@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="None">
+        
+        
+        <link rel="shortcut icon" href="../img/favicon.ico">
+        <title>STDL Reporting</title>
+        <link href="../css/bootstrap-custom.min.css" rel="stylesheet">
+        <link href="../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+
+        <script src="../js/jquery-1.10.2.min.js" defer></script>
+        <script src="../js/bootstrap-3.0.3.min.js" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script> 
+    </head>
+
+    <body class="homepage">
+
+        <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+            <div class="container">
+
+                <!-- Collapsed navigation -->
+                <div class="navbar-header">
+                    <!-- Expander button -->
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="..">STDL Reporting</a>
+                </div>
+
+                <!-- Expanded navigation -->
+                <div class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li >
+                                <a href="..">Home</a>
+                            </li>
+                            <li >
+                                <a href="../TASK-4RAS/">TASK-4RAS</a>
+                            </li>
+                            <li class="active">
+                                <a href="./">TASK-DIFF</a>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav navbar-right">
+                        <li>
+                            <a href="#" data-toggle="modal" data-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li >
+                                <a rel="next" href="../TASK-4RAS/">
+                                    <i class="fa fa-arrow-left"></i> Previous
+                                </a>
+                            </li>
+                            <li class="disabled">
+                                <a rel="prev" >
+                                    Next <i class="fa fa-arrow-right"></i>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://github.com/swiss-territorial-data-lab/stdl-reporting/edit/master/docs/TASK-DIFF/README.md"><i class="fa fa-github"></i> Edit on GitHub</a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+                <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
+    <ul class="nav bs-sidenav">
+        <li class="main active"><a href="#context">Context</a></li>
+        <li class="main "><a href="#methodology">Methodology</a></li>
+        <li class="main "><a href="#first-phase-synthetic-variations">First Phase : Synthetic Variations</a></li>
+            <li><a href="#selected-ressources-and-models">Selected Ressources and Models</a></li>
+            <li><a href="#implementation-of-the-algorithm">Implementation of the Algorithm</a></li>
+            <li><a href="#experimentations-and-results">Experimentations and Results</a></li>
+        <li class="main "><a href="#codes-and-ressources">Codes and Ressources</a></li>
+        <li class="main "><a href="#auxiliary-developments-corrections">Auxiliary Developments &amp; Corrections</a></li>
+    </ul>
+</div></div>
+                <div class="col-md-9" role="main">
+
+<p><strong>TASK-DIFF</strong> - NH <br />
+Schedule : September 2020 to February 2021</p>
+<h1 id="context">Context</h1>
+<p>Initially dedicated to handle large scale point-based models, the 4D platform developed at the DHLAB with the collaboration of Cadastre Suisse introduced an optimized Earth-attached indexation formalism. As the data access and broadcast performances where encouraging, it was decided to adapt the indexation formalism for vector-based models allowing the platform to ingest, store and broadcast any type of 3D data.</p>
+<p>In the context of differencies detection and as the indexation formalism is based on equivalences classes defined on space and time, the space-time is naturally discretized along all of the four dimensions. This allowed to implements simple logical operators on the four-dimensional space. The OR, AND and XOR operators were then implemented allowing the platform to compute, on the fly, convolutions of models to compare one place at two different times.</p>
+<p>The implementation of theses operators was simple due to the natural spatio-temporal discretization obtained from the indexation formalism. Nevertheless, two major drawback appeared : the first one is that such operator only works for point-based models. Having the possibility to compute and render differences and similarities between any type of data is not possible with such formal operators.</p>
+<p>The second drawback comes from the nature of the point-based capturing devices. Indeed, taking the example of a building, even without any change to its structure, two digitization campains can lead to disparities only due to the point-based models sampling. The XOR operator is the natural choice to detect and render differences but this operator is very sensitive to sampling disparities. Computing the XOR convolution between two point-based models leads the rendering to be dominated by sampling variations rather than the desired structural differences.</p>
+<p>This drawback was partially solved by considering the AND operator. Indeed, the AND operator allows to only shows constant structural elements from two different positions in time and is insensitive to sampling disparities. As shown on the following images, the AND operator shows differences as black spots (lack of data) :</p>
+<p><br />
+<p align="center">
+<img src="image/and-convolution.jpg?raw=true" width="800">
+<br />
+<i>AND convolution between two LIDAR models : Geneva 2005 and 2009 - Data : SITG</i>
+</p>
+<br /></p>
+<p>As one can see, AND convolution allows to detect, through the black spots, large area of structural changes between the two times and also, with more care, allows to guess more small differences.</p>
+<p>The goal of this task is to tackle these two drawbacks allowing the platform to detect changes not only for point-based models but also for vector-based models and to show more clearly the differences between the compared to time positions.</p>
+<p>The task consists then in the implementation, testing and validation of disparity and similarity detection algorithms for any type of data taken at two different times and to conduct a formal analysis on the best detection and rendering techniques.</p>
+<h1 id="methodology">Methodology</h1>
+<p>A step by step methodology is defined to address the problem of differences and similarities detection in the platform. In a first phase, a frist algorithm will be developed and validated on vector-based models as follows :</p>
+<ul>
+<li>
+<p>Development of the algorithm on synthetic variations on a vector-based model</p>
+</li>
+<li>
+<p>Validation of the algorithm (using the known synthetic variations)</p>
+</li>
+<li>
+<p>First conclusion</p>
+</li>
+</ul>
+<p>In a second phase, <em>true</em> land register data will be used to formally detect real evolution of the territory and to compare them with the land register databases :</p>
+<ul>
+<li>
+<p>Obtaining <em>true</em> land register vector-based model (INTERLIS) at two different times</p>
+</li>
+<li>
+<p>Detecting the differences with the algorithm and validate them with the <em>true</em> land register revision</p>
+</li>
+</ul>
+<p>In a third phase, the algorithm will be validated (and adapted) to work on point-based models :</p>
+<ul>
+<li>
+<p>Obtaining <em>true</em> land register point-based model (LAS) at two different times</p>
+</li>
+<li>
+<p>Detecting the differences between the two times and validate them with the <em>true</em> land register revision</p>
+</li>
+<li>
+<p>Second conclusion</p>
+</li>
+</ul>
+<p>Finally, in a last phase, both point-based and vector-based models will be considered without distinction to develop an algorithm able to compare any type of data between themselves based on the conclusion made during the first algorithm development :</p>
+<ul>
+<li>
+<p>Detection of differences/similarities on different type of data : flat land register (vector) and 3D models (point, mesh)</p>
+</li>
+<li>
+<p>Analysis and conclusion on the results of the developed algorithm</p>
+</li>
+</ul>
+<p>In addition, the development of differences and similarities algorithms has to be conducted keeping in mind the possible future evolution of the platform such as addition of layer (separation of data), implementation of a multi-scale approach of the time dimension and addition of raster data in the platform.</p>
+<h1 id="first-phase-synthetic-variations">First Phase : Synthetic Variations</h1>
+<p>In order to implements the first vector-based differences detection algorithm, sets of data are considered as base on which synthtic differences are applied to simulate the evolution of the territory. This approach allows to focus on well controlled data to formally benchmark the results of the implemented algorithms.</p>
+<h2 id="selected-ressources-and-models">Selected Ressources and Models</h2>
+<p>In this first phase, data are gathered from <em>openstreetmap</em> in order to create simple models used during the implementation and validation of the detection algorithms. A first set of vector-based models are considered made only of lines (land register). Three set are create each with a different scale, from city to the whole Switzerland.</p>
+<p>The line-based sets of data are extracted from <em>openstreetmap</em> shapefiles and the elevation is restored using the <em>SRTM geotiff</em> data. The <em>EGM96-5</em> geoid model is then used to convert the elevation from <em>MSL</em> to ellipsoid heights. The following images give an illustration of these set of data :</p>
+<p><br />
+<p align="center">
+<img src="image/line-data-swiss.jpg?raw=true" width="800"> <br /> <br />
+<img src="image/line-data-neuchatel-frauenfeld.jpg?raw=true" width="800"> <br />
+<br />
+<i>Line-based dataset : Switzerland (top), canton of Neuchatel (bottom left) and Frauenfeld city (bottom right) - Data : OSM</i>
+</p>
+<br /></p>
+<p>In order to simulate evolution of the territory in time, synthetic variations are added to these models. A script is developed and used to insert controlled variations on selected primitives. The amount and the amplitude of these variation can also be controlled through the developed script.</p>
+<p>A second set of triangle-based models is also considered to implement and validate the differences detection algorithm. The selected model is a mesh model of the building of Geneva city. It comes aligned in the CH1903+ frame with the altitudes. It is simply converted into the <em>WGS84</em> frame using again the <em>EGM95-5</em> geoid model :</p>
+<p><br />
+<p align="center">
+<img src="image/triangle-data-geneva.jpg?raw=true" width="800"> <br />
+<br />
+<i>Triangle-based dataset : Geneva buildings mesh - Data : SITG</i>
+</p>
+<br /></p>
+<p>The developed script for line-based models is also used here to add synthetic variation to the model primitives in order to simulate an evolution of the territory.</p>
+<h2 id="implementation-of-the-algorithm">Implementation of the Algorithm</h2>
+<p>In order to compare two models at two different positions in time to detect differences, the solution is of course to search for each primitive of the first time if it has a correspondance in the second time. In such case, the primitives can be concluded as static in time and only the primitives that have no correspondance will be highlighted as differences.</p>
+<p>A first approach was initially tested : a vertex-based comparison. As every primitive (points, lines and triangles) are supported by vertex, it can be seen as a common denominator on which comparison can take place. Unfortunately, it is not a relevant approach as it leads to asymetric detection algorithm. To illustrate the issue, the following image shows the situation of a group of primitives at two different times with an evolution on one of the primitive vertex :</p>
+<p><br />
+<p align="center">
+<img src="image/asymetric-illustration.png?raw=true" width="400">
+<br />
+<i>Asymetric approach : the variation is detected only when comparing backward in time</i>
+</p>
+<br /></p>
+<p>When the comparison oocurs between the second time compared to the first one, the modified vertex is not found in the first model, and then, the vertex can be highlighted as a difference. The asymetry appears as the frist time is compare to the second one. In this case, despite the primitive vertex has changed, the vertex-based approach is able to find another vertex, part of another static primitive, and interprets it as a vertex identity, leading the modified primitive to be considered as static.</p>
+<p>In order to obtain fully symetric algorithm, that does not depends on the way models are compared in times, a primitive based approach has to be considered. The implemented algorithm then treats the correspondance problem from the whole primitive point of view, by checking that the whole primitive can be found in the other model to which it is compared to. This allows to highlight any primitive showing a modification, regardless of the way models in time are compared.</p>
+<p>In addition to highlighting the primitives that changed through time, the implemented algorithm also keeps the primitive that did not changed. The ensemble of primitives are then shown by modulating their color to emphasize the modification by keeping their original color for modified one while the static primitives are shown in dark gray. This allows to not only show the modifications but also to keep the context of the modification helping the user to fully understand the nature of the territory evolution.</p>
+<p>Additional developments were required for triangle-based models : indeed, such models need to be subjected to a lighting model during rendering for the user to understand the model. As the differences are highlighted through color modulation, the implemented lighting model is causing difficulties to spot the highlighted primitives. The rendering client then checks for the differences detection algorithm and switches off the lighting in such case to make the differences more clear to the user.</p>
+<p>In addition, mesh models, as they are made of triangles, are hiding parts of themselves. It can then be difficult for the user to spot the highlighted primitives as they can be <em>hidden</em> by others. A option was added to the rendering client allowing the user to ask the rendering of triangles as <em>line-loops</em> or points in order to make them transparent.</p>
+<h2 id="experimentations-and-results">Experimentations and Results</h2>
+<p>With the implemented algorithm, a series of experimentations are conducted in order to validate and analyze the performance of the differencies detection algorithm for vector-based models.</p>
+<h3 id="differences-detection-and-rendering">Differences Detection and Rendering</h3>
+<p>With the implemented algorithms, it is possible to highligth any modification in the evolution of a model through time. The following image show examples of modifications and how their are rendered for the user by the graphical client :</p>
+<p><br />
+<p align="center">
+<img src="image/diff-example-line.jpg?raw=true" width="800">
+<br />
+<i>Example of differences detection on Frauenfeld (left, two detections) and La Chaux-de-Fonds (right, one detection) - Data : OSM</i>
+</p>
+<br /></p>
+<p>Considering one of the two differences detected on the city of Frauenfeld, the following image shows the situation in the two compared models, at their respective position in time, that led to the detection :</p>
+<p><br />
+<p align="center">
+<img src="image/diff-line-situation.jpg?raw=true" width="800">
+<br />
+<i>First model situation (left) compared the the second model situation (right) - Data : OSM</i>
+</p>
+<br /></p>
+<p>On can see that, despite the modification of the primitive vertex is very small and difficult to see, the algorithm is able to detect it and to show the user where to look for evolutions. On this example, the shown evolution of the primitive vertex is of the order of <em>10</em> centimetres, leading to a very difficult differences to spot without the help of the algorithm.</p>
+<p>Considering the triangle-based model, the following image shows how detected differencies are rendered to the user :</p>
+<p><br />
+<p align="center">
+<img src="image/diff-example-triangle.jpg?raw=true" width="800">
+<br />
+<i>Example of differences detection on Geneva with filled (left) and line-loops (right) triangle rendering modes - Data : OSM</i>
+</p>
+<br /></p>
+<p>This shows how the differences detection algorithm is able to detect and render differences in a triangle-based model using the same color modulation technique as used for line-based models. One cas see how rendering triangle as <em>line-loops</em> can ease the display of variations on triangle-based models allowing to see <em>through</em> the primitives.</p>
+<h1 id="codes-and-ressources">Codes and Ressources</h1>
+<p>The following lins gives you access to the codes related to this task :</p>
+<ul>
+<li>
+<p><a href="https://github.com/nils-hamel/liberatosthene">4D platform main framework library</a></p>
+</li>
+<li>
+<p><a href="https://github.com/nils-hamel/eratosthene-suite">4D platform front-end including graphical client and server instance</a></p>
+</li>
+<li>
+<p><a href="https://github.com/swiss-territorial-data-lab/csv-wkt-to-uv3">Shapefile <em>CSV</em> export to <em>UV3</em> format conversion script</a></p>
+</li>
+<li>
+<p><a href="https://github.com/nils-hamel/dalai-suite"><em>UV3</em> related tool suite including display and conversion</a></p>
+</li>
+</ul>
+<h1 id="auxiliary-developments-corrections">Auxiliary Developments &amp; Corrections</h1>
+<p>In addition to the main developments made on the platform, some other corrections have been made to solve minor problem or to improve the code according to the developed features during this task. The auxiliary developments are summarized here :</p>
+<ul>
+<li>
+<p>Correction of socket read function to improve server-client connectivity</p>
+</li>
+<li>
+<p>Creation of scripts that allows to insert sythetic modifications (random displacements on the vertex coordinates) on UV3 models</p>
+</li>
+<li>
+<p>Creation of a script to convert <em>CSV</em> export from shapefile to <em>UV3</em> format. The script code is available <a href="https://github.com/swiss-territorial-data-lab/csv-wkt-to-uv3">here</a></p>
+</li>
+<li>
+<p>Dynamical management of lighting during differencies detection on triangle-based models</p>
+</li>
+<li>
+<p>Adding rendering option allowing the user to display triangles as filled triangles, <em>line-loops</em> or points to allow seeing through the primitive</p>
+</li>
+</ul></div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script>
+            var base_url = "..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../js/base.js" defer></script>
+        <script src="../search/main.js" defer></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="Search Modal" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <h4 class="modal-title" id="exampleModalLabel">Search</h4>
+            </div>
+            <div class="modal-body">
+                <p>
+                    From here you can search these documents. Enter
+                    your search terms below.
+                </p>
+                <form role="form">
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="Keyboard Shortcuts Modal" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <h4 class="modal-title" id="exampleModalLabel">Keyboard Shortcuts</h4>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>
+
+<!--
+MkDocs version : 1.0.4
+Build Date UTC : 2020-09-15 13:29:18
+-->
