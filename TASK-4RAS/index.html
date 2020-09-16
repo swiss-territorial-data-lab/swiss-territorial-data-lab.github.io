@@ -8,7 +8,7 @@
         
         
         <link rel="shortcut icon" href="../img/favicon.ico">
-        <title>STDL - Swiss Territorial Data Lab - Reporting</title>
+        <title>Swiss Territorial Data Lab - Reporting</title>
         <link href="../css/bootstrap-custom.min.css" rel="stylesheet">
         <link href="../css/font-awesome.min.css" rel="stylesheet">
         <link href="../css/base.css" rel="stylesheet">
@@ -34,7 +34,7 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="..">STDL - Swiss Territorial Data Lab - Reporting</a>
+                    <a class="navbar-brand" href="..">Swiss Territorial Data Lab - Reporting</a>
                 </div>
 
                 <!-- Expanded navigation -->
@@ -81,24 +81,25 @@
     <ul class="nav bs-sidenav">
         <li class="main active"><a href="#context">Context</a></li>
         <li class="main "><a href="#specifications">Specifications</a></li>
-        <li class="main "><a href="#ressources">Ressources</a></li>
+        <li class="main "><a href="#resources">Resources</a></li>
     </ul>
 </div></div>
                 <div class="col-md-9" role="main">
 
 <p><strong>TASK-4RAS</strong> - HR, NH <br />
-Schedule : September 2020 to September 2021 (Initially planned from August 2021 February 2022)</p>
+Schedule : September 2020 to February 2021 (initially planned from August 2021 February 2022)</p>
+<p><em>This document describe the state of an ongoing task (DIFF) and is subject to daily revision and evolution</em></p>
 <h1 id="context">Context</h1>
 <p>The 4D platform developed at EPFL with the collaboration of Cadastre Suisse is able to ingest both large scale point-based and vector-based models. During the previous development, the possibility to have this different type of data in a single framework lead to interesting results, showing the interest to have the possibility to put this different type of data into perspectives.</p>
 <p><br />
 <p align="center">
 <img src="image/mixed-models.jpg" width="800">
 <br />
-<i>Illustrations of mixed models in the 4D platform : INTERLIS, Mesh and LIDA - Data : SITN</i>
+<i>Illustrations of mixed models in the 4D platform : INTERLIS, Mesh and LIDAR - Data : SITN</i>
 </p>
 <br /></p>
 <p>Taking into account point-based and vector-based model allows to almost cover all type of data that are traditionally considered for land registering.</p>
-<p>The only type of data that is currently missing are the two-dimensional rasters. Indeed, due to their nature, image are more complicated to put in perspective of other three-dimensional data. The goal of this task is then to address the management of the raster by the platform in order to be able to ingest, store and broadcast any type of data with the 4D platform.</p>
+<p>The only type of data that is currently missing is the two-dimensional rasters. Indeed, due to their nature, image are more complicated to put in perspective of other three-dimensional data. The goal of this task is then to address the management of the raster by the platform in order to be able to ingest, store and broadcast any type of data with the 4D platform.</p>
 <h1 id="specifications">Specifications</h1>
 <p>In order to address this task, a step-by-step approach is defined. In the first place, a set of data has to be gathered from the STDL partners :</p>
 <ul>
@@ -109,10 +110,10 @@ Schedule : September 2020 to September 2021 (Initially planned from August 2021 
 <p>The dataset has to provide ortho-photography for at least two different times</p>
 </li>
 <li>
-<p>The format of the dataset has to be analysed in order to be able to extract the image pixels with their position (CH1903+)</p>
+<p>The format of the dataset has to be analyzed in order to be able to extract the image pixels with their position (CH1903+)</p>
 </li>
 </ul>
-<p>As the platform indexation formalism is not straightforward, the images are treated as point-based model, each pixel being one colored point of the model. This will allows to provide a way of starting to analyse and understand the indexation formalism while having first results on image integration :</p>
+<p>As the platform indexation formalism is not straightforward, the images are treated as point-based model, each pixel being one colored point of the model. This will allow to provide a way of starting to analyze and understand the indexation formalism while having first results on image integration :</p>
 <ul>
 <li>
 <p>Transform images into simple point-based models (each pixel being one point)</p>
@@ -121,17 +122,17 @@ Schedule : September 2020 to September 2021 (Initially planned from August 2021 
 <p>Injection of the point-based model in an experimental instance of the platform</p>
 </li>
 <li>
-<p>Understanding the indexation formalism for point-based model and, subsequently, its adaptation for the vector-based models</p>
+<p>Understanding the indexation formalism for point-based models and, subsequently, its adaptation for the vector-based models</p>
 </li>
 </ul>
-<p>As the indexation formalism is understood for point-based model, the following adaptation will be performed :</p>
+<p>As the indexation formalism is understood for point-based models, the following adaptation will be performed :</p>
 <ul>
 <li>removing the third dimension from the point-based indexation specifically for the image (flat indexation)</li>
 </ul>
 <p>At this point, a first reporting is required :</p>
 <ul>
 <li>
-<p>Is there a advantage to add raster to such platform in perspective of the other types of model (points, vectors, meshes) ?</p>
+<p>Is there an advantage to add raster to such a platform in perspective of the other types of model (points, vectors, meshes) ?</p>
 </li>
 <li>
 <p>How the adaptation of the point-based indexation performs for images ?</p>
@@ -147,15 +148,15 @@ Schedule : September 2020 to September 2021 (Initially planned from August 2021 
 <ul>
 <li>Would it be more efficient to integrate image keeping them as raster (deviation from the current indexation) ?</li>
 </ul>
-<p>Depending on the answer, a new set of specification will be decided (if this direction is flavoured).</p>
+<p>Depending on the answer, a new set of specification will be decided (if this direction is favored).</p>
 <p>Depending on the remaining time and on the obtained results, the question of the time management in the platform will be addressed. Currently, the time is treated linearly in the platform and a multi-scale approach, as for the spatial dimensions, could be interesting. The specifications will be decided as the previous points will be fulfilled.</p>
-<h1 id="ressources">Ressources</h1>
-<p>List of the ressources initially linked to the task :</p>
+<h1 id="resources">Resources</h1>
+<p>List of the resources initially linked to the task :</p>
 <ul>
 <li><a href="https://github.com/nils-hamel/liberatosthene">liberatosthene</a> - Platform and indexation back-end</li>
 <li><a href="https://github.com/nils-hamel/eratosthene-suite">eratosthene-suite</a> - Platform front-end</li>
 </ul>
-<p>Other ressources will be provided according to requirements.</p></div>
+<p>Other resources will be provided according to requirements.</p></div>
         </div>
 
         <footer class="col-md-12">
@@ -238,5 +239,5 @@ Schedule : September 2020 to September 2021 (Initially planned from August 2021 
 
 <!--
 MkDocs version : 1.0.4
-Build Date UTC : 2020-09-15 14:13:12
+Build Date UTC : 2020-09-16 14:57:20
 -->
