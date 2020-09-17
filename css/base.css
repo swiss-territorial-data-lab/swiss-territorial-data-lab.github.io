@@ -1,5 +1,5 @@
 body {
-    padding-top: 70px;
+    padding-top: 120px;
 }
 
 /* Replacement for `body { background-attachment: fixed; }`, which has
@@ -211,7 +211,7 @@ footer {
     }
     .bs-sidebar.affix { /* csslint allow: adjoining-classes */
         position: fixed; /* Undo the static from mobile first approach */
-        top: 80px;
+        top: 120px;
     }
     .bs-sidebar.affix-bottom { /* csslint allow: adjoining-classes */
         position: absolute; /* Undo the static from mobile first approach */
