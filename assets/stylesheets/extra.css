@@ -32,3 +32,7 @@
 .md-nav--primary::after{
 	content: url("/assets/logo-stdl-transparent-blue.svg");
 }
+
+.md-source__facts{
+	display: none;
+}
