@@ -1,103 +1,508 @@
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta name="description" content="None">
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      <link rel="shortcut icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-6.0.1">
+    
+    
+      
+        <title>TASK-DIFF - Swiss Territorial Data Lab</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.38780c08.min.css">
+      
         
+        <link rel="stylesheet" href="../assets/stylesheets/palette.3f72e892.min.css">
         
-        <link rel="shortcut icon" href="../img/favicon.ico">
-        <title>Swiss Territorial Data Lab - Reporting</title>
-        <link href="../css/bootstrap-custom.min.css" rel="stylesheet">
-        <link href="../css/font-awesome.min.css" rel="stylesheet">
-        <link href="../css/base.css" rel="stylesheet">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+      
+    
+    
+    
+      
+        
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>body,input{font-family:"Roboto",-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono",SFMono-Regular,Consolas,Menlo,monospace}</style>
+      
+    
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/extra.css">
+    
+    
+      
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="none" data-md-color-accent="none">
+      
+  
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#task-diff-nh" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid" aria-label="Header">
+    <a href=".." title="Swiss Territorial Data Lab" class="md-header-nav__button md-logo" aria-label="Swiss Territorial Data Lab">
+      
+  <img src="../assets/logo-stdl-transparent.svg" alt="logo">
 
-        <script src="../js/jquery-1.10.2.min.js" defer></script>
-        <script src="../js/bootstrap-3.0.3.min.js" defer></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
-        <script>hljs.initHighlightingOnLoad();</script> 
-    </head>
-
-    <body class="homepage">
-
-        <div class="navbar navbar-default navbar-fixed-top" role="navigation">
-            <div class="container">
-
-                <!-- Collapsed navigation -->
-                <div class="navbar-header">
-                    <!-- Expander button -->
-                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                        <span class="sr-only">Toggle navigation</span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-                    <a class="navbar-brand" href="..">Swiss Territorial Data Lab - Reporting</a>
-                </div>
-
-                <!-- Expanded navigation -->
-                <div class="navbar-collapse collapse">
-                        <!-- Main navigation -->
-                        <ul class="nav navbar-nav">
-                            <li >
-                                <a href="..">Home</a>
-                            </li>
-                            <li >
-                                <a href="../TASK-4RAS/">TASK-4RAS</a>
-                            </li>
-                            <li class="active">
-                                <a href="./">TASK-DIFF</a>
-                            </li>
-                            <li >
-                                <a href="../TASK-IDET/">TASK-IDET</a>
-                            </li>
-                        </ul>
-
-                    <ul class="nav navbar-nav navbar-right">
-                        <li>
-                            <a href="#" data-toggle="modal" data-target="#mkdocs_search_modal">
-                                <i class="fa fa-search"></i> Search
-                            </a>
-                        </li>
-                            <li >
-                                <a rel="next" href="../TASK-4RAS/">
-                                    <i class="fa fa-arrow-left"></i> Previous
-                                </a>
-                            </li>
-                            <li >
-                                <a rel="prev" href="../TASK-IDET/">
-                                    Next <i class="fa fa-arrow-right"></i>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="https://github.com/swiss-territorial-data-lab/stdl-reporting/edit/master/docs/TASK-DIFF/README.md"><i class="fa fa-github"></i> Edit on GitHub</a>
-                            </li>
-                    </ul>
-                </div>
-            </div>
+    </a>
+    <label class="md-header-nav__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header-nav__title" data-md-component="header-title">
+      
+        <div class="md-header-nav__ellipsis">
+          <span class="md-header-nav__topic md-ellipsis">
+            Swiss Territorial Data Lab
+          </span>
+          <span class="md-header-nav__topic md-ellipsis">
+            
+              TASK-DIFF
+            
+          </span>
         </div>
+      
+    </div>
+    
+      <label class="md-header-nav__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active">
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" data-md-component="search-reset" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header-nav__source">
+        
+<a href="https://github.com/swiss-territorial-data-lab/stdl-reporting/" title="Go to repository" class="md-source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05L244 40.45a28.87 28.87 0 00-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 01-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 000 40.81l195.61 195.6a28.86 28.86 0 0040.8 0l194.69-194.69a28.86 28.86 0 000-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Swiss Territorial Data Lab" class="md-nav__button md-logo" aria-label="Swiss Territorial Data Lab">
+      
+  <img src="../assets/logo-stdl-transparent.svg" alt="logo">
 
-        <div class="container">
-                <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
-    <ul class="nav bs-sidenav">
-        <li class="main active"><a href="#context">Context</a></li>
-        <li class="main "><a href="#methodology">Methodology</a></li>
-        <li class="main "><a href="#first-phase-synthetic-variations">First Phase : Synthetic Variations</a></li>
-            <li><a href="#selected-resources-and-models">Selected Resources and Models</a></li>
-            <li><a href="#implementation-of-the-algorithm">Implementation of the Algorithm</a></li>
-            <li><a href="#experimentations-and-results">Experimentations and Results</a></li>
-        <li class="main "><a href="#codes-and-resources">Codes and Resources</a></li>
-        <li class="main "><a href="#auxiliary-developments-corrections">Auxiliary Developments &amp; Corrections</a></li>
+    </a>
+    Swiss Territorial Data Lab
+  </label>
+  
+    <div class="md-nav__source">
+      
+<a href="https://github.com/swiss-territorial-data-lab/stdl-reporting/" title="Go to repository" class="md-source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05L244 40.45a28.87 28.87 0 00-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 01-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 000 40.81l195.61 195.6a28.86 28.86 0 0040.8 0l194.69-194.69a28.86 28.86 0 000-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href=".." title="STDL Reporting" class="md-nav__link">
+      STDL Reporting
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../TASK-4RAS/" title="TASK-4RAS" class="md-nav__link">
+      TASK-4RAS
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        TASK-DIFF
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+    
+    <a href="./" title="TASK-DIFF" class="md-nav__link md-nav__link--active">
+      TASK-DIFF
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#context" class="md-nav__link">
+    Context
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#methodology" class="md-nav__link">
+    Methodology
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#first-phase-synthetic-variations" class="md-nav__link">
+    First Phase : Synthetic Variations
+  </a>
+  
+    <nav class="md-nav" aria-label="First Phase : Synthetic Variations">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#selected-resources-and-models" class="md-nav__link">
+    Selected Resources and Models
+  </a>
+  
+    <nav class="md-nav" aria-label="Selected Resources and Models">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#vector-models-line-based" class="md-nav__link">
+    Vector Models : Line-based
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#vector-models-triangle-based" class="md-nav__link">
+    Vector Models : Triangle-based
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#point-models-lidar" class="md-nav__link">
+    Point Models : LIDAR
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#implementation-of-the-algorithm" class="md-nav__link">
+    Implementation of the Algorithm
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#experimentations-and-results" class="md-nav__link">
+    Experimentations and Results
+  </a>
+  
+    <nav class="md-nav" aria-label="Experimentations and Results">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#differences-detection-and-rendering" class="md-nav__link">
+    Differences Detection and Rendering
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#codes-and-resources" class="md-nav__link">
+    Codes and Resources
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#auxiliary-developments-corrections" class="md-nav__link">
+    Auxiliary Developments &amp; Corrections
+  </a>
+  
+</li>
+      
     </ul>
-</div></div>
-                <div class="col-md-9" role="main">
+  
+</nav>
+    
+  </li>
 
-<p><strong>TASK-DIFF</strong> - NH <br />
-Schedule : September 2020 to February 2021</p>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../TASK-IDET/" title="TASK-IDET" class="md-nav__link">
+      TASK-IDET
+    </a>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#context" class="md-nav__link">
+    Context
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#methodology" class="md-nav__link">
+    Methodology
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#first-phase-synthetic-variations" class="md-nav__link">
+    First Phase : Synthetic Variations
+  </a>
+  
+    <nav class="md-nav" aria-label="First Phase : Synthetic Variations">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#selected-resources-and-models" class="md-nav__link">
+    Selected Resources and Models
+  </a>
+  
+    <nav class="md-nav" aria-label="Selected Resources and Models">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#vector-models-line-based" class="md-nav__link">
+    Vector Models : Line-based
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#vector-models-triangle-based" class="md-nav__link">
+    Vector Models : Triangle-based
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#point-models-lidar" class="md-nav__link">
+    Point Models : LIDAR
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#implementation-of-the-algorithm" class="md-nav__link">
+    Implementation of the Algorithm
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#experimentations-and-results" class="md-nav__link">
+    Experimentations and Results
+  </a>
+  
+    <nav class="md-nav" aria-label="Experimentations and Results">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#differences-detection-and-rendering" class="md-nav__link">
+    Differences Detection and Rendering
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#codes-and-resources" class="md-nav__link">
+    Codes and Resources
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#auxiliary-developments-corrections" class="md-nav__link">
+    Auxiliary Developments &amp; Corrections
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                  <a href="https://github.com/swiss-territorial-data-lab/stdl-reporting/edit/master/docs/TASK-DIFF/README.md" title="Edit this page" class="md-content__button md-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
+                  </a>
+                
+                
+                <h1 id="task-diff-nh"><strong>TASK-DIFF</strong> - NH <br /><a class="headerlink" href="#task-diff-nh" title="Permanent link">&para;</a></h1>
+<p>Schedule : September 2020 to February 2021</p>
 <p><em>This document describe the state of an ongoing task (DIFF) and is subject to daily revision and evolution</em></p>
-<h1 id="context">Context</h1>
+<h2 id="context">Context<a class="headerlink" href="#context" title="Permanent link">&para;</a></h2>
 <p>Initially dedicated to handle large scale point-based models, the 4D platform developed at the DHLAB with the collaboration of Cadastre Suisse introduced an optimized Earth-attached indexation formalism. As the data access and broadcast performances were encouraging, it was decided to adapt the indexation formalism for vector-based models allowing the platform to ingest, store and broadcast any type of 3D data.</p>
 <p>In the context of differences detection and as the indexation formalism is based on equivalences classes defined on space and time, the space-time is naturally discretized along all of the four dimensions. This allowed to implements simple logical operators on the four-dimensional space. The OR, AND and XOR operators were then implemented allowing the platform to compute, on the fly, convolutions of models to compare one place at two different times.</p>
 <p>The implementation of theses operators was simple due to the natural spatiotemporal discretization obtained from the indexation formalism. Nevertheless, two major drawbacks appeared : the first one is that such operator only works for point-based models. Having the possibility to compute and render differences and similarities between any type of data is not possible with such formal operators.</p>
@@ -113,7 +518,7 @@ Schedule : September 2020 to February 2021</p>
 <p>As one can see, AND convolution allows to detect, through the black spots, large area of structural changes between the two times and also, with more care, allows to guess more small differences.</p>
 <p>The goal of this task is to tackle these two drawbacks allowing the platform to detect changes not only for point-based models but also for vector-based models and to show more clearly the differences between the compared to time positions.</p>
 <p>The task consists then in the implementation, testing and validation of disparity and similarity detection algorithms for any type of data taken at two different times and to conduct a formal analysis on the best detection and rendering techniques.</p>
-<h1 id="methodology">Methodology</h1>
+<h2 id="methodology">Methodology<a class="headerlink" href="#methodology" title="Permanent link">&para;</a></h2>
 <p>A step by step methodology is defined to address the problem of differences and similarities detection in the platform. In a first phase, a first algorithm will be developed and validated on vector-based models as follows :</p>
 <ul>
 <li>
@@ -157,11 +562,11 @@ Schedule : September 2020 to February 2021</p>
 </li>
 </ul>
 <p>In addition, the development of differences and similarities algorithms has to be conducted keeping in mind the possible future evolution of the platform such as addition of layers (separation of data), implementation of a multi-scale approach of the time dimension and addition of raster data in the platform.</p>
-<h1 id="first-phase-synthetic-variations">First Phase : Synthetic Variations</h1>
+<h2 id="first-phase-synthetic-variations">First Phase : Synthetic Variations<a class="headerlink" href="#first-phase-synthetic-variations" title="Permanent link">&para;</a></h2>
 <p>In order to implements the first vector-based differences detection algorithm, sets of data are considered as base on which synthetic differences are applied to simulate the evolution of the territory. This approach allows to focus on well controlled data to formally benchmark the results of the implemented algorithms.</p>
 <p>In addition, point-based models are also considered in order to determine in which extend the implemented vector-based differences detection algorithm can be operated on point clouds data with which results and performances.</p>
-<h2 id="selected-resources-and-models">Selected Resources and Models</h2>
-<h3 id="vector-models-line-based">Vector Models : Line-based</h3>
+<h3 id="selected-resources-and-models">Selected Resources and Models<a class="headerlink" href="#selected-resources-and-models" title="Permanent link">&para;</a></h3>
+<h4 id="vector-models-line-based">Vector Models : Line-based<a class="headerlink" href="#vector-models-line-based" title="Permanent link">&para;</a></h4>
 <p>In this first phase, line-based data are gathered from <em>openstreetmap</em> in order to create simple models used during the implementation and validation of the detection algorithms. A first set of vector-based models are considered made only of lines (land register). Three set are create each with a different scale, from cities to the whole Switzerland.</p>
 <p>The line-based sets of data are extracted from <em>openstreetmap</em> shapefiles and the elevation is restored using the <em>SRTM geotiff</em> data. The <em>EGM96-5</em> geoid model is then used to convert the elevation from <em>MSL</em> to ellipsoid heights. The following images give an illustration of these sets of data :</p>
 <p><br />
@@ -172,7 +577,7 @@ Schedule : September 2020 to February 2021</p>
 </p>
 <br /></p>
 <p>In order to simulate evolution of the territory in time, synthetic variations are added to these models. A script is developed and used to insert controlled variations on selected primitives. The amount and the amplitude of these variations can also be controlled through the developed script.</p>
-<h3 id="vector-models-triangle-based">Vector Models : Triangle-based</h3>
+<h4 id="vector-models-triangle-based">Vector Models : Triangle-based<a class="headerlink" href="#vector-models-triangle-based" title="Permanent link">&para;</a></h4>
 <p>A second set of triangle-based models is also considered to implement and validate the differences detection algorithm. The selected model is a mesh model of the building of Geneva City. It comes aligned in the CH1903+ frame with the altitudes. It is simply converted into the <em>WGS84</em> frame using again the <em>EGM95-5</em> geoid model :</p>
 <p><br />
 <p align="center">
@@ -181,7 +586,7 @@ Schedule : September 2020 to February 2021</p>
 </p>
 <br /></p>
 <p>The developed script for line-based models is also used here to add synthetic variation to the model primitives in order to simulate an evolution of the territory.</p>
-<h3 id="point-models-lidar">Point Models : LIDAR</h3>
+<h4 id="point-models-lidar">Point Models : LIDAR<a class="headerlink" href="#point-models-lidar" title="Permanent link">&para;</a></h4>
 <p>A third set of point-based models are considered to be able how the developed algorithm is able to provide results on such models. A selected portion of the city of Geneva <em>LIDAR</em> is considered as illustrated on the following image :</p>
 <p><br />
 <p align="center">
@@ -190,7 +595,7 @@ Schedule : September 2020 to February 2021</p>
 </p>
 <br /></p>
 <p>In case of point-based models, taking into account the problem of sampling disparities that was experienced with the previously implemented <em>XOR</em> operator, two <em>true</em> case are here selected that are the <em>LIDAR</em> model in 2005 and 2009. This allows to apply the developed algorithm on <em>real</em> variations and to see how the sampling disparity is solved in case of such data.</p>
-<h2 id="implementation-of-the-algorithm">Implementation of the Algorithm</h2>
+<h3 id="implementation-of-the-algorithm">Implementation of the Algorithm<a class="headerlink" href="#implementation-of-the-algorithm" title="Permanent link">&para;</a></h3>
 <p>In order to compare two models at two different positions in time to detect differences, the solution is of course to search for each primitive of the first time if it has a correspondence in the second time. In such case, the primitives can be concluded as static in time and only the primitives that have no correspondence will be highlighted as differences.</p>
 <p>A first approach was initially tested : a vertex-based comparison. As every primitive (points, lines and triangles) is supported by vertexes, it can be seen as a common denominator on which comparison can take place. Unfortunately, it is not a relevant approach as it leads to asymmetric detection algorithm. To illustrate the issue, the following image shows the situation of a group of primitives at two different times with an evolution on one of the primitive vertexes :</p>
 <p><br />
@@ -204,9 +609,9 @@ Schedule : September 2020 to February 2021</p>
 <p>In addition to highlighting the primitives that changed through time, the implemented algorithm also keeps the primitive that did not changed. The ensemble of primitives are then shown by modulating their color to emphasize the modification by keeping their original color for modified one while the static primitives are shown in dark gray. This allows to not only show the modifications but also to keep the context of the modification helping the user to fully understand the nature of the territory evolution.</p>
 <p>Additional developments were required for triangle-based models : indeed, such models need to be subjected to a lighting model during rendering for the user to understand the model. As the differences are highlighted through color modulation, the implemented lighting model is causing difficulties to spot the highlighted primitives. The rendering client then checks for the differences detection algorithm and switches off the lighting in such case to make the differences more clear to the user.</p>
 <p>In addition, mesh models, as they are made of triangles, are hiding parts of themselves. It can then be difficult for the user to spot the highlighted primitives as they can be <em>hidden</em> by others. An option was added to the rendering client allowing the user to ask the rendering of triangles as <em>line-loops</em> or points in order to make them transparent.</p>
-<h2 id="experimentations-and-results">Experimentations and Results</h2>
+<h3 id="experimentations-and-results">Experimentations and Results<a class="headerlink" href="#experimentations-and-results" title="Permanent link">&para;</a></h3>
 <p>With the implemented algorithm, a series of experimentations are conducted in order to validate and analyze the performance of the differences detection algorithm for vector-based models.</p>
-<h3 id="differences-detection-and-rendering">Differences Detection and Rendering</h3>
+<h4 id="differences-detection-and-rendering">Differences Detection and Rendering<a class="headerlink" href="#differences-detection-and-rendering" title="Permanent link">&para;</a></h4>
 <p>With the implemented algorithms, it is possible to highlight any modification in the evolution of a model through time. The following image shows examples of modifications and how their are rendered for the user by the graphical client :</p>
 <p><br />
 <p align="center">
@@ -253,7 +658,7 @@ Schedule : September 2020 to February 2021</p>
 </p>
 <br /></p>
 <p>This specific example shows that large modifications of the territory can be detected on point-based models, but it also illustrates the limitations of the detection algorithm applied on such data. In order to detect the modification, the user must have some knowledge of what is a point cloud model and be aware of the effects of sampling disparities.</p>
-<h1 id="codes-and-resources">Codes and Resources</h1>
+<h2 id="codes-and-resources">Codes and Resources<a class="headerlink" href="#codes-and-resources" title="Permanent link">&para;</a></h2>
 <p>The following links gives you access to the codes related to this task :</p>
 <ul>
 <li>
@@ -269,7 +674,7 @@ Schedule : September 2020 to February 2021</p>
 <p><a href="https://github.com/nils-hamel/dalai-suite"><em>UV3</em> related tool suite including display and conversion</a></p>
 </li>
 </ul>
-<h1 id="auxiliary-developments-corrections">Auxiliary Developments &amp; Corrections</h1>
+<h2 id="auxiliary-developments-corrections">Auxiliary Developments &amp; Corrections<a class="headerlink" href="#auxiliary-developments-corrections" title="Permanent link">&para;</a></h2>
 <p>In addition to the main developments made on the platform, some other corrections have been made to solve minor problem or to improve the code according to the developed features during this task. The auxiliary developments are summarized here :</p>
 <ul>
 <li>
@@ -287,88 +692,86 @@ Schedule : September 2020 to February 2021</p>
 <li>
 <p>Adding rendering option allowing the user to display triangles as filled triangles, <em>line-loops</em> or points to allow seeing through the primitive</p>
 </li>
-</ul></div>
-        </div>
+</ul>
+                
+              
+              
+                
 
-        <footer class="col-md-12">
-            <hr>
-            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
-        </footer>
-        <script>
-            var base_url = "..",
-                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
-        </script>
-        <script src="../js/base.js" defer></script>
-        <script src="../search/main.js" defer></script>
 
-        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="Search Modal" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-                <h4 class="modal-title" id="exampleModalLabel">Search</h4>
-            </div>
-            <div class="modal-body">
-                <p>
-                    From here you can search these documents. Enter
-                    your search terms below.
-                </p>
-                <form role="form">
-                    <div class="form-group">
-                        <input type="text" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
-                    </div>
-                </form>
-                <div id="mkdocs-search-results"></div>
-            </div>
-            <div class="modal-footer">
-            </div>
+              
+            </article>
+          </div>
         </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
+        
+          <a href="../TASK-4RAS/" title="TASK-4RAS" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+            </div>
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                TASK-4RAS
+              </div>
+            </div>
+          </a>
+        
+        
+          <a href="../TASK-IDET/" title="TASK-IDET" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                TASK-IDET
+              </div>
+            </div>
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
     </div>
-</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="Keyboard Shortcuts Modal" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-                <h4 class="modal-title" id="exampleModalLabel">Keyboard Shortcuts</h4>
-            </div>
-            <div class="modal-body">
-              <table class="table">
-                <thead>
-                  <tr>
-                    <th style="width: 20%;">Keys</th>
-                    <th>Action</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td class="help shortcut"><kbd>?</kbd></td>
-                    <td>Open this help</td>
-                  </tr>
-                  <tr>
-                    <td class="next shortcut"><kbd>n</kbd></td>
-                    <td>Next page</td>
-                  </tr>
-                  <tr>
-                    <td class="prev shortcut"><kbd>p</kbd></td>
-                    <td>Previous page</td>
-                  </tr>
-                  <tr>
-                    <td class="search shortcut"><kbd>s</kbd></td>
-                    <td>Search</td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-            <div class="modal-footer">
-            </div>
-        </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+      </div>
+      
     </div>
-</div>
-
-    </body>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../assets/javascripts/vendor.77e55a48.min.js"></script>
+      <script src="../assets/javascripts/bundle.aa3f9871.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}</script>
+      
+      <script>
+        app = initialize({
+          base: "..",
+          features: ['navigation.expand'],
+          search: Object.assign({
+            worker: "../assets/javascripts/worker/search.4ac00218.min.js"
+          }, typeof search !== "undefined" && search)
+        })
+      </script>
+      
+    
+  </body>
 </html>
-
-<!--
-MkDocs version : 1.0.4
-Build Date UTC : 2020-09-29 07:57:46
--->
