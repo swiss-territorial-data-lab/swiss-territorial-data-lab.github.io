@@ -44,8 +44,8 @@
                             <li >
                                 <a href="..">Home</a>
                             </li>
-                            <li class="active">
-                                <a href="./">TASK-4RAS</a>
+                            <li >
+                                <a href="../TASK-4RAS/">TASK-4RAS</a>
                             </li>
                             <li >
                                 <a href="../TASK-DIFF/">TASK-DIFF</a>
@@ -61,18 +61,8 @@
                                 <i class="fa fa-search"></i> Search
                             </a>
                         </li>
-                            <li >
-                                <a rel="next" href="..">
-                                    <i class="fa fa-arrow-left"></i> Previous
-                                </a>
-                            </li>
-                            <li >
-                                <a rel="prev" href="../TASK-DIFF/">
-                                    Next <i class="fa fa-arrow-right"></i>
-                                </a>
-                            </li>
                             <li>
-                                <a href="https://github.com/swiss-territorial-data-lab/stdl-reporting/edit/master/docs/TASK-4RAS/README.md"><i class="fa fa-github"></i> Edit on GitHub</a>
+                                <a href="https://github.com/swiss-territorial-data-lab/stdl-reporting/edit/master/docs/STDL-DATA/README.md"><i class="fa fa-github"></i> Edit on GitHub</a>
                             </li>
                     </ul>
                 </div>
@@ -82,84 +72,91 @@
         <div class="container">
                 <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
     <ul class="nav bs-sidenav">
-        <li class="main active"><a href="#context">Context</a></li>
-        <li class="main "><a href="#specifications">Specifications</a></li>
-        <li class="main "><a href="#resources">Resources</a></li>
+        <li class="main active"><a href="#stdl-data-monitoring">STDL Data Monitoring</a></li>
+            <li><a href="#swiss-vector-model-2020">Swiss Vector Model 2020</a></li>
+            <li><a href="#egm96-5-world-geoid-model">EGM96-5 World Geoid Model</a></li>
+            <li><a href="#geneva-lidar-model-2005">Geneva LIDAR Model 2005</a></li>
+            <li><a href="#geneva-lidar-model-2009">Geneva LIDAR Model 2009</a></li>
+            <li><a href="#geneva-lidar-model-2013">Geneva LIDAR Model 2013</a></li>
+            <li><a href="#geneva-lidar-model-2017">Geneva LIDAR Model 2017</a></li>
+            <li><a href="#geneva-3d-building-model-2020">Geneva 3D Building Model 2020</a></li>
     </ul>
 </div></div>
                 <div class="col-md-9" role="main">
 
-<p><strong>TASK-4RAS</strong> - HR, NH <br />
-Schedule : September 2020 to February 2021 (initially planned from August 2021 February 2022)</p>
-<p><em>This document describe the state of an ongoing task (DIFF) and is subject to daily revision and evolution</em></p>
-<h1 id="context">Context</h1>
-<p>The 4D platform developed at EPFL with the collaboration of Cadastre Suisse is able to ingest both large scale point-based and vector-based models. During the previous development, the possibility to have this different type of data in a single framework lead to interesting results, showing the interest to have the possibility to put this different type of data into perspectives.</p>
-<p><br />
-<p align="center">
-<img src="image/mixed-models.jpg" width="800">
-<br />
-<i>Illustrations of mixed models in the 4D platform : INTERLIS, Mesh and LIDAR - Data : SITN</i>
-</p>
-<br /></p>
-<p>Taking into account point-based and vector-based model allows to almost cover all type of data that are traditionally considered for land registering.</p>
-<p>The only type of data that is currently missing is the two-dimensional rasters. Indeed, due to their nature, image are more complicated to put in perspective of other three-dimensional data. The goal of this task is then to address the management of the raster by the platform in order to be able to ingest, store and broadcast any type of data with the 4D platform.</p>
-<h1 id="specifications">Specifications</h1>
-<p>In order to address this task, a step-by-step approach is defined. In the first place, a set of data has to be gathered from the STDL partners :</p>
-<ul>
-<li>
-<p>Gathering a dataset of geo-referenced ortho-photography of a chosen place of reasonable size</p>
-</li>
-<li>
-<p>The dataset has to provide ortho-photography for at least two different times</p>
-</li>
-<li>
-<p>The format of the dataset has to be analyzed in order to be able to extract the image pixels with their position (CH1903+)</p>
-</li>
-</ul>
-<p>As the platform indexation formalism is not straightforward, the images are treated as point-based model, each pixel being one colored point of the model. This will allow to provide a way of starting to analyze and understand the indexation formalism while having first results on image integration :</p>
-<ul>
-<li>
-<p>Transform images into simple point-based models (each pixel being one point)</p>
-</li>
-<li>
-<p>Injection of the point-based model in an experimental instance of the platform</p>
-</li>
-<li>
-<p>Understanding the indexation formalism for point-based models and, subsequently, its adaptation for the vector-based models</p>
-</li>
-</ul>
-<p>As the indexation formalism is understood for point-based models, the following adaptation will be performed :</p>
-<ul>
-<li>removing the third dimension from the point-based indexation specifically for the image (flat indexation)</li>
-</ul>
-<p>At this point, a first reporting is required :</p>
-<ul>
-<li>
-<p>Is there an advantage to add raster to such a platform in perspective of the other types of model (points, vectors, meshes) ?</p>
-</li>
-<li>
-<p>How the adaptation of the point-based indexation performs for images ?</p>
-</li>
-<li>
-<p>How taking advantage of color accumulation enrich the image integration ?</p>
-</li>
-<li>
-<p>What is the cost of rendering the image with the adaptation of the point-based indexation ?</p>
-</li>
-</ul>
-<p>Based on the formulated answer, the following strategical choice has to be discussed :</p>
-<ul>
-<li>Would it be more efficient to integrate image keeping them as raster (deviation from the current indexation) ?</li>
-</ul>
-<p>Depending on the answer, a new set of specification will be decided (if this direction is favored).</p>
-<p>Depending on the remaining time and on the obtained results, the question of the time management in the platform will be addressed. Currently, the time is treated linearly in the platform and a multi-scale approach, as for the spatial dimensions, could be interesting. The specifications will be decided as the previous points will be fulfilled.</p>
-<h1 id="resources">Resources</h1>
-<p>List of the resources initially linked to the task :</p>
-<ul>
-<li><a href="https://github.com/nils-hamel/liberatosthene">liberatosthene</a> - Platform and indexation back-end</li>
-<li><a href="https://github.com/nils-hamel/eratosthene-suite">eratosthene-suite</a> - Platform front-end</li>
-</ul>
-<p>Other resources will be provided according to requirements.</p></div>
+<p><strong>STLD-DATA</strong> - AM, NH, HR, AC <br /></p>
+<h1 id="stdl-data-monitoring">STDL Data Monitoring</h1>
+<p>This pages is regularly updated to keep track of every set of data that has been provided to the STDL. The following section describe each a set of data, giving the detail of the origin of the data and current storage status.</p>
+<h3 id="swiss-vector-model-2020">Swiss Vector Model 2020</h3>
+<p><strong>Source</strong> : OpenStreetmap (http://download.geofabrik.de/) <br />
+<strong>Person of contact</strong> : N/A <br />
+<strong>Restriction</strong> : None <br />
+<strong>Date</strong> : 2020-09-04 <br />
+<strong>Amplitude</strong> : Switzerland <br />
+<strong>Type</strong> : Shapefile - Vector model (line-based) with multiple layer (Roads, Building, ...) <br />
+<strong>Applicant</strong> : NH <br />
+<strong>Storage</strong> : NH device (AES256) <br />
+<strong>Access</strong> : NH <br /></p>
+<h3 id="egm96-5-world-geoid-model">EGM96-5 World Geoid Model</h3>
+<p><strong>Source</strong> : GeographicLib (https://geographiclib.sourceforge.io/html/geoid.html) <br />
+<strong>Person of contact</strong> : N/A <br />
+<strong>Restriction</strong> : None <br />
+<strong>Date</strong> : 2020-09-10 <br />
+<strong>Amplitude</strong> : World <br />
+<strong>Type</strong> : PGM (Raster) <br />
+<strong>Applicant</strong> : NH <br />
+<strong>Storage</strong> : NH device (AES256) <br />
+<strong>Access</strong> : NH <br /></p>
+<h3 id="geneva-lidar-model-2005">Geneva LIDAR Model 2005</h3>
+<p><strong>Source</strong> : SITG Exatractor (https://www.etat.ge.ch/geoportail/pro/?method=showextractpanel) <br />
+<strong>Person of contact</strong> : N/A <br />
+<strong>Restriction</strong> : SITG publication guidelines <br />
+<strong>Date</strong> : 2020-09-16 <br />
+<strong>Amplitude</strong> : Geneva city center <br />
+<strong>Type</strong> : LAS (Point-based) <br />
+<strong>Applicant</strong> : NH <br />
+<strong>Storage</strong> : NH device (AES256) <br />
+<strong>Access</strong> : NH <br /></p>
+<h3 id="geneva-lidar-model-2009">Geneva LIDAR Model 2009</h3>
+<p><strong>Source</strong> : SITG Exatractor (https://www.etat.ge.ch/geoportail/pro/?method=showextractpanel) <br />
+<strong>Person of contact</strong> : N/A <br />
+<strong>Restriction</strong> : SITG publication guidelines <br />
+<strong>Date</strong> : 2020-09-16 <br />
+<strong>Amplitude</strong> : Geneva city center <br />
+<strong>Type</strong> : LAS (Point-based) <br />
+<strong>Applicant</strong> : NH <br />
+<strong>Storage</strong> : NH device (AES256) <br />
+<strong>Access</strong> : NH <br /></p>
+<h3 id="geneva-lidar-model-2013">Geneva LIDAR Model 2013</h3>
+<p><strong>Source</strong> : SITG Exatractor (https://www.etat.ge.ch/geoportail/pro/?method=showextractpanel) <br />
+<strong>Person of contact</strong> : N/A <br />
+<strong>Restriction</strong> : SITG publication guidelines <br />
+<strong>Date</strong> : 2020-09-21 <br />
+<strong>Amplitude</strong> : Geneva city center <br />
+<strong>Type</strong> : LAS (Point-based) <br />
+<strong>Applicant</strong> : NH <br />
+<strong>Storage</strong> : NH device (AES256) <br />
+<strong>Access</strong> : NH <br /></p>
+<h3 id="geneva-lidar-model-2017">Geneva LIDAR Model 2017</h3>
+<p><strong>Source</strong> : SITG Exatractor (https://www.etat.ge.ch/geoportail/pro/?method=showextractpanel) <br />
+<strong>Person of contact</strong> : N/A <br />
+<strong>Restriction</strong> : SITG publication guidelines <br />
+<strong>Date</strong> : 2020-09-21 <br />
+<strong>Amplitude</strong> : Geneva city center <br />
+<strong>Type</strong> : LAS (Point-based) <br />
+<strong>Applicant</strong> : NH <br />
+<strong>Storage</strong> : NH device (AES256) <br />
+<strong>Access</strong> : NH <br /></p>
+<h3 id="geneva-3d-building-model-2020">Geneva 3D Building Model 2020</h3>
+<p><strong>Source</strong> : SITG Exatractor (https://www.etat.ge.ch/geoportail/pro/?method=showextractpanel) <br />
+<strong>Person of contact</strong> : N/A <br />
+<strong>Restriction</strong> : SITG publication guidelines <br />
+<strong>Date</strong> : 2020-09-10 <br />
+<strong>Amplitude</strong> : Geneva city center <br />
+<strong>Type</strong> : 3DS (Polygonal mesh) <br />
+<strong>Applicant</strong> : NH <br />
+<strong>Storage</strong> : NH device (AES256) <br />
+<strong>Access</strong> : NH <br /></p></div>
         </div>
 
         <footer class="col-md-12">

@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="None">
+        
+        
+        <link rel="shortcut icon" href="../img/favicon.ico">
+        <title>Swiss Territorial Data Lab - Reporting</title>
+        <link href="../css/bootstrap-custom.min.css" rel="stylesheet">
+        <link href="../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+
+        <script src="../js/jquery-1.10.2.min.js" defer></script>
+        <script src="../js/bootstrap-3.0.3.min.js" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script> 
+    </head>
+
+    <body class="homepage">
+
+        <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+            <div class="container">
+
+                <!-- Collapsed navigation -->
+                <div class="navbar-header">
+                    <!-- Expander button -->
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="..">Swiss Territorial Data Lab - Reporting</a>
+                </div>
+
+                <!-- Expanded navigation -->
+                <div class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li >
+                                <a href="..">Home</a>
+                            </li>
+                            <li >
+                                <a href="../TASK-4RAS/">TASK-4RAS</a>
+                            </li>
+                            <li >
+                                <a href="../TASK-DIFF/">TASK-DIFF</a>
+                            </li>
+                            <li class="active">
+                                <a href="./">TASK-IDET</a>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav navbar-right">
+                        <li>
+                            <a href="#" data-toggle="modal" data-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li >
+                                <a rel="next" href="../TASK-DIFF/">
+                                    <i class="fa fa-arrow-left"></i> Previous
+                                </a>
+                            </li>
+                            <li class="disabled">
+                                <a rel="prev" >
+                                    Next <i class="fa fa-arrow-right"></i>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://github.com/swiss-territorial-data-lab/stdl-reporting/edit/master/docs/TASK-IDET/README.md"><i class="fa fa-github"></i> Edit on GitHub</a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+                <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
+    <ul class="nav bs-sidenav">
+        <li class="main active"><a href="#objective">Objective</a></li>
+        <li class="main "><a href="#background-and-potential-use-cases">Background and Potential Use Cases</a></li>
+            <li><a href="#swimming-pool-detector">Swimming Pool Detector</a></li>
+            <li><a href="#sol-ai-solar-panel-detector">Sol AI - Solar Panel Detector</a></li>
+            <li><a href="#the-area-statistics">The Area Statistics</a></li>
+        <li class="main "><a href="#methodology">Methodology</a></li>
+            <li><a href="#environments-and-frameworks">Environments and Frameworks</a></li>
+            <li><a href="#data-sources">Data Sources</a></li>
+        <li class="main "><a href="#results">Results</a></li>
+            <li><a href="#deep-learning-benchmarking-tests">Deep Learning Benchmarking Tests</a></li>
+        <li class="main "><a href="#outlook">Outlook</a></li>
+        <li class="main "><a href="#links-and-resources">Links and Resources</a></li>
+    </ul>
+</div></div>
+                <div class="col-md-9" role="main">
+
+<p><strong>TASK-IDET</strong> - AM &amp; AC <br />
+Current Mandate Schedule : September 2020 to October 2020 (with extension options until 2024)</p>
+<p><em>This document describes the state and roadmap of an ongoing task (Imagery Detections - IDET) and is subject to daily revision and evolution</em></p>
+<h1 id="objective">Objective</h1>
+<p>This task of the STDL consists of the automated analysis of geospatial images (using deep learning) while providing practical applications for specific use cases.</p>
+<h1 id="background-and-potential-use-cases">Background and Potential Use Cases</h1>
+<h2 id="swimming-pool-detector">Swimming Pool Detector</h2>
+<p><br />
+<p align="center">
+<img src="image/piscines.jpg?raw=true">
+<br />
+<i>Label inputs for deep learning derived from cadastral data</i>
+</p>
+<br /></p>
+<p>Providing a reliable detection of swimming pools allows authorities to assess the status quo to update archival datasets and to reinforce administrative construction permit processes. The status quo is based on manually digitized cadastral information. This data is used to extract feature masks which can be applied to orthophoto imagery. Deep Learning algorithms such as Faster RCNN or Mask RCNN then allow the detection of previously unregistered swimming pools in a defined perimeter (such as the Canton of Geneva). </p>
+<h2 id="sol-ai-solar-panel-detector">Sol AI - Solar Panel Detector</h2>
+<p>Sol AI is a prototypical framework solution developed by the Institute Geomatics of FHNW to provide location and geometry for millions of solar panel installations in Switzerland. We programmed a big data approach using parallelized multi gpu deep learning with Pytorch and additional post-classifiers on large scale 10cm SWISSIMAGE aerial imagery datasets by swisstopo. It is shown how we found a solution to extract geometries and energy potential and how to distinguish different solar panel types. Data handling, labelling strategies, geoconversions, read/write NoSQL interfaces, as well as deep learning training and inferencing results are described. Furthermore we show challenges, sample data, optimization strategies and focus on the computational demands the large amount of data imposes.</p>
+<p><br />
+<p align="center">
+<img src="image/solar_combo.JPG?raw=true" width="800">
+<br />
+<i>Early Detection Result of a Resnet-50 Mask-RCNN architecture</i>
+</p>
+<br /></p>
+<h2 id="the-area-statistics">The Area Statistics</h2>
+<p>The Area Statistics of Switzerland classifies land use (LU) and land cover (LC) based on a regular 100x100m grid of 4.2 million sample points in 72 categories combined from 46 LU and 27 LC classes. The arduous manual labelling process performed by experts relies mainly on aerial imagery but also uses a catalogue of additional data to increase reliability. The goal of this study is to investigate the benefits using multimodal data from different sources and sensors using modern machine learning (ML) algorithms. Deep Convolutional Neural Networks (CNN) as well as Random Forest (RF) architectures provide automatized classification. The models are trained on aerial RGB and FCIR images, as well as auxiliary datasets such as satellite-derived time series indices and GIS data. The accurate manually annotated Area Statistics serve as conducive “ground truth” to study the performance of ML algorithms in a challenging paradigm in particular due to the high level of detail of the LU/LC categories. Especially for underrepresented categories containing low sample counts the benefits of transfer learning were exploited by applying the CNN architecture “Xception” independently on 50x50m RGB and FCIR orthophoto tiles. Best preliminary classification accuracies of CNN reached over 80% on individual major classes, but maximal overall accuracies threshold to 52% due to tiles with visually very similar characteristics in different smaller ground truth classes. To further improve the classification, the resulting CNN probabilities were used together with extrapolated Landsat-based index time series, digital elevation data, vegetation canopy height models and categorical cadastral information as a combined input vector for RF post-classification. The RF achieved reproducible overall accuracies of 84% for LU and 89% for LC. Certain major classes, which so far required an especially monotonous manual process, are classified with very high specific accuracies (&gt;90%). We conclude that multimodal data as provided by sensor fusion and auxiliary data sources in a bipartite system of ML algorithms has the potential to support the expert-based classification and reduce the manual work. Therefore, the reporting period can be significantly shortened and the spatial resolution can be further increased in future.</p>
+<h1 id="methodology">Methodology</h1>
+<h2 id="environments-and-frameworks">Environments and Frameworks</h2>
+<ul>
+<li>Google Colab</li>
+</ul>
+<p><br />
+<p align="center">
+<img src="image/colab_swimming.JPG?raw=true" width="600">
+<br />
+<i>Google Colab as a rapid prototyping environment</i>
+</p>
+<br /></p>
+<ul>
+<li>High-Performance Cluster at FHNW</li>
+</ul>
+<p><br />
+<p align="center">
+<img src="image/hpc.jpg?raw=true" width="600">
+<br />
+<i>HPE Apollo 6500 with 4 NVidia V100 GPUs</i>
+</p>
+<br /></p>
+<ul>
+<li>
+<p>Pytorch</p>
+</li>
+<li>
+<p>Detectron2</p>
+</li>
+<li>
+<p>Tensorflow</p>
+</li>
+<li>
+<p>COCO</p>
+</li>
+</ul>
+<h2 id="data-sources">Data Sources</h2>
+<ul>
+<li>
+<p>SWISSIMAGE RGB 10cm by swisstopo</p>
+</li>
+<li>
+<p>SWISSIMAGE RS 10cm by swisstopo</p>
+</li>
+<li>
+<p>Labels drawn from the official Swiss cadastral services. The Swiss cadastral system comprises the cadastral surveying, the Cadastre of Public-law Restrictions on landownership (PLR-cadastre) and the land register.</p>
+</li>
+</ul>
+<h1 id="results">Results</h1>
+<h2 id="deep-learning-benchmarking-tests">Deep Learning Benchmarking Tests</h2>
+<h3 id="swimming-pool-detector_1">Swimming Pool Detector</h3>
+<ul>
+<li>
+<p>Masks vs. Bbox with Resnet-50 Mask RCNN</p>
+</li>
+<li>
+<p>Resnet-50 vs. Resnet-101</p>
+</li>
+<li>
+<p>Tile Size Dependencies</p>
+</li>
+</ul>
+<h3 id="multi-class-detectors">Multi-Class Detectors</h3>
+<ul>
+<li>Combining Solar Detector and Swimming Pool Detector vs. Single Class Paradigms</li>
+</ul>
+<h3 id="base-technology">Base Technology</h3>
+<ul>
+<li>Detectron2 / Pytorch vs. Tensorflow</li>
+</ul>
+<h1 id="outlook">Outlook</h1>
+<p>Ultimately, an automatized system for surface classification based on aerial imagery and additional data sources will be proposed that allows consistent differential surface segmentation as a basis for differential change analysis. Spatiotemporal data storage provides insight into current, historical and future territorial features scalabe from small communal objects to the environmental and landscape levels.</p>
+<h1 id="links-and-resources">Links and Resources</h1>
+<ul>
+<li>
+<p>Institute Geomatics FHNW</p>
+<ul>
+<li>Project Area Statistics</li>
+<li>Project Sol Ai </li>
+<li>Project Animal Detection</li>
+</ul>
+</li>
+<li>
+<p>Swisstopo</p>
+</li>
+<li>
+<p>BFS / OFS</p>
+</li>
+<li>
+<p>BFE / Energiestrategie 2050</p>
+</li>
+</ul></div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script>
+            var base_url = "..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../js/base.js" defer></script>
+        <script src="../search/main.js" defer></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="Search Modal" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <h4 class="modal-title" id="exampleModalLabel">Search</h4>
+            </div>
+            <div class="modal-body">
+                <p>
+                    From here you can search these documents. Enter
+                    your search terms below.
+                </p>
+                <form role="form">
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="Keyboard Shortcuts Modal" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <h4 class="modal-title" id="exampleModalLabel">Keyboard Shortcuts</h4>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>
+
+<!--
+MkDocs version : 1.0.4
+Build Date UTC : 2020-09-29 07:57:46
+-->
