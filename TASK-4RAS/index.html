@@ -8,8 +8,9 @@
       
       
       
+      
       <link rel="shortcut icon" href="../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-6.0.1">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-6.1.7">
     
     
       
@@ -17,10 +18,10 @@
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.38780c08.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.19753c6b.min.css">
       
         
-        <link rel="stylesheet" href="../assets/stylesheets/palette.3f72e892.min.css">
+        <link rel="stylesheet" href="../assets/stylesheets/palette.196e0c26.min.css">
         
       
     
@@ -67,7 +68,9 @@
       
     </div>
     
-      <header class="md-header" data-md-component="header">
+      
+
+<header class="md-header" data-md-component="header">
   <nav class="md-header-nav md-grid" aria-label="Header">
     <a href=".." title="Swiss Territorial Data Lab" class="md-header-nav__button md-logo" aria-label="Swiss Territorial Data Lab">
       
@@ -100,7 +103,7 @@
   <label class="md-search__overlay" for="__search"></label>
   <div class="md-search__inner" role="search">
     <form class="md-search__form" name="search">
-      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active" required>
       <label class="md-search__icon md-icon" for="__search">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
@@ -151,7 +154,9 @@
               <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
-                    <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+                    
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
     <a href=".." title="Swiss Territorial Data Lab" class="md-nav__button md-logo" aria-label="Swiss Territorial Data Lab">
       
@@ -182,7 +187,7 @@
 
 
   <li class="md-nav__item">
-    <a href=".." title="STDL Reporting" class="md-nav__link">
+    <a href=".." class="md-nav__link">
       STDL Reporting
     </a>
   </li>
@@ -207,7 +212,7 @@
         <span class="md-nav__icon md-icon"></span>
       </label>
     
-    <a href="./" title="TASK-4RAS" class="md-nav__link md-nav__link--active">
+    <a href="./" class="md-nav__link md-nav__link--active">
       TASK-4RAS
     </a>
     
@@ -258,7 +263,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../TASK-DIFF/" title="TASK-DIFF" class="md-nav__link">
+    <a href="../TASK-DIFF/" class="md-nav__link">
       TASK-DIFF
     </a>
   </li>
@@ -270,8 +275,20 @@
 
 
   <li class="md-nav__item">
-    <a href="../TASK-IDET/" title="TASK-IDET" class="md-nav__link">
+    <a href="../TASK-IDET/" class="md-nav__link">
       TASK-IDET
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../TASK-4MOB/README.md" class="md-nav__link">
+      TASK-4MOB
     </a>
   </li>
 
@@ -338,13 +355,13 @@
 <p><em>This document describe the state of an ongoing task (DIFF) and is subject to daily revision and evolution</em></p>
 <h2 id="context">Context<a class="headerlink" href="#context" title="Permanent link">&para;</a></h2>
 <p>The 4D platform developed at EPFL with the collaboration of Cadastre Suisse is able to ingest both large scale point-based and vector-based models. During the previous development, the possibility to have this different type of data in a single framework lead to interesting results, showing the interest to have the possibility to put this different type of data into perspectives.</p>
-<p><br />
+<p><br /></p>
 <p align="center">
 <img src="image/mixed-models.jpg" width="800">
 <br />
 <i>Illustrations of mixed models in the 4D platform : INTERLIS, Mesh and LIDAR - Data : SITN</i>
 </p>
-<br /></p>
+<p><br /></p>
 <p>Taking into account point-based and vector-based model allows to almost cover all type of data that are traditionally considered for land registering.</p>
 <p>The only type of data that is currently missing is the two-dimensional rasters. Indeed, due to their nature, image are more complicated to put in perspective of other three-dimensional data. The goal of this task is then to address the management of the raster by the platform in order to be able to ingest, store and broadcast any type of data with the 4D platform.</p>
 <h2 id="specifications">Specifications<a class="headerlink" href="#specifications" title="Permanent link">&para;</a></h2>
@@ -422,7 +439,7 @@
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
         
-          <a href=".." title="STDL Reporting" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href=".." class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-footer-nav__button md-icon">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
             </div>
@@ -437,7 +454,7 @@
           </a>
         
         
-          <a href="../TASK-DIFF/" title="TASK-DIFF" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../TASK-DIFF/" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-footer-nav__title">
               <div class="md-ellipsis">
                 <span class="md-footer-nav__direction">
@@ -490,8 +507,8 @@
       
     </div>
     
-      <script src="../assets/javascripts/vendor.77e55a48.min.js"></script>
-      <script src="../assets/javascripts/bundle.aa3f9871.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}</script>
+      <script src="../assets/javascripts/vendor.0ac82a11.min.js"></script>
+      <script src="../assets/javascripts/bundle.f81dfb4d.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}</script>
       
       <script>
         app = initialize({
