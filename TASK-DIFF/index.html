@@ -59,7 +59,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#task-diff-nh" class="md-skip">
+        <a href="#automatic-detection-of-changes-in-the-environment" class="md-skip">
           Skip to content
         </a>
       
@@ -187,20 +187,8 @@
 
 
   <li class="md-nav__item">
-    <a href=".." class="md-nav__link">
+    <a href="../index.html" class="md-nav__link">
       STDL Reporting
-    </a>
-  </li>
-
-    
-      
-      
-      
-
-
-  <li class="md-nav__item">
-    <a href="../TASK-4RAS/" class="md-nav__link">
-      TASK-4RAS
     </a>
   </li>
 
@@ -460,20 +448,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../TASK-IDET/" class="md-nav__link">
-      TASK-IDET
-    </a>
-  </li>
-
-    
-      
-      
-      
-
-
-  <li class="md-nav__item">
-    <a href="../TASK-4MOB/README.md" class="md-nav__link">
-      TASK-4MOB
+    <a href="../TASK-REGBL/" class="md-nav__link">
+      TASK-REGBL
     </a>
   </li>
 
@@ -720,9 +696,11 @@
               
                 
                 
-                <h1 id="task-diff-nh">TASK-DIFF - NH<a class="headerlink" href="#task-diff-nh" title="Permanent link">&para;</a></h1>
-<p>Schedule : September 2020 to February 2021 - Published on December 7, 2020</p>
-<p>Initially dedicated to handle large point-based models, the 4D platform, developed at the DHLAB, with the collaboration of Cadastre Suisse, introduced an optimized 4D Earth-attached indexation formalism. As the data access and broadcast performances were encouraging, it was decided to adapt the indexation formalism for vector-based models allowing the platform to ingest, store and broadcast any type of 3D data associated with a time.</p>
+                <h1 id="automatic-detection-of-changes-in-the-environment">AUTOMATIC DETECTION OF CHANGES IN THE ENVIRONMENT<a class="headerlink" href="#automatic-detection-of-changes-in-the-environment" title="Permanent link">&para;</a></h1>
+<p>Nils Hamel (UNIGE)</p>
+<p>Project scheduled in the STDL research roadmap - TASK-DIFF <br />
+September 2020 to November 2020 - Published on December 7, 2020</p>
+<p><em><strong>Abstract</strong> : Developed at EPFL with the collaboration of Cadastre Suisse to handle large scale geographical models of different nature, the STDL 4D platform offers a robust and efficient indexation methodology allowing to manage storage and access to large-scale models. In addition to spatial indexation, the platform also includes time as part of the indexation, allowing any area to be described by models in both spatial and temporal dimensions. In this development project, the notion of model temporal derivative is explored and proof-of-concepts are implemented in the platform. The goal is to demonstrate that, in addition to their formal content, models coming with different temporal versions can be derived along the time dimension to compute difference models. Such proof-of-concept is developed for both point cloud and vectorial models, demonstrating that the indexation formalism of the platform is able to ease considerably the computation of difference models. This research project demonstrates that the time dimension can be fully exploited in order to access the data it holds.</em></p>
 <h2 id="task-context-difference-detection">Task Context : Difference Detection<a class="headerlink" href="#task-context-difference-detection" title="Permanent link">&para;</a></h2>
 <p>As the implemented indexation formalism is based on equivalences classes defined on space and time, a natural discretization along all the four dimensions is obtained. In the field of difference detection, it allowed implementing simple logical operators on the four-dimensional space. The <em>OR</em>, <em>AND</em> and <em>XOR</em> operators were then implemented allowing the platform to compute, in <em>real time</em>, convolutions to compare models with each others across the time.</p>
 <p>The implementation of these operators was simple due to the natural spatio-temporal discretization obtained from the indexation formalism. Nevertheless, two major drawbacks appeared : the first one is that such operators only works for point-based models. Having the opportunity to compute and render differences and similarities between any type of data is not possible with such formal operators.</p>
@@ -1605,28 +1583,14 @@ Land register situation in 2013 (left) and 2017 (right) - Data SITG
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
         
-          <a href="../TASK-4RAS/" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
-            <div class="md-footer-nav__button md-icon">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
-            </div>
-            <div class="md-footer-nav__title">
-              <div class="md-ellipsis">
-                <span class="md-footer-nav__direction">
-                  Previous
-                </span>
-                TASK-4RAS
-              </div>
-            </div>
-          </a>
         
-        
-          <a href="../TASK-IDET/" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../TASK-REGBL/" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-footer-nav__title">
               <div class="md-ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                TASK-IDET
+                TASK-REGBL
               </div>
             </div>
             <div class="md-footer-nav__button md-icon">
