@@ -1,0 +1,609 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+      <link rel="shortcut icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-6.1.7">
+    
+    
+      
+        <title>DIFFERENCE MODELS APPLIED ON LAND REGISTER - Swiss Territorial Data Lab</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.19753c6b.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.196e0c26.min.css">
+        
+      
+    
+    
+    
+      
+        
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>body,input{font-family:"Roboto",-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono",SFMono-Regular,Consolas,Menlo,monospace}</style>
+      
+    
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/extra.css">
+    
+    
+      
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="none" data-md-color-accent="none">
+      
+  
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#difference-models-applied-on-land-register" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid" aria-label="Header">
+    <a href=".." title="Swiss Territorial Data Lab" class="md-header-nav__button md-logo" aria-label="Swiss Territorial Data Lab">
+      
+  <img src="../assets/logo-stdl-transparent.svg" alt="logo">
+
+    </a>
+    <label class="md-header-nav__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header-nav__title" data-md-component="header-title">
+      
+        <div class="md-header-nav__ellipsis">
+          <span class="md-header-nav__topic md-ellipsis">
+            Swiss Territorial Data Lab
+          </span>
+          <span class="md-header-nav__topic md-ellipsis">
+            
+              DIFFERENCE MODELS APPLIED ON LAND REGISTER
+            
+          </span>
+        </div>
+      
+    </div>
+    
+      <label class="md-header-nav__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" data-md-component="search-reset" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header-nav__source">
+        
+<a href="https://github.com/swiss-territorial-data-lab" title="Go to repository" class="md-source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05L244 40.45a28.87 28.87 0 00-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 01-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 000 40.81l195.61 195.6a28.86 28.86 0 0040.8 0l194.69-194.69a28.86 28.86 0 000-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    STDL on Github
+  </div>
+</a>
+      </div>
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Swiss Territorial Data Lab" class="md-nav__button md-logo" aria-label="Swiss Territorial Data Lab">
+      
+  <img src="../assets/logo-stdl-transparent.svg" alt="logo">
+
+    </a>
+    Swiss Territorial Data Lab
+  </label>
+  
+    <div class="md-nav__source">
+      
+<a href="https://github.com/swiss-territorial-data-lab" title="Go to repository" class="md-source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05L244 40.45a28.87 28.87 0 00-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 01-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 000 40.81l195.61 195.6a28.86 28.86 0 0040.8 0l194.69-194.69a28.86 28.86 0 000-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    STDL on Github
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../index.html" class="md-nav__link">
+      Homepage
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="https://github.com/swiss-territorial-data-lab" class="md-nav__link">
+      GitHub
+    </a>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#introduction" class="md-nav__link">
+    Introduction
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#research-project-specifications" class="md-nav__link">
+    Research Project Specifications
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#research-project-data" class="md-nav__link">
+    Research Project Data
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#difference-models-a-temporal-derivative" class="md-nav__link">
+    Difference Models : A Temporal Derivative
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#difference-models-an-assessment-tool" class="md-nav__link">
+    Difference Models : An Assessment Tool
+  </a>
+  
+    <nav class="md-nav" aria-label="Difference Models : An Assessment Tool">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#large-scale-analysis" class="md-nav__link">
+    Large-Scale Analysis
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#small-scale-analysis" class="md-nav__link">
+    Small-Scale Analysis
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#conclusion" class="md-nav__link">
+    Conclusion
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#reproduction-resources" class="md-nav__link">
+    Reproduction Resources
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#references" class="md-nav__link">
+    References
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                <h1 id="difference-models-applied-on-land-register">DIFFERENCE MODELS APPLIED ON LAND REGISTER<a class="headerlink" href="#difference-models-applied-on-land-register" title="Permanent link">&para;</a></h1>
+<p>Nils Hamel (UNIGE) - Huriel Reichel (swisstopo)</p>
+<p>Project scheduled in the STDL research roadmap - TASK-DTRK <br />
+September 2020 to November 2020 - Published on ? ?, 2021</p>
+<p><br /></p>
+<p><em><strong>Abstract</strong> : Being able to track modifications in the evolution of geographical datasets is one important aspect in territory management, as a large amount of information can be extracted out of differences models. Differences detection can also be a tool used to assess the evolution of a geographical model through time. In this research project, we apply differences detection on INTERLIS models of the official Swiss land registers in order to emphasize and follow its evolution and to demonstrate that change in reference frames can be detected and assessed.</em></p>
+<h2 id="introduction">Introduction<a class="headerlink" href="#introduction" title="Permanent link">&para;</a></h2>
+<p>Land register models are probably to most <em>living</em> of the geographical models as they are constantly updated to offer a rigorous and up-to-date view of the territory.</p>
+<p>The applied corrections are always the result of a complex process, involving different territory actors, until the decision is made to integrate them into the land register. In addition, land register models comes with an additional constraint linked to political decisions. Indeed, the land register models are the result of a <em>political mission</em> conducted under <em>federal laws</em> making these models of high importance and requiring constant care. We show in this research project how differences detection tool [1] of the <em>STDL 4D framework</em> can be used to emphasize and analyze these corrections along the time dimension.</p>
+<p>In addition to the constant updates of the models, changes in the reference frame can also lead to large-scale corrections of the land register models. These <em>global</em> corrections are then made even more complex by the <em>federal laws</em> that impose a high degree of correctness and accuracy.</p>
+<p>In the context of the introduction of the new reference frame <em>DM.flex</em> [2] for the Swiss land register, being able to assess the applied changes on the geographical model appear as an important aspect. Indeed, changing the reference frame for the land register models is a long and complex technical process that can be error prompt. We also show in this research project how the difference detection algorithm can be helpful to assess and verify the performed corrections.</p>
+<div align="center">
+<img src="image/separator.gif?raw=true" width="5%">
+</div>
+
+<h2 id="research-project-specifications">Research Project Specifications<a class="headerlink" href="#research-project-specifications" title="Permanent link">&para;</a></h2>
+<p>In this research project, the difference detection algorithm implemented in the <em>STDL 4D framework</em> is applied on <em>INTERLIS</em> data containing the official land register models of different Swiss <em>Canton</em>. As introduced, two main directions are considered for the difference detection algorithm :</p>
+<ul>
+<li>
+<p>Demonstrating the ability to extract information in between land register models</p>
+</li>
+<li>
+<p>Demonstrating the ability of <em>difference models</em> to be used as an assessment tool</p>
+</li>
+</ul>
+<p>Through the first direction, the difference detection algorithm is presented. Considering the <em>difference models</em> it allows computing, it is shown how such model are able to extract information in between the models in order to emphasize the ability to represent, and then, to verify the evolution of the land register models.</p>
+<p>The second direction focuses on demonstrating that <em>difference models</em> are a helpful representation of the large-scale corrections that can be applied to land register during reference frame modification and how they can be used as a tool to assess the modifications and to help to fulfil the complex task of the verification of the corrected models.</p>
+<div align="center">
+<img src="image/separator.gif?raw=true" width="5%">
+</div>
+
+<h2 id="research-project-data">Research Project Data<a class="headerlink" href="#research-project-data" title="Permanent link">&para;</a></h2>
+<p>For the first research direction, the land register models of the <em>Thurgau Kanton</em> are considered. There are selected in order to have a small temporal distance allowing to focus on a small amount of well-defined differences :</p>
+<ul>
+<li>
+<p><em>Thurgau Kanton</em>, <strong>2020-10-13</strong>, <em>INTERLIS</em></p>
+</li>
+<li>
+<p><em>Thurgau Kanton</em>, <strong>2020-10-17</strong>, <em>INTERLIS</em></p>
+</li>
+</ul>
+<p>In the second direction, focusing on more complex differences, the models of the <em>Canton of Geneva</em> land register are considered with a much larger temporal gap between them :</p>
+<ul>
+<li>
+<p><em>Canton of Geneva</em>, <strong>2009-10</strong>, <em>INTERLIS</em></p>
+</li>
+<li>
+<p><em>Canton of Geneva</em>, <strong>2013-04</strong>, <em>INTERLIS</em></p>
+</li>
+<li>
+<p><em>Canton of Geneva</em>, <strong>2017-04</strong>, <em>INTERLIS</em></p>
+</li>
+<li>
+<p><em>Canton of Geneva</em>, <strong>2019-04</strong>, <em>INTERLIS</em></p>
+</li>
+</ul>
+<div align="center">
+<img src="image/separator.gif?raw=true" width="5%">
+</div>
+
+<h2 id="difference-models-a-temporal-derivative">Difference Models : A Temporal Derivative<a class="headerlink" href="#difference-models-a-temporal-derivative" title="Permanent link">&para;</a></h2>
+<p>This first section focuses on short-term differences to show how difference models works and how they are able to represent the modifications extracted out of the two compared models. The following images give an illustration of the considered dataset, which are the land register models of <em>Thurgau Kanton</em> :</p>
+<div align="center" style="font-style: italic">
+<a href="image/dataset-thurgau.gif">
+<img src="image/dataset-thurgau_thumb.gif?raw=true" width="90%">
+</a><br />
+Illustration of Thurgau Kanton INTERLIS models - Data : Kanton Thurgau
+</div>
+
+<p>The models are made of vector lines, well geo-referenced in the Swiss coordinates frame <em>EPSG:2056</em>. The models are also made of different layers that are colored differently with the following correspondences :</p>
+<div align="center" style="font-style: italic">
+<img src="image/interlis-legend.gif?raw=true" width="35%"><br />
+INTERLIS selected topics and tables colors - Official French and German designations
+</div>
+
+<p>These legends are used all along this research project.</p>
+<p>Considering two temporal versions of this geographical model, separated of a few days, one is able to extract difference models using the <em>4D framework</em> algorithm. As an example, one can consider this very specific view of the land register, focusing on a few houses :</p>
+<div align="center" style="font-style: italic">
+<a href="image/diff-thurgau-example-1-situation.gif">
+<img src="image/diff-thurgau-example-1-situation_thumb.gif?raw=true" width="90%">
+</a><br />
+Close view of the Thurgau INTERLIS model in 2020-10-13 (left) and 2020-10-17 (right) - Data : Kanton Thurgau
+</div>
+
+<p>It is clear that most of the close view is identical for the two models, except for a couple of houses that were added to the land register model between these two temporal versions. By applying the difference detection algorithm, one is able to obtain a <em>difference model</em> comparing the two previous models. The following image gives an illustration of the obtained <em>difference models</em> considered the most recent temporal version as reference :</p>
+<div align="center" style="font-style: italic">
+<a href="image/diff-thurgau-example-1.gif">
+<img src="image/diff-thurgau-example-1_thumb.gif?raw=true" width="45%">
+</a><br />
+Difference model obtained comparing the two temporal versions - Data : Kanton Thrugau
+</div>
+
+<p>One can see how the difference algorithm is able to emphasize the differences and to represent them in a human-readable third model. The algorithm also displays the identical parts in dark gray to offer the context of the differences to the operator.</p>
+<p>Of course, in such close view, differences detection can appear as irrelevant, as one is clearly able to <em>see</em> that something changed on the selected example without any help. But <em>difference models</em> can be computed at any scale. For example, taking the example of the <em>Amriswil</em> city :</p>
+<div align="center" style="font-style: italic">
+<a href="image/diff-thurgau-example-2-situation.gif">
+<img src="image/diff-thurgau-example-2-situation_thumb.gif?raw=true" width="90%">
+</a><br />
+View of Amriswil model in 2020-10-13 (left) and 2020-10-17 (right) - Data : Kanton Thurgau
+</div>
+
+<p>It becomes more complicated to track down the differences that can appear between the two temporal versions. By computing their <em>difference model</em>, one is able to access a third model that ease the analysis of the evolution at the scale of the city itself as illustrated on the following image :</p>
+<div align="center" style="font-style: italic">
+<a href="image/diff-thurgau-example-2.gif">
+<img src="image/diff-thurgau-example-2_thumb.gif?raw=true" width="45%">
+</a><br />
+Difference model computed for the city of Amriswil - Data : Kanton Thrugau
+</div>
+
+<p>One can see how <em>difference models</em> can be used to track down modifications brought to the land register in a simple manner, while keeping the information of the unchanged elements between the two compared models. This demonstrates that information that exists between models can be extracted and represented for further users or automated processes. In addition, such <em>difference models</em> can be computed at any scale, considering small area up to the whole countries.</p>
+<div align="center">
+<img src="image/separator.gif?raw=true" width="5%">
+</div>
+
+<h2 id="difference-models-an-assessment-tool">Difference Models : An Assessment Tool<a class="headerlink" href="#difference-models-an-assessment-tool" title="Permanent link">&para;</a></h2>
+<p>On the previous section, the <em>difference models</em> are computed using two models only separated of a few days, containing only a small amount of clear and simple modifications. This section focuses on detecting differences on larger models, separated by several years. In this case, the land register of the <em>Canton of Geneva</em> is considered :</p>
+<div align="center" style="font-style: italic">
+<a href="image/dataset-geneva.gif">
+<img src="image/dataset-geneva_thumb.gif?raw=true" width="90%">
+</a><br />
+Illustration of the Geneva land register in 2017-04 (left) and 2019-04 (right) - Data : Canton of Geneva
+</div>
+
+<p>One can see that at such a scale, taking into account that the <em>Canton of Geneva</em> is one of the smallest in Switzerland, having a vision and a clear understanding of the modifications made between these two models is difficult by considering the two models separately.</p>
+<p>It's precisely where <em>differences models</em> can be useful to understand and analyze the evolution of the land register, along both the space and time dimensions.</p>
+<h3 id="large-scale-analysis">Large-Scale Analysis<a class="headerlink" href="#large-scale-analysis" title="Permanent link">&para;</a></h3>
+<p>A first large-scale evaluation can be made on the overall models. A <em>difference model</em> can be computed considering the land register of <em>Geneva</em> in 2019 and 2017 as illustrated on the following image :</p>
+<div align="center" style="font-style: italic">
+<a href="image/diff-geneva-1.gif">
+<img src="image/diff-geneva-1_thumb.gif?raw=true" width="45%">
+</a><br />
+Difference model on Geneva land register between 2019-04 and 2017-04 - Data : Canton of Geneva
+</div>
+
+<p>Two observation can be already made by looking at the <em>difference model</em>. In the first place, one can see that the amount of modifications brought to the land register is large in only two years. A large portion of the land register were subject to modifications or corrections, the <em>unchanged</em> parts being mostly limited outside the populated area.</p>
+<p>In the second place, one can observe large portions where differences seem to be accumulating over this period of time. Looking at them more closely lead to the conclusion that these zones were actually completely modified, as all elements are highlighted by the difference detection algorithm. The following image gives a closer view of such an area of differences accumulation :</p>
+<div align="center" style="font-style: italic">
+<a href="image/diff-geneva-2.gif">
+<img src="image/diff-geneva-2_thumb.gif?raw=true" width="45%">
+</a><br />
+Focus on Carouge area of the 2019-04 and 2017-04 difference model - Data : Canton of Geneva
+</div>
+
+<p>Despite the amount of modifications outside this specific zone is also high, it is clear that the pointed zone contains more of them. Looking at it more closely lead to the conclusion that <em>everything</em> changed.</p>
+<p>In order to understand these areas of differences accumulation, the official land register of the <em>Canton of Geneva</em> (<em>SITG</em>) was questioned. They provided an explanation for these specific areas. Between <em>2017</em> and <em>2019</em>, these areas were subjected to a <em>global</em> correction in order to release the tension between the old reference frame <em>LV03</em> [3] and the current one <em>LV95</em> [4]. These corrections were made using the <em>FINELTRA</em> algorithm to modify the elements of the land register of the order of a few centimeters.</p>
+<p>The land register of <em>Geneva</em> provided the following illustration summarizing these reference frame corrections made between <em>2017</em> and <em>2019</em> on the <em>Geneva</em> territory :</p>
+<div align="center" style="font-style: italic">
+<a href="image/diff-geneva-stig.jpg">
+<img src="image/diff-geneva-stig.jpg?raw=true" width="65%">
+</a><br />
+Reference frame corrections performed between 2017 and 2019 - Data : SITG
+</div>
+
+<p>Comparing this map from the land register with the computed model allows seeing how differences detection can emphasize this type of corrections efficiently, as the corrected zones on this previous image corresponds to the difference accumulation areas on the computed <em>difference model</em>.</p>
+<h3 id="small-scale-analysis">Small-Scale Analysis<a class="headerlink" href="#small-scale-analysis" title="Permanent link">&para;</a></h3>
+<p>One can also dive deep into the details of the <em>difference models</em>. As we saw on the large scale analysis, <em>two types</em> of areas can be seen on the <em>2019-04-2017-04</em> <em>difference model</em> of <em>Geneva</em> : regular evolution with an accumulation of corrections and areas on which <em>global</em> corrections were applied. The following images propose a close view of these two types of situation :</p>
+<div align="center" style="font-style: italic">
+<a href="image/diff-geneva-3.gif">
+<img src="image/diff-geneva-3_thumb.gif?raw=true" width="90%">
+</a><br />
+Illustration of the two observed type of evolutions of the land register - Data : Canton of Geneva
+</div>
+
+<p>On the left image above, one can observe the <em>regular</em> evolution of the land register where modifications are brought to the model in order to follow the evolution of the territory. On the right image above, one can see a close view of an area subjected to a <em>global</em> correction (reference frame), leading to a <em>difference model</em> highlighting <em>all</em> the elements.</p>
+<p>Analyzing more closely the right image above lead the observer to conclude that not <em>all</em> the elements are actually highlighted by the difference detection algorithm. Indeed, some elements are rendered in gray on the <em>difference model</em>, indicating their lack of modification between the two compare times. The following image emphasizes the <em>unchanged</em> elements that can be observed :</p>
+<div align="center" style="font-style: italic">
+<a href="image/diff-geneva-4.gif">
+<img src="image/diff-geneva-4_thumb.gif?raw=true" width="45%">
+</a><br />
+Unchanged elements in the land register after reference frame correction - Data : SITG
+</div>
+
+<p>These <em>unchanged</em> elements can be surprising as found in an area that was subject to a <em>global</em> reference frame correction. This shows how <em>difference models</em> can be helpful to track down these type of events in order to check whether these <em>unchanged</em> elements are expected or are the results of a discrepancy in the land register evolution.</p>
+<p>Other example can be found in this very same area of the <em>Geneva</em> city. The following images give an illustration of two other close view where the <em>unchanged</em> element can be seen despite the reference frame correction :</p>
+<div align="center" style="font-style: italic">
+<a href="image/diff-geneva-5.gif">
+<img src="image/diff-geneva-5_thumb.gif?raw=true" width="90%">
+</a><br />
+Unchanged elements in the land register after reference frame correction - Data : SITG
+</div>
+
+<p>On the left image above, one can observe that the <em>unchanged</em> elements are the railway tracks within the <em>commune of Carouge</em>. This is an interesting observation, as railway track can be considered as specific elements that can be subject to different legislation regarding the land register. But it is clear that railway track were not considered in the reference frame correction.</p>
+<p>On the right image above, another example of <em>unchanged</em> elements that are more complicated to explain, as in the middle of modified other elements. This clearly demonstrate how <em>difference models</em> can be helpful for analyzing and assessing the evolution of the land register model. Such models are able to drive users or automated process and lead them to focus on relevant aspects to define the good question in the context of analyzing the evolution of the land register.</p>
+<h2 id="conclusion">Conclusion<a class="headerlink" href="#conclusion" title="Permanent link">&para;</a></h2>
+<p>The presented <em>difference models</em> computed based on two temporal versions of the land register and using the <em>4D framework</em> algorithm showed how differences can be emphasized for users and automated processes [1]. <em>Difference models</em> can be helpful to determine the amount and nature of changes that appear in the land register. Applying such an algorithm on land register is especially relevant as it is a highly <em>living</em> model, that evolve jointly with the territory it describes.</p>
+<p>Two main applications can be considered using <em>difference models</em> applied on the land register. In the first place, the <em>difference models</em> can be used to assess and analyze the <em>regular</em> evolution of the territory. Indeed, updating the land register is not a simple task. Such modifications involve a whole chain of decisions and verifications, from surveyors to the highest land register authority before to be integrated in the model. Being able to assess and analyze the modifications in the land register through <em>difference models</em> could be one interesting strengthening of the overall process.</p>
+<p>The second application of <em>difference models</em> could be as an assessment tool of <em>global</em> corrections applied to the land register or parts of it. These modifications are often linked to the reference frame and its evolution. Being able to assess the corrections through the <em>difference models</em> could add a helpful tool in order to verify that the elements of the land register where correctly processed. In this direction, <em>difference models</em> could be used during the introduction of the <em>DM.flex</em> reference frame for both analyzing its introduction and demonstrating that <em>difference models</em> can be an interesting point of view.</p>
+<h2 id="reproduction-resources">Reproduction Resources<a class="headerlink" href="#reproduction-resources" title="Permanent link">&para;</a></h2>
+<p>To reproduce the presented experiments, the <em>STDL 4D framework</em> has to be used and can be found here :</p>
+<ul>
+<li><a href="https://github.com/nils-hamel/eratosthene-suite">STDL 4D framework (eratosthene-suite), STDL</a></li>
+</ul>
+<p>You can follow the instructions on the <em>README</em> to both compile and use the framework.</p>
+<p>Unfortunately, the used data are not currently public. In both cases, the land register <em>INTERLIS</em> datasets were provided to the <em>STDL</em> directly. You can contact both <em>Thurgau Kanton</em> and <em>SITG</em> :</p>
+<ul>
+<li>
+<p>INTERLIS land register, Thurgau Kanton</p>
+</li>
+<li>
+<p>INTERLIS land register, SITG (Geneva)</p>
+</li>
+</ul>
+<p>to query the data.</p>
+<p>In order to extract and convert the data from the <em>INTERLIS</em> models, the following code is used :</p>
+<ul>
+<li><a href="https://github.com/nils-hamel/dalai-suite">INTERLIS to UV3 (dalai-suite), STDL/EPFL</a></li>
+</ul>
+<p>where the <em>README</em> gives all the information needed.</p>
+<p>For the <em>3D</em> geographical coordinates conversion and heights restoration, we used two <em>STDL</em> internal tools. You can contact the <em>STDL</em> to obtain the tools and support in this direction :</p>
+<ul>
+<li>
+<p><em>ptolemee-suite</em> : 3D coordinate conversion tool (EPSG:2056 to WGS84)</p>
+</li>
+<li>
+<p><em>height-from-geotiff</em> : Restoring geographical heights using topographic <em>GeoTIFF</em> (<em>SRTM</em>)</p>
+</li>
+</ul>
+<p>You can contact <em>STDL</em> for any question regarding the reproduction of the presented results.</p>
+<h2 id="references">References<a class="headerlink" href="#references" title="Permanent link">&para;</a></h2>
+<p>[1] <a href="https://stdl.ch/TASK-DIFF/index.html">Automatic Detection of Changes in the Environment, N. Hamel, STDL 2020</a></p>
+<p>[2] <a href="https://www.cadastre.ch/fr/manual-av/method/dm-flex.html">DM.flex reference frame</a></p>
+<p>[3] <a href="https://www.swisstopo.admin.ch/en/knowledge-facts/surveying-geodesy/reference-frames/local/lv95.html">LV03 Reference frame</a></p>
+<p>[4] <a href="https://www.swisstopo.admin.ch/en/knowledge-facts/surveying-geodesy/reference-frames/local/lv03.html">LV95 Reference frame</a></p>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+          <div class="md-footer-copyright__highlight">
+            Copyright &copy; 2020-2021 Swiss Territorial Data Lab
+          </div>
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+      </div>
+      
+  <div class="md-footer-social">
+    
+      
+      
+      <a href="https://github.com/swiss-territorial-data-lab" target="_blank" rel="noopener" title="Repo on Github" class="md-footer-social__link">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+      </a>
+    
+      
+      
+      <a href="mailto:<info@stdl.ch>" target="_blank" rel="noopener" title="Send us an eMail!" class="md-footer-social__link">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M476 3.2L12.5 270.6c-18.1 10.4-15.8 35.6 2.2 43.2L121 358.4l287.3-253.2c5.5-4.9 13.3 2.6 8.6 8.3L176 407v80.5c0 23.6 28.5 32.9 42.5 15.8L282 426l124.6 52.2c14.2 6 30.4-2.9 33-18.2l72-432C515 7.8 493.3-6.8 476 3.2z"/></svg>
+      </a>
+    
+  </div>
+
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../assets/javascripts/vendor.0ac82a11.min.js"></script>
+      <script src="../assets/javascripts/bundle.f81dfb4d.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}</script>
+      
+      <script>
+        app = initialize({
+          base: "..",
+          features: ['navigation.expand'],
+          search: Object.assign({
+            worker: "../assets/javascripts/worker/search.4ac00218.min.js"
+          }, typeof search !== "undefined" && search)
+        })
+      </script>
+      
+    
+  </body>
+</html>
