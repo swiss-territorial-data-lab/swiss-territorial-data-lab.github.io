@@ -1,0 +1,527 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      <link rel="shortcut icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-6.0.1">
+    
+    
+      
+        <title>Swimming Pool Detection from Aerial Images over the Canton of Geneva - Swiss Territorial Data Lab</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.38780c08.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.3f72e892.min.css">
+        
+      
+    
+    
+    
+      
+        
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>body,input{font-family:"Roboto",-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono",SFMono-Regular,Consolas,Menlo,monospace}</style>
+      
+    
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/extra.css">
+    
+    
+      
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="none" data-md-color-accent="none">
+      
+  
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#swimming-pool-detection-from-aerial-images-over-the-canton-of-geneva" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid" aria-label="Header">
+    <a href=".." title="Swiss Territorial Data Lab" class="md-header-nav__button md-logo" aria-label="Swiss Territorial Data Lab">
+      
+  <img src="../assets/logo-stdl-transparent.svg" alt="logo">
+
+    </a>
+    <label class="md-header-nav__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header-nav__title" data-md-component="header-title">
+      
+        <div class="md-header-nav__ellipsis">
+          <span class="md-header-nav__topic md-ellipsis">
+            Swiss Territorial Data Lab
+          </span>
+          <span class="md-header-nav__topic md-ellipsis">
+            
+              <span style="text-transform:uppercase;"> Swimming Pool Detection from Aerial Images over the Canton of Geneva </span>
+            
+          </span>
+        </div>
+      
+    </div>
+    
+      <label class="md-header-nav__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active">
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" data-md-component="search-reset" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header-nav__source">
+        
+<a href="https://github.com/swiss-territorial-data-lab" title="Go to repository" class="md-source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05L244 40.45a28.87 28.87 0 00-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 01-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 000 40.81l195.61 195.6a28.86 28.86 0 0040.8 0l194.69-194.69a28.86 28.86 0 000-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    STDL on Github
+  </div>
+</a>
+      </div>
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Swiss Territorial Data Lab" class="md-nav__button md-logo" aria-label="Swiss Territorial Data Lab">
+      
+  <img src="../assets/logo-stdl-transparent.svg" alt="logo">
+
+    </a>
+    Swiss Territorial Data Lab
+  </label>
+  
+    <div class="md-nav__source">
+      
+<a href="https://github.com/swiss-territorial-data-lab" title="Go to repository" class="md-source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05L244 40.45a28.87 28.87 0 00-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 01-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 000 40.81l195.61 195.6a28.86 28.86 0 0040.8 0l194.69-194.69a28.86 28.86 0 000-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    STDL on Github
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href=".." title="Homepage" class="md-nav__link">
+      Homepage
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="https://github.com/swiss-territorial-data-lab" title="GitHub" class="md-nav__link">
+      GitHub
+    </a>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#introduction" class="md-nav__link">
+    Introduction
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#method" class="md-nav__link">
+    Method
+  </a>
+  
+    <nav class="md-nav" aria-label="Method">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-data-preparation" class="md-nav__link">
+    1. Data preparation
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-model-training" class="md-nav__link">
+    2. Model training
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-prediction" class="md-nav__link">
+    3. Prediction
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-prediction-assessment" class="md-nav__link">
+    4. Prediction assessment
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#domain-experts-feedback" class="md-nav__link">
+    Domain experts feedback
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#conclusion" class="md-nav__link">
+    Conclusion
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                <h1 id="swimming-pool-detection-from-aerial-images-over-the-canton-of-geneva"><span style="text-transform:uppercase;"> Swimming Pool Detection from Aerial Images over the Canton of Geneva </span><a class="headerlink" href="#swimming-pool-detection-from-aerial-images-over-the-canton-of-geneva" title="Permanent link">&para;</a></h1>
+<p>Alessandro Cerioni (Canton of Geneva) - Adrian Meyer (FHNW)</p>
+<p>Proposed by the Canton of Geneva - PROJ-GEPOOL <br/>
+September 2020 to January 2021 - Published on May 18, 2021</p>
+<p><br/></p>
+<p><em><strong>Abstract</strong></em>: <em>Object detection is one of the computer vision tasks which can benefit from Deep Learning methods. The STDL team managed to leverage state-of-art methods and already existing open datasets to first build a swimming pool detector, then to use it to potentially detect unregistered swimming pools over the Canton of Geneva. Despite the success of our approach, we will argue that domain expertise still remains key to post-process detections in order to tell objects which are subject to registration from those which aren't. Pairing semi-automatic Deep Learning methods with domain expertise turns out to pave the way to novel workflows allowing administrations to keep cadastral information up to date.</em></p>
+<h2 id="introduction">Introduction<a class="headerlink" href="#introduction" title="Permanent link">&para;</a></h2>
+<p>The Canton of Geneva manages a register of swimming pools, counting - in principle - all and only those swimming pools that are in-ground or, at least, permanently fixed to the ground. The swimming pool register is part of a far more general cadastre, including several other classes of objects (cf. <a href="https://ge.ch/sitg/fiche/3205">this page</a>). </p>
+<p>Typically the swimming pool register is updated either by taking building/demolition permits into account, or by manually checking its multiple records (4000+ to date) against aerial images, which is quite a long and tedious task. Exploring the opportunity of leveraging Machine Learning to help domain experts in such an otherwise tedious tasks was one of the main motivations behind this study. As such, no prior requirements/expectations were set by the recipients. </p>
+<p>The study was autonomously conducted by the STDL team, using Open Source software and Open Data published by the Canton of Geneva. Domain experts were asked for feedback only at a later stage. In the following, details are provided regarding the various steps we followed. We refer the reader to <a href="../TASK-IDET/">this page</a> for a thorough description of the generic STDL Object Detection Framework.</p>
+<div align="center">
+<img src="image/separator.gif?raw=true" width="5%">
+</div>
+
+<h2 id="method">Method<a class="headerlink" href="#method" title="Permanent link">&para;</a></h2>
+<p>Several steps are required to set the stage for object detection and eventually reach the goal of obtaining - ideally - even more than decent results. Despite the linear presentation that the reader will find here-below, multiple back-and-forths are actually required, especially through steps 2-4.</p>
+<h3 id="1-data-preparation">1. Data preparation<a class="headerlink" href="#1-data-preparation" title="Permanent link">&para;</a></h3>
+<p>As a <strong>very first step</strong>, one has to define the geographical region over which the study has to be conducted, the so-called "<strong>Area of Interest</strong>" (AoI). In the case of this specific application, the AoI was chosen and obtained as the geometric subtraction between the following two polygons:</p>
+<ol>
+<li>the unary union of all the polygons of the Canton of Geneva's cadastral parcels dataset, published as Open Data by the <a href="https://ge.ch/sitg/">SITG</a>, cf. <em><a href="https://ge.ch/sitg/fiche/8450">PARCELLES DE LA MENSURATION</a></em>;</li>
+<li>the polygon corresponding to the Lake Geneva ("<em>lac Léman</em>" in French), included in the <em><a href="https://ge.ch/sitg/fiche/3951">EMPRISE DU LAC LEMAN (Complet)</a></em> open dataset, published by the <a href="https://ge.ch/sitg/">SITG</a> as well.</li>
+</ol>
+<p>The so-defined AoI covers both the known "ground-truth" labels and regions over which hypothetical unknown objects are expected to be detected. </p>
+<p>The <strong>second step</strong> consists in downloading aerial images from a remote server, following an established tiling strategy. We adopted the so-called "<a href="https://wiki.openstreetmap.org/wiki/Slippy_Map">Slippy Map</a>" tiling scheme. Aerial images were fetched from a raster web service hosted by the <a href="https://ge.ch/sitg/">SITG</a> and powered by ESRI ArcGIS Server. More precisely, the following dataset was used: <a href="https://ge.ch/sitg/fiche/0556">ORTHOPHOTOS AGGLO 2018</a>. According to our configuration, this second step produces a folder including one GeoTIFF image per tile, each image having a size of 256x256 pixels. In terms of resolution - or better, in terms of "<strong>Ground Sampling Distance</strong>" (GSD) - the combination of </p>
+<ul>
+<li>256x256 pixels images and</li>
+<li>zoom level 18 Slippy Map Tiles</li>
+</ul>
+<p>yields approximately a GSD of ~ 60 cm/pixel. The tests we performed at twice the resolution showed little gain in terms of predictive power, surely not enough to support the interest in engaging 4x more resources (storage, CPU/GPU, ...).</p>
+<p>The <strong>third step</strong> amounts to splitting the tiles covering the AoI (let's label them "AoI tiles") twice:</p>
+<ol>
+<li>
+<p>first, tiles are partitioned into two subsets, according to whether they include (<code>GT</code> tiles) or not (<code>oth</code> tiles) ground-truth labels: </p>
+<p><span class="arithmatex">\(\mbox{AoI tiles} = (\mbox{GT tiles}) \cup (\mbox{oth tiles}),\; \mbox{with}\; (\mbox{GT tiles}) \cap (\mbox{oth tiles}) = \emptyset\)</span></p>
+</li>
+<li>
+<p>Then, ground-truth tiles are partitioned into three other subsets, namely the training (<code>trn</code>), validation (<code>val</code>) and test (<code>tst</code>) datasets: </p>
+<p><span class="arithmatex">\(\mbox{GT tiles} = (\mbox{trn tiles}) \cup (\mbox{val tiles}) \cup (\mbox{tst tiles})\)</span></p>
+<p>with <span class="arithmatex">\(A \neq B \Rightarrow A \cap B = \emptyset, \quad \forall A, B \in \{\mbox{trn tiles}, \mbox{val tiles}, \mbox{tst tiles}, \mbox{oth tiles}\}\)</span></p>
+<p>We opted for the 70%-15%-15% dataset splitting strategy.</p>
+</li>
+</ol>
+<p align="center">
+<img src='image/trn-val-tst-oth-tiles-full.webp' alt='Ground-truth (training + validation + test) and AoI tiles (overview)'/>
+<br />
+<i>Slippy Map Tiles at zoom level 18 covering the Area of Interest, partitioned into several subsets: ground-truth (GT = trn + val + tst), other (oth). </i>
+</p>
+
+<p align="center">
+<img src='image/trn-val-tst-oth-tiles-detail.webp' alt='Ground-truth (training + validation + test) and AoI tiles (detail)'/>
+<br />
+<i>Zoom over a portion of the previous image. </i>
+</p>
+
+<p>Concerning ground-truth labels, the final results of this study rely on a curated subset of the public dataset including polygons corresponding to the Canton of Geneva's registered swimming pools, cf. <a href="https://ge.ch/sitg/fiche/1836">PISCINES</a>. Indeed, some "warming-up" iterations of this whole process allowed us to semi-automatically identify tiles where the swimming pool register was inconsistent with aerial images, and viceversa. By manually inspecting the tiles displaying inconsistency, we discarded those tiles for which the swimming pool register seemed to be wrong (at least through the eyes of a Data Scientist; in a further iteration, this data curation step should be performed together with domain experts). While not having the ambition to return a "100% ground-truth" training dataset, this data curation step yielded a substantial gain in terms of <span class="arithmatex">\(F_1\)</span> score (from ~82% to ~90%, to be more precise).  </p>
+<h3 id="2-model-training">2. Model training<a class="headerlink" href="#2-model-training" title="Permanent link">&para;</a></h3>
+<p>A predictive model was trained, stemming from one of the pre-trained models provided by <a href="https://github.com/facebookresearch/detectron2">Detectron2</a>. In particular, the "R50-FPN" baseline was used (cf. <a href="https://github.com/facebookresearch/detectron2/blob/master/MODEL_ZOO.md">this page</a>), which implements a Mask R-CNN architecture leveraging a ResNet-50 backbone along with a Feature Pyramid Network (FPN). We refer the reader <em>e.g.</em> to <a href="https://kharshit.github.io/blog/2019/08/23/quick-intro-to-instance-segmentation">this blog article</a> for further information about this kind of Deep Learning methods.</p>
+<p>Training a (Deep) Neural Network model means running an algorithm which iteratively adjusts the various parameters of a Neural Network (40+ million parameters in our case), in order to minimize the value of some "loss function". In addition to the model parameters (otherwise called "weights", too), multiple "hyper-parameters" exist, affecting the model and the way how the optimization is performed. In theory, one should automatize the <strong>hyper-parameters tuning</strong>, in order to eventually single out the best setting among all the possible ones. In practice, the hyper-parameters space is never fully explored; <em>a minima</em>, a systematic search should be performed, in order to find a "sweet spot" among a finite, discrete collection of settings. In our case, no systematic hyper-parameters tuning was actually performed. Instead, a few man hours were spent in order to manually tune the hyper-parameters, until a setting was found which the STDL team judged to be reasonably good (~90% <span class="arithmatex">\(F_1\)</span> score on the test dataset, see details here-below). The <strong>optimal number of iterations</strong> was chosen so as to approximately minimize the loss on the validation dataset.</p>
+<h3 id="3-prediction">3. Prediction<a class="headerlink" href="#3-prediction" title="Permanent link">&para;</a></h3>
+<p>Each image resulting from the tiling of the AoI constitutes - let's say - the "basic unit of computation" of this analysis. Thus, the model optimized at the previous step was used to make predictions over:</p>
+<ol>
+<li>the <code>oth</code> images, meaning images covering no already known swimming pools; </li>
+<li>the <code>trn</code>, <code>val</code> and <code>tst</code> images, meaning images covering already known swimming pools.</li>
+</ol>
+<p>The combination of predictions 1 and 2 covers the entire AoI and allows us to discover potential new objects as well as to check whether some of the known objects are outdated, respectively.</p>
+<p>Image by image, the model produces one segmentation mask per detected object, accompanied by a <strong>score</strong> ranging from a custom minimum value (5% in our setting) to 100%. The higher the score, the most the model is confident about a given prediction.</p>
+<p align="center">
+<img src='image/sample-detections.webp' alt='Sample detections'/>
+<br />
+<i>Sample detections of swimming pools, accompanied by scores. Note that multiple detections can concern the same object, if the latter extends over multiple tiles.</i>
+</p>
+
+<p>Let us note that not only swimming pools exhibiting only "obvious" features (bluish color, rectangular shape, ...) were detected, but also:</p>
+<ul>
+<li>swimming pools covered by some tarp;</li>
+<li>empty swimming pools;</li>
+<li>etc.</li>
+</ul>
+<p>As a matter of fact, the training dataset was rich enough to also include samples of such somewhat tricky cases. </p>
+<h3 id="4-prediction-assessment">4. Prediction assessment<a class="headerlink" href="#4-prediction-assessment" title="Permanent link">&para;</a></h3>
+<p>As described <a href="../TASK-IDET/">here</a> in more detail, in order to assess the reliability of the predictive model predictions have to be post-processed so as to switch from the image coordinates - ranging from (0, 0) to (255, 255) in our case, where 256x256 pixel images were used - to geographical coordinates. This amounts to applying an affine transformation to the various predictions, yielding a vector layer which we can compare with ground-truth (<code>GT</code>) data by means of spatial joins:</p>
+<ul>
+<li>objects which are detected and can also be found in <code>GT</code> data are referred to as "true positives" (TPs);</li>
+<li>objects which are detected but cannot be found in <code>GT</code> data are referred to as "false positives" (FPs);</li>
+<li><code>GT</code> objects which are not detected are referred to as "false negatives" (FNs).</li>
+</ul>
+<p align="center">
+<img src='image/sample-TP-FP-FN.webp' alt='Sample true positive, false positive, false negative'/>
+<br />
+<i>Example of a true positive (TP), a false positive (FP) and a false negative (FN). Note that both the TP and the FP object are detected twice, as they extend over multiple tiles.</i>
+</p>
+
+<p>The counting of TPs, FPs, FNs allow us to compute some standard metrics such as precision, recall and <span class="arithmatex">\(F_1\)</span> score (cf. <a href="https://en.wikipedia.org/wiki/Precision_and_recall">this Wikipedia page</a> for further information). Actually, one count (hence one set of metrics) can be produced per choice of the minimum score that one is willing to accept. Choosing a threshold value (= <code>thr</code>) means keeping all the predictions having a score &gt;= <code>thr</code> and discarding the rest. Intuitively,</p>
+<ul>
+<li>a low threshold should yield a few false negatives;</li>
+<li>a high threshold should yield a few false positives.</li>
+</ul>
+<p>Such intuitions can be confirmed by the following diagram, which we obtained by sampling the values of <code>thr</code> by steps of 0.05 (= 5%), from 0.05 to 0.95.</p>
+<p align="center">
+<img src="image/tst_TP-FN-FP_vs_threshold.svg" alt="TP, FN, FP counts of the test dataset" width="100%">
+<br />
+<i>True positives (TPs), false negatives (FNs), and false positives (FPs) counted over the test dataset, as a function of the threshold on the score: for a given threshold, all and only the predictions exhibiting a bigger score are kept.</i>
+</p>
+
+<p align="center">
+<img src="image/tst_metrics_vs_threshold.svg" alt="Performance metrics over the test dataset" width="100%">
+<br />
+<i>Performance metrics computed over the test dataset as a function of the threshold on the score: for a given threshold, all and only the predictions exhibiting a bigger score are kept.</i>
+</p>
+
+<p>The latter figure was obtained by evaluating the predictions of our best model over the test dataset. Inferior models exhibited a similar behavior, with a downward offset in terms of <span class="arithmatex">\(F_1\)</span> score. In practice, upon <strong>iterating over multiple realizations</strong> (with different hyper-parameters, training data and so on) we aimed at maximizing the value of the <span class="arithmatex">\(F_1\)</span> score on the validation dataset, and stopped when the <span class="arithmatex">\(F_1\)</span> score went over the value of 90%.</p>
+<p>As the ground-truth data we used turned out not to be 100% accurate, the responsibility for mismatching predictions has to be shared between ground-truth data and the predictive model, at least in some cases. In a more ideal setting, ground-truth data would be 100% accurate and differences between a given metric (precision, recall, <span class="arithmatex">\(F_1\)</span> score) and 100% should be imputed to the model.</p>
+<div align="center">
+<img src="image/separator.gif?raw=true" width="5%">
+</div>
+
+<h2 id="domain-experts-feedback">Domain experts feedback<a class="headerlink" href="#domain-experts-feedback" title="Permanent link">&para;</a></h2>
+<p>All the predictions having a score <span class="arithmatex">\(\geq\)</span> 5% obtained by our best model were exported to Shapefile and shared with the experts in charge of the cadastre of the Canton of Geneva, who carried out a thorough evaluation. By checking predictions against the swimming pool register as well as aerial images, it was empirically found that the threshold on the minimum score (= <code>thr</code>) should be set as high as 97%, in order not to have too many false positives to deal with. In spite of such a high threshold, 562 potentially new objects were detected (over 4652 objects which were known when this study started), of which:</p>
+<ul>
+<li>128 items are objects other than swimming pools (let's say an "actual false positives");</li>
+<li>211 items are swimming pools that are NOT subject to registration (temporary, above-ground, on top of a building, ...);</li>
+<li>223 items are swimming pools that are subject to registration.</li>
+</ul>
+<p>This figures show that:</p>
+<ol>
+<li>on the one hand, the model performs quite well on the task it was trained for, in particular when an appropriate threshold is used;</li>
+<li>on the other hand, the meticulous review of results by domain experts remain essential. This said, automatic detections can surely be used to drive the domain experts' attention towards the areas which might require some.</li>
+</ol>
+<p align="center">
+<img src='image/actual-FP.webp' alt='Example of a "true false positive"' width="49%"/>
+<img src='image/actual-FP-2.webp' alt='Example of a "true false positive"' width="49%"/>
+<br />
+<i>Examples of "actual false positives": a fountain (left) and a tunnel (right).</i>
+</p>
+
+<p align="center">
+<img src='image/sample-swimming-pools-not-subject-to-registration.webp' alt='Example of a "true false positive"' width="49%"/>
+<img src='image/sample-swimming-pools-not-subject-to-registration-2.webp' alt='Example of a "true false positive"' width="49%"/>
+<br />
+<i>Examples of detected swimming pools which are not subject to registration: placed on top of a building (left), inflatable hence temporary (right).</i>
+</p>
+
+<div align="center">
+<img src="image/separator.gif?raw=true" width="5%">
+</div>
+
+<h2 id="conclusion">Conclusion<a class="headerlink" href="#conclusion" title="Permanent link">&para;</a></h2>
+<p>The analysis reported in this document confirms the opportunity of using state-of-the-art Deep Learning approaches to assist experts in some of their tasks, in this case that of keeping the cadastre up to date. Not only the opportunity was explored and actually confirmed, but valuable results were also produced, leading to the detection of previously unknown objects. At the same time, our study also shows how essential domain expertise still remains, despite the usage of such advanced methods.</p>
+<p>As a concluding remark, let us note that our predictive model may be further improved. In particular, it may be rendered less prone to false positives, for instance by:</p>
+<ul>
+<li>leveraging 3D data (<em>e.g.</em> point clouds), in order to potentially remove temporary, above-ground swimming pools from the set of detected objects;</li>
+<li>injecting into the training dataset those predictions which were classified by domain experts as other objects or temporary swimming pools;</li>
+<li>leveraging some other datasets, already available through the <a href="https://ge.ch/sitg/">SITG portal</a>: <a href="https://ge.ch/sitg/fiche/9810">buildings</a>, <a href="https://ge.ch/sitg/fiche/1333">miscellaneous objects</a>, etc.</li>
+</ul>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+          <div class="md-footer-copyright__highlight">
+            Copyright &copy; 2020-2021 Swiss Territorial Data Lab
+          </div>
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+      </div>
+      
+  <div class="md-footer-social">
+    
+      
+      
+      <a href="https://github.com/swiss-territorial-data-lab" target="_blank" rel="noopener" title="Repo on Github" class="md-footer-social__link">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+      </a>
+    
+      
+      
+      <a href="mailto:<info@stdl.ch>" target="_blank" rel="noopener" title="Send us an eMail!" class="md-footer-social__link">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M476 3.2L12.5 270.6c-18.1 10.4-15.8 35.6 2.2 43.2L121 358.4l287.3-253.2c5.5-4.9 13.3 2.6 8.6 8.3L176 407v80.5c0 23.6 28.5 32.9 42.5 15.8L282 426l124.6 52.2c14.2 6 30.4-2.9 33-18.2l72-432C515 7.8 493.3-6.8 476 3.2z"/></svg>
+      </a>
+    
+  </div>
+
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../assets/javascripts/vendor.77e55a48.min.js"></script>
+      <script src="../assets/javascripts/bundle.aa3f9871.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}</script>
+      
+      <script>
+        app = initialize({
+          base: "..",
+          features: ['navigation.expand'],
+          search: Object.assign({
+            worker: "../assets/javascripts/worker/search.4ac00218.min.js"
+          }, typeof search !== "undefined" && search)
+        })
+      </script>
+      
+        <script src="../assets/javascripts/config.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>
