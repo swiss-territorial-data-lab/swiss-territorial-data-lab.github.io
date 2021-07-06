@@ -498,21 +498,21 @@ January 2021 to April 2021 - Published on April 21, 2021</p>
 <h2 id="results">Results<a class="headerlink" href="#results" title="Permanent link">&para;</a></h2>
 <h3 id="metrics-and-model-selection">Metrics and Model Selection<a class="headerlink" href="#metrics-and-model-selection" title="Permanent link">&para;</a></h3>
 <p align="center">
-<img src="../PROJ-TGOBJ/image/counts.JPG">
+<img src="image/counts.JPG">
 <br />
 <i>Results of different training runs using SWISSIMAGE depending on the chosen zoom level</i>
 </p>
 
 <p>The choice of a correct confidence threshold ("THR") is of central importance for the interpretation of the results. The division of a data set into true/false positives/negatives is a function of the confidence threshold. A high threshold means that the model is very confident of a detection; a low threshold means that as few detections as possible should be missed, but at the same time more false positive ("FP") detections should be triggered. </p>
 <p align="center">
-<img src="../PROJ-TGOBJ/image/metrics.JPG">
+<img src="image/metrics.JPG">
 <br />
 <i>Results of different training runs using SWISSIMAGE depending on the chosen zoom level</i>
 </p>
 
 <p>There are several standardized metrics to evaluate model performance on unknown data. The most important are "Precision" (user accuracy), "Recall" (hit rate or producer accuracy) and "F1 Score" (the mathematical harmonic mean of the other two). "Precision" should increase with higher THR, "Recall" should decrease. The maximum F1 Score can be used as a measure of how well the model performs regardless of the viewing direction. </p>
 <p align="center">
-<img src="../PROJ-TGOBJ/image/zoomlevels.JPG">
+<img src="image/zoomlevels.JPG">
 <br />
 <i>Results of different training runs using SWISSIMAGE depending on the chosen zoom level</i>
 </p>
@@ -523,7 +523,7 @@ January 2021 to April 2021 - Published on April 21, 2021</p>
 <h3 id="true-positives">True Positives<a class="headerlink" href="#true-positives" title="Permanent link">&para;</a></h3>
 <p>A detection is considered "True Positive" (TP) if the algorithm detected a pool that was listed at the same position in the cadastral layer. Setting the threshold very low (THR ≥ 5%), 2'227 of 2’959 swimming pools were detected. This corresponds to a detection proportion of 75% of the recorded water pools. Conversely, this could mean that 25% or 732 objects are False Negatives and therefore "erroneously" recorded in the cadastre as swimming pools or missed by the algorithm. </p>
 <p align="center">
-<img src="../PROJ-TGOBJ/image/TP_example.JPG">
+<img src="image/TP_example.JPG">
 <br />
 <i>“True Positive” detections – note that cases of empty and covered swimming pools are detected with a very high confidence threshold in this example.</i>
 </p>
@@ -532,7 +532,7 @@ January 2021 to April 2021 - Published on April 21, 2021</p>
 <p>FN describe those objects that the algorithm completely failed to detect, no matter what threshold is set. A total of 732 objects were not detected. FN easily occur when there are obvious discrepancies between orthophoto and cadastre - for example, a pool may have been constructed after the time of flight. </p>
 <p>The combined number from FN and TP corresponds to the number of analyzed labels from the water pool layer (2’959 objects). Due to the splitting of pools at the segmentation grid boundaries, this value is slightly higher than the 2’895 objects that were in the “Prediction AoI”. Here, only objects larger than 5m² in area were counted, since the segmentation grid cuts some pools into several parts and tiny residual of only a few pixels in total area polygons might otherwise be counted as FN even though the largest part of a swimming pool was detected (and therefore counted as TP).</p>
 <p align="center">
-<img src="../PROJ-TGOBJ/image/FN_example.JPG">
+<img src="image/FN_example.JPG">
 <br />
 <i>“False Negatives” – (Left) An obvious mismatch between the cadastre and the orthophoto, an update should be considered. (Right) An ambiguous swimming pool which might be covered by a white canvas and was therefore missed by the detector. </i>
 </p>
@@ -542,7 +542,7 @@ January 2021 to April 2021 - Published on April 21, 2021</p>
 <p>Therefore, to get a better estimation of objects that really represent private pools but are still missing in the cadastre, the choice of a very high threshold is recommended. For example, the geoinformation services of the Canton of Geneva work with a threshold of THR ≥ 97%. Applying this threshold, 271 unrecorded swimming pools remain in the dataset with an extremely high probability of correct redetection (9% of the cadastre). </p>
 <p>However, it is still worth looking at slightly less likely FP detections with a threshold of THR ≥ 90% here. Filtering with this value, a total of 672 unregistered swimming pools were found, which would correspond to 23% of the cadastre layer. At the same time the risk for clear errors by the object detector also increases at lower thresholds, leading to some misclassifications.</p>
 <p align="center">
-<img src="../PROJ-TGOBJ/image/FP_example.JPG">
+<img src="image/FP_example.JPG">
 <br />
 <i>“False Positive” detections – (Top) Two clear examples of detected swimming pools that are missing in the cadastre. (Bottom Left) More ambiguous examples of detected swimming pools which might be missing in the cadastre. (Bottom Right) A clear error of the detector misclassifying a photovoltaic installation as a swimming pool.  </i>
 </p>
@@ -555,7 +555,7 @@ January 2021 to April 2021 - Published on April 21, 2021</p>
 <h3 id="manual-evaluation">Manual Evaluation<a class="headerlink" href="#manual-evaluation" title="Permanent link">&para;</a></h3>
 <p>In the city of Frauenfeld a sample district was chosen for manual evaluation by a STDL data scientist. Even though this task should ideally be performed by a local expert this analysis does provide some insight on the potential errors currently existing within the cadastre as well as the object detection quality. Within the sampled area a total of 99 identifiable swimming pool objects were found to be present.</p>
 <p align="center">
-<img src="../PROJ-TGOBJ/image/table-frauenfeld.jpg" width="423">
+<img src="image/table-frauenfeld.jpg" width="423">
 <br />
 <i>Table: Manually evaluated dataset accuracy vs. detector performance comparison. Green indicates the preferred value.  </i>
 </p>
