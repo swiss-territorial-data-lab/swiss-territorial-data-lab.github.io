@@ -1,0 +1,225 @@
+# **STDL Object Detection Framework**
+<i>Adrian F. Meyer, FHNW</i>
+
+<i>Alessandro Cerioni, Etat de Geneve</i>
+
+Current Mandate Schedule : October 2020 to September 2021 (with extension options until 2024)
+
+
+_AC thinks these are the "things" that should be explained here: AoI, tiling, labels, ground-truth labels, trn-val-tst splitting (<- few words about overfitting, ...),_
+
+## Objective
+
+This strategic component of the STDL consists of the automated analysis of geospatial images using deep learning while providing practical applications for specific use cases. The overall goal is the extraction of semantic information from remote sensing data. The earlier involved case studies revolve around concrete object detection use cases deploying modern machine learning methods and utilizing a multitude of available datasets. Later, full semantic surface layers can be produced leveraging the obtained datasets to arrive at a prototypical platform for object detection which is highly useful for decision makers at various contact points in society.
+
+<p align="center">
+<img src="image/010-Basic-Idea.JPG" width="800">
+<br />
+<i>Generating a Model from Cadastral Vectors and Aerial Images to Predict Objects in the Same or a New Area of Interest (AoI).
+</i>
+</p>
+
+## Background and Potential Use Cases
+
+### Swimming Pools 
+
+Providing a reliable detection of swimming pools allows authorities to assess the status quo to update archival datasets and to reinforce administrative construction permit processes. The status quo is based on manually digitized cadastral information. This data is used to extract feature masks which can be applied to orthophoto imagery such as the SWISSIMAGE dataset or aerial photos provided by the end users. Deep Learning algorithms such as Faster RCNN or Mask RCNN then allow the detection of previously unregistered swimming pools in a defined perimeter. 
+Achievable detection accuracies range above 90% (F1 Score). 
+Current users of the technology include the Canton of Geneva and the Canton of Neuchâtel.
+
+<p align="center">
+<img src="image/120-Swimming-Pools.jpg?raw=true" width="800">
+<br />
+<i>Example Detections of Swimming Pools Missing in the Cadastre.</i>
+</p>
+
+### Thermal Panels
+
+<p align="center">
+<img src="image/thermal-panels.JPG" width="800">
+<br />
+<i>Thermal Solar Panels Can Contribute a Substantial Amount to Reducing Carbon Emissions.</i>
+</p>
+
+### Silage Hay Bales
+
+
+<p align="center">
+<img src="image/110-Silage-Bales.JPG" width="800">
+<br />
+<i>Locations of Silage Hay Bales are Relevant for the Calculation of Governmental Agriculture Subsidies.</i>
+</p>
+
+
+## Methodology
+
+_I think it's worth adding a paragraph about the terminology here, cf. https://github.com/swiss-territorial-data-lab/swimming-pool-detector/tree/code-cleanup (AC)_
+
+### Area of Interest Preparation
+
+<p align="center">
+<img src="image/040-AoI-Filtering.JPG" width="800">
+<br />
+<i>Slippy Map Tiles </i>
+</p>
+
+### Tiling Subsystem
+WMS and MIL Support
+
+
+<p align="center">
+<img src="image/050-Tiling-Subsystem.JPG" width="800">
+<br />
+<i>Slippy Map Tiles </i>
+</p>
+
+
+### Detectron2 Core
+
+#### Dataset Splitting
+
+<p align="center">
+<img src="image/060-Ground-Truth.JPG" width="800">
+<br />
+<i>Sample split of Ground Truth datasets </i>
+</p>
+
+
+#### Transfer Learning
+
+<p align="center">
+<img src="image/020-Transfer-Learning.JPG" width="800">
+<br />
+<i>Subdivision of Ground Truth Datasets </i>
+</p>
+
+#### Hyperparameter Tuning
+
+### Parallelisation
+
+#### High-Performance Computing Cluster at FHNW
+
+
+<p align="center">
+<img src="image/070-Training-Deep-Learning.JPG?raw=true" width="800">
+<br />
+<i>HPE Apollo 6500 with 4 NVidia V100 GPUs</i>
+</p>
+
+
+#### Joblib Backend
+
+
+
+## Datasets
+
+### Ground Truth Labels
+
+#### Swimming Pools of Geneva and Neuchâtel (partial)
+
+
+<p align="center">
+<img src="image/piscines.jpg?raw=true">
+<br />
+<i>Label inputs for deep learning derived from cadastral data</i>
+</p>
+
+<p align="center">
+<img src="image/030-AoI.JPG?raw=true" width="800">
+<br />
+<i>Approximately 3000 cross checked swimming pool annotations are available as vectorized shapes in the Cantons of Geneva and partially in Neuchâtel. They are compatible with orthophotos from 2018/19 such as the latest SWISSIMAGE 10cm layer.</i>
+</p>
+
+
+#### Thermal Panels in Northwestern Switzerland
+
+The thermal panel dataset of the STDL is based on a predecessor project. The project «SolAi» was launched in 2018 at the Institute of Geomatics (IGEO) of the University of Applied Sciences Northwestern Switzerland (FHNW), in collaboration with the Swiss Federal Office of Energy (SFOE) and will be finished by the end of 2020. The project aims to use Mask R-CNN algorithms to automatically identify and quantify existing solar installations from Swissimage orthophotos. Such an approach should then serve as a basis for the implementation of the energy strategy and statistical estimation models of the solar market. A solar register is already available in Switzerland based on applications of government subsidies. This dataset is lacking integral completeness as well as absolute shape and positions of the installations though. To date, Switzerland still lacks reliable position and area data of the photovoltaic and solar thermal systems already installed in order to enable a complete evaluation in conjunction with the solar cadastre data. In the scope of the project over 30'000 polygons of solar panels classified into "Photovoltaic" and "Thermal" installations were drawn over the SWISSIMAGE dataset to generate traning data, currently yielding a mean average prediction accuracy of ~87%. 
+
+
+<p align="center">
+<img src="image/BFE_logo.png" width="300">
+<br />
+<i>The Predecessor-Project «SolAi» was funded by the Swiss Federal Office of Energy</i>
+</p>
+
+
+Various cantonal and federal authorities as well as research groups have shown exceptional interest in obtaining the dataset and building on these scientific findings. The use case will therefore be continued in the framework of the Swiss Territorial Data Lab project to refine the scope of the outcomes to end user needs and achieve a maturation of the classification results through hyperparameter optimization, retraining on multispectral imagery and evaluating prediction/inferencing robustness in different radiometric scenarios. 
+
+
+<p align="center">
+<img src="image/solar_combo.JPG?raw=true" width="800">
+<br />
+<i>Early Detection Result of a Resnet-50 Mask-RCNN architecture</i>
+</p>
+
+
+#### Silage Hay Bales in Thurgau
+
+700 Labels as Vectors.
+
+### Data Sources
+
+* SWISSIMAGE RGB 10cm by swisstopo
+
+* SWISSIMAGE RS 10cm by swisstopo
+
+* Labels drawn from the official Swiss cadastral services. The Swiss cadastral system comprises the cadastral surveying, the Cadastre of Public-law Restrictions on landownership (PLR-cadastre) and the land register.
+
+* <a href="https://ge.ch/sitg/" target="_blank">SITG - Geneva Geodata Services</a>
+
+* SITN - Neuchâtel Geodata Services
+
+## Results
+
+### Metrics Output
+
+<p align="center">
+<img src="image/080-Metric-Results.JPG?raw=true" width="800">
+<br />
+<i>Example Detections of Swimming Pools Missing in the Cadastre.</i>
+</p>
+
+### Swimming Pools
+
+
+<p align="center">
+<img src="image/090-Results-Swimming-Pools.JPG?raw=true" width="800">
+<br />
+<i>Zoom Level Dependency</i>
+</p>
+
+<p align="center">
+<img src="image/neuchatel.jpg?raw=true">
+<br />
+<i>Detected Swimming Pools in the Canton of Neuchâtel</i>
+</p>
+
+
+### Silage Hay Bales
+
+
+<p align="center">
+<img src="image/100-Results-Silage-Bales.JPG?raw=true" width="800">
+<br />
+<i>Early Detection Result of a Resnet-50 Mask-RCNN architecture</i>
+</p>
+
+
+## Outlook
+
+Ultimately, an automatized system for surface classification based on aerial imagery and additional data sources will be proposed that allows consistent differential surface segmentation as a basis for differential change analysis. Spatiotemporal data storage provides insight into current, historical and future territorial features scalabe from small communal objects to the environmental and landscape levels.
+
+## Links and Resources
+
+* Institute Geomatics FHNW
+	- Project Area Statistics
+	- Project Sol Ai 
+	- Project Animal Detection
+
+* Swisstopo
+
+* BFS / OFS
+
+* BFE / Energiestrategie 2050
+
+* [Mask R-CNN](https://arxiv.org/abs/1703.06870)
