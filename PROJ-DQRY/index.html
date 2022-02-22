@@ -8,9 +8,8 @@
       
       
       
-      
       <link rel="icon" href="../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-7.1.5">
+      <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-8.1.7">
     
     
       
@@ -18,10 +17,10 @@
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.bde7dde4.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.cd566b2a.min.css">
       
         
-        <link rel="stylesheet" href="../assets/stylesheets/palette.ef6f36e2.min.css">
+        <link rel="stylesheet" href="../assets/stylesheets/palette.e6a45f82.min.css">
         
       
     
@@ -31,15 +30,16 @@
         
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
-        <style>:root{--md-text-font-family:"Roboto";--md-code-font-family:"Roboto Mono"}</style>
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
       
-    
     
     
       <link rel="stylesheet" href="../assets/stylesheets/extra.css">
     
+    <script>__md_scope=new URL("..",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
+
     
     
   </head>
@@ -53,7 +53,6 @@
     <body dir="ltr" data-md-color-scheme="" data-md-color-primary="none" data-md-color-accent="none">
   
     
-    <script>function __prefix(e){return new URL("..",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
     
     <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
@@ -70,7 +69,10 @@
       
     </div>
     
-      <header class="md-header" data-md-component="header">
+    
+      
+
+<header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
     <a href=".." title="Swiss Territorial Data Lab" class="md-header__button md-logo" aria-label="Swiss Territorial Data Lab" data-md-component="logo">
       
@@ -102,19 +104,22 @@
       <label class="md-header__button md-icon" for="__search">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
       </label>
-      
-<div class="md-search" data-md-component="search" role="dialog">
+      <div class="md-search" data-md-component="search" role="dialog">
   <label class="md-search__overlay" for="__search"></label>
   <div class="md-search__inner" role="search">
     <form class="md-search__form" name="search">
-      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active" required>
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
       <label class="md-search__icon md-icon" for="__search">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
       </label>
-      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
-      </button>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+        </button>
+      </nav>
+      
     </form>
     <div class="md-search__output">
       <div class="md-search__scrollwrap" data-md-scrollfix>
@@ -131,8 +136,7 @@
     
     
       <div class="md-header__source">
-        
-<a href="https://github.com/swiss-territorial-data-lab" title="Go to repository" class="md-source" data-md-component="source">
+        <a href="https://github.com/swiss-territorial-data-lab" title="Go to repository" class="md-source" data-md-component="source">
   <div class="md-source__icon md-icon">
     
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
@@ -144,11 +148,14 @@
       </div>
     
   </nav>
+  
 </header>
     
     <div class="md-container" data-md-component="container">
       
       
+        
+          
         
       
       <main class="md-main" data-md-component="main">
@@ -173,8 +180,7 @@
   </label>
   
     <div class="md-nav__source">
-      
-<a href="https://github.com/swiss-territorial-data-lab" title="Go to repository" class="md-source" data-md-component="source">
+      <a href="https://github.com/swiss-territorial-data-lab" title="Go to repository" class="md-source" data-md-component="source">
   <div class="md-source__icon md-icon">
     
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
@@ -229,6 +235,7 @@
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
                     
+
 <nav class="md-nav md-nav--secondary" aria-label="Table of contents">
   
   
@@ -244,28 +251,28 @@
       
         <li class="md-nav__item">
   <a href="#1-introduction" class="md-nav__link">
-    1    Introduction
+    1 - Introduction
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#2-method" class="md-nav__link">
-    2    Method
+  <a href="#2-methodology" class="md-nav__link">
+    2 - Methodology
   </a>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#3-results-discussion" class="md-nav__link">
-    3    Results &amp; Discussion
+    3 - Results &amp; Discussion
   </a>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#4-conclusion" class="md-nav__link">
-    4    Conclusion
+    4 - Conclusion
   </a>
   
 </li>
@@ -282,106 +289,102 @@
             <article class="md-content__inner md-typeset">
               
                 
-                
-                <h1 id="automatic-detection-of-quarries-and-the-lithology-below-them-in-switzerland">Automatic Detection of Quarries and the Lithology below them in Switzerland<a class="headerlink" href="#automatic-detection-of-quarries-and-the-lithology-below-them-in-switzerland" title="Permanent link">&para;</a></h1>
-<p>Huriel Reichel (FHNW) &amp; Nils Hamel (unige) <br />
-Supervision : Nils Hamel (unige) &amp; Raphael Rollier (swisstopo)</p>
+
+<h1 id="automatic-detection-of-quarries-and-the-lithology-below-them-in-switzerland">Automatic Detection of Quarries and the Lithology below them in Switzerland<a class="headerlink" href="#automatic-detection-of-quarries-and-the-lithology-below-them-in-switzerland" title="Permanent link">&para;</a></h1>
+<p>Huriel Reichel (FHNW) - Nils Hamel (UNIGE) <br />
+Supervision : Nils Hamel (UNIGE) - Raphael Rollier (swisstopo)</p>
 <p>Proposed by swisstopo - PROJ-DQRY <br />
 June 2021 to January 2022 - Published on January 30th, 2022</p>
 <p><br /></p>
-<p><em><strong>Abstract</strong>: Mining is an important economic activity in Switzerland and therefore it is monitored by the Confederation through swisstopo. To this points, the identification of quarries has been mode manually, which even being done with very high quality, unfortunately does not follow the constant changing and updating pattern of these features. For this reason, swisstopo contacted the STDL to automatically detect quarries through the whole country. The training was done using SWISSIMAGE with 10cm spatial resolution and the Deep Learning Framework from the STDL. Moreover there were two iteration steps with the domain expert which included the manual correction of detection for new training. Interaction with the domain expert was very relevant for final results and summing to his appreciation, an F1 Score of 85% was obtained in the end, which due to peculiar characteristics of quarries can be considered an optimal result.</em></p>
-<h2 id="1-introduction">1    Introduction<a class="headerlink" href="#1-introduction" title="Permanent link">&para;</a></h2>
-<p>Mining is an important economic acitivity worldwide and this is also the case in Switzerland. The Confederation, especially through swisstopo, is responsible for monitoring the presence of quarries and also the materials being explored. This is extremely relevant for planning the demand and shortage of explored materials and also their transportation through the country. As this of federal importance the mapping of these features is already done. Although this work is very detailed and accurate, quarries have a very characteristical updating pattern. Quarries can appear and dissappear in a matter of a few months, in especial when they are relatively small, as in Switzerland. Therefore it is of interest of swisstopo to make an automatic detection of quarries in a way that it is also reproducible in time. </p>
-<p>A strategy offen offered by the Swiss Territorial Data Lab is the automatic detection of several objects in aerial imagery through deep learning, following our [Object Detection Framework] (../TASK-IDET/README.md). In this case it is fully applicable as quarries in Switzerland are relatively small, so high resolution imagery is required, which is something our Neural Network has proven to tackle with mastery in past projects. This high resolution imagery is also reachable through <a href="https://www.swisstopo.admin.ch/en/geodata/images/ortho/swissimage10.html">SWISSIMAGE</a>, aerial images from swisstopo that cover almost the whole country with a 10cm pixel size. </p>
-<p>Nevertheless, in order to train our neural network, and as it's usually the case in deep learning, several labelled images are required. These data work as ground truth so that the neural network "learns" what's the object to be detected and which shouldn't. For this purpose, the work from the topographic landscape model (<a href="https://www.swisstopo.admin.ch/en/knowledge-facts/topographic-landscape-model.html">TLM</a>) team from swisstopo has been of extreme importance. Among different surface features, quarries have been mapped all over Switzerland with a highly detailed scale.</p>
-<p>Although the high quality and precision of the labels from TLM, quarries are constantly changing, appearing and dissapearing, and therefore the labels are not always syncronised with the images from SWISSIMAGE. This lack of of synchronisation between these datasets can be seen in Figure 1, where in the left one has the year of mapping of TLM and on the right the year of the SWISSIMAGE flights. </p>
+<p><em><strong>Abstract</strong>: Mining is an important economic activity in Switzerland and therefore it is monitored by the Confederation through swisstopo. To this points, the identification of quarries has been made manually, which even being done with very high quality, unfortunately does not follow the constant changing and updating pattern of these features. For this reason, swisstopo contacted the STDL to automatically detect quarries through the whole country. The training was done using SWISSIMAGE with 10cm spatial resolution and the Deep Learning Framework from the STDL. Moreover there were two iteration steps with the domain expert which included the manual correction of detection for new training. Interaction with the domain expert was very relevant for final results and summing to his appreciation, an F1 Score of 85% was obtained in the end, which due to peculiar characteristics of quarries can be considered an optimal result.</em></p>
+<h2 id="1-introduction">1 - Introduction<a class="headerlink" href="#1-introduction" title="Permanent link">&para;</a></h2>
+<p>Mining is an important economic activity worldwide and this is also the case in Switzerland. The Confederation topographic office (swisstopo) is responsible for monitoring the presence of quarries and also the materials being explored. This is extremely relevant for planning the demand and shortage of explored materials and also their transportation through the country. As this of federal importance the mapping of these features is already done. Although this work is very detailed and accurate, quarries have a very characteristical updating pattern. Quarries can appear and disappear in a matter of a few months, in especial when they are relatively small, as in Switzerland. Therefore it is of interest of swisstopo to make an automatic detection of quarries in a way that it is also reproducible in time. </p>
+<p>A strategy offen offered by the Swiss Territorial Data Lab is the automatic detection of several objects in aerial imagery through deep learning, following our <a href="../TASK-IDET/">Object Detection Framework</a>. In this case it is fully applicable as quarries in Switzerland are relatively small, so high resolution imagery is required, which is something our Neural Network has proven to tackle with mastery in past projects. This high resolution imagery is also reachable through <a href="https://www.swisstopo.admin.ch/en/geodata/images/ortho/swissimage10.html">SWISSIMAGE</a>, aerial images from swisstopo that cover almost the whole country with a 10cm pixel size (GSD). </p>
+<p>Nevertheless, in order to train our neural network, and as it's usually the case in deep learning, several labelled images are required. These data work as ground truth so that the neural network "learns" what's the object to be detected and which should not. For this purpose, the work from the topographic landscape model (<a href="https://www.swisstopo.admin.ch/en/knowledge-facts/topographic-landscape-model.html">TLM</a>) team of swisstopo has been of extreme importance. Among different surface features, quarries have been mapped all over Switzerland with a highly detailed scale.</p>
+<p>Although the high quality and precision of the labels from TLM, quarries are constantly changing, appearing and disappearing, and therefore the labels are not always synchronized with the images from SWISSIMAGE. This lack of of synchronization between these sets of data can be seen in Figure 1, where in the left one has the year of mapping of TLM and on the right the year of the SWISSIMAGE flights. </p>
 <div align="center">
-<img src="image/fig1.gif?raw=true" width="100%">
+<img src="image/fig1.gif?raw=true" width="75%">
 <br />
-<i>Figure 1 : Comparison in execution time from TLM (left) and SWISSIMAGE (right).
+<i>Figure 1 : Comparison of TLM (left) and SWISSIMAGE (right) temporality.
 </i>
 </div>
 
-<p>For this purpose, a two-times interaction was necessary with the requirer domain expert. In order to have a ground truth that was fully synchronised with SWISSIMAGE we required two stages of training : one making use of the TLM data and a second one with a manual correction of the predicted labels from the first interaction. It is of crucial importance to state that this correction needed to be made by the domain expert so that he could carefully check each detection in pre-defined tiles. With that in hands, we could go further with a more trustworthy training. </p>
+<p>For this purpose, a two-times interaction was necessary with the domain expert. In order to have a ground truth that was fully synchronized with SWISSIMAGE we required two stages of training : one making use of the TLM data and a second one with a manual correction of the predicted labels from the first interaction. It is of crucial importance to state that this correction needed to be made by the domain expert so that he could carefully check each detection in pre-defined tiles. With that in hands, we could go further with a more trustworthy training. </p>
 <p>As stated, it is of interest of swisstopo to also identify the material being explored by every quarry. For that purpose, it was recommended the usage of the <a href="https://www.swisstopo.admin.ch/en/geodata/geology/maps/geocover.html">GeoCover dataset</a> from swisstopo as well. This dataset a vector layer of the the geological cover of the whole Switzerland, which challenged us to cross the detector predictions with such vector information.</p>
 <p>In summary, the challenge of the STDL was to investigate to which extent is it possible to automatically detect quarries using Deep Learning considering their high update ratio using aerial imagery.</p>
-<h2 id="2-method">2    Method<a class="headerlink" href="#2-method" title="Permanent link">&para;</a></h2>
-<p>First of all the "area of interest" must be identified. This is where the detection and training took place. In this case, a polygon of the whole Switzerland was used. After that, the area of interest is divided in several tiles of fixed size. This is then defining the slicing of SWISSIMAGE (given as WMS). For this study, tiles of different sizes were tested, being 500m x 500m tiles defined for final usage. Following the resolution of the images must be defined, which, again, after several tests, was defined as 512 x 512 pixels.</p>
-<p>For validation purposes the data is then split into Training, Validation and Testing. The training dataset is used inside the network for its learning; the validation is completely apart from training and used only to check results and testing is used for cross-validation. 70% of the data was used for training, 15% for validation and 15% for testing.</p>
-<p>To what concerns the labels, the ones from TLM were manually checked so that a group of approximatedly 250 labels with full synchronisation with the SWISSIMAGE were found and recorded. Following, the first row training passes through the same framework from former STDL projects. We make use of a predictive Recursive-Convolutional Neural Network with ResNet-50 backbone provided by <a href="https://github.com/facebookresearch/detectron2">Detectron2</a>. A deeper explanation of the network functionality can be found <a href="../TASK-IDET/">here</a> and <a href="../PROJ-GEPOOL">here</a>.</p>
-<p>Even with different parameters set, it was observed that predictions were including too much false positives, which were mainly made of snow. Most probably the reflectance of snow is similar to the one of quarries and this needed a special treatment. For this purpose, a filtering of the results was used. First of all the features were filtered based on the score values (0.9) and then by elevation, using the SRTM digital elevation model. As snow usually does not precipitate below around 1155 m, this was used as threshold. Finally an area threshold is also passed (using smallest predicitons area) and predicitons are merged. A more detailed description of how to operate this first filter can be seen <a href="https://github.com/swiss-territorial-data-lab/detector-interface/tree/past-filter/tools/prediction-thresholding">here</a>.</p>
-<p>Once several tests were performed, the new predictions were sent back to the domain expert for detailed revision with a rigid protocol. This included the removal of false positives and the inclusion of false negatives, mainly. This was performed by 4 different experts from swisstopo in 4 regions with the same ammount of tiles to be analysed. It is important to the state again the importance of domain expertise in this step, as a very careful and manual evaluation of what is and what is not a quarry must be made. </p>
-<p>Once the predictions were corrected, a new session of training was performed using different parameters. Once again, the same resolution and tile size were used as in the first iteration, although this time a <a href="https://github.com/swiss-territorial-data-lab/detector-interface/tree/master/tools/prediction-thresholding">new filtering</a> was developed. Very similar to the first one, but in a different order, allowing more aesthetical predictions in the end, something the requirer was also carrying about.</p>
-<p>This procedure is summarised in figure 2.</p>
+<h2 id="2-methodology">2 - Methodology<a class="headerlink" href="#2-methodology" title="Permanent link">&para;</a></h2>
+<p>First of all the "area of interest" must be identified. This is where the detection and training took place. In this case, a polygon of the whole Switzerland was used. After that, the area of interest is divided in several tiles of fixed size. This is then defining the slicing of SWISSIMAGE (given as WMS). For this study, tiles of different sizes were tested, being 500x500m tiles defined for final usage. Following the resolution of the images must be defined, which, again, after several tests, was defined as 512x512 pixels.</p>
+<p>For validation purposes the data is then split into Training, Validation and Testing. The training data-set is used inside the network for its learning; the validation is completely apart from training and used only to check results and testing is used for cross-validation. 70% of the data was used for training, 15% for validation and 15% for testing.</p>
+<p>To what concerns the labels, the ones from TLM were manually checked so that a group of approximately 250 labels with full synchronization with the SWISSIMAGE were found and recorded. Following, the first row training passes through the same framework from former STDL projects. We make use of a predictive Recursive-Convolutional Neural Network with ResNet-50 backbone provided by <a href="https://github.com/facebookresearch/detectron2">Detectron2</a>. A deeper explanation of the network functionality can be found <a href="../TASK-IDET/">here</a> and <a href="../PROJ-GEPOOL">here</a>.</p>
+<p>Even with different parameters set, it was observed that predictions were including too much false positives, which were mainly made of snow. Most probably the reflectance of snow is similar to the one of quarries and this needed a special treatment. For this purpose, a filtering of the results was used. First of all the features were filtered based on the score values (0.9) and then by elevation, using the SRTM digital elevation model. As snow usually does not precipitate below around 1155 m, this was used as threshold. Finally an area threshold is also passed (using smallest predictions area) and predictions are merged. A more detailed description of how to operate this first filter can be seen <a href="https://github.com/swiss-territorial-data-lab/detector-interface/tree/past-filter/tools/prediction-thresholding">here</a>.</p>
+<p>Once several tests were performed, the new predictions were sent back to the domain expert for detailed revision with a rigid protocol. This included the removal of false positives and the inclusion of false negatives, mainly. This was performed by 4 different experts from swisstopo in 4 regions with the same amount of tiles to be analyzed. It is important to the state again the importance of domain expertise in this step, as a very careful and manual evaluation of what is and what is not a quarry must be made. </p>
+<p>Once the predictions were corrected, a new session of training was performed using different parameters. Once again, the same resolution and tile size were used as in the first iteration (512x512m tiles with 512x512 pixels of resolution), although this time a <a href="https://github.com/swiss-territorial-data-lab/detector-interface/tree/master/tools/prediction-thresholding">new filtering</a> was developed. Very similar to the first one, but in a different order, allowing more aesthetical predictions in the end, something the domain expert was also carrying about.</p>
+<p>This procedure is summarized in figure 2.</p>
 <div align="center">
-<img src="image/fig2.gif?raw=true" width="100%">
+<img src="image/fig2.gif?raw=true" width="75%">
 <br />
-<i>Figure 2 : Framework applied for the detection of quarries and new training sessions.
+<i>Figure 2 : Methodology applied for the detection of quarries and new training sessions.
 </i>
 </div>
 
-<p>In the end, in order to also include the geological information of the detected quarries, a third layer resulting of the intersection of both the predictions and the GeoCover labels in created. This was done in a way that the final user can click to obtain both information on the quarry (when not a pure prediction) and the information of the geology/lithology on this part of the quarry. As a result, each resulting intersection poylgon contains both information from quarry and GeoCover.</p>
-<p>In order to evaluate the obtained results, the <a href="https://towardsdatascience.com/the-f1-score-bec2bbc38aa6">F1 Score</a> was computed and also the final predictions were compared to the corrected labels from the domain expert side. This was done visually by acquiring the centroid of each quarry detected and by a heatmap, allowing one to detect the spatial pattern of detections.</p>
-<p>The heatmap was computed using 10'000 m radius and a 100 m pixel size. </p>
-<h2 id="3-results-discussion">3    Results &amp; Discussion<a class="headerlink" href="#3-results-discussion" title="Permanent link">&para;</a></h2>
-<p>In the first iteration, when the neural was trained with some labels of the TLM vector data, an F1 score of approximatedly 78 was obtained. The figure 3 shows the behaviour of the precision, recall and F1 score for the final model selected. </p>
+<p>In the end, in order to also include the geological information of the detected quarries, a third layer resulting of the intersection of both the predictions and the GeoCover labels is created. This was done in a way that the final user can click to obtain both information on the quarry (when not a pure prediction) and the information of the geology/lithology on this part of the quarry. As a result, each resulting intersection poylgon contains both information from quarry and GeoCover.</p>
+<p>In order to evaluate the obtained results, the <a href="https://towardsdatascience.com/the-f1-score-bec2bbc38aa6">F1 Score</a> was computed and also the final predictions were compared to the corrected labels from the domain expert side. This was done visually by acquiring the centroid of each quarry detected and by a heat-map, allowing one to detect the spatial pattern of detections. The heat-map was computed using 10'000 m radius and a 100 m pixel size.</p>
+<h2 id="3-results-discussion">3 - Results &amp; Discussion<a class="headerlink" href="#3-results-discussion" title="Permanent link">&para;</a></h2>
+<p>In the first iteration, when the neural was trained with some labels of the TLM vector data, an optimal F1 score of approximately 0.78 was obtained. The figure 3 shows the behavior of the precision, recall and F1 score for the final model selected. </p>
 <div align="center">
-<img src="image/fig3.gif?raw=true" width="100%">
+<img src="image/fig3.gif?raw=true" width="75%">
 <br />
 <i>Figure 3 : Precision, Recall and F1 score of the first iteration (using TLM data).
 </i>
 </div>
 
-<p>Given the predictions resulting from the correction by the domain experts, there was an outstading improve in the F1 score obtained, which was of approximatedly 85, as seen in figure 4. A total of 1265 were found in Switzerland after filtering.</p>
+<p>Given the predictions resulting from the correction by the domain experts, there was an outstanding improve in the F1 score obtained, which was of approximately 0.85 in its optimal, as seen in figure 4. A total of 1265 were found in Switzerland after filtering.</p>
 <div align="center">
-<img src="image/fig4.gif?raw=true" width="100%">
+<img src="image/fig4.gif?raw=true" width="75%">
 <br />
-<i>Figure 4 : Precision, Recall and F1 score of the first iteration (using TLM data).
+<i>Figure 4 : Precision, Recall and F1 score of the second iteration (using data corrected by the domain expert).
 </i>
 </div>
 
-<p>Figure 5 demonstrates some examples of detected quarries and this one can have some notion of the aesthetical quality of the shape of the detections. Examples of false positives and false negatives, unfortunately still present in the detections are also shown. This is also an interesting demonstration of how some objects that are very similar to quarries, in the point of view of non-experts and how they may influence the results. These examples of errors are also an interesting indication of the importance of domain expertise in evaluating machine made results. </p>
+<p>Figure 5 demonstrates some examples of detected quarries and this one can have some notion of the quality of the shape of the detections and how they mark the real-world quarries. Examples of false positives and false negatives, unfortunately still present in the detections are also shown. This is also an interesting demonstration of how some objects that are very similar to quarries, in the point of view of non-experts and how they may influence the results. These examples of errors are also an interesting indication of the importance of domain expertise in evaluating machine made results. </p>
 <div align="center">
-<img src="image/fig5.gif?raw=true" width="100%">
+<img src="image/fig5.gif?raw=true" width="75%">
 <br />
-<i>Figure 5 : Examples of detected quarries.
+<i>Figure 5 : Examples of detected quarries, with true positive, false negative and false positive.
 </i>
 </div>
 
-<p>To check on the validity of the new predictions generated, the centroid of them was plot along the centroid of the corrected labels, so one could check the spatial pattern of them and this way evaluate if they were respecting the same behaviour. Figure 6 shows this plot.</p>
+<p>To check on the validity of the new predictions generated, the centroid of them was plot along the centroid of the corrected labels, so one could check the spatial pattern of them and this way evaluate if they were respecting the same behavior. Figure 6 shows this plot.</p>
 <div align="center">
-<img src="image/fig6.gif?raw=true" width="100%">
+<img src="image/fig6.gif?raw=true" width="75%">
 <br />
 <i>Figure 6 : Disposition of the centroids of assessed predictions and final predictions.
 </i>
 </div>
 
-<p>One can see that despite some slight differences, the overall pattern is very similar among the disposition of the predictions. A very similar result can be seen with the heatmap of these points, seen in figure 7.</p>
+<p>One can see that despite some slight differences, the overall pattern is very similar among the disposition of the predictions. A very similar result can be seen with the computed heat-map of these points, seen in figure 7.</p>
 <div align="center">
-<img src="image/fig7.gif?raw=true" width="100%">
+<img src="image/fig7.gif?raw=true" width="75%">
 <br />
 <i>Figure 7 : Heatmap of assessed predictions and final predictions.
 </i>
 </div>
 
-<p>There is a small area to the west of the country where there were less detections than desired and in general there were more predictions than before. The objective of the heatmap is more to give a general view of the results than giving an exact comparison, as a point is created for every feature and the new filter used tended to smooth the results and join many features into a single one too. </p>
-<p>At the end the results were also intersected with GeoCover and an example of the results can be seen below using the QGIS Software.</p>
+<p>There is a small area to the west of the country where there were less detections than desired and in general there were more predictions than before. The objective of the heat-map is more to give a general view of the results than giving an exact comparison, as a point is created for every feature and the new filter used tended to smooth the results and join many features into a single one too. </p>
+<p>At the end the results were also intersected with GeoCover, which provide the Swiss soil detailed lithology, and an example of the results can be seen below using the QGIS Software.</p>
 <div align="center">
-<img src="image/fig8.gif?raw=true" width="100%">
+<img src="image/fig8.gif?raw=true" width="75%">
 <br />
-<i>Figure 8 : Interesection of predictions with GeoCover seen in QGIS.
+<i>Figure 8 : Intersection of predictions with GeoCover seen in QGIS.
 </i>
 </div>
 
-<p>Finally and most important, the requirer was highly satisfied with this work, due to the support it can give to swisstopo and the TLM team in mapping the future quarries. The requirer also demonstrated interest in pursuing the work by investigating the temporal pattern of quarries and detecting the volume of material in each quarry. </p>
-<h2 id="4-conclusion">4    Conclusion<a class="headerlink" href="#4-conclusion" title="Permanent link">&para;</a></h2>
-<p>We demonstrated how one can automatically detect quarries in high resolution imagery in Switzerland using a deep learning framework. Accurate and reasonable results were obtained following a similar pattern seen in validated data. Moreover this framework is reproducible for future years in swisstopo where it may be considered as a very helpful asset in future mapping acitivities of the Office. 
-During the work we also show the importance of the activity communication between data scientists and domain experts and how that was significant for final results. </p>
-                
-              
-              
-                
-
+<p>Finally and most important, the domain expert was highly satisfied with this work, due to the support it can give to swisstopo and the TLM team in mapping the future quarries. The domain expert also demonstrated interest in pursuing the work by investigating the temporal pattern of quarries and detecting the volume of material in each quarry. </p>
+<h2 id="4-conclusion">4 - Conclusion<a class="headerlink" href="#4-conclusion" title="Permanent link">&para;</a></h2>
+<p>Through this collaboration with swisstopo, we managed to demonstrate that data science is able to provide relevant and efficient tool to ease complex and time-consuming task. With the produced inventory of the quarries on the whole Swiss territory, we were able to provide a quasi-exhaustive view of the situation to the domain expert, leading him to have a better view of the exploitation sites.</p>
+<p>This is of importance and a major step forward compared to the previous situation. Indeed, before this project, the only solution available to the domain expert was to gather all the federal and <em>cantonal</em> data, through non-standardized and time-consuming process, to hope having a beginning of an inventory, with temporality issues. With the developed prototype, within hours, the entire SWISSIMAGE data-set can be processed and turn into a full scale inventory, guiding the domain expert directly toward its interests.</p>
+<p>The resulting geographical layer can then be seen as the result of this demonstrator, able to turn the aerial images into a simple polygonal layer representing the quarries, with little false positive and false negative, providing the required view for the domain expert understanding of the Swiss situation. With such a result, it is possible to convolve it with all the other existing data, with the GeoCover in the first place. This lithology model of the Swiss soil can be intersected with the produced quarries layer in order to create a secondary geographical layer merging both quarries location and quarries soil type, leading to a powerful analyzing tool for the domain expert.</p>
+<p>The produced demonstrator shows that it is possible, in hours, to deduce a simple and reliable geographical layer based on a simple set of orthomosaic. The STDL then was able to prove the possibility to repeat the process along the time dimension, for future and past images, opening the way to build and rebuild the history and evolution of the quarries. With such a process, it will be possible to compute statistical quantities on the long term to catch the evolution and the resources, leading to more reliable strategical understanding of the Swiss resources and sovereignty.</p>
 
               
             </article>
@@ -390,40 +393,40 @@ During the work we also show the importance of the activity communication betwee
         
       </main>
       
-        
-<footer class="md-footer">
+        <footer class="md-footer">
   
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">
-      <div class="md-footer-copyright">
-        
-          <div class="md-footer-copyright__highlight">
-            Copyright &copy; 2020-2021 Swiss Territorial Data Lab
-          </div>
-        
-        Made with
-        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
-          Material for MkDocs
-        </a>
-        
-      </div>
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2020-2021 Swiss Territorial Data Lab
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
       
-  <div class="md-footer-social">
+        <div class="md-social">
+  
     
-      
-      
-      <a href="https://github.com/swiss-territorial-data-lab" target="_blank" rel="noopener" title="Repo on Github" class="md-footer-social__link">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
-      </a>
     
-      
-      
-      <a href="mailto:<info@stdl.ch>" target="_blank" rel="noopener" title="Send us an eMail!" class="md-footer-social__link">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M476 3.2 12.5 270.6c-18.1 10.4-15.8 35.6 2.2 43.2L121 358.4l287.3-253.2c5.5-4.9 13.3 2.6 8.6 8.3L176 407v80.5c0 23.6 28.5 32.9 42.5 15.8L282 426l124.6 52.2c14.2 6 30.4-2.9 33-18.2l72-432C515 7.8 493.3-6.8 476 3.2z"/></svg>
-      </a>
+    <a href="https://github.com/swiss-territorial-data-lab" target="_blank" rel="noopener" title="Repo on Github" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+    </a>
+  
     
-  </div>
-
+    
+    <a href="mailto:<info@stdl.ch>" target="_blank" rel="noopener" title="Send us an eMail!" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M476 3.2 12.5 270.6c-18.1 10.4-15.8 35.6 2.2 43.2L121 358.4l287.3-253.2c5.5-4.9 13.3 2.6 8.6 8.3L176 407v80.5c0 23.6 28.5 32.9 42.5 15.8L282 426l124.6 52.2c14.2 6 30.4-2.9 33-18.2l72-432C515 7.8 493.3-6.8 476 3.2z"/></svg>
+    </a>
+  
+</div>
+      
     </div>
   </div>
 </footer>
@@ -432,10 +435,10 @@ During the work we also show the importance of the activity communication betwee
     <div class="md-dialog" data-md-component="dialog">
       <div class="md-dialog__inner md-typeset"></div>
     </div>
-    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.expand"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}, "search": "../assets/javascripts/workers/search.d351de03.min.js", "version": null}</script>
+    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.expand"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../assets/javascripts/workers/search.22074ed6.min.js"}</script>
     
     
-      <script src="../assets/javascripts/bundle.a1609d9a.min.js"></script>
+      <script src="../assets/javascripts/bundle.01de222e.min.js"></script>
       
         <script src="../assets/javascripts/config.js"></script>
       
