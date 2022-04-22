@@ -1,0 +1,1808 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-7.1.5">
+    
+    
+      
+        <title>Tree Detection from Point Clouds over the Canton of Geneva - Swiss Territorial Data Lab</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.bde7dde4.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ef6f36e2.min.css">
+        
+      
+    
+    
+    
+      
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>:root{--md-text-font-family:"Roboto";--md-code-font-family:"Roboto Mono"}</style>
+      
+    
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/extra.css">
+    
+    
+      
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="none" data-md-color-accent="none">
+  
+    
+    <script>function __prefix(e){return new URL("..",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#tree-detection-from-point-clouds-over-the-canton-of-geneva" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Swiss Territorial Data Lab" class="md-header__button md-logo" aria-label="Swiss Territorial Data Lab" data-md-component="logo">
+      
+  <img src="../assets/logo-stdl-transparent.svg" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Swiss Territorial Data Lab
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              <span style="text-transform:uppercase;"> Tree Detection from Point Clouds over the Canton of Geneva </span>
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        
+<a href="https://github.com/swiss-territorial-data-lab" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    STDL on Github
+  </div>
+</a>
+      </div>
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Swiss Territorial Data Lab" class="md-nav__button md-logo" aria-label="Swiss Territorial Data Lab" data-md-component="logo">
+      
+  <img src="../assets/logo-stdl-transparent.svg" alt="logo">
+
+    </a>
+    Swiss Territorial Data Lab
+  </label>
+  
+    <div class="md-nav__source">
+      
+<a href="https://github.com/swiss-territorial-data-lab" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    STDL on Github
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        Homepage
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://github.com/swiss-territorial-data-lab" class="md-nav__link">
+        GitHub
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-introduction" class="md-nav__link">
+    1. Introduction
+  </a>
+  
+    <nav class="md-nav" aria-label="1. Introduction">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#11-context" class="md-nav__link">
+    1.1 Context
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#12-objectives" class="md-nav__link">
+    1.2 Objectives
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#13-methodology" class="md-nav__link">
+    1.3 Methodology
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#14-input-data" class="md-nav__link">
+    1.4 Input data
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#15-off-the-shelf-software" class="md-nav__link">
+    1.5 Off-the-shelf software
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-method" class="md-nav__link">
+    2. Method
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Method">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21-pre-processing-point-cloud-reclassification-and-cleaning" class="md-nav__link">
+    2.1 Pre-processing: point cloud reclassification and cleaning
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22-running-terrascan" class="md-nav__link">
+    2.2 Running Terrascan
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#23-running-dft" class="md-nav__link">
+    2.3 Running DFT
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#24-post-processing-assessment-algorithm-and-metrics-computation" class="md-nav__link">
+    2.4 Post-processing: assessment algorithm and metrics computation
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-results-and-discussion" class="md-nav__link">
+    3. Results and discussion
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Results and discussion">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31-the-best-trial-made-with-terrascan" class="md-nav__link">
+    3.1 The best trial made with Terrascan
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32-the-best-trial-made-with-dft" class="md-nav__link">
+    3.2 The best trial made with DFT
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#33-comparison-terrascan-vs-dft" class="md-nav__link">
+    3.3 Comparison: Terrascan vs. DFT
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#34-trials-with-standard-density-datasets" class="md-nav__link">
+    3.4 Trials with standard-density datasets
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#35-tree-detection-over-the-full-2021-high-density-lidar-dataset" class="md-nav__link">
+    3.5 Tree detection over the full 2021 high-density LiDAR dataset
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-conclusion-and-outlook" class="md-nav__link">
+    4. Conclusion and outlook
+  </a>
+  
+    <nav class="md-nav" aria-label="4. Conclusion and outlook">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#41-further-the-dft-parameter-space-exploration" class="md-nav__link">
+    4.1 Further the DFT parameter space exploration
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#42-exploit-contextual-information" class="md-nav__link">
+    4.2 Exploit contextual information
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#43-combine-detections-stemming-from-two-or-more-independent-trials" class="md-nav__link">
+    4.3 Combine detections stemming from two or more independent trials
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#44-use-generic-point-cloud-segmentation-algorithms" class="md-nav__link">
+    4.4 Use generic point cloud segmentation algorithms
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#45-use-machine-learning" class="md-nav__link">
+    4.5 Use Machine Learning
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-other-resources" class="md-nav__link">
+    5. Other resources
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-acknowledgements" class="md-nav__link">
+    6. Acknowledgements
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                <h1 id="tree-detection-from-point-clouds-over-the-canton-of-geneva"><span style="text-transform:uppercase;"> Tree Detection from Point Clouds over the Canton of Geneva </span><a class="headerlink" href="#tree-detection-from-point-clouds-over-the-canton-of-geneva" title="Permanent link">&para;</a></h1>
+<p>Alessandro Cerioni (Canton of Geneva) - Flann Chambers (University of Geneva) - Gilles Gay des Combes (CJBG - City of Geneva and University of Geneva) - Adrian Meyer (FHNW) - Roxane Pott (swisstopo)</p>
+<p>Proposed by the Canton of Geneva - PROJ-TREEDET <br/>
+May 2021 to March 2022 - Published on April 22, 2022</p>
+<p><br/></p>
+<p><em><strong>Abstract</strong>: Trees are essential assets, in urban context among others. Since several years, the Canton of Geneva maintains a digital inventory of isolated (or "urban") trees. This project aimed at designing a methodology to automatically update Geneva's tree inventory, using high-density LiDAR data and off-the-shelf software. Eventually, only the sub-task of detecting and geolocating trees was explored. Comparisons against ground truth data show that the task can be more or less tricky depending on how sparse or dense trees are. In mixed contexts, we managed to reach an accuracy of around 60%, which unfortunately is not high enough to foresee a fully unsupervised process. Still, as discussed in the concluding section there may be room for improvement.</em></p>
+<div align="center">
+<img src="image/separator.gif?raw=true" width="5%">
+</div>
+
+<h2 id="1-introduction">1. Introduction<a class="headerlink" href="#1-introduction" title="Permanent link">&para;</a></h2>
+<h3 id="11-context">1.1 Context<a class="headerlink" href="#11-context" title="Permanent link">&para;</a></h3>
+<p>Human societies benefits from the presence of trees in cities and their surroundings. More specifically, as far as urban contexts are concerned, trees deliver many ecosystem services such as:</p>
+<ul>
+<li>the reduction of heat islands, by shading and cooling their direct environment;</li>
+<li>the mitigation of flood risks, by intercepting precipitation through their foliage and increasing soil infiltration;</li>
+<li>the reduction of atmospheric pollution;</li>
+<li>the reduction of noise pollution;</li>
+<li>a positive contribution to the physical, mental and social health of the population.</li>
+</ul>
+<p>Moreover, they play an important role of support of the biodiversity by offering resources and shelter to numerous animal, plant and fungus species.</p>
+<p>The quality and quantity of such benefits depend on various parameters, such as the height, the age, the leaf area, the species diversity within a given population of trees. Therefore, the preservation and the development of a healthy and functional tree population is one of the key elements of those public policies which aim at increasing resilience against climate change.</p>
+<p>For these reasons, the Canton of Geneva has set the ambitious goal of increasing its canopy cover (= ratio between the area covered by foliage and the total area) from 21% (as estimated in 2019) to 30% by 2050. In order to reach this goal, the concerned authorities (<em>i.e.</em> the <em>Office cantonal de l’agriculture et de la nature</em>) need detailed data and tools to keep track of the cantonal tree population and drive its development.</p>
+<p>The <a href="https://ge.ch/sitg/fiche/4571"><em>Inventaire Cantonal des Arbres Isolés</em> (ICA)</a> is the most extensive and detailed source of data on isolated trees (= trees that do not grow in forests) within the Canton of Geneva. Such dataset is maintained by a joint effort of several public administrations (green spaces departments of various municipalities, the <em>Office cantonal de l’agriculture et de la nature</em>, the Geneva Conservatory and Botanical Garden, etc.). For each tree, several attributes are provided: geographical coordinates, species, height, plantation date, trunk diameter, crown diameter, etc.</p>
+<p>To date, the ICA includes data about more than 237&nbsp;000 trees. However, it comes with a host of known limitations:</p>
+<ul>
+<li>only the public domain is covered (no records about trees which are found within private properties); moreover, the coverage of the public domain is partial (business experts estimate that half of the actual trees are missing).</li>
+<li>The freshness of data is not consistent among the various records, as it relies on sporadic ground surveys and manual updates. Trees tagged as "historical" lack precision in terms of geolocation and taxonomical information.</li>
+</ul>
+<p>In light of Geneva's ambitions in terms of the canopy growth, the latter observations call for the need of a more efficient methodology to improve the exhaustivity and veracity of the ICA. Over the last few years, several joint projects of the Canton, the City and the University of Geneva explored the potential of using LiDAR point clouds and tailored software to characterize trees in a semi-automatic way, following practices that are already established in forestry. Yet, forest and urban settings are quite different from each other: forests exhibit higher tree density, which can hinder tree detection; forests exhibit lower heterogeneity in terms of species and morphology, which can facilitate tree detection. Hence, the task of automatic detection is likely to be harder in urban contexts than in forests.</p>
+<p>The study reported in this page, proposed by the <em>Office cantonal de l’agriculture et de la nature</em> (OCAN) and carried out by the STDL, represents a further yet modest step ahead towards the semi-automatic digitalisation of urban trees.</p>
+<h3 id="12-objectives">1.2 Objectives<a class="headerlink" href="#12-objectives" title="Permanent link">&para;</a></h3>
+<p>The objectives of this project was fixed by the OCAN domain experts and, in one sentence, amount to designing a robust and reproducible semi-automatic methodology allowing one to "know everything" about each and every isolated tree of the Canton of Geneva, which means:</p>
+<ol>
+<li>detecting all the trees (exhaustivity);</li>
+<li>geolocating the trunk and the top of every tree;</li>
+<li>measuring all the properties of every tree: height, trunk and crown diameter, canopy area and volume;</li>
+<li>identify species.</li>
+</ol>
+<p>Regarding quality, the following requirements were fixed:</p>
+<p><center></p>
+<table>
+<thead>
+<tr>
+<th><strong>Property</strong></th>
+<th><strong>Expected precision</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Trunk geolocation</td>
+<td>1 m</td>
+</tr>
+<tr>
+<td>Top geolocation</td>
+<td>1 m</td>
+</tr>
+<tr>
+<td>Height</td>
+<td>2 m</td>
+</tr>
+<tr>
+<td>Trunk diameter at 1m height</td>
+<td>10 cm</td>
+</tr>
+<tr>
+<td>Crown diameter</td>
+<td>1 m</td>
+</tr>
+<tr>
+<td>Canopy area</td>
+<td>1 m²</td>
+</tr>
+<tr>
+<td>Canopy volume</td>
+<td>1 m³</td>
+</tr>
+</tbody>
+</table>
+<p></center></p>
+<p>In spite of such thorough and ambitious objectives, the time span of this project was not long enough to address them all. As a matter of fact, the STDL team only managed to tackle the tree detection and trunk geolocation.</p>
+<h3 id="13-methodology">1.3 Methodology<a class="headerlink" href="#13-methodology" title="Permanent link">&para;</a></h3>
+<p>As shown in Figure 1.1 here below, algorithms and software exist, which can detect individual trees from point clouds.</p>
+<p align="center">
+<img src="./image/Segmentation_avant.png" alt="Point cloud before tree segmentation"/>
+<br />
+<img src="./image/Segmentation_après_2.png" alt="Point cloud after tree segmentation"/>
+<br />
+<i>Figure 1.1: The two panels represent a sample of a point cloud before (top panel) and after (bottom) tree detection.</i>
+</p>
+
+<p>Not only such tools take point cloud as input data, but also the values of a bunch of parameters have to be chosen by users. The quality of results depend both on input data and on input parameters. The application of some pre-processing to the input point cloud have an impact, too. Therefore, it becomes clear that in order to find the optimal configuration for a given context, one should be able to measure the quality of results as a function of the chosen parameters as well as of the pre-processing operations. To this end, the STDL team called for the acquisition of ground truth data. Further details about input data (point cloud and ground truth), software and methodology will be provided shortly.</p>
+<h3 id="14-input-data">1.4 Input data<a class="headerlink" href="#14-input-data" title="Permanent link">&para;</a></h3>
+<h4 id="141-lidar-data">1.4.1 LiDAR data<a class="headerlink" href="#141-lidar-data" title="Permanent link">&para;</a></h4>
+<p>A high-density point cloud dataset was produced by the <em><a href="https://www.flotron.ch/">Flotron Ingenieure</a></em> company, through Airborne Laser Scanning (ALS, also commonly known by the acronym LiDAR - Light Detection And Ranging). Thanks to a lateral overlap of flight lines of ~80%, more than 200 pts/m² were collected, quite a high density when compared to more conventional acquisitions (30 – 40 pts/m²). <em><a href="https://www.flotron.ch/">Flotron Ingenieure</a></em> took care of the point cloud classification, too.</p>
+<p>The following table summarizes the main features of the dataset:</p>
+<p><center></p>
+<table>
+<thead>
+<tr>
+<th><strong>LIDAR 2021 - OCAN, Flotron Ingenieure</strong></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Coverage</strong></td>
+<td>Municipalities of Chêne-Bourg and Thonêx (GE)</td>
+</tr>
+<tr>
+<td><strong>Date of acquisition</strong></td>
+<td>March 10, 2021</td>
+</tr>
+<tr>
+<td><strong>Density</strong></td>
+<td>&gt; 200 pts/m²</td>
+</tr>
+<tr>
+<td><strong>Planimetric precision</strong></td>
+<td>20 mm</td>
+</tr>
+<tr>
+<td><strong>Altimetric precision</strong></td>
+<td>50 mm</td>
+</tr>
+<tr>
+<td><strong>Tiles</strong></td>
+<td>200 tiles of 200 m x 200 m</td>
+</tr>
+<tr>
+<td><strong>Format</strong></td>
+<td>LAS 1.2</td>
+</tr>
+<tr>
+<td><strong>Classes</strong></td>
+<td>0 - Unclassified</td>
+</tr>
+<tr>
+<td></td>
+<td>2 - Ground</td>
+</tr>
+<tr>
+<td></td>
+<td>4 - Medium vegetation (0.5 - 3m)</td>
+</tr>
+<tr>
+<td></td>
+<td>5 - High vegetation (&gt; 3m)</td>
+</tr>
+<tr>
+<td></td>
+<td>6 - Building</td>
+</tr>
+<tr>
+<td></td>
+<td>7 - Low points</td>
+</tr>
+<tr>
+<td></td>
+<td>10 - Error points</td>
+</tr>
+<tr>
+<td></td>
+<td>13 - Bridges</td>
+</tr>
+<tr>
+<td></td>
+<td>16 - Noise / Vegetation &lt; 0.5m</td>
+</tr>
+</tbody>
+</table>
+<p></center></p>
+<p>Figs.&nbsp;1.2 and 1.3 represent the coverage of the dataset and a sample, respectively.</p>
+<p align="center">
+<img src="./image/Carte_GE_THOCHB_Tiles.png" alt="Map of LAS tiles"/>
+<br />
+<i>Figure 1.2: Coverage and tiling of the 2021 high-density point cloud dataset.</i>
+</p>
+
+<p align="center">
+<img src="./image/LiDAR_general_view.PNG" alt="General view of a point cloud"/>
+<br />
+<i>Figure 1.3: A sample of the 2021 high-density point cloud. Colors correspond to different classes: green = vegetation (classes 4 and 5), orange = buildings (class 6), grey = ground or unclassified points (class 2 and 0, respectively).</i>
+</p>
+
+<h4 id="142-test-sectors-and-ground-truth-data">1.4.2 Test sectors and ground truth data<a class="headerlink" href="#142-test-sectors-and-ground-truth-data" title="Permanent link">&para;</a></h4>
+<p>In order to be able to assess the exhaustivity and quality of our results, we needed reference (or "ground truth") data to compare with. Following the advice of domain experts, it was decided to acquire ground truth data regarding trees within three test sectors, which represent three different types of contexts: [1] alignment of trees, [2] park, [3] a mix of [1] and [2]. Of course, these types can also be found elsewhere within the Canton of Geneva.</p>
+<p>Ground truth data was acquired through surveys conducted by geometers, who recorded</p>
+<ul>
+<li>the (x, y) coordinates of the trunk at 1 m above the ground;</li>
+<li>the trunk diameter at 1 m above the ground,</li>
+</ul>
+<p>for every tree having a trunk diameter larger than 10 cm.</p>
+<p>Details about the three test sectors are provided in the following, where statistics on species, height, age and crown diameter stem from the ICA.</p>
+<h4 id="avenue-de-bel-air-chene-bourg-ge">Avenue de Bel-Air (Chêne-Bourg, GE)<a class="headerlink" href="#avenue-de-bel-air-chene-bourg-ge" title="Permanent link">&para;</a></h4>
+<p><center></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Type</strong></td>
+<td>Alignment of trees</td>
+</tr>
+<tr>
+<td><strong>Trees</strong></td>
+<td>135 individuals</td>
+</tr>
+<tr>
+<td><strong>Species</strong></td>
+<td>monospecific (<em>Tilia tomentosa</em>)</td>
+</tr>
+<tr>
+<td><strong>Height range</strong></td>
+<td>6 - 15 m</td>
+</tr>
+<tr>
+<td><strong>Age range</strong></td>
+<td>17 - 28 yo</td>
+</tr>
+<tr>
+<td><strong>Crown diameters</strong></td>
+<td>3 - 10 m</td>
+</tr>
+<tr>
+<td><strong>Comments</strong></td>
+<td>Well separated trees, heights and morphologies are relatively homogenous, no underlying vegetation (bushes) around the trunks.</td>
+</tr>
+</tbody>
+</table>
+<p></center></p>
+<p align="center">
+<img src="./image/BEL.jpg" alt="Avenue de Bel-Air sector"/>
+<br />
+<i>Figure 1.4: "Avenue de Bel-Air" test sector in Chêne-Bourg (GE). Orange dots represents ground truth trees as recorded by geometers.</i>
+</p>
+
+<h4 id="parc-floraire-chene-bourg-ge">Parc Floraire (Chêne-Bourg, GE)<a class="headerlink" href="#parc-floraire-chene-bourg-ge" title="Permanent link">&para;</a></h4>
+<p><center></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Type</strong></td>
+<td>Park with ornemental trees</td>
+</tr>
+<tr>
+<td><strong>Trees</strong></td>
+<td>95 individuals</td>
+</tr>
+<tr>
+<td><strong>Species</strong></td>
+<td>65 species</td>
+</tr>
+<tr>
+<td><strong>Height range</strong></td>
+<td>1.5 - 28 m</td>
+</tr>
+<tr>
+<td><strong>Age range</strong></td>
+<td>Unknown</td>
+</tr>
+<tr>
+<td><strong>Crown diameters</strong></td>
+<td>1 - 23 m</td>
+</tr>
+<tr>
+<td><strong>Comments</strong></td>
+<td>Many ornemental species of all sizes and shapes, most of them not well separated. Very heterogenous vegetation structure.</td>
+</tr>
+</tbody>
+</table>
+<p></center></p>
+<p align="center">
+<img src="./image/FLO.jpg" alt="Sector of Floraire"/>
+<br />
+<i>Figure 1.5: "Parc Floraire" test sector in Chêne-Bourg (GE). Orange dots represents ground truth trees as recorded by geometers.</i>
+</p>
+
+<h4 id="adrien-jeandin-thonex-ge">Adrien-Jeandin (Thônex, GE)<a class="headerlink" href="#adrien-jeandin-thonex-ge" title="Permanent link">&para;</a></h4>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Type</strong></td>
+<td>Mixed (park, alignment of tree, tree hedges, etc.)</td>
+</tr>
+<tr>
+<td><strong>Trees</strong></td>
+<td>362 individuals</td>
+</tr>
+<tr>
+<td><strong>Species</strong></td>
+<td>43 species</td>
+</tr>
+<tr>
+<td><strong>Height range</strong></td>
+<td>1 - 34 m</td>
+</tr>
+<tr>
+<td><strong>Age range</strong></td>
+<td>Unknown</td>
+</tr>
+<tr>
+<td><strong>Crown diameters</strong></td>
+<td>1 - 21 m</td>
+</tr>
+<tr>
+<td><strong>Comments</strong></td>
+<td>Mix of different vegetation structures, such as homogenous tree alignments, dense tree hedges and park with a lot of underlying vegetation under big trees.</td>
+</tr>
+</tbody>
+</table>
+<p align="center">
+<img src="./image/ADR.jpg" alt="Sector of Adrien-Jeandin"/>
+<br />
+<i>Figure 1.6: "Adrien-Jeandin" test sector in Thonêx (GE). Orange dots represents ground truth trees as recorded by the geometers.</i>
+</p>
+
+<h3 id="15-off-the-shelf-software">1.5 Off-the-shelf software<a class="headerlink" href="#15-off-the-shelf-software" title="Permanent link">&para;</a></h3>
+<p>Two off-the-shelf software products were used to detect trees from LiDAR data, namely TerraScan and the Digital Forestry Toolbox (DFT). The following table summarizes the main similarities and differences between the two:</p>
+<p><center></p>
+<table>
+<thead>
+<tr>
+<th>Feature</th>
+<th>Terrascan</th>
+<th>DFT</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Licence</td>
+<td>Proprietary (*)</td>
+<td>Open Source (GPL-3.0)</td>
+</tr>
+<tr>
+<td>Price</td>
+<td>See <a href="https://terrasolid.com/pricing/">here</a></td>
+<td>Free</td>
+</tr>
+<tr>
+<td>Standalone</td>
+<td>No: requires <a href="https://www.bentley.com/fr/products/brands/microstation">MicroStation</a> or <a href="https://spatix.com/">Spatix</a></td>
+<td>No: requires <a href="https://www.gnu.org/software/octave/">Octave</a> or <a href="https://www.mathworks.com/products/matlab.html">MATLAB</a></td>
+</tr>
+<tr>
+<td>Graphical User Interface</td>
+<td>Yes</td>
+<td>No</td>
+</tr>
+<tr>
+<td>In-app point cloud visualization</td>
+<td>Yes (via <a href="https://www.bentley.com/fr/products/brands/microstation">MicroStation</a> or <a href="https://spatix.com/">Spatix</a>)</td>
+<td>No (**)</td>
+</tr>
+<tr>
+<td>Scriptable</td>
+<td>Partly (via <a href="https://www.terrasolid.com/guides/tscan/intromacros.html">macros</a>)</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>Hackable</td>
+<td>No</td>
+<td>Yes</td>
+</tr>
+</tbody>
+</table>
+<p><small>
+(*) Unfortunately, we must acknowledge that using network licenses turned out to be quite problematic. Weeks of unexpected downtime were experienced, due to puzzling issues related to the interplay between the self-hosted license server, firewalls, VPN and end-devices. 
+(**) We used the excellent <a href="https://github.com/potree/potree">Potree</a> Free and Open Source software for visualization.
+</small></p>
+<p></center></p>
+<p>The following sections are devoted to brief descriptions of these two tools; further details will be provided in <a href="#4-terrascan-parameters-space">Section 4</a> and <a href="#5-dft-parameters-space">Section 5</a>.</p>
+<h4 id="151-terrascan">1.5.1 Terrascan<a class="headerlink" href="#151-terrascan" title="Permanent link">&para;</a></h4>
+<p><a href="https://terrasolid.com/products/terrascan/">Terrascan</a> is a proprietary software, developed and commercialized by <a href="https://terrasolid.com/">Terrasolid</a>, a <a href="https://www.bentley.com/fr/products/brands/microstation">MicroStation</a> and <a href="https://spatix.com/">Spatix</a> plugin which is capable of performing several tasks on point clouds, including visualisation, classification. As far as tree detection is concerned, Terrascan offers multiple options to</p>
+<ul>
+<li>manually, semi- or fully-automatically detect and segment trees in point clouds;</li>
+<li>estimate the value of a host of properties (height, trunk diameter, etc.).</li>
+</ul>
+<p>Two methods are provided to group (one may also say "to segment") points into individual trees:</p>
+<ol>
+<li>the so-called "highest point" (aka "watershed") method, suitable for airborne point clouds.</li>
+<li>the so-called "trunk" method, which requires a high amount of points from trunks and hence is suitable for very high-density airborne point clouds, for mobile data and point clouds from static scanners.</li>
+</ol>
+<p>For further details on these two methods, we refer the reader to the <a href="https://terrasolid.com/guides/tscan/mwassigngroups.html">official documentation</a>.</p>
+<h4 id="152-digital-forestry-toolbox-dft">1.5.2 Digital Forestry Toolbox (DFT)<a class="headerlink" href="#152-digital-forestry-toolbox-dft" title="Permanent link">&para;</a></h4>
+<p>The <a href="https://mparkan.github.io/Digital-Forestry-Toolbox/">Digital Forestry Toolbox (DFT)</a> is a</p>
+<blockquote>
+<p>collection of tools and tutorials for Matlab/Octave designed to help process and analyze remote sensing data related to forests (source: <a href="https://mparkan.github.io/Digital-Forestry-Toolbox/">official website</a>)</p>
+</blockquote>
+<p>developed and maintained by Matthew Parkan, released under an Open Source license (GPL-3.0).</p>
+<p>The DFT implements algorithms allowing one to perform</p>
+<ol>
+<li>tree top detection, via a marker-controlled watershed segmentation (cf.&nbsp;<a href="https://mparkan.github.io/Digital-Forestry-Toolbox/tutorial-2.html">this tutorial</a>);</li>
+<li>stem detection (cf.&nbsp;<a href="https://mparkan.github.io/Digital-Forestry-Toolbox/tutorial-3.html">this other tutorial</a>).</li>
+</ol>
+<p>We refer the reader to the <a href="http://mparkan.github.io/Digital-Forestry-Toolbox/">official documentation</a> for further information.</p>
+<div align="center">
+<img src="image/separator.gif?raw=true" width="5%">
+</div>
+
+<h2 id="2-method">2. Method<a class="headerlink" href="#2-method" title="Permanent link">&para;</a></h2>
+<p>As already stated, in spite of the thorough and ambitious objectives of this project (cf. <a href="#12-objectives">here</a>), only the</p>
+<ul>
+<li>tree detection and</li>
+<li>trunk geolocation</li>
+</ul>
+<p>sub-tasks could be tackled given the resources (time, humans) which were allocated to the STDL.</p>
+<p>The method we followed goes through several steps,</p>
+<ol>
+<li>pre-processing,</li>
+<li>running Terrascan or DFT,</li>
+<li>post-processing,</li>
+</ol>
+<p>which are documented here-below.</p>
+<h3 id="21-pre-processing-point-cloud-reclassification-and-cleaning">2.1 Pre-processing: point cloud reclassification and cleaning<a class="headerlink" href="#21-pre-processing-point-cloud-reclassification-and-cleaning" title="Permanent link">&para;</a></h3>
+<p>[1] In some cases, points corresponding to trunks may be misclassified and lay in class <em>0 – Unclassified</em> instead of class <em>4 – Medium vegetation</em>. As the segmentation process only takes vegetation classes (namely classes 4 and 5) into account, the lack of trunk points can make some trees "invisibles".</p>
+<p>[2] We suspected that the standard classification of vegetation in LiDAR point clouds could be too basic for the task at hand. Indeed, vegetation points found at less (more) than 3 m above the ground are classified as <em>4 – Medium Vegetation</em> (<em>5 – High Vegetation</em>). This may cause one potential issue: all the points of a given tree that are located at up to 3 meters above the ground (think about the trunk!) belong to a class (namely class no.&nbsp;4) which can also be populated by bushes and hedges. The "contamination" by bushes and hedges may spoil the segmentation process, especially in situations where dense low vegetation exists around higher trees. Indeed, it was acknowledged that in such situations the segmentation algorithm fails to properly identify trunk locations and distinguish one tree from another.</p>
+<p>Issues [1] and [2] can be solved or at least mitigated by reclassifying and cleaning the input point cloud, respectively. Figures&nbsp;2.1 and 2.2 show how tree grouping (or "segmentation") yields better results if pre-processed pointclouds are used.</p>
+<p align="center">
+<img src="./image/Segm_1a.jpg" alt="Segmentation without pre-processing"/>
+<br />
+<img src="./image/Segm_1b.jpg" alt="Segmentation with pre-processing"/>
+<br />
+<i>Figure 2.1: Tree grouping (or "segmentation") applied to the original (top panel) vs pre-processed (bottom) point cloud. Without pre-processing, two trees connected by a hedge are segmented as one single individual. Therefore, only one detection is made (green circle slightly above the ground). With pre-processing, we get rid of the hedge and recover the lowest trunk points belonging to the tree on the left. Eventually, both trees are properly segmented and we end up having two detections (green circles).</i>
+</p>
+
+<p align="center">
+<img src="./image/Segm_2.jpg" alt="Segmentation without/with pre-processing"/>
+<br />
+<i>Figure 2.2: Tree grouping (or "segmentation") applied to the original (left panel) vs reclassified (right) point cloud. Without pre-processing, segmentation yields a spurious detection (= false positive, red circle slightly above the ground), resulting from the combination of a pole and a hedge. With pre-processing, we get rid of most of the points belonging to the hedge and the pole; no false positive shows up.</i>
+</p>
+
+<h4 id="211-reclassification-with-terrascan-and-fme-desktop">2.1.1 Reclassification with Terrascan and FME Desktop<a class="headerlink" href="#211-reclassification-with-terrascan-and-fme-desktop" title="Permanent link">&para;</a></h4>
+<p>The reclassification step aims at recovering trunk points which might be misclassified and hence found in some class other than class <em>4 – Medium Vegetation</em> (<em>e.g.</em> class <em>0 - Unclassified</em>). It was carried out with Terrascan using the <em>Classify by normal vectors</em> tool, which</p>
+<ul>
+<li>identifies linear features generated by groups of class 0 and 4 points;</li>
+<li>moves the concerned points to an empty class (here: class 10).</li>
+</ul>
+<p>Finally, during the cleaning process with <a href="https://www.safe.com/fme/fme-desktop/">FME Desktop</a> (cf.&nbsp;Chapter 2.1.2 here below), these points are reclassified in class 4.</p>
+<p>The outcome of this reclassification step is shown in Figure&nbsp;2.3.</p>
+<p align="center">
+<img src="./image/Reclass_1.jpg" alt="Reclassification Before After"/>
+<br />
+<i>Figure 2.3: Outcome of reclassification. In the upper picture, the trunk of the tree on the left is partially misclassified, while the trunk of the tree in the middle is completely misclassified. After reclassification, almost all the points belonging to trunks are back in class 4. </i>
+</p>
+
+<p>Let us note that the reclassification process may also recover some unwanted objects enjoying linear features similar to trees (poles, power lines, etc.). However, such spurious objects can at least partly filtered out by cleaning step described here below.</p>
+<h4 id="212-cleaning-point-clouds-with-fme-desktop">2.1.2 Cleaning point clouds with FME Desktop<a class="headerlink" href="#212-cleaning-point-clouds-with-fme-desktop" title="Permanent link">&para;</a></h4>
+<p>The cleaning step aims to filter as many "non-trunk" points as possible out of class <em>4 – Medium Vegetation</em>, in order to isolate trees from other types of vegetation. Vegetation is considered as part of a tree if higher than 3 m.</p>
+<p>Cleaning consists in two steps:</p>
+<ol>
+<li>Every point of class 4 which is NOT vertically covered by any class 5 point (<em>i.e.</em> any class 4 point which is not under a tree) is moved to another class. This filters out an important part of bushes and hedges. Only those bushes and hedges which are actually under a tree remain in class 4.</li>
+<li>Every point of class 4 which is located above a wall is moved to another class. Actually, it was noticed that many hedges were located on or against walls. This filters out some additional "hedge points", which may escape the first cleaning step if found straight under a tree.</li>
+</ol>
+<p>Note that in case the point cloud is reclassified in order to recover missing trunks, the cleaning step also allow to get rid of unwanted linear objects (poles, electric lines, etc) that have been recovered during the reclassification. The class containing reclassified points (class 10) will simply be process together with class 4 and receive the same treatment. Eventually, reclassified points that are kept (discarded) by the cleaning process will be integrated in class 4 (3).</p>
+<p align="center">
+<img src="./image/Cleaning_1.jpg" alt="Cleaning process 1"/>
+<br />
+<i>Figure 2.4: Outcome of the cleaning process. Red points correspond to the "cleaned" points that were moved to class 3.</i>
+</p>
+
+<p align="center">
+<img src="./image/Cleaning_2.jpg" alt="Cleaning process 2"/>
+<br />
+<i>Figure 2.5: Outcome of the cleaning process. Red points correspond to the "cleaned" points that were moved to class 3. Hedges under trees escape the cleaning.</i>
+</p>
+
+<h4 id="213-fme-files-and-documentation-of-pre-processing-steps">2.1.3 FME files and documentation of pre-processing steps<a class="headerlink" href="#213-fme-files-and-documentation-of-pre-processing-steps" title="Permanent link">&para;</a></h4>
+<p>More detailed information about the reclassification and cleaning of the point cloud can be found <a href="resources/STDL_preprocess_documentation.pdf">here</a>.</p>
+<p>FME files can be downloaded by following these links:</p>
+<ul>
+<li><a href="resources/LAS_Preprocess_2021_cleaning.fmw">FME Workbench File (requires a Canopy Cover Layer)</a></li>
+<li><a href="resources/LAS_Preprocess_2021_cleaning_alternative.fmw">Alternative FME Workbench File (does not require a Canopy Cover Layer</a></li>
+</ul>
+<p>Further information on the generation of a Canopy Cover Layer can be found <a href="resources/Rapport_Stage_GG_SEVE_CJB_CCG_2021.pdf">here</a>.</p>
+<h3 id="22-running-terrascan">2.2 Running Terrascan<a class="headerlink" href="#22-running-terrascan" title="Permanent link">&para;</a></h3>
+<p>Terrascan offers multiple ways to detect trees from point clouds. In this project, we focused on the fully automatic segmentation, which is available through the "Assign Groups" command.</p>
+<p>As already said (cf.&nbsp;<a href="#151-terrascan">here</a>), two methods are available: highest point (aka "watershed") method and trunk method. In what follows, we introduce the reader to the various parameters that are involved in such methods.</p>
+<h4 id="221-watershed-method-parameters">2.2.1 Watershed method parameters<a class="headerlink" href="#221-watershed-method-parameters" title="Permanent link">&para;</a></h4>
+<h5 id="group-planar-surfaces">Group planar surfaces<a class="headerlink" href="#group-planar-surfaces" title="Permanent link">&para;</a></h5>
+<p>Quoting the <a href="https://terrasolid.com/guides/tscan/mwassigngroups.html">official documentation</a>,</p>
+<blockquote>
+<p>If on, points that fit to planes are grouped. Points fitting to the same plane get the same group number.</p>
+</blockquote>
+<h5 id="min-height">Min height<a class="headerlink" href="#min-height" title="Permanent link">&para;</a></h5>
+<p>This parameter defines a minimum threshold on the distance from the ground that the highest of a group of points must have, in order for the group to be considered as a tree. The default value is 4 meters. The <em>Inventaire Cantonal des Arbres Isolés</em> includes trees which are at least 3 m high. This parameter ranged from 2 to 6 m in our tests.</p>
+<p align="center">
+<img src="./image/020-grouping_small.PNG" alt="Segmented Point Cloud of Small Trees"/>
+<br />
+<i>Figure 2.6: Cross-section view of two detected trees. The left tree would not be detected if the parameter "Min height" were larger than 3.5 m.</i>
+</p>
+
+<h5 id="require">Require<a class="headerlink" href="#require" title="Permanent link">&para;</a></h5>
+<p>This parameter defines the minimum number of points which are required to form a group (<em>i.e.</em> a tree).
+The default value is 20 points, which is very low in light of the high density of the dataset we used. Probably, the default value is meant to be used with point clouds having a one order of magnitude smaller density.</p>
+<p>In our analysis, we tested the following values: 20 (default), 50, 200, 1000, 2000, 4000, 6000.</p>
+<h4 id="222-trunk-method-parameters">2.2.2 Trunk method parameters<a class="headerlink" href="#222-trunk-method-parameters" title="Permanent link">&para;</a></h4>
+<h5 id="group-planar-surfaces_1">Group planar surfaces<a class="headerlink" href="#group-planar-surfaces_1" title="Permanent link">&para;</a></h5>
+<p>See <a href="#group-planar-surfaces">here</a>.</p>
+<h5 id="min-height_1">Min Height<a class="headerlink" href="#min-height_1" title="Permanent link">&para;</a></h5>
+<p>Same role as in the watershed method, see <a href="#min-height">here</a>.</p>
+<h5 id="max-diameter">Max diameter<a class="headerlink" href="#max-diameter" title="Permanent link">&para;</a></h5>
+<p>This parameter defines the maximum diameter (in meters) which a group of points identified as trunk can reach. Default value is 0.6 meters. Knowing that</p>
+<ul>
+<li>very few trees of the ICA exceed this value;</li>
+<li>yet, older trees can exhibit larger diameters,</li>
+</ul>
+<p>we used the following values: 0.20, 0.30, 0.40, 0.60 (default), 0.80, 1.00, 1.50 meters.</p>
+<h5 id="min-trunk">Min trunk<a class="headerlink" href="#min-trunk" title="Permanent link">&para;</a></h5>
+<p>This parameter defines a minimum threshold on the length of tree trunks. Default value is 2 m. We tested the following values: 0.50, 1.00, 1.50, 2.00 (default), 2.50, 3.00, 4.00, 5.00 meters.</p>
+<h5 id="group-by-density">Group by density<a class="headerlink" href="#group-by-density" title="Permanent link">&para;</a></h5>
+<p>Quoting the <a href="https://terrasolid.com/guides/tscan/mwassigngroups.html">official documentation</a>,</p>
+<blockquote>
+<p>If on, points are grouped based on their distance to each other. Close-by points get the same group number.</p>
+</blockquote>
+<h5 id="gap">Gap<a class="headerlink" href="#gap" title="Permanent link">&para;</a></h5>
+<p>Quoting the <a href="https://terrasolid.com/guides/tscan/mwassigngroups.html">official documentation</a>,</p>
+<blockquote>
+<p>Distance between consecutive groups:</p>
+<p>Automatic: the software decides what points belong to one group or to another. This is recommended for objects with variable gaps, such as moving objects on a road.</p>
+<p>User fixed: the user can define a fixed distance value in the text field. This is suited for fixed objects with large distances in between, such as powerline towers.</p>
+</blockquote>
+<p>We did not attempt the optimization of this parameter but kept the default value [WHICH VALUE?].</p>
+<h4 id="223-visualizing-results">2.2.3 Visualizing results<a class="headerlink" href="#223-visualizing-results" title="Permanent link">&para;</a></h4>
+<p>Terrascan allows the user to visualize the outcome of the tree segmentation straight from within the Graphical User Interface. Points belonging to the same group (<em>i.e.</em> to the same tree) are assigned the same random color, which allows the user to perform intuitive, quick, qualitative in-app assessments. An example is provided in Figure 2.7.</p>
+<p align="center">
+<img src="./image/040-underseg_overseg.PNG" alt="Grouping segmentation models in comparison"/>
+<br />
+<i>Figure 2.7: Three examples of tree segmentations. From a qualitative point of view, we can acknowledge that the leftmost (rightmost) example is affected by undersegmentation (oversegmentation). The example in the middle seems to be a good compromise.</i>
+</p>
+
+<h4 id="224-exporting-results">2.2.4 Exporting results<a class="headerlink" href="#224-exporting-results" title="Permanent link">&para;</a></h4>
+<p>As already said, Terrascan takes point clouds as input data and can run algorithms which form group out of these points, each group corresponding to an individual tree. A host of "features" (or "measurements"/ "attributes"/...) are generated for each group, which the user can export to text files using the "Write group info" command. The set of exported features can be customized through a dedicated configuration panel which can be found within the software settings ("File formats / User group formats").</p>
+<p>The list and documentation of all the exportable features can be found <a href="https://terrasolid.com/guides/tscan/setfileformats_usergroupformats.html">here</a>. Let us note that</p>
+<ul>
+<li>depending on the segmentation method, not all the features can be populated;</li>
+<li>multiple geolocation information can exist.</li>
+</ul>
+<p>The following table summarizes the features which the watershed and trunk methods can export:</p>
+<p><center></p>
+<table>
+<thead>
+<tr>
+<th>Feature</th>
+<th>Watershed Method</th>
+<th>Trunk Method</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Group ID</td>
+<td>Yes</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>Point Count</td>
+<td>Yes</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>Average XY Coordinates</td>
+<td>Yes</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>Ground Z at Avg. XY</td>
+<td>Yes</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>Trunk XY</td>
+<td><span style="color:red"><strong>No</strong></span></td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>Ground Z at Trunk XY</td>
+<td><span style="color:red"><strong>No</strong></span></td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>Trunk Diameter</td>
+<td>See here below</td>
+<td>See here below</td>
+</tr>
+<tr>
+<td>Canopy Width</td>
+<td>Yes</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>Biggest Distance above Ground (Max. Height)</td>
+<td>Yes</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>Smallest Distance above Ground</td>
+<td>Yes</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>Length</td>
+<td>Yes</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>Width</td>
+<td>Yes</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>Height</td>
+<td>Yes</td>
+<td>Yes</td>
+</tr>
+</tbody>
+</table>
+<p></center></p>
+<h4 id="225-trunk-diameters">2.2.5 Trunk Diameters<a class="headerlink" href="#225-trunk-diameters" title="Permanent link">&para;</a></h4>
+<p>Terrascan integrates a functionality allowing users to measure trunk diameters (see Figure 2.8).</p>
+<p align="center">
+<img src="./image/030-trunk_diameters.PNG" alt="Screenshots of the trunk diameter measurement function."/>
+<br />
+<i>Figure 2.8: Screenshots of the trunk diameter measurement function.</i>
+</p>
+
+<p>Let us note that the measurement of trunk diameters can be feasible or not, depending on the number of points which sample a given trunk.</p>
+<p>We performed some rapid experiments, which showed that some diameters could actually be estimated, given the high density of the point cloud we used (cf. <a href="#141-lidar-data">here</a>). Still, we did not analyzed the reliability of such estimations against reference/ground truth data.</p>
+<h3 id="23-running-dft">2.3 Running DFT<a class="headerlink" href="#23-running-dft" title="Permanent link">&para;</a></h3>
+<p>As already said, DFT consists of a collection of functions which can be run either with <a href="https://www.gnu.org/software/octave/index">Octave</a> or <a href="https://www.mathworks.com/products/matlab.html">MATLAB</a>. The former software was used in the frame of this context. A few custom Octave scripts were written to automatize the exploration of the parameter space.</p>
+<p>Our preliminary, warm-up tests showed that we could not obtain satisfactory results by using the "tree top detection method" (cf. <a href="#152-digital-forestry-toolbox-dft">here</a>). Indeed, upon using this method the F1-score topped at around 40%. Therefore, we devoted our efforts to exploring the parameter space of the other available method, namely the "tree stem detection method" (cf.&nbsp;<a href="https://mparkan.github.io/Digital-Forestry-Toolbox/tutorial-3.html">this tutorial</a>). In the following, we provide a brief description of the various parameters involved in such a detection method.</p>
+<h4 id="232-parameters-concerned-by-the-tree-stem-detection-method">2.3.2 Parameters concerned by the tree stem detection method<a class="headerlink" href="#232-parameters-concerned-by-the-tree-stem-detection-method" title="Permanent link">&para;</a></h4>
+<p>Quoting <a href="https://mparkan.github.io/Digital-Forestry-Toolbox/tutorial-3.html">the official tutorial</a>,</p>
+<blockquote>
+<p>The stem detection algorithm uses the planimetric coordinates and height of the points above ground as an input.</p>
+</blockquote>
+<p>To compute the height, DFT provides a function called <code>elevationModels</code>, which takes the classified 3D point cloud as input, as well as some parameters. Regarding these parameters, we stuck to the values suggested by the official tutorial, except for</p>
+<ul>
+<li>the <code>cellSize</code> parameter (=&nbsp;size of the raster cells) which was set to 0.8 (meters);</li>
+<li>the <code>searchRadius</code> parameter which was set to 10 (meters).</li>
+</ul>
+<p>Once that each point is assigned an height above the ground, the actual tree stem detection algorithm can be invoked (<code>treeStems</code> DFT function, cf.&nbsp;<a href="https://mparkan.github.io/Digital-Forestry-Toolbox/tutorial-3.html">DFT Tree Stem Detection Tutorial / Step 4 - Detect the stems</a>), which takes a host of parameters. While referring the reader to the <a href="https://mparkan.github.io/Digital-Forestry-Toolbox/tutorial-3.html">official tutorial</a> for the definition of these parameters, we provide the list of values we used (unit&nbsp;=&nbsp;meters):</p>
+<p><center></p>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>cellSize</code></td>
+<td>0.9</td>
+</tr>
+<tr>
+<td><code>bandWidth</code></td>
+<td>0.7</td>
+</tr>
+<tr>
+<td><code>verticalStep</code></td>
+<td>0.15</td>
+</tr>
+<tr>
+<td><code>searchRadius</code></td>
+<td>from 1 to 6, step = 0.5</td>
+</tr>
+<tr>
+<td><code>minLength</code></td>
+<td>from 1 to 6, step = 0.5</td>
+</tr>
+</tbody>
+</table>
+<p></center></p>
+<p><code>searchRadius</code> (<code>minLength</code>) was fixed to 4 (meters) when <code>minLength</code> (<code>searchRadius</code>) was let vary between 1 and 6 meters.</p>
+<h4 id="233-visualizing-results">2.3.3 Visualizing results<a class="headerlink" href="#233-visualizing-results" title="Permanent link">&para;</a></h4>
+<p>DFT does not include any specific Graphical User Interface. Still, users can rely on Octave/MATLAB to generate plots, something useful and clever especially when performing analysis in an interactive way. In our case, DFT was used in a non-interactive way and visualisation was delayed until the assessment step, which we describe in <a href="#24-post-processing-assessment-algorithm-and-metrics-computation">Section&nbsp;2.4</a>.</p>
+<h4 id="234-exporting-results">2.3.4 Exporting results<a class="headerlink" href="#234-exporting-results" title="Permanent link">&para;</a></h4>
+<p>Thanks to the vast Octave/MATLAB ecosystem, DFT results can be output to disk in several ways and using data formats. More specifically, we used the ESRI Shapefile file format to export the average (x, y) coordinates of the detected stems/peaks.</p>
+<h4 id="235-trunk-diameters">2.3.5 Trunk diameters<a class="headerlink" href="#235-trunk-diameters" title="Permanent link">&para;</a></h4>
+<p>This feature is missing in DFT.</p>
+<h3 id="24-post-processing-assessment-algorithm-and-metrics-computation">2.4 Post-processing: assessment algorithm and metrics computation<a class="headerlink" href="#24-post-processing-assessment-algorithm-and-metrics-computation" title="Permanent link">&para;</a></h3>
+<p>As already said, the STDL used a couple of third-party tools, namely <a href="https://terrasolid.com/products/terrascan/">TerraScan</a> and the <a href="https://mparkan.github.io/Digital-Forestry-Toolbox/">Digital Forestry Toolbox (DFT)</a>, in order to detect trees from point clouds. Both tools can output</p>
+<ol>
+<li>a segmented point cloud, in which points associated to the same tree are assigned the same identifier;</li>
+<li>
+<p>one (X, Y, Z) triplet per detected tree, where the X, Y and Z (optional) coordinates are</p>
+</li>
+<li>
+<p>computed either as the centroid of all the points which get associated to a given tree, or - under some conditions - as the centroid of the trunk only;</p>
+</li>
+<li>expressed in the same reference system as the input point cloud.</li>
+</ol>
+<p>As the ground truth data the STDL was provided with take the form of one (X', Y') pair per tree, with Z' implicitly equal to 1 meter above the ground, the comparison between detections and ground truth trees could only be performed on the common ground of 2D space. In other words, we could not assess the 3D point clouds segmentations obtained by either TerraScan or DFT against reference/ground truth segmentations in the 3D space.</p>
+<p>The problem which needed to be solved amounts to finding matching and unmatching items between two sets of 2D points:</p>
+<ol>
+<li>a 1st set including the (X', Y') coordinates of ground truth trees;</li>
+<li>a 2nd set including the (X, Y) coordinates of detected trees.</li>
+</ol>
+<p>In order to fulfill the requirement of a <strong>1 meter accuracy</strong> which was set by the beneficiaries of this project, the following matching rule was adopted:</p>
+<blockquote>
+<p>a detection (D) matches a ground truth tree (GT) (and vice versa) if and only if the Cartesian distance between D and GT is less or equal to 1 meter</p>
+</blockquote>
+<p>Figure 2.9 shows how such a rule would allow one to tag</p>
+<ul>
+<li>detections as either True Positives (TPs) or False Positives (FPs)</li>
+<li>ground truth trees as either True Positives (TPs) or False Negatives (FNs)</li>
+</ul>
+<p>in the most trivial case.</p>
+<p align="center">
+<img src="./image/STDL-TreeDet-AssessmentScript-TaggingInTheMostTrivialCase.svg" alt="Tagging detections and ground truth trees in the most trivial case"/>
+<br />
+<i>Figure 2.9: Tagging as True Positive (TP), False Positive (FP), False Negative (FN) ground truth and detected trees in the most trivial case.</i>
+</p>
+
+<p>Actually, far less trivial cases can arise, such as the one illustrated in Figure 2.10.</p>
+<p align="center">
+<img src="./image/STDL-TreeDet-AssessmentScript-ComplexCase.svg" alt="Tagging detections and ground truth trees in the most trivial case"/>
+<br />
+<i>Figure 2.10: Only one detection can exist for two candidate ground truth trees, or else two detections can exist for only one candidate ground truth tree.</i>
+</p>
+
+<p>The STDL designed and implemented an algorithm, which would produce relevant TP, FP, FN tags and counts even in such more complex cases. For instance, in a setting like the one in the image here above, one would expect the algorithm to count 2 TPs, 1 FP, 1 FN.</p>
+<p>Details are provided here below.</p>
+<h4 id="241-the-tagging-and-counting-algorithm">2.4.1 The tagging and counting algorithm<a class="headerlink" href="#241-the-tagging-and-counting-algorithm" title="Permanent link">&para;</a></h4>
+<h5 id="1st-step-geohash-detections-and-ground-truth-trees">1st step: geohash detections and ground truth trees<a class="headerlink" href="#1st-step-geohash-detections-and-ground-truth-trees" title="Permanent link">&para;</a></h5>
+<p>In order to keep track of the various detections and ground truth trees all along the execution of the assessment algorithm, each item is given a unique identifier, computed as the <a href="https://en.wikipedia.org/wiki/Geohash">geohash</a> of its coordinates, using the <a href="https://github.com/wdm0006/pygeohash"><code>pygeohash</code></a> Python module. Such identifier is not only unique (as far as a sufficiently high precision is used), but also stable across subsequent executions. The latter property allows analysts to "synchronise" the concerned objects between the output of the (Python) code and the views generated with GIS tools such as <a href="https://www.qgis.org">QGIS</a>, which turns out to be quite useful especially at development and debugging time.</p>
+<h5 id="2nd-step-convert-point-detections-to-circles">2nd step: convert point detections to circles<a class="headerlink" href="#2nd-step-convert-point-detections-to-circles" title="Permanent link">&para;</a></h5>
+<p>As a 2nd step, each detection is converted to a circle,</p>
+<ul>
+<li>centered on the (X, Y) coordinates of the detection;</li>
+<li>having a 1 m radius.</li>
+</ul>
+<p>This operation can be accomplished by generating a 1 m buffer around each detection. For the sake of precision, <a href="https://shapely.readthedocs.io/en/latest/manual.html#object.buffer">this method</a> was used, which generates a polygonal surface approximating the intended circle.</p>
+<h5 id="3rd-step-perform-left-and-right-outer-spatial-joins">3rd step: perform left and right outer spatial joins<a class="headerlink" href="#3rd-step-perform-left-and-right-outer-spatial-joins" title="Permanent link">&para;</a></h5>
+<p>As a 3rd step, the following two spatial joins are computed:</p>
+<ol>
+<li>
+<p>left outer join between the circles generated at the previous step and ground truth trees;</p>
+</li>
+<li>
+<p>right outer join between the same two operands.</p>
+</li>
+</ol>
+<p>In both cases, the "intersects" operation is used (cf.&nbsp;<a href="https://geopandas.org/en/stable/gallery/spatial_joins.html">this page</a> for more technical details).</p>
+<h5 id="4th-step-tag-trivial-false-positives-and-false-negatives">4th step: tag trivial False Positives and False Negatives<a class="headerlink" href="#4th-step-tag-trivial-false-positives-and-false-negatives" title="Permanent link">&para;</a></h5>
+<p>All those detections output by the left outer join for which no right attribute exists (in particular, we focus on the right geohash) can trivially be tagged as FPs. As a matter of fact, this means that the 1 m circular buffer surrounding the detection does not intersect any ground truth tree; in other words, that no ground truth tree can be found within 1 m from the detection. The same reasoning leads to trivially tagging as FNs all those ground truth trees output by the right outer join for which no left attribute exists. These cases correspond to the two rightmost items in Fig.&nbsp;6.1.</p>
+<p>For reasons which will be clarified here below, the algorithm does not actually tag items as either FPs or FNs; instead,</p>
+<ul>
+<li>TP and FP "charges" are assigned to detected trees;</li>
+<li>TP and FN charges are assigned to ground truth trees.</li>
+</ul>
+<p>Here's how:</p>
+<ul>
+<li>for FP detected trees:</li>
+</ul>
+<p><center></p>
+<table>
+<thead>
+<tr>
+<th>TP charge</th>
+<th>FP charge</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0</td>
+<td>1</td>
+</tr>
+</tbody>
+</table>
+<p></center></p>
+<ul>
+<li>for FN ground truth trees:</li>
+</ul>
+<p><center></p>
+<table>
+<thead>
+<tr>
+<th>TP charge</th>
+<th>FN charge</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0</td>
+<td>1</td>
+</tr>
+</tbody>
+</table>
+<p></center></p>
+<h5 id="5th-step-tag-non-trivial-false-positives-and-false-negatives">5th step: tag non-trivial False Positives and False Negatives<a class="headerlink" href="#5th-step-tag-non-trivial-false-positives-and-false-negatives" title="Permanent link">&para;</a></h5>
+<p>The left outer spatial join performed at step 3 establishes relations between each detection and those ground truth trees which are located no further than 1 meter, as shown in Figure 2.11.</p>
+<p align="center">
+<img src="./image/STDL-TreeDet-AssessmentScript-GraphComponents.svg" alt="Tagging detections and ground truth trees in the most trivial case"/>
+<br />
+<i>Figure 2.11: The spatial join between buffered detections and ground truth trees establishes relations between groups of items of these two populations. In the sample setting depicted in this picture, two unrelated groups can be found. </i>
+</p>
+
+<p>The example here above shows 4 relations,</p>
+<ol>
+<li>D1 - GT1,</li>
+<li>D1 - GT2,</li>
+<li>D2 - GT3,</li>
+<li>D3 - GT3</li>
+</ol>
+<p>which can be split (see the red dashed line) into two unrelated, independent groups:</p>
+<ol>
+<li>{D1 - GT1, D1 - GT2}</li>
+<li>{D2 - GT3, D3 - GT3}</li>
+</ol>
+<p>In order to generate this kind of groups in a programmatic way, the algorithm first builds a graph out of the relations established by the left outer spatial join, then it extracts the connected components of such a graph (cf.&nbsp;<a href="https://en.wikipedia.org/wiki/Component_(graph_theory)">this page</a>).</p>
+<p>The tagging and counting of TPs, FPs, FNs is performed on a per-group basis, according to the following strategy:</p>
+<ul>
+<li>
+<p>if a group contains more ground truth than detected trees, then the group is assigned an excess "FN charge", equal to the difference between the number of ground truth trees and detected trees. This excess charge is then divided by the number of ground truth trees and the result assigned to each of them. For instance, the {D1 - GT1, D1 - GT2} group in the image here above would be assigned an FN charge equal to 1; then, each ground truth tree would be assigned an FN charge equal to 1/2.</p>
+</li>
+<li>
+<p>Similarly, if a group contains more detected trees than ground truth trees, then the group is assigned an excess FP charge, equal to the difference between the number of detected trees and ground truth trees. This excess charge is then divided by the number of detections and the result assigned to each of them. For instance, the {D2 - GT3, D3 - GT3} group in the image here above would be assigned an excess FN charge equal to 1; then, each detection would be assigned an FP charge equal to 1/2.</p>
+</li>
+<li>
+<p>In case the number of ground truth trees be the same as the number of detections, no excess FN/FP charge is assigned to the group.</p>
+</li>
+<li>
+<p>Concerning the assignment of TP charges, the per-group budget is established as the minimum between the number of ground truth and detected trees, then equally split between the items of these two populations. In the example above, both groups would be assigned TP charge = 1.</p>
+</li>
+</ul>
+<p>Wrapping things up, here are the charges which the algorithm would assign to the various items of the example here above:</p>
+<p><center></p>
+<table>
+<thead>
+<tr>
+<th>item</th>
+<th>TP charge</th>
+<th>FP charge</th>
+<th>Total charge</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>D1</td>
+<td>1</td>
+<td>0</td>
+<td>1</td>
+</tr>
+<tr>
+<td>D2</td>
+<td>1/2</td>
+<td>1/2</td>
+<td>1</td>
+</tr>
+<tr>
+<td>D3</td>
+<td>1/2</td>
+<td>1/2</td>
+<td>1</td>
+</tr>
+<tr>
+<td><strong>Sum</strong></td>
+<td><strong>2</strong></td>
+<td><strong>1</strong></td>
+<td><strong>3</strong></td>
+</tr>
+</tbody>
+</table>
+<p></center>
+<center></p>
+<table>
+<thead>
+<tr>
+<th>item</th>
+<th>TP charge</th>
+<th>FN charge</th>
+<th>Total charge</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>GT1</td>
+<td>1/2</td>
+<td>1/2</td>
+<td>1</td>
+</tr>
+<tr>
+<td>GT2</td>
+<td>1/2</td>
+<td>1/2</td>
+<td>1</td>
+</tr>
+<tr>
+<td>GT3</td>
+<td>1</td>
+<td>0</td>
+<td>1</td>
+</tr>
+<tr>
+<td><strong>Sum</strong></td>
+<td><strong>2</strong></td>
+<td><strong>1</strong></td>
+<td><strong>3</strong></td>
+</tr>
+</tbody>
+</table>
+<p></center></p>
+<p>Let us note that:</p>
+<ul>
+<li>the count of TPs yields the same result, whether we consider detections or ground truth trees, which makes sense;</li>
+<li>the "Total charge" column allows one to check the consistency of the algorithm;</li>
+<li>as expected, we obtain 2 FPs, 1 FP, 1 FN;</li>
+<li>the algorithm does not even attempt to establish 1:1 relations, "optimal" in a given sense, between ground truth and detected trees. As a matter of fact, the algorithm is designed to produce meaningful counts and tags only;</li>
+<li>of course, the algorithm also works in far more complex settings than the one depicted in Figs.&nbsp;6.2 and 6.3.</li>
+</ul>
+<h4 id="242-from-counts-to-metrics">2.4.2 From counts to metrics<a class="headerlink" href="#242-from-counts-to-metrics" title="Permanent link">&para;</a></h4>
+<p>TP, FP, FN counts are extensive properties, out of which we can compute some standard metrics such as</p>
+<ul>
+<li>precision</li>
+<li>recall</li>
+<li>F1-score</li>
+</ul>
+<p>which are intensive, instead. While referring the reader to <a href="../TASK-IDET/#4-assessment">this paragraph</a> for the definition of these metrics, let us state the interpretation which holds in the present use case:</p>
+<ul>
+<li>precision is optimal (= 1.0) if and only if (iff) all the detections are matched by ground truth trees (no FPs);</li>
+<li>recall is optimal (= 1.0) iff all the ground truth trees are detected (no FNs).</li>
+</ul>
+<p>Typically, one cannot optimize both precision and recall for the same values of a set of parameters. Instead, they can exhibit opposite trends as a function of a given parameter (<i>e.g.</i> precision increases while recall decreases). In such cases, the F1-score would exhibit convexity and could be optimized.</p>
+<div align="center">
+<img src="image/separator.gif?raw=true" width="5%">
+</div>
+
+<h2 id="3-results-and-discussion">3. Results and discussion<a class="headerlink" href="#3-results-and-discussion" title="Permanent link">&para;</a></h2>
+<p>Figure 3.1 shows some of the tree detection trials we performed, using Terrascan and DFT. Each trial corresponds to a different set of parameters and is represented either by gray dots or colored diamonds in a precision-recall plot (see the image caption for further details).</p>
+<p align="center">
+<img src="./image/050-precision-recall-cleaning-path.PNG" alt="Precision vs. Recall"/>
+<br />
+<i>Figure 3.1: Precision vs. Recall of a subset of the tree detections we attempted, using different parameters in Terrascan and DFT. Colored diamonds represent the starting point (red) as well as our "last stops" in the parameter space, with (yellow, green) and without (orange) pre-processing. All the three test sectors are here combined.</i>
+</p>
+
+<p>Let us note that:</p>
+<ul>
+<li>the DFT parameter space can be conveniently explored by scripting the batch execution of various runs;</li>
+<li>on the contrary, the exploration of the Terrascan parameter space is more laborious, has to be performed manually, trying out one specific set of parameters after another, with repeated manual export of features (including geographical coordinates) in between. Indeed, although Terrascan let users define macros, unfortunately the "Write Group Info" command cannot be used in macros;</li>
+<li>in both cases, the parameter space was explored in quite an heuristic and partial way;</li>
+<li>we aimed at optimizing the F1-score all sectors combined.</li>
+</ul>
+<p>More detailed comments follow, concerning the best trials made with Terrascan and DFT.</p>
+<h3 id="31-the-best-trial-made-with-terrascan">3.1 The best trial made with Terrascan<a class="headerlink" href="#31-the-best-trial-made-with-terrascan" title="Permanent link">&para;</a></h3>
+<p>Among the trials we ran with Terrascan, the one which yielded the best F1-score was obtained using the following parameters:</p>
+<p><center></p>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Method / Algorithm</td>
+<td>Trunk</td>
+</tr>
+<tr>
+<td>Classes</td>
+<td>4+5, cleaned and reclassified</td>
+</tr>
+<tr>
+<td>Group planar surfaces</td>
+<td>Off</td>
+</tr>
+<tr>
+<td>Min height</td>
+<td>3.00 m</td>
+</tr>
+<tr>
+<td>Max diameter</td>
+<td>0.40 m</td>
+</tr>
+<tr>
+<td>Min trunk</td>
+<td>3.00 m</td>
+</tr>
+<tr>
+<td>Group by density</td>
+<td>On</td>
+</tr>
+<tr>
+<td>Gap</td>
+<td>Auto</td>
+</tr>
+<tr>
+<td>Require</td>
+<td>1500 pts</td>
+</tr>
+</tbody>
+</table>
+<p></center></p>
+<p>This trial corresponds to the green diamond shown in Figure 3.1.</p>
+<p align="center">
+<img src="./image/060-segmentation_coloured_result.PNG" alt="Test sectors as segmented by the best trial made with Terrascan"/>
+<br />
+<i>Figure 3.2: Test sectors as segmented by the best trial made with Terrascan.</i>
+</p>
+
+<p>Figure 3.2 provides a view of the outcome on the three test sectors. Metrics read as follows:</p>
+<p><center></p>
+<table>
+<thead>
+<tr>
+<th>Sector</th>
+<th>TP</th>
+<th>FP</th>
+<th>FN</th>
+<th>Detectable (TP+FN)</th>
+<th>Precision</th>
+<th>Recall</th>
+<th>F1-Score</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Global</td>
+<td>323</td>
+<td>137</td>
+<td>234</td>
+<td>557</td>
+<td>70.2%</td>
+<td>58.0%</td>
+<td>63.5%</td>
+</tr>
+<tr>
+<td>Adrien-Jeandin</td>
+<td>177</td>
+<td>69</td>
+<td>160</td>
+<td>337</td>
+<td>72.0%</td>
+<td>52.5%</td>
+<td>60.7%</td>
+</tr>
+<tr>
+<td>Bel-Air</td>
+<td>114</td>
+<td>15</td>
+<td>11</td>
+<td>125</td>
+<td>88.4%</td>
+<td>91.2%</td>
+<td>89.8%</td>
+</tr>
+<tr>
+<td>Floraire</td>
+<td>32</td>
+<td>53</td>
+<td>63</td>
+<td>89</td>
+<td>37.6%</td>
+<td>33.7%</td>
+<td>35.6%</td>
+</tr>
+</tbody>
+</table>
+<p></center></p>
+<p>Figure 3.3 provides a graphical representation of the same findings, with the addition of the metrics we computed before <a href="#21-pre-processing-point-cloud-cleaning-and-reclassification">cleaning and reclassifying</a> the LiDAR point cloud.</p>
+<p align="center">
+<img src="./image/071-precision-recall-cleaning.PNG" alt="Impact of cleaning and reclassification on metrics"/>
+<br />
+<i>Figure 3.3: Cleaning and reclassifying the point cloud has a positive influence on precision and recall, although modest.</i>
+</p>
+
+<p>Our results confirm that the tree detection task is more or less hard depending on the sector at hand. Without any surprise, we acknowledge that:</p>
+<ul>
+<li>the "Avenue de Bel-Air" test sector (BEL), enjoying an alley of well-separated trees, is easily tackled by Terrascan. Quite decent precision and recall are obtained.</li>
+<li>In contrast, the "Parc Floraire" test sector (FLO) turns out to be the hardest one, given the vegetation density and heterogeneity.</li>
+<li>The "Adrien-Jeandin" (ADR) is actually a mix of dense and sparse contexts and turns out to be a good proxy for the global performance.</li>
+</ul>
+<p>Cleaning and Reclassification have a benificial impact on Precision and Recall for all sectors as well as the global context (TOT).
+While for BEL mainly Recall profited from preprocessing, ADR and FLO showed a stronger increase in Precision.
+For the global context both, Precision and Recall, could be increased slighty.</p>
+<p align="center">
+<img src="./image/081-preprocessing_sectors_tscan.PNG" alt="F1-score attained by our best Terrascan trial"/>
+<br />
+<i>Figure 3.4: The F1-score attained by our best Terrascan trial.</i>
+</p>
+
+<p>Figure 3.4 shows how our best Terrascan trial performed in terms of F1-score: globally, on a per-sector basis; with and without pre-processing.</p>
+<p>We can notice that pre-processing slightly improves the F1-score for the global context as well as for the individual sectors. The largest impact was observed for the Bel-Air sector, especially for preprocessing including Reclassification.</p>
+<h3 id="32-the-best-trial-made-with-dft">3.2 The best trial made with DFT<a class="headerlink" href="#32-the-best-trial-made-with-dft" title="Permanent link">&para;</a></h3>
+<p>The DFT trial yielding the highest global F1-score was obtained using the stem detection method and the following parameters:</p>
+<p><center></p>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Method / Algorithm</td>
+<td>Stem detection</td>
+</tr>
+<tr>
+<td>Classes</td>
+<td>4+5, cleaned and reclassified</td>
+</tr>
+<tr>
+<td>Search radius</td>
+<td>4.00</td>
+</tr>
+<tr>
+<td>Minimum length</td>
+<td>4.00</td>
+</tr>
+</tbody>
+</table>
+<p></center></p>
+<p>Here's a summary of the resulting metrics:</p>
+<p><center></p>
+<table>
+<thead>
+<tr>
+<th>Sector</th>
+<th>Precision</th>
+<th>Recall</th>
+<th>F1-score</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Adrien-Jeandin</td>
+<td>75.4%</td>
+<td>36.5%</td>
+<td>49.2%</td>
+</tr>
+<tr>
+<td>Bel-Air</td>
+<td>88.0%</td>
+<td>82.4%</td>
+<td>85.1%</td>
+</tr>
+<tr>
+<td>Floraire</td>
+<td>47.9%</td>
+<td>36.8%</td>
+<td>41.7%</td>
+</tr>
+<tr>
+<td>Global</td>
+<td>74.0%</td>
+<td>46.6%</td>
+<td>57.2%</td>
+</tr>
+</tbody>
+</table>
+<p></center></p>
+<p>Similar comments to those formulated <a href="#31-the-best-trial-made-with-terrascan">here</a> apply: the "Avenue de Bel-Air" sector remains the easiest to process; "Parc Floraire" the hardest. However, here we acknowledge a bigger gap between the global F1-score and the F1-score related to the "Adrien-Jeandin" test sector.</p>
+<p>Figure 3.5 shows how our best DFT trial performed in terms of F1-score: globally, on a per-sector basis; with and without pre-processing. We can notice that the impact of point cloud reclassification can be slightly positive or negative depending on the test sector.</p>
+<p align="center">
+<img src="./image/086-preprocessing_sectors_dft.PNG" alt="The F1-score attained by our best DFT trial"/>
+<br />
+<i>Figure 3.5: The F1-score attained by our best DFT trial.</i>
+</p>
+
+<h3 id="33-comparison-terrascan-vs-dft">3.3 Comparison: Terrascan vs. DFT<a class="headerlink" href="#33-comparison-terrascan-vs-dft" title="Permanent link">&para;</a></h3>
+<p align="center">
+<img src="./image/121-F1_final.PNG" alt="Comparison of Terrascan and DFT in terms of F1-score"/>
+<br />
+<i>Figure 3.6: Comparison of Terrascan and DFT in terms of F1-score.</i>
+</p>
+
+<p>The comparison of the best Terrascan trial vs. the best DFT trial in terms of F1-score shows that there is no clear winner (see Figure 3.6). Still, we can notice that:</p>
+<ul>
+<li>DFT reaches the best F1-score ever in the "Parc Floraire" ("Avenue de Bel-Air") sector, without (with) pre-processing.</li>
+<li>Terrascan performs slightly better on global scores and substantially better on the mixed context of the Adrien-Jeandin sector,especially after pre-processing.</li>
+</ul>
+<h3 id="34-trials-with-standard-density-datasets">3.4 Trials with standard-density datasets<a class="headerlink" href="#34-trials-with-standard-density-datasets" title="Permanent link">&para;</a></h3>
+<p>In addition to applying our method to the 2021 high-density (HD) LiDAR dataset, we also tried using two other datasets exhibiting a by far more standard point density (20-30 pt/m²):</p>
+<ul>
+<li><em><a href="https://ge.ch/sitg/fiche/6496">Nuage de points LiDAR 2017</a></em></li>
+<li><em><a href="https://ge.ch/sitg/fiche/1827">Nuage de points LiDAR 2019</a></em></li>
+</ul>
+<p>The goal was twofold:</p>
+<ol>
+<li>finding evidence for the added value of high-density (HD) datasets, despite their higher cost;</li>
+<li>checking whether the parameters which turned out to yield optimal scores with HD LiDAR data could also yield acceptable results if used with standard-density (SD) datasets.</li>
+</ol>
+<p>Concerning the 1st point, lower point densities make the "trunk method" unreliable (if not completely unusable). In Figure 3.7, we report results obtained with the watershed method, along with results related to the best performing trials obtained with the 2021 HD dataset. The scores we obtained with the SD dataset are far below the best we obtained with the HD dataset, confirming the interest of high-density acquisitions.</p>
+<p align="center">
+<img src="./image/126-F1_final-HD-SD.PNG" alt="Comparison of F1-scores of the best performing trials."/>
+<br />
+<i>Figure 3.7: Comparison of F1-scores of the best performing trials. Parameters were optimized for each model individually.</i>
+</p>
+
+<p>Concerning the 2nd point, without any surprise we confirmed that parameters must be re-optimized for SD datasets. The usage of the set of parameters which were optimized on the basis of the HD dataset yielded poor results, as shown in Figure 3.8.</p>
+<p align="center">
+<img src="./image/090-underseg_2019.PNG" alt="Failing detection using HD optimal parameters on SD data"/>
+<br />
+<i>Figure 3.8: Using the parameters which were optimized for the high-density dataset leads to poor results (strong under-segmentation) on SD datasets. In accordance with the TS documentation we can see that the trunk method is unusable for lower and medium density datasets.</i>
+</p>
+
+<p>The watershed algorithm produces a more realistic segmentation pattern on the SD dataset but still cannot reach the performance levels of the trunk or the watershed method on the HD dataset. After optimizing parameters, we could obtain quite decent results though (see Figure 3.9).</p>
+<p align="center">
+<img src="./image/100-watershed_result_2019.PNG" alt="Segmentation after dataset-specific parameter optimization"/>
+<br />
+<i>Figure 3.9: After a dataset-specific parameter optimization, convincing results can be achieved on the medium-density 2019 dataset (Terrascan's watershed method was used).</i>
+</p>
+
+<h3 id="35-tree-detection-over-the-full-2021-high-density-lidar-dataset">3.5 Tree detection over the full 2021 high-density LiDAR dataset<a class="headerlink" href="#35-tree-detection-over-the-full-2021-high-density-lidar-dataset" title="Permanent link">&para;</a></h3>
+<p>Clearly, from a computational point of view processing large point cloud dataset is not the same as processing small datasets. Given the extremely high density of the 2021 LiDAR datasets, we wanted to check whether and how Terrascan could handle such a resource-intensive task. Thanks to Terrascan's macro actions, one can split the task into a set of smaller sub-tasks, each sub-task dealing with a "tile" of the full dataset. Additionally, Terrascan integrates quite a smart feature, which automatically merges groups of points (<em>i.e.</em> trees) spanning multiple tiles.</p>
+<p>Figure 3.10 provides a static view of the results we obtained, using the parameters which globally performed the best on the three sectors. We refer the reader to <a href="https://sitn.ne.ch/lidar/dev/stdl.html">this Potree viewer</a> (kindly hosted by the <em><a href="https://sitn.ne.ch/">Géoportail du SITN</a>)</em> for an interactive view.</p>
+<p align="center">
+<img src="./image/130-application_potree.PNG" alt="Potree complete dataset"/>
+<br />
+<i>Figure 3.10: Result of the application of the best performing Terrascan parameters to the full dataset.</i>
+</p>
+
+<div align="center">
+<img src="image/separator.gif?raw=true" width="5%">
+</div>
+
+<h2 id="4-conclusion-and-outlook">4. Conclusion and outlook<a class="headerlink" href="#4-conclusion-and-outlook" title="Permanent link">&para;</a></h2>
+<p>Despite all the efforts documented here above, the results we obtained are not as satisfactory as expected. Indeed, the metrics we managed to attain all sectors combined indicate that tree detections are neither reliable (low precision) nor exhaustive (low recall). Still, we think that results may be improved by further developing some ideas, which we sketch in the following.</p>
+<h3 id="41-further-the-dft-parameter-space-exploration">4.1 Further the DFT parameter space exploration<a class="headerlink" href="#41-further-the-dft-parameter-space-exploration" title="Permanent link">&para;</a></h3>
+<p>We devoted much more time to exploring Terrascan's parameter space than DFT's. Indeed, as already stated <a href="#23-running-dft">here</a>, we only explored the two parameters <code>searchRadius</code> and <code>minLenght</code>. Other parameters such as <code>cellSize</code>, <code>bandwidth</code> and <code>verticalStep</code> were not explored at all (we kept default values). We think it is definitely worth exploring these other parameters, too.</p>
+<p>Moreover,</p>
+<ul>
+<li>we did not try feeding all the LiDAR returns to the stem detection method, we only used the last returns. It is surely worth checking whether the usage of the other returns could be beneficial.</li>
+<li>Upon using the peak detection method, we did not manage to reach a better F1-score than ~40%, as opposed to the 57% obtained with the stem detection method. However, the peak detection method is particularly interesting because it can also delimit canopies. Hence, it may be worth trying to improve the F1-score, for instance by tuning the parameters of the power law equation relating the crown radius to the tree height (cf.&nbsp;<a href="https://mparkan.github.io/Digital-Forestry-Toolbox/tutorial-2.html">here</a>).</li>
+</ul>
+<h3 id="42-exploit-contextual-information">4.2 Exploit contextual information<a class="headerlink" href="#42-exploit-contextual-information" title="Permanent link">&para;</a></h3>
+<p>We showed that the algorithms implemented by TerraScan and DFT yield much better results in sparse contexts (ex.: the "Avenue de Bel-Air" test sector) than in dense ones (ex.: the "Parc Floraire" test sector). This means that precision may be improved (at the expense of recall, though) if one could restrain the tree detection to sparse contexts only, either as a pre- or post-processing step. We can think of at least a couple of methods which would allow one to (semi-)automatically tell sparse from dense contexts:</p>
+<ol>
+<li>
+<p>intrinsic method: after segmenting the point cloud into individual trees, one could analyze how close (far) each individual is to (from) the nearest neighbor and estimate the density of trees on some 2D or 3D grid;</p>
+</li>
+<li>
+<p>extrinsic method: territorial data exist (see for instance the dataset &nbsp;<em><a href="https://ge.ch/sitg/fiche/1880">"Carte de couverture du sol selon classification OTEMO"</a></em> distributed by the <a href="https://ge.ch/sitg/">SITG</a>), providing information about urban planning and land use (<em>e.g</em>.&nbsp;roads, parks, sidewalks, etc.). These data may be analyzed in order to extract hints on how likely it is for a tree to be in close proximity with another, according to its position.</p>
+</li>
+</ol>
+<h3 id="43-combine-detections-stemming-from-two-or-more-independent-trials">4.3 Combine detections stemming from two or more independent trials<a class="headerlink" href="#43-combine-detections-stemming-from-two-or-more-independent-trials" title="Permanent link">&para;</a></h3>
+<p>Detections coming from two or more independent trials (obtained with different software or else with the same software but different parameters) could be combined in order to improve either precision or recall:</p>
+<ol>
+<li>
+<p>recall would be improved (i.e.&nbsp;the number of false negatives would be reduced) if detections coming from multiple trials were merged. In order to prevent double counting, two or more detections coming from two or more sources could be counted as just one if they were found within a given distance from each other. The algorithm would follow along similar lines as the ones which led us to the "tagging and counting algorithm" presented <a href="./#the-tagging-and-counting-algorithm">here above</a>;</p>
+</li>
+<li>
+<p>precision would be improved (i.e.&nbsp;the number of false positives would be reduced) if we considered only those detections for which a consensus could be established among two or more trials, and discarded the rest. A distance-based criterion could be used to establish such consensus, along similar lines as those leading to our <a href="./#the-tagging-and-counting-algorithm">"tagging and counting algorithm"</a>.</p>
+</li>
+</ol>
+<h3 id="44-use-generic-point-cloud-segmentation-algorithms">4.4 Use generic point cloud segmentation algorithms<a class="headerlink" href="#44-use-generic-point-cloud-segmentation-algorithms" title="Permanent link">&para;</a></h3>
+<p>Generic (<em>i.e.</em> not tailored for tree detection) clustering algorithms exist, such as DBSCAN ("Density-Based Spatial Clustering of Applications with Noise", see <em>e.g.</em> <a href="https://towardsdatascience.com/how-to-automate-3d-point-cloud-segmentation-and-clustering-with-python-343c9039e4f5">here</a>), which could be used to segment a LiDAR point cloud into individual trees. We think it would be worth giving these algorithms a try!</p>
+<h3 id="45-use-machine-learning">4.5 Use Machine Learning<a class="headerlink" href="#45-use-machine-learning" title="Permanent link">&para;</a></h3>
+<p>The segmentation algorithms we used in this project do not rely on Machine Learning. Yet, alternative/complementary approaches might me investigated, in which a point cloud segmentation model would be first trained on reference data, then used to infer tree segmentations within a given area of interest. For instance, it would be tempting to test <a href="https://www.arcgis.com/home/item.html?id=58d77b24469d4f30b5f68973deb65599">this Deep Learning model</a> published by ESRI and usable with their ArcGIS Pro software. It would be also worth deep diving into <a href="https://www.mdpi.com/2072-4292/14/6/1317">this research paper</a> and try replicating the proposed methodology. Regarding training data, we could generate a ground truth dataset by</p>
+<ol>
+<li>using our best TerraScan/DFT model to segment the 3D point cloud;</li>
+<li>using 2D ground truth data to filter out wrong segmentations.</li>
+</ol>
+<div align="center">
+<img src="image/separator.gif?raw=true" width="5%">
+</div>
+
+<h2 id="5-other-resources">5. Other resources<a class="headerlink" href="#5-other-resources" title="Permanent link">&para;</a></h2>
+<p>The work documented here was the object of a <em>Forum SITG</em> which took place online on March 29, 2022. Videos and presentation materials can be found <a href="https://ge.ch/sitg/calendrier/espace-public/des-solutions-digitales-et-innovantes-pour-mieux-connaitre-les-arbres-1635">here</a>.</p>
+<div align="center">
+<img src="image/separator.gif?raw=true" width="5%">
+</div>
+
+<h2 id="6-acknowledgements">6. Acknowledgements<a class="headerlink" href="#6-acknowledgements" title="Permanent link">&para;</a></h2>
+<p>This project was made possible thanks to a tight collaboration between the STDL team and some experts of the Canton of Neuchâtel (NE), the Canton of Geneva (GE), the <em>Conservatoire et Jardin botaniques de la Ville de Genève</em> (CJBG) and the University of Geneva (UNIGE). The STDL team acknowledges key contributions from Marc Riedo (SITN, NE), Bertrand Favre (OCAN, GE), Nicolas Wyler (CJBG) and Gregory Giuliani (UNIGE). We also wish to warmly thank Matthew Parkan for developing, maintaining and advising us on the <a href="https://mparkan.github.io/Digital-Forestry-Toolbox/">Digital Forestry Toolbox</a>.</p>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+        
+      </main>
+      
+        
+<footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+          <div class="md-footer-copyright__highlight">
+            Copyright &copy; 2020-2021 Swiss Territorial Data Lab
+          </div>
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+        
+      </div>
+      
+  <div class="md-footer-social">
+    
+      
+      
+      <a href="https://github.com/swiss-territorial-data-lab" target="_blank" rel="noopener" title="Repo on Github" class="md-footer-social__link">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+      </a>
+    
+      
+      
+      <a href="mailto:<info@stdl.ch>" target="_blank" rel="noopener" title="Send us an eMail!" class="md-footer-social__link">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M476 3.2 12.5 270.6c-18.1 10.4-15.8 35.6 2.2 43.2L121 358.4l287.3-253.2c5.5-4.9 13.3 2.6 8.6 8.3L176 407v80.5c0 23.6 28.5 32.9 42.5 15.8L282 426l124.6 52.2c14.2 6 30.4-2.9 33-18.2l72-432C515 7.8 493.3-6.8 476 3.2z"/></svg>
+      </a>
+    
+  </div>
+
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.expand"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}, "search": "../assets/javascripts/workers/search.d351de03.min.js", "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.a1609d9a.min.js"></script>
+      
+        <script src="../assets/javascripts/config.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>
