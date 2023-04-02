@@ -1,5 +1,0 @@
-Shared by Adrian Meyer on Oct. 6, 2021 via Slack.
-
-"""
-The training was Farmyards in Thurgau at Zoom Level 17, total of 810 Images in TRN
-"""
