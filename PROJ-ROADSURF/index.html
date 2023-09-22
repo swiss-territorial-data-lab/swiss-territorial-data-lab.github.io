@@ -420,7 +420,7 @@
 
 <h1 id="classification-of-road-surfaces">Classification of road surfaces<a class="headerlink" href="#classification-of-road-surfaces" title="Permanent link">&para;</a></h1>
 <p>Gwenaëlle Salamin (swisstopo), Clémence Herny (Exolabs), Roxane Pott (swisstopo), Alessandro Cerioni (État de Genève) <br>
-Mars 2023 <br></p>
+March 2023 <br></p>
 <p><b>Abstract</b>: The Swiss road network extends over 83’274 km. Information about the type of road surface is useful not only for the Swiss Federal Roads Office and engineering companies, but also for cyclists and hikers. Currently, the data creation and update is entirely done manually at the Swiss Federal Office of Topography. This is a time-consuming and methodical task, potentially suitable to automation by data science methods. The goal of this project is classifying Swiss roads according to their surface type, natural or artificial. <br>
 We first searched for statistical differences between these two classes, in order to then perform supervised classification based on machine-learning methods. As we could not find any discriminant feature, we used deep learning methods. <br>
 In terms of balanced F1 score, we obtained a global score of 0.74 over the training, validation and test area, 0.56 over the inference-only area.</p>
@@ -497,7 +497,7 @@ The first step consists in reprojecting images in the EPSG:3857 projection, comp
 <li>per-band statistics (mean, median, minimum, maximum, standard deviation).</li>
 </ul>
 <p>The machine learning analysis was performed only on the two middle tiles of the AOI.</p>
-<p>The most promising spectral index we found in the literature is the Artificial Surface Index (ASI) defined by Zhao \&amp; Zhu (2022) <sup id="fnref:12"><a class="footnote-ref" href="#fn:12">12</a></sup>. Unfortunately, the computation of the ASI requires the shortwave infrared (SWIR) band which is not available in the SWISSIMAGE RS data. The SWIR band can be available in satellite imagery (e.g.: Landsat 8, Sentinel 2), yet spatial resolution (20-30 m/px) is not enough for the problem at hand.</p>
+<p>The most promising spectral index we found in the literature is the Artificial Surface Index (ASI) defined by Zhao &amp; Zhu (2022) <sup id="fnref:12"><a class="footnote-ref" href="#fn:12">12</a></sup>. Unfortunately, the computation of the ASI requires the shortwave infrared (SWIR) band which is not available in the SWISSIMAGE RS data. The SWIR band can be available in satellite imagery (e.g.: Landsat 8, Sentinel 2), yet spatial resolution (20-30 m/px) is not enough for the problem at hand.</p>
 <p>Instead, the VgNIR-BI index <sup id="fnref:13"><a class="footnote-ref" href="#fn:13">13</a></sup> could be computed in our case, since it combines the green and NIR bands:</p>
 <div class="arithmatex">\[\begin{align}
 \
