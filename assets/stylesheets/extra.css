@@ -35,6 +35,7 @@
 :root {
   --md-primary-fg-color:        #00468C;
   --md-primary-fg-color--dark:  #000000;
+  --md-accent-fg-color:        #00468C;
 }
 
 .md-nav--primary::after{
