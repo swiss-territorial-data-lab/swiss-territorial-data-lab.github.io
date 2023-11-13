@@ -1,0 +1,1872 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.4.0, mkdocs-material-8.5.6">
+    
+    
+      
+        <title>Dieback of beech trees: methodology for determining the health state of beech trees from airborne images and LiDAR point clouds - Swiss Territorial Data Lab</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.20d9efc8.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.cbb835fc.min.css">
+        
+      
+      
+
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="none" data-md-color-accent="none">
+  
+    
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#dieback-of-beech-trees-methodology-for-determining-the-health-state-of-beech-trees-from-airborne-images-and-lidar-point-clouds" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Swiss Territorial Data Lab" class="md-header__button md-logo" aria-label="Swiss Territorial Data Lab" data-md-component="logo">
+      
+  <img src="../assets/logo-stdl-transparent.svg" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Swiss Territorial Data Lab
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Dieback of beech trees: methodology for determining the health state of beech trees from airborne images and LiDAR point clouds
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/swiss-territorial-data-lab" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    STDL on Github
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Swiss Territorial Data Lab" class="md-nav__button md-logo" aria-label="Swiss Territorial Data Lab" data-md-component="logo">
+      
+  <img src="../assets/logo-stdl-transparent.svg" alt="logo">
+
+    </a>
+    Swiss Territorial Data Lab
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/swiss-territorial-data-lab" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    STDL on Github
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        Homepage
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://github.com/swiss-territorial-data-lab" class="md-nav__link">
+        GitHub
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-introduction" class="md-nav__link">
+    1. Introduction
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-study-area" class="md-nav__link">
+    2. Study area
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-data" class="md-nav__link">
+    3. Data
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Data">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31-lidar-point-cloud" class="md-nav__link">
+    3.1 LiDAR point cloud
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32-airborne-images" class="md-nav__link">
+    3.2 Airborne images
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#33-satellite-images" class="md-nav__link">
+    3.3 Satellite images
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#34-ground-truth" class="md-nav__link">
+    3.4 Ground truth
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-method" class="md-nav__link">
+    4. Method
+  </a>
+  
+    <nav class="md-nav" aria-label="4. Method">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#41-lidar-processing" class="md-nav__link">
+    4.1 LiDAR processing
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#42-image-processing" class="md-nav__link">
+    4.2 Image processing
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#43-satellite-based-indices" class="md-nav__link">
+    4.3 Satellite-based indices
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#44-random-forest" class="md-nav__link">
+    4.4 Random Forest
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-results-and-discussion" class="md-nav__link">
+    5 Results and discussion
+  </a>
+  
+    <nav class="md-nav" aria-label="5 Results and discussion">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#51-lidar-processing" class="md-nav__link">
+    5.1 LiDAR processing
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#52-image-processing" class="md-nav__link">
+    5.2 Image processing
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#53-vegetation-indices-from-satellite-imagery" class="md-nav__link">
+    5.3 Vegetation indices from satellite imagery
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#54-random-forest" class="md-nav__link">
+    5.4 Random Forest
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-conclusion-and-outlook" class="md-nav__link">
+    6 Conclusion and outlook
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-appendixes" class="md-nav__link">
+    7 Appendixes
+  </a>
+  
+    <nav class="md-nav" aria-label="7 Appendixes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#71-simulation-plan-for-dft-parameter-tuning" class="md-nav__link">
+    7.1 Simulation plan for DFT parameter tuning
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#72-t-tests" class="md-nav__link">
+    7.2 t-tests
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-sources-and-references" class="md-nav__link">
+    8 Sources and references
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="dieback-of-beech-trees-methodology-for-determining-the-health-state-of-beech-trees-from-airborne-images-and-lidar-point-clouds">Dieback of beech trees: methodology for determining the health state of beech trees from airborne images and LiDAR point clouds<a class="headerlink" href="#dieback-of-beech-trees-methodology-for-determining-the-health-state-of-beech-trees-from-airborne-images-and-lidar-point-clouds" title="Permanent link">&para;</a></h1>
+<p>Clotilde Marmy (ExoLabs) - Gwenaëlle Salamin (ExoLabs) - Alessandro Cerioni (Canton of Geneva) - Roxane Pott (swisstopo)</p>
+<p>Proposed by the Canton of Jura - PROJ-HETRES<br/>
+October 2022 to August 2023 - Published on November 13, 2023</p>
+<p>All scripts are available on GitHub: https://github.com/swiss-territorial-data-lab/proj-hetres/tree/main.</p>
+<p><em><strong>Abstract</strong>: Beech trees are sensitive to drought and repeated episodes can cause dieback. This issue affects the Jura forests requiring the development of new tools for forest management. In this project, descriptors for the health state of beech trees were derived from LiDAR point clouds, airborne images and satellite images to train a random forest predicting the health state per tree in a study area (5 km²) in Ajoie. A map with three classes was produced: healthy, unhealthy, dead. Metrics computed on the test dataset revealed that the model trained with all the descriptors has an overall accuracy up to 0.79, as well as the model trained only with descriptors derived from airborne imagery. When all the descriptors are used, the yearly difference of NDVI between 2018 and 2019, the standard deviation of the blue band, the mean of the NIR band, the mean of the NDVI, the standard deviation of the canopy cover and the LiDAR reflectance appear to be important descriptors.</em></p>
+<h2 id="1-introduction">1. Introduction<a class="headerlink" href="#1-introduction" title="Permanent link">&para;</a></h2>
+<p>Since the drought episode of 2018, the canton of Jura and others cantons have noticed a dieback of the beech trees in their forests <sup id="fnref:1"><a class="footnote-ref" href="#fn:1">1</a></sup>. In the canton of Jura, this problem mainly concerns the Ajoie region, where 1000 hectares of deciduous trees are affected <sup id="fnref:2"><a class="footnote-ref" href="#fn:2">2</a></sup>. This is of concern for the productivity and management of the forest, as well as for the security of walkers. In this context, the République et Canton du Jura has contacted the Swiss Territorial Data Lab to develop a new monitoring solution based on data science, airborne images and LiDAR point clouds. Dieback symptoms are observable in the mortality of branches, the transparency of the tree crown and the leaf mass partition <sup id="fnref:3"><a class="footnote-ref" href="#fn:3">3</a></sup>. </p>
+<p>The vegetation health state influences the reflectance in images (airborne and satellite), which is often used as a monitoring tool, in particular under the form of vegetation indices: </p>
+<ul>
+<li>Normalized Difference Vegetation Index (NDVI), a combination of the near infrared and red bands quantifying vegetation health; </li>
+<li>Vegetation Health Index (VHI), an index quantifying the decrease or increase of vegetation in comparison to a reference state. </li>
+</ul>
+<p>For instance, Brun et al. studied early-wilting in Central European forests with time series of the Normalized Difference Vegetation Index (NDVI) and estimate the surface concerned by early leaf-shedding <sup id="fnref:4"><a class="footnote-ref" href="#fn:4">4</a></sup>.</p>
+<p>Another technology used to monitor forests is light detection and ranging (LiDAR) as it penetrates the canopy and gives 3D-information on trees and forest structures. Several forest and tree descriptors such as the canopy cover <sup id="fnref:5"><a class="footnote-ref" href="#fn:5">5</a></sup> or the standard deviation of crown return intensity <sup id="fnref:6"><a class="footnote-ref" href="#fn:6">6</a></sup> can be derived from the LiDAR point cloud to monitor vegetation health state. </p>
+<p>In <sup id="fnref2:5"><a class="footnote-ref" href="#fn:5">5</a></sup>, the study was conducted at tree level, whereas in <sup id="fnref2:6"><a class="footnote-ref" href="#fn:6">6</a></sup> stand level was studied. To work at tree level, it is necessary to segment individual trees in the LiDAR point cloud. On complex forests, like with a dense understory near tree stems, it is challenging to get correct segments without manual corrections. </p>
+<p>The aim of this project is to provide foresters with a map to help plan the felling of beech trees in the Ajoie's forests. To do so, we developed a combined method using LiDAR point clouds and airborne and satellite multispectral images to determine the health state of beech trees. </p>
+<h2 id="2-study-area">2. Study area<a class="headerlink" href="#2-study-area" title="Permanent link">&para;</a></h2>
+<p>The study was conducted in two areas of interest in the Ajoie region (Fig. 1.A); one near Miécourt (Fig. 1.B), the other one near Beurnevésin (Fig. 1.C). Altogether they cover 5 km<sup>2</sup>, 1.4 % of the Canton of Jura's forests <sup id="fnref:7"><a class="footnote-ref" href="#fn:7">7</a></sup>. </p>
+<p>Miécourt sub-area is west-south and south oriented, whereas Beurnevésin sub-area is rather east-south and south oriented. They are in the same altitude range (600-700 m) and are 2 km far from each other, thus near the same weather station.</p>
+<div align="center" style="font-style: italic">
+<img src="./images/F1_AOI_GT.jpg" alt="Study area"> <br />
+<i>
+Figure 1: The study area is composed of two areas of interest.
+</i>
+</div>
+
+<h2 id="3-data">3. Data<a class="headerlink" href="#3-data" title="Permanent link">&para;</a></h2>
+<p>The project makes use of different data types: LiDAR point cloud, airborne and satellite imagery, and ground truth data. Table 1 gives an overview of the data and their characteristics. Data have been acquired in late summer 2022 to have an actual and temporally correlated information on the health state of beech trees.  </p>
+<p><center></p>
+<p><i>Table 1: Overview of the data used in the project.</i></p>
+<table>
+<thead>
+<tr>
+<th align="center"></th>
+<th align="center">Resolution</th>
+<th align="center">Acquisition time</th>
+<th align="center">Proprietary</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">LiDAR</td>
+<td align="center">50-100 pts/m<sup>2</sup></td>
+<td align="center">08.2022</td>
+<td align="center">République et Canton du Jura</td>
+</tr>
+<tr>
+<td align="center">Airborne images</td>
+<td align="center">0.03 m</td>
+<td align="center">08.2022</td>
+<td align="center">République et Canton du Jura</td>
+</tr>
+<tr>
+<td align="center">Yearly variation of NDVI</td>
+<td align="center">10 m</td>
+<td align="center">06.2015-08.2022</td>
+<td align="center">Bern University of Applied Science (HAFL) and the Federal Office for Environment (BAFU)</td>
+</tr>
+<tr>
+<td align="center">Weekly vegetation health index</td>
+<td align="center">10 m</td>
+<td align="center">06.2015-08.2022</td>
+<td align="center">ExoLabs</td>
+</tr>
+<tr>
+<td align="center">Ground truth</td>
+<td align="center">- (point data)</td>
+<td align="center">08.-10.2022</td>
+<td align="center">République et Canton du Jura</td>
+</tr>
+</tbody>
+</table>
+<p></center></p>
+<h3 id="31-lidar-point-cloud">3.1 LiDAR point cloud<a class="headerlink" href="#31-lidar-point-cloud" title="Permanent link">&para;</a></h3>
+<p>The LiDAR dataset was acquired on the 16th of August 2023 and its point density is 50-100 pts/m^2^. It is classified in the following classes: ground, low vegetation (2-10m), middle vegetation (10-20m) and high vegetation (20 m and above). It was delivered in the LAS-format and had reflectance values <sup id="fnref:8"><a class="footnote-ref" href="#fn:8">8</a></sup> in the intensity storage field.  </p>
+<h3 id="32-airborne-images">3.2 Airborne images<a class="headerlink" href="#32-airborne-images" title="Permanent link">&para;</a></h3>
+<p>The airborne images have a ground resolution of 3 cm and were acquired simultaneously to the LiDAR dataset. The camera captured the RGB bands, as well as the near infrared (NIR) one. The acquisition of images with a lot of overlap and oblique views allowed the production of a true orthoimage for a perfect match with the LiDAR point cloud and the data of the ground truth.  </p>
+<h3 id="33-satellite-images">3.3 Satellite images<a class="headerlink" href="#33-satellite-images" title="Permanent link">&para;</a></h3>
+<p>The Sentinel-2 mission from the European Space Agency is passing every 6 days over Switzerland and allows free temporal monitoring at a 10 m resolution. The archives are available back to the beginning of beech tree dieback in 2018.</p>
+<h4 id="331-yearly-variation-of-ndvi">3.3.1 Yearly variation of NDVI<a class="headerlink" href="#331-yearly-variation-of-ndvi" title="Permanent link">&para;</a></h4>
+<p>The Bern University of Applied Science (HAFL) and the Federal Office for Environment (BAFU) have developed Web Services for vegetation monitoring derived from Sentinel-2 images. For this project, the yearly variation of NDVI <sup id="fnref:9"><a class="footnote-ref" href="#fn:9">9</a></sup> between two successive years is used. It measures the decrease in vegetation activity between August of one year (e.g. 2018) and June of the following year (e.g. 2019). The decrease is derived from rasters made of maximum values of the NDVI in June, July or August. The data are downloaded from the WCS service which delivers "row" indices: the NDVI values are not cut for a minimal threshold.  </p>
+<h4 id="332-vhi">3.3.2 VHI<a class="headerlink" href="#332-vhi" title="Permanent link">&para;</a></h4>
+<p>The Vegetation Health Index (VHI) was generated by ETHZ, WSL and ExoLab within the SILVA project <sup id="fnref:10"><a class="footnote-ref" href="#fn:10">10</a></sup> which proposes several indices for forest monitoring. VHI from 2016 to 2022 is used. It is computed mainly out of Sentinel-2 images, but also out of images from other satellite missions, in order to have data to obtain a weekly index with no time gap. </p>
+<h3 id="34-ground-truth">3.4 Ground truth<a class="headerlink" href="#34-ground-truth" title="Permanent link">&para;</a></h3>
+<p>The ground truth was collected between August and October 2022 by forsters. They assessed the health of the beech trees based on four criteria [@{gauquelin_guide_2010]:</p>
+<ol>
+<li>mortality of branches;</li>
+<li>transparency of the tree crown;</li>
+<li>leaf mass partition;</li>
+<li>trunk condition and other health aspects.</li>
+</ol>
+<p>In addition, each tree was associated with its coordinates and pictures as illustrated in Figure 1 and Figure 2 respectively. The forester surveyed: 75 healthy, 77 unhealthy and 56 dead trees.</p>
+<p>Tree locations were first identified in the field with a GPS-enabled tablet on which the 2022 SWISSIMAGE orthophoto mosaic was displayed. Afterwards, the tree locations were precisely adjusted on the trunk locations by visually locating the corresponding stems in the LiDAR point cloud with the help of the pictures taken in the field.
+The location and health status of a further 18 beech trees were added in July 2023. These 226 beeches - under which are 76 healthy, 77 affected and 73 dead trees - surveyed at the two dates are defined as the ground truth for this project.</p>
+<div align="center" style="font-style: italic">
+<img src="./images/F2_health_state.jpg" alt="Examples of the three health states."> <br />
+<i>
+Figure 2: Examples of the three health states: left, a healthy tree with a green, dense tree crown; center, a unheathy tree with dead twigs and a scarce foliage; right, a dead tree completely dry.
+</i>
+</div>
+
+<h2 id="4-method">4. Method<a class="headerlink" href="#4-method" title="Permanent link">&para;</a></h2>
+<p>The method developed is based on the processing of <a href="#4.1-LiDAR-processing">LiDAR point clouds</a> and of <a href="#4.2-Image-processing">airborne images</a>. <a href="#4.4-Random-Forest">Ready-made vegetation indices</a> derived from satellite imagery were also used.
+First, a segmentation of the trees in the LiDAR point cloud was carried out using the Digital-Forestry-Toolbox (DFT) <sup id="fnref:12"><a class="footnote-ref" href="#fn:12">11</a></sup>. Then, descriptors for the health state of the beech trees were derived from each dataset. Boxplots and corresponding t-test are computed to evaluate the ability of descriptors to differentiate the three health states. A t-test value below 0.01 indicates that there is a significant difference between the means of two classes. Finally, the descriptors were used jointly with the ground truth to train a <a href="#4.4-Random-Forest">random forest</a> (RF) algorithm, before inferring for the study area.</p>
+<div align="center" style="font-style: italic">
+<img src="./images/F3_method_overview.png" alt="Methodology overview"> <br />
+<i>
+Figure 3: Overview of the methodology, which processes the data into health descriptors for beech tree, before training and evaluating a random forest. 
+</i>
+</div>
+
+<h3 id="41-lidar-processing">4.1 LiDAR processing<a class="headerlink" href="#41-lidar-processing" title="Permanent link">&para;</a></h3>
+<p>At the beginning of LiDAR processing, exploration of the data motivated the segmentation and descriptors computation.</p>
+<h4 id="412-data-exploration">4.1.2 Data exploration<a class="headerlink" href="#412-data-exploration" title="Permanent link">&para;</a></h4>
+<p>In order to get an understanding of the available information at the tree level, we manually segmented three healthy, five unhealthy and three dead trees. More unhealthy trees have been segmented to better represent dieback symptoms. Vertical slices of each tree were rotary extracted, providing visual information on the health state. </p>
+<h4 id="413-segmentation">4.1.3 Segmentation<a class="headerlink" href="#413-segmentation" title="Permanent link">&para;</a></h4>
+<p>To be able to describe the health state of each tree, segmentation of the forest was performed using the DFT. Parameters have been tuned to find an appropriate segmentation. Two strategies for peak isolation were tested on the canopy height model (CHM): 
+1. Maxima smoothing: a height difference is set below which all local maxima are suppressed.
+2. Local maxima within search radius: the size of the dilation window for identification of maxima is dependent of the height.  </p>
+<p>Each peak isolation method was tested on a range of parameters and on different cell resolutions for the CHM computation. The detailed plan of the simulation is given in <a href="#71-simulation-plan-for-dft-parameter-tuning">Appendix 1</a>. The minimum tree height was set to 10 m. For computation time reasons, only 3 LiDAR tiles with 55 ground truth (GT) trees located on them were processed.  </p>
+<p>To find the best segmentation, the locations of the GT trees were compared to the location of the segment peaks. GT trees with a segmented peak less than 4 m away were considered as True Positive (TP). The best segmentation was the one with the most TP.</p>
+<h4 id="414-structural-descriptors">4.1.4 Structural descriptors<a class="headerlink" href="#414-structural-descriptors" title="Permanent link">&para;</a></h4>
+<p>An alternative to the segmentation is to change of paradigm and perform the analyses at the stand level. Meng et al. <sup id="fnref3:6"><a class="footnote-ref" href="#fn:6">6</a></sup> derived structural descriptors for acacia dieback at the stand level based on LiDAR point cloud. By adapting their method to the present case, the following descriptors were derived from the LiDAR point cloud using the <em>LidR</em> library from R <sup id="fnref:13"><a class="footnote-ref" href="#fn:13">12</a></sup>:</p>
+<ol>
+<li>Canopy maximal height.</li>
+<li>Scale and shape parameters of the Weibull density function fitted for the point distribution along the height. </li>
+<li>Coefficient of variation of leaf area density (cvLAD) describing the distribution of the vertical structure of photosynthetic tissue along the height.</li>
+<li>Vertical Complexity Index (VCI): Entropy measure of the vertical distribution of vegetation.</li>
+<li>Standard deviation of the canopy height model (sdCHM), reflects canopy height variations.</li>
+<li>Canopy cover (CC) and standard deviation (sdCC), reflects foliage density and coverage.</li>
+<li>Above ground biomass height (AGH), reflects understory height until 10 m.</li>
+</ol>
+<p>Descriptors 1 to 6 are directly overtaken from Meng et al. All the descriptors were first computed for three grid resolutions: 10 m, 5 m and 2.5 m.<br />
+In a second time, the DFT segments were considered as an adaptive grid around the trees, with the assumption that it is still more natural than a regular grid. Then, structural descriptors for vertical points distribution (descriptors 1 to 4) were computed on each segment, whereas descriptors for horizontal points distribution (descriptors 5 to 7) have been processed for 2.5 m grid. A weight was applied to the value of the latter descriptors according to the area of grid cells included in the footprint of the segments. </p>
+<p>Furthermore, LiDAR reflectance mean and standard deviation (sd) were computed for the segment crowns to differentiate them by their reflectance.</p>
+<h3 id="42-image-processing">4.2 Image processing<a class="headerlink" href="#42-image-processing" title="Permanent link">&para;</a></h3>
+<p>For the image processing, an initial step was to compute the normalized difference vegetation index (NDVI) for each raster image. The normalized difference vegetation index (NDVI) is an index commonly used for the estimation of the health state of vegetation <sup id="fnref3:5"><a class="footnote-ref" href="#fn:5">5</a></sup><sup id="fnref:14"><a class="footnote-ref" href="#fn:14">13</a></sup><sup id="fnref:15"><a class="footnote-ref" href="#fn:15">14</a></sup>.</p>
+<div class="arithmatex">\[\begin{align}
+\
+NDVI = {NIR-R \over NIR+R}
+\
+\end{align}\]</div>
+<p>where NIR and R are the value of the pixel in the near-infrared and red band respectively.</p>
+<p>To uncover potential distinctive features between the classes, boxplots and principal component analysis were used on the images four bands (RGB-NIR) and the NDVI.</p>
+<p>Firstly, we tested if the brute pixel values allowed the distinction between classes at a pixel level. This method avoids the pit of the forest segmentation into trees.<br />
+Secondly, we tested the same method, but with some low-pass filter to reduce the noise in the data.<br />
+Thirdly, we tried to find distinct statistical features at the tree level. This approach allows to decrease the noise that can be present in high-resolution information. However, it necessitates to have a reasonably good segmentation of the trees.<br />
+Finally, color filtering and edge detection was tested in order to highlight and extract the linear structure of the branches.</p>
+<p>For each treatment, it is possible to do it with or without a mask on the tree height. As only trees between 20 and 40 m tall are affected by dieback, a mask based on the Canopy Height Model (CHM) raster derived from the LiDAR point cloud was tested.</p>
+<div align="center" style="font-style: italic">
+<img src="images/F4_statistical_analysis_flow.jpeg" alt="Flow for the statistical analysis" style="width:50%"> <br />
+<i>
+Figure 4: Overview of different possible data treatments for the the statistical analysis. 
+</i>
+</div>
+
+<h4 id="421-statistical-tests-on-the-original-and-filtered-pixels">4.2.1 Statistical tests on the original and filtered pixels<a class="headerlink" href="#421-statistical-tests-on-the-original-and-filtered-pixels" title="Permanent link">&para;</a></h4>
+<p>The statistical tests were performed on the original and filtered pixels.</p>
+<p>Two low pass filters were tested:
+- Gaussian with a sigma of 5;
+- Bilinear downsampling with scale factors of 1/3, 1/5 and 1/17, corresponding to resolutions of 9, 15 and 50 cm.</p>
+<p>In the original and the filtered cases, the pixels for each GT tree were extracted from the images and sorted by class. Then, the corresponding NDVI is computed. Each pixel has 5 attributes corresponding to its value on the four bands (R, G, B, NIR) and its NDVI.<br />
+First, the per-class boxplots of the attributes were executed to see if the distinction between classes was possible on one or several bands or on the NDVI.<br />
+Then, the principal component analysis (PCA) was computed on the same values to see if their linear combination allowed the distinction of the classes.</p>
+<h4 id="422-statistical-tests-at-the-tree-level">4.2.2. Statistical tests at the tree level<a class="headerlink" href="#422-statistical-tests-at-the-tree-level" title="Permanent link">&para;</a></h4>
+<p>For the tests at the tree level, the GT trees were segmented by hand. For each trees, the statistics of the pixels were calculated over its polygon, on each band and for the NDVI. Then, the results were sorted by class.<br />
+Each tree has 5 attributes per band or index corresponding to the statistics of its pixels: minimum (min), maximum (max), mean, median and standard deviation (std).</p>
+<p>Like with the pixels, the per-class boxplots of the attributes were executed to see if the distinction between classes was possible. Then, the PCA was computed.</p>
+<h4 id="423-extraction-of-branches">4.2.3 Extraction of branches<a class="headerlink" href="#423-extraction-of-branches" title="Permanent link">&para;</a></h4>
+<p>One of the beneficiaries noted that the branches are clearly visible on the RGB images. Therefore, it may be possible to isolate them with color filtering based on the RGB bands.<br />
+We calibrated a RGB filter through trial and error to produce a binary mask indicating the location of the branches. A sieve filter was used to reduce the noise due to the lighter parts of the foliage. Then, a binary dilation was performed on the mask to highlight the results. Otherwise, they would be too thin to be visible at a 1:5'000 scale.<br />
+A mask based on the CHM is integrated to the results to limit the influence of the ground.</p>
+<p>The branches have a characteristic linear structure. In addition, the branches of dead trees tend to be very light line on the dark forest ground and understory. Therefore, we thought that we may detect the dead branches thanks to edge detection. We used the canny edge detector and tested the python functions of the libraries <em>openCV</em> and <em>skimage</em>.</p>
+<h3 id="43-satellite-based-indices">4.3 Satellite-based indices<a class="headerlink" href="#43-satellite-based-indices" title="Permanent link">&para;</a></h3>
+<p>The yearly variation of NDVI and the VHI were used to take account of historical variations of NDVI from 2015 to 2022. For the VHI, the mean for each year is computed over the months considered for the yearly variation of NDVI.</p>
+<p>The pertinence of using these indices was explored: the values for each tree in the ground truth were extracted and observed in boxplots per health class in 2022 per year pair over the time span from 2015 to 2022. </p>
+<h3 id="44-random-forest">4.4 Random Forest<a class="headerlink" href="#44-random-forest" title="Permanent link">&para;</a></h3>
+<p>In R <sup id="fnref2:13"><a class="footnote-ref" href="#fn:13">12</a></sup>, the <em>caret</em> and <em>randomForest</em> packages were used to train the random forest and make predictions. First, the ground truth was split into the training and the test datasets, with each class being split 70 % into the training set and 30 % into the test set. Health classes with not enough samples were completed with copies. Optimization of the RF was performed on the number of trees to develop and on the number of randomly sampled descriptors to test at each split. In addition, 5-fold cross-validation was used to ensure the use of different parts of the dataset. The search parameter space was from 100 to 1000 decision trees and from 4 to 10 descriptors as the default value is the square root of all descriptors, i.e. 7. RF was assessed using a custom metric, which is an adaption of the false positive rate for the healthy class. It minimizes the amount of false healthy detections and of dead trees predicted as unhealthy (false unhealthy). It is called custom false positive rate (cFPR) in the text. It was preferred to have a model with more unhealthy predictions to control on the field, than missing unhealthy or dead trees. The cFPR goes from 0 (best) to 1 (worse). </p>
+<p><center> </p>
+<p><i>Table 2: Confusion matrix for the three health classes.</i></p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+<th>Ground truth</th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+<td></td>
+<td>Healthy</td>
+<td>Unhealthy</td>
+<td>Dead</td>
+</tr>
+<tr>
+<td><strong>Prediction</strong></td>
+<td>Healthy</td>
+<td>A</td>
+<td>B</td>
+<td>C</td>
+</tr>
+<tr>
+<td></td>
+<td>Unhealthy</td>
+<td>D</td>
+<td>E</td>
+<td>F</td>
+</tr>
+<tr>
+<td></td>
+<td>Dead</td>
+<td>G</td>
+<td>H</td>
+<td>I</td>
+</tr>
+</tbody>
+</table>
+<p></center></p>
+<p>According to the confusion matrix in Table 2, the cFPR is computed as follow: </p>
+<div class="arithmatex">\[\begin{align}
+\
+cFPR = {(𝐵+𝐶+𝐹)\over(𝐵+𝐶+𝐸+𝐹+𝐻+𝐼)}.
+\
+\end{align}\]</div>
+<p>In addition, the overall accuracy (OA), i.e. the ratio of correct predictions over all the predictions, and the sensitivity, which is, per class, the number of correct predictions divided by the number of samples from that class, are used. </p>
+<p>An ablation study was performed on descriptors to assess the contribution of the different data sources to the final performance. An “important” descriptor is having a strong influence on the increase in prediction errors in the case of random reallocation of the descriptor values in the training set.</p>
+<p>After the optimization, predictions for each DFT segments were computed using the best model according to the cFPR. The inferences were delivered as a thematic map with colors indicating the health state and hue indicating the fraction of decision trees in the RF having voted for the class (votes fraction). The purpose is to give a confidence information, with high votes fraction indicating robust predictions.  </p>
+<p>Furthermore, the ground truth was evaluated for quantity and quality by two means:</p>
+<ul>
+<li>Sample removals and their impact on the metric evaluation</li>
+<li>Splitting the training set into training subsets to evaluate on the original test set.</li>
+</ul>
+<p>Finally, after having developed the descriptors and the routine on high-quality data, we downgraded them to have resolutions similar to the ones of the swisstopo products (LiDAR: 20 pts/m<sup>2</sup>, orthoimage: 10 cm) and performed again the optimization and prediction steps. Indeed, the data acquisition was especially commissioned for this project and only covers the study area. If in the future the method should be extended, one would like to test if a lower resolution as the one of the standard national-wide product SWISSIMAGE could be sufficient.</p>
+<h2 id="5-results-and-discussion">5 Results and discussion<a class="headerlink" href="#5-results-and-discussion" title="Permanent link">&para;</a></h2>
+<p>In this section, the results obtained during the processing of each data source into descriptors are presented and discussed, followed by a section on the random forest results.</p>
+<h3 id="51-lidar-processing">5.1 LiDAR processing<a class="headerlink" href="#51-lidar-processing" title="Permanent link">&para;</a></h3>
+<p>For the LiDAR data, the reader will first discover the aspect of beech trees in the LiDAR point cloud according to their health state as studied in the data exploration. Then, the segmentation results and the obtained LiDAR-based descriptors will be presented. </p>
+<h4 id="512-data-exploration-for-11-beech-trees">5.1.2 Data exploration for 11 beech trees<a class="headerlink" href="#512-data-exploration-for-11-beech-trees" title="Permanent link">&para;</a></h4>
+<p>The vertical slices of 11 beech trees provided visual information on health state: branch shape, clearer horizontal and vertical point distribution. In Figure 5, one can appreciate the information showed by these vertical slices. The linear structure of the dead branches, the denser foliage of the healthy tree and the already smaller tree crown of the dead tree are well recognizable.</p>
+<div align="center" style="font-style: italic">
+<img src="./images/F5_profiles.png" alt="Segmented beech tree profiles"> <br/>
+<i>
+Figure 5: Slices for three trees with different health state. Vertical slices of each tree were rotary extracted, providing visual information on the health state. Dead twigs and density of foliage are particularly distinctive. 
+</i>
+</div>
+<p><br></p>
+<p>Some deep learning image classifier could treat LiDAR point cloud slices as artificial images and learn from them before classifying any arbitrary slice from the LiDAR point cloud. However, the subject is not adapted to transfer learning because 200 samples are not enough to train a model to classify three new classes, especially via images without resemblance to datasets used to pre-train deep learning models.</p>
+<h4 id="513-segmentation">5.1.3 Segmentation<a class="headerlink" href="#513-segmentation" title="Permanent link">&para;</a></h4>
+<p>Since the tree health classes were visually recognizable for the 11 trees, it was very interesting to individuate each tree in the LiDAR point cloud. </p>
+<p>After having searched for optimal parameters in the DFT, the best realization of each peak isolation method either slightly oversegmented or slightly undersegmented the forest. The forest has a complex structure with dominant and co-dominant trees, and with understory. A simple yet frequent example is the situation of a small pine growing in the shadow of a beech tree. It is difficult for an algorithm to differentiate between the points belonging to the pine and those belonging to the beech. Complex tree crowns (not spheric, with two maxima) especially lead to oversegmentation.</p>
+<p>As best segmentation, maxima smoothing on a 0.5 m resolution CHM was identified. 52 out of 55 GT trees were within a 4m distance from the centroid of a segment. The total amount of segments is 7347. This corresponds to 272 trees/ha. Report of a forest inventory in the Jura forest between 2003 and 2005 indicated a density of 286 trees/ha in high forest <sup id="fnref2:7"><a class="footnote-ref" href="#fn:7">7</a></sup>. Since the ground truth is only made of points coordinates, it is difficult to assess quantitatively the correctness of the segments, i.e. the attribution of each point to the right segment. Therefore, the work at the tree level is only approximate. </p>
+<h4 id="514-structural-descriptors">5.1.4 Structural descriptors<a class="headerlink" href="#514-structural-descriptors" title="Permanent link">&para;</a></h4>
+<p>Nevertheless, the structural descriptors for each tree were computed from the segmented LiDAR point cloud. The t-test between health classes for each descriptor at each resolution (10 m, 5 m, 2.5 m and per-tree grid) are given in Appendices <a href="#7.2.1-t-test-on-LiDAR-based-descriptors-at-10-m">2</a>, <a href="#7.2.2-t-test-on-LiDAR-based-descriptors-at-5-m">3</a>, <a href="#7.2.3-t-test-on-LiDAR-based-descriptors-at-2.5-m">4</a> and <a href="#7.2.4-t-test-on-LiDAR-based-descriptors-per-tree">5</a>. The number of significant descriptors per resolution are indicated to understand better the effect on the RF:</p>
+<ul>
+<li>at 10 m: 13</li>
+<li>at 5 m: 17 </li>
+<li>at 2.5 m: 18</li>
+<li>per tree: 15</li>
+</ul>
+<p>The simulations at 5 m and at 2.5 m seemed a priori the most promising. In both constellations, t-tests indicated a significant different distribution for: </p>
+<ul>
+<li>maximal height, between the three health states</li>
+<li>sdCHM, between the three health states</li>
+<li>cvLAD, healthy trees against the others</li>
+<li>mean reflectance, healthy trees against the others</li>
+<li>VCI, healthy trees against unhealthy trees</li>
+<li>canopy cover, healthy trees against dead trees</li>
+<li>standard deviation of reflectance, dead trees against the others</li>
+<li>sdCC, dead trees against the others</li>
+</ul>
+<p>The maximal height and the sdCHM appear to be the most suited descriptors to separate the three health states. The other descriptors are differentiating healthy trees from the others or dead trees from the others. From the 11 LiDAR-based descriptors, 8 are at least significant for the comparison between two classes. </p>
+<h3 id="52-image-processing">5.2 Image processing<a class="headerlink" href="#52-image-processing" title="Permanent link">&para;</a></h3>
+<p>Boxplots and PCA are given to illustrate the results of the image processing exploration. As the masking of pixels below and above the affected height made no difference in the interpretation of the results, they are presented here with the height mask.</p>
+<h4 id="521-boxplots-and-pca-over-the-pixel-values-of-the-original-images">5.2.1 Boxplots and PCA over the pixel values of the original images<a class="headerlink" href="#521-boxplots-and-pca-over-the-pixel-values-of-the-original-images" title="Permanent link">&para;</a></h4>
+<p>When the pixel values of the original images per health class are compared in boxplots (ex. Fig. 6), the sole brute value of the pixel is not enough to clearly distinguish between classes.</p>
+<div align="center" style="font-style: italic">
+<img src="images/F6_bxplt_distribution_status_health_pixel_based.jpg" alt="Boxplot of the unfiltered pixel values by band and class"> <br/>
+<i>
+Figure 6: Boxplots of the unfiltered pixel values on the different bands and the NDVI index by health class.</i>
+</div>
+<p><br></p>
+<p>The PCA in Figure 7 shows that is not possible to distinguish the groups based on a linear combination of the brute pixel values of the band and NDVI.</p>
+<div align="center" style="font-style: italic">
+<img src="images/F7_PCA_beeches_PC12_individuals_pixel_based.jpg" alt="PCA of the unfiltered pixel values on each band and the NDVI" style="width:75%"> <br/>
+<i>
+Figure 7: Distribution of the pixels in the space of the principal components based on the pixel values on the different branches and the NDVI.</i>
+</div>
+<p><br></p>
+<h4 id="522-boxplots-and-pca-over-the-pixel-values-of-the-filtered-images">5.2.2 Boxplots and PCA over the pixel values of the filtered images<a class="headerlink" href="#522-boxplots-and-pca-over-the-pixel-values-of-the-filtered-images" title="Permanent link">&para;</a></h4>
+<p>A better separation of the different classes is noticeable after the application of a Gaussian filter. The most promising band is the NIR one for a separation of the healthy and dead classes. On the NDVI, the distinction between those two classes should also be possible as illustrated in Figure 8. In all cases, there is no possible distinction between the healthy and unhealthy classes.<br />
+The separation between the healthy and dead trees on the NIR band would be around 130 and the slight overlap on the NDVI band is between approx. 0.04 and approx. 0.07.</p>
+<div align="center" style="font-style: italic">
+<img src="images/F8_bxplt_distribution_status_health_pixel_based.jpg" alt="Boxplot of the pixel values by band and class after a Gaussian filter with sigma=5"> <br/>
+<i>
+Figure 8: Boxplots of the pixel values on the different bands and the NDVI by health class after a Gaussian filter with sigma=5.</i>
+</div>
+<p><br></p>
+<p>As for the brute pixels, the overlap between the different classes is still very present in the PCA (Fig. 9).</p>
+<div align="center" style="font-style: italic">
+<img src="images/F9_PCA_beeches_PC12_individuals_pixel_based.jpg" alt="PCA of the pixel values on each band and the NDVI after a Gaussian filter with sigma=5" style="width:75%"> <br/>
+<i>
+Figure 9: Distribution of the pixels in the space of the principal components based on the pixel values on the different branches and the NDVI after a Gaussian filter with sigma=5.</i>
+</div>
+<p><br></p>
+<p>The boxplots produced on the resampled images (Figure 10) give similar results to the ones with the Gaussian filter. The healthy and dead classes are separated on the NIR band around 130. The unhealthy class stays similar to the healthy one.</p>
+<div align="center" style="font-style: italic">
+<img src="images/F10_bxplt_distribution_status_health_pixel_based.jpg" alt="Boxplot of the pixel values by band and class after a downsampling filter with a factor 1/3"> <br/>
+<i>
+Figure 10: Boxplots of the pixel values on the different bands and the NDVI by health class after a downsampling filter with a factor 1/3.</i>
+</div>
+<p><br></p>
+<p>According to the PCA in Figure 11, it seems indeed not possible to distinguish between the classes only with the information presented in this section.</p>
+<div align="center" style="font-style: italic">
+<img src="images/F11_PCA_beeches_PC12_individuals_pixel_based.jpg" alt="PCA of the pixel values on each band and the NDVI after a downsampling filter with a factor 1/3" style="width:75%"> <br/>
+<i>
+Figure 11: Distribution of the pixels in the space of the principal components based on the pixel values on the different branches and the NDVI after a downsampling filter with a factor 1/3.</i>
+</div>
+<p><br></p>
+<p>When the factor for the resampling is decreased, i.e. when the resulting resolution increases, the separation on the NIR band becomes stronger. With a factor of 1/17, the healthy and dead classes on the NDVI are almost entirely separated around the value of 0.04.</p>
+<h4 id="523-boxplots-and-pca-over-the-tree-statistics">5.2.3 Boxplots and PCA over the tree statistics<a class="headerlink" href="#523-boxplots-and-pca-over-the-tree-statistics" title="Permanent link">&para;</a></h4>
+<p>As an example for the per-tree statistics, the boxplots and PCA for the blue band are presented in Figures 12 to 14.<br />
+On the mean and on the standard deviation, healthy and dead classes are well differentiated on the blue band as visible on Figure 12. The same is observed on the mean, median, and minimum of the NDVI, as well as on the maximum, mean, and median of the NIR band. However, there is no possible differentiation on the red and green bands.</p>
+<div align="center" style="font-style: italic">
+<img src="images/F12_boxplot_stats_band_bleu.jpg" alt="Boxplot of the tree-level statistics after a downsampling filter with a factor 1/3"> <br/>
+<i>
+Figure 12: Boxplots of the statistics values for each tree on the blue band by health class.</i>
+</div>
+<p><br></p>
+<p>In the PCA in Figure 13, the groups of the healthy and dead trees are quite well separated, mostly along the first component.</p>
+<div align="center" style="font-style: italic">
+<img src="images/F13_PCA_beeches_bleu_band_PC12_individuals.jpg" alt="PCA of the statistic values on each band and the NDVI, repartition of the trees" style="width:75%"> <br/>
+<i>
+Figure 13: Distribution of the trees in the space of the principal components based on their statistical values on the blue band.</i>
+</div>
+<p><br></p>
+<p>On Figure 14, the first principal component is influenced principally by the standard deviation of the blue band. The mean, the median and the max have an influence too. This is in accordance with the boxplots where the standard deviation values presented the largest gap between classes.  </p>
+<div align="center" style="font-style: italic">
+<img src="images/F14_PCA_beeches_bleu_band_PC12_features.webp" alt="PCA of the statistic values on each band and the NDVI, influence of the variables" style="width:75%"> <br/>
+<i>
+Figure 14: Influence of the statistics for the blue band on the first and second principal components.</i>
+</div>
+<p><br></p>
+<p>The point clouds of the dead and healthy classes are also well separated on the PCA of the NIR band and of the NDVI. No separation is visible on the PCA of the green and red bands.</p>
+<h4 id="524-extraction-of-branches">5.2.4 Extraction of branches<a class="headerlink" href="#524-extraction-of-branches" title="Permanent link">&para;</a></h4>
+<p>Finally, the extraction of dead branches was performed. </p>
+<h5 id="use-of-a-rgb-filter">Use of a RGB filter<a class="headerlink" href="#use-of-a-rgb-filter" title="Permanent link">&para;</a></h5>
+<p>The result of the RGB filter is displayed in Figure 15. It is important to include the binary CHM in the visualization. Otherwise, the ground can have a significant influence on certain zones and distract from the dead trees. Some interferences can still be seen among the coniferous trees that have a similar light color as dead trees.</p>
+<div align="center" style="font-style: italic">
+<img src="images/F15_comp_sieve_helimap_large_zone.jpg" alt="Results produced by the RGB filter for the detection of dead branches" style="width:75%"> <br/>
+<i>
+Figure 15: Results produced by the RGB filter for the detection and highlight of dead branches over a zone with coniferous, healthy deciduous and dead deciduous trees. The parts in grey are the zones masked by the filter on the height.</i>
+</div>
+
+<h5 id="use-of-the-canny-edge-detector">Use of the canny edge detector<a class="headerlink" href="#use-of-the-canny-edge-detector" title="Permanent link">&para;</a></h5>
+<p>Figure 16 presents the result for the blue band which was the most promising one. The dead branches are well captured. However, there is a lot of noise around them due to the high contrasts in some parts of the foliage. The result is not usable as is.<br />
+Using a stricter filter decreased the noise, but it also decreased the captured pixels of the branches. In addition, using a sieve filter or trying to combine the results with the ones of the RGB filter did not improve the situation.  </p>
+<div align="center" style="font-style: italic">
+<img src="images/F16_canny_blue_sk.jpg" alt="Results produced canny edge detector on the blue band over a test dead tree" style="width:75%"> <br/>
+<i>
+Figure 16: Test of the canny edge detector from sklearn over a dead tree by using only the blue band. The parts in grey are the zones masked by the CHM filter on the height.
+</i>
+</div>
+<p><br></p>
+<p>The results for the other bands, RGB images or the NDVI were not usable either.</p>
+<h4 id="525-discussion">5.2.5 Discussion<a class="headerlink" href="#525-discussion" title="Permanent link">&para;</a></h4>
+<p>The results at the tree level are the most promising ones. They are integrated into the random forest. Choosing to work at the tree-level means that all the trees must be segmented with the DFT. This adds uncertainties to the results. As explained in the <a href="#5.1.3-Segmentation">dedicated section</a>, the DFT has a tendency of over/under-segmenting the results.<br />
+The procedures at the pixel level, whether on filtered or unfiltered images, are abandoned.  </p>
+<p>For the branch detection, the results were compared with some observations on the terrain by a forest expert. He assessed the result as incorrect in several parts of the forest. Therefore, the use of dead branch detection was not integrated in the random forest.<br />
+In addition, the edge detection was maybe not the right choice for dead branches and maybe we should have taken an approach more focused on detection of straight lines or graphs. The chance of success of such methods are difficult to predict as there can be a lot of variations in the form of the dead branches.</p>
+<h3 id="53-vegetation-indices-from-satellite-imagery">5.3 Vegetation indices from satellite imagery<a class="headerlink" href="#53-vegetation-indices-from-satellite-imagery" title="Permanent link">&para;</a></h3>
+<p>The t-test used to evaluate the ability of satellite indices to differentiate between health states are given in Appendices <a href="#7.2.5-t-tests-on-yearly-variation-of-NDVI">6</a> and <a href="#7.2.6-t-test-on-VHI">7</a>. In the following two subsections, solely the significant tested groups are mentioned for understanding the RF performance. </p>
+<h4 id="531-yearly-variation-of-ndvi">5.3.1 Yearly variation of NDVI<a class="headerlink" href="#531-yearly-variation-of-ndvi" title="Permanent link">&para;</a></h4>
+<p>t-test on the yearly variation of NDVI indicated significance between: 
+* all health states in 2018-2019: 2018 was an especially dry and hot year, whereas 2019 was in the seasonal normals. The recovery in 2019 may have differed according to the health classes. 
+* healthy and others trees in 2016-2017 and 2019-2020: maybe healthy trees are responding diversely to environmental factors than affected trees. 
+* healthy and dead trees in 2021-2022: this reflects a higher increase of NDVI for the dead trees. Are the understory benefitting from clearer forest structure? </p>
+<h4 id="532-vegetation-healthy-index">5.3.2 Vegetation Healthy Index<a class="headerlink" href="#532-vegetation-healthy-index" title="Permanent link">&para;</a></h4>
+<p>t-test on the VHI indicated significance between: 
+* dead and other trees in 2017
+* healthy and dead trees in 2018 
+* healthy and other trees in 2019
+* unhealthy and other trees in 2021
+* dead and unhealthy trees in 2020 and 2022</p>
+<p>Explanations similar to those for NDVI may partly explain the significance obtained. In any case,it is encouraging that the VHI helps to differentiate health classes thanks to different evolution through the years. </p>
+<h3 id="54-random-forest">5.4 Random Forest<a class="headerlink" href="#54-random-forest" title="Permanent link">&para;</a></h3>
+<p>The results of the RF that are presented and discussed are: (1) the optimization and ablation study, (2) the ground truth analysis, (3) the predictions for the AOI and (4) the performance with downgraded data. </p>
+<h4 id="541-optimization-and-ablation-study">5.4.1 Optimization and ablation study<a class="headerlink" href="#541-optimization-and-ablation-study" title="Permanent link">&para;</a></h4>
+<p>In Table 3, performance for VHI and yearly variation of NDVI (yvNDVI) descriptors using their value at the location of the GT trees are compared. VHI (cFPR = 0.24, OA = 0.63) performed better than the yearly variation of NDVI (cFPR = 0.39, OA = 0.5). Both groups of descriptors are mostly derived from satellite data with the same resolution (10 m). A conceptual difference is that the VHI is a deviation to a long-term reference value; whereas the yearly variation of NDVI reflects the change between two years. For the latter, values can be high or low independently of the actual health state. Example, a succession of two bad years will indicate few to no differences in NDVI.  </p>
+<p><center></p>
+<p><i>Table 3: RF performance with satellite-based descriptors.</i></p>
+<table>
+<thead>
+<tr>
+<th>Descriptors</th>
+<th>cFPR</th>
+<th>OA</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>VHI</td>
+<td>0.24</td>
+<td>0.63</td>
+</tr>
+<tr>
+<td>yvNDVI</td>
+<td>0.39</td>
+<td>0.5</td>
+</tr>
+</tbody>
+</table>
+<p></center></p>
+<p>Nonetheless, only the yearly variation of NDVI is used hereafter as it is available free of charge. </p>
+<p>About the LiDAR descriptors, the tested resolutions indicated that the 5 m resolution (cFPR = 0.2 and OA = 0.65) was performing the best for the cFPR, but that the per-tree descriptors had the higher OA (cFPR = 0.33, OA = 0.67). At 5 m resolution, fewer affected trees are missed, but there are more errors in the classification, so more control on the field would have to be done. The question of which grid resolution to use on the forest is a complex one, as the forest consists of trees of different sizes. Further, even if dieback affects some areas more severely than others, it's not a continuous phenomenon, and it is important to be able to clearly delimit each tree.  However, a too fine grid, as the 2.5 m one, can also hinders to capture the entirety of some trees and the performance may decrease (LiDAR, 2.5 m, OA=0.63).</p>
+<p><center></p>
+<p><i>Table 4: RF performance with LiDAR-based descriptors at different resolutions.</i> </p>
+<table>
+<thead>
+<tr>
+<th>Descriptors</th>
+<th>cFPR</th>
+<th>OA</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>LiDAR, 10 m</td>
+<td>0.3</td>
+<td>0.6</td>
+</tr>
+<tr>
+<td>LiDAR, 5 m</td>
+<td>0.2</td>
+<td>0.65</td>
+</tr>
+<tr>
+<td>LiDAR, 2.5 m</td>
+<td>0.28</td>
+<td>0.63</td>
+</tr>
+<tr>
+<td>LiDAR, per tree</td>
+<td>0.33</td>
+<td>0.67</td>
+</tr>
+</tbody>
+</table>
+<p></center></p>
+<p>Then, the 5 m resolution descriptors are kept for the rest of the analysis according to the decision of reducing missed dying trees.</p>
+<p>The ablation study performed on the descriptor sources is summarized in Table 5.A and Table 5.B. The two tables reflect performance for two different partitions of the samples in training and test sets. Since the performance is varying form several percents, the performance is impacted by the repartition of the samples. Following those values, the best setups for each partition respectively are the full-model (cFPR = 0.13, OA = 0.76) and the airborne-based model (cFPR = 0.11, OA = 0.79). </p>
+<p>One notices that all the health classes are not predicted with the same accuracy. The airborne-based model, as described in <a href="#5.2.3-Boxplots-and-PCA-over-the-tree-statistics">Section 5.2.3</a>, is less sensitive to the healthy class; whereas the satellite-based model and the LiDAR-based model is more polarized to healthy and dead classes, with low sensitivity performance in the unhealthy class. </p>
+<p><center> </p>
+<p><i>Table 5.A: Ablation study results, partition A of the dataset.</i></p>
+<table>
+<thead>
+<tr>
+<th>Descriptor sources</th>
+<th>cFPR</th>
+<th>OA</th>
+<th>Sensitivity healthy</th>
+<th>Sensitivity unhealthy</th>
+<th>Sensitivity dead</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>LiDAR</td>
+<td>0.2</td>
+<td>0.65</td>
+<td>0.65</td>
+<td>0.61</td>
+<td>0.71</td>
+</tr>
+<tr>
+<td>Airborne images</td>
+<td>0.18</td>
+<td>0.63</td>
+<td>0.43</td>
+<td>0.61</td>
+<td>0.94</td>
+</tr>
+<tr>
+<td>yvNDVI</td>
+<td>0.4</td>
+<td>0.49</td>
+<td>0.78</td>
+<td>0.26</td>
+<td>0.41</td>
+</tr>
+<tr>
+<td>LiDAR and yvNDVI</td>
+<td>0.23</td>
+<td>0.7</td>
+<td>0.74</td>
+<td>0.61</td>
+<td>0.76</td>
+</tr>
+<tr>
+<td>Airborne images and yvNDVI</td>
+<td>0.15</td>
+<td>0.73</td>
+<td>0.65</td>
+<td>0.7</td>
+<td>0.88</td>
+</tr>
+<tr>
+<td>LiDAR, airborne images and yvNDVI</td>
+<td>0.13</td>
+<td>0.76</td>
+<td>0.65</td>
+<td>0.74</td>
+<td>0.94</td>
+</tr>
+</tbody>
+</table>
+<p><i>Table 5.B: Ablation study results, partition B of the dataset.</i></p>
+<table>
+<thead>
+<tr>
+<th>Descriptor sources</th>
+<th>cFPR</th>
+<th>OA</th>
+<th>Sensitivity healthy</th>
+<th>Sensitivity unhealthy</th>
+<th>Sensitivity dead</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>LiDAR</td>
+<td>0.19</td>
+<td>0.71</td>
+<td>0.76</td>
+<td>0.5</td>
+<td>0.88</td>
+</tr>
+<tr>
+<td>Airborne images</td>
+<td>0.11</td>
+<td>0.79</td>
+<td>0.62</td>
+<td>0.8</td>
+<td>1</td>
+</tr>
+<tr>
+<td>yvdNDVI</td>
+<td>0.38</td>
+<td>0.62</td>
+<td>0.81</td>
+<td>0.4</td>
+<td>0.65</td>
+</tr>
+<tr>
+<td>LiDAR  and yvNDVI</td>
+<td>0.27</td>
+<td>0.74</td>
+<td>0.86</td>
+<td>0.5</td>
+<td>0.88</td>
+</tr>
+<tr>
+<td>Airborne images and yvNDVI</td>
+<td>0.14</td>
+<td>0.78</td>
+<td>0.62</td>
+<td>0.8</td>
+<td>0.94</td>
+</tr>
+<tr>
+<td>LiDAR, airborne images and yvNDVI</td>
+<td>0.14</td>
+<td>0.79</td>
+<td>0.71</td>
+<td>0.7</td>
+<td>1</td>
+</tr>
+</tbody>
+</table>
+<p></center></p>
+<p>Even if the performance varies according to the dataset partition, the important descriptors remain quite similar between the two partitions as displayed in Figure 17.A and Figure 17.B. The yearly difference of NDVI between 2018 and 2019 (<em>NDVI_diff_1918</em>) is the most important descriptor; standard deviation on the blue band (<em>b_std</em>) and the mean on the NIR band and NDVI (<em>nir_mean</em> and <em>ndvi_mean</em>) are standing out in both cases; from the LiDAR, the standard deviation of canopy cover (<em>sdcc</em>) and of the LiDAR reflectance (<em>i_sd_seg</em>) are the most important descriptors. <!--The descriptors important in both models are: yearly variation of NDVI between 2018 and 2019, the standard deviation of the blue band, the mean of the NIR band, the NDVI mean derived from airborne imagery, the standard deviation of the LiDAR reflectance and the standard deviation of the canopy cover.--><br />
+The order of magnitude explains the better performance on partition B with the airborne-based model: for instance, the <em>b_std</em> has the magnitude of 7.6 instead of 4.6 with Partition B. </p>
+<div align="center" style="font-style: italic">
+<img src="images/F17A_all_VarImp.png" alt="Important descriptors for the full model, dataset, partition A." style="width:75%"> <br/>
+<i>
+Figure 17.A: Important descriptors for the full-model, dataset partition A. 
+</i>
+</div>
+<p><br></p>
+<div align="center" style="font-style: italic">
+<img src="images/F17B_all_VarImp.png" alt="Important descriptors for the full model, dataset partition B." style="width:75%"> <br/>
+<i>
+Figure 17.B: Important descriptors for the full-model, dataset partition B. 
+</i>
+</div>
+<p><br></p>
+<p>The most important descriptor of the full-model resulted to be the yearly variation of NDVI between 2018 and 2019. The former was a year with a dry and hot summer which has stressed beech trees and probably participated to cause forest damages <sup id="fnref2:1"><a class="footnote-ref" href="#fn:1">1</a></sup>. This corroborates the ability of our RF method to monitor the response of trees to extreme drought events. However, the 10 m resolution of the index and the different adaptability of individual beech trees to drought may make the relationship between current health status and the index weak. This can explain that the presence of this descriptor in the full-model doesn't offer better performance than the airborne-based model to predict the health state.</p>
+<p>Both the mean on the NIR band and the standard deviation on the blue band play an important role. Statistical study in <a href="#5.2.3-Boxplots-and-PCA-over-the-tree-statistics">Section 5.2.3</a> indicated that the models might confuse healthy and unhealthy classes. On one hand, airborne imagery only sees the top of the crown and may miss useful information on hidden part. On the other hand, airborne imagery has a good ability to detect dead trees thanks to different reflectance values in NIR and blue bands. </p>
+<p>One argument that could explain the lower performance of the model based on LiDAR-based descriptors is the difficulty to find the right scale to perform the analysis as beech trees can show a wide range of crown diameters.</p>
+<h4 id="542-ground-truth-analysis">5.4.2 Ground truth analysis<a class="headerlink" href="#542-ground-truth-analysis" title="Permanent link">&para;</a></h4>
+<p>With progressive removal of sample individuals from the training set, impact of individual beech trees on the performance is further analyzed. The performance variation is shown in Figure 18. The performance is rather stable in the sense that the sensitivities stay in a range of values similar to the initial one up to 40 samples removed, but with each removal, a slight instability in the metrics is visible. The size of the peaks indicates variations of 1 prediction for the dead class, but up to 6 predictions for the unhealthy class and up to 7 for the healthy class. During the sample removal, some samples were always predicted correctly, whereas others were often misclassified leading to the peaks in Figure 18. With the large number of descriptors in the full-model, there is no straightforward profile of outliers to identify. </p>
+<div align="center" style="font-style: italic">
+<img src="images/F18_sample_removal.jpg" alt="Sensitivity when removal" style="width:75%"> <br/>
+<i>
+Figure 18: Evolution of the per-class sensitivity with samples removals.
+</i>
+</div>
+<p><br></p>
+<p>In addition, the subsampling of the training set in Table 6 shows that the OA varies only by max. 3% according to the subset used. It indicated again that the amount of ground truth allows to reach a stable OA range, but the characteristics of the samples does not allow a stable OA value. The sensitivity for the dead classes is stable, whereas sensitivity for healthy and unhealthy class are varying. </p>
+<p><center></p>
+<p><i>Table 6: Performance according to different random seed for the creation of the training subset.</i></p>
+<table>
+<thead>
+<tr>
+<th>Training set subpartition</th>
+<th>cFPR</th>
+<th>OA</th>
+<th>Sensitivity healthy</th>
+<th>Sensitivity unhealthy</th>
+<th>Sensitivity dead</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Random seed = 2</td>
+<td>0.13</td>
+<td>0.76</td>
+<td>0.61</td>
+<td>0.83</td>
+<td>0.88</td>
+</tr>
+<tr>
+<td>Random seed = 22</td>
+<td>0.15</td>
+<td>0.78</td>
+<td>0.70</td>
+<td>0.78</td>
+<td>0.88</td>
+</tr>
+<tr>
+<td>Random seed = 222</td>
+<td>0.18</td>
+<td>0.75</td>
+<td>0.65</td>
+<td>0.74</td>
+<td>0.88</td>
+</tr>
+<tr>
+<td>Random seed = 2222</td>
+<td>0.13</td>
+<td>0.76</td>
+<td>0.65</td>
+<td>0.78</td>
+<td>0.88</td>
+</tr>
+<tr>
+<td>Random seed = 22222</td>
+<td>0.10</td>
+<td>0.78</td>
+<td>0.65</td>
+<td>0.83</td>
+<td>0.88</td>
+</tr>
+</tbody>
+</table>
+<p></center></p>
+<h4 id="543-predictions">5.4.3 Predictions<a class="headerlink" href="#543-predictions" title="Permanent link">&para;</a></h4>
+<p>The full-model and the airborne-based-model were used to infer the health state of trees in the study area (Fig. 19). As indicated in Table 7, with the full-model, 35.1 % of the segments were predicted as healthy, 53 % as unhealthy and 11.9 % as dead. With the airborne-based model, 42.6 % of the segments were predicted as healthy, 46.2 % as unhealthy and 11.2 % as dead. The two models agree on 74.3 % of the predictions. In the 25.6 % of disagreement, it is about 77.1% of disagreement between healthy and unhealthy predictions. Finally, 1.5% are critical disagreement (between healthy and dead classes). </p>
+<p><center></p>
+<p><i>Table 7: Percentage of health in the AOI.</i></p>
+<table>
+<thead>
+<tr>
+<th>Model</th>
+<th>Healthy [%]</th>
+<th>Unhealth [%]</th>
+<th>Dead [%]</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Full</td>
+<td>35.1</td>
+<td>53</td>
+<td>11.9</td>
+</tr>
+<tr>
+<td>Airborne-based</td>
+<td>42.6</td>
+<td>46.2</td>
+<td>11.2</td>
+</tr>
+</tbody>
+</table>
+<p></center></p>
+<p>Control by forestry experts reported that the predictions mostly correspond to the field situation and that a weak votes fraction often correspond to false predictions. They confirmed that the map is delivering useful information to help plan beech tree felling. The final model retained after excursion on the field is the full-model.</p>
+<div align="center" style="font-style: italic">
+<img src="images/F19_thematic_health_map.png" alt="Thematic health map" style="width:75%"> <br/>
+<i>
+Figure 19: Extract of the predicted thematic health map. Green is for healthy, yellow for unhealthy, and red for dead trees. Hues indicate the RF fraction of votes. The predictions can be compared with the true orthophoto in the background. The polygons approximating the tree crowns correspond to the delimitation of segmented trees.
+</i>
+</div>
+
+<h4 id="544-downgraded-data">5.4.4 Downgraded data<a class="headerlink" href="#544-downgraded-data" title="Permanent link">&para;</a></h4>
+<p>Finally, random forest models are trained and tested on downgraded data with the partition A of the ground truth for all descriptors and by descriptor sources. With this partition, RF have a better cFPR for the full model (0.08 instead of 0.13), the airborne-based model (0.08 instead of 0.21) and the LiDAR-based model (0.28 instead of 0.31). The OA is also better (full model: 0.84 instead of 0.76, airborne-based model: 0.77 instead of 0.63), except in the case of the LiDAR-based model (0.63 instead of 0.66). It indicated that the resolution of 10 cm in the aerial imagery does not weaken the model and can even improve it. For the LiDAR point cloud, a reduction by a factor five of the density has not changed much the performance.</p>
+<p><center></p>
+<p><i>Table 7.A: Performance for RF trained and tested with the partition A of the dataset of downgraded data.</i> </p>
+<table>
+<thead>
+<tr>
+<th>Simulation</th>
+<th><em>cFPR</em></th>
+<th><em>OA</em></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Full</td>
+<td>0.08</td>
+<td>0.84</td>
+</tr>
+<tr>
+<td>Airborne-based</td>
+<td>0.08</td>
+<td>0.77</td>
+</tr>
+<tr>
+<td>LiDAR-based</td>
+<td>0.28</td>
+<td>0.63</td>
+</tr>
+</tbody>
+</table>
+<p><i>Table 7.A: Performance for RF trained and tested with the partition A of the dataset for original data.</i>  </p>
+<table>
+<thead>
+<tr>
+<th>Simulation</th>
+<th>cFPR</th>
+<th>OA</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Full</td>
+<td>0.13</td>
+<td>0.76</td>
+</tr>
+<tr>
+<td>Airborne-based</td>
+<td>0.21</td>
+<td>0.63</td>
+</tr>
+<tr>
+<td>LiDAR-based</td>
+<td>0.31</td>
+<td>0.66</td>
+</tr>
+</tbody>
+</table>
+<p></center></p>
+<p>When the important descriptors are compared between the original and downgraded model, one notices that the airborne-descriptors gained in importance in the full model when data are downgraded. The downgraded model showed sufficient accuracy for the objective of the project. </p>
+<h2 id="6-conclusion-and-outlook">6 Conclusion and outlook<a class="headerlink" href="#6-conclusion-and-outlook" title="Permanent link">&para;</a></h2>
+<p>The study has demonstrated the ability of a random forest algorithm to learn from structural descriptors derived from LiDAR point clouds and from vegetation reflectance in airborne and satellite images to predict the health state of beech trees. Depending of the used train and test datasets, the optimized full-model including all descriptors reached an OA of 0.76 or of 0.79, with corresponding cFPR values of 0.13 and 0.14 respectively. These metrics are sufficient for the purpose of prioritizing beech tree felling. The produced map, with the predicted health state and the corresponding votes for the segments, delivers useful information for forest management. The cantonal foresters validated the outcomes of this proof-of-concept and explained how the location of affected beech trees as individuals or as groups are used to target high-priority areas.<br />
+The full-model highlighted the importance of the yearly variation of NDVI between a drought year (2018) and a normal year (2019). The airborne imagery showed good ability to predict dead trees, whereas confusion remained between healthy and unhealthy trees. The quality of the LiDAR point cloud segmentation may explain the limited performance of the LiDAR-based model.<br />
+Finally, the model trained and tested on downgraded data gave an OA of 0.84 and a cFPR of 0.08. In this model, the airborne-based descriptors gained in importance. It was concluded that a 10 cm resolution may help the model by reducing the noise in the image. </p>
+<p>Outlooks for improving results include improving the ground truth representativeness of symptoms in the field and continuing research into descriptors for differentiating between healthy and unhealthy trees:  </p>
+<ul>
+<li>For the image processing, suggestions are the integration of more statistics like the skewness and kurtosis of the reflectance as in Junttila et al. (2022) <sup id="fnref:16"><a class="footnote-ref" href="#fn:16">15</a></sup>.</li>
+<li>LiDAR-based descriptors had limited impact on the final results. To better valorize them for an application on beech trees, further research would be needed. Beside producing a cleaner segmentation and finding additional descriptors, it could consist in mixing the descriptors at the different resolutions and, with the help of the importance analysis, estimate at which resolution each descriptor brings the most information to the classification.</li>
+<li>The results showed the important contribution of vegetation indices derived from satellite imagery reflecting the drought year of 2018. If available, using historical image data of higher resolution to derive more descriptors could help improve individual tree health assessment.</li>
+</ul>
+<p>The possibility of further developments put aside, the challenge is now the extension of the methodology to a larger area. The simultaneity of the data is necessary to an accurate analysis. It has been shown that the representativeness of the ground truth has to be improved to obtain better and more stable results. Thus, for an extension to further areas, we recommend collecting additional ground truth measurements. The health state of the trees showed some autocorrelation that could have boosted our results and make them less representative of the whole forest. They should be more scattered in the forest.</p>
+<p>Furthermore, required data are a true orthophoto and a LiDAR point cloud for per-tree analysis. It should be possible to use an old LiDAR acquisition to produce a CHM and renounce to use LiDAR-based descriptors without degrading the performance of the model too much. </p>
+<h2 id="7-appendixes">7 Appendixes<a class="headerlink" href="#7-appendixes" title="Permanent link">&para;</a></h2>
+<h3 id="71-simulation-plan-for-dft-parameter-tuning">7.1 Simulation plan for DFT parameter tuning<a class="headerlink" href="#71-simulation-plan-for-dft-parameter-tuning" title="Permanent link">&para;</a></h3>
+<p><center></p>
+<p><i>Table 8: parameter tuning for DFT.</i>  </p>
+<table>
+<thead>
+<tr>
+<th>CHM cell   size [m]</th>
+<th>Maxima smoothing</th>
+<th>Local maxima within search   radius</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0.50</td>
+<td>0.1</td>
+<td>(3.09632 + 0.00895 * h^2)/2</td>
+</tr>
+<tr>
+<td></td>
+<td>0.3</td>
+<td>(1.7425 * h^0.5566)/2</td>
+</tr>
+<tr>
+<td></td>
+<td>0.5</td>
+<td>(1.2 + 0.16 * h)/2</td>
+</tr>
+<tr>
+<td>1.00</td>
+<td>0.1</td>
+<td>(3.09632 + 0.00895 * h^2)/2</td>
+</tr>
+<tr>
+<td></td>
+<td>0.3</td>
+<td>(1.7425 * h^0.5566)/2</td>
+</tr>
+<tr>
+<td></td>
+<td>0.5</td>
+<td>(1.2 + 0.16 * h)/2</td>
+</tr>
+<tr>
+<td>1.50</td>
+<td>0.1</td>
+<td>(3.09632 + 0.00895 * h^2)/2</td>
+</tr>
+<tr>
+<td></td>
+<td>0.3</td>
+<td>(1.7425 * h^0.5566)/2</td>
+</tr>
+<tr>
+<td></td>
+<td>0.5</td>
+<td>(1.2 + 0.16 * h)/2</td>
+</tr>
+<tr>
+<td>2.00</td>
+<td>0.1</td>
+<td>(3.09632 + 0.00895 * h^2)/2</td>
+</tr>
+<tr>
+<td></td>
+<td>0.3</td>
+<td>(1.7425 * h^0.5566)/2</td>
+</tr>
+<tr>
+<td></td>
+<td>0.5</td>
+<td>(1.2 + 0.16 * h)/2</td>
+</tr>
+</tbody>
+</table>
+<p></center></p>
+<h3 id="72-t-tests">7.2 t-tests<a class="headerlink" href="#72-t-tests" title="Permanent link">&para;</a></h3>
+<p>t-test were computed to evaluate the ability of descriptors to differentiate the three health states. A t-test value below 0.01 indicates that there is a significant difference between the means of two classes. </p>
+<h4 id="721-t-tests-on-lidar-based-descriptors-at-10-m">7.2.1 t-tests on LiDAR-based descriptors at 10 m<a class="headerlink" href="#721-t-tests-on-lidar-based-descriptors-at-10-m" title="Permanent link">&para;</a></h4>
+<p><center></p>
+<p><i>Table 9: t-test on LiDAR-based descriptors at 10 m.</i></p>
+<table>
+<thead>
+<tr>
+<th>Descriptors</th>
+<th>healthy vs. unhealthy</th>
+<th>healthy vs. dead</th>
+<th>unhealthy vs. dead</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>maximal height</td>
+<td>0.002</td>
+<td>1.12E-11</td>
+<td>3.23E-04</td>
+</tr>
+<tr>
+<td>scale parameter</td>
+<td>0.005</td>
+<td>0.014</td>
+<td>0.964</td>
+</tr>
+<tr>
+<td>shape parameter</td>
+<td>0.037</td>
+<td>0.002</td>
+<td>0.269</td>
+</tr>
+<tr>
+<td>cvLAD</td>
+<td>0.001</td>
+<td>2.22E-04</td>
+<td>0.353</td>
+</tr>
+<tr>
+<td>VCI</td>
+<td>0.426</td>
+<td>0.094</td>
+<td>0.358</td>
+</tr>
+<tr>
+<td>mean reflectance</td>
+<td>4.13E-05</td>
+<td>0.002</td>
+<td>0.164</td>
+</tr>
+<tr>
+<td>sd of reflectance</td>
+<td>0.612</td>
+<td>3.33E-06</td>
+<td>9.21E-05</td>
+</tr>
+<tr>
+<td>canopy cover</td>
+<td>0.009</td>
+<td>0.069</td>
+<td>0.340</td>
+</tr>
+<tr>
+<td>sdCC</td>
+<td>0.002</td>
+<td>0.056</td>
+<td>0.324</td>
+</tr>
+<tr>
+<td>sdCHM</td>
+<td>0.316</td>
+<td>0.262</td>
+<td>0.892</td>
+</tr>
+<tr>
+<td>AGH</td>
+<td>0.569</td>
+<td>0.055</td>
+<td>0.120</td>
+</tr>
+</tbody>
+</table>
+<p></center></p>
+<h4 id="722-t-test-on-lidar-based-descriptors-at-5-m">7.2.2 t-test on LiDAR-based descriptors at 5 m<a class="headerlink" href="#722-t-test-on-lidar-based-descriptors-at-5-m" title="Permanent link">&para;</a></h4>
+<p><center></p>
+<p><i>Table 10: t-test on LiDAR-based descriptors at 5 m.</i></p>
+<table>
+<thead>
+<tr>
+<th>Descriptors</th>
+<th>healthy vs. unhealthy</th>
+<th>healthy vs. dead</th>
+<th>unhealthy vs. dead</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>maximal height</td>
+<td>0.001</td>
+<td>4.67E-12</td>
+<td>1.73E-04</td>
+</tr>
+<tr>
+<td>scale parameter</td>
+<td>0.072</td>
+<td>0.831</td>
+<td>0.204</td>
+</tr>
+<tr>
+<td>shape parameter</td>
+<td>0.142</td>
+<td>0.654</td>
+<td>0.361</td>
+</tr>
+<tr>
+<td>cvLAD</td>
+<td>9.14E-06</td>
+<td>3.22E-05</td>
+<td>0.667</td>
+</tr>
+<tr>
+<td>VCI</td>
+<td>0.006</td>
+<td>0.104</td>
+<td>0.485</td>
+</tr>
+<tr>
+<td>mean reflectance</td>
+<td>6.60E-05</td>
+<td>2.10E-06</td>
+<td>0.249</td>
+</tr>
+<tr>
+<td>sd of reflectance</td>
+<td>0.862</td>
+<td>2.26E-08</td>
+<td>9.24E-08</td>
+</tr>
+<tr>
+<td>canopy cover</td>
+<td>0.288</td>
+<td>0.001</td>
+<td>0.003</td>
+</tr>
+<tr>
+<td>sdCC</td>
+<td>1.42E-05</td>
+<td>1.94E-11</td>
+<td>0.001</td>
+</tr>
+<tr>
+<td>sdCHM</td>
+<td>0.004</td>
+<td>1.94E-08</td>
+<td>0.002</td>
+</tr>
+<tr>
+<td>AGH</td>
+<td>0.783</td>
+<td>0.071</td>
+<td>0.095</td>
+</tr>
+</tbody>
+</table>
+<p></center></p>
+<h4 id="723-t-test-on-lidar-based-descriptors-at-25-m">7.2.3 t-test on LiDAR-based descriptors at 2.5 m<a class="headerlink" href="#723-t-test-on-lidar-based-descriptors-at-25-m" title="Permanent link">&para;</a></h4>
+<p><center></p>
+<p><i>Table 11: t-test on LiDAR-based descriptors at 2.5 m.</i></p>
+<table>
+<thead>
+<tr>
+<th>Descriptors</th>
+<th>healthy vs. unhealthy</th>
+<th>healthy vs. dead</th>
+<th>unhealthy vs. dead</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>maximal height</td>
+<td>3.76E-04</td>
+<td>7.28E-11</td>
+<td>4.80E-04</td>
+</tr>
+<tr>
+<td>scale parameter</td>
+<td>0.449</td>
+<td>0.283</td>
+<td>5.60E-01</td>
+</tr>
+<tr>
+<td>shape parameter</td>
+<td>0.229</td>
+<td>0.087</td>
+<td>0.462</td>
+</tr>
+<tr>
+<td>cvLAD</td>
+<td>3.59E-04</td>
+<td>1.06E-07</td>
+<td>0.012</td>
+</tr>
+<tr>
+<td>VCI</td>
+<td>0.004</td>
+<td>1.99E-05</td>
+<td>0.072</td>
+</tr>
+<tr>
+<td>mean reflectance</td>
+<td>3.15E-04</td>
+<td>5.27E-07</td>
+<td>0.068</td>
+</tr>
+<tr>
+<td>sd of reflectance</td>
+<td>0.498</td>
+<td>1.10E-10</td>
+<td>4.66E-11</td>
+</tr>
+<tr>
+<td>canopy cover</td>
+<td>0.431</td>
+<td>0.004</td>
+<td>0.019</td>
+</tr>
+<tr>
+<td>sdCC</td>
+<td>0.014</td>
+<td>1.94E-13</td>
+<td>6.94E-09</td>
+</tr>
+<tr>
+<td>sdCHM</td>
+<td>0.003</td>
+<td>5.56E-07</td>
+<td>0.006</td>
+</tr>
+<tr>
+<td>AGH</td>
+<td>0.910</td>
+<td>0.132</td>
+<td>0.132</td>
+</tr>
+</tbody>
+</table>
+<p></center></p>
+<h4 id="724-t-test-on-lidar-based-descriptors-per-tree">7.2.4 t-test on LiDAR-based descriptors per tree<a class="headerlink" href="#724-t-test-on-lidar-based-descriptors-per-tree" title="Permanent link">&para;</a></h4>
+<p><center></p>
+<p><i>Table 12: t-test on LiDAR-based descriptors per tree.</i></p>
+<table>
+<thead>
+<tr>
+<th>Descriptors</th>
+<th>healthy vs. unhealthy</th>
+<th>healthy vs. dead</th>
+<th>unhealthy vs. dead</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>maximal height</td>
+<td>0.001</td>
+<td>1.98E-11</td>
+<td>2.61E-04</td>
+</tr>
+<tr>
+<td>scale parameter</td>
+<td>0.726</td>
+<td>0.618</td>
+<td>0.413</td>
+</tr>
+<tr>
+<td>shape parameter</td>
+<td>0.739</td>
+<td>0.795</td>
+<td>0.564</td>
+</tr>
+<tr>
+<td>cvLAD</td>
+<td>0.001</td>
+<td>4.23E-04</td>
+<td>0.526</td>
+</tr>
+<tr>
+<td>VCI</td>
+<td>0.145</td>
+<td>0.312</td>
+<td>0.763</td>
+</tr>
+<tr>
+<td>mean reflectance</td>
+<td>1.19E-04</td>
+<td>0.001</td>
+<td>0.949</td>
+</tr>
+<tr>
+<td>sd of reflectance</td>
+<td>0.674</td>
+<td>3.70E-07</td>
+<td>4.79E-07</td>
+</tr>
+<tr>
+<td>canopy cover</td>
+<td>0.431</td>
+<td>0.005</td>
+<td>0.023</td>
+</tr>
+<tr>
+<td>sdCC</td>
+<td>0.014</td>
+<td>4.43E-13</td>
+<td>1.10E-08</td>
+</tr>
+<tr>
+<td>sdCHM</td>
+<td>0.003</td>
+<td>2.71E-07</td>
+<td>0.004</td>
+</tr>
+<tr>
+<td>AGH</td>
+<td>0.910</td>
+<td>0.090</td>
+<td>0.087</td>
+</tr>
+</tbody>
+</table>
+<p></center></p>
+<h4 id="725-t-tests-on-yearly-variation-of-ndvi">7.2.5 t-tests on yearly variation of NDVI<a class="headerlink" href="#725-t-tests-on-yearly-variation-of-ndvi" title="Permanent link">&para;</a></h4>
+<p><center></p>
+<p><i>Table 13: t-test on yearly variation of NDVI.</i></p>
+<table>
+<thead>
+<tr>
+<th>Descriptors</th>
+<th>healthy vs. unhealthy</th>
+<th>healthy vs. dead</th>
+<th>unhealthy vs. dead</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>2016</td>
+<td>0.177</td>
+<td>0.441</td>
+<td>0.037</td>
+</tr>
+<tr>
+<td>2017</td>
+<td>0.079</td>
+<td>2.20E-06</td>
+<td>0.004</td>
+</tr>
+<tr>
+<td>2018</td>
+<td>0.093</td>
+<td>1.57E-04</td>
+<td>0.132</td>
+</tr>
+<tr>
+<td>2019</td>
+<td>0.003</td>
+<td>0.001</td>
+<td>0.816</td>
+</tr>
+<tr>
+<td>2020</td>
+<td>0.536</td>
+<td>0.041</td>
+<td>0.005</td>
+</tr>
+<tr>
+<td>2021</td>
+<td>0.002</td>
+<td>0.894</td>
+<td>0.003</td>
+</tr>
+<tr>
+<td>2022</td>
+<td>0.131</td>
+<td>0.103</td>
+<td>0.002</td>
+</tr>
+</tbody>
+</table>
+<p></center></p>
+<h4 id="726-t-test-on-vhi">7.2.6 t-test on VHI<a class="headerlink" href="#726-t-test-on-vhi" title="Permanent link">&para;</a></h4>
+<p><center></p>
+<p><i>Table 14: t-test on VHI.</i></p>
+<table>
+<thead>
+<tr>
+<th>Descriptors</th>
+<th>healthy vs. unhealthy</th>
+<th>healthy vs. dead</th>
+<th>unhealthy vs. dead</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>2015-2016</td>
+<td>0.402</td>
+<td>0.572</td>
+<td>0.767</td>
+</tr>
+<tr>
+<td>2016-2017</td>
+<td>0.005</td>
+<td>0.002</td>
+<td>0.885</td>
+</tr>
+<tr>
+<td>2017-2018</td>
+<td>0.769</td>
+<td>0.329</td>
+<td>0.505</td>
+</tr>
+<tr>
+<td>2018-2019</td>
+<td>2.64E-05</td>
+<td>3.98E-14</td>
+<td>0.001</td>
+</tr>
+<tr>
+<td>2019-2020</td>
+<td>7.86E-06</td>
+<td>9.55E-05</td>
+<td>0.427</td>
+</tr>
+<tr>
+<td>2020-2021</td>
+<td>0.028</td>
+<td>0.790</td>
+<td>0.018</td>
+</tr>
+<tr>
+<td>2021-2022</td>
+<td>0.218</td>
+<td>0.001</td>
+<td>0.080</td>
+</tr>
+</tbody>
+</table>
+<p></center></p>
+<h2 id="8-sources-and-references">8 Sources and references<a class="headerlink" href="#8-sources-and-references" title="Permanent link">&para;</a></h2>
+<p>Indications on software and hardware requirements, as well as the code used to perform the project, are available on GitHub: https://github.com/swiss-territorial-data-lab/proj-hetres/tree/main.</p>
+<p>Other sources of information mentioned in this documentation are listed here: </p>
+<div class="footnote">
+<hr />
+<ol>
+<li id="fn:1">
+<p>OFEV et al. (éd.). La canicule et la sécheresse de l’été 2018. Impacts sur l’homme et l’environnement. Technical Report 1909, Office fédéral de l’environnement, Berne, 2019.&#160;<a class="footnote-backref" href="#fnref:1" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:1" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+</li>
+<li id="fn:2">
+<p>Benoît Grandclement and Daniel Bachmann. 19h30 - En Suisse, la sécheresse qui sévit depuis plusieurs semaines frappe durement les arbres - Play RTS. February 2023. URL: <a href="https://www.rts.ch/play/tv/19h30/video/en-suisse-la-secheresse-qui-sevit-depuis-plusieurs-semaines-frappe-durement-les-arbres?urn=urn:rts:video:13829524">https://www.rts.ch/play/tv/19h30/video/en-suisse-la-secheresse-qui-sevit-depuis-plusieurs-semaines-frappe-durement-les-arbres?urn=urn:rts:video:13829524</a> (visited on 2023-03-28).&#160;<a class="footnote-backref" href="#fnref:2" title="Jump back to footnote 2 in the text">&#8617;</a></p>
+</li>
+<li id="fn:3">
+<p>Xavier Gauquelin, editor. <em>Guide de gestion des forêts en crise sanitaire</em>. Office National des Forêts, Institut pour le Développement Forestier, Paris, 2010. ISBN 978-2-84207-344-2.&#160;<a class="footnote-backref" href="#fnref:3" title="Jump back to footnote 3 in the text">&#8617;</a></p>
+</li>
+<li id="fn:4">
+<p>Philipp Brun, Achilleas Psomas, Christian Ginzler, Wilfried Thuiller, Massimiliano Zappa, and Niklaus E. Zimmermann. Large-scale early-wilting response of Central European forests to the 2018 extreme drought. <em>Global Change Biology</em>, 26(12):7021–7035, 2020. _eprint: https://onlinelibrary.wiley.com/doi/pdf/10.1111/gcb.15360. URL: <a href="https://onlinelibrary.wiley.com/doi/abs/10.1111/gcb.15360">https://onlinelibrary.wiley.com/doi/abs/10.1111/gcb.15360</a> (visited on 2022-10-13), <a href="https://doi.org/10.1111/gcb.15360">doi:10.1111/gcb.15360</a>.&#160;<a class="footnote-backref" href="#fnref:4" title="Jump back to footnote 4 in the text">&#8617;</a></p>
+</li>
+<li id="fn:5">
+<p>Run Yu, Youqing Luo, Quan Zhou, Xudong Zhang, Dewei Wu, and Lili Ren. A machine learning algorithm to detect pine wilt disease using UAV-based hyperspectral imagery and LiDAR data at the tree level. <em>International Journal of Applied Earth Observation and Geoinformation</em>, 101:102363, September 2021. URL: <a href="https://www.sciencedirect.com/science/article/pii/S0303243421000702">https://www.sciencedirect.com/science/article/pii/S0303243421000702</a> (visited on 2022-10-13), <a href="https://doi.org/10.1016/j.jag.2021.102363">doi:10.1016/j.jag.2021.102363</a>.&#160;<a class="footnote-backref" href="#fnref:5" title="Jump back to footnote 5 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:5" title="Jump back to footnote 5 in the text">&#8617;</a><a class="footnote-backref" href="#fnref3:5" title="Jump back to footnote 5 in the text">&#8617;</a></p>
+</li>
+<li id="fn:6">
+<p>Pengyu Meng, Hong Wang, Shuhong Qin, Xiuneng Li, Zhenglin Song, Yicong Wang, Yi Yang, and Jay Gao. Health assessment of plantations based on LiDAR canopy spatial structure parameters. <em>International Journal of Digital Earth</em>, 15(1):712–729, December 2022. URL: <a href="https://www.tandfonline.com/doi/full/10.1080/17538947.2022.2059114">https://www.tandfonline.com/doi/full/10.1080/17538947.2022.2059114</a> (visited on 2022-12-07), <a href="https://doi.org/10.1080/17538947.2022.2059114">doi:10.1080/17538947.2022.2059114</a>.&#160;<a class="footnote-backref" href="#fnref:6" title="Jump back to footnote 6 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:6" title="Jump back to footnote 6 in the text">&#8617;</a><a class="footnote-backref" href="#fnref3:6" title="Jump back to footnote 6 in the text">&#8617;</a></p>
+</li>
+<li id="fn:7">
+<p>Patrice Eschmann, Pascal Kohler, Vincent Brahier, and Joël Theubet. La forêt jurassienne en chiffres, Résultats et interprétation de l'inventaire forestier cantonal 2003 - 2005. Technical Report, République et Canton du Jura, St-Ursanne, 2006. URL: <a href="https://www.google.com/url?sa=t&amp;rct=j&amp;q=&amp;esrc=s&amp;source=web&amp;cd=&amp;ved=2ahUKEwjHuZyfhoSBAxU3hP0HHeBtC4sQFnoECDcQAQ&amp;url=https%3A%2F%2Fwww.jura.ch%2FHtdocs%2FFiles%2FDepartements%2FDEE%2FENV%2FFOR%2FDocuments%2Fpdf%2Frapportinventfor0305.pdf%3Fdownload%3D1&amp;usg=AOvVaw0yr9WOtxMyY-87avVMS9YM&amp;opi=89978449However">https://www.google.com/url?sa=t&amp;rct=j&amp;q=&amp;esrc=s&amp;source=web&amp;cd=&amp;ved=2ahUKEwjHuZyfhoSBAxU3hP0HHeBtC4sQFnoECDcQAQ&amp;url=https%3A%2F%2Fwww.jura.ch%2FHtdocs%2FFiles%2FDepartements%2FDEE%2FENV%2FFOR%2FDocuments%2Fpdf%2Frapportinventfor0305.pdf%3Fdownload%3D1&amp;usg=AOvVaw0yr9WOtxMyY-87avVMS9YM&amp;opi=89978449However</a>.&#160;<a class="footnote-backref" href="#fnref:7" title="Jump back to footnote 7 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:7" title="Jump back to footnote 7 in the text">&#8617;</a></p>
+</li>
+<li id="fn:8">
+<p>Agnieska Ptak. (5) Amplitude vs Reflectance \textbar  LinkedIn. June 2020. URL: <a href="https://www.linkedin.com/pulse/amplitude-vs-reflectance-agnieszka-ptak/">https://www.linkedin.com/pulse/amplitude-vs-reflectance-agnieszka-ptak/</a> (visited on 2023-08-11).&#160;<a class="footnote-backref" href="#fnref:8" title="Jump back to footnote 8 in the text">&#8617;</a></p>
+</li>
+<li id="fn:9">
+<p>BFH-HAFL and BAFU. Waldmonitoring.ch : wcs_ndvi_diff_2016_2015, wcs_ndvi_diff_2017_2016, wcs_ndvi_diff_2018_2017, wcs_ndvi_diff_2019_2018, wcs_ndvi_diff_2020_2019, wcs_ndvi_diff_2021_2020, wcs_ndvi_diff_2022_2021. URL: <a href="https://geoserver.karten-werk.ch/wfs?request=GetCapabilities">https://geoserver.karten-werk.ch/wfs?request=GetCapabilities</a>.&#160;<a class="footnote-backref" href="#fnref:9" title="Jump back to footnote 9 in the text">&#8617;</a></p>
+</li>
+<li id="fn:10">
+<p>Reik Leiterer, Gillian Milani, Jan Dirk Wegner, and Christian Ginzler. ExoSilva - ein Multi­-Sensor­-Ansatz für ein räumlich und zeitlich hochaufgelöstes Monitoring des Waldzustandes. In <em>Neue Fernerkundungs­technologien für die Umweltforschung und Praxis</em>, 17–22. Swiss Federal Institute for Forest, Snow and Landscape Research, WSL, April 2023. URL: <a href="https://www.dora.lib4ri.ch/wsl/islandora/object/wsl%3A33057">https://www.dora.lib4ri.ch/wsl/islandora/object/wsl%3A33057</a> (visited on 2023-11-13), <a href="https://doi.org/10.55419/wsl:33057">doi:10.55419/wsl:33057</a>.&#160;<a class="footnote-backref" href="#fnref:10" title="Jump back to footnote 10 in the text">&#8617;</a></p>
+</li>
+<li id="fn:12">
+<p>Matthew Parkan. Mparkan/Digital-Forestry-Toolbox: Initial release. April 2018. URL: <a href="https://zenodo.org/record/1213013">https://zenodo.org/record/1213013</a> (visited on 2023-08-11), <a href="https://doi.org/10.5281/ZENODO.1213013">doi:10.5281/ZENODO.1213013</a>.&#160;<a class="footnote-backref" href="#fnref:12" title="Jump back to footnote 11 in the text">&#8617;</a></p>
+</li>
+<li id="fn:13">
+<p>R Core Team. R: A Language and Environment for Statistical Computing. 2023. URL: <a href="https://www.R-project.org/">https://www.R-project.org/</a>.&#160;<a class="footnote-backref" href="#fnref:13" title="Jump back to footnote 12 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:13" title="Jump back to footnote 12 in the text">&#8617;</a></p>
+</li>
+<li id="fn:14">
+<p>Olga Brovkina, Emil Cienciala, Peter Surový, and Přemysl Janata. Unmanned aerial vehicles (UAV) for assessment of qualitative classification of Norway spruce in temperate forest stands. <em>Geo-spatial Information Science</em>, 21(1):12–20, January 2018. URL: <a href="https://www.tandfonline.com/doi/full/10.1080/10095020.2017.1416994">https://www.tandfonline.com/doi/full/10.1080/10095020.2017.1416994</a> (visited on 2022-07-15), <a href="https://doi.org/10.1080/10095020.2017.1416994">doi:10.1080/10095020.2017.1416994</a>.&#160;<a class="footnote-backref" href="#fnref:14" title="Jump back to footnote 13 in the text">&#8617;</a></p>
+</li>
+<li id="fn:15">
+<p>N.K. Gogoi, Bipul Deka, and L.C. Bora. Remote sensing and its use in detection and monitoring plant diseases: A review. <em>Agricultural Reviews</em>, December 2018. <a href="https://doi.org/10.18805/ag.R-1835">doi:10.18805/ag.R-1835</a>.&#160;<a class="footnote-backref" href="#fnref:15" title="Jump back to footnote 14 in the text">&#8617;</a></p>
+</li>
+<li id="fn:16">
+<p>Samuli Junttila, Roope Näsi, Niko Koivumäki, Mohammad Imangholiloo, Ninni Saarinen, Juha Raisio, Markus Holopainen, Hannu Hyyppä, Juha Hyyppä, Päivi Lyytikäinen-Saarenmaa, Mikko Vastaranta, and Eija Honkavaara. Multispectral Imagery Provides Benefits for Mapping Spruce Tree Decline Due to Bark Beetle Infestation When Acquired Late in the Season. <em>Remote Sensing</em>, 14(4):909, February 2022. URL: <a href="https://www.mdpi.com/2072-4292/14/4/909">https://www.mdpi.com/2072-4292/14/4/909</a> (visited on 2023-10-27), <a href="https://doi.org/10.3390/rs14040909">doi:10.3390/rs14040909</a>.&#160;<a class="footnote-backref" href="#fnref:16" title="Jump back to footnote 15 in the text">&#8617;</a></p>
+</li>
+</ol>
+</div>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2020-2021 Swiss Territorial Data Lab
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        <div class="md-social">
+  
+    
+    
+    <a href="https://github.com/swiss-territorial-data-lab" target="_blank" rel="noopener" title="Repo on Github" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+    </a>
+  
+    
+    
+    <a href="mailto:<info@stdl.ch>" target="_blank" rel="noopener" title="Send us an eMail!" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M498.1 5.6c10.1 7 15.4 19.1 13.5 31.2l-64 416c-1.5 9.7-7.4 18.2-16 23s-18.9 5.4-28 1.6l-126.3-52.5-40.1 74.5c-5.2 9.7-16.3 14.6-27 11.9S192 499 192 488v-96c0-5.3 1.8-10.5 5.1-14.7l165.3-212.6c2.5-7.1-6.5-14.3-13-8.4l-179 161.9-32 28.9c-9.2 8.3-22.3 10.6-33.8 5.8l-85-35.4C8.4 312.8.8 302.2.1 290s5.5-23.7 16.1-29.8l448-256c10.7-6.1 23.9-5.5 34 1.4z"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.expand"], "search": "../assets/javascripts/workers/search.5bf1dace.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.078830c0.min.js"></script>
+      
+        <script src="../assets/javascripts/config.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>
