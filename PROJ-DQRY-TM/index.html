@@ -1,0 +1,1384 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.0.14">
+    
+    
+      
+        <title>Automatic detection and observation of mineral extraction sites in Switzerland - Swiss Territorial Data Lab</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.113286f1.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.a0c5b2b5.min.css">
+      
+      
+
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="" data-md-color-accent="">
+  
+    
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#automatic-detection-and-observation-of-mineral-extraction-sites-in-switzerland" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Swiss Territorial Data Lab" class="md-header__button md-logo" aria-label="Swiss Territorial Data Lab" data-md-component="logo">
+      
+  <img src="../assets/logo-stdl-transparent.svg" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Swiss Territorial Data Lab
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Automatic detection and observation of mineral extraction sites in Switzerland
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/swiss-territorial-data-lab" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.3.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    STDL on Github
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Swiss Territorial Data Lab" class="md-nav__button md-logo" aria-label="Swiss Territorial Data Lab" data-md-component="logo">
+      
+  <img src="../assets/logo-stdl-transparent.svg" alt="logo">
+
+    </a>
+    Swiss Territorial Data Lab
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/swiss-territorial-data-lab" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.3.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    STDL on Github
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        Homepage
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://github.com/swiss-territorial-data-lab" class="md-nav__link">
+        GitHub
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-introduction" class="md-nav__link">
+    1. Introduction
+  </a>
+  
+    <nav class="md-nav" aria-label="1. Introduction">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#11-context" class="md-nav__link">
+    1.1 Context
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#12-approach" class="md-nav__link">
+    1.2. Approach
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-data" class="md-nav__link">
+    2. Data
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Data">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21-images-and-area-of-interest" class="md-nav__link">
+    2.1 Images and area of interest
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22-image-fetching" class="md-nav__link">
+    2.2 Image fetching
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#23-ground-truth" class="md-nav__link">
+    2.3 Ground truth
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-automatic-detection-methodology" class="md-nav__link">
+    3. Automatic detection methodology
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Automatic detection methodology">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31-deep-learning-algorithm-for-object-detection" class="md-nav__link">
+    3.1 Deep learning algorithm for object detection
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32-model-training" class="md-nav__link">
+    3.2 Model training
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#33-metrics" class="md-nav__link">
+    3.3 Metrics
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-automatic-detection-model-analysis" class="md-nav__link">
+    4. Automatic detection model analysis
+  </a>
+  
+    <nav class="md-nav" aria-label="4. Automatic detection model analysis">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#41-model-performance-and-replicability" class="md-nav__link">
+    4.1. Model performance and replicability
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#42-sensitivity-to-the-zoom-level" class="md-nav__link">
+    4.2 Sensitivity to the zoom level
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#43-model-choice" class="md-nav__link">
+    4.3 Model choice
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-automatic-detection-of-mes" class="md-nav__link">
+    5. Automatic detection of MES
+  </a>
+  
+    <nav class="md-nav" aria-label="5. Automatic detection of MES">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#51-detection-post-processing" class="md-nav__link">
+    5.1 Detection post-processing
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#52-inference-detections" class="md-nav__link">
+    5.2 Inference detections
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-observation-of-mes-evolution" class="md-nav__link">
+    6. Observation of MES evolution
+  </a>
+  
+    <nav class="md-nav" aria-label="6. Observation of MES evolution">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#61-object-tracking-strategy" class="md-nav__link">
+    6.1 Object tracking strategy
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#62-evolution-of-mes-over-years" class="md-nav__link">
+    6.2 Evolution of MES over years
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-conclusion-and-perspectives" class="md-nav__link">
+    7. Conclusion and perspectives
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#code-availability" class="md-nav__link">
+    Code availability
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#acknowledgements" class="md-nav__link">
+    Acknowledgements
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#appendix" class="md-nav__link">
+    Appendix
+  </a>
+  
+    <nav class="md-nav" aria-label="Appendix">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#a1-influence-of-empty-tiles-addition-to-model-performance" class="md-nav__link">
+    A.1 Influence of empty tiles addition to model performance
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#a2-sensitivity-of-the-model-to-the-number-of-images-per-batch" class="md-nav__link">
+    A.2 Sensitivity of the model to the number of images per batch
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#a3-evaluation-of-trained-models" class="md-nav__link">
+    A.3 Evaluation of trained models
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="automatic-detection-and-observation-of-mineral-extraction-sites-in-switzerland">Automatic detection and observation of mineral extraction sites in Switzerland<a class="headerlink" href="#automatic-detection-and-observation-of-mineral-extraction-sites-in-switzerland" title="Permanent link">&para;</a></h1>
+<p>Clémence Herny (Exolabs), Shanci Li (Uzufly), Alessandro Cerioni (État de Genève), Roxane Pott (swisstopo)</p>
+<p>Proposed by swisstopo - PROJ-DQRY-TM <br />
+October 2022 to February 2023 - Published on January 2024 <br /></p>
+<p><em><strong>Abstract</strong>: Study the evolution of mineral extraction sites (MES) is of primary importance for assessing the availability of mineral resources, managing MES, and evaluating the environmental impact of mining activity. In Switzerland, MES are inventoried locally by cantons and at the federal level by swisstopo. The later performs manual vectorisation of MES boundaries. Unfortunately, although the data is high quality, it is not regularly updated. To automate this tedious task and better observe the development of MES, swisstopo has solicited the STDL to carry out automatic detection of MES in Switzerland over years. We performed instance segmentation using a deep learning method to automatically detect MES in aerial images. The detection model was trained with 266 labels and orthophotos from the SWISSIMAGE RGB mosaic published in 2020. The selected trained model achieved a f1-score of 82% on the validation dataset. The model was used to perform detection by inference of potential MES in SWISSIMAGE RGB orthophotos from 1999 to 2021. The model shows good ability to detect potential MES with about 82% of labels detected for the 2020 SWISSIMAGE mosaic. Detection obtained with SWISSIMAGE orthophotos acquired in different years can be tracked to observe the temporal evolution of the detected object. The framework developed can perform detection in an area of interest (about a third of Switzerland) in just a few hours, which is a major advantage over manual mapping. We acknowledge that there is some missed and false detection in the final product, and the results need to be reviewed and validated by domain experts before being analysed and interpreted. The results can be used to perform statistics over time and update MES evolution in future image acquisitions.</em></p>
+<h2 id="1-introduction">1. Introduction<a class="headerlink" href="#1-introduction" title="Permanent link">&para;</a></h2>
+<h3 id="11-context">1.1 Context<a class="headerlink" href="#11-context" title="Permanent link">&para;</a></h3>
+<p>Mineral extraction constitutes a strategic activity worldwide, including in Switzerland. Demand for mineral resources has been growing significantly in recent decades<sup id="fnref:1"><a class="footnote-ref" href="#fn:1">1</a></sup>, mainly due to the rapid increase in the production of batteries and electronic chips, or buildings construction, for example. As a result, the exploitation of some resources, such as rare earth elements, lithium, or sand, is putting pressure on their availability. Being able to observe the development of mineral extraction sites (MES) is of primary importance to adapting mining strategy and anticipating demand and shortage. Mining has also strong environmental and societal impact<sup id="fnref:2"><a class="footnote-ref" href="#fn:2">2</a></sup><sup id="fnref:3"><a class="footnote-ref" href="#fn:3">3</a></sup>. It implies the extraction of rocks and minerals from water ponds, cliffs, and quarries. The surface affected, initially natural areas, can reach up to thousands of square kilometres<sup id="fnref2:1"><a class="footnote-ref" href="#fn:1">1</a></sup>. The extraction of some minerals could lead to soil and water pollution and involves polluting truck transport. Economic and political interests of some resources might overwhelm land protection, and conflicts are gradually intensifying<sup id="fnref2:2"><a class="footnote-ref" href="#fn:2">2</a></sup>. </p>
+<p>MES are dynamic features that can evolve according to singular patterns, especially if they are small, as is the case in Switzerland. A site can expand horizontally and vertically or be filled to recover the site<sup id="fnref:4"><a class="footnote-ref" href="#fn:4">4</a></sup><sup id="fnref3:2"><a class="footnote-ref" href="#fn:2">2</a></sup><sup id="fnref2:3"><a class="footnote-ref" href="#fn:3">3</a></sup><sup id="fnref:5"><a class="footnote-ref" href="#fn:5">5</a></sup>. Changes can happen quickly, in a couple of months. As a results, updating the MES inventory can be challenging. <br>
+There is a significant demand for effective MES observation of development worldwide. Majority of MES mapping is performed manually by visual inspection of images<sup id="fnref3:1"><a class="footnote-ref" href="#fn:1">1</a></sup>. Alternatively, recent improvements in the availability of high spatial and temporal resolution space/airborne imagery and computational methods have encouraged the development of automated image processing. Supervised classification of spectral images is an effective method but requires complex workflow <sup id="fnref:6"><a class="footnote-ref" href="#fn:6">6</a></sup><sup id="fnref2:4"><a class="footnote-ref" href="#fn:4">4</a></sup><sup id="fnref4:2"><a class="footnote-ref" href="#fn:2">2</a></sup>. More recently, few studies have implemented deep learning algorithms to train models to detect extraction sites in images and have shown high levels of accuracy<sup id="fnref3:3"><a class="footnote-ref" href="#fn:3">3</a></sup>.</p>
+<p>In Switzerland, MES management is historically regulated on a canton-based level using GIS data, including information about the MES location, extent, and extracted materials among others. At the federal level, <em>swisstopo</em> and the Federal Office of Statistics (FSO) observe the development of MES. <em>swisstopo</em> has carried out a detailed manual delineation of MES based on <em>SWISSIMAGE</em> dataset over Switzerland. </p>
+<p>In the scope to fasten and improving the process of MES mapping in Switzerland, we developed a method for automating MES detection over the years. Ultimately, the goal is to keep the database up to date when new images are acquired. The results can be statistically process to better assess the MES evolution over time in Switzerland.</p>
+<h3 id="12-approach">1.2. Approach<a class="headerlink" href="#12-approach" title="Permanent link">&para;</a></h3>
+<p>The STDL has developed a framework named <a href="https://tech.stdl.ch/TASK-IDET/">object-detector</a> to automatically detect objects in a georeferenced imagery dataset based on deep learning method. The framework can be adapted to detect MES (also referred as quarry in the project) in Switzerland.</p>
+<p>A project to automatically detect MES in Switzerland<sup id="fnref:7"><a class="footnote-ref" href="#fn:7">7</a></sup> has been carried out by the STDL in 2021 (<a href="https://github.com/swiss-territorial-data-lab/detector-interface">detector-interface</a> framework). Detection of potential MES obtained by automatic detection on the 2020 <em>SWISSIMAGE</em> mosaic has already been delivered to swisstopo (layer <a href="https://s.geo.admin.ch/9454c389db">2021_10_STDL_QC1</a>). The method has proven its efficiency detecting MES. The numerical model trained with the object detector achieved a f1-score of 82% and detected about 1200 potential MES over Switzerland. </p>
+<p>In this project, we aim to continue this work and extend it to a second objective, that of observing MES evolution over time. The main challenge is to prove the algorithm reliability for detecting objects in a multi-year dataset images acquired with different sensors.</p>
+<p>The project workflow is synthesised in Figure 1. First, a deep learning algorithm is trained using a manually mapped MES dataset that serves as ground truth (GT). After evaluating the performance of the trained model, the selected one was used to perform inference detection for a given year dataset and area of interest (AoI). The results were filtered to discard irrelevant detection. The operation was repeated over several years. Finally, each potential MES detected was tracked over the years to observe its evolution.</p>
+<div align="center" style="font-style: italic">
+<img src="./image/dqry_workflow_graph.png" alt="GeneralScheme" width="100%"> <br />
+<i>
+Figure 1: Workflow diagram for automatic MES detection.
+</i>
+</div>
+
+<p>In this report, we first describe the data used, including the image description and the definition of AoI. Then we explain the model training, evaluation and object detection procedure. Next, we present the results of potential MES detection and the MES tracking strategy. Finally, we provide conclusion and perspectives.</p>
+<h2 id="2-data">2. Data<a class="headerlink" href="#2-data" title="Permanent link">&para;</a></h2>
+<h3 id="21-images-and-area-of-interest">2.1 Images and area of interest<a class="headerlink" href="#21-images-and-area-of-interest" title="Permanent link">&para;</a></h3>
+<p>Automatic detection of potential MES over the years in Switzerland was performed with aerial orthophotos from the <em>swisstopo</em> product <a href="https://map.geo.admin.ch/?lang=en&amp;topic=ech&amp;bgLayer=ch.swisstopo.pixelkarte-farbe&amp;layers=ch.swisstopo.swissimage-product&amp;layers_timestamp=current"><em>SWISSIMAGE Journey</em></a>. Images are georeferenced RGB TIF tiles with a size of 256 x 256 pixels (1 km<sup>2</sup>). <br></p>
+<p><center></p>
+<table>
+<thead>
+<tr>
+<th align="center">Product</th>
+<th align="center">Year</th>
+<th align="center">Coordinate system</th>
+<th align="center">Spatial resolution</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">SWISSIMAGE 10 cm</td>
+<td align="center">2017 - current</td>
+<td align="center">CH1903+/MN95 (EPSG:2056)</td>
+<td align="center">0.10 m (<span class="arithmatex">\(\sigma\)</span> <span class="arithmatex">\(\pm\)</span> 0.15 m) - 0.25 m</td>
+</tr>
+<tr>
+<td align="center">SWISSIMAGE 25 cm</td>
+<td align="center">2005 - 2016</td>
+<td align="center">MN03 (2005 - 2007) and MN95 (since 2008)</td>
+<td align="center">0.25 m (<span class="arithmatex">\(\sigma\)</span> <span class="arithmatex">\(\pm\)</span> 0.25 m) - 0.50 m (<span class="arithmatex">\(\sigma\)</span> <span class="arithmatex">\(\pm\)</span> 3.00 - 5.00 m)</td>
+</tr>
+<tr>
+<td align="center">SWISSIMAGE 50 cm</td>
+<td align="center">1998 - 2004</td>
+<td align="center">MN03</td>
+<td align="center">0.50 m (<span class="arithmatex">\(\sigma\)</span> <span class="arithmatex">\(\pm\)</span> 0.50 m)</td>
+</tr>
+</tbody>
+</table>
+<figcaption><i>Table 1: SWISSIMAGE products characteristics.</i>
+</figcaption>
+<p></center></p>
+<p>Several <a href="https://www.swisstopo.admin.ch/en/geodata/images/ortho/swissimage10.html"><em>SWISSIMAGE</em></a> products exist, produced from different instrumentation (Table 1). <em>SWISSIMAGE</em> mosaics are built and published yearly. The year of the mosaic corresponds to the last year of the dataset publication, and the most recent orthophotos datasets available are then used to complete the mosaic. For example the 2020 <em>SWISSIMAGE</em> mosaic is a combination of 2020, 2019 and 2018 images acquisition. The 1998 mosaic release corresponds to a year of transition from black and white images (<a href="https://www.swisstopo.admin.ch/en/geodata/images/ortho/swissimage-hist.html"><em>SWISSIMAGE HIST</em></a>) to RGB images. For this study, only RGB data from 1999 to 2021 were considered.</p>
+<div align="center" style="font-style: italic">
+<img src="./image/swissimage_footprints_2016-2021.png" alt="Footprints" width="100%"> <br />
+<i>
+Figure 2: Acquisition footprint of SWISSIMAGE aerial orthophotos for the years 2016 to 2021. The SWISSIMAGE Journey mosaic in the background is the 2020 release.
+</i>
+</div>
+
+<p><a href="https://map.geo.admin.ch/?lang=en&amp;topic=ech&amp;bgLayer=ch.swisstopo.pixelkarte-farbe&amp;layers=ch.swisstopo.swissimage-product,ch.swisstopo.swissimage-product.metadata&amp;layers_timestamp=2020,2020&amp;layers_opacity=1,0.7&amp;time=2020">Acquisition footprints</a> of yearly acquired orthophotos were used as AoI to perform MES detection through time. Over the years, the footprints may spatially overlap (Fig. 2). Since 2017, the geometry of the acquisition footprints has been quasi-constant, dividing Switzerland into three more or less equal areas, ensuring that the orthophotos are updated every three years. For the years before 2017, the acquisition footprints were not systematic and do not guarantee a periodically update of the orthophotos. The acquisition footprint may also not be spatially contiguous. </p>
+<div align="center" style="font-style: italic">
+<img src="./image/SWISSIMAGE-BFS_2006-2007.png" alt="BFS" width="100%"> <br />
+<i>
+Figure 3: Illustration of the combination of SWISSIMAGE images and FSO images for the 2007 SWISSIMAGE mosaic. (a) Overview of the 2007 SWISSIMAGE mosaic. The red polygon corresponds to the provided SWISSIMAGE acquisition footprint for 2007. The orange polygon corresponds to the surface covered by the new SWISSIMAGE for 2007. The remaining area of the red polygon corresponds to the FSO image dataset acquired in 2007. The black box indicates the panel (b) location, and the white box indicates the panel &#40;c) location. (b) Side-by-side comparison of image composition in 2006 and 2007 SWISSIMAGE mosaics. &#40;c) Examples of detection polygons (white polygons) obtained by inference on the 2007 SWISSIMAGE dataset (red box) and FSO images 2007 (outlined by black box).
+</i>
+</div>
+
+<p><em>SWISSIMAGE Journey</em> mosaics of 2005, 2006, and 2007 present a particularity as it is composed not only of 25 cm resolution <em>SWISSIMAGE</em> but also of orthophotos acquired for the FSO. These are tiff RGB orthophotos with a spatial resolution of 50 cm px<sup>-1</sup> (coordinate system: CH1903/LV03 (EPSG:21781)) and have been integrated into the <em>SWISSIMAGE Journey</em> products. However, these images were discarded (modification of the footprint shape) from our dataset because they were causing issues in the MES automatic detection producing odd segmented detection shapes (Fig. 3). This is probably due to the different stretching of pixel colour between datasets.</p>
+<p>It also has to be noted that there are currently missing images (about 88 tiles at zoom level 16) in the 2020 <em>SWISSIMAGE</em> dataset. </p>
+<h3 id="22-image-fetching">2.2 Image fetching<a class="headerlink" href="#22-image-fetching" title="Permanent link">&para;</a></h3>
+<p>Pre-rendered <em>SWISSIMAGE</em> tiles (256 x 256 px, 1 km<sup>2</sup>) are downloaded using the Web Map Tile Service (WMTS) <a href="https://www.geo.admin.ch/en">wmts.geo.admin.ch</a> via an <a href="https://developers.planet.com/docs/planetschool/xyz-tiles-and-slippy-maps/">XYZ</a> connector. Tiles are served on a cartesian coordinates grid using a <a href="https://docs.opengeospatial.org/is/17-083r2/17-083r2.html#63">Web Mercator Quad</a> projection and a coordinate reference system EPGS 3857. Position of a tile on the grid is defined by <em>x</em> and <em>y</em> coordinates and the pixel resolution of the image is defined by <em>z</em>, its zoom level. Changing the zoom level affects the resolution by a factor of 2 (Fig. 4). For instance a zoom level of 17 corresponds to a resolution of 0.8 m px<sup>-1</sup> and a zoom level of 16 to a resolution of 1.6 m px<sup>-1</sup>. </p>
+<div align="center" style="font-style: italic">
+<img src="./image/tiles_zoom-lvl.png" alt="Tiles" width="100%"> <br />
+<i>
+Figure 4: Examples of tiles geometry at zoom level 16 (z16, black polygons) and at zoom level 17 (z17, blue polygons). The number of tiles for each zoom level is indicated in square brackets. The tiles are selected for model training, i.e. only tiles intersecting swissTLM3D labels (tlm-hr-trn-topo, yellow polygons).
+</i>
+</div>
+
+<p>Note that in the subsequent project carried out by Reichel and Hamel (2021)<sup id="fnref2:7"><a class="footnote-ref" href="#fn:7">7</a></sup>, the tiling method adopted was slightly different from the one adopted for this project. Custom size and resolution tiles were built. A sensitivity analysis of these two parameters was conducted and led to the choice of tiles with a size of about 500 m and a pixel resolution of about 1 m (above, the performance was not significantly improved). </p>
+<h3 id="23-ground-truth">2.3 Ground truth<a class="headerlink" href="#23-ground-truth" title="Permanent link">&para;</a></h3>
+<p>The MES labels originate from the swiss Topographic Landscape Model 3D (<a href="https://www.swisstopo.admin.ch/en/knowledge-facts/topographic-landscape-model.html">swissTLM3D</a>) produced by <em>swisstopo</em>. <em>swissTLM3D</em> is a large-scale topographic landscape model of Switzerland, including manually drawn and georeferenced vectors of objects of interest at a high resolution, including MES features. Domain experts from swisstopo have carried out extensive work to review the labeled MES and to synchronise them with the 2020 <em>SWISSIMAGE</em> mosaic to improve the quality of the labeled dataset. A total of 266 labels are available. The mapped MES reveal the diversity of MES characteristics, such as the presence or absence of buildings/infrastructures, trucks, water pounds, and vegetation (Fig. 5). </p>
+<div align="center" style="font-style: italic">
+<img src="./image/quarries_examples_v2.png" alt="Quarries" width="100%"> <br />
+<i>
+Figure 5: Examples of MES mapped in swissTLM3D and synchronised to 2020 SWISSIMAGE mosaic.
+</i>
+</div>
+
+<p>These labels are used as the ground truth (GT) <em>i.e.</em> the reference dataset indicating the presence of a MES in an image. The GT is used both as input to train the model to detect MES and to evaluate the model performance.</p>
+<h2 id="3-automatic-detection-methodology">3. Automatic detection methodology<a class="headerlink" href="#3-automatic-detection-methodology" title="Permanent link">&para;</a></h2>
+<h3 id="31-deep-learning-algorithm-for-object-detection">3.1 Deep learning algorithm for object detection<a class="headerlink" href="#31-deep-learning-algorithm-for-object-detection" title="Permanent link">&para;</a></h3>
+<p>Training and inference detection of potential MES in <em>SWISSIMAGE</em> were performed with the <a href="https://tech.stdl.ch/TASK-IDET/">object detector</a> framework. This project is based on the open source <a href="https://github.com/facebookresearch/detectron2">detectron2</a> framework<sup id="fnref:8"><a class="footnote-ref" href="#fn:8">8</a></sup> implemented with PyTorch by the Facebook Artificial Intelligence Research group (FAIR). Instance segmentation (delineation of object) was performed with a Mask R-CNN deep learning algorithm<sup id="fnref:9"><a class="footnote-ref" href="#fn:9">9</a></sup>. It is based on a Recursive-Convolutional Neural Network (CNN) with a backbone pre-trained model ResNet-50 (50 layers deep residual network).</p>
+<p>Images were annotated with custom <a href="https://cocodataset.org/#home">COCO object</a> based on the labels (class 'Quarry'). The model is trained with this dataset to later perform inference detection on images. If the object is detected by the algorithm, a pixel mask is produced with a confidence score (0 to 1) attributed to the detection (Fig. 6). </p>
+<div align="center" style="font-style: italic">
+<img src="./image/trn_pred_16_34430_22951.png" alt="Annoted" width="50%"> <br />
+<i>
+Figure 6: Example of detection mask. The pink rectangle corresponds to the bounding box of the object, the object is segmented by the pink polygons associated with the detection class ('Quarry') and a confidence score. 
+</i>
+</div>
+
+<p>The object detector framework permits to convert detection mask to georeferenced polygon that can be used in GIS softwares. The implementation of the Ramer-Douglas-Peucker (<a href="https://rdp.readthedocs.io/en/latest/">RDP</a>) algorithm, allows the simplification of the derived polygons by discarding non-essential points based on a smoothing parameter. This allow to considerably reduces the amount of data to be stored and prevent potential memory saturation while deriving detection polygons on large areas as it is the case for this study.</p>
+<h3 id="32-model-training">3.2 Model training<a class="headerlink" href="#32-model-training" title="Permanent link">&para;</a></h3>
+<p>Orthophotos from the 2020 <em>SWISSIMAGE</em> mosaic, for which the GT has been defined, were chosen to proceed the model training. Tiles intersecting labels were selected and split randomly into three datasets: the training dataset (70%), the validation dataset (15%), and the test dataset (15%). Addition of empty tiles (no annotation) to confront the model to landscapes not containing the target object has been tested (<a href="#A1-Influence-of-empty-tiles-addition-to-model-performance">Appendix A.1</a>) but did not provide significant improvement in the model performance to be adopted.</p>
+<div align="center" style="font-style: italic">
+<img src="./image/replicate3_z16_training.png" alt="Loss_Curves" width="100%"> <br />
+<i>
+Figure 7: Training curves obtained at zoom level 16 on the 2020 SWISSIMAGE mosaic. The curves were obtained for the trained model 'replicate 3'. (a) Learning rate in function of iteration. The step was defined every 500 iterations. The initial learning rate was 5.0 x 10<sup>-3</sup> with a weight and bias decay of 1.0 x 10<sup>-4</sup>. (b) The total loss is a function of iteration. Raw measurement (light red) and smoothed curve (0.6 factor, solid red) are superposed. &#40;c) The validation loss curve is a function of iteration. Raw measurement (light red) and smoothed curve (0.6 factor, solid red) are superposed. The vertical dashed black lines indicate the iteration minimising the validation loss curve, i.e. 3000.
+</i>
+</div>
+
+<p>Models were trained with two images per batch (<a href="#A2-Sensitivity-of-the-model-to-the-number-of-images-per-batch">Appendix A.2</a>), a learning rate of 5 x 10<sup>-3</sup>, and a learning rate decay of 1 x 10<sup>-4</sup> every 500 steps (Fig. 7 (a)). For the given model, parameters and a zoom level of 16 (<a href="#3.3.3-Sensitivity-to-zoom-level">Section 3.3.3</a>), the training is performed over 7000 iterations and lasts about 1 hour on a 16 GiB GPU (NVIDIA Tesla T4) machine compatible with <a href="https://detectron2.readthedocs.io/en/latest/tutorials/install.html">CUDA</a>. The total (train and validation loss) loss curve decreases until reaching a quasi-steady state around 6000 iterations (Fig. 7 (b)). The optimal detection model corresponds to the one minimising the validation loss curve. This minimum is reached between 2000 and 3000 iterations (Fig. 7 &#40;c)).</p>
+<h3 id="33-metrics">3.3 Metrics<a class="headerlink" href="#33-metrics" title="Permanent link">&para;</a></h3>
+<p>The model performance and detection reliability were assessed by comparing the results to the GT. The detection performed by the model can be either (1) a True Positive (TP), <em>i.e.</em> the detection is real (spatially intersecting the GT) ; (2) a False Positive <em>i.e.</em> the detection is not real (not spatially intersecting the GT) or (3) a False Negative (FN) <em>i.e.</em> the labeled object is not detected by the algorithm (Fig. 8). Tagging the detection (Fig. 9(a)) allows to calculate several metrics (Fig. 9(b)) such as:</p>
+<div align="center" style="font-style: italic">
+<img src="./image/TP_FN_FP_examples.png" alt="TP_FN_FP" width="100%"> <br />
+<i>
+Figure 8: Examples of different detection cases. Label is represented with a yellow polygon and detection with a red polygon. (a) True Positive (TP) detection intersecting the GT, (b) a potential True Positive (TP?) detection with no GT, (c) False Negative (FN) case with no detection while GT exists, (d) False Positive (FP) detection of object that is not a MES.
+</i>
+</div>
+
+<ul>
+<li>
+<p>the <strong>recall</strong>, translating the amount of TP detections predicted by the model:</p>
+<div class="arithmatex">\[recall = \frac{TP}{(TP + FN)}\]</div>
+</li>
+<li>
+<p>the <strong>precision</strong>, translating the number of well-predicted TP among all the detections: </p>
+<div class="arithmatex">\[precision = \frac{TP}{(TP + FP)}\]</div>
+</li>
+<li>
+<p>the <strong>f1-score</strong>, the harmonic average of the precision and the recall:</p>
+<div class="arithmatex">\[f1 = 2 \times \frac{recall \times precision}{recall + precision}\]</div>
+</li>
+</ul>
+<div align="center" style="font-style: italic">
+<img src="./image/replicate3_z16_metrics.png" alt="Metrics" width="100%"> <br />
+<i>
+Figure 9: Evaluation of the trained model performance obtained at zoom level 16 for the trained model 'replicate 3' (Table 2). (a) Number of TP (blue), FN (red), and FP (green) as a function of detection score threshold for the validation dataset. (b) Metrics value, precision (blue), recall (red), and f1-score (green) as a function of the detection score threshold for the validation dataset. The maximum f1-score value is 82%.
+</i>
+</div>
+
+<h2 id="4-automatic-detection-model-analysis">4. Automatic detection model analysis<a class="headerlink" href="#4-automatic-detection-model-analysis" title="Permanent link">&para;</a></h2>
+<h3 id="41-model-performance-and-replicability">4.1. Model performance and replicability<a class="headerlink" href="#41-model-performance-and-replicability" title="Permanent link">&para;</a></h3>
+<p>Trained models reached f1-scores of about 80% with a standard deviation of 2% (Table 2). The performances are similar to the model trained by Reichel and Hamel (2021)<sup id="fnref3:7"><a class="footnote-ref" href="#fn:7">7</a></sup>.</p>
+<p><center></p>
+<table>
+<thead>
+<tr>
+<th align="center">model</th>
+<th align="center">precision</th>
+<th align="center">recall</th>
+<th align="center">f1</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">replicate 1</td>
+<td align="center">0.84</td>
+<td align="center">0.79</td>
+<td align="center">0.82</td>
+</tr>
+<tr>
+<td align="center">replicate 2</td>
+<td align="center">0.77</td>
+<td align="center">0.76</td>
+<td align="center">0.76</td>
+</tr>
+<tr>
+<td align="center">replicate 3</td>
+<td align="center">0.83</td>
+<td align="center">0.81</td>
+<td align="center">0.82</td>
+</tr>
+<tr>
+<td align="center">replicate 4</td>
+<td align="center">0.89</td>
+<td align="center">0.77</td>
+<td align="center">0.82</td>
+</tr>
+<tr>
+<td align="center">replicate 5</td>
+<td align="center">0.78</td>
+<td align="center">0.82</td>
+<td align="center">0.80</td>
+</tr>
+</tbody>
+</table>
+<p><i>Table 2: Metrics value computed for the validation dataset for trained models replicates with the 2020 SWISSIMAGE mosaic at zoom level 16.</i>
+</center></p>
+<p>A variability is expected as the deep learning algorithm displays some random behavior, but it is supposed to be negligible. However, the observed model variability is enough to affect final results that might slightly change by using different trained models with same input parameters (Fig. 10). </p>
+<div align="center" style="font-style: italic">
+<img src="./image/replicate_Training_NoET_FilteredPredictions_1.jpg" alt="Replicates" width="100%"> <br />
+<i>
+Figure 10: Detection polygons obtained for the different trained model replicates (Table 2) highlighting results variability. The labels correspond to orange polygons. The number in the square bracket corresponds to the number of polygons. The inference detections have been performed on a subset of 2000 tiles for the 2020 SWISSIMAGE at zoom level 16. Detections have been filtered according to the parameters defined in Section 5.1.
+</i>
+</div>
+
+<p>To reduce the variability of the trained models, the random seeds of both detectron2 and python have been fixed. Neither of these attempts have been successful, and the variability remains. The nondeterministic behavior of detectron2 has been recognised (<a href="https://github.com/facebookresearch/detectron2/issues/4260">issue 1</a>, <a href="https://github.com/facebookresearch/detectron2/issues/4723">issue 2</a>), but no suitable solution has been provided yet. Further investigation on the model performance and consistency should be performed in the future.</p>
+<p>To mitigate the results variability of model replicates, we could consider in the future to combine the results of several model replicates to remove FP while preserving the TP and potential TP detection. The choice and number of models used should be evaluated. This method is tedious as it requires inference detection from several models, which can be time-consuming and computationally intensive.</p>
+<h3 id="42-sensitivity-to-the-zoom-level">4.2 Sensitivity to the zoom level<a class="headerlink" href="#42-sensitivity-to-the-zoom-level" title="Permanent link">&para;</a></h3>
+<p>Image resolution is dependent on the zoom level (<a href="#22-Image-fetching">Section 2.2</a>). To select the most suitable zoom level for MES detection, we performed a sensitivity analysis on trained model performance. Increasing the zoom level increases the value of the metrics following a global linear trend (Fig. 11). </p>
+<div align="center" style="font-style: italic">
+<img src="./image/metrics_zoom-lvl_val.png" alt="Zoom-Level" width="75%"> <br />
+<i>
+Figure 11: Metrics values (precision, recall and f1) as function of zoom level for the validation dataset. The results of the replicates performed at each zoom level are included (Table A1).
+</i>
+</div>
+
+<p>Models trained at a higher zoom level performed better. However, a higher zoom level implies smaller tile and thus, a larger number of tiles to fill the AoI. For a typical AoI, <em>i.e</em> up to a third of Switzerland, this can lead to a large number of tiles to be stored and processed, leading to potential RAM and/or disk space saturation. For 2019 AoI, 89'290 tiles are required at zoom level 16 while 354'867 tiles are required at zoom level 17, taking respectively 3 hours and 11 hours to process on a 30 GiB RAM machine with a 16 GiB GP. <br></p>
+<p>Visual comparison of inference detection reveals that there was no significant improvement in the object detection quality from zoom level 16 to zoom level 17. Both zoom level present a similar proportion of detections intersecting labels (82% and 79% for zoom level 16 and zoom level 17 respectively). On the other hand, the quality of object detection at zoom level 15 was depreciated. Indeed, detection scores were lower, with only tens of detection scores above 0.95 while it was about 400 at zoom level 16 and about 64% of detection intersecting labels. </p>
+<h3 id="43-model-choice">4.3 Model choice<a class="headerlink" href="#43-model-choice" title="Permanent link">&para;</a></h3>
+<p>Based on tests performed, we selected the 'replicate 3' model, obtained (Tables 2 and A1) at zoom level 16, to perform inference detection. <br></p>
+<p>Models trained at zoom level 16 (1.6 m px<sup>-1</sup> pixel resolution) have shown satisfying results in accurately detecting MES contour and limiting the number of FP with high detection score (Fig. 11). It represents a good trade-off between results reliability (f1-score between 76% and 82% on the validation dataset) and computational resources. <br>
+Then, among all the replicates performed at zoom level 16, we selected the trained model 'replicate 3' (Table 2) because it combines both the highest metrics values (for the validation dataset but also the train and test datasets), close precision and recall values and a rather low amount of low score detections. <br></p>
+<h2 id="5-automatic-detection-of-mes">5. Automatic detection of MES<a class="headerlink" href="#5-automatic-detection-of-mes" title="Permanent link">&para;</a></h2>
+<h3 id="51-detection-post-processing">5.1 Detection post-processing<a class="headerlink" href="#51-detection-post-processing" title="Permanent link">&para;</a></h3>
+<p>Detection by inference was performed over AoIs with a threshold detection score of 0.3 (Fig. 12). The low score filtering results in a large amount of detections. Several detections may overlap, potentially segmenting a single object. In addition a detection might be split into multiple tiles. To improve the pertinence and the aesthetics of the raw detection polygons, a post-processing procedure was applied. </p>
+<p>First, a large proportion of FP occurred in mountainous areas (rock outcrops and snow, Fig. 12(a)). We assumed MES are not present (or at least sparse) above a given altitude. An elevation filtering was applied using a <a href="https://github.com/lukasmartinelli/swissdem">Switzerland Digital Elevation Model</a> (about 25 m px<sup>-1</sup>) derived from the SRTM instrument (<a href="https://doi.org/10.5066/F7PR7TFT">USGS - SRTM</a>). The maximum elevation of the labeled MES is about 1100 m.</p>
+<p>Second, detection aggregation was applied:
+- polygons were clustered (<a href="https://scikit-learn.org/stable/modules/generated/sklearn.cluster.KMeans.html">K-means</a>) according to their centroid position. The method involves setting a predefined number <em>k</em> of clusters. Manual tests performed by Reichel and Hamel (2021)<sup id="fnref4:7"><a class="footnote-ref" href="#fn:7">7</a></sup> concluded to set <em>k</em> equal to the number of detection divided by three. The highest detection score was assigned to the clustered detection. This method preserves the final integrity of detection polygons by retaining detection that has potentially a low confidence score but belongs to a cluster with a higher confidence score improving the final segmentation of the detected object. The value of the threshold score must be kept relatively low (<em>i.e.</em> 0.3) when performing the detection to prevent removing too many polygons that could potentially be part of the detected object. We acknowledge that determining the optimal number of clusters by clustering validation indices rather than manual adjustment would be more robust. In addition, exploring other clustering methods, such as <a href="https://scikit-learn.org/stable/modules/generated/sklearn.cluster.DBSCAN.html">DBSCAN</a>, based on local density, can be considered in the future.
+- score filtering was applied.
+- spatially close polygons were assumed to belong to the same MES and are merged according to a distance threshold. The averaged score of the merged detection polygons was ultimately computed.</p>
+<p>Finally, we assumed that a MES covers a minimal area. Detection with an area smaller than a given threshold were filtered out. The minimum MES area in the GT is 2270 m<sup>2</sup>.</p>
+<div align="center" style="font-style: italic">
+<img src="./image/filters_results.png" alt="Filters" width="100%"> <br />
+<i>
+Figure 12: MES detection filtering. (a) Overview of the automatic detection of MES obtained with 2020 SWISSIMAGE at zoom level 16. Transparent red polygons (with associated confidence score in white) correspond to the raw object detection output and the red line polygons (with associated confidence score in red) correspond to the final filtered detection. The black box outlines the location of the (b) and &#40;c) panel zoom. Note the large number of detection in the mountains (right area of the image). (b) Zoom on several raw detections polygons of a single object with their respective confidence score. &#40;c) Zoom on a filtered detection polygon of a single object with the resulting score.
+</i>
+</div>
+
+<p>Sensitivity of detections to these filters was investigated (Table 3). The quantitative evaluation of filter combination relevance is tricky as potential MES presence is performed by inference, and the GT provided by <em>swissTLM3D</em> constitutes an incomplete portion of the MES in Switzerland (2020). As indication, we computed the number of spatial intersection between ground truth and detection obtained with the 2020 <em>SWISSIMAGE</em> mosaic. Filter combination number 3 was adopted, allowing to detect about 82% of the GT with a relatively limited amount of FP detection compared to filter combinations 1 and 2 (from visual inspection).</p>
+<p><center></p>
+<table>
+<thead>
+<tr>
+<th align="center">filters combination</th>
+<th align="center">score threshold</th>
+<th align="center">elevation threshold (m)</th>
+<th align="center">area threshold (m<sup>2</sup>)</th>
+<th align="center">distance threshold (m)</th>
+<th align="center">number of detection</th>
+<th align="center">label detection (%)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">1</td>
+<td align="center">0.95</td>
+<td align="center">2000</td>
+<td align="center">1100</td>
+<td align="center">10</td>
+<td align="center">1745</td>
+<td align="center">85.1</td>
+</tr>
+<tr>
+<td align="center">2</td>
+<td align="center">0.95</td>
+<td align="center">2000</td>
+<td align="center">1200</td>
+<td align="center">10</td>
+<td align="center">1862</td>
+<td align="center">86.6</td>
+</tr>
+<tr>
+<td align="center">3</td>
+<td align="center">0.95</td>
+<td align="center">5000</td>
+<td align="center">1200</td>
+<td align="center">10</td>
+<td align="center">1347</td>
+<td align="center">82.1</td>
+</tr>
+<tr>
+<td align="center">4</td>
+<td align="center">0.96</td>
+<td align="center">2000</td>
+<td align="center">1100</td>
+<td align="center">10</td>
+<td align="center">1331</td>
+<td align="center">81.3</td>
+</tr>
+<tr>
+<td align="center">5</td>
+<td align="center">0.96</td>
+<td align="center">2000</td>
+<td align="center">1200</td>
+<td align="center">8</td>
+<td align="center">1445</td>
+<td align="center">78.7</td>
+</tr>
+<tr>
+<td align="center">6</td>
+<td align="center">0.96</td>
+<td align="center">5000</td>
+<td align="center">1200</td>
+<td align="center">10</td>
+<td align="center">1004</td>
+<td align="center">74.3</td>
+</tr>
+</tbody>
+</table>
+<p><i>Table 3: Threshold values of filtering parameters and their respective number of detections and intersection proportion with swissTLM3D labels. The detections have been obtained for the 2020 SWISSIMAGE mosaic.  </i> 
+</center></p>
+<p>We acknowledged that for the selected filter combination, the area threshold value is higher than the smallest area value of the GT polygons. However, reducing the area value increases significantly the presence of FP. Thirteen labels display an area below 5000 m<sup>2</sup>. </p>
+<h3 id="52-inference-detections">5.2 Inference detections<a class="headerlink" href="#52-inference-detections" title="Permanent link">&para;</a></h3>
+<p>The trained model was used to perform inference detection on <em>SWISSIMAGE</em> orthophotos from 1999 to 2021. The automatic detection model shows good capabilities to detect MES in different years orthophotos (Fig. 13), despite being trained on the 2020 <em>SWISSIMAGE</em> mosaic. The model also demonstrates capabilities to detect potential MES that have not been mapped yet but are strong candidates. However, the model misses some labeled MES or potential MES (FN, Fig. 8). However, when the model process FSO images, with different colour stretching, it failed to correctly detect potential MES (Fig. 3). It reveals that images must have characteristics close to the training dataset for optimal results with a deep learning model.</p>
+<div align="center" style="font-style: italic">
+<img src="./image/ID31.png" alt="Quarry_detection" width="100%"> <br />
+<img src="./image/ID44.png" alt="Quarry_detection" width="100%">
+<img src="./image/ID229.png" alt="Quarry_detection" width="100%">
+<img src="./image/ID239.png" alt="Quarry_detection" width="100%">
+<img src="./image/ID3861.png" alt="Quarry_detection" width="100%">
+<i>
+Figure 13: Examples of object detection segmented by polygons in different year orthophotos. The yellow polygon for the year 2020 panel of object ID 3761 corresponds to the label. Other coloured polygons correspond to the algorithm detection. 
+</i>
+</div>
+
+<p>Then, we acknowledge that a significant amount of FP detection can still be observed in our filtered detection dataset (Figs. 8 and 14). The main sources of FP are the presence of large rock outcrops, mountainous areas without vegetation, snow, river sand beds, brownish-coloured fields, or construction areas. MES present a large variety of features (buildings, water pounds, trucks, vegetation) (Fig. 5) which can be a source of confusion for the algorithm but even sometimes for human eye. Therefore, the robustness of the GT is crucial for reliable detection. The algorithm's results should be taken carefully. </p>
+<div align="center" style="font-style: italic">
+<img src="./image/FP_examples.png" alt="FP" width="100%"> <br />
+<i>
+Figure 14: Examples of FP detection. (a) Snow patches (2019) ; (b) River sand beds and gullies (2019); &#40;c) Brownish field (2020); (d) vineyards (2005); (e) Airport tarmac (2020); (f) Construction site (2008).
+</i>
+</div>
+
+<p>The detections produced by the algorithm are potential MES, but the final results must be reviewed by experts in the field to discard remaining FP detection and correct FN before any processing or interpretation.</p>
+<h2 id="6-observation-of-mes-evolution">6. Observation of MES evolution<a class="headerlink" href="#6-observation-of-mes-evolution" title="Permanent link">&para;</a></h2>
+<h3 id="61-object-tracking-strategy">6.1 Object tracking strategy<a class="headerlink" href="#61-object-tracking-strategy" title="Permanent link">&para;</a></h3>
+<p>Switzerland is covered by RGB <em>SWISSIMAGE</em> product over more than 20 years (1999 to actual), allowing changes to be detected (Fig. 13).</p>
+<div align="center" style="font-style: italic">
+<img src="./image/quarry_tracking_strategy.png" alt="Tracking" style="width:75%"> <br />
+<i>
+Figure 15: Strategy for MES tracking over time. ID assignment to detection. Spatially intersecting polygons share the same ID allowing the MES to be tracked in a multi-year dataset.
+</i>
+</div>
+
+<p>We assumed that detection polygons that overlap from one year to another describe a single object (Fig. 15). Overlapping detections and unique detections (which do not overlap with polygons from other years) in the multi-year dataset were assigned a unique object identifier (ID). A new object ID in the timeline indicates:
+- the first occurrence of the object detected in the dataset of the first year available for the area. It does not mean that the object was not present before,
+- the creation of a potential new MES.</p>
+<p>The disappearance of an object ID indicates its potential refill. Therefore, the chronology of MES, creation, evolution and filling, can be constrained.</p>
+<h3 id="62-evolution-of-mes-over-years">6.2 Evolution of MES over years<a class="headerlink" href="#62-evolution-of-mes-over-years" title="Permanent link">&para;</a></h3>
+<p>Figures 13 and 16 illustrate the ability of the trained model to detect and track a single object in a multi-year dataset. The detection over the years appears reliable and consistent, although object detection may be absent from a year dataset (<em>e.g.</em> due to shadows or colour changes in the surroundings). Remember that the image coverage of a given area is not renewed every year. Characteristics of the potential MES, such as surface evolution (extension or retreat), can be quantified. For example, the surfaces of object IDs 239 and 3861 have more than doubled in about 20 years. Tracking object ID along with image visualisation allows observation of the opening and the closing of potential MES, as object IDs 31, 44, and 229.</p>
+<div align="center" style="font-style: italic">
+<img src="./image/quarry_area-year.png" alt="Area_Year" width="100%"> <br />
+<i>
+Figure 16: Detection area (m<sup>2</sup>) as a function of years for several object ID. Figure 13 provides the visualisation of the object IDs selected. Each point corresponds to an object ID occurrence in the corresponding year dataset. 
+</i>
+</div>
+
+<p>The presence of an object in several years dataset strengthens the likeliness of the detected object to be an actual MES. On the other hand, object detection of only one occurrence is more likely a FP detection. </p>
+<h2 id="7-conclusion-and-perspectives">7. Conclusion and perspectives<a class="headerlink" href="#7-conclusion-and-perspectives" title="Permanent link">&para;</a></h2>
+<p>The project demonstrated the ability to automatically, quickly (a matter of hours for one AoI), and reliably detect potential MES in orthophotos of Switzerland with an automatic detection algorithm (deep learning). The selected trained model achieved a f1-score of 82% on the validation dataset. The final detection polygons accurately delineate the potential MES. We can track single MES through multiple years, emphasising the robustness of the method to detect objects in multi-year datasets despite the detection model being trained on a single dataset (2020 <em>SWISSIMAGE</em> mosaic). However, image colour stretching different from that used to train the model can significantly affect the model's ability to provide reliable detection, as was the case with the FSO images.</p>
+<p>Although the performance of the trained model is satisfactory, FP and FN are present in the datasets. They are mainly due to confusion of the algorithm between MES and rock outcrops, river sandbeds or construction sites. A manual verification of the relevance of the detection by experts in the field is necessary before processing and interpreting the data. Revision of all the detections from 1999 to 2021 is a time-consuming effort but is necessary to guarantee detection reliability. Despite the required manual checks, the provided framework and detection results constitute a valuable contribution that can greatly assist the inventory and the observation of MES evolution in Switzerland. It provides state-wide detection in a matter of hours, which is a considerable time-saving compared with manual mapping. It also enables MES detection with a standardised method, independent of the information or method adopted by the cantons.</p>
+<p>Further model improvements could be consider, such as increasing the metrics by improving GT quality, improving model learning strategy, mitigating the model learning variability, or test supervised clustering methods to find relevant detection.</p>
+<p>This work can be used to compute statistics to study long-term MES in Switzerland and better management of resources and land use in the future. MES detection can be combined with other data, such as the geologic layer, to identify the mineral/rocks exploited and high-resolution DEM (<a href="https://www.swisstopo.admin.ch/en/geodata/height/alti3d.html">swissALTI3D</a>) to infer elevation changes and observe excavation or filling of MES<sup id="fnref2:5"><a class="footnote-ref" href="#fn:5">5</a></sup>.</br>
+So far only RGB <em>SWISSIMAGE</em> orthophotos from 1999 to 2021 were processed. Prior to 1999, black and white orthophotos exist but the model trained on RGB images could not be applied trustfully to black and white images. Image colourisation tests (with the help of deep learning algorithm[@farella_colour_2022]) were performed and provided encouraging detection results. This avenue needs to be explored.</p>
+<p>Finally, automatic detection of MES is rare<sup id="fnref4:1"><a class="footnote-ref" href="#fn:1">1</a></sup><sup id="fnref4:3"><a class="footnote-ref" href="#fn:3">3</a></sup>, and most studies perform manual mapping. Therefore, the framework could be the extended to other datasets and/or other countries to provide a valuable asset to the community. A global mapping of MES has been completed with over 21'000 polygons<sup id="fnref5:1"><a class="footnote-ref" href="#fn:1">1</a></sup> and can be used as a GT database to train an automatic detection model.</p>
+<h2 id="code-availability">Code availability<a class="headerlink" href="#code-availability" title="Permanent link">&para;</a></h2>
+<p>The codes are stored and available on the STDL's github repository:</p>
+<ul>
+<li><a href="https://github.com/swiss-territorial-data-lab/proj-dqry">proj-dqry</a>: mineral extraction site framework</li>
+<li><a href="https://github.com/swiss-territorial-data-lab/object-detector">object-detector</a>: object detector framework</li>
+</ul>
+<h2 id="acknowledgements">Acknowledgements<a class="headerlink" href="#acknowledgements" title="Permanent link">&para;</a></h2>
+<p>This project was made possible thanks to a tight collaboration between the STDL team and <em>swisstopo</em>. In particular, the STDL team acknowledges key contribution from Thomas Galfetti (<em>swisstopo</em>). This project has been funded by "Strategie Suisse pour la Géoinformation".</p>
+<h2 id="appendix">Appendix<a class="headerlink" href="#appendix" title="Permanent link">&para;</a></h2>
+<h3 id="a1-influence-of-empty-tiles-addition-to-model-performance">A.1 Influence of empty tiles addition to model performance<a class="headerlink" href="#a1-influence-of-empty-tiles-addition-to-model-performance" title="Permanent link">&para;</a></h3>
+<p>By selecting tiles intersecting only labels, the detection model is mainly confronted with the presence of the targeted object to be detected. Addition of non-label-intersecting tiles, <em>i.e.</em> empty tiles, provides landscape diversity that might help to improve the object detection performance. </p>
+<p>In order to evaluate the influence of adding empty tiles to the dataset used for the model performance, empty tiles were chosen randomly (not intersecting labels) within Switzerland boundaries and added to the tile dataset used for the model training (Fig. A1). Empty tiles were added to (1) the whole dataset split as for the initial dataset (training: 70%, test: 15%, and validation: 15%) and (2) only to the training dataset. A visual inspection must be performed to prevent a potential unlabeled MES to be present in the image and disturbing the algorithm learning. </p>
+<div align="center" style="font-style: italic">
+<img src="./image/empty_tiles_map.png" alt="Empty_Tiles_map" width="100%"> <br />
+<i>
+Figure A1: View of tiles intersecting (black) labels (yellow) and randomly selected empty tiles (red) in Switzerland. This case correspond to the addition of 35% empty tiles.
+</i>
+</div>
+
+<p>Figure A1 reveals that adding empty tiles to the dataset does not significantly influence the metrics values. The number of TP, FP, and FN do not show significant variation. However, when performing an inference detection test on a subset of tiles (2000) for an AOI, it appears that the number of raw detections (unfiltered) is reduced as the number of empty tiles increases. However, visual inspection of the final detection after applying filters does not show significant improvement compared to a model trained without adding empty tiles.</p>
+<div align="center" style="font-style: italic">
+<img src="./image/empty_tiles_plots.png" alt="Empty_Tiles_plot" width="100%"> <br />
+<i>
+Figure A1: Influence of the addition of empty tiles (relative to the number of tiles intersecting labels) on trained performance for zoom levels 16 and 17 with (a) the F1-score as a function of the percentage of added empty tiles and (b) the normalised (by the number of tiles sampled = 2000) number of detection as a function of added empty tiles. Empty tiles have been added to only the train dataset for the 5% and 30% cases and to all datasets for 9%, 35%, 70%, and 140% cases.
+</i>
+</div>
+
+<p>A considered solution to improve the results could be to specifically select tiles for which FP occurred and include them in the training dataset as empty tiles. This way, the model could be trained with relevant confounding features such as snow patches, river sandbeds, or gullies not labeled as GT.</p>
+<h3 id="a2-sensitivity-of-the-model-to-the-number-of-images-per-batch">A.2 Sensitivity of the model to the number of images per batch<a class="headerlink" href="#a2-sensitivity-of-the-model-to-the-number-of-images-per-batch" title="Permanent link">&para;</a></h3>
+<p>During the model learning phase, the trained model is updated after each batch of samples was processed. Adding more samples, <em>i.e.</em> in our case images, to the batch can influence the model learning capacity. We investigated the role of adding more images per batch for a dataset with and without adding a portion of empty tiles to the learning dataset. Adding more images per batch speeds up the model learning (Table A1), and the minimum of the loss curve is reached for a smaller number of iterations.</p>
+<div align="center" style="font-style: italic">
+<img src="./image/metrics_batch.png" alt="Batch" width="75%"> <br />
+<i>
+Figure A2: Metrics (precision, recall and f1-score) evolution with the number of images per batch during the model training. Results have been obtained on a dataset without empty tiles addition (red) and with the addition of 23% of empty tiles to the training dataset.
+</i>
+</div>
+
+<p>Figure A2 reveals that the metrics values remain in a range of constant values while adding extra images to the batch in all cases (with or without empty tiles). A potential effect of adding 
+more images to the batch is the reduction of the metrics variability between replicates of trained models as the range of metrics values is smaller for 8 images per batch than 2 images per batch. However, this observation has to be taken carefully as fewer replicates have been performed with 8 images per batch than for 2 or 4 images per batch. Further investigation would provide stronger insights on this effect.</p>
+<h3 id="a3-evaluation-of-trained-models">A.3 Evaluation of trained models<a class="headerlink" href="#a3-evaluation-of-trained-models" title="Permanent link">&para;</a></h3>
+<p>Table A1 sumup metrics value obtained for all the configuration tested for the project.</p>
+<p><center></p>
+<table>
+<thead>
+<tr>
+<th align="center">zoom level</th>
+<th align="center">model</th>
+<th align="center">empty tiles (%)</th>
+<th align="center">image per batch</th>
+<th align="center">optimum iteration</th>
+<th align="center">precision</th>
+<th align="center">recall</th>
+<th align="center">f1</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">15</td>
+<td align="center">replicate 1</td>
+<td align="center">0</td>
+<td align="center">2</td>
+<td align="center">1000</td>
+<td align="center">0.727</td>
+<td align="center">0.810</td>
+<td align="center">0.766</td>
+</tr>
+<tr>
+<td align="center">16</td>
+<td align="center">replicate 1</td>
+<td align="center">0</td>
+<td align="center">2</td>
+<td align="center">2000</td>
+<td align="center">0.842</td>
+<td align="center">0.793</td>
+<td align="center">0.817</td>
+</tr>
+<tr>
+<td align="center">16</td>
+<td align="center">replicate 2</td>
+<td align="center">0</td>
+<td align="center">2</td>
+<td align="center">2000</td>
+<td align="center">0.767</td>
+<td align="center">0.760</td>
+<td align="center">0.763</td>
+</tr>
+<tr>
+<td align="center">16</td>
+<td align="center">replicate 3</td>
+<td align="center">0</td>
+<td align="center">2</td>
+<td align="center">3000</td>
+<td align="center">0.831</td>
+<td align="center">0.810</td>
+<td align="center">0.820</td>
+</tr>
+<tr>
+<td align="center">16</td>
+<td align="center">replicate 4</td>
+<td align="center">0</td>
+<td align="center">2</td>
+<td align="center">2000</td>
+<td align="center">0.886</td>
+<td align="center">0.769</td>
+<td align="center">0.826</td>
+</tr>
+<tr>
+<td align="center">16</td>
+<td align="center">replicate 5</td>
+<td align="center">0</td>
+<td align="center">2</td>
+<td align="center">2000</td>
+<td align="center">0.780</td>
+<td align="center">0.818</td>
+<td align="center">0.798</td>
+</tr>
+<tr>
+<td align="center">16</td>
+<td align="center">replicate 6</td>
+<td align="center">0</td>
+<td align="center">2</td>
+<td align="center">3000</td>
+<td align="center">0.781</td>
+<td align="center">0.826</td>
+<td align="center">0.803</td>
+</tr>
+<tr>
+<td align="center">16</td>
+<td align="center">replicate 7</td>
+<td align="center">0</td>
+<td align="center">4</td>
+<td align="center">1000</td>
+<td align="center">0.748</td>
+<td align="center">0.860</td>
+<td align="center">0.800</td>
+</tr>
+<tr>
+<td align="center">16</td>
+<td align="center">replicate 8</td>
+<td align="center">0</td>
+<td align="center">4</td>
+<td align="center">1000</td>
+<td align="center">0.779</td>
+<td align="center">0.785</td>
+<td align="center">0.782</td>
+</tr>
+<tr>
+<td align="center">16</td>
+<td align="center">replicate 9</td>
+<td align="center">0</td>
+<td align="center">8</td>
+<td align="center">1500</td>
+<td align="center">0.800</td>
+<td align="center">0.793</td>
+<td align="center">0.797</td>
+</tr>
+<tr>
+<td align="center">16</td>
+<td align="center">replicate 10</td>
+<td align="center">0</td>
+<td align="center">4</td>
+<td align="center">1000</td>
+<td align="center">0.796</td>
+<td align="center">0.744</td>
+<td align="center">0.769</td>
+</tr>
+<tr>
+<td align="center">16</td>
+<td align="center">replicate 11</td>
+<td align="center">0</td>
+<td align="center">8</td>
+<td align="center">1000</td>
+<td align="center">0.802</td>
+<td align="center">0.769</td>
+<td align="center">0.785</td>
+</tr>
+<tr>
+<td align="center">16</td>
+<td align="center">ET-250_allDS_1</td>
+<td align="center">34.2</td>
+<td align="center">2</td>
+<td align="center">2000</td>
+<td align="center">0.723</td>
+<td align="center">0.770</td>
+<td align="center">0.746</td>
+</tr>
+<tr>
+<td align="center">16</td>
+<td align="center">ET-250_allDS_2</td>
+<td align="center">34.2</td>
+<td align="center">2</td>
+<td align="center">3000</td>
+<td align="center">0.748</td>
+<td align="center">0.803</td>
+<td align="center">0.775</td>
+</tr>
+<tr>
+<td align="center">16</td>
+<td align="center">ET-1000_allDS_1</td>
+<td align="center">73.8</td>
+<td align="center">2</td>
+<td align="center">6000</td>
+<td align="center">0.782</td>
+<td align="center">0.815</td>
+<td align="center">0.798</td>
+</tr>
+<tr>
+<td align="center">16</td>
+<td align="center">ET-1000_allDS_2</td>
+<td align="center">69.8</td>
+<td align="center">2</td>
+<td align="center">6000</td>
+<td align="center">0.786</td>
+<td align="center">0.767</td>
+<td align="center">0.776</td>
+</tr>
+<tr>
+<td align="center">16</td>
+<td align="center">ET-1000_allDS_3</td>
+<td align="center">70.9</td>
+<td align="center">2</td>
+<td align="center">6000</td>
+<td align="center">0.777</td>
+<td align="center">0.810</td>
+<td align="center">0.793</td>
+</tr>
+<tr>
+<td align="center">16</td>
+<td align="center">ET-1000_allDS_4</td>
+<td align="center">73.8</td>
+<td align="center">2</td>
+<td align="center">6000</td>
+<td align="center">0.768</td>
+<td align="center">0.807</td>
+<td align="center">0.787</td>
+</tr>
+<tr>
+<td align="center">16</td>
+<td align="center">ET-2000_allDS_1</td>
+<td align="center">143.2</td>
+<td align="center">2</td>
+<td align="center">6000</td>
+<td align="center">0.761</td>
+<td align="center">0.748</td>
+<td align="center">0.754</td>
+</tr>
+<tr>
+<td align="center">16</td>
+<td align="center">ET-80_trnDS_1</td>
+<td align="center">5.4</td>
+<td align="center">2</td>
+<td align="center">2000</td>
+<td align="center">0.814</td>
+<td align="center">0.793</td>
+<td align="center">0.803</td>
+</tr>
+<tr>
+<td align="center">16</td>
+<td align="center">ET-80_trnDS_2</td>
+<td align="center">5.4</td>
+<td align="center">2</td>
+<td align="center">2000</td>
+<td align="center">0.835</td>
+<td align="center">0.752</td>
+<td align="center">0.791</td>
+</tr>
+<tr>
+<td align="center">16</td>
+<td align="center">ET-80_trnDS_3</td>
+<td align="center">5.4</td>
+<td align="center">2</td>
+<td align="center">2000</td>
+<td align="center">0.764</td>
+<td align="center">0.802</td>
+<td align="center">0.782</td>
+</tr>
+<tr>
+<td align="center">16</td>
+<td align="center">ET-400_trnDS_1</td>
+<td align="center">29.5</td>
+<td align="center">2</td>
+<td align="center">6000</td>
+<td align="center">0.817</td>
+<td align="center">0.777</td>
+<td align="center">0.797</td>
+</tr>
+<tr>
+<td align="center">16</td>
+<td align="center">ET-400_trnDS_2</td>
+<td align="center">29.5</td>
+<td align="center">2</td>
+<td align="center">5000</td>
+<td align="center">0.848</td>
+<td align="center">0.785</td>
+<td align="center">0.815</td>
+</tr>
+<tr>
+<td align="center">16</td>
+<td align="center">ET-400_trnDS_3</td>
+<td align="center">29.5</td>
+<td align="center">2</td>
+<td align="center">4000</td>
+<td align="center">0.758</td>
+<td align="center">0.802</td>
+<td align="center">0.779</td>
+</tr>
+<tr>
+<td align="center">16</td>
+<td align="center">ET-400_trnDS_4</td>
+<td align="center">29.5</td>
+<td align="center">4</td>
+<td align="center">2000</td>
+<td align="center">0.798</td>
+<td align="center">0.818</td>
+<td align="center">0.808</td>
+</tr>
+<tr>
+<td align="center">16</td>
+<td align="center">ET-400_trnDS_5</td>
+<td align="center">29.5</td>
+<td align="center">4</td>
+<td align="center">1000</td>
+<td align="center">0.825</td>
+<td align="center">0.777</td>
+<td align="center">0.800</td>
+</tr>
+<tr>
+<td align="center">16</td>
+<td align="center">ET-1000_trnDS_1</td>
+<td align="center">0</td>
+<td align="center">2</td>
+<td align="center">4000</td>
+<td align="center">0.758</td>
+<td align="center">0.802</td>
+<td align="center">0.779</td>
+</tr>
+<tr>
+<td align="center">17</td>
+<td align="center">replicate 1</td>
+<td align="center">0</td>
+<td align="center">2</td>
+<td align="center">5000</td>
+<td align="center">0.819</td>
+<td align="center">0.853</td>
+<td align="center">0.835</td>
+</tr>
+<tr>
+<td align="center">17</td>
+<td align="center">replicate 1</td>
+<td align="center">0</td>
+<td align="center">2</td>
+<td align="center">5000</td>
+<td align="center">0.803</td>
+<td align="center">0.891</td>
+<td align="center">0.845</td>
+</tr>
+<tr>
+<td align="center">17</td>
+<td align="center">replicate 1</td>
+<td align="center">0</td>
+<td align="center">2</td>
+<td align="center">5000</td>
+<td align="center">0.872</td>
+<td align="center">0.813</td>
+<td align="center">0.841</td>
+</tr>
+<tr>
+<td align="center">17</td>
+<td align="center">ET-250_allDS_1</td>
+<td align="center">16.8</td>
+<td align="center">2</td>
+<td align="center">3000</td>
+<td align="center">0.801</td>
+<td align="center">0.794</td>
+<td align="center">0.797</td>
+</tr>
+<tr>
+<td align="center">17</td>
+<td align="center">ET-1000_allDS_1</td>
+<td align="center">72.2</td>
+<td align="center">2</td>
+<td align="center">7000</td>
+<td align="center">0.743</td>
+<td align="center">0.765</td>
+<td align="center">0.754</td>
+</tr>
+<tr>
+<td align="center">18</td>
+<td align="center">replicate 1</td>
+<td align="center">0</td>
+<td align="center">2</td>
+<td align="center">10000</td>
+<td align="center">0.864</td>
+<td align="center">0.855</td>
+<td align="center">0.859</td>
+</tr>
+</tbody>
+</table>
+<p><i>Table A1: Metrics value computed for the validation dataset for all the trained models with the 2020 SWISSIMAGE Journey mosaic at zoom level 16. </i> </p>
+<p></center></p>
+<div class="footnote">
+<hr />
+<ol>
+<li id="fn:1">
+<p>Victor Maus, Stefan Giljum, Jakob Gutschlhofer, Dieison M. Da Silva, Michael Probst, Sidnei L. B. Gass, Sebastian Luckeneder, Mirko Lieber, and Ian McCallum. A global-scale data set of mining areas. <em>Scientific Data</em>, 7(1):289, September 2020. URL: <a href="https://www.nature.com/articles/s41597-020-00624-w">https://www.nature.com/articles/s41597-020-00624-w</a>, <a href="https://doi.org/10.1038/s41597-020-00624-w">doi:10.1038/s41597-020-00624-w</a>.&#160;<a class="footnote-backref" href="#fnref:1" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:1" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref3:1" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref4:1" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref5:1" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+</li>
+<li id="fn:2">
+<p>Vicenç Carabassa, Pau Montero, Marc Crespo, Joan-Cristian Padró, Xavier Pons, Jaume Balagué, Lluís Brotons, and Josep Maria Alcañiz. Unmanned aerial system protocol for quarry restoration and mineral extraction monitoring. <em>Journal of Environmental Management</em>, 270:110717, September 2020. URL: <a href="https://linkinghub.elsevier.com/retrieve/pii/S0301479720306496">https://linkinghub.elsevier.com/retrieve/pii/S0301479720306496</a>, <a href="https://doi.org/10.1016/j.jenvman.2020.110717">doi:10.1016/j.jenvman.2020.110717</a>.&#160;<a class="footnote-backref" href="#fnref:2" title="Jump back to footnote 2 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:2" title="Jump back to footnote 2 in the text">&#8617;</a><a class="footnote-backref" href="#fnref3:2" title="Jump back to footnote 2 in the text">&#8617;</a><a class="footnote-backref" href="#fnref4:2" title="Jump back to footnote 2 in the text">&#8617;</a></p>
+</li>
+<li id="fn:3">
+<p>Chunsheng Wang, Lili Chang, Lingran Zhao, and Ruiqing Niu. Automatic Identification and Dynamic Monitoring of Open-Pit Mines Based on Improved Mask R-CNN and Transfer Learning. <em>Remote Sensing</em>, 12(21):3474, January 2020. URL: <a href="https://www.mdpi.com/2072-4292/12/21/3474">https://www.mdpi.com/2072-4292/12/21/3474</a>, <a href="https://doi.org/10.3390/rs12213474">doi:10.3390/rs12213474</a>.&#160;<a class="footnote-backref" href="#fnref:3" title="Jump back to footnote 3 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:3" title="Jump back to footnote 3 in the text">&#8617;</a><a class="footnote-backref" href="#fnref3:3" title="Jump back to footnote 3 in the text">&#8617;</a><a class="footnote-backref" href="#fnref4:3" title="Jump back to footnote 3 in the text">&#8617;</a></p>
+</li>
+<li id="fn:4">
+<p>Haoteng Zhao, Yong Ma, Fu Chen, Jianbo Liu, Liyuan Jiang, Wutao Yao, and Jin Yang. Monitoring Quarry Area with Landsat Long Time-Series for Socioeconomic Study. <em>Remote Sensing</em>, 10(4):517, April 2018. URL: <a href="https://www.mdpi.com/2072-4292/10/4/517">https://www.mdpi.com/2072-4292/10/4/517</a>, <a href="https://doi.org/10.3390/rs10040517">doi:10.3390/rs10040517</a>.&#160;<a class="footnote-backref" href="#fnref:4" title="Jump back to footnote 4 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:4" title="Jump back to footnote 4 in the text">&#8617;</a></p>
+</li>
+<li id="fn:5">
+<p>Valentin Tertius Bickel and Andrea Manconi. Decadal Surface Changes and Displacements in Switzerland. <em>Journal of Geovisualization and Spatial Analysis</em>, 6(2):24, December 2022. URL: <a href="https://link.springer.com/10.1007/s41651-022-00119-9">https://link.springer.com/10.1007/s41651-022-00119-9</a>, <a href="https://doi.org/10.1007/s41651-022-00119-9">doi:10.1007/s41651-022-00119-9</a>.&#160;<a class="footnote-backref" href="#fnref:5" title="Jump back to footnote 5 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:5" title="Jump back to footnote 5 in the text">&#8617;</a></p>
+</li>
+<li id="fn:6">
+<p>George P. Petropoulos, Panagiotis Partsinevelos, and Zinovia Mitraka. Change detection of surface mining activity and reclamation based on a machine learning approach of multi-temporal Landsat TM imagery. <em>Geocarto International</em>, 28(4):323–342, July 2013. URL: <a href="http://www.tandfonline.com/doi/abs/10.1080/10106049.2012.706648">http://www.tandfonline.com/doi/abs/10.1080/10106049.2012.706648</a>, <a href="https://doi.org/10.1080/10106049.2012.706648">doi:10.1080/10106049.2012.706648</a>.&#160;<a class="footnote-backref" href="#fnref:6" title="Jump back to footnote 6 in the text">&#8617;</a></p>
+</li>
+<li id="fn:7">
+<p>Huriel Reichel and Nils Hamel. Automatic Detection of Quarries and the Lithology below them in Switzerland. 2022. URL: <a href="file:///C:/Users/Clemence/Documents/STDL/Projects/proj-quarries/01_Documentation/Bibliography/Automatic%20Detection%20of%20Quarries%20and%20the%20Lithology%20below%20them%20in%20Switzerland%20-%20Swiss%20Territorial%20Data%20Lab.htm">file:///C:/Users/Clemence/Documents/STDL/Projects/proj-quarries/01_Documentation/Bibliography/Automatic%20Detection%20of%20Quarries%20and%20the%20Lithology%20below%20them%20in%20Switzerland%20-%20Swiss%20Territorial%20Data%20Lab.htm</a>.&#160;<a class="footnote-backref" href="#fnref:7" title="Jump back to footnote 7 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:7" title="Jump back to footnote 7 in the text">&#8617;</a><a class="footnote-backref" href="#fnref3:7" title="Jump back to footnote 7 in the text">&#8617;</a><a class="footnote-backref" href="#fnref4:7" title="Jump back to footnote 7 in the text">&#8617;</a></p>
+</li>
+<li id="fn:8">
+<p>Yuxin Wu, Alexander Kirillov, Francisco Massa, Wan-Yen Lo, and Ross Girshick. Detectron2. 2019. URL: <a href="https://github.com/facebookresearch/detectron2">https://github.com/facebookresearch/detectron2</a>.&#160;<a class="footnote-backref" href="#fnref:8" title="Jump back to footnote 8 in the text">&#8617;</a></p>
+</li>
+<li id="fn:9">
+<p>Kaiming He, Georgia Gkioxari, Piotr Dollár, and Ross Girshick. Mask R-CNN. January 2018. arXiv:1703.06870 [cs]. URL: <a href="http://arxiv.org/abs/1703.06870">http://arxiv.org/abs/1703.06870</a>, <a href="https://doi.org/10.48550/arXiv.1703.06870">doi:10.48550/arXiv.1703.06870</a>.&#160;<a class="footnote-backref" href="#fnref:9" title="Jump back to footnote 9 in the text">&#8617;</a></p>
+</li>
+</ol>
+</div>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2020-2021 Swiss Territorial Data Lab
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        <div class="md-social">
+  
+    
+    
+    
+    
+    <a href="https://github.com/swiss-territorial-data-lab" target="_blank" rel="noopener" title="Repo on Github" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.3.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+    </a>
+  
+    
+    
+    
+    
+    <a href="mailto:<info@stdl.ch>" target="_blank" rel="noopener" title="Send us an eMail!" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.3.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M498.1 5.6c10.1 7 15.4 19.1 13.5 31.2l-64 416c-1.5 9.7-7.4 18.2-16 23s-18.9 5.4-28 1.6L284 427.7l-68.5 74.1c-8.9 9.7-22.9 12.9-35.2 8.1S160 493.2 160 480v-83.6c0-4 1.5-7.8 4.2-10.7l167.6-182.9c5.8-6.3 5.6-16-.4-22s-15.7-6.4-22-.7L106 360.8l-88.3-44.2C7.1 311.3.3 300.7 0 288.9s5.9-22.8 16.1-28.7l448-256c10.7-6.1 23.9-5.5 34 1.4z"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.expand"], "search": "../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.2a6f1dda.min.js"></script>
+      
+        <script src="../assets/javascripts/config.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>
