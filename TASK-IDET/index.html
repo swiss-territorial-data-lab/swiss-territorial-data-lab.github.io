@@ -9,7 +9,7 @@
       
       
       <link rel="icon" href="../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-8.5.10">
+      <meta name="generator" content="mkdocs-1.4.0, mkdocs-material-8.5.6">
     
     
       
@@ -17,10 +17,10 @@
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.472b142f.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.20d9efc8.min.css">
       
         
-        <link rel="stylesheet" href="../assets/stylesheets/palette.08040f6c.min.css">
+        <link rel="stylesheet" href="../assets/stylesheets/palette.cbb835fc.min.css">
         
       
       
@@ -54,7 +54,7 @@
     
     
     
-    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="None" data-md-color-accent="None">
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="none" data-md-color-accent="none">
   
     
     
@@ -338,9 +338,10 @@
 
 
 <h1 id="object-detection-framework"><span style="text-transform:uppercase;"> Object Detection Framework </span><a class="headerlink" href="#object-detection-framework" title="Permanent link">&para;</a></h1>
-<p><i>Alessandro Cerioni, Etat de Geneve - Adrian F. Meyer, FHNW</i></p>
-<p>Published on November 22, 2021</p>
-<p><em><strong>Abstract</strong>: The STDL develops a framework allowing users to train and use Deep Learning models to detect objects in aerial images. While relying on a generic-purpose third-party Open Source library, the STDL framework implements a somewhat opinionated workflow, targeting georeferenced aerial images and labels. After a brief introduction to object detection, this article provides detailed information on the STDL Object Detection framework and the opinions it implements. References to successful applications are provided along with concluding remarks.</em></p>
+<p><i>Alessandro Cerioni, Etat de Geneve - Clémence Herny, Exolabs - Adrian F. Meyer, FHNW - Gwenaëlle Salamin, Exolabs</i></p>
+<p>Published on November 22, 2021
+Updated on December 12, 2023</p>
+<p><em><strong>Abstract</strong>: The STDL develops a framework allowing users to train and use deep learning models to detect objects in aerial images. While relying on a generic-purpose third-party open-source library, the STDL's framework implements a somewhat opinionated workflow, targeting georeferenced aerial images and labels. After a brief introduction to object detection, this article provides detailed information on the STDL's object detection framework and the opinions it implements. References to successful applications are provided along with concluding remarks.</em></p>
 <h2 id="introduction">Introduction<a class="headerlink" href="#introduction" title="Permanent link">&para;</a></h2>
 <p>Object detection is a computer vision task which aims at detecting instances of objects of some target classes (<em>e.g.</em> buildings, swimming pools, solar panels, ...) in digital images and videos. </p>
 <p>According to the commonly adopted terminology, a distinction is made between the following tasks:</p>
@@ -355,9 +356,9 @@
 <i>Object Detection vs Instance Segmentation. Image credit: <a href="https://engineering.matterport.com/splash-of-color-instance-segmentation-with-mask-r-cnn-and-tensorflow-7c761e238b46">Waleed Abdulla</a>.</i>
 </p>
 
-<p>Significant progress has been made over the past decades in the domain of object detection and instance segmentation (cf. <em>e.g.</em> <a href="https://arxiv.org/pdf/1905.05055.pdf">this review paper</a>). Applications of object detection methods are today popular also in real-world products: for instance, some cars are already capable of detecting and reading speed limit signs; social media applications integrate photo and video effects based on face and pose detection. All these applications usually rely on Deep Learning methods, which are the subset of Machine Learning methods leveraging Deep Neural Networks. While referring the reader to other sources for further information on Machine and Deep Learning methods (cf. <em>e.g.</em> <a href="https://frcs.github.io/4C16-LectureNotes/">these lecture notes</a>), we wish to highlight a point which is key in all these approaches based on learning: no rigid, static, human-engineered rule is given to the machine to accomplish the task. Instead, the machine is provided with a collection of input-output pairs, where the output represents the outcome of a properly solved task. As far as object detection is concerned, we provide Deep Learning algorithms with a set of images accompanied by reference annotations ("ground truth labels"), which the machine is expected to reproduce. Clearly, things become interesting when the machine learns how to generate acceptable detections/segmentations on previously unseen images; such a crucial ability is referred to as "generalization". Strategies exist to measure and improve generalization (more on this here-below).</p>
-<p>A generic framework was developed within the STDL, allowing the usage of <a href="https://paperswithcode.com/task/object-detection">state-of-the-art Machine Learning methods</a> to detect objects in aerial images. Such framework allows one to leverage aerial images <em>e.g.</em> to provide valuable hints towards the update of cadastral information. At least as far as Switzerland is concerned, high-resolution (&lt; 30 cm Ground Sample Distance) are acquired at the cantonal and federal scales on a regular basis. An inventory of the STDL applications will be provided at the end of this article.</p>
-<p>In its current version, the STDL object detection framework is powered at its very core by <a href="https://github.com/facebookresearch/detectron2">Detectron2</a>, a Python library developed by the Facebook Artificial Intelligence Research group and released under the <a href="https://github.com/facebookresearch/detectron2/blob/master/LICENSE">Apache 2.0 Open Source license</a>. Detectron2 includes methods to train models performing various tasks, object detection and instance segmentation to name a few. Specific, slightly opinionated pieces of code were written by the STDL in order to pre-process data to be input to Detectron2, as well as to post-process outputs and turn them into meaningful information. More precisely, our developments enable the usage of Detectron2 with aerial images and georeferenced labels.</p>
+<p>Significant progress has been made over the past decades in the domain of object detection and instance segmentation (cf. <em>e.g.</em> <a href="https://arxiv.org/pdf/1905.05055.pdf">this review paper</a>). Applications of object detection methods are today popular also in real-world products: for instance, some cars are already capable of detecting and reading speed limit signs; social media applications integrate photo and video effects based on face and pose detection. All these applications usually rely on deep learning methods, which are the subset of machine learning methods leveraging deep neural networks. While referring the reader to other sources for further information on machine and deep learning methods (cf. <em>e.g.</em> <a href="https://frcs.github.io/4C16-LectureNotes/">these lecture notes</a>), we wish to highlight a key point in all these approaches based on learning: no rigid, static, human-engineered rule is given to the machine to accomplish the task. Instead, the machine is provided with a collection of input-output pairs, where the output represents the outcome of a properly solved task. As far as object detection is concerned, we provide deep learning algorithms with a set of images accompanied by reference annotations ("ground truth labels"), which the machine is expected to reproduce. Clearly, things become interesting when the machine learns how to generate acceptable detections/segmentation on previously unseen images; such a crucial ability is referred to as "generalization".</p>
+<p>A generic framework was developed within the STDL, allowing the usage of <a href="https://paperswithcode.com/task/object-detection">state-of-the-art machine learning methods</a> to detect objects in aerial images. Such framework allows one to leverage aerial images <em>e.g.</em> to provide valuable hints towards the update of cadastral information. At least as far as Switzerland is concerned, high-resolution (&lt; 30 cm Ground Sample Distance) are acquired at the cantonal and federal scales on a regular basis. An inventory of the STDL's applications will be provided at the end of this article.</p>
+<p>The STDL's object detection framework is powered at its core by <a href="https://github.com/facebookresearch/detectron2">Detectron2</a>, a Python library developed by the Facebook Artificial Intelligence Research group and released under the <a href="https://github.com/facebookresearch/detectron2/blob/master/LICENSE">Apache 2.0 open-source license</a>. Detectron2 includes methods to train models performing various tasks, object detection and instance segmentation to name a few. Specific pieces of code were written by the STDL to pre-process data to be input to Detectron2, as well as to post-process outputs and turn them into meaningful information for the projects being developed. More precisely, our developments enable the usage of Detectron2 with georeferenced images and labels.</p>
 <p>Our workflow goes through the steps described here-below.</p>
 <div align="center">
 <img src="image/separator.gif?raw=true" width="5%">
@@ -372,12 +373,13 @@
 <li>the reference system of both the bounding box (input) and the requested image (output).</li>
 </ul>
 <p>GIS tools such as <a href="https://qgis.org/">QGIS</a> and <a href="https://www.esri.com/en-us/arcgis/products/arcgis-pro/overview">ArcGIS Pro</a> as well as Web Applications powered by Web Mapping clients such as <a href="https://leafletjs.com/">Leaflet</a>, <a href="https://openlayers.org/">OpenLayers</a>, <a href="https://github.com/maplibre/maplibre-gl-js">MapLibre GL</a>, etc. actually rely on this mechanism to let end-users navigating through tons of bits in quite a seamless, fluent, reactive way. As a matter of fact, zooming in and out in such 2D scenes amounts to fetching and visualizing different images depending on the zoom level, instead of "simply" increasing/decreasing the size of the various image pixels as displayed on screen. </p>
-<p>Through this 1st step of our workflow, several requests are issued against a Web Service in order to generate a consistent set of tiled images ("tileset") covering the so-called "<strong>Area of Interest</strong>" (AoI), namely the area over which the user intend to train a predictive model and/or to perform the actual object detection. Connectors for the following two Web Services have been developed so far:</p>
+<p>Through this 1st step of our workflow, several requests are issued against a Web Service in order to generate a consistent set of tiled images ("tileset") covering the so-called "<strong>area of interest</strong>" (AoI), namely the area over which the user intend to train a detection model and/or to perform the actual object detection. Connectors for the following two Web Services have been developed so far:</p>
 <ol>
 <li><a href="https://www.ogc.org/standards/wms">OGC's Web Mapping Service (WMS)</a>;</li>
 <li><a href="https://doc.arcgis.com/en/arcgis-online/reference/map-image-elevation-imagery-layers.htm">ESRI's Map Image Layer</a>.</li>
+<li><a href="https://www.maptiler.com/google-maps-coordinates-tile-bounds-projection/#4/84.84/59.04">XYZ link</a></li>
 </ol>
-<p>Our framework is agnostic with respect to the tiling scheme, which the user has to provide as a GeoJSON input file, compliant with some  requirements. We refer the user to the code documentation for detailed information about these requirements.</p>
+<p>Except when using the XYZ connector that requires the EPSG:3857, our framework is agnostic with respect to the tiling scheme. The user has to provide as a input file compliant with some requirements. We refer the user to the <a href="https://github.com/swiss-territorial-data-lab/object-detector?tab=readme-ov-file#stage-1-tileset-generation">code documentation</a> for detailed information about these requirements.</p>
 <p>Concerning the AoI and its extension, the following scenarios are supported:</p>
 <ol>
 <li>training-only scenarios, <em>i.e.</em> the user intends to train a model to be used for detection at a later stage. In this case, the AoI would only cover the area for which reference, ground truth data exist. </li>
@@ -391,7 +393,7 @@
 <li><a href="https://cocodataset.org/#format-data">COCO</a>.</li>
 </ul>
 <p>Since Detectron2 natively supports the latter but not the former, we made the obvious choice to opt for the COCO format.</p>
-<p>As mentioned here-above, Machine Learning models are valuable as far as they do not "overfit" to the training data; in other words, as far as they generalize well to new, unseen data. One of the techniques which are commonly used in order to prevent Machine Learning algorithms from overfitting is the "train, validation, test split". While referring the interested reader to <a href="https://en.wikipedia.org/wiki/Training,_validation,_and_test_sets">this Wikipedia page</a> for further details, let us note that a 70%-15%-15% split is currently hard-coded in our framework. </p>
+<p>As mentioned above, machine learning models are valuable as far as they do not "overfit" to the training data; in other words, as far as they generalize well to new, unseen data. One of the techniques which are commonly used in order to prevent machine learning algorithms from overfitting is the "train, validation, test split". While referring the interested reader to <a href="https://en.wikipedia.org/wiki/Training,_validation,_and_test_sets">this Wikipedia page</a> for further details, let us note that a 70%-15%-15% split is currently hard-coded in our framework. </p>
 <p>Various independent COCO tilesets are generated, depending on the scenario:</p>
 <ol>
 <li>
@@ -401,18 +403,18 @@
 <li>validation tileset (<code>val</code>);</li>
 <li>test tileset (<code>tst</code>).</li>
 </ol>
-<p>For now, training, validation and test tiles are chosen exclusively among the Area of Interest tiles including one or more ground truth label. Having realized that some of our models tend to produce false detections, we will shortly improve our framework in order to allow for unlabeled tiles within the training, validation, test tilesets. </p>
+<p>For now, training, validation and test tiles are chosen exclusively among the tiles of the AoI including one or more ground truth labels. Having realized that some of our models tend to produce false detections, we will shortly improve our framework in order to allow for unlabeled tiles within the training, validation, test tilesets. </p>
 </li>
 <li>
-<p>In inference-only scenarios, a single COCO tileset labeled as "other" is generated (<code>oth</code> is the abbreviation we use); a more meaningful label will be hopefully adopted in the near future.</p>
+<p>In inference-only scenarios, a single COCO tileset labeled as "other" is generated (<code>oth</code> is the abbreviation we use).</p>
 </li>
 <li>
 <p>In training + inference scenarios, the full collection of tilesets is generated: <code>trn</code>, <code>val</code>, <code>tst</code>, <code>oth</code>.</p>
 </li>
 </ol>
 <h3 id="2-model-training">2. Model training<a class="headerlink" href="#2-model-training" title="Permanent link">&para;</a></h3>
-<p>At the end of step no. 1 we are left with a collection of consistent (<em>i.e.</em> same size and resolution) tiled images and corresponding COCO files (<code>trn</code> + <code>val</code> + <code>tst</code> and/or <code>oth</code> depending on the scenario).</p>
-<p>This 2nd step consists in training a prediction model by iterating over the training dataset, as customarily done in Machine/Deep Learning. As already mentioned, we delegate this crucial part of the process to the superb <a href="https://github.com/facebookresearch/detectron2">Detectron2</a> library; support for other libraries may be implemented in the future, if suitable.</p>
+<p>The 1st step provides a collection of consistent (<em>i.e.</em> same size and resolution) tiled images and corresponding COCO files (<code>trn</code> + <code>val</code> + <code>tst</code> and/or <code>oth</code> depending on the scenario).</p>
+<p>The 2nd step consists in training a prediction model by iterating over the training dataset, as customarily done in machine and deep learning. As already mentioned, we delegate this crucial part of the process to the <a href="https://github.com/facebookresearch/detectron2">Detectron2</a> library; support for other libraries may be implemented in the future, if suitable.</p>
 <p>Detectron2 comes with a large collection of pre-trained models tailored for various tasks. In particular, as far as instance segmentation is concerned, pre-trained models can be selected from <a href="https://github.com/facebookresearch/detectron2/blob/master/MODEL_ZOO.md#coco-instance-segmentation-baselines-with-mask-r-cnn">this list</a>. </p>
 <p>In our workflow, we setup Detectron2 in such a way that inference is made on the validation dataset every N training iterations, being N a user-defined parameter. By doing this, we can monitor both the training and validation losses all along the iterative learning and decide when to stop. Typically, learning is stopped when the validation loss reaches a minimum (cf. <em>e.g.</em> <a href="https://machinelearningmastery.com/early-stopping-to-avoid-overtraining-neural-network-models/">this article</a> for further information on early stopping). As training and validation loss curves are somewhat noisy, typically an on-the-fly smoothing is applied in order to reveal steady trends. Other metrics may be tracked and used to decide when to stop. For now, within our framework (early) stopping can be done manually and is left to the user; it will be made automatic in the future, following some suitable criterion.</p>
 <p align="center">
@@ -421,38 +423,51 @@
 <i>Training and validation losses in a sample object detection task. In this case, one could stop the training after the first ~1400 iterations. Note that, in this example, the validation loss is evaluated every 200 iterations.</i>
 </p>
 
-<p>Before moving on to the next step, let us note that the learning process is regulated by several parameters, which are usually called "hyper-parameters" in order to distinguish them from the learned "parameters", the latter being - in our Deep Learning context - the coefficients of the many neurons populating the various layers of the Deep Neural Network. In successful scenarios, the iterative learning process does actually lower the validation loss until a minimum value is reached. Yet, such a minimum is likely to be a "local" one (<em>i.e.</em> relative to a given set of hyper-parameters); indeed, the global minimum may be found along a different trajectory, corresponding to a different set of hyper-parameters. Actually, even finding the global minimum of the validation loss could be not as relevant as checking how different models resulting from different choices of the hyper-parameters compare with each other on the common ground of more meaningful "business metrics". Even though currently our code does not implement any automatic hyper-parameter tuning, neither in terms of expert metrics nor in terms of business ones, we have already setup everything that is needed to produce business metrics, as explained here-below.</p>
+<p>Let us note that the learning process is regulated by several parameters, which are usually called "hyper-parameters" in order to distinguish them from the learned "parameters", the latter being - in our deep learning context - the coefficients of the many neurons populating the various layers of the deep neural network. In successful scenarios, the iterative learning process does actually lower the validation loss until a minimum value is reached. Yet, such a minimum is likely to be a "local" one (<em>i.e.</em> relative to a given set of hyper-parameters); indeed, the global minimum may be found along a different trajectory, corresponding to a different set of hyper-parameters. Actually, even finding the global minimum of the validation loss could be not as relevant as checking how different models resulting from different choices of the hyper-parameters compare with each other on the common ground of more meaningful "business metrics". Even though currently our code does not implement any automatic hyper-parameter tuning, neither in terms of expert metrics nor in terms of business ones, we have already setup everything that is needed to produce business metrics, as explained here-below.</p>
 <h3 id="3-detection">3. Detection<a class="headerlink" href="#3-detection" title="Permanent link">&para;</a></h3>
-<p>The model trained at the preceding step can be used to perform the actual object detection / instance segmentation over the various tilesets concerned by a given study:</p>
+<p>The model trained at the preceding step can be used to perform the actual object detection or instance segmentation over the various tilesets concerned by a given study:</p>
 <ul>
 <li>in training-only scenarios, detections can be made on the training, validation and test sets, for model assessment purposes (cf. next section);</li>
 <li>in inference-only scenarios, detections can be made over the tileset which we call "other", for now.</li>
 </ul>
 <p>Depending on the configuration, Detectron2 is capable to perform either object detection AND instance segmentation at once, or object detection only. In both cases, every detection is accompanied by the following information:</p>
 <ul>
-<li>the class the detected object belongs to. Currently, our framework only support single-class detections;</li>
+<li>the class the detected object belongs to;</li>
 <li>a confidence score, ranging from 0 to 1.</li>
 </ul>
-<p>In the case of object detection only, a bounding box is output as a list of vertices relative to the image coordinate system. In case instance segmentation is demanded, detections are also output under the form of binary ("monochromatic") masks, one per input tile/image, in which pixels belonging to target objects are encoded with ones whereas background pixels are encoded with zeros. </p>
+<p>In the case of object detection only, a bounding box is output as a list of vertices relative to the image coordinate system. In case instance segmentation is demanded, detections are also output under the form of binary ("monochromatic") masks, one per input tile/image, in which pixels belonging to target objects are encoded with ones whereas background pixels are encoded with zeros.<br />
+Detectron2 output is then converted into a georeferenced vector. Polygon geometry can be simplified using the <a href="https://rdp.readthedocs.io/en/latest/">Ramer-Douglas-Peucker algorithm (RDP)</a> by tuning the epsilon parameter.</p>
 <h3 id="4-assessment">4. Assessment<a class="headerlink" href="#4-assessment" title="Permanent link">&para;</a></h3>
-<p>As already mentioned, several expert metrics are output by Detectron2 all along the learning process, concerning the training dataset and, optionally, the validation dataset too. As these metrics can be confusing for business experts (cf. <a href="https://yanfengliux.medium.com/the-confusing-metrics-of-ap-and-map-for-object-detection-3113ba0386ef">this article</a> for further details on such metrics), the STDL decided to try making things as simple as possible by turning these detections into georeferenced polygons. Not only such polygons can then be visualized by GIS tools like QGIS or ArcGIS Pro, but also spatial intersections can be computed with ground truth labels in order to tag detections according to the following classes:</p>
+<p>The results are evaluated by matching the detections and the ground truth labels, i.e. by finding detections overlapping with ground truth labels. To be considered a match, the intersection over union (IoU) between the detection polygon and label polygon must be greater than a threshold set by the user, with a default value = 0.25. In addition, if there are intersections between several detections and ground truth labels, only the pair with the largest IoU is considered to be a valid match.</p>
+<p>Intersection over union between a label and a detection is defined as:</p>
 <ul>
-<li>True Positives (TP): detections matching ground truth objects;</li>
-<li>False Positives (FP): detections NOT matching ANY ground truth object;</li>
-<li>False Negatives (FN): missing detections, namely objects which are can only be found in the ground truth dataset.</li>
+<li><span class="arithmatex">\(\mbox{IoU} = \frac{A_{label \cap detection}}{A_{label \cup detection}}\)</span></li>
 </ul>
-<p>The reader may wonder why there are no True Negatives (TN) in the list. Actually, all the image pixels which are rightly associated to none of the target classes can be considered as "True Negatives". Yet, as far as object detection and instance segmentation are concerned, we do not need to group unclassified pixels into some sort of "dummy objects". Should the user need to model such a scenario, one idea might consist in introducing a dummy class (<em>e.g.</em> "background"), to which all the (ir)relevant pixels would be associated.</p>
-<p>Counting the number of TPs, FPs and FNs allows one to compute some rather common metrics:</p>
+<p>The spatial intersection between the vectorized detections and the ground truth labels is computed to tag detections according to the following classification:</p>
 <ul>
-<li><span class="arithmatex">\(\mbox{precision} = \frac{\mbox{TP}}{\mbox{TP} + \mbox{FP}}\)</span> </li>
-<li><span class="arithmatex">\(\mbox{recall} = \frac{\mbox{TP}}{\mbox{TP} + \mbox{FN}}\)</span> </li>
+<li>true positive (TP): detections matching correctly a ground truth object;</li>
+<li>false positive (FP): detections not matching any ground truth object;</li>
+<li>false negative (FN): missing detections, namely objects of the ground truth which are not detected;</li>
+<li>wrong class: detections matching a ground truth object of another class.</li>
+</ul>
+<p>The reader may wonder why there are no true negatives (TN) in the list. Actually, all the image pixels which are rightly not associated with the target class can be considered as "true negatives". Yet, as far as object detection and instance segmentation are concerned, we do not need to group leftover pixels into some sort of "dummy objects". Should the user need to model such a scenario, one idea might consist in introducing a dummy class (<em>e.g.</em> "background" or "other"), to which all the (ir)relevant pixels would be associated.
+The metrics are calculated per-class to take into account possible imbalances between classes. The detections in the wrong class will be classified as FN, <em>i.e.</em> missed object, or false positive (FP), <em>i.e.</em> detections not matching any object, depending on the target class we are calculating for.  </p>
+<p>Precision and recall by class are used here:</p>
+<ul>
+<li><span class="arithmatex">\(\mbox{precision}_{class} = \frac{\mbox{TP}_{class}}{\mbox{TP}_{class} + \mbox{FP}_{class}}\)</span> </li>
+<li><span class="arithmatex">\(\mbox{recall}_{class} = \frac{\mbox{TP}_{class}}{\mbox{TP}_{class} + \mbox{FN}_{class}}\)</span> </li>
 </ul>
 <p>While referring the reader to <a href="https://en.wikipedia.org/wiki/Precision_and_recall">this page</a> for further information on these metrics, let us note that:</p>
 <ul>
-<li>precision is optimal (= 1.0) when the count of FPs is equal to zero, <em>i.e.</em> this metric measures how good the model is in detecting the objects that are actually targeted, only;</li>
-<li>recall is optimal (= 1.0) when the count of FNs is equal to zero. In other words, this metric measures how good the model in detecting all the target objects, without missing any.</li>
+<li>Precision is optimal when it equals one, <em>i.e.</em> when the count of FPs is equal to zero. This metric measures how good the model is in detecting only objects with the class of interest;</li>
+<li>Recall is optimal when it equals one, <em>i.e.</em> when the count of FNs is equal to zero. This metric measures how good the model is in detecting all objects of the class of interest without missing any.</li>
 </ul>
-<p>As already mentioned, each detection is assigned a confidence score, ranging from 0 to 1. By filtering out all the detections exhibiting a score smaller than some cut-off/threshold value, one would end up having more or less detections to compare against ground truth data; the higher the threshold, the smaller the number of detections, the better their quality in terms of the confidence score. Sampling the threshold from a minimal (<em>e.g.</em> 0.05) to a maximum value (<em>e.g.</em> 0.95) and counting TPs, FPs, FNs at each sampling step, meaningful curves can be obtained representing counts and/or metrics like precision and recall as a function of the threshold. Typically, precision (recall) is monotonically increasing (decreasing) as a function of the threshold. As such, neither the precision nor the recall can be used to determine the optimal value of the threshold, which is why precision and recall are customarily aggregated in order to form a third metric which can be convex if computed as a function of the threshold or, at least, it can exhibit local minima. This metric is named "<span class="arithmatex">\(F_1\)</span> score" and is defined as follows:</p>
+<p>Each metric can be aggregated to keep only one value per dataset, rather than one per class.</p>
+<ul>
+<li><span class="arithmatex">\(\mbox{precision} = \frac{\sum_{class}\mbox{precision}_{class}}{\mbox{nbr of classes}}\)</span></li>
+<li><span class="arithmatex">\(\mbox{recall} = \frac{\sum_{class}\mbox{recall}_{class}}{\mbox{nbr of classes}}\)</span></li>
+</ul>
+<p>As already mentioned, each detection is assigned a confidence score, ranging from 0 to 1. By filtering out all the detections exhibiting a score smaller than some cut-off/threshold value, one would end up having more or less detections to compare against ground truth data; the higher the threshold, the smaller the number of detections, the better their quality in terms of the confidence score. Sampling the threshold from a minimal user-defined value to a maximum value (<em>e.g.</em> 0.95) and counting TPs, FPs, FNs at each sampling step, meaningful curves can be obtained representing counts and/or metrics like precision and recall as a function of the threshold. Typically, precision (recall) is monotonically increasing (decreasing) as a function of the threshold. As such, neither the precision nor the recall can be used to determine the optimal value of the threshold, which is why precision and recall are customarily aggregated in order to form a third metric which can be convex if computed as a function of the threshold or, at least, it can exhibit local minima. This metric is named "<span class="arithmatex">\(F_1\)</span> score" and is defined as follows:</p>
 <ul>
 <li><span class="arithmatex">\(F_1 = 2\times \frac{\mbox{precision}\;\times\;\mbox{recall}}{\mbox{precision}\; +\; \mbox{recall}}\)</span></li>
 </ul>
@@ -460,16 +475,18 @@
 <p>Other approaches exist, allowing one to summarize metrics and eventually come up with threshold-independent scores. One of these approaches consist in computing the "Area Under the ROC curve" (AUC, cf. <a href="https://tinyurl.com/6eea6bnu">this page</a>) and will be soon implemented by the STDL.</p>
 <h3 id="5-iterate-until-results-are-satisfactory">5. Iterate until results are satisfactory<a class="headerlink" href="#5-iterate-until-results-are-satisfactory" title="Permanent link">&para;</a></h3>
 <p>Several training sessions can be executed, using different values of the various hyper-parameters involved in the process. As a matter of fact, reviewing and improving ground truth data is also part of the hyper-parameter tuning (cf. "<a href="https://towardsdatascience.com/from-model-centric-to-data-centric-artificial-intelligence-77e423f3f593">From Model-centric to Data-centric Artificial Intelligence</a>''). Keeping track of the above-mentioned metrics across multiple realizations, eventually an optimal model should be found (at least, a local optimum). </p>
-<p>The exploration of the hyper-parameter space is a tedious task, which consumes time as well as human and computing resources. It can be performed in a more or less systematic/heuristic way, depending on the experience of the operator as well as on the features offered by the code. Typically, a partial exploration is enough to obtain acceptable results. Within the STDL team, it is customary to first perform some iterations until "decent scores" are obtained, then to involve beneficiaries and domain experts in the continuous evaluation and improvement of results, until satisfactory results are obtained. These exchanges between Data Scientists and domain experts are also key to raise both communities' awareness of the virtues and flaws of Machine Learning approaches.</p>
+<p>The exploration of the hyper-parameter space is a tedious task, which consumes time as well as human and computing resources. It can be performed in a more or less systematic/heuristic way, depending on the experience of the operator as well as on the features offered by the code. Typically, a partial exploration is enough to obtain acceptable results. Within the STDL team, it is customary to first perform some iterations until "decent scores" are obtained, then to involve beneficiaries and domain experts in the continuous evaluation and improvement of results, until satisfactory results are obtained. These exchanges between data scientists and domain experts are also key to raise both communities' awareness of the virtues and flaws of machine learning approaches.</p>
 <div align="center">
     <img src="image/separator.gif?raw=true" width="5%">
 </div>
 
 <h2 id="use-cases">Use cases<a class="headerlink" href="#use-cases" title="Permanent link">&para;</a></h2>
-<p>Here's a list of the successful applications of the Object Detection Framework described in this article:</p>
+<p>Here is a list of the successful applications of the object detection framework described in this article:</p>
 <ul>
-<li><a href="../PROJ-GEPOOL/">Swimming Pool Detection from Aerial Images over the Canton of Geneva</a></li>
+<li><a href="../PROJ-DQRY/">Automatic detection of quarries</a></li>
+<li><a href="../PROJ-GEPOOL/">Swimming Pool Detection for the Canton of Geneva</a></li>
 <li><a href="../PROJ-TGPOOL/">Swimming Pool Detection for the Canton of Thurgau</a></li>
+<li><a href="../PROJ-ROADSURF/">Classification of road surfaces</a></li>
 <li><a href="../PROJ-TGLN/">Updating the «Cultivable Area» Layer of the Agricultural Office, Canton of Thurgau</a></li>
 </ul>
 <div align="center">
@@ -477,7 +494,7 @@
 </div>
 
 <h2 id="concluding-remarks">Concluding remarks<a class="headerlink" href="#concluding-remarks" title="Permanent link">&para;</a></h2>
-<p>The STDL Object Detection Framework is still under development and receives updates as new use cases are tackled. Its source code will be soon released under Open Source terms: stay tuned!</p>
+<p>The STDL's object detection framework is still under development and receives updates as new use cases are tackled.</p>
 
 
 
@@ -535,10 +552,10 @@
       <div class="md-dialog__inner md-typeset"></div>
     </div>
     
-    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.expand"], "search": "../assets/javascripts/workers/search.16e2a7d4.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.expand"], "search": "../assets/javascripts/workers/search.5bf1dace.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
     
     
-      <script src="../assets/javascripts/bundle.d6c3db9e.min.js"></script>
+      <script src="../assets/javascripts/bundle.078830c0.min.js"></script>
       
         <script src="../assets/javascripts/config.js"></script>
       
