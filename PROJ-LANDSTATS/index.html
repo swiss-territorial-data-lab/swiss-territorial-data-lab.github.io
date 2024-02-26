@@ -456,10 +456,6 @@ September 2022 to March 2023 - Published on April 2023</p>
 Logistic regression was used to assess the contribution of spatial and temporal neighbors to the change detection. While time deactivation and less-neighbors have a 0.2% decrease on the balanced accuracy, the space deactivation causes 1% decrease. Furthermore, XGBoost, random forest (RF), fully convolutional network (FCN) and recurrent convolutional neural network (RCNN) performance are compared by the means of a custom metric, established with the help of the interpretation team. For the spatial-temporal module, FCN outperforms all the models with a value of 0.259 for the custom metric, whereas the logistic regression indicates a custom metrics of 0.249.</em> </p>
 <p><em>Then, FCN and RF are tested to combine the best performing model with the model trained by OFS on image data only. When using temporal-spatial neighors and image data as inputs, the final integration module achieves 0.438 in custom metric, against 0.374 when only the the image data is used.</em> </p>
 <p><em>It was conclude that temporal-spatial neighbors showed that they could light the process of tile interpretation.</em>  </p>
-<div align="center">
-<img src="image/separator.gif?raw=true" width="5%">
-</div>
-
 <h2 id="1-introduction">1. Introduction<a class="headerlink" href="#1-introduction" title="Permanent link">&para;</a></h2>
 <p>The introduction presents the background and the objectives of the projects, but also introduces the input data and its specific features.</p>
 <h3 id="11-background">1.1 Background<a class="headerlink" href="#11-background" title="Permanent link">&para;</a></h3>
@@ -568,10 +564,6 @@ Logistic regression was used to assess the contribution of spatial and temporal 
 *<em>The shortened LC1/LU1 to LC4/LU4 will be used to simplify the notation of Land Cover/Use of survey 1 to survey 4 in the following documentation.</em>
 </small> </p>
 <p>For machine learning, training data quality has strong influence on model performance. With the <em>training</em> label, domain experts from FSO selected data points that are more reliable and representative. These 348'474 tiles and their neighbors composed the training and testing dataset for machine learning methodology.</p>
-<div align="center">
-<img src="image/separator.gif?raw=true" width="5%">
-</div>
-
 <h2 id="2-exploratory-data-analysis">2. Exploratory data analysis<a class="headerlink" href="#2-exploratory-data-analysis" title="Permanent link">&para;</a></h2>
 <p>As suggested by domain experts, exploratory data analysis (EDA) is of significance to understand the data statistics and find the potential internal patterns of class transformation. The EDA is implemented from three different perspectives: distribution, quantity and probability. With the combination of the three, we can find that there do exist certain trends in the transformation of both land cover and land use classes. </p>
 <p>For the land cover, main findings are: </p>
@@ -707,10 +699,6 @@ Logistic regression was used to assess the contribution of spatial and temporal 
 
 <p>Figure 11 tells the difference in the diversity of transformation destination. The construction and unexploited areas would turn into all kinds of urban areas, with more than 95% changed and the maximum probability to a fixed class is less than 35%. While the <em>Afforestation</em>, <em>Lumbering areas</em> and <em>Damaged Forest</em> returned to <em>Forest</em> with a probability of more than 90%, the transformation pattern within these four classes is fairly fixed.</p>
 <p>The distribution statistics, the quantity statistics and the probability matrices have shown to validate and complement each other during the exploratory analysis of the data.</p>
-<div align="center">
-<img src="image/separator.gif?raw=true" width="5%">
-</div>
-
 <h2 id="3-methods">3. Methods<a class="headerlink" href="#3-methods" title="Permanent link">&para;</a></h2>
 <p>The developed method should be integrated in the OFS framework for change detection and classification of land use and land cover illustrated in Figure 12. The interesting parts for this project are highlighted in orange and will be presented in the following. </p>
 <p align="center">
@@ -862,10 +850,6 @@ Weighted \ Metric &amp;= Automatized \ Capacity \times (0.1 - Missed \ Weighted 
 <li>outputs of the best performing temporal-spatial module, followed by FCN training for the integration module. </li>
 </ul>
 <p>The extra information gain from the temporal-spatial module will be studied by comparison with image-level performance only. The image-level data contain multi-class classification prediction and its confidence. We can calculate the change probability according to the probability of each class. Therefore, the weighted metric can also be applied at the image-level only. Then, the RF and FCN are tested for the integration module which combines various types of information sources. </p>
-<div align="center">
-<img src="image/separator.gif?raw=true" width="5%">
-</div>
-
 <h2 id="4-experiments">4. Experiments<a class="headerlink" href="#4-experiments" title="Permanent link">&para;</a></h2>
 <p>The Experiments section covers the results obtained when performing the <a href="#34-training-and-testing-plan">planned simulations</a> for the temporal-spatial module and the integration module. </p>
 <h3 id="41-temporal-spatial-module">4.1 Temporal-spatial module<a class="headerlink" href="#41-temporal-spatial-module" title="Permanent link">&para;</a></h3>
@@ -1214,25 +1198,13 @@ Table 3 reveals the performance change when time or space information is totally
 </table>
 <p>The study demonstrates that the image-level contains more information related to change detection compared with temporal-spatial neighbors (<em>FCN</em> row in the Table 5). However, performance improvement from the temporal-spatial module when combined with image-level data, achieving 0.438 in weighted metric in the end (<em>FCN+RF</em> and <em>FCN+FCN</em>).</p>
 <p>Regarding the composition of different models for the two modules, FCN is proved to be the best one for the temporal-spatial module, while RF and FCN have similar performance in the integration module. The choice of integration module could be influenced by the data format of other potential modules. This will be further studied by the FSO team.</p>
-<div align="center">
-<img src="image/separator.gif?raw=true" width="5%">
-</div>
-
 <h2 id="5-conclusion-and-outlook">5. Conclusion and outlook<a class="headerlink" href="#5-conclusion-and-outlook" title="Permanent link">&para;</a></h2>
 <p>This project studied the potential of historical and spatial neighbor data in change detection task for the fifth interpretation process of the areal statistic of FSO. For the evaluation of this specific project, a weighted metric was defined by the FSO team. The temporal-spatial information was proved not to be as powerful as image-level information which directly detects change within visual data. However, an efficient prototype was built with 6% performance improvement in weighted metric combining the temporal-spatial module and the image-level module. It is validated that integration of modules with different source information can help to enhance the final capacity of the entire workflow.</p>
 <p>The next research step of the project would be to modify the current implementation of ConvRNN. If the numerical relationship is removed from the synthetic image data, ConvRNN should have similar performance as FCN theoretically. Also, CNN is worth trying to validate whether the temporal pattern matters in this dataset. Besides, by changing the size of the synthetic images, we can figure out how does the number of neighbour tiles impact the model performance.</p>
-<div align="center">
-<img src="image/separator.gif?raw=true" width="5%">
-</div>
-
 <!--## 6. Acknowledgements
 
 We are very grateful to everyone who participated in this project and helped us achieve our goals. We thank the Swiss Federal Statistical Office for submitting this project to the STDL and for providing us with the necessary domain expertise to complete it. Special attention is given to the beneficiaries for their regular assistance and supervision. We congratulate Shanci Li (Uzufly for STDL) for his innovative ideas and technical realization of the project, and Clotilde Marmy (Exolabs for STDL) for her suggestions during the research process and for her review of the code and documentation. We also thank Alessandro Cerioni (State of Geneva for the STDL) for his wise technical advice and his thoroughness. Finally, we thank Roxane Pott (swisstopo for the STDL) for her leadership and project management, and Raphael Rollier (swisstopo for the STDL) for his coordination and general project communication.
 
-
-<div align="center">
-<img src="image/separator.gif?raw=true" width="5%">
-</div>
 -->
 
 <h2 id="appendix">Appendix<a class="headerlink" href="#appendix" title="Permanent link">&para;</a></h2>

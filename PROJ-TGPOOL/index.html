@@ -411,18 +411,10 @@
 January 2021 to April 2021 - Published on April 21, 2021</p>
 <p><br /></p>
 <p><em><strong>Abstract</strong>: The Canton of Thurgau entrusted the STDL with the task of producing swimming pool detections over the cantonal area. Specifically interesting was to leverage the ground truth annotation data from the Canton of Geneva to generate a predictive model in Thurgau while using the publicly available SWISSIMAGE aerial imagery datasets provided by swisstopo. The STDL object detection framework produced highly accurate predictions of swimming pools in Thurgau and thereby proved transferability from one canton to another without having to manually redigitize annotations. These promising detections showcase the highly useful potential of this approach by greatly reducing the need of repetitive manual labour.</em></p>
-<div align="center">
-<img src="image/separator.gif?raw=true" width="5%">
-</div>
-
 <h2 id="introduction">Introduction<a class="headerlink" href="#introduction" title="Permanent link">&para;</a></h2>
 <p>Until February 2021 the Swiss Territorial Data Lab developed an approach based on Mask RCNN Deep Learning algorithms for the detection of objects on aerial images, with swimming pools serving as a demonstration object. The official cadastres of the Canton of Thurgau include – among many other objects – the registration of larger private swimming pools that are permanently anchored in the ground. </p>
 <p>The challenge is to keep the cadastre up to date on a regular basis which is usually done manually by surveying or verification with aerial imagery. Because the Canton of Thurgau (unlike the Canton of Geneva) does not maintain an own specific register of swimming pools, this study primarily serves as a technology demonstration. </p>
 <p>A secondary goal encompasses detailed knowledge transfer from the data scientist team at the STDL to the cantonal authorities such as providing insight and interpretation guidance into the performance metrics and raising awareness for the prerequisites of the detector framework.  </p>
-<div align="center">
-<img src="image/separator.gif?raw=true" width="5%">
-</div>
-
 <h2 id="methodology">Methodology<a class="headerlink" href="#methodology" title="Permanent link">&para;</a></h2>
 <h3 id="process-overview">Process Overview<a class="headerlink" href="#process-overview" title="Permanent link">&para;</a></h3>
 <p align="center">
@@ -523,10 +515,6 @@ January 2021 to April 2021 - Published on April 21, 2021</p>
 <h3 id="inference-and-assessment">Inference and Assessment<a class="headerlink" href="#inference-and-assessment" title="Permanent link">&para;</a></h3>
 <p>After training, tile by tile the entire “Prediction AoI” as well as the ground truth datasets presented to the final model for prediction generation. From a minimum confidence threshold up to 100% the model produces a segmentation mask for each swimming pool detection delimiting its proposed outer boundary. This boundary can be vectorized and transformed back from image space into map coordinates during post-processing. Through this process we can accumulate a consistent GIS-compatible vector layer for visualization, counting and further analysis. </p>
 <p>In case of the ground truth data the resulting vector layer can be intersected with the original input data (especially the “Test Subset”) to obtain unbiased model performance metrics. In case of a well-performing model the resulting vector layer can then be intersected with the “Prediction AoI”-derived Thurgau dataset to identify missing or surplus swimming pools in the cadastre.</p>
-<div align="center">
-<img src="image/separator.gif?raw=true" width="5%">
-</div>
-
 <h2 id="results">Results<a class="headerlink" href="#results" title="Permanent link">&para;</a></h2>
 <h3 id="metrics-and-model-selection">Metrics and Model Selection<a class="headerlink" href="#metrics-and-model-selection" title="Permanent link">&para;</a></h3>
 <p align="center">
@@ -579,10 +567,6 @@ January 2021 to April 2021 - Published on April 21, 2021</p>
 <i>“False Positive” detections – (Top) Two clear examples of detected swimming pools that are missing in the cadastre. (Bottom Left) More ambiguous examples of detected swimming pools which might be missing in the cadastre. (Bottom Right) A clear error of the detector misclassifying a photovoltaic installation as a swimming pool.  </i>
 </p>
 
-<div align="center">
-<img src="image/separator.gif?raw=true" width="5%">
-</div>
-
 <h2 id="conclusion">Conclusion<a class="headerlink" href="#conclusion" title="Permanent link">&para;</a></h2>
 <h3 id="manual-evaluation">Manual Evaluation<a class="headerlink" href="#manual-evaluation" title="Permanent link">&para;</a></h3>
 <p>In the city of Frauenfeld a sample district was chosen for manual evaluation by a STDL data scientist. Even though this task should ideally be performed by a local expert this analysis does provide some insight on the potential errors currently existing within the cadastre as well as the object detection quality. Within the sampled area a total of 99 identifiable swimming pool objects were found to be present.</p>
@@ -596,10 +580,6 @@ January 2021 to April 2021 - Published on April 21, 2021</p>
 <h3 id="interpretation">Interpretation<a class="headerlink" href="#interpretation" title="Permanent link">&para;</a></h3>
 <p>We can conclude that the use of annotation data gathered in another canton of Switzerland allows for highly accurate predictions in Thurgau using the freely and publicly available SWISSIMAGE dataset. We demonstrate that such a transferrable approach can therefore be applied within a relatively short time span to other cantons without the effort of manually digitizing objects in a new area. This is supported by the assumption that SWISSIMAGE is of the same consistent radiometrical and spatial quality we see in Thurgau over the whole country.</p>
 <p>Manual evaluation will stay paramount before authorities take for example legal action or perform updates and changes to the cadastre. Nevertheless a great amount of workload reduction can be achieved by redirecting the eyes of the experts to the detected or undetected areas that are worth looking at.</p>
-<div align="center">
-<img src="image/separator.gif?raw=true" width="5%">
-</div>
-
 <h2 id="references">References<a class="headerlink" href="#references" title="Permanent link">&para;</a></h2>
 <ul>
 <li>

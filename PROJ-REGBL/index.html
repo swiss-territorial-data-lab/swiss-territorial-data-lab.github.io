@@ -431,10 +431,6 @@ December 2020 to February 2021 - Published on March 2, 2021</p>
 <p>The construction year of buildings turns out to be complicated to gather, as adding new buildings to the register already impose an important workload even for the simple information. In addition, in many cases, the construction year of the building is missing or can not be easily collected to update the register.</p>
 <p>The <em>Statistical Office</em> mandated the <em>STDL</em> to perform researches on the possibility to automatically gather the construction year by analysing the <em>swisstopo</em> [3] <em>National Maps</em> [4]. Indeed, the Swiss national maps are known for their excellency, their availability on any geographical area, and for their temporal cover. The national maps are made with a rigorous and well controlled methodology from the <em>1950s</em> and therefore they can be used as a reliable source of information to determine the buildings' construction year.</p>
 <p>The <em>STDL</em> was then responsible for performing the researches and developing a proof-of-concept to provide all the information needed to the <em>Statistical Office</em> for them to take the right decision on considering national maps as a reliable way of assigning a construction year for the buildings lacking information.</p>
-<div align="center">
-<img src="image/separator.gif?raw=true" width="5%">
-</div>
-
 <h2 id="research-project-specifications">Research Project Specifications<a class="headerlink" href="#research-project-specifications" title="Permanent link">&para;</a></h2>
 <p>Extracting the construction date out of the national maps is a real challenge, as the national maps are a heavy dataset, they are not easy to be considered as a whole. In addition, the <em>Statistical Office</em> needs the demonstration that it can be done in a reliable way and within a reasonable amount of time to limit the cost of such process. They are also subjected to strict tolerances on the efficiency of the construction years extraction through an automated process. The goal of at least <em>80</em>% of overall success was then provided as a constraint to the <em>STDL</em>.</p>
 <p>As a result, the research specifications for the <em>STDL</em> were:</p>
@@ -449,10 +445,6 @@ December 2020 to February 2021 - Published on March 2, 2021</p>
 <p>Assessing the results with a reliable metric to allow demonstrating the quality and reliability of the obtained construction years</p>
 </li>
 </ul>
-<div align="center">
-<img src="image/separator.gif?raw=true" width="5%">
-</div>
-
 <h2 id="research-data-selected-areas">Research Data &amp; Selected Areas<a class="headerlink" href="#research-data-selected-areas" title="Permanent link">&para;</a></h2>
 <p>In this research project, two datasets were considered: the building register itself and the national maps. As both datasets are heavy and complex, considering them entirely for such a research project would have been too complicated and unnecessary. It was then decided to focus on four areas selected for their representativeness of Swiss landscape:</p>
 <ul>
@@ -585,10 +577,6 @@ Available map variations: SITU, GEB and DKM25-GEB (vector) - Data: swisstopo
 </div>
 
 <p>One can see that a large portion of the <em>20th</em> century can be covered using the maps with a very good resolution of around five to six years between the maps.</p>
-<div align="center">
-<img src="image/separator.gif?raw=true" width="5%">
-</div>
-
 <h2 id="research-approaches">Research Approaches<a class="headerlink" href="#research-approaches" title="Permanent link">&para;</a></h2>
 <p>In this research project, the main focus was put on the national maps to extract the construction year of buildings as the maps are sources on which we can rely and assess the results. The only drawback of the maps is their limited temporal coverage, as they only start to be available in the <em>1950s</em>.</p>
 <p>This is the reason why another experimental approach was also added to address the cases of building being built before the <em>1950s</em>. This secondary approach focused on a statistical methodology to verify to which extent it could be possible to assign a construction date even in the case no maps are available.</p>
@@ -601,10 +589,6 @@ Available map variations: SITU, GEB and DKM25-GEB (vector) - Data: swisstopo
 </li>
 </ul>
 <p>The statistical analysis allows then to consider buildings that were detected on all maps, meaning their construction is older than the oldest available map, to assign them an estimation of their construction year, knowing they had to be older than the oldest map.</p>
-<div align="center">
-<img src="image/separator.gif?raw=true" width="5%">
-</div>
-
 <h2 id="research-approach-national-maps">Research Approach: National Maps<a class="headerlink" href="#research-approach-national-maps" title="Permanent link">&para;</a></h2>
 <p>In order to detect construction year of buildings, we need to be able to track them down on the maps across the temporal coverage. The <em>RBD</em> is providing the reference list of the building, each coming with a federal identifier (<em>EGID</em>) and a position. This position can then be used to track down the building on maps for its appearance or morphological change.</p>
 <p>As the maps are already selected, as the research areas, this research approach can be summarised in the following way:</p>
@@ -888,10 +872,6 @@ Distance (red and blue) and pseudo-distance (red) of the error on the constructi
 <p>In this approach, it turns out that developing the proof-of-concept was the easy part. Indeed, finding a metric and demonstrating its representativeness and reliability was much more complicated. Indeed, as the two datasets can not be considered as fully reliable in the first place, a strategy had to be defined in order to be able to demonstrate that the chosen metric was able to assess our result in the way expected by the <em>Statistical Office</em>.</p>
 <p>In addition, the metric only required one additional hypothesis on top of the two datasets. This hypothesis, consisting in assuming that the <em>synchronous</em> sub-set was a quasi-sub-set of the <em>absolutely correct construction years</em>, can be assumed to be reasonable. Nevertheless it is important to emphasise that it was necessary to make it, leading us to remains critic and careful whilst reading the results given by our metric.</p>
 <p>The developed proof-of-concept was developed in <em>C++</em>, leading to an efficient code able to be used for the whole processing of Switzerland without the necessity to deeply modify it.</p>
-<div align="center">
-<img src="image/separator.gif?raw=true" width="5%">
-</div>
-
 <h2 id="research-approach-statistical">Research Approach: Statistical<a class="headerlink" href="#research-approach-statistical" title="Permanent link">&para;</a></h2>
 <p>As the availability of the topographic/national maps does not reach the integrity of all building's year of construction in the registry, an add-on was developed to infer this information, whenever there was this need for extrapolation. Usually, the maps availability reaches the 1950s, whilst in some cities the minimum year of construction can be in the order of the 12th century, e.g. The core of this statistical model is based on the Concentric Zones Model (Park and Burgess, 1925)[6] extended to the idea of the growth of the city from the a centre (Central Business District - CBD) to all inner areas. The concept behind this statistical approach can be seen below using the example of a crop of Basel city:</p>
 <div align="center" style="font-style: italic">
@@ -978,10 +958,6 @@ Extrapolation of the error distribution on the whole Switzerland
 <h3 id="conclusion_1">Conclusion<a class="headerlink" href="#conclusion_1" title="Permanent link">&para;</a></h3>
 <p>This add-on allows extrapolating the predictions to beyond the range of the topographical maps. Its predictions are limited, but the accuracy reached can be considered reasonable, once there is a considerable lack of information in this prediction range. Nor the dates in the <em>RBD</em>, nor the topographic maps can be fully trusted, ergo <em>15.6</em> years of error for the older buildings is acceptable, especially by considering the relative lack of spread in errors distribution. If a suggestion for improvement were to be given, a method for smoothing the intYEARpolator predictions could be interesting. This would possibly shift the distribution of the error into closer to a gaussian with mean zero. The dangerous found when searching for such an approach is that the year of construction of buildings does not seem to present a smooth surface, despite the spatial dependence. Hence, if this were to be considered, a balance between smoothing and variability would need to found.</p>
 <p>We also demonstrated a completely different perspective on how the spatial and temporal dimensions can be joined as the random variable predicted through spatial methodology was actually time. Therefore a strong demonstration of the importance of time in spatially related models and approaches was also given. The code for the intYEARpolator was developed in Python and it runs smoothly even with this quite big proportion of data. The singular case it can be quite time-demanding is in the case of high proportion of prediction points (missing values). It should also be reproducible to the whole Switzerland with no need for modification. A conditional argument is the use of concentric zones, that can be excluded in case of a total different pattern of processing time.</p>
-<div align="center">
-<img src="image/separator.gif?raw=true" width="5%">
-</div>
-
 <h2 id="reproduction-resources">Reproduction Resources<a class="headerlink" href="#reproduction-resources" title="Permanent link">&para;</a></h2>
 <p>The source code of the <em>proof-of-concept</em> for national maps can be found here :</p>
 <ul>

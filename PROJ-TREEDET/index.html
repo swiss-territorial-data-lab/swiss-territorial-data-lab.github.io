@@ -473,10 +473,6 @@
 May 2021 to March 2022 - Published on April 22, 2022</p>
 <p><br/></p>
 <p><em><strong>Abstract</strong>: Trees are essential assets, in urban context among others. Since several years, the Canton of Geneva maintains a digital inventory of isolated (or "urban") trees. This project aimed at designing a methodology to automatically update Geneva's tree inventory, using high-density LiDAR data and off-the-shelf software. Eventually, only the sub-task of detecting and geolocating trees was explored. Comparisons against ground truth data show that the task can be more or less tricky depending on how sparse or dense trees are. In mixed contexts, we managed to reach an accuracy of around 60%, which unfortunately is not high enough to foresee a fully unsupervised process. Still, as discussed in the concluding section there may be room for improvement.</em></p>
-<div align="center">
-<img src="image/separator.gif?raw=true" width="5%">
-</div>
-
 <h2 id="1-introduction">1. Introduction<a class="headerlink" href="#1-introduction" title="Permanent link">&para;</a></h2>
 <h3 id="11-context">1.1 Context<a class="headerlink" href="#11-context" title="Permanent link">&para;</a></h3>
 <p>Human societies benefits from the presence of trees in cities and their surroundings. More specifically, as far as urban contexts are concerned, trees deliver many ecosystem services such as:</p>
@@ -879,10 +875,6 @@ May 2021 to March 2022 - Published on April 22, 2022</p>
 <li>stem detection (cf.&nbsp;<a href="https://mparkan.github.io/Digital-Forestry-Toolbox/tutorial-3.html">this other tutorial</a>).</li>
 </ol>
 <p>We refer the reader to the <a href="http://mparkan.github.io/Digital-Forestry-Toolbox/">official documentation</a> for further information.</p>
-<div align="center">
-<img src="image/separator.gif?raw=true" width="5%">
-</div>
-
 <h2 id="2-method">2. Method<a class="headerlink" href="#2-method" title="Permanent link">&para;</a></h2>
 <p>As already stated, in spite of the thorough and ambitious objectives of this project (cf. <a href="#12-objectives">here</a>), only the</p>
 <ul>
@@ -1407,10 +1399,6 @@ The default value is 20 points, which is very low in light of the high density o
 <li>recall is optimal (= 1.0) iff all the ground truth trees are detected (no FNs).</li>
 </ul>
 <p>Typically, one cannot optimize both precision and recall for the same values of a set of parameters. Instead, they can exhibit opposite trends as a function of a given parameter (<i>e.g.</i> precision increases while recall decreases). In such cases, the F1-score would exhibit convexity and could be optimized.</p>
-<div align="center">
-<img src="image/separator.gif?raw=true" width="5%">
-</div>
-
 <h2 id="3-results-and-discussion">3. Results and discussion<a class="headerlink" href="#3-results-and-discussion" title="Permanent link">&para;</a></h2>
 <p>Figure 3.1 shows some of the tree detection trials we performed, using Terrascan and DFT. Each trial corresponds to a different set of parameters and is represented either by gray dots or colored diamonds in a precision-recall plot (see the image caption for further details).</p>
 <p align="center">
@@ -1697,10 +1685,6 @@ For the global context both, Precision and Recall, could be increased slighty.</
 <i>Figure 3.10: Result of the application of the best performing Terrascan parameters to the full dataset.</i>
 </p>
 
-<div align="center">
-<img src="image/separator.gif?raw=true" width="5%">
-</div>
-
 <h2 id="4-conclusion-and-outlook">4. Conclusion and outlook<a class="headerlink" href="#4-conclusion-and-outlook" title="Permanent link">&para;</a></h2>
 <p>Despite all the efforts documented here above, the results we obtained are not as satisfactory as expected. Indeed, the metrics we managed to attain all sectors combined indicate that tree detections are neither reliable (low precision) nor exhaustive (low recall). Still, we think that results may be improved by further developing some ideas, which we sketch in the following.</p>
 <h3 id="41-further-the-dft-parameter-space-exploration">4.1 Further the DFT parameter space exploration<a class="headerlink" href="#41-further-the-dft-parameter-space-exploration" title="Permanent link">&para;</a></h3>
@@ -1738,16 +1722,8 @@ For the global context both, Precision and Recall, could be increased slighty.</
 <li>using our best TerraScan/DFT model to segment the 3D point cloud;</li>
 <li>using 2D ground truth data to filter out wrong segmentations.</li>
 </ol>
-<div align="center">
-<img src="image/separator.gif?raw=true" width="5%">
-</div>
-
 <h2 id="5-other-resources">5. Other resources<a class="headerlink" href="#5-other-resources" title="Permanent link">&para;</a></h2>
 <p>The work documented here was the object of a <em>Forum SITG</em> which took place online on March 29, 2022. Videos and presentation materials can be found <a href="https://ge.ch/sitg/calendrier/espace-public/des-solutions-digitales-et-innovantes-pour-mieux-connaitre-les-arbres-1635">here</a>.</p>
-<div align="center">
-<img src="image/separator.gif?raw=true" width="5%">
-</div>
-
 <h2 id="6-acknowledgements">6. Acknowledgements<a class="headerlink" href="#6-acknowledgements" title="Permanent link">&para;</a></h2>
 <p>This project was made possible thanks to a tight collaboration between the STDL team and some experts of the Canton of Neuchâtel (NE), the Canton of Geneva (GE), the <em>Conservatoire et Jardin botaniques de la Ville de Genève</em> (CJBG) and the University of Geneva (UNIGE). The STDL team acknowledges key contributions from Marc Riedo (SITN, NE), Bertrand Favre (OCAN, GE), Nicolas Wyler (CJBG) and Gregory Giuliani (UNIGE). We also wish to warmly thank Matthew Parkan for developing, maintaining and advising us on the <a href="https://mparkan.github.io/Digital-Forestry-Toolbox/">Digital Forestry Toolbox</a>.</p>
 

@@ -491,10 +491,6 @@ AND convolution between two LIDAR models : Geneva 2005 and 2009 - Data : SITG
 
 <p>As one can see, <em>AND</em> convolutions allow detecting, through the black spots, large area of structural changes between the two times and also, with more care, allow guessing smaller differences. Nevertheless, reading and interpreting such representation remains complex for users.</p>
 <p>The goal of this task is then to tackle these two drawbacks, allowing the platform to detect changes not only for point-based models but also for vector-based models and to implement a variation of the <em>XOR</em> operator for point-based models allowing to efficiently highlight the structural evolution. The task consists then in the implementation, testing and validation of a difference detection algorithm suitable for any type of model and to conduct a formal analysis on the best rendering techniques.</p>
-<div align="center">
-<img src="image/separator.gif?raw=true" width="5%">
-</div>
-
 <h2 id="methodology">Methodology<a class="headerlink" href="#methodology" title="Permanent link">&para;</a></h2>
 <p>A step by step methodology is defined to address the problem of difference detection in the platform. In a first phase, the algorithm will be developed and validated on vector-based models as follows :</p>
 <ul>
@@ -545,10 +541,6 @@ AND convolution between two LIDAR models : Geneva 2005 and 2009 - Data : SITG
 </li>
 </ul>
 <p>In addition, the development of difference detection algorithm has to be conducted keeping in mind the possible future evolutions of the platform such as addition of layers (separation of data), implementation of a multi-scale approach of the time dimension and addition of raster data in the platform.</p>
-<div align="center">
-<img src="image/separator.gif?raw=true" width="5%">
-</div>
-
 <h2 id="first-phase-synthetic-variations">First Phase : Synthetic Variations<a class="headerlink" href="#first-phase-synthetic-variations" title="Permanent link">&para;</a></h2>
 <p>In order to implements the vector-based difference detection algorithm, sets of data are considered as base on which synthetic differences are applied to simulate the evolution of the territory. This approach allows focusing on well controlled data to formally benchmark the results of the implemented algorithm. Experiments are conducted using these data to formally evaluate the performance of the developed algorithm.</p>
 <h3 id="selected-resources-and-models">Selected Resources and Models<a class="headerlink" href="#selected-resources-and-models" title="Permanent link">&para;</a></h3>
@@ -782,10 +774,6 @@ Example of a differences map based on the results of the detection process - Dat
 <p>The user-based experiments showed that using the platform interface, a human can significantly outperform the result of a <em>naive</em> automated process operating on the models themselves. The experiments showed that the user is able to efficiently search and find through space and time the evolutions of the territory appearing in the data.</p>
 <p>Of course, as the model size and complexity increases, the user-driven interface starts to show its limits. In such a case, the process-based experiments showed that automated processes can take over these more complicated searches through methods allowing performing exhaustive detection over wide models in a matter of several minutes.</p>
 <p>At this point, the developments and validations of the algorithm, and its variations, were conducted on synthetic modifications introduced in models using controlled procedures. The next phase focuses on formal data extracted from land registers.</p>
-<div align="center">
-<img src="image/separator.gif?raw=true" width="5%">
-</div>
-
 <h2 id="second-phase-true-variations">Second Phase : True Variations<a class="headerlink" href="#second-phase-true-variations" title="Permanent link">&para;</a></h2>
 <p>In this second phase, also dedicated to vector-based models, the focus is set on applying the developed difference detection algorithm on <em>true</em> land register models. Two sets of data are considered in order to address short-term and long-term difference detection.</p>
 <h3 id="selected-resources-and-models_1">Selected Resources and Models<a class="headerlink" href="#selected-resources-and-models_1" title="Permanent link">&para;</a></h3>
@@ -1014,10 +1002,6 @@ La Gradelle (left) and Puplinge (right) 2019-04 and 2017-04 differences with 201
 <p>Indeed, on the <em>Geneva</em> models, a large amount of differences is detected even on a relative short period of time (two years). In addition to the regular updates, following the territory evolution, a large amount of corrections is made to keep the model in the correct reference frame. The Swiss federal system can also add complexity, as all Cantons have to align themselves on a common set of expectations.</p>
 <p>In such a case, the difference detection turned out to be an interesting tool to understand and follows the corrections made to the model in addition to the regular updates. On the <em>Geneva</em> case, we illustrated that, by detecting it in the difference model, the correction on the coordinates frame on large pieces of the territory. This shows how the difference detection can be seen as a service that can help to keep track of the life of the model by detecting and checking these type of modifications.</p>
 <p>As a result, difference detection can be a tool for the user of the land register but can also be a tool for the land register authorities themselves. The difference models can be used to check and audit the evolution of the models, helping the required follow-up on the applied correction and updates.</p>
-<div align="center">
-<img src="image/separator.gif?raw=true" width="5%">
-</div>
-
 <h2 id="third-phase-point-based-models">Third Phase : Point-Based Models<a class="headerlink" href="#third-phase-point-based-models" title="Permanent link">&para;</a></h2>
 <p>In this third and last phase, the developed algorithm for difference detection on vector models is tested on point-based ones. As mentioned in the introduction, the platform was already implementing logical operators allowing comparing point-based models across time. As illustrated in the introduction, only the <em>AND</em> operator allowed emphasizing differences, but rendering them as missing part of the composite models. It was then difficult for the user to determine and analyze those differences.</p>
 <p>The goal of this last phase is to determine in which extend the developed algorithm is able to improve the initial results of point-based logical operators and how it can be adapted to provide better detection of differences.</p>
@@ -1269,20 +1253,12 @@ Land register situation in 2013 (left) and 2017 (right) - Data SITG
 <h3 id="synthesis">Synthesis<a class="headerlink" href="#synthesis" title="Permanent link">&para;</a></h3>
 <p>As a synthesis, it is clear that models are carrying a large amount of richness themselves, that is already a challenge to exploit, but it is also clear that a large amount of information can be found between the <em>versions</em> of the models. The difference detection algorithm brings a first tool that demonstrate the ability to reach and start to exploit these informations.</p>
 <p>More than the content of the models itself, the understanding of the evolution of this content is a major topic especially in the field of <em>geodata</em> as they represent, transcript, the evolution of the surveyed territory. It then appears clear that being able to reach and exploit the information contained in-between the models is a major advantage as it allows understanding what are these models, that is four dimensional objects.</p>
-<div align="center">
-<img src="image/separator.gif?raw=true" width="5%">
-</div>
-
 <h2 id="perspectives">Perspectives<a class="headerlink" href="#perspectives" title="Permanent link">&para;</a></h2>
 <p>Many perspectives are opened following the implementation and analysis of the difference detection. Several perspectives, mostly technical, are presented here as a final section.</p>
 <p>In the first place, as raster are entering the set of data that can be injected in the platform, evolution of the difference detection could be applied to the platform, taking advantage of the evolution of machine learning. The possibility of detected differences in images could lead to very interesting perspective through the <em>data communication</em> features of the platform.</p>
 <p>Another perspective could be to allow the platform to separate the data into formal layers, the separation being only currently ensure by type and times. Splitting data into layers would allow applying difference detection in a much more controlled manner, leading to difference models focused on very specific elements of the model temporal evolution.</p>
 <p>The addition of layer could also be the starting point to the notion of <em>data convolution micro language</em>. Currently, data communication and difference detection only apply through the specification of two different and parallel navigation time. The users, or processes, have to specify each of the two time position in order to obtain the mixed of differences models they need.</p>
 <p>An interesting evolution would be to replace these two navigation time by a small and simple <em>micro language</em> allowing the user to compare more than two times in a more complex manner. This could also benefit from data separation through layer. Such <em>micro language</em> could allow to compare two, three or more models, or layers, and would also open the access the mixed models of differences models such as comparing the difference detection between point-based and vector-based models, which would then be a comparison of a comparison.</p>
-<div align="center">
-<img src="image/separator.gif?raw=true" width="5%">
-</div>
-
 <h2 id="reproduction-resources">Reproduction Resources<a class="headerlink" href="#reproduction-resources" title="Permanent link">&para;</a></h2>
 <p>To reproduce the presented experiments, the <em>STDL 4D framework</em> has to be used and can be found here :</p>
 <ul>
@@ -1335,10 +1311,6 @@ Land register situation in 2013 (left) and 2017 (right) - Data SITG
 </li>
 </ul>
 <p>You can contact <em>STDL</em> for any question regarding the reproduction of the presented results.</p>
-<div align="center">
-<img src="image/separator.gif?raw=true" width="5%">
-</div>
-
 <h2 id="auxiliary-developments-corrections">Auxiliary Developments &amp; Corrections<a class="headerlink" href="#auxiliary-developments-corrections" title="Permanent link">&para;</a></h2>
 <p>In addition to the main developments made, some additional scripts and other corrections have been made to solve auxiliary problems or to improve the code according to the developed features during this task. The auxiliary developments are summarized here :</p>
 <ul>
@@ -1373,10 +1345,6 @@ Land register situation in 2013 (left) and 2017 (right) - Data SITG
 <p>Developments of various scripts for plots and figures creations.</p>
 </li>
 </ul>
-<div align="center">
-<img src="image/separator.gif?raw=true" width="5%">
-</div>
-
 <h2 id="references">References<a class="headerlink" href="#references" title="Permanent link">&para;</a></h2>
 <p>[1] REFRAME, SwissTopo, https://www.swisstopo.admin.ch/de/karten-daten-online/calculation-services.html</p>
 

@@ -340,10 +340,6 @@ September 2020 to January 2021 - Published on May 18, 2021</p>
 <p>The Canton of Geneva manages a register of swimming pools, counting - in principle - all and only those swimming pools that are in-ground or, at least, permanently fixed to the ground. The swimming pool register is part of a far more general cadastre, including several other classes of objects (cf. <a href="https://ge.ch/sitg/fiche/3205">this page</a>). </p>
 <p>Typically the swimming pool register is updated either by taking building/demolition permits into account, or by manually checking its multiple records (4000+ to date) against aerial images, which is quite a long and tedious task. Exploring the opportunity of leveraging Machine Learning to help domain experts in such an otherwise tedious tasks was one of the main motivations behind this study. As such, no prior requirements/expectations were set by the recipients. </p>
 <p>The study was autonomously conducted by the STDL team, using Open Source software and Open Data published by the Canton of Geneva. Domain experts were asked for feedback only at a later stage. In the following, details are provided regarding the various steps we followed. We refer the reader to <a href="../TASK-IDET/">this page</a> for a thorough description of the generic STDL Object Detection Framework.</p>
-<div align="center">
-<img src="image/separator.gif?raw=true" width="5%">
-</div>
-
 <h2 id="method">Method<a class="headerlink" href="#method" title="Permanent link">&para;</a></h2>
 <p>Several steps are required to set the stage for object detection and eventually reach the goal of obtaining - ideally - even more than decent results. Despite the linear presentation that the reader will find here-below, multiple back-and-forths are actually required, especially through steps 2-4.</p>
 <h3 id="1-data-preparation">1. Data preparation<a class="headerlink" href="#1-data-preparation" title="Permanent link">&para;</a></h3>
@@ -442,10 +438,6 @@ September 2020 to January 2021 - Published on May 18, 2021</p>
 
 <p>The latter figure was obtained by evaluating the predictions of our best model over the test dataset. Inferior models exhibited a similar behavior, with a downward offset in terms of <span class="arithmatex">\(F_1\)</span> score. In practice, upon <strong>iterating over multiple realizations</strong> (with different hyper-parameters, training data and so on) we aimed at maximizing the value of the <span class="arithmatex">\(F_1\)</span> score on the validation dataset, and stopped when the <span class="arithmatex">\(F_1\)</span> score went over the value of 90%.</p>
 <p>As the ground-truth data we used turned out not to be 100% accurate, the responsibility for mismatching predictions has to be shared between ground-truth data and the predictive model, at least in some cases. In a more ideal setting, ground-truth data would be 100% accurate and differences between a given metric (precision, recall, <span class="arithmatex">\(F_1\)</span> score) and 100% should be imputed to the model.</p>
-<div align="center">
-<img src="image/separator.gif?raw=true" width="5%">
-</div>
-
 <h2 id="domain-experts-feedback">Domain experts feedback<a class="headerlink" href="#domain-experts-feedback" title="Permanent link">&para;</a></h2>
 <p>All the predictions having a score <span class="arithmatex">\(\geq\)</span> 5% obtained by our best model were exported to Shapefile and shared with the experts in charge of the cadastre of the Canton of Geneva, who carried out a thorough evaluation. By checking predictions against the swimming pool register as well as aerial images, it was empirically found that the threshold on the minimum score (= <code>thr</code>) should be set as high as 97%, in order not to have too many false positives to deal with. In spite of such a high threshold, 562 potentially new objects were detected (over 4652 objects which were known when this study started), of which:</p>
 <ul>
@@ -471,10 +463,6 @@ September 2020 to January 2021 - Published on May 18, 2021</p>
 <br />
 <i>Examples of detected swimming pools which are not subject to registration: placed on top of a building (left), inflatable hence temporary (right).</i>
 </p>
-
-<div align="center">
-<img src="image/separator.gif?raw=true" width="5%">
-</div>
 
 <h2 id="conclusion">Conclusion<a class="headerlink" href="#conclusion" title="Permanent link">&para;</a></h2>
 <p>The analysis reported in this document confirms the opportunity of using state-of-the-art Deep Learning approaches to assist experts in some of their tasks, in this case that of keeping the cadastre up to date. Not only the opportunity was explored and actually confirmed, but valuable results were also produced, leading to the detection of previously unknown objects. At the same time, our study also shows how essential domain expertise still remains, despite the usage of such advanced methods.</p>

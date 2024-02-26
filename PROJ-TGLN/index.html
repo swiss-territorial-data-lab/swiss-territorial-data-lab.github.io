@@ -425,10 +425,6 @@ Contributions to Background &amp; Agricultural Law: Pascal Salathé (FHNW)</p>
 March 2021 to June 2021 - Published on July 7, 2021</p>
 <p><br /></p>
 <p><em><strong>Abstract</strong>: The Cultivable agricultural area layer ("LN, Landwirtschaftliche Nutzfläche") is a GIS vector product maintained by the cantonal agricultural offices and serves as the key calculation index for the receipt of direct subsidy contributions to farms. The canton of Thurgau requested a spatial vector layer indicating locations and area consumption extent of the largest silage bale deposits intersecting with the known LN area, since areas used for silage bale storage are not eligible for subsidies. Having detections of such objects readily available greatly reduces the workload of the responsible official by directing the monitoring process to the relevant hotspots. Ultimately public economical damage can be prevented which would result from the payout of unjustified subsidy contributions.</em></p>
-<div align="center">
-<img src="image/separator.gif?raw=true" width="5%">
-</div>
-
 <h2 id="1-introduction">1    Introduction<a class="headerlink" href="#1-introduction" title="Permanent link">&para;</a></h2>
 <h3 id="11-background">1.1 Background<a class="headerlink" href="#11-background" title="Permanent link">&para;</a></h3>
 <p>Switzerland's direct payment system is the basis for sustainable, market-oriented agriculture. The federal government supports local farms in the form of various types of contributions and enables farming families to claim an adequate income. (cf. Art. 104 BV)</p>
@@ -456,10 +452,6 @@ March 2021 to June 2021 - Published on July 7, 2021</p>
 <p>One of several features of interest specifically excluded from the subsidized cultivable LN area are silage hay bales. These bales are processed and compacted fermenting grass cuttings wrapped in plastic foil. They often roughly measure 1 - 2 cubic meters in volume and are weighed in at around 900kg. They are mainly used as animal food during winter when no fresh hay is available. Farmers are encouraged to compactly («discretely») stack them in regular piles at few locations rather than keeping them in scattered collections consuming large areas. </p>
 <p>The agricultural office can assess the silage bale stack locations and sizes in order to approve the application for subsidies, since areas where silage bales are stored do not count into the cultivable LN area. Farmers can specify those areas where they must not receive contributions for in a specialized webGIS system by digitizing them manually with the attribute «code 898». For validation purposes specialists are manually evaluating aerial imagery and conduct field visits. The process of aerial imagery evaluation is arduous and monotonous and could therefore greatly profit from automatization. </p>
 <p>The agricultural office of the Canton of Thurgau (LWA) requested a spatial vector layer indicating locations and area consumption extent of the largest silage bale deposits intersecting with the known LN area. The delivered dataset should be compatible with their webGIS workflow and should be made available with new aquisitions of aerial imaging campaigns. Having such detections readily available would reduce the workload of the responsible official by directing the monitoring to the relevant hotspots. Ultimately public economical damage can be prevented which would result from the payout of unjustified subsidy contributions. This project therefore aims at the development of an efficient silage bale detection algorithm which offers a highly accurate performance and can be quickly deployed over imaged areas as large as the complete canton of Thurgau (approx. 992 km²). </p>
-<div align="center">
-<img src="image/separator.gif?raw=true" width="5%">
-</div>
-
 <h2 id="2-method">2    Method<a class="headerlink" href="#2-method" title="Permanent link">&para;</a></h2>
 <h3 id="21-overview">2.1 Overview<a class="headerlink" href="#21-overview" title="Permanent link">&para;</a></h3>
 <p>Sileage bale stacks are clearly visible on the newest 2019 layer of the 10cm Swissimage orthophoto provided by Swisstopo. A few hundred of these stacks were manually digitized as vector polygons with QGIS in a semi-automatic approach.</p>
@@ -527,10 +519,6 @@ For all subsets (including the rest of the canton as OTH), predictions are gener
 <p>Curve polygons contain a high number of vertex points, which is why a simplification operation can be performed afterwards. 
 The intersection with the LN layer required a preparation of that dataset. First, the perimeters of all LN polygons in Thurgau, stemming from the cadastre, were intersected with the layer "LN difference". Areas which contained the attribute "No LN" in the difference layer were therefore removed, areas with the attribute "LN" or "To be checked" were kept or if necessary (if not yet available) added to the LN dataset. Areas excluded by farmers from the subsidy themself (so-called "layer code 898") were removed from the LN polygons. The silage bale detections were now intersected (clipped) with all remaining LN areas such that only those portions of the detections remained that were present within the LN perimeter.
 For all these leftover detection polygons, the area is calculated and added as an attribute to the polygon. With a threshold operation all silo bale stacks with an area below 20 m2 are filtered out of the dataset in order to provide only economically relevant detections.</p>
-<div align="center">
-<img src="image/separator.gif?raw=true" width="5%">
-</div>
-
 <h2 id="3-results">3    Results<a class="headerlink" href="#3-results" title="Permanent link">&para;</a></h2>
 <h3 id="31-metrics-and-evaluation">3.1 Metrics and Evaluation<a class="headerlink" href="#31-metrics-and-evaluation" title="Permanent link">&para;</a></h3>
 <p align="center">
@@ -615,10 +603,6 @@ At this value 809 silage bale stacks were rediscovered in the TRN, TST and VAL s
 </i>
 </p>
 
-<div align="center">
-<img src="image/separator.gif?raw=true" width="5%">
-</div>
-
 <h2 id="4-discussion">4    Discussion<a class="headerlink" href="#4-discussion" title="Permanent link">&para;</a></h2>
 <h3 id="41-feedback-by-the-agricultural-office">4.1 Feedback by the Agricultural Office<a class="headerlink" href="#41-feedback-by-the-agricultural-office" title="Permanent link">&para;</a></h3>
 <p>The contact person at the agricultural office, Mr. T. Froehlich describes the detections as very accurate with a very low percentage of wrong detections. As a GIS product the detections layer can be used in the standard workflow in order to cross-check base datasets or to perform updates and corrections.</p>
@@ -626,10 +610,6 @@ At this value 809 silage bale stacks were rediscovered in the TRN, TST and VAL s
 <p>Most farmers adhere to the policies and false declaration of areas followed by sanctions is extremely rare. Silage bales are therefore not the first priority when monitoring the advancements and updates considering the LN layer. Nevertheless these new detections allow the end users at the agricultural office to direct their eyes more quickly at relevant hotspots and spare them some aspects of the long and tidious manual search that was performed in the past.</p>
 <h3 id="42-outlook">4.2 Outlook<a class="headerlink" href="#42-outlook" title="Permanent link">&para;</a></h3>
 <p>Silage bales are by far not the only object limiting the extent of the cultivable subsidized land. A much larger area is consumed by farm yards – heterogenous spaces around the central farm buildings. Monitoring the growth of these spaces into the LN layer would greatly diminuish the manual workload at the agricultural office. As these spaces might also be detectable by a similar approach, this project will continue to investigate the potential of the STDL Object Detection Framework now into this direction.</p>
-<div align="center">
-<img src="image/separator.gif?raw=true" width="5%">
-</div>
-
 <h2 id="references">References<a class="headerlink" href="#references" title="Permanent link">&para;</a></h2>
 <ul>
 <li>
