@@ -1,0 +1,1211 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.4.0, mkdocs-material-8.5.6">
+    
+    
+      
+        <title>Index - Swiss Territorial Data Lab</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.20d9efc8.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.cbb835fc.min.css">
+        
+      
+      
+
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="none" data-md-color-accent="none">
+  
+    
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#cross-generational-change-detection-in-classified-lidar-point-clouds-for-a-semi-automated-quality-control" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Swiss Territorial Data Lab" class="md-header__button md-logo" aria-label="Swiss Territorial Data Lab" data-md-component="logo">
+      
+  <img src="../assets/logo-stdl-transparent.svg" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Swiss Territorial Data Lab
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Index
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/swiss-territorial-data-lab" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    STDL on Github
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Swiss Territorial Data Lab" class="md-nav__button md-logo" aria-label="Swiss Territorial Data Lab" data-md-component="logo">
+      
+  <img src="../assets/logo-stdl-transparent.svg" alt="logo">
+
+    </a>
+    Swiss Territorial Data Lab
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/swiss-territorial-data-lab" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    STDL on Github
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        Homepage
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://github.com/swiss-territorial-data-lab" class="md-nav__link">
+        GitHub
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-introduction" class="md-nav__link">
+    1. Introduction
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-data" class="md-nav__link">
+    2. Data
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Data">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21-lidar-point-clouds" class="md-nav__link">
+    2.1 LiDAR point clouds
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22-annotations-by-the-domain-expert" class="md-nav__link">
+    2.2 Annotations by the domain expert
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-method" class="md-nav__link">
+    3. Method
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Method">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31-correspondence-between-classes" class="md-nav__link">
+    3.1 Correspondence between classes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32-voxelization-of-the-point-clouds" class="md-nav__link">
+    3.2 Voxelization of the point clouds
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#33-determination-of-the-voxel-size" class="md-nav__link">
+    3.3 Determination of the voxel size
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#34-criticality-tree" class="md-nav__link">
+    3.4 Criticality tree
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#35-clustering-of-problematic-voxels" class="md-nav__link">
+    3.5 Clustering of problematic voxels
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#36-visualization-of-detections" class="md-nav__link">
+    3.6 Visualization of detections
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-results" class="md-nav__link">
+    4. Results
+  </a>
+  
+    <nav class="md-nav" aria-label="4. Results">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#41-granularity-of-results" class="md-nav__link">
+    4.1 Granularity of results
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#42-distribution-of-the-decision-tree-outcomes" class="md-nav__link">
+    4.2 Distribution of the decision tree outcomes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#43-assessment-of-a-subset-of-detections" class="md-nav__link">
+    4.3 Assessment of a subset of detections
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-discussion" class="md-nav__link">
+    5. Discussion
+  </a>
+  
+    <nav class="md-nav" aria-label="5. Discussion">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#51-interpretation-of-the-results" class="md-nav__link">
+    5.1 Interpretation of the results
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#52-discussion-of-the-results" class="md-nav__link">
+    5.2 Discussion of the results
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-conclusion" class="md-nav__link">
+    6. Conclusion
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-acknowledgements" class="md-nav__link">
+    7. Acknowledgements
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-bibliography" class="md-nav__link">
+    8. Bibliography
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="cross-generational-change-detection-in-classified-lidar-point-clouds-for-a-semi-automated-quality-control">Cross-generational change detection in classified LiDAR point clouds for a semi-automated quality control<a class="headerlink" href="#cross-generational-change-detection-in-classified-lidar-point-clouds-for-a-semi-automated-quality-control" title="Permanent link">&para;</a></h1>
+<p>Nicolas Münger (Uzufly) - Gwenaëlle Salamin (ExoLabs) - Alessandro Cerioni (Canton of Geneva) - Roxane Pott (swisstopo)</p>
+<p>Proposed by the Federal Office of Topography swisstopo - PROJ-QALIDAR<br/>
+September 2023 to February 2024 - Published in April 2024</p>
+<p>All scripts are available on <a href="https://github.com/swiss-territorial-data-lab/proj-qalidar">GitHub</a>.</p>
+<p><em><strong>Abstract</strong>: The acquisition of LiDAR data has become standard practice at national and cantonal levels during the recent years in Switzerland. In 2024, the Federal Office of Topography (swisstopo) will complete a comprehensive campaign of 6 years covering the whole Swiss territory. The point clouds produced are classified post-acquisition, i.e. each point is attributed to a certain category, such as "building" or "vegetation". Despite the global control performed by providers, local inconsistencies in the classification persist. To ensure the quality of a Swiss-wide product, extensive time is invested by swisstopo in the control of the classification. This project aims to highlight changes in a new point cloud compared to a previous generation acting as reference. We propose here a method where a common grid is defined for the two generations of point clouds and their information is converted in voxels, summarizing the distribution of classes and comparable one-to-one. This method highlights zones of change by clustering the concerned voxels. Experts of the swisstopo LiDAR team declared themselves satisfied with the precision of the method.</em></p>
+<h2 id="1-introduction">1. Introduction<a class="headerlink" href="#1-introduction" title="Permanent link">&para;</a></h2>
+<p>The usage of light detection and ranging (LiDAR) technology has seen a large increase in the field of geo-surveying over the recent years <sup id="fnref:1"><a class="footnote-ref" href="#fn:1">1</a></sup>. Data obtained from airborne acquisition provides rich 3D information about land cover in the form of a point cloud. These point clouds are typically processed after acquisition in order to assign a class to each point, as displayed in Figure 1. </p>
+<div align="center" style="font-style: italic">
+  <img
+  src="images/chute_du_rhin_legende.png"
+  alt="View of the Rhine Falls in the classified point cloud of the product swissSURFACE3D"
+  width = "90%" >
+  <figcaption>Figure 1: View of the Rhine Falls in the classified point cloud of the product <em>swissSURFACE3D</em>.</figcaption>
+</div>
+
+<p>To conduct their LiDAR surveys, the Federal Office of Topography (swisstopo) mandates external companies, in charge of the airborne acquisition and classification in post-processing. The process of verifying the quality of the data supplied is tedious, with an estimated duration of 42 working hours for the verification of an area of 216 km<sup>2</sup>. A significant portion of this verification process is dedicated to ensuring the precision of the point classification. With the first generation of the LiDAR product <sup id="fnref:2"><a class="footnote-ref" href="#fn:2">2</a></sup> nearing completion, swisstopo is keen to leverage the considerable time and effort invested to facilitate the quality assessment of the next generation. In this context, the swisstopo's LiDAR development team contacted the STDL to develop a change detection method.</p>
+<p>As reviewed by Stilla &amp; Xu (2023), change detection in point clouds has already been explored in numerous ways<sup id="fnref:3"><a class="footnote-ref" href="#fn:3">3</a></sup>. The majority of the research focus, however, on changes of geometry. Deep learning solutions are being extensively researched to apply the advancements in this field to change detection in point clouds<sup id="fnref:4"><a class="footnote-ref" href="#fn:4">4</a></sup>. However, to the best of our knowledge, no solution currently address the problem of change detection in the classification of two point clouds. <br>
+Most challenges of change detection in point clouds come from the unstructured nature of LiDAR data, making it impossible to reproduce the same result across acquisition. Therefore, the production of ground truth and application of deep learning to point clouds of different generations can be challenging. To overcome this, data discretization by voxelization has already been studied in several works on change detection in point clouds, with promising results<sup id="fnref:5"><a class="footnote-ref" href="#fn:5">5</a></sup><sup id="fnref:6"><a class="footnote-ref" href="#fn:6">6</a></sup>.</p>
+<p>The goal of this project is to create a mapping of the changes observed between two generations of point clouds for a common scene, with an emphasis on classification changes. <br>
+The proposed method creates a voxel map for the reference point cloud and the new point cloud for which classification was not controlled as thoroughly. By using the same voxel grid for both generations, direct comparisons can be performed on the occupancy of voxels by the previous and the new classes. Based on the domain expert's criteria, an urgency level is assigned to all voxels: non-problematic, grey zone or problematic. Problematic voxels are then clustered into high priority areas. The summarized process is displayed in Figure 2.</p>
+<div align="center" style="font-style: italic">
+  <img
+  src="images/overall_workflow.webp"
+  alt="Workflow of project"
+  width = "70%"><br>
+  <figcaption>Figure 2: Overview of the workflow for change detection and assignment of a criticality level to the detected changes.</figcaption>
+</div>
+
+<h2 id="2-data">2. Data<a class="headerlink" href="#2-data" title="Permanent link">&para;</a></h2>
+<h3 id="21-lidar-point-clouds">2.1 LiDAR point clouds<a class="headerlink" href="#21-lidar-point-clouds" title="Permanent link">&para;</a></h3>
+<p>The algorithm required two temporally distinct acquisitions for a same area. Throughout the document, we refer to the first point cloud as <strong>v.1</strong>. It served as reference data and is assumed to have a properly controlled classification. The subsequent point cloud, representing a new generation, is referred as <strong>v.2</strong>.</p>
+<h4 id="211-choice-of-the-lidar-products">2.1.1 Choice of the LiDAR products<a class="headerlink" href="#211-choice-of-the-lidar-products" title="Permanent link">&para;</a></h4>
+<p>The <em>swissSURFACE3D</em> product was extensively controlled by swisstopo's LiDAR team before its publication. Therefore, its classification has the quality expected by the domain expert. It acted as the <strong>v.1</strong>, <em>i.e</em> as the generation of reference.</p>
+<p>We thus needed to find some newer acquisition which fulfilled the following conditions:</p>
+<ul>
+<li><strong>Availability in swissSURFACE3D</strong>: At the time of development, the initial classification control was not over for the whole of Switzerland. Point clouds were still in production at swisstopo for some cantons. </li>
+<li><strong>Gap in acquisition dates</strong>: To have an exhaustive and representative panel of changes, point cloud of the <strong>v.2</strong> had to be acquired at least two years apart from the <strong>v.1</strong> data.</li>
+<li><strong>Difference in density</strong>: The method aimed for robustness against changes in density, considering that advancements in technology lead to higher-quality sensors and an increased point density per square meter.</li>
+<li><strong>Larger number of classes</strong>: Anticipating that swisstopo next iteration would introduce five additional classes, we required the <strong>v.2</strong> point cloud to have a higher number of classes than in the <strong>v.1</strong> point cloud. Furthermore, to be comparable, the <strong>v.2</strong> classes needed to be subsets of the ones present in <strong>v.1</strong>.</li>
+<li><strong>Typology of the point cloud</strong>: The selected point clouds needed to be acquired, at least partially, in an urban environment, where classification errors are more prevalent and, consequently, more control time is allocated. </li>
+</ul>
+<p>For our <strong>v.2</strong>, we used the point cloud produced by the State of Neuchâtel, which covers the area within its cantonal borders. The characteristics of each point cloud are summarized in Table 1. </p>
+<p><center>
+<i>Table 1: Characteristics of swissSURFACE3D, used as <b>v1</b>, and the LiDAR product of the State of Neuchâtel, used as <b>v2</b>.</i></p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th align="center"><a href="https://www.swisstopo.admin.ch/fr/modele-altimetrique-swisssurface3d">swissSURFACE3D</a></th>
+<th align="center"><a href="https://sitn.ne.ch/web/plaquettes/lidaraerien2022.pdf">Neuchâtel</a></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Acquisition period</td>
+<td align="center">2018-19</td>
+<td align="center">2022</td>
+</tr>
+<tr>
+<td>Planimetric precision</td>
+<td align="center">20 cm</td>
+<td align="center">10 cm</td>
+</tr>
+<tr>
+<td>Altimetric precision</td>
+<td align="center">10 cm</td>
+<td align="center">5 cm</td>
+</tr>
+<tr>
+<td>Spatial density</td>
+<td align="center">~15-20 pts/m<sup>2</sup></td>
+<td align="center">~100 pts/m <sup> 2 </sup></td>
+</tr>
+<tr>
+<td>Number of class</td>
+<td align="center">7</td>
+<td align="center">21</td>
+</tr>
+<tr>
+<td>Dimension of one tile</td>
+<td align="center">1000 x 1000 m</td>
+<td align="center">500 x 500 m</td>
+</tr>
+<tr>
+<td>Provided file format</td>
+<td align="center">LAZ</td>
+<td align="center">LAZ</td>
+</tr>
+</tbody>
+</table>
+<p></center></p>
+<h4 id="212-area-of-interest">2.1.2 Area of interest<a class="headerlink" href="#212-area-of-interest" title="Permanent link">&para;</a></h4>
+<p>The delimitation of the LiDAR tiles used in this project is shown in Figure 3. We chose to work with tiles of the dimensions of the Neuchâtel data, <em>i.e.</em> 500 x 500 m. The tiles are designated by a letter that we refer to in the continuation of this document.</p>
+<p>The tiles are located in the region of Le Locle. The zone covers an urban area, where quality control is the most time-consuming. It also possesses a variety of land covers, such as a large band of dense forest or agricultural fields.</p>
+<div align="center" style="font-style: italic">
+  <img
+  src="images/precise_AOI_doc_three_tiles.png"
+  alt="Tiles of the AOI"
+  width = "70%"><br>
+  <figcaption>Figure 3: Tiles used for the development of our method: <b>A</b> for a result control for the hyperparameter tuning, <b>B</b> for the choice of the voxel size and <b>C</b> for a control of the results by the domain expert.</figcaption>
+</div>
+
+<h3 id="22-annotations-by-the-domain-expert">2.2 Annotations by the domain expert<a class="headerlink" href="#22-annotations-by-the-domain-expert" title="Permanent link">&para;</a></h3>
+<p>To understand the expected result, the domain expert controlled the <strong>v.2</strong> point cloud in the region of Le Locle as if it was a new acquisition. A perimeter of around 1.2 km<sup>2</sup> was controlled.</p>
+<p>The problematic zones were each defined by a polygon with a textual description, as well as the current and the correct class as numbers. A sample of annotations are shown in Figure 4. </p>
+<div align="center" style="font-style: italic">
+  <img
+  src="images/florian_control.png"
+  alt="Zone controlled by the domain expert and example of annotation" ><br>
+  <figcaption>Figure 4: Controlled area (left) and examples of control annotations within the detail zone, with the reported error as color and with the original and the corrected class as labels (right).</figcaption>
+</div>
+
+<p>This provided us with annotations of areas where the point cloud data were incorrect. The annotations were used to calibrate the change detection.</p>
+<p>It must be noted that this control was achieved without referring the <strong>v.1</strong> point cloud. In this case we assume that the <strong>v.1</strong> contains no classification error, and that the annotated areas therefore represent classification changes between the two generations.</p>
+<h2 id="3-method">3. Method<a class="headerlink" href="#3-method" title="Permanent link">&para;</a></h2>
+<h3 id="31-correspondence-between-classes">3.1 Correspondence between classes<a class="headerlink" href="#31-correspondence-between-classes" title="Permanent link">&para;</a></h3>
+<p>To compare the classes between generations, we needed to establish their correspondence. We selected the classes from the swisstopo point cloud, <em>i.e</em> the reference generation, as the common ground. Any added classes in the new generation must come from a subdivision of an existing class, as explained in the <a href="#211-choice-of-the-lidar-products">requirements for the <strong>v.2</strong> point cloud</a>. This is the case with Neuchâtel data. Each class from Neuchâtel data was mapped to an overarching class from the reference generation, in accordance with the inputs from the domain expert. The details of this mapping are given in table 2. Notice that the class <em>Ground level noise</em> received the label -1. It means that this class was not treated in our algorithm and every such point is removed from the point cloud. This was agreed with the domain expert as this class is very different from the class <em>Low Point (Noise)</em> and doesn't provide any useful information.</p>
+<p><center>
+<i>Table 2: Mapping between the <b>v.2</b> and <b>v.1</b> point cloud. The field "original ID" provides the class number for <b>v.2</b>, the class name corresponds to the class description from the metadata, and the corresponding ID shows the class number from <b>v.1</b> to which it is assigned.</i></p>
+<table>
+<thead>
+<tr>
+<th>Original ID</th>
+<th>Class name</th>
+<th>Corresponding ID</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Unclassified</td>
+<td>1</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Ground</td>
+<td>2</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Low vegetation</td>
+<td>3</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Medium vegetation</td>
+<td>3</td>
+</tr>
+<tr>
+<td>5</td>
+<td>High vegetation</td>
+<td>3</td>
+</tr>
+<tr>
+<td>6</td>
+<td>Building roofs</td>
+<td>6</td>
+</tr>
+<tr>
+<td>7</td>
+<td>Low Point (Noise)</td>
+<td>7</td>
+</tr>
+<tr>
+<td>9</td>
+<td>Water</td>
+<td>9</td>
+</tr>
+<tr>
+<td>11</td>
+<td>Piles, heaps (natural materials)</td>
+<td>1</td>
+</tr>
+<tr>
+<td>14</td>
+<td>Cables</td>
+<td>1</td>
+</tr>
+<tr>
+<td>15</td>
+<td>Masts, antennas</td>
+<td>1</td>
+</tr>
+<tr>
+<td>17</td>
+<td>Bridges</td>
+<td>17</td>
+</tr>
+<tr>
+<td>18</td>
+<td>Ground level noise</td>
+<td>-1</td>
+</tr>
+<tr>
+<td>19</td>
+<td>Street lights</td>
+<td>1</td>
+</tr>
+<tr>
+<td>21</td>
+<td>Cars</td>
+<td>1</td>
+</tr>
+<tr>
+<td>22</td>
+<td>Building facades</td>
+<td>6</td>
+</tr>
+<tr>
+<td>25</td>
+<td>Cranes, trains, temporary objects</td>
+<td>1</td>
+</tr>
+<tr>
+<td>26</td>
+<td>Roof structures</td>
+<td>6</td>
+</tr>
+<tr>
+<td>29</td>
+<td>Walls</td>
+<td>1</td>
+</tr>
+<tr>
+<td>31</td>
+<td>Additional ground points</td>
+<td>2</td>
+</tr>
+<tr>
+<td>41</td>
+<td>Water (synthetic points)</td>
+<td>9</td>
+</tr>
+</tbody>
+</table>
+<p></center></p>
+<p align="center">
+<iframe src="images/tileB_sankey_flow_of_classes.html" width="800px" height="500px" frameborder="0" scrolling="no"> </iframe>
+<br>
+<i>Figure 5: Reallocation of points from the <b>v.2</b> classes (left) to the <b>v.1</b> classes (right) for tile B with the class numbers from the second generation indicated between parenthesis.</i>
+</p>
+
+<p>As visible on Figure 5, seven classes were reassigned to class 1 <em>Undefined</em>. However, they represented a small part of the point cloud. The most important classes were <em>ground</em>, with in equal parts of <em>ground</em> and <em>additional ground</em> points, <em>vegetation</em>, with mainly points in high vegetation, and <em>building</em>, with mainly points on building roofs.</p>
+<h3 id="32-voxelization-of-the-point-clouds">3.2 Voxelization of the point clouds<a class="headerlink" href="#32-voxelization-of-the-point-clouds" title="Permanent link">&para;</a></h3>
+<p>The method relies on the voxelization of both point clouds. As defined in Xu et al. (2021)<sup id="fnref:7"><a class="footnote-ref" href="#fn:7">7</a></sup>, voxels are a geometry in 3D space, defined on a regular 3D grid. They can be seen as the 3D equivalent to pixels in 2D. Figure 6<sup id="fnref:8"><a class="footnote-ref" href="#fn:8">8</a></sup> shows how a voxel grid is defined over a point cloud.</p>
+<div align="center" style="font-style: italic">
+  <img
+  src="images/voxelisation_representation.webp"
+  alt="A point cloud and the representation of its voxel grid"
+  width = "70%"><br>
+  <figcaption>Figure 6: Representation of a point cloud (a) and its voxel grid (b), courtesy of Shi et al. (2018).</figcaption>
+</div>
+
+<h4 id="321-preprocessing-of-lidar-tiles">3.2.1 Preprocessing of LiDAR tiles<a class="headerlink" href="#321-preprocessing-of-lidar-tiles" title="Permanent link">&para;</a></h4>
+<p>It must be noted that the approach operated under the assumption that both point clouds were already projected in the same reference frame, and that the 3D positions of the points were accurate. We did not perform any point-set registration as part of the workflow, as the method focuses on finding errors of classification in the point cloud.</p>
+<p>Before creating the voxels, the tiles were cropped to the size of the generation with the smallest tiling grid. Here, the <strong>v.1</strong> tiles were cropped from 1000 x 1000 m to the dimensions of <strong>v.2</strong>, <em>i.e</em> 500 x 500 m. A <strong>v.2</strong> tile corresponds exactly to one quarter of a <strong>v.1</strong> tile, so no additional operations were needed.</p>
+<h4 id="323-voxelization-process">3.2.3 Voxelization process<a class="headerlink" href="#323-voxelization-process" title="Permanent link">&para;</a></h4>
+<p>In the interest of keeping our solution free of charge for users, and to have greater flexibility in the voxelization process, we chose to develop our own solution, rather than use pre-existing tools.</p>
+<p>We used the python libraries <a href="https://laspy.readthedocs.io/en/latest/">laspy</a> and <a href="https://pandas.pydata.org/">pandas</a>. Given a point cloud provided as a LAS or LAZ file, it returned a table with one row per voxel. The voxels were identified by their center coordinates. In addition, the columns provided the number of points for each class contained within the voxel for each generation. Figure 7 shows a visual representation of the voxelization process for one voxel element.</p>
+<div align="center" style="font-style: italic">
+  <img
+  src="images/distribution_comparison.png"
+  alt="Summarized voxelization process"
+  width = "90%"><br>
+  <figcaption>Figure 7: Summarized process for the creation of one voxel in the <b>v.1</b> (left) and the <b>v.2</b> (right) generation from the point cloud to the class distribution as a vector. The class distribution is saved for both generations in a table. </figcaption>
+</div>
+
+<h3 id="33-determination-of-the-voxel-size">3.3 Determination of the voxel size<a class="headerlink" href="#33-determination-of-the-voxel-size" title="Permanent link">&para;</a></h3>
+<p>The voxels must be sized to efficiently locate area of changes without being sensitive to negligible local variations in the point location and density.</p>
+<p>We assumed that although a point cloud changes between two generations, the vast majority of its features would remain consistent on a tile of 500 x 500 m. Following this hypothesis, we evaluated how the voxel size influenced the proportion of voxels not filled with the same classes in two separate generations. We called this situation a "categorical change". A visual example is given in Figure 8.</p>
+<div align="center" style="font-style: italic">
+  <img
+  src="images/categorical_changes.png"
+  alt="Example of a situation with and without a categorical change"
+  width = "70%"><br>
+  <figcaption>Figure 8: Example of a situation with no categorical change (left) and a second situation with a categorical change (right)</figcaption>
+</div>
+
+<p>When the proportion of voxels presenting a categorical change was calculated for different voxel sizes, it rose drastically around a size of 1.5 m, as visible on Figure 9. We postulated that this is the minimum voxel size which allows observing changes without interference from the noisy nature of point clouds.</p>
+<div align="center" style="font-style: italic">
+  <img
+  src="images/voxel_dimension_decision.jpeg"
+  alt="Proportion of categorical changes for different voxel size in tile B."
+  width = "80%"><br>
+  <figcaption>Figure 9: Proportion of categorical changes for different voxel size in tile B. The horizontal axis is the voxel size. The vertical axis represents the percentage of voxels experiencing a categorical change between the two generations. </figcaption>
+</div>
+
+<p>For the rest of the development process, square voxels of 1.5 m are used. However, the voxel width and height can be modified in the scripts if desired.</p>
+<h3 id="34-criticality-tree">3.4 Criticality tree<a class="headerlink" href="#34-criticality-tree" title="Permanent link">&para;</a></h3>
+<p>The algorithm must not only detect changes, but also assign them a criticality level. We translated the domain expert's criteria into a decision tree, which sorts the voxels into different criticality levels for control. The decision tree went through several iterations, in a dialogue with the domain expert. Figure 10 provides the final architecture of the tree.</p>
+<div align="center" style="font-style: italic">
+  <img
+  src="images/decisional_tree.svg"
+  alt="Final decision tree used to classify the voxels based on the different types of changes and their criticality."
+  width="90%"/><br>
+  <figcaption>Figure 10: Decision tree used to classify the voxels based on the different types of changes and their criticality.</figcaption>
+</div>
+
+<p>The decision tree classifies the voxels into three buckets of criticality level: "non-problematic", "grey zone" and "problematic".</p>
+<ul>
+<li>"non-problematic" voxels have little to no change. No control is necessary. </li>
+<li>"Grey zone" voxels undergo a change that is coherent with their neighbors or due to the presence of the class 1, <em>i.e.</em> the <em>Undefined</em> class, in the new generation. The detected changes should not be problematic, but might be interesting to verify in the case of a very thorough control. </li>
+<li>"Problematic" voxels are the ones with important changes such as strong variations in the class proportions or changes not reflected in their neighborhood. They are relevant to control. </li>
+</ul>
+<p>Let us note that although only three final buckets were output, we preserved an individual number for each outgoing branch of the criticality tree, as they provided a more detailed information. Those numbers are referred as "criticality numbers".</p>
+<p>The decisions of the criticality tree are divided into two major categories. Some are based on qualitative criteria which is by definition true or false. Others, however, depend on some threshold which had to be defined. </p>
+<h4 id="341-qualitative-decisions">3.4.1 Qualitative decisions<a class="headerlink" href="#341-qualitative-decisions" title="Permanent link">&para;</a></h4>
+<p><strong>Decision A: Is there only one class in both generations and is it the same?</strong> <br>
+Every voxel that contains a single, common class in both generations is automatically identified as non-problematic.</p>
+<p><strong>Decision B: Does the voxel contain noise in the new generation?</strong> <br>
+Any noise presence is possibly an object wrongly classified and necessitates a control. Any such voxel is directed to the "problematic" bucket. </p>
+<p><strong>Decision G: Is the change a case of complete appearance or disappearance of a voxel?</strong> <br>
+If the voxel is only present in one generation, it means that the voxel is part of a new or disappearing geometry that might or not be problematic, depending on decisions H and J.<br>
+If the voxel is present in both generations, we are facing a change in the class distribution due to new classes in it. The decision I will compare the voxel with its neighbors to determine if it is problematic.</p>
+<p><strong>Decision J: Is it the specific case of building facade or vegetation?</strong> <br>
+Due to the higher point density in the <strong>v.2</strong> point cloud, point proportions may change in voxels compared to the <strong>v.1</strong> point cloud, even though the geometry already existed. We particularly noticed this on building facades and under dense trees, as shown in the example given in Figure 11. To avoid classifying these detections as problematic, a voxel with an appearance of points in the class <em>building</em> or <em>vegetation</em> is not problematic if it is located under a non-problematic voxel containing points of the same class. </p>
+<div align="center" style="font-style: italic">
+  <img
+  src="images/non_problematic_apparition.png"
+  alt="non-problematic appearance of points in the v.2 point cloud due to the difference of density between the two generations."
+  width = "80%" ><br>
+  <figcaption>Figure 11: Example of non-problematic appearance of points in the v.2 point cloud due to the difference of density between the two generations.</figcaption>
+</div>
+
+<h4 id="342-threshold-based-decisions">3.4.2 Threshold based decisions<a class="headerlink" href="#342-threshold-based-decisions" title="Permanent link">&para;</a></h4>
+<p>The various thresholds were set iteratively by visualization of the results on tile A and visual comparison with the expert's annotations described in <a href="#22-annotations-by-the-domain-expert">section 2.2</a>. Once the global result seemed satisfying, we assessed the criticality label for a subset of voxels. Eight voxels were selected randomly for each criticality number. Given that there are 13 possible outcomes, 104 voxels were evaluated. A first evaluation was performed on tile A without the input of the domain expert. It allowed for the hyperparameter tuning. A second evaluation was conducted by the domain expert on tile C and he declared that no further adjustment of the threshold was necessary.</p>
+<p><strong>Cosine similarity</strong></p>
+<p>The decision C, D and E require to evaluate the similarity between the distribution of the previous and the new classes occupying a voxel. We thus sought a metric adapted to compare the two distributions. Many ways exist to measure the similarity between two distributions<sup id="fnref:9"><a class="footnote-ref" href="#fn:9">9</a></sup>. We settled for the well-known cosine similarity. Given two vectors <strong>X</strong> and <strong>Y</strong>, it is defined as:
+<span class="arithmatex">\(\text{Cosine Similarity}(\mathbf{X}, \mathbf{Y}) = \frac{\mathbf{X} \cdot \mathbf{Y}}{\|\mathbf{X}\| \|\mathbf{Y}\|}\)</span></p>
+<p>This metric measures the angle between two vectors. The magnitude of the vectors holds no influence on the results. Therefore, this measure is unaffected by the density of the point clouds. The more the two vectors point in the same direction, the closer the metric is to one. Vectors having null cosine similarity correspond to voxels where none of the classes present in the previous generation match those from the new one.</p>
+<p>One limitation of the cosine similarity is its requirement for both vectors to be non-zero. For cases where a voxel is only occupied in a single generation, an arbitrary cosine similarity of -1 is set. </p>
+<p><strong>Decision C: Does the proportion of class stay similar and the classes don't change?</strong><br>
+We assessed whether the proportion of class stays similar between generations. A threshold of 0.8 is set on the cosine similarity.</p>
+<p><center></p>
+<p><pre class="mermaid"><code>flowchart LR
+    A[Prev. gen.&lt;br&gt; 0 &amp;#124 0 &amp;#124 4 &amp;#124 2 &amp;#124 0 &amp;#124 0 &amp;#124 7] --&gt; E(Cosine similarity)
+    B[New gen.&lt;br&gt; 25 &amp;#124 0 &amp;#124 20 &amp;#124 0 &amp;#124 0 &amp;#124 5 &amp;#124 40] --&gt; E
+
+    E--&gt;F[0.84]</code></pre>
+<i>Graph 1: Example of vectors and their resulting cosine similarity when considering all the classes.</i>
+</center></p>
+<p><strong>Decision D: Do the previous classes keep the same proportions?</strong> <br>
+We computed the cosine similarity based only on the vector elements which are non-empty in the previous generation. A threshold of 0.8 is set as the limit.</p>
+<p>Let us note that voxels present only in one of the two generations are here artificially considered to retain the same class proportion. They are treated further down the decision tree by the decision G.</p>
+<p><center></p>
+<p><pre class="mermaid"><code>flowchart LR
+    A[Prev. gen.&lt;br&gt; 0 &amp;#124 0 &amp;#124 4 &amp;#124 2 &amp;#124 0 &amp;#124 0 &amp;#124 7] --&gt; C[4 &amp;#124 2 &amp;#124 7]
+    B[New gen.&lt;br&gt; 25 &amp;#124 0 &amp;#124 20 &amp;#124 0 &amp;#124 0 &amp;#124 5 &amp;#124 40] --&gt; D[20 &amp;#124 0 &amp;#124 40]
+    C--&gt;E(Cosine similarity)
+    D--&gt;E
+    E--&gt;F[0.97]</code></pre>
+<i>Graph 2: Example of vectors and their resulting cosine similarity when considering only the classes present in the reference generation v.1.</i>
+</center></p>
+<p><strong>Decision E: Is the change due to the class 1?</strong> <br>
+We assessed whether the change is due to the influence of the <em>unclassified</em> points (class 1). To do so we computed the cosine similarity with all vector elements except the first one, corresponding to <em>unclassified</em> points. If the cosine similarity was low when considering all vector elements (decision C), but high when discarding the quantity of <em>unclassified</em> points, this indicates that the change is due to class 1. A threshold of 0.8 is set as the limit.</p>
+<p><center></p>
+<p><pre class="mermaid"><code>flowchart LR
+    A[Prev. gen.&lt;br&gt; 0 &amp;#124 0 &amp;#124 4 &amp;#124 2 &amp;#124 0 &amp;#124 0 &amp;#124 7] --&gt; C[0 &amp;#124 4 &amp;#124 2 &amp;#124 0 &amp;#124 0 &amp;#124 7]
+    B[New gen.&lt;br&gt; 25 &amp;#124 0 &amp;#124 20 &amp;#124 0 &amp;#124 0 &amp;#124 5 &amp;#124 40] --&gt; D[0 &amp;#124 20 &amp;#124 0 &amp;#124 0 &amp;#124 5 &amp;#124 40]
+    C--&gt;E(Cosine similarity)
+    D--&gt;E
+    E--&gt;F[0.96]</code></pre>
+<i>Graph 3: Example of vectors and their resulting cosine similarity when excluding the first class.</i>
+</center></p>
+<p><strong>Decision F: Is class 1 presence low in the new generation?</strong> <br>
+In the case where the change is due to the <em>unclassified</em> points, we wished to evaluate whether such points are in large quantity in the new voxel occupancy. Because the number of points is dependent on the density of the new point cloud, we cannot simply set a threshold on the number of points. To solve this issue, we normalize the number of unclassified points in the voxel, <span class="arithmatex">\(n_{unclassified}\)</span>. Let <span class="arithmatex">\(N_{reference}\)</span> and <span class="arithmatex">\(N_{new}\)</span> be the total number of points in the <strong>v.1</strong> and <strong>v.2</strong> point cloud respectively. The normalized number of unclassified points <span class="arithmatex">\(\tilde{n}_{unclassified}\)</span> is defined as:</p>
+<div class="arithmatex">\[\tilde{n}_{unclassified}= n_{unclassified}\cdot \frac{N_{reference}}{N_{new}} \]</div>
+<p>An arbitrary threshold of 1 is set as the limit on <span class="arithmatex">\(\tilde{n}_{unclassified}\)</span>. Under this threshold, the presence of the class 1 was considered as low in the new generation.</p>
+<p><strong>Decision H &amp; I: Do the neighbor voxels share the same characteristics?</strong> <br>
+For both decisions we searched the neighbors of a given voxel to evaluate if they share the same characteristics. To make the search of these neighbors efficient, we built a <a href="https://scikit-learn.org/stable/modules/generated/sklearn.neighbors.KDTree.html">KD-Tree</a> from the location of the voxels. 
+For each voxel, it then assessed whether the neighbors shared the same classes or not. Each class of the evaluated voxel must be present in at least one neighbor. The radius of search influences the number of voxels used for comparison. Let <span class="arithmatex">\(x\)</span> be the voxel edge length, using search radii of <span class="arithmatex">\(x\)</span>, <span class="arithmatex">\(\sqrt{2}x\)</span> or <span class="arithmatex">\(\sqrt{3}x\)</span> leads to considering 6, 18 or 26 neighbors respectively, as displayed in Figure 12<sup id="fnref:10"><a class="footnote-ref" href="#fn:10">10</a></sup>. Note that the radius is not limited to these options and search among further adjacent voxels is possible.</p>
+<div align="center" style="font-style: italic">
+  <img
+  src="images/voxel_neighbourhood.png"
+  alt="Types of neighborhood"
+  width = "60%" ><br>
+<figcaption>Figure 12: Possible connectivity types to define the neighborhood of a voxel from the website brainvisa.info. </figcaption>
+</div>
+
+<p>In the case where the voxel is only present in one generation, <em>i.e</em> for the <em>decision H</em>, the neighbors considered are the following:</p>
+<ul>
+<li>appearance of the voxel: the class distribution of the new voxel is compared to the voxels of the reference generation. Therefore, the extension of a neighboring class to the new voxel is non-problematic, whereas the appearance of a whole new geometry is classified in the grey zone.</li>
+<li>disappearance of the voxel: the class distribution of the old voxel is compared to the voxels of the new generation. Therefore, shrinking a geometry to cover only the neighboring voxels would be non-problematic, whereas the disappearance of a entire geometry is classified in the grey zone.</li>
+</ul>
+<p>In the case where the class distribution changes due to new classes present in the voxel compared to <strong>v.1</strong>, <em>i.e</em> for the <em>decision I</em>, the class distribution of the voxel in <strong>v.2</strong> will be compared to its neighbors in <strong>v.2</strong>. Therefore, if the entire area share the same classes, the voxel is classified the grey zone, but if the change is isolated, it goes into the "problematic" bucket.</p>
+<h4 id="343-description-of-the-grey-zone-and-problematic-buckets">3.4.3 Description of the "grey zone" and "problematic" buckets<a class="headerlink" href="#343-description-of-the-grey-zone-and-problematic-buckets" title="Permanent link">&para;</a></h4>
+<p>We provide a brief description of the output for each branch of the decision tree ending in the grey zone and problematic buckets. They are identified by their criticality number. Let us note that the criticality numbers are not a ranking of the voxel priority level for a control, but identifiers for the different types of change.</p>
+<ul>
+<li>
+<p>Grey zone:</p>
+<ul>
+<li><strong>7</strong>: Appearance of a voxel or change in the class proportions due to <em>unclassified</em> points in the new generation;</li>
+<li><strong>8</strong>: Change in the class distribution due to extra classes present in the voxel. The neighboring voxels share the same class occupancy.</li>
+</ul>
+</li>
+<li>
+<p>Problematic:</p>
+<ul>
+<li><strong>9</strong>: Disappearance, i.e. a voxel which contains points in <strong>v.1</strong> but not in <strong>v.2</strong>. The neighboring voxels do not show the same change;</li>
+<li><strong>10</strong>: Appearance, i.e. a voxel which contains no points in <strong>v.1</strong> but is filled in <strong>v.2</strong>. The neighboring voxels do not show the same change;</li>
+<li><strong>11</strong>: Change in the class distribution due to extra classes present in the voxel. The neighboring voxels do not share the same class occupancy;</li>
+<li><strong>12</strong>: Changes in the distribution for old and new classes present in the voxel between the <strong>v.1</strong> and <strong>v.2</strong> occupancy;</li>
+<li><strong>13</strong>: Presence of points classified as noise in <strong>v.2</strong>.</li>
+</ul>
+</li>
+</ul>
+<h3 id="35-clustering-of-problematic-voxels">3.5 Clustering of problematic voxels<a class="headerlink" href="#35-clustering-of-problematic-voxels" title="Permanent link">&para;</a></h3>
+<p>Voxels ending in the "grey zone" and "problematic" buckets were often isolated. This creates a noisy map, making its usage for quality control challenging. To provide a less granular change map, we chose to cluster the change detections, highlighting only areas with numerous problematic detections in close proximity. In practice, we leveraged the <a href="https://scikit-learn.org/stable/modules/generated/sklearn.cluster.DBSCAN.html">DBSCAN</a> algorithm. Then, the smallest clusters were filtered out and their cluster number is set to one. They are not treated as clusters in the rest of the processing. The hyperparameters for the clustering process are shown in Table 3. They were determined by the expert through the visualization of the results. The epsilon parameter was chosen to correspond to a neighborhood of 18 voxels, as illustrated on Figure 12.</p>
+<p><i>Table 3: Hyperparameters used for the DBSCAN clustering and the filtering of the clusters. </i></p>
+<table>
+<thead>
+<tr>
+<th>Hyperparameter</th>
+<th align="center">Description</th>
+<th align="center">Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Epsilon</td>
+<td align="center">radius of the neighborhood for a given voxel in meters</td>
+<td align="center">2.13</td>
+</tr>
+<tr>
+<td>Minimum number of samples</td>
+<td align="center">minimum number of problematic voxels in the epsilon neighborhood for a voxel to be a core point for the cluster</td>
+<td align="center">5</td>
+</tr>
+<tr>
+<td>Minimum cluster size</td>
+<td align="center">minimum number of voxels needed inside a cluster for it to be preserved</td>
+<td align="center">10</td>
+</tr>
+</tbody>
+</table>
+<p>The clusters should be controlled in priority; they form the primary control. Voxels outside a cluster go into the secondary control as illustrated in the schema of the workflow on Figure 13. Their cluster number of those voxels is set to zero.</p>
+<div align="center" style="font-style: italic">
+  <img
+  src="images/dbscan_filtering.svg"
+  alt="Clustering for the problematic voxels and assignment of the voxels falling inside a cluster to the primary control."
+  width = "60%" ><br>
+  <figcaption>Figure 13: Schema of the additional step of clustering for the problematic voxels and assignment of the voxels falling inside a cluster to the primary control.</figcaption>
+</div>
+
+<p>All problematic voxels went through this DBSCAN algorithm at once, without distinction based on the criticality number. That way, detections related to the same geometry were grouped together even if its voxels are not all labeled with the same criticality number. In the end, the label which was the most present inside a cluster is attributed to it.</p>
+<h3 id="36-visualization-of-detections">3.6 Visualization of detections<a class="headerlink" href="#36-visualization-of-detections" title="Permanent link">&para;</a></h3>
+<p>Several possibilities were considered for the visualization of the results, as shown in Figure 14.</p>
+<div align="center" style="font-style: italic">
+  <img
+  src="images/comparison_visualisation.webp"
+  alt=" Comparison of a voxel mesh, LAS point cloud and shapefile for the representation of the results."
+  width = "75%" ><br>
+  <figcaption>Figure 14: Comparison of a voxel mesh in green (a), a LAS point cloud (b), and a shapefile with the most represented criticality number of the cluster (c) for the visualization of the detections. The cluster in the point cloud and shapefile are colored in orange and blue depending on their criticality number. The <b>v.2</b> point cloud is visible as background. </figcaption>
+</div>
+
+<p>Table 4 shows the advantages and drawbacks of the different methods. In the end, the domain expert required that we provide the results as a shapefile.</p>
+<p><center>
+<i>Table 4: Comparison of the visualization methods</i></p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th align="center">Voxel mesh</th>
+<th align="center">LAS point cloud</th>
+<th align="center">shapefile</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>2D representation of the space occupied by voxels</td>
+<td align="center">Yes</td>
+<td align="center">No</td>
+<td align="center">Yes</td>
+</tr>
+<tr>
+<td>3D representation of the space occupied by voxels</td>
+<td align="center">Yes</td>
+<td align="center">No</td>
+<td align="center">No</td>
+</tr>
+<tr>
+<td>Visualization of the voxel height</td>
+<td align="center">Yes</td>
+<td align="center">Yes</td>
+<td align="center">No</td>
+</tr>
+<tr>
+<td>Numerical attributes</td>
+<td align="center">No</td>
+<td align="center">Yes</td>
+<td align="center">Yes</td>
+</tr>
+<tr>
+<td>Textual attributes</td>
+<td align="center">No</td>
+<td align="center">No</td>
+<td align="center">Yes</td>
+</tr>
+</tbody>
+</table>
+<p></center></p>
+<h2 id="4-results">4. Results<a class="headerlink" href="#4-results" title="Permanent link">&para;</a></h2>
+<h3 id="41-granularity-of-results">4.1 Granularity of results<a class="headerlink" href="#41-granularity-of-results" title="Permanent link">&para;</a></h3>
+<p>Figure 15 shows the voxels produced by the algorithm for the different priority levels. From the base with all the created voxels, each level reduces the number of considered voxels. At the last level, the clustering effectively reduces the dispersion of voxels, keeping only clearly defined groups.</p>
+<div align="center" style="font-style: italic">
+  <img
+  src="images/granularity_levels.webp"
+  alt="Voxels for the different levels of priority for tile C. Clustered from 'Filtered detections' at the top to 'All voxels' at the bottom."
+  width = "100%" ><br>
+  <figcaption>Figure 15: Voxels by their center coordinates in a point cloud for the different levels of priority for tile C. Going from the clustered detections at the top to all the voxels at the bottom. </figcaption>
+</div>
+
+<p>Table 5 gives the number and percentage of voxels retained at each level. For tile C, the voxels falling into the "grey zone" and the "problematic" buckets represent 14.86% of all voxels. If only the problematic ones are retained, this percentage is reduced to 4.77%. Finally, after removing the voxels which do not belong to a cluster, only 2.30% remains. </p>
+<p>Meanwhile, the covered part of the tile decreases from 35.80% with all the problematic voxels and the ones of the grey zone, to 11.89% with only the problematic voxels, and to 4.53% with only the clustered voxels. In the end, an expert controlling the classification would have to check in priority 5% of the total tile area.</p>
+<p><center>
+<i>Table 5: Number of voxels preserved in each urgency level on tile C.</i></p>
+<table>
+<thead>
+<tr>
+<th>Urgency level</th>
+<th align="center">Number of voxels</th>
+<th align="center">Percentage of all voxels</th>
+<th align="center">Covered tile area</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Clustered detections</td>
+<td align="center">8'756</td>
+<td align="center">2.30 %</td>
+<td align="center">4.53 %</td>
+</tr>
+<tr>
+<td>Problematic detections</td>
+<td align="center">18'146</td>
+<td align="center">4.77 %</td>
+<td align="center">11.89 %</td>
+</tr>
+<tr>
+<td>Problematic + grey zone detections</td>
+<td align="center">56'363</td>
+<td align="center">14.83 %</td>
+<td align="center">35.80 %</td>
+</tr>
+<tr>
+<td>All voxels</td>
+<td align="center">380'165</td>
+<td align="center">100 %</td>
+<td align="center">100 %</td>
+</tr>
+</tbody>
+</table>
+<p></center></p>
+<p>The percentage of voxels and covered tile area decrease consequently between each granularity level. The higher the granularity is, the larger the difference in the voxel number and the covered area between two levels. The covered tile area decreases more slowly than the percentage of voxels retained.</p>
+<h3 id="42-distribution-of-the-decision-tree-outcomes">4.2 Distribution of the decision tree outcomes<a class="headerlink" href="#42-distribution-of-the-decision-tree-outcomes" title="Permanent link">&para;</a></h3>
+<h4 id="421-distribution-of-the-points-in-the-criticality-numbers-and-buckets">4.2.1 Distribution of the points in the criticality numbers and buckets<a class="headerlink" href="#421-distribution-of-the-points-in-the-criticality-numbers-and-buckets" title="Permanent link">&para;</a></h4>
+<p>Figure 16 shows the percentage of points from the new point cloud coming out of each branch of the decision tree. The distribution between criticality buckets is given at the top of the figure. The vast majority of points belongs to non-problematic voxels, with around 80% of them being from the first tree branch. This corresponds to the case where only one class is present in both generations. We notice that 10% of the points end up in voxels assigned to the grey zone. It is mostly due to the output of the 8<sup>th</sup> tree branch. For this specific tile, 1.81% of points from the new point cloud end up in problematic voxels. Let us note that no point ends up in voxels with the 4<sup>th</sup> and 9<sup>th</sup> criticality number. This is because those correspond to case of geometry disappearances.</p>
+<div align="center" style="font-style: italic">
+  <img
+  src="images/tileA_criticality_number_percentage.jpeg"
+  alt="Percentage of points from the new point cloud that fall in each criticality number and bucket. Results for tile A."
+  width = "100%" ><br>
+  <figcaption>Figure 16: Relative distribution of the points from the new point cloud depending on the criticality number and bucket of their voxel. Results for tile A.</figcaption>
+</div>
+
+<p>Figure 17 shows the same plot, but with the <strong>v.1</strong> point cloud for tile C. In that case the percentage of non-problematic points is smaller than for tile A, with more points falling in the "grey zone" and "problematic" buckets, but the overall trend stays similar. The only changes over 1% are for criticality numbers 1 (-6.99 points), 8 (+5.08 points), and 12 (+1.44 points). Fewer voxels present one same class across generations, marked with the criticality number 1. More voxels present a change in the distribution. This change can be non-problematic if due to the presence of extra classes in the voxel and reflected by the neighboring voxels (criticality number 8). It is problematic if there is a drastic change in the distribution of all classes in the voxel (criticality number 12).</p>
+<div align="center" style="font-style: italic">
+  <img
+  src="images/tileC_criticality_number_percentage.jpeg"
+  alt="Percentage of points from the new point cloud that fall in a each criticality number and bucket. Results for tile C."
+  width = "100%" ><br>
+  <figcaption>Figure 17: Relative distribution of the points from the new point cloud depending on the criticality number and bucket of their voxel. Results for tile C. </figcaption>
+</div>
+
+<h4 id="422-distribution-of-the-criticality-numbers-in-the-clusters">4.2.2 Distribution of the criticality numbers in the clusters<a class="headerlink" href="#422-distribution-of-the-criticality-numbers-in-the-clusters" title="Permanent link">&para;</a></h4>
+<p>Figure 18 displays a sample of clusters as an example. These are shown as a shapefile, which is the visualization format required by the domain expert. One cluster (#1) indicates the disappearance of a tree. Another cluster (#2) designates an appearance. Upon closer examination, the voxels contributing to the cluster comprise different types: "appearance" and "class change". The most present label is assigned to the cluster. Finally, two zones with differences in classification are highlighted: one (#3) for a building structure going from class <em>unclassified</em> to <em>building</em>, and the other (#4) for a shed going from <em>unclassified</em> to <em>vegetation</em>.</p>
+<div align="center" style="font-style: italic">
+  <img
+  src="images/example_changes.png"
+  alt="Example of clusters"
+  width = "100%" ><br>
+  <figcaption>Figure 18: Example of resulting clusters with the corresponding point cloud for the reference generation (v.1) and the uncontrolled generations (v.2). </figcaption>
+</div>
+
+<p>The 8'756 problematic voxels for the primary control are grouped in 263 individual clusters. The repartition of clusters and voxels among the criticality numbers is given in Table 6. Among the clusters, 67% of them contain mostly voxels with the criticality number 12, meaning that there is a major change in the class distribution for the delineated area. Then, 13% and 12% of the voxels are dominated by a geometry appearance and disappearance respectively. Only 7% of the clusters contain in majority an occurrence of the <em>noise</em> class. It is normal that no cluster is tagged with the criticality number 11, because it is assigned by definition to isolated class changes.</p>
+<p>The criticality number 12 is the most present criticality number among the clustered voxels. However, its percentage decrease of 18 points at the voxel scale compared to the cluster scale. On the other hand, the presence of the criticality number 8 increase by 15 points at the voxel scale compared to the cluster scale. The other percentages remain stable.</p>
+<p><center>
+<i>Table 6: Number of clusters and number of voxels in the primary control for each criticality number on tile C. </i></p>
+<table>
+<thead>
+<tr>
+<th>Criticality number and its description</th>
+<th align="center">Distribution in the clusters</th>
+<th align="center">Distribution in the voxels in the primary control</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>9</strong>. Appearance of a geometry</td>
+<td align="center">13.31 %</td>
+<td align="center">27.91 %</td>
+</tr>
+<tr>
+<td><strong>10</strong>. Disappearance of a geometry</td>
+<td align="center">12.17 %</td>
+<td align="center">16.47 %</td>
+</tr>
+<tr>
+<td><strong>11</strong>. Isolated minor class change</td>
+<td align="center">0 %</td>
+<td align="center">0.13 %</td>
+</tr>
+<tr>
+<td><strong>12</strong>. Major change in the class distribution</td>
+<td align="center">67.30 %</td>
+<td align="center">49.63 %</td>
+</tr>
+<tr>
+<td><strong>13</strong>. Noise</td>
+<td align="center">7.22 %</td>
+<td align="center">5.86 %</td>
+</tr>
+</tbody>
+</table>
+<p></center></p>
+<h4 id="423-distribution-of-the-lidar-classes-in-the-criticality-buckets">4.2.3 Distribution of the LiDAR classes in the criticality buckets<a class="headerlink" href="#423-distribution-of-the-lidar-classes-in-the-criticality-buckets" title="Permanent link">&para;</a></h4>
+<p>Figure 19 shows the distribution of the LiDAR classes in the criticality buckets. We see that for the three main classes of this tile, <em>ground</em>, <em>vegetation</em> and <em>building</em>, the vast majority of points fall in non-problematic voxels, with the <em>ground</em> class having a higher proportion of points falling in "grey zone" voxels than the others. <em>Unclassified</em> points fall predominantly in the grey zone voxels. The grey zone gets a lot of voxels due to the decision C of the criticality tree, which requires that the voxels share the same classes in both generations. It is difficult for voxels to end up in the "non-problematic" bucket, if they did not pass the decision C.<br>
+All points classified as <em>noise</em> end up in the problematic bucket, as required by the domain expert. <br>
+Finally, points from the <em>bridge</em> class fall in "problematic" and "grey zone" voxels. This class is, however, in very low quantity in the new point cloud (only 0.014% of all points) and is thus not statistically significant.</p>
+<p align="center">
+<iframe src="images/tileC_class_criticality_repartition.html" width="800px" height="500px" frameborder="0" scrolling="no"> </iframe>
+<br>
+<i>Figure 19: Distribution of the points among criticality bucket relative to their LiDAR class, as well as the percentage represented by the class in the point cloud. Let us note the results are for the <b>v.2</b> point cloud on tile C and that no point was classified as water for this tile.</i>
+</p>
+
+<h3 id="43-assessment-of-a-subset-of-detections">4.3 Assessment of a subset of detections<a class="headerlink" href="#43-assessment-of-a-subset-of-detections" title="Permanent link">&para;</a></h3>
+<p>As mentioned in <a href="#342-threshold-based-decisions">section 3.4.2</a>, 104 voxels were evaluated on tile C, <em>i.e</em> 13 per criticality number. Per the expert review, all the non-problematic and "grey zone" voxels were deemed rightfully attributed. However out of the 40 selected problematic voxels, nine detections did not justify their status. Three of those were for cases of appearance and disappearance of geometry. Out of those, two were due to an isolated change of density in the area of the voxel, a situation which can occur in vegetated areas. The other six came from the tree branch 11, which detects small changes that are not present in the neighboring voxels. After discussion with the domain expert, it was agreed that such changes still needed to be classified as problematic, but due to their isolated nature, would not be checked as a priority. After the implementation of the clustering via the DBSCAN algorithm, these voxels of criticality number 11 and isolated changes in vegetation are filtered out.</p>
+<h2 id="5-discussion">5. Discussion<a class="headerlink" href="#5-discussion" title="Permanent link">&para;</a></h2>
+<h3 id="51-interpretation-of-the-results">5.1 Interpretation of the results<a class="headerlink" href="#51-interpretation-of-the-results" title="Permanent link">&para;</a></h3>
+<p>In <a href="#41-granularity-of-results">Section 4.1</a>, the voxel count for the different granularity levels highlights the number of detections that would have to be controlled at each level. For the clustered detections, which would be the principal mapping to use, only 2.30% of all evaluated voxels are to be controlled. It represents 4.53% of the tile area. The domain expert confirmed that the final amount of voxel to control is reasonable and would allow saving resources compared to the actual situation. <br></p>
+<p>For each granularity level, the percentage of the tile area covered is 2 to 3 times higher than the percentage of voxels considered. It means that between each granularity level, a part of the eliminated voxel does not impact the covered tile area. The reason must be that the area is a 2D measurement while the voxels are positioned in the 3D space and can cover the same area by belonging to the same grid column. The voxels of a same column must be frequently assigned to different criticality buckets. Therefore, the covered tiles area decreases more slowly than the percentage of voxels considered.</p>
+<p>From the results obtained in <a href="#421-distribution-of-the-points-between-criticality-numbers-and-buckets">Section 4.2.1</a>, we see that the vast majority of points from the new point cloud end up in non-problematic voxels. The number of points falling in problematic voxels is limited, which is desired as a high quantity of problematic detections would not help in making the quality assessment faster. We notice, however, a relatively large number of points falling in voxels classified as "grey zone", due to the 8<sup>th</sup> tree branch. These voxels typically exhibit high similarity in their distribution between the <strong>v.1</strong> and the <strong>v.2</strong>, but do not retain precisely the same classes. The decision C will therefore exclude them from a quick assignment to the non-problematic voxels. Such a situation occurs, for example, if a few points of vegetation appear in a zone previously filled only with <em>ground</em> points. This situation generally isn't a classification error and reflects the reality of the terrain. However if it were to be a widespread problem of classification, it needs to be raised to the controller. This is why we preserve those rules which lead to a lot of "grey zone" detections instead of redirecting them to "non-problematic".</p>
+<p>In <a href="#421-distribution-of-the-points-between-criticality-numbers-and-buckets">Section 4.2.1</a>, results are presented for tile A and C on Figures 16 and 17 respectively. Tile A has fewer voxels in the "problematic" and "grey zone" buckets than tile C. It is in accordance with our expectation than urban zones would have more detected changes, as they evolve faster than other areas and have some complex landscape to classify.</p>
+<p>The numbers of <a href="#422-distribution-of-the-criticality-numbers-in-the-clusters">Section 4.2.2</a> show that the majority of clusters and the majority of the voxels in clusters have the criticality number 12, indicating a major change in the class distribution. It is a satisfying point as the variations of the classification across generations were the main focus of this work. Let us not, however, that they dominate 67% of the clusters, but only 50% of the voxels in clusters are assigned to this criticality numbers. On the other hand, the criticality number 9, standing for the appearance of a geometry, represents 28% of the voxels present in clusters while it was only 13% of the clusters. Two possibilities can explain that: the voxels with a geometry appearance are larger than the ones with a major change in the class distribution, or they are more present in clusters that were assigned to another criticality number.</p>
+<p>Results of <a href="#423-distribution-of-the-lidar-classes-in-the-criticality-buckets">Section 4.2.3</a> show that the points of the three main LiDAR classes are assigned predominantly to the "non-problematic" bucket, which makes the map usable. <br>
+For the <em>unclassified</em> points, the majority are deemed in "grey zone". Because these points regroup, among other things, mobile and temporary objects, it is not desirable that every such appearance or disappearance ends up in the primary control. However, geometries which transform from a given class to <em>unclassified</em>, or the opposite, are problematic. That situation happens quite often, as indicated by the 17.43% of points ending in this level. <br>
+For the <em>bridge</em> class, none of the points fall in "non-problematic" because, in this specific tile, a small zone was classified as <em>bridge</em> in <strong>v.2</strong> but no point of that class is present in <strong>v.1</strong>. </p>
+<p>Finally, from the evaluation by the domain expert described in <a href="#43-assessment-of-a-subset-of-detections">Section 4.3</a>, we understand that the voxels are correctly classified into their criticality level, except for some minor cases. Some of the problematic voxels were not rightfully attributed. Even so, six out of nine of those voxels had the criticality number 11, whose detections are removed when applying the clustering. This sample evaluation instills confidence that the level of urgency attributed to the voxels corresponds well to the situation contained within, making it relevant for usage in a control of the classification.</p>
+<h3 id="52-discussion-of-the-results">5.2 Discussion of the results<a class="headerlink" href="#52-discussion-of-the-results" title="Permanent link">&para;</a></h3>
+<p>As seen in the previous section, the proposed method generates a somewhat reasonable amount of problematic detections, accompanied by a considerable volume of instances falling within the "grey zone". The map for this intermediate level may not be suitable for initial quality control but can offer a more detailed delineation for precise assessment. The map of non-problematic voxels could also be used to highlight the areas requiring no quality assessment given the absence of changes in the distribution.</p>
+<p>The proportion of points identified as problematic is very low (1-4%). However, their visual representation can be overwhelming for the controller, given the high number of scattered detections. To address this challenge, we introduced the clustering and filtering of detections. Though this allows for visually more understandable areas, it naturally sacrifices the exhaustivity of the detections. For example, low wall and hedge were frequently classified differently between the <strong>v.1</strong> and the <strong>v.2</strong>. Due to the clustering favoring areas with grouped elements, such elongated and thin objects can be cut out of the mapping. Possible future works could study other filtering methods to attenuate this issue.</p>
+<p>Currently, no full assessment of the detections on a tile was performed. Therefore, it is hard to estimate the quantity of detections that would be missing in clusters or in the "problematic" bucket.</p>
+<p>For the precision of the results, the evaluation of the small subset of detections by the domain experts indicates that they are relevant and possibly useful as a tool for quality assessment.</p>
+<p>While the developed method allows for finding changes between two point clouds, it has some limitations. First, it only works if the classes from <strong>v.2</strong> can be mapped to overarching classes in <strong>v.1</strong>. This is not always the case, due to the lack of consensus between LiDAR providers. Another limitation comes from the voxel size. Indeed, by employing fixed volumes of 3.375 m<sup>3</sup> to detect the changes, points not contributing to the actual change will also be included in the highlighted areas. A possible improvement would be to refine the detection area after the clustering. Another thing to consider is that the method work on a single tile at a time, without consideration of the tiles around it. This can potentially affect the clustering step as voxels on the border have fewer neighbors. To ensure that this does not affect the results a buffer could be taken around the tile. This buffer could also ensure that the total tile size is a multiple of the voxel size.</p>
+<h2 id="6-conclusion">6. Conclusion<a class="headerlink" href="#6-conclusion" title="Permanent link">&para;</a></h2>
+<p>Quality assessment of LiDAR classification is a demanding task, requiring a considerable amount of work by an operator. With the proposed method, controllers can leverage a previous acquisition to highlight changes in the new one. The detections are divided in different levels of urgency, allowing for control of various granularity levels. </p>
+<p>The limited number of voxels preserved in the map of primary changes encourages the prospect of its usefulness in a quality assessment process. The positive review of a sample of voxels by the domain expert further confirms the method quality.</p>
+<p>A possible step to make the detections more suited to experts' specific needs could be to review a broader sample of voxel by criticality buckets to optimize the thresholds of the decision tree.</p>
+<p>In the planned future, the cluster produced by the algorithm will be tested on tiles in another region and with other LiDAR data. If the results are deemed satisfying, the method will be tested in swisstopo's workflow when the production for the next generation of swissSURFACE3D begins. The test in the workflow should enable a control of the detection precision and exhaustively, as well as an estimation of the time spared for an operator by working with the developed algorithm.</p>
+<p>By the domain expert's evaluation, out of all the operations applied during a quality assessment, the developed method touches on operations which make up 52.7% of the control time. These operations could be made faster by having zones of interest already precomputed.</p>
+<h2 id="7-acknowledgements">7. Acknowledgements<a class="headerlink" href="#7-acknowledgements" title="Permanent link">&para;</a></h2>
+<p>This project was made possible thanks to the swisstopo's LiDAR team that submitted this task to the STDL and provided regular feedback. Special thanks are extended to Florian Gandor for his expertise and his meticulous review of the method and results. In addition, we are very appreciative of the active participation of Matthew Parkan and Mayeul Gaillet to our meetings.</p>
+<h2 id="8-bibliography">8. Bibliography<a class="headerlink" href="#8-bibliography" title="Permanent link">&para;</a></h2>
+<div class="footnote">
+<hr />
+<ol>
+<li id="fn:1">
+<p>Xin Wang, HuaZhi Pan, Kai Guo, Xinli Yang, and Sheng Luo. The evolution of LiDAR and its application in high precision measurement. <em>IOP Conference Series: Earth and Environmental Science</em>, 502(1):012008, May 2020. URL: <a href="https://iopscience.iop.org/article/10.1088/1755-1315/502/1/012008">https://iopscience.iop.org/article/10.1088/1755-1315/502/1/012008</a> (visited on 2024-02-20), <a href="https://doi.org/10.1088/1755-1315/502/1/012008">doi:10.1088/1755-1315/502/1/012008</a>.&#160;<a class="footnote-backref" href="#fnref:1" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+</li>
+<li id="fn:2">
+<p>swissSURFACE3D. URL: <a href="https://www.swisstopo.admin.ch/fr/modele-altimetrique-swisssurface3d#technische_details">https://www.swisstopo.admin.ch/fr/modele-altimetrique-swisssurface3d#technische_details</a> (visited on 2024-01-16).&#160;<a class="footnote-backref" href="#fnref:2" title="Jump back to footnote 2 in the text">&#8617;</a></p>
+</li>
+<li id="fn:3">
+<p>Uwe Stilla and Yusheng Xu. Change detection of urban objects using 3D point clouds: A review. <em>ISPRS Journal of Photogrammetry and Remote Sensing</em>, 197:228–255, March 2023. URL: <a href="https://linkinghub.elsevier.com/retrieve/pii/S0924271623000163">https://linkinghub.elsevier.com/retrieve/pii/S0924271623000163</a> (visited on 2023-10-05), <a href="https://doi.org/10.1016/j.isprsjprs.2023.01.010">doi:10.1016/j.isprsjprs.2023.01.010</a>.&#160;<a class="footnote-backref" href="#fnref:3" title="Jump back to footnote 3 in the text">&#8617;</a></p>
+</li>
+<li id="fn:4">
+<p>Yulan Guo, Hanyun Wang, Qingyong Hu, Hao Liu, Li Liu, and Mohammed Bennamoun. Deep Learning for 3D Point Clouds: A Survey. June 2020. arXiv:1912.12033 [cs, eess]. URL: <a href="http://arxiv.org/abs/1912.12033">http://arxiv.org/abs/1912.12033</a> (visited on 2024-01-18).&#160;<a class="footnote-backref" href="#fnref:4" title="Jump back to footnote 4 in the text">&#8617;</a></p>
+</li>
+<li id="fn:5">
+<p>Harith Aljumaily, Debra F. Laefer, Dolores Cuadra, and Manuel Velasco. Voxel Change: Big Data–Based Change Detection for Aerial Urban LiDAR of Unequal Densities. <em>Journal of Surveying Engineering</em>, 147(4):04021023, November 2021. Publisher: American Society of Civil Engineers. URL: <a href="https://ascelibrary.org/doi/10.1061/%28ASCE%29SU.1943-5428.0000356">https://ascelibrary.org/doi/10.1061/%28ASCE%29SU.1943-5428.0000356</a> (visited on 2023-11-20), <a href="https://doi.org/10.1061/(ASCE)SU.1943-5428.0000356">doi:10.1061/(ASCE)SU.1943-5428.0000356</a>.&#160;<a class="footnote-backref" href="#fnref:5" title="Jump back to footnote 5 in the text">&#8617;</a></p>
+</li>
+<li id="fn:6">
+<p>J. Gehrung, M. Hebel, M. Arens, and U. Stilla. A VOXEL-BASED METADATA STRUCTURE FOR CHANGE DETECTION IN POINT CLOUDS OF LARGE-SCALE URBAN AREAS. <em>ISPRS Annals of the Photogrammetry, Remote Sensing and Spatial Information Sciences</em>, IV-2:97–104, May 2018. Conference Name: ISPRS TC II Mid-term Symposium \textless q\textgreater Towards Photogrammetry 2020\textless /q\textgreater  (Volume IV-2) - 4&amp;ndash;7 June 2018, Riva del Garda, Italy Publisher: Copernicus GmbH. URL: <a href="https://isprs-annals.copernicus.org/articles/IV-2/97/2018/isprs-annals-IV-2-97-2018.html">https://isprs-annals.copernicus.org/articles/IV-2/97/2018/isprs-annals-IV-2-97-2018.html</a> (visited on 2024-01-18), <a href="https://doi.org/10.5194/isprs-annals-IV-2-97-2018">doi:10.5194/isprs-annals-IV-2-97-2018</a>.&#160;<a class="footnote-backref" href="#fnref:6" title="Jump back to footnote 6 in the text">&#8617;</a></p>
+</li>
+<li id="fn:7">
+<p>Yusheng Xu, Xiaohua Tong, and Uwe Stilla. Voxel-based representation of 3D point clouds: Methods, applications, and its potential use in the construction industry. <em>Automation in Construction</em>, 126:103675, June 2021. URL: <a href="https://www.sciencedirect.com/science/article/pii/S0926580521001266">https://www.sciencedirect.com/science/article/pii/S0926580521001266</a> (visited on 2024-01-18), <a href="https://doi.org/10.1016/j.autcon.2021.103675">doi:10.1016/j.autcon.2021.103675</a>.&#160;<a class="footnote-backref" href="#fnref:7" title="Jump back to footnote 7 in the text">&#8617;</a></p>
+</li>
+<li id="fn:8">
+<p>Zhenwei Shi, Zhizhong Kang, Yi Lin, Yu Liu, and Wei Chen. Automatic Recognition of Pole-Like Objects from Mobile Laser Scanning Point Clouds. <em>Remote Sensing</em>, 10(12):1891, 2018. Number: 12, Publisher: Multidisciplinary Digital Publishing Institute. URL: <a href="https://www.mdpi.com/2072-4292/10/12/1891">https://www.mdpi.com/2072-4292/10/12/1891</a> (visited on 2024-01-19), <a href="https://doi.org/10.3390/rs10121891">doi:10.3390/rs10121891</a>.&#160;<a class="footnote-backref" href="#fnref:8" title="Jump back to footnote 8 in the text">&#8617;</a></p>
+</li>
+<li id="fn:9">
+<p>Sung-Hyuk Cha. Comprehensive Survey on Distance/Similarity Measures between Probability Density Functions. <em>INTERNATIONAL JOURNAL OF MATHEMATICAL MODELS AND METHODS IN APPLIED SCIENCES</em>, 4(1):300–307, 2007. URL: <a href="https://pdodds.w3.uvm.edu/research/papers/others/everything/cha2007a.pdf">https://pdodds.w3.uvm.edu/research/papers/others/everything/cha2007a.pdf</a> (visited on 2024-03-14).&#160;<a class="footnote-backref" href="#fnref:9" title="Jump back to footnote 9 in the text">&#8617;</a></p>
+</li>
+<li id="fn:10">
+<p>[Volume of Labels] Compute Clique Statistics. URL: <a href="https://brainvisa.info/axon/fr/processes/AtlasComputeCliqueFromLabels.html">https://brainvisa.info/axon/fr/processes/AtlasComputeCliqueFromLabels.html</a> (visited on 2024-02-23).&#160;<a class="footnote-backref" href="#fnref:10" title="Jump back to footnote 10 in the text">&#8617;</a></p>
+</li>
+</ol>
+</div>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2020-2021 Swiss Territorial Data Lab
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        <div class="md-social">
+  
+    
+    
+    <a href="https://github.com/swiss-territorial-data-lab" target="_blank" rel="noopener" title="Repo on Github" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+    </a>
+  
+    
+    
+    <a href="mailto:<info@stdl.ch>" target="_blank" rel="noopener" title="Send us an eMail!" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M498.1 5.6c10.1 7 15.4 19.1 13.5 31.2l-64 416c-1.5 9.7-7.4 18.2-16 23s-18.9 5.4-28 1.6l-126.3-52.5-40.1 74.5c-5.2 9.7-16.3 14.6-27 11.9S192 499 192 488v-96c0-5.3 1.8-10.5 5.1-14.7l165.3-212.6c2.5-7.1-6.5-14.3-13-8.4l-179 161.9-32 28.9c-9.2 8.3-22.3 10.6-33.8 5.8l-85-35.4C8.4 312.8.8 302.2.1 290s5.5-23.7 16.1-29.8l448-256c10.7-6.1 23.9-5.5 34 1.4z"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.expand"], "search": "../assets/javascripts/workers/search.5bf1dace.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.078830c0.min.js"></script>
+      
+        <script src="../assets/javascripts/config.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>
