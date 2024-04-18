@@ -1,0 +1,1300 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.0.14">
+    
+    
+      
+        <title>Automatic Soil Segmentation - Swiss Territorial Data Lab</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.113286f1.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.a0c5b2b5.min.css">
+      
+      
+
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="" data-md-color-accent="">
+  
+    
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#automatic-soil-segmentation" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Swiss Territorial Data Lab" class="md-header__button md-logo" aria-label="Swiss Territorial Data Lab" data-md-component="logo">
+      
+  <img src="../assets/logo-stdl-transparent.svg" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Swiss Territorial Data Lab
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Automatic Soil Segmentation
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/swiss-territorial-data-lab" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.3.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    STDL on Github
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Swiss Territorial Data Lab" class="md-nav__button md-logo" aria-label="Swiss Territorial Data Lab" data-md-component="logo">
+      
+  <img src="../assets/logo-stdl-transparent.svg" alt="logo">
+
+    </a>
+    Swiss Territorial Data Lab
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/swiss-territorial-data-lab" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.3.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    STDL on Github
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        Homepage
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://github.com/swiss-territorial-data-lab" class="md-nav__link">
+        GitHub
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-introduction" class="md-nav__link">
+    1. Introduction
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-acceptance-criteria-and-concerned-metrics" class="md-nav__link">
+    2. Acceptance criteria and concerned metrics
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Acceptance criteria and concerned metrics">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21-metrics" class="md-nav__link">
+    2.1 Metrics
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22-qualitative-assessment" class="md-nav__link">
+    2.2 Qualitative Assessment
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-data" class="md-nav__link">
+    3. Data
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Data">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31-input-data" class="md-nav__link">
+    3.1 Input Data
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32-ground-truth" class="md-nav__link">
+    3.2 Ground Truth
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-existing-models" class="md-nav__link">
+    4. Existing Models
+  </a>
+  
+    <nav class="md-nav" aria-label="4. Existing Models">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#41-institut-national-de-linformation-geographique-et-forestiere-ign" class="md-nav__link">
+    4.1 Institut National de l’Information Géographique et Forestière (IGN)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#42-haute-ecole-dingenierie-et-de-gestion-du-canton-de-vaud-heig-vd" class="md-nav__link">
+    4.2 Haute Ecole d'Ingénierie et de Gestion du Canton de Vaud (HEIG-VD)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#43-office-federal-de-la-statistique-ofs" class="md-nav__link">
+    4.3 Office Fédéral de la Statistique (OFS)
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-methodology" class="md-nav__link">
+    5. Methodology
+  </a>
+  
+    <nav class="md-nav" aria-label="5. Methodology">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#51-infrastructure" class="md-nav__link">
+    5.1 Infrastructure
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#52-evaluation" class="md-nav__link">
+    5.2 Evaluation
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#53-fine-tuning" class="md-nav__link">
+    5.3 Fine-Tuning
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-results" class="md-nav__link">
+    6. Results
+  </a>
+  
+    <nav class="md-nav" aria-label="6. Results">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#61-evaluation" class="md-nav__link">
+    6.1 Evaluation
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#62-fine-tuning" class="md-nav__link">
+    6.2 Fine-Tuning
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#63-examplary-inference" class="md-nav__link">
+    6.3 Examplary Inference
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-discussion" class="md-nav__link">
+    7. Discussion
+  </a>
+  
+    <nav class="md-nav" aria-label="7. Discussion">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#71-evaluation" class="md-nav__link">
+    7.1 Evaluation
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#72-fine-tuning" class="md-nav__link">
+    7.2 Fine-Tuning
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#73-remarks-from-beneficiaries" class="md-nav__link">
+    7.3 Remarks from Beneficiaries
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-conclusion" class="md-nav__link">
+    8. Conclusion
+  </a>
+  
+    <nav class="md-nav" aria-label="8. Conclusion">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#81-limitations" class="md-nav__link">
+    8.1 Limitations
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#82-outlook" class="md-nav__link">
+    8.2 Outlook
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#83-acknowledgements" class="md-nav__link">
+    8.3 Acknowledgements
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9-appendices" class="md-nav__link">
+    9. Appendices
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#10-bibliography" class="md-nav__link">
+    10. Bibliography
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="automatic-soil-segmentation">Automatic Soil Segmentation<a class="headerlink" href="#automatic-soil-segmentation" title="Permanent link">&para;</a></h1>
+<p>Nicolas Beglinger (swisstopo) - Clotilde Marmy (ExoLabs) - Alessandro Cerioni (Canton of Geneva) - Roxane Pott (swisstopo) - Thilo Dürr-Auster (Canton of Fribourg) - Daniel Käser (Canton of Fribourg)</p>
+<p>Proposed by the <a href="https://www.fr.ch/dime/sen">Service de l'environnement</a> (SEn) of the Canton of Fribourg - PROJ-SOILS<br/>
+May 2023 to April 2024 - Published in April 2024</p>
+<p>All code is available on <a href="https://github.com/swiss-territorial-data-lab/proj-soils">GitHub</a>.</p>
+<p><em><strong>Abstract</strong>: This project focuses on developing an automated methodology to distinguish areas covered by pedological soil from areas comprised of non-soil. The goal is to generate high-resolution maps (10cm) to aid in the location and assessment of polluted soils. Towards this end, we utilize deep learning models to classify land cover types using raw, raster-based aerial imagery and digital elevation models (DEMs). Specifically, we assess models developed by the Institut National de l’Information Géographique et Forestière (IGN), the Haute Ecole d'Ingénierie et de Gestion du Canton de Vaud (HEIG-VD), and the Office Fédéral de la Statistique (OFS). The performance of the models is evaluated with the Matthew's correlation coefficient (MCC) and the Intersection over Union (IoU), as well as with qualitatifve assessments conducted by the beneficiaries of the project. In addition to testing pre-existing models, we fine-tuned the model developed by the HEIG-VD on a dataset specifically created for this project. The fine-tuning aimed to optimize the model performance on the specific use-case and to adapt it to the characteristics of the dataset: higher resolution imagery, different vegetation appearances due to seasonal differences, and a unique classification scheme. Fine-tuning with a mixed-resolution dataset improved the model performance of its application on lower-resolution imagery, which is proposed to be a solution to square artefacts that are common in inferences of attention-based models. Reaching an MCC score of 0.983, the findings demonstrate promising performance. The derived model produces satisfactory results, which have to be evaluated in a broader context before being published by the beneficiaries. Lastly, this report sheds light on potential improvements and highlights considerations for future work.</em></p>
+<h2 id="1-introduction">1. Introduction<a class="headerlink" href="#1-introduction" title="Permanent link">&para;</a></h2>
+<p>Polluted soils present diverse health risks. In particular, contamination with lead, mercury, and polycyclic aromatic hydrocarbons (PAHs) currently mobilizes the Federal Office for the Environment <sup id="fnref:1"><a class="footnote-ref" href="#fn:1">1</a></sup>. Therefore, it is necessary to know about the location of contaminated soils, like for prevention and management of soil displacement during construction works.</p>
+<p>Current maps indicating the land cover or land use are often only accurate to the parcel level and therefore imprecise near houses (a property often includes a house and a garden), although those areas are especially prone to contamination <sup id="fnref:2"><a class="footnote-ref" href="#fn:2">2</a></sup>. The Fribourgese Service de l'environnement wants to improve the knowledge about the location of contaminated soils. In this process, two phases can be distinguished:</p>
+<ol>
+<li>Find out about the precise location of soils.</li>
+<li>Assess the contamination within the identified soils (not part of this project).</li>
+</ol>
+<p>The aim of this project is to explore methodologies for the first step only, creating a high-resolution map that distinguishes soil from non-soil areas. The problem of this project can be stated as following:</p>
+<blockquote>
+<p>Identify or develop a model, that is able to distinguish areas covered by pedological soil from areas covered by non-soil land cover, given a raster-based input in the form of aerial imagery and digital elevation models (DEMs).
+</p>
+</blockquote>
+<!-- ####################################          #################################### -->
+<!-- ####################################          #################################### -->
+<!-- ####################################          #################################### -->
+<h2 id="2-acceptance-criteria-and-concerned-metrics">2. Acceptance criteria and concerned metrics<a class="headerlink" href="#2-acceptance-criteria-and-concerned-metrics" title="Permanent link">&para;</a></h2>
+<!-- ####################################          #################################### -->
+<!-- ####################################          #################################### -->
+<!-- ####################################          #################################### -->
+<p>The acceptance criteria describe the conditions that must be met by the outcome of the project, by which the proof-of-concept is considered a success.</p>
+<p>These conditions can be of qualitative or quantitative nature. In the present case, the former ones rely on visual interpretation; the latter ones consist of metrics which measure the performance of the methodologies to evaluate and are easily standardized.</p>
+<p>The chosen evaluation strategies are described below.</p>
+<h3 id="21-metrics">2.1 Metrics<a class="headerlink" href="#21-metrics" title="Permanent link">&para;</a></h3>
+<p>As metrics, the Mathew's correlation coefficient and the intersection over union have been used.</p>
+<p><strong>Mathew's Correlation Coefficient (MCC)</strong>
+The Matthew's correlation coefficient (MCC) offers a balanced evaluation of model performance by incorporating and combining all four components of the confusion matrix: true positives, false positives, true negatives, and false negatives. This makes the metric be effective even in cases of class imbalance, which could be a challenge when working with aerial imagery.</p>
+<div class="arithmatex">\[MCC = \frac{TP \times TN - FP \times FN}{\sqrt{(TP + FP)(TP + FN)(TN + FP)(TN + FN)}}\]</div>
+<p>Where:</p>
+<ul>
+<li><span class="arithmatex">\(TP\)</span> is the number of true positives</li>
+<li><span class="arithmatex">\(TN\)</span> is the number of true negatives</li>
+<li><span class="arithmatex">\(FP\)</span> is the number of false positives</li>
+<li><span class="arithmatex">\(FN\)</span> is the number of false negatives</li>
+</ul>
+<p>The MCC is the only binary classification rate that generates a high score only if the binary predictor was able to correctly predict the majority of positive data instances and the majority of negative data instances. It ranges from -1 to 1, where 1 indicates a perfect prediction, 0 indicates a random prediction, and -1 indicates a perfectly wrong prediction<sup id="fnref:3"><a class="footnote-ref" href="#fn:3">3</a></sup>.</p>
+<p><strong>Intersection over Union (IoU)</strong>
+The IoU, also known as the Jaccard index, measures the overlap between two datasets. In the context of image segmentation, it calculates the ratio of the intersection (the area correctly identified as a certain class) to the union (the total area predicted and actual, combined) of these two areas. This makes the IoU a valuable metric for evaluating the performance of segmentation models. However, it's important to note that the IoU does not take true negatives into account, which can make interpretation challenging in certain cases.</p>
+<div class="arithmatex">\[IoU = \frac{TP}{TP + FP + FN}\]</div>
+<p>Where:</p>
+<ul>
+<li><span class="arithmatex">\(TP\)</span> is the number of true positives</li>
+<li><span class="arithmatex">\(FP\)</span> is the number of false positives</li>
+<li><span class="arithmatex">\(FN\)</span> is the number of false negatives</li>
+</ul>
+<p>The IoU ranges from 0 to 1, where 1 indicates a perfect prediction and 0 indicates no overlap between the ground truth and the prediction. The mIoU is the mean of the IoU values of all classes and is a common metric for semantic segmentation tasks.</p>
+<p>In a binary scenario, the IoU does not render the same scores for the two classes. This means, that either the mIoU is considered to be the final metrics, or one of the two classes <em>soil</em> or <em>non-soil</em> is considered to be the positive or the negative class, respectively. The decision was made that the mIoU, meaning the mean of the IoU for soil and the IoU for non-soil is used in the binary case.</p>
+<h3 id="22-qualitative-assessment">2.2 Qualitative Assessment<a class="headerlink" href="#22-qualitative-assessment" title="Permanent link">&para;</a></h3>
+<p>To incorporate a holistic perspective of the results and to make sure that the evaluation and ranking based on the above metrics correspond to the actually perceived quality of the models, a qualitative assessment is also conducted. For this reason, the beneficiaries were asked to rank predictions of the models qualitatively. If the qualitatively assessed ranking corresponds to the ranking based on the above metrics, we can be confident that the chosen metrics are a good proxy for the actual perceived quality and usability of the models.</p>
+<h2 id="3-data">3. Data<a class="headerlink" href="#3-data" title="Permanent link">&para;</a></h2>
+<p>The models evaluated in the project make use of different data: after inference on images with or without DEM, the obtained predictions were compared to ground truth data. All these data are described in this section.</p>
+<h3 id="31-input-data">3.1 Input Data<a class="headerlink" href="#31-input-data" title="Permanent link">&para;</a></h3>
+<p>As stated in the <a href="#1-introduction">introduction</a>, the explored methodology should work with raw, raster-based data. The following data is provided by swisstopo and well-adapted to our problem:</p>
+<ul>
+<li><strong>SWISSIMAGE RS</strong> is made of orthorectified images with 4 spectral bands: Near infrared, red, green and blue. The original product is delivered in the form of raw image captures with a resolution of 0.1 m and is encoded in 16 bit. However, for lighter processing and normalization, the imagery is converted to regular-sized 8-bit images.</li>
+<li>Since no exact seamlines are provided, it was very difficult to find a strategy to create a mosaic where no tilting artefacts at the border between neighbouring strips occur. Since the imagery was created using a downward-facing pushbroom sensor, objects are only tilted perpendicular to the flight direction. As a result, the tiles could be mosaicked in the flight direction without any artefacts. The resulting mosaic strips where used as the base for ground truth digitization and model training.</li>
+<li><strong>swissSURFACE3D Raster</strong> is a digital surface model (DSM) which represents the earth’s surface including visible and permanent landscape elements such as soil, natural cover, and all sorts of construction work with the exception of power lines and masts. It's spatial resolution is 0.5 m.</li>
+<li><strong>swissALTI3D</strong> is a precise digital elevation model which describes the surface of Switzerland without vegetation and development. Its spatial resolution is 0.5 m.</li>
+</ul>
+<p>The imagery and the data for the DEMs computation were not acquired at the same time, which means that the depicted land cover can differ between the two datasets. An important factor in this respect is the season (leaf-on or leaf-off). Data for swisstopo's DEMs are always acquired in the leaf-off period, which means that the used imagery should also have been acquired in the leaf-off period. To get the best fit regarding temporal and seasonal similarity, imagery from 2020 and DEMs from 2019 were used.</p>
+<h3 id="32-ground-truth">3.2 Ground Truth<a class="headerlink" href="#32-ground-truth" title="Permanent link">&para;</a></h3>
+<p>The ground truth data for this project is used to compare the predictions of the models to the actual land cover types and to fine-tune an existing model for the project's specific needs. It was digitized by the beneficiaries of the project and is based on the SWISSIMAGE RS  acquisition from 2020. As vector data allows for a more precise delineation of the land cover types, the ground truth data was digitized in a vector format. All contiguous areas comprised of the same land cover type were digitized as polygons.</p>
+<h4 id="classification-scheme">Classification Scheme<a class="headerlink" href="#classification-scheme" title="Permanent link">&para;</a></h4>
+<p>Although the goal of this project is to distinguish soil from non-soil areas, the ground truth data is classified into more detailed classes. This is due to the fact that it is easier to identify possible shortcomings of the models when the classes are more detailed. With a  classification, techniques like confusion matrices can be used to identify which classes are often confused with each other, leading also to a better understanding about what areas should be covered in additional ground truth digitizations.</p>
+<p>During development of the classification scheme, the focus lied on the distinction between soil and non-soil, which means that every class can be attributed to either soil, or non-soil, thereby respecting the legal definitions of soil according to the <em>Federal Ordinance on Soil Pollutions</em><sup id="fnref:4"><a class="footnote-ref" href="#fn:4">4</a></sup>. The final classification scheme of the ground truth data is a product of an iterative process and has been subject of compromises between an optimal fit to the legal definitions and practical limitations like the possibility of a mere optical identification of the classes. Essentially, the scheme consists of 17 classes. However, during <a href="#62-fine-tuning">fine-tuning</a>, it was found that some classes are too heavily underrepresented to be learnt by the model. As a result, the classes were merged into a new scheme consisting of 12 classes. Another feature of the classification scheme to keep in mind is that it is optimized for the Fribourgese territory, which means that some classes may not be directly applicable to other regions. The classification scheme is depicted in Figure 1.</p>
+<div align="center" style="font-style: italic">
+  <img
+  src="images/gt_classes.png"
+  alt="Classification Scheme of the Ground Truth Data. Soil classes are depicted in green."
+  width = "60%" >
+  <figcaption>Figure 1: Classification scheme of the ground truth data. Soil classes are depicted in green.</figcaption>
+</div>
+
+<h4 id="extent">Extent<a class="headerlink" href="#extent" title="Permanent link">&para;</a></h4>
+<p>The ground truth has been digitized on the Fribourgese territory on about 9.6 km², including diverse land cover types. The area of interest is depicted in Figure 2.</p>
+<div align="center" style="font-style: italic">
+  <img
+  src="images/GT_overview_2.png"
+  alt="Ground Truth of the area of interest"
+  width = "100%" >
+  <figcaption>Figure 2: Ground truth of the area of interest.</figcaption>
+</div>
+
+<h2 id="4-existing-models">4. Existing Models<a class="headerlink" href="#4-existing-models" title="Permanent link">&para;</a></h2>
+<p>There are no existing models that directly fit to the project's problem: models directly outputing georeferenced, binary raster-images distinguishing soil from non-soil. However, there are models that are able to classify land cover types on aerial imagery. Three institutions have developed such models which are assessed in the evaluation section. All of them are deep learning neural networks. In the following subchapters, the models are discussed briefly.</p>
+<h3 id="41-institut-national-de-linformation-geographique-et-forestiere-ign">4.1 Institut National de l’Information Géographique et Forestière (IGN)<a class="headerlink" href="#41-institut-national-de-linformation-geographique-et-forestiere-ign" title="Permanent link">&para;</a></h3>
+<p>The <em>Département d'Appui à l'Innovation</em> (DAI) at IGN has implemented three AI models for land cover segmentation: odeon-unet-vgg16, smp-unet-resnet34-imagenet, and smp-fpn-resnet34-imagenet, each trained with two input modalities, named RVBI and RVBIE, resulting in six configurations.</p>
+<p>The model architectures are:</p>
+<ol>
+<li><strong>odeon-unet-vgg16</strong>: IGN's current production model for IGN's layer <em>Occupation du sol à grande échelle (OCSGE)</em>. It is based on <em>U-Net</em> architecture with a <em>vgg16</em> encoder, not pre-trained. It was trained with IGN’s own utility <em>Odeon</em>.</li>
+<li><strong>smp-unet-resnet34-imagenet</strong>: This <em>U-Net</em> architecture model uses a <em>resnet34</em> encoder, pre-trained on the <em>ImageNet</em> dataset. It was trained with the library <em>Segmentation Models (SMP)</em> <sup id="fnref:5"><a class="footnote-ref" href="#fn:5">5</a></sup>.</li>
+<li><strong>smp-fpn-resnet34-imagenet</strong>: Also trained using <em>SMP</em>, this model employs <em>FPN</em> architecture with a <em>resnet34</em> encoder, pre-trained on <em>ImageNet</em>.</li>
+</ol>
+<p>The input modalities are:</p>
+<ol>
+<li>RVBI: <strong>R</strong>ouge (red) <strong>V</strong>ert (green) <strong>B</strong>leu (blue) <strong>I</strong>nfrarouge (near infrared)</li>
+<li>RVBIE: <strong>R</strong>ouge (red) <strong>V</strong>ert (green) <strong>B</strong>leu (blue) <strong>I</strong>nfrarouge (near infrared) <strong>E</strong>levation</li>
+</ol>
+<p>IGN's own assessment of these 6 configurations suggests that <em>resnet34</em> encoder models, with their larger receptive fields, generally outperform <em>vgg16</em> models, benefiting from the spatial context in prediction. The pre-training with <em>ImageNet</em> further enhances model performance. Current evaluations of IGN are focusing on models from the <a href="https://www.ign.fr/agenda/flair-one-challenge-ia-et-occupation-du-sol">FLAIR-1</a> challenge, which may replace existing models in production.</p>
+<p>The FLAIR-1 Challenge was designed to enhance artificial intelligence (AI) methods for land cover mapping. Launched on November 21, 2022, the challenge focused on the FLAIR-1 (<strong>F</strong>rench <strong>L</strong>and cover from <strong>A</strong>erospace <strong>I</strong>mage<strong>R</strong>y) dataset, one of the largest datasets for training AI models in land cover mapping. The dataset included data from over 50 departments, encompassing more than 20 billion annotated pixels, representing the diversity of the French metropolitan territory. The total area of the ground truth data is calculated as:</p>
+<div class="arithmatex">\[A = \frac{(512px*0.2\frac{m}{px})^2 * 77412\ tiles}{10^6} = 811.7 km^2\]</div>
+<p>All of the used model architectures of the IGN are in the family of the convolutional neural networks (CNNs), which are a type of deep learning algorithm. Inspired by biological processes, CNNs implement patterns of connectivity between artificial neurons similar to the organization in the biological visual system. CNNs are particularly effective in image recognition tasks, as they can automatically learn features from the input data<sup id="fnref:6"><a class="footnote-ref" href="#fn:6">6</a></sup>.</p>
+<p>According to IGN, the main challenges in model performance lie in adapting to varying radiometric calibrations and vegetation appearances in different datasets, such as the lack of orthophotos taken during winter (“leaf-off”) in the French training data. Ongoing efforts are aimed at improving model generalization across different types of radiometry and training with winter images to account for leafless vegetation appearances.</p>
+<h3 id="42-haute-ecole-dingenierie-et-de-gestion-du-canton-de-vaud-heig-vd">4.2 Haute Ecole d'Ingénierie et de Gestion du Canton de Vaud (HEIG-VD)<a class="headerlink" href="#42-haute-ecole-dingenierie-et-de-gestion-du-canton-de-vaud-heig-vd" title="Permanent link">&para;</a></h3>
+<p>The Institute of Territorial Engineering (INSIT) at the HEIG-VD has participated in the FLAIR-1 challenge.</p>
+<p>INSIT use a Mask2Former<sup id="fnref:7"><a class="footnote-ref" href="#fn:7">7</a></sup> architecture, which is an attention-based model. Attention-based models in computer vision are neural networks that selectively focus on certain areas of an image during processing. They also mimic the biological visual system by concentrating on specific parts of an image while ignoring others <sup id="fnref:8"><a class="footnote-ref" href="#fn:8">8</a></sup>.</p>
+<p>The researchers at HEIG-VD could not prove a significant performance increase in including the near-infrared (NIR) channel and/or a DEM. As a result, their model works with RGB imagery only.</p>
+<h3 id="43-office-federal-de-la-statistique-ofs">4.3 Office Fédéral de la Statistique (OFS)<a class="headerlink" href="#43-office-federal-de-la-statistique-ofs" title="Permanent link">&para;</a></h3>
+<p>OFS has also created a deep learning model prototype to automatically segment land cover types. However, different than the models of IGN and  HEIG-VD, it works with two steps:</p>
+<ol>
+<li>The input imagery is processed by the <em>Segment Anything Model (SAM)</em> by Meta <sup id="fnref:9"><a class="footnote-ref" href="#fn:9">9</a></sup>. This step is used to create segments of pixels that belong to the same class without labeling the produced segments.</li>
+<li>In a second step, the formerly produced segments are classified using a part of the <em>ADELE</em> pipeline, which is designed to automatize the acquisition of the <a href="https://www.bfs.admin.ch/bfs/fr/home/statistiques/espace-environnement/enquetes/area.html"><em>Statistique suisse de la superficie</em></a>, a point sampling grid with a mesh width of 100 meters. The data points on this grid are only representative for the exact coordinate that they lay on, not for the 100 meter square they are in, which means that the ground truth cannot be treated as an image <sup id="fnref2:10"><a class="footnote-ref" href="#fn:10">10</a></sup>. As a result, their model has been trained to classify the land cover class of only the centre pixel in an input image. To classify a segment, then, the model is used to classify a small number of sample pixels of a segment and the most frequent class is chosen as the class of the segment. The used architecture is a ConvNeXtLarge<sup id="fnref:11"><a class="footnote-ref" href="#fn:11">11</a></sup> architecture, which is a CNN. The model is limited to RGB imagery only and has been trained with a spatial resolution of 25 cm.</li>
+</ol>
+<h2 id="5-methodology">5. Methodology<a class="headerlink" href="#5-methodology" title="Permanent link">&para;</a></h2>
+<p>The Methodology section describes the infrastructure used to run the models and to reproduce the project. Furthermore, it describes precisely the evaluation and fine-tuning approaches.</p>
+<h3 id="51-infrastructure">5.1 Infrastructure<a class="headerlink" href="#51-infrastructure" title="Permanent link">&para;</a></h3>
+<p>The term “infrastrucutre” refers here to both hardware and software resources.</p>
+<h4 id="hardware">Hardware<a class="headerlink" href="#hardware" title="Permanent link">&para;</a></h4>
+<p>Most of the development of this project was conducted on a MacBook Pro (2021) with an M1 Pro chip. To accelerate the inference and fine-tuning of the models, virtual machines (VMs) were used. The VMs were provided by <a href="https://www.infomaniak.com">Infomaniak</a> and were equipped with 16 CPUs, 32 GB of RAM, and an NVIDIA Tesla T4 GPU.</p>
+<h4 id="reproducibility">Reproducibility<a class="headerlink" href="#reproducibility" title="Permanent link">&para;</a></h4>
+<p>The code is versioned using Git and hosted on the <a href="https://github.com/swiss-territorial-data-lab/proj-soils"><em>Swiss Territorial Data Lab</em></a> GitHub repository. To ensure reproducibility across different environments, the environment is containerized using Docker<sup id="fnref:12"><a class="footnote-ref" href="#fn:12">12</a></sup>. <!-- Docker as hyperlink and not as reference ?--></p>
+<h4 id="deep-learning-framework">Deep Learning Framework<a class="headerlink" href="#deep-learning-framework" title="Permanent link">&para;</a></h4>
+<p>We received the source code and the model weights of the HEIG-VD model and of the OFS model. Both models are implemented using the deep learning framework PyTorch<sup id="fnref:13"><a class="footnote-ref" href="#fn:13">13</a></sup>. The HEIG-VD model uses an additional library called mmsegmentation<sup id="fnref:14"><a class="footnote-ref" href="#fn:14">14</a></sup>, which is built on top of PyTorch and provides a high-level interface for training and evaluating semantic segmentation models.</p>
+<h3 id="52-evaluation">5.2 Evaluation<a class="headerlink" href="#52-evaluation" title="Permanent link">&para;</a></h3>
+<p>To realize the evaluation of the afore-mentionned models, reclassification of land cover classes into soil classes were necessary, as well as the definition of a common extent to the availabe inferences.
+Furthermore, the metrics were implemented in the workflow and a rigorous qualitative assessment was defined.</p>
+<h4 id="inference">Inference<a class="headerlink" href="#inference" title="Permanent link">&para;</a></h4>
+<p>In the beginning of the evaluation phase, the inferences of the models were generated directly by the aforementioned institutions. Later, after receiving the model weights and the source codes, we could infere from the models of the HEIG-VD and OFS directly.</p>
+<h4 id="reclassification">Reclassification<a class="headerlink" href="#reclassification" title="Permanent link">&para;</a></h4>
+<p>As already touched upon, the above-stated models do not directly output binary (soil/non-soil) raster images, but output segmented rasters with multiple classes. The classification scheme depends on the data that was used for training. The classes of the models of IGN and HEIG-VD are almost identical, since they have both been trained on French imagery and ground truth. They differ only in the numbering of the classes. The model of OFS, however outputs completely different classes. To harmonize the results of all three institution’s models and to make them fit for out problem at hand, all outputs have been reclassified to the same classification scheme named “Package ID”. The reason for this name is that there is an N:M relationship between the IGN-originated classes and the Fribourg ground truth classes. One “package” thus consists of all the classes that are connected via N:M relationships. The mapping of the classes is depicted in Figures 3 and 4.</p>
+<div style="display: flex; justify-content: center;">
+  <div align="center" style="font-style: italic; margin-right: 10px;">
+  <img
+  src="images/classes_jointable_IGN-FLAIR.png"
+  alt="Mapping between the package ID and the classification schemes of IGN and HEIG-VD"
+  width = "100%" >
+  <figcaption>Figure 3: Mapping between the package ID and the classification schemes of IGN and HEIG-VD.</figcaption>
+  </div>
+
+  <div align="center" style="font-style: italic; margin-left: 10px;">
+  <img
+  src="images/classes_jointable_OFS.png"
+  alt="Mapping between the package ID and the classification scheme of OFS"
+  width = "95%" >
+  <figcaption>Figure 4: Mapping between the package ID and the classification scheme of OFS.</figcaption>
+  </div>
+</div>
+
+<h4 id="extents">Extents<a class="headerlink" href="#extents" title="Permanent link">&para;</a></h4>
+<p>From the extent originally covered by the ground truth, a smaller extent had to be defined during the evaluation for reasons of inferences availability and to understand the performance of the different models.</p>
+<p><strong>Extent 1</strong>
+Because, we did not have inferences of all models for the whole area of the ground truth, we did not have the possibility to evaluate all the models on the whole extent. To allow for a fair comparison between the models, the evaluation was therefore conducted on the largest possible extent, which is the intersection between all the received inferences and the ground truth. This extent is called “Extent 1” and makes up a total area of about 0.42 km². The area can be seen in Figure 5.</p>
+<div align="center" style="font-style: italic">
+  <img
+  src="images/extent1.png"
+  alt="Ground Truth of Extent 1"
+  width = "50%" >
+  <figcaption>Figure 5: Ground truth of Extent 1.</figcaption>
+</div>
+
+<p><strong>Masked Extent 1: Areas around buildings</strong>
+In the Extent 1, a great share of the area consists of vegetated soil. To check the performance only in the urban areas, the evaluation is also conducted for only the subset of pixels that are within 20 m of buildings. Although the extent of this modification is the same as Extent 1, it is treated like a separate extent, called “extent1-masked”, which is depicted in Figure 6.</p>
+<div align="center" style="font-style: italic">
+  <img
+  src="images/extent1-masked.png"
+  alt="Ground Truth of Extent 1, displayed by the HEIG-VD predictions."
+  width = "50%" >
+  <figcaption>Figure 6: Ground truth of Extent 1, masked to focus on the areas around buildings.</figcaption>
+</div>
+
+<p><strong>Extent 2</strong>
+The output of the HEIG-VD's model is affected by square-shaped artefacts, which can be seen in Figure 7. The squares coincide with the size of the model's receptive field, which is 512x512 pixels. With an image resolution of 10 cm, the artefacts are thus of size 51.2x51.2 m, or with an image resolution of 20 cm of size 102.4x102.4 m.</p>
+<p>There are to observations regarding the occurence of the artefacts:</p>
+<ol>
+<li>Input tiles that are very dark and/or input tiles without much context or high-frequency texture are especially hard to classify, even for humans.</li>
+<li>A sudden break between two classes in an image with only low-frequency texture is very improbable in reality. As a result, often a whole low-frequency tile is predicted to be the same class. If there is very smooth gradient of texture in the imagery on a larger scale, one whole tile could be predicted to be one class, and the next whole tile could be predicted to be another class, leading to very hard breaks in the reconnected images.</li>
+</ol>
+<p>The artefacts, then, are probably a combination of those two factors.</p>
+<div align="center" style="font-style: italic; margin-right: 10px;">
+  <img
+  src="images/artefacts.jpeg"
+  alt="Square Artefacts"
+  width = "50%" >
+  <figcaption>Figure 7: Representative map showing square artefacts in areas without high-frequency context. Lines: GT, Fills: predictions</figcaption>
+</div>
+
+<p>The artefacts produce large areas of false predictions that supposedly greatly influence any evaluation metric that is computed. To obtain a clearer understanding of the influence of those artefacts on the metrics, a second extent, Extent 2 as shown in Figure 8, has been created, that excludes all the tiles where the HEIG-VD model produces those artefacts.</p>
+<div align="center" style="font-style: italic">
+  <img
+  src="images/extent2.png"
+  alt="Ground Truth of Extent 2"
+  width = "50%" >
+  <figcaption>Figure 8: Ground truth of Extent 2.</figcaption>
+</div>
+
+<h4 id="metrics">Metrics<a class="headerlink" href="#metrics" title="Permanent link">&para;</a></h4>
+<p>Both the MCC and the IoU values are created in a raster-based fashion. This means that the spatially overlapping pixels of the predictions and the GT are compared to be the same. For each class, each pixel is therefore classified as one of the following:</p>
+<ul>
+<li>True Positive (TP): The pixel is correctly classified as the class.</li>
+<li>False Positive (FP): The pixel is incorrectly classified as the class.</li>
+<li>False Negative (FN): The pixel is incorrectly classified as another class.</li>
+<li>True Negative (TN): The pixel is correctly classified as another class.</li>
+</ul>
+<p>As described in the <a href="#2-acceptance-criteria-and-concerned-metrics">acceptance criteria</a>, the MCC and the IoU are then calculated as a specific combination of these values. As the MCC is only suited for a binary classification, the MCC is computed for the binary classification of the models. Only the IoU is also computed for the multiclass classification of the models. The general workflow of the evaluation pipeline is the following:</p>
+<ol>
+<li>The models are used to predict the land cover types of the input imagery.</li>
+<li>The ground truth data is rasterized to the same spatial resolution as the predictions (10cm).</li>
+<li>The predictions and the ground truth data are reclassified to the same classification scheme (package ID's).</li>
+<li>The predictions and the ground truth data are cut into a grid of 512x512 pixel tiles.</li>
+<li>The tiles are compared, thereby computing the MCC and the IoU metrics.</li>
+</ol>
+<p>More details about the technical implications of the evaluation pipeline can be found in the <a href="https://github.com/swiss-territorial-data-lab/proj-soils">GitHub repository</a> of the project.</p>
+<h4 id="qualitative-assessment">Qualitative assessment<a class="headerlink" href="#qualitative-assessment" title="Permanent link">&para;</a></h4>
+<p>As stated in the <a href="#qualitative-assessment">Qualitative Assessment</a> section, this visual assessment serves to ensure that the chosen metrics (MCC, IoU) correspond to the qualitative evaluation of the beneficiaries. Three models where chosen, such that (regarding the metrics) high- and low-performing models were included. As the problem with the artefacts in the HEIG-VD model’s predictions is very evident, for this assessment, only a subset from Extent 2 has been taken into account.</p>
+<p>To conduct the qualitative assessment, the beneficiaries were given the predictions of the three chosen models on 4 representative tiles. The tiles were chosen to represent different land cover types (as far as possible on this area). The beneficiaries were then asked to rank the predictions of the models from best to worst.</p>
+<p>As the inferences for the OFS model were not available at the relevant point in time, the qualitative assessment was conducted only for the IGN and the HEIG-VD models for the tiles displayed in Figure 9.</p>
+<div align="center" style="font-style: italic">
+  <img
+  src="images/example_tiles_bn_combined.png"
+  alt=""
+  width = "70%" >
+  <figcaption>Figure 9: Tiles that were used for the qualitative assessment. Ground truth depicted as outlines, predictions as fills. IGN1: smp-unet-resnet34-imagenet_RVBI, IGN2: odeon-unet-vgg16_RVBIE.</figcaption>
+</div>
+
+<h3 id="53-fine-tuning">5.3 Fine-Tuning<a class="headerlink" href="#53-fine-tuning" title="Permanent link">&para;</a></h3>
+<p>After the <a href="#61-evaluation">evaluation</a>, considerations about which model to take for further progress in the project were made and the HEIG-VD model was identified as the most promising in terms of performance and availability (more in the <a href="#7-discussion">Discussion</a> section). The model has been trained on the FLAIR-1 dataset (see <a href="#4-existing-models">Existing Models</a>), which differs from the present dataset in several aspects. Fine-tuning allows to retrain a model to let it adapt to the specifics of the dataset. In this case, fine-tuning aims to adjust the model to the following specifics:</p>
+<ul>
+<li>
+<p>The Swiss imagery is of a higher resolution than the French imagery (10 cm vs 20 cm), which means that the model has to be able to work with more detailed information.</p>
+</li>
+<li>
+<p>The Swiss imagery is of a different season than the French imagery, which means that the model has to be able to work with different vegetation appearances.</p>
+</li>
+<li>
+<p>The classification scheme of the Swiss ground truth is different from the French ground truth, which means that the model has to be able to work with different classes.</p>
+</li>
+</ul>
+<h4 id="data-preparation">Data Preparation<a class="headerlink" href="#data-preparation" title="Permanent link">&para;</a></h4>
+<p>For fine-tuning, the dataset is split into the training dataset and the validation dataset. The training dataset consists of 80% of the input imagery and ground truth, while the validation dataset consists of the remaining 20%. The dataset is split in a stratified manner, which means that the distribution of the classes in the training dataset is as close as possible to the distribution of the classes in the validation dataset. This is important to ensure that the model is trained on a representative sample of the data. The split is conducted in a semi-random and tile-based manner:</p>
+<ol>
+<li>The images are cut into a predefined grid.</li>
+<li>The grid tiles are assigned to the training or validation set randomly, using different random seeds and choosing the one that leads to the most even class frequency distribution.</li>
+<li>After identifying the seed 6 as the best one, the split was manually adjusted to ensure that the class frequency distributions of the two datasets are as representative as possible. The final distribution can be seen in Figure 10. Only the class frequencies of the <em>class sol_vigne</em> and <em>roseliere</em> change considerably.</li>
+</ol>
+<p>As stated in the <a href="#32-ground-truth">Ground Truth</a> section, the fine-tuning is conducted using the classification scheme consisting of 12 classes.</p>
+<div align="center" style="font-style: italic">
+  <img
+  src="images/dataset_classdistr.png"
+  alt="Class Frequency Distribution of the Training and Validation Dataset, coloured according to whether . Mind that the y-axis is logarithmic."
+  width = "90%" >
+  <figcaption>Figure 10: Class frequency distribution of the training and validation dataset. Mind that the y-axis is logarithmic.</figcaption>
+</div>
+
+<p>To mitigate the effect of the artefacts, mentioned in the <a href="#extents">Extent</a> section, we propose to decrease the spatial resolution of the input (and thus also the output) of the model to increase the spatial receptive field of the model. With input tiles covering a larger area, the chance of the occurrence of high-frequency features that give context to the image increases. A visualization of this proposal is shown in Figure 11: while the 10 cm input tile has only low-frequency agricultural context, the 40 cm input tile has high-frequency context in the form of a road. This context, as proposed, could help the model to make a more informed decision.</p>
+<div align="center" style="font-style: italic; margin-left: 10px;">
+  <img
+  src="images/context_resolution.jpeg"
+  alt="Visualization of the changing receptive field of the model with different input resolutions"
+  width = "50%" >
+  <figcaption>Figure 11: Visualization of the changing receptive field of the model with different input resolutions</figcaption>
+</div>
+
+<p>As a model adjusts for a certain resolution during training, we test the effect of training on different resolutions. Thus, the model is fine-tuned on two different datasets, one with a spatial resolution of 10 cm and one with mixed resolutions of 10 cm, 20 cm, and 40 cm. The input shape of all the image tiles, regardless of the ground sampling distance, is 512x512 pixels. The spatially largest tiles (40 cm) were assigned to either the training or the validation set, and all the smaller tiles that are contained within the larger tiles were assigned to the same set. This way, the model can be trained and evaluated, respectively, on the same area at different resolutions. The resulting nested grid is depicted in Figure 12.</p>
+<div align="center" style="font-style: italic">
+  <img
+  src="images/grid_square.png"
+  alt="Example of the used grid. The shape of the tiles is always (512,512), only the ground sampling distance changes. Borders have an offset to increase legibility, in reality, they're perfectly overlapping."
+  width = "50%" >
+  <figcaption>Figure 12: Example of the used grid. The shape of the tiles is always 512 by 512 pixels, only the ground sampling distance changes. Borders have an offset to increase legibility, in reality, they're perfectly overlapping.</figcaption>
+</div>
+
+<p>The obtained datasets and their sizes are summarized here:</p>
+<ul>
+<li>
+<p>Training Dataset</p>
+<ul>
+<li><strong>10cm: 2'640 tiles</strong></li>
+<li>20cm: 656 tiles</li>
+<li>40cm: 164 tiles</li>
+<li><strong>Mixed: 3'460 tiles</strong></li>
+</ul>
+</li>
+<li>
+<p>Validation Dataset</p>
+<ul>
+<li><strong>10cm: 692 tiles</strong></li>
+<li>20cm: 172 tiles</li>
+<li>40cm: 43 tiles</li>
+<li><strong>Mixed: 907 tiles</strong></li>
+</ul>
+</li>
+</ul>
+<h4 id="training">Training<a class="headerlink" href="#training" title="Permanent link">&para;</a></h4>
+<p>Both the models trained on the single-resolution and on the mixed-resolution dataset have been trained for a total of 160'000 iterations using the mmsegmentation library<sup id="fnref2:14"><a class="footnote-ref" href="#fn:14">14</a></sup>. One iteration in this context means one batch of data has been processed. Because of memory limitations, the models were trained with a batch-size of 1, which means, that one iteration corresponds to one tile being processed. Thus, one epoch (one pass through the whole dataset) consists of 2'640 iterations for the single-resolution dataset and 3'460 iterations for the mixed-resolution dataset. During training, the models were evaluated on the validation set after every epoch by computing the mIoU metric. If the mIoU increased, a model checkpoint was saved and the old one deleted. After training for the predefined number of iterations, the model with the highest mIoU on the validation set was chosen as the final model.</p>
+<h2 id="6-results">6. Results<a class="headerlink" href="#6-results" title="Permanent link">&para;</a></h2>
+<p>The metrics values for the evaluation and the fine-tuning parts of the project are first presented. Afterwards, a close view of the final product is shown.</p>
+<h3 id="61-evaluation">6.1 Evaluation<a class="headerlink" href="#61-evaluation" title="Permanent link">&para;</a></h3>
+<p>The multiclass evaluation is briefly presented before showing in details, from a quantitative and qualitative perpectives, the evaluation of the models for the binary classification in soil and non-soil classes.</p>
+<h4 id="multiclass-evaluation">Multiclass Evaluation<a class="headerlink" href="#multiclass-evaluation" title="Permanent link">&para;</a></h4>
+<p>As the focus of this project lies in the binary distinction between soil and non-soil areas, the multiclass classification results are not discussed in further detail. However, plots displaying the class-IoU values of the different models are depicted in Figures 13 and 14. Confusion matrices can be found in the <a href="#9-appendices">Appendices</a>.</p>
+<!-- docs/PROJ-SOILS/images/_iou_extent1.png -->
+<div align="center" style="font-style: italic">
+  <img
+  src="images/multiclass_iou_extent1.png"
+  alt="IoU values for different models and classes on Extent 1."
+  width = "100%" >
+  <figcaption>Figure 13: IoU values for different models and classes on Extent 1. Soil-classes are depicted in the green rectangles.</figcaption>
+</div>
+
+<!-- docs/PROJ-SOILS/images/_iou_extent2.png -->
+<div align="center" style="font-style: italic">
+  <img
+  src="images/multiclass_iou_extent2.png"
+  alt="IoU values for different models and classes on Extent 2."
+  width = "100%" >
+  <figcaption>Figure 14: IoU values for different models and classes on Extent 2. Soil-classes are depicted in the green rectangles. </figcaption>
+</div>
+
+<!-- images/_iou_mixed_resolutions.png -->
+
+<h4 id="quantitative-evaluation">Quantitative Evaluation<a class="headerlink" href="#quantitative-evaluation" title="Permanent link">&para;</a></h4>
+<p>Figure 15 and 16 show the MCC values and mIoU values, respectively, computed for the binary classification of different models. As the distribution of the metrics across the models is very similar, only the MCC values are discussed in the following and are precisely given in Table 1.</p>
+<div style="display: flex; justify-content: center;">
+  <div align="center" style="font-style: italic; margin-right: 10px;">
+  <img
+  src="images/binary_mcc_extents.png"
+  alt=""
+  width = "100%" >
+  <figcaption>Figure 15: MCC values of the binary predictions of the models on the two extents.</figcaption>
+  </div>
+  <div align="center" style="font-style: italic; margin-left: 10px;">
+  <img
+  src="images/binary_miou_extents.png"
+  alt=""
+  width = "100%" >
+  <figcaption>Figure 16: mIoU values of the binary predictions of the models on the two extents.</figcaption>
+  </div>
+</div>
+<!--CM: about legend, on the three extents ? -->
+<!-- NB: Talk about it -->
+
+<div align="center">
+<table>
+<thead>
+<tr><th>Model</th><th>MCC (Extent 1)</th><th>MCC (Masked Extent 1)</th><th>MCC (Extent 2)</th></tr>
+</thead>
+<tbody>
+<tr><td>IGN_smp-unet-resnet34-imagenet_RVBI</td><td><strong>0.825</strong></td><td>0.808</td><td>0.813</td></tr>
+<tr><td>OFS_ADELE2(+SAM)</td><td>0.818</td><td>0.802</td><td>0.794</td></tr>
+<tr><td>IGN_smp-unet-resnet34-imagenet_RVBIE</td><td>0.810</td><td>0.798</td><td>0.824</td></tr>
+<tr><td>HEIG-VD</td><td>0.789</td><td><strong>0.839</strong></td><td><strong>0.859</strong></td></tr>
+<tr><td>IGN_smp-fpn-resnet34-imagenet_RVBIE</td><td>0.714</td><td>0.749</td><td>0.795</td></tr>
+<tr><td>IGN_odeon-unet-vgg16_RVBI</td><td>0.710</td><td>0.706</td><td>0.794</td></tr>
+<tr><td>IGN_smp-fpn-resnet34-imagenet_RVBI</td><td>0.710</td><td>0.745</td><td>0.792</td></tr>
+<tr><td>IGN_odeon-unet-vgg16_RVBIE</td><td>0.640</td><td>0.613</td><td>0.713</td></tr>
+</tbody>
+</table>
+<figcaption  style="font-style: italic">Table 1: MCC of the binary predictions of the models on the three extents.</figcaption>
+</div>
+
+<p><strong>Extent 1</strong>
+The best-performing model in Extent 1 is the <em>IGN_smp-unet-resnet34-imagenet_RVBI model</em>, with an MCC of 0.825. The inclusion of the elevation channel does not seem to have a significant impact on the model's performance, as the <em>IGN_smp-unet-resnet34-imagenet_RVBIE</em> model only achieves an MCC of 0.810. The <em>OFS_ADELE2(+SAM)</em> model follows closely with an MCC of 0.818.  The <em>HEIG-VD</em> model, on the other hand, performs significantly worse, with an MCC of 0.789. The models <em>IGN_smp-fpn-resnet34-imagenet_RVBIE</em>, <em>IGN_odeon-unet-vgg16_RVBI</em>, and <em>IGN_smp-fpn-resnet34-imagenet_RVBI</em> all achieve an MCC of around 0.710. The <em>IGN_odeon-unet-vgg16_RVBIE</em> model performs the worst, with an MCC of 0.640.</p>
+<p><strong>masked Extent 1 &amp; Extent 2</strong>
+The greatest difference to Extent 1 is that in masked Extent 1 and in Extent 2, the <em>HEIG-VD</em> model performs significantly better than in masked Extent 1, with an MCC of 0.839. Generally, the models perform similarly in masked Extent 1 and in Extent 1. The models are generally performing better in Extent 2.</p>
+<h4 id="qualitative-evaluation">Qualitative Evaluation<a class="headerlink" href="#qualitative-evaluation" title="Permanent link">&para;</a></h4>
+<p>The results of the qualitative assessment are depicted in Figure 17. The qualitative assessment rendered the following ranking:</p>
+<ol>
+<li>heig-vd</li>
+<li>smp-unet-resnet34-imagenet_RVBI</li>
+<li>odeon_unet-vgg16_RVBIE</li>
+</ol>
+<p>The ranking corresponds to the ranking based on the metric measures.</p>
+<div align="center" style="font-style: italic">
+  <img
+  src="images/231108_Evaluation_soil_delination_FOR_REPORT.png"
+  alt="Result of qualitative assessment of the beneficiaries"
+  width = "100%" >
+  <figcaption>Figure 17: Qualitative assessment by the beneficiaries. </figcaption>
+</div>
+
+<h3 id="62-fine-tuning">6.2 Fine-Tuning<a class="headerlink" href="#62-fine-tuning" title="Permanent link">&para;</a></h3>
+<p>For the second part of the project - fine-tuning of the HEIG-VD model - the quantitative binary performance is first presented. Afterwards, the multiclass outputs are quantitatively, qualitatively and visually given. This allows to understand what is behind the visual binary outputs qualitatively discussed it the final subsection.</p>
+<h4 id="binary-results">Binary Results<a class="headerlink" href="#binary-results" title="Permanent link">&para;</a></h4>
+<p>Figure 18 shows the progress of the models during fine-tuning, with a datapoint after every epoch. The curves are quite similar to each other, but both are rather noisy. The best checkpoint of the 10 cm model is at epoch 71 with an mIoU of 0.939. The best checkpoint of the mixed model is at epoch 145 with an mIoU of 0.930. The names of the two models are thus <em>HEIG-VD-10cm-71k</em> and <em>HEIG-VD-mixed-145k</em>.</p>
+<p>The training for the models for 160'000 iterations with the <a href="#51-infrastructure">above stated</a> hardware took about 7 days. Performing inference on one single tile with 512x512 pixels takes about 1 second. This means that with 10 cm input tiles, the model takes about 380 seconds or 6 minutes and 20 seconds to process 1 km². As the canton of Fribourg has an area of about 1'670 km², the model would take about one week to process the whole canton. The model would able to process the whole canton in a reasonable amount of time.</p>
+<!-- 
+m^2 per tile = 51.2 * 51.2 = 2'621.44
+km^2 per tile = 2'621.44 / 10^6 = 0.00262144
+tiles per km^2 = 1 / 0.00262144 = 381.469
+s per tile = 1
+s per km^2 = 381.469
+area of Fribourg = 1'670 km^2
+s for Fribourg = 1'670 * 381.469 = 637'053.73
+s per day = 24 * 60 * 60 = 86'400
+days for Fribourg = 637'053.73 / 86'400 = 7.37
+-->
+
+<div align="center" style="font-style: italic">
+  <img
+  src="images/training_progress.png"
+  alt="Training progress of the models."
+  width = "100%" >
+  <figcaption>Figure 18: Training progress of the models.</figcaption>
+</div>
+
+<p>Figure 19 and Table 2 show the MCC values for the original <em>HEIG-VD</em> model, as well as for the two fine-tuned models one the evaluation extent. When comparing the MCC values of the original HEIG-VD model (MCC=0.553) with the fine-tuned models (MCC after 10 cm training : 0.939; MCC after mixed training: 0.938 ), the fine-tuned models perform significantly better. However, one should notice that the original HEIG-VD model was trained on a different dataset and with a different classification scheme. It was evaluated on the same extent but using the <em>package ID</em>, which is introduced in the <a href="#reclassification">Reclassification</a> section.</p>
+<p>Regarding the performance of the two models on inference with different input resolutions, they perform quite similarly on the 10 cm resolution input. Both models perform worse as the ground sampling distance increases:</p>
+<ul>
+<li>MCC after 10 cm training: 0.884 on 20 cm inputs against 0.795 on 40 cm inputs.</li>
+<li>MCC after mixed training: 0.930 on 20 cm inputs against 0.893 on 40 cm inputs.</li>
+</ul>
+<p>However, the performance of the  <em>HEIG-VD-mixed-145k</em> model is not decreasing as much as the <em>HEIG-VD-10cm-71k</em> model on the 20 cm and 40 cm resolution inputs.</p>
+<div align="center" style="font-style: italic">
+  <img
+  src="images/binary_mcc_resolutions.png"
+  alt=""
+  width = "50%" >
+  <figcaption>Figure 19: MCC values of the binary predictions of the model fine-tuned on different resolutions.</figcaption>
+</div>
+
+<div align="center">
+  <table>
+  <thead>
+  <tr><th>Model</th><th>MCC (10cm input)</th><th>MCC (20cm input)</th><th>MCC (40cm input)</th></tr>
+  </thead>
+  <tbody>
+  <tr><td>HEIG-VD-original</td><td>0.553</td><td></td><td></td></tr>
+  <tr><td>HEIG-VD-10cm-71k</td><td><strong>0.939</strong></td><td>0.884</td><td>0.795</td></tr>
+  <tr><td>HEIG-VD-mixed-145k</td><td>0.938</td><td><strong>0.930</strong></td><td><strong>0.893</strong></td></tr>
+  </tbody>
+  </table>
+  <figcaption  style="font-style: italic">Table 2: MCC values of the binary predictions of the model fine-tuned on different resolutions.</figcaption>
+</div>
+
+<h4 id="multi-class-results">Multi-Class Results<a class="headerlink" href="#multi-class-results" title="Permanent link">&para;</a></h4>
+<p>As in the <a href="#61-evaluation">Evaluation</a> results section, the  results are not discussed in further details. Confusion matrices can be found in the <a href="#9-appendices">Appendices</a>. Figures 20 and 21 shows the IoU values of the mixed-resolution model (Figure 20) and the 10 cm model (Figure 21) on different resolutions.</p>
+<div align="center" style="font-style: italic">
+  <img
+  src="images/multiclass_iou_10cm_resolutions.png"
+  alt="IoU values of the 10 cm model on different resolutions."
+  width = "100%" >
+  <figcaption>Figure 20: IoU values of the fine-tuned models on the 10 cm dataset.</figcaption>
+</div>
+
+<div align="center" style="font-style: italic">
+  <img
+  src="images/multiclass_iou_mixed_resolutions.png"
+  alt="IoU values of the mixed-resolution model on different resolutions."
+  width = "100%" >
+  <figcaption>Figure 21: IoU values of the fine-tuned models on the mixed-resolution dataset.</figcaption>
+</div>
+
+<h4 id="qualitative-analysis-of-the-outputs">Qualitative Analysis of the Outputs<a class="headerlink" href="#qualitative-analysis-of-the-outputs" title="Permanent link">&para;</a></h4>
+<p>Figures 22, 23, and 24 show the  outputs of the two models for 10, 20, and 40 cm input resolution, respectively, on three different areas. The areas were chosen to represent different land cover types. Since there is no ground truth on this areas, these inferences can only be analyzed qualitatively. On the inferences it is apparent, that the models still have trouble on regions with little high-frequency context and are prone to square artefacts. In the urban and countryside areas (Figure 22 and 23), the combination of decreased resolution (and thus increased spatial receptive field) and the fine-tuning on the mixed dataset seems to have a positive effect on the occurrence of the square artefacts. In the mountainous area (Figure 24), however, the artefacts are even more pronounced in the outputs of the mixed-resolution model than in the 10cm-only model.</p>
+<p>An effect of the decreased resolution is that, generally, the predictions seem to be less impacted by the artefacts. However, if there are artefacts, their spatial extent, being the same as the spatial receptive field of the model, is larger.</p>
+<div align="center" style="font-style: italic">
+  <img
+  src="images/horizontal_resolution_comparison_Urban.png"
+  alt="Comparison of the binary predictions of the model fine-tuned on different resolutions in urban areas."
+  width = "90%" >
+  <figcaption>Figure 22: Comparison of the predictions of the model fine-tuned on different resolutions in urban areas.</figcaption>
+</div>
+
+<div align="center" style="font-style: italic">
+  <img
+  src="images/horizontal_resolution_comparison_Countryside.png"
+  alt="Comparison of the binary predictions of the model fine-tuned on different resolutions in countryside areas."
+  width = "90%" >
+  <figcaption>Figure 23: Comparison of the predictions of the model fine-tuned on different resolutions in countryside areas.</figcaption>
+</div>
+
+<div align="center" style="font-style: italic">
+  <img
+  src="images/horizontal_resolution_comparison_Mountainous.png"
+  alt="Comparison of the binary predictions of the model fine-tuned on different resolutions in mountainous areas."
+  width = "90%" >
+  <figcaption>Figure 24: Comparison of the predictions of the model fine-tuned on different resolutions in mountainous areas.</figcaption>
+</div>
+
+<h4 id="qualitative-analysis-of-the-binary-outputs">Qualitative Analysis of the Binary Outputs<a class="headerlink" href="#qualitative-analysis-of-the-binary-outputs" title="Permanent link">&para;</a></h4>
+<p>Figures 25, 26, and 27 show the binary output versions of the three Figures above (22, 23, and 24). Looking at the inferences on the same areas, one can see that the artefacts are much less of an issue in the binary outputs. They are still present to some extent, however, since many of the artefacts and their surroundings are in fact soil, or non-soil, respectively, the artefacts dissolve in the binary outputs. The artefacts are still present in the mountainous area where the mixed model predicts large areas of water, which is a non-soil class.</p>
+<div align="center" style="font-style: italic">
+  <img
+  src="images/binary_horizontal_resolution_comparison_Urban.png"
+  alt="Comparison of the binary predictions of the model fine-tuned on different resolutions in urban areas."
+  width = "90%" >
+  <figcaption>Figure 25: Comparison of the binary predictions of the model fine-tuned on different resolutions in urban areas.</figcaption>
+</div>
+
+<div align="center" style="font-style: italic">
+  <img
+  src="images/binary_horizontal_resolution_comparison_Countryside.png"
+  alt="Comparison of the binary predictions of the model fine-tuned on different resolutions in countryside areas."
+  width = "90%" >
+  <figcaption>Figure 26: Comparison of the binary predictions of the model fine-tuned on different resolutions in countryside areas.</figcaption>
+</div>
+
+<div align="center" style="font-style: italic">
+  <img
+  src="images/binary_horizontal_resolution_comparison_Mountainous.png"
+  alt="Comparison of the binary predictions of the model fine-tuned on different resolutions in mountainous areas."
+  width = "90%" >
+  <figcaption>Figure 27: Comparison of the binary predictions of the model fine-tuned on different resolutions in mountainous areas.</figcaption>
+</div>
+
+<h3 id="63-examplary-inference">6.3 Examplary Inference<a class="headerlink" href="#63-examplary-inference" title="Permanent link">&para;</a></h3>
+<p>Finally, to show an example of the model output, an inference of the <em>HEIG-VD-mixed-145k</em> model on a 10 cm input resolution tile is given in Figure 28. The inference is a zoomed part in the north-east of the extent shown in Figure 22 and 25. The inference illustrates that the model is capable of distinguishing between different land cover classes in great detail.</p>
+<div align="center" style="font-style: italic">
+  <img
+  src="images/example_inference_bulles.png"
+  alt="Representative inference of the HEIG-VD-mixed-145k model on a 10cm input resolution tile."
+  width = "100%" >
+  <figcaption>Figure 28: Representative inference of the HEIG-VD-mixed-145k model on a 10 cm input resolution tile.</figcaption>
+</div>
+
+<h2 id="7-discussion">7. Discussion<a class="headerlink" href="#7-discussion" title="Permanent link">&para;</a></h2>
+<p>After presentation of the results, the evaluation and the fine-tuning outcomes are successively discussed.</p>
+<h3 id="71-evaluation">7.1 Evaluation<a class="headerlink" href="#71-evaluation" title="Permanent link">&para;</a></h3>
+<p>All institutions and models have their strengths and weaknesses:</p>
+<p><strong>IGN</strong>
+Regarding Extent 1, the model <em>IGN_smp-unet-resnet34-imagenet_RVBI</em> produced the best metrics. Furthermore, the CNN models of IGN are computationally less expensive than the other models and the inferences are not prone to the square artefacts that the HEIG-VD model produces.</p>
+<p><strong>HEIG-VD</strong>
+The <em>HEIG-VD</em> model, although it is outperformed by the other two institutions' models on Extent 1, performs significantly better in masked Extent 1 and in Extent 2. The model also performed best in the qualitative assessment. The assessment of the performance in Extent 2 shows that the square artefacts are responsible for a great share of false predictions.</p>
+<p><strong>OFS</strong>
+The OFS model <em>OFS_ADELE2(+SAM)</em> performs similarly to the best-performing IGN model, its outputs are not prone to square artefacts, and the inferences are very clean due to its usage of the SAM model. The downside of the OFS model is that it is specifically adapted for the <em>Statistique suisse de la superficie</em><sup id="fnref:10"><a class="footnote-ref" href="#fn:10">10</a></sup> and thus cannot be retrained on a different dataset.</p>
+<p>The goal of the evaluation phase was to identify the most promising model for further steps in the project. Based on the results of the evaluation, the HEIG-VD model was chosen. It performed best in masked Extent 1 and in Extent 2, and it performed best in the qualitative assessment. Additionally, the model needs only aerial imagery with the three RGB channels which allows for an easier reproducibility. The model weights and source code of the HEIG-VD model were kindly shared with us, which enabled us to fine-tune the model to adapt to the specifics of this project. However, the premise of choosing the HEIG-VD model was that we are able to mitigate the square artefacts to an acceptable degree.</p>
+<h3 id="72-fine-tuning">7.2 Fine-Tuning<a class="headerlink" href="#72-fine-tuning" title="Permanent link">&para;</a></h3>
+<p>The following keypoints can be extracted from the fine-tuning results:</p>
+<h4 id="performance-increase">Performance Increase<a class="headerlink" href="#performance-increase" title="Permanent link">&para;</a></h4>
+<p>The fine-tuning procedure could improve the model performance substantially, even though a small dataset was used. For comparison: The FLAIR-1 dataset comprises more than 800 km², which is more than 80 times the size of our used dataset. The improvement is especially impressing, since the chosen model is an attention-based model, which is known to be dependent on large amounts of data <sup id="fnref:15"><a class="footnote-ref" href="#fn:15">15</a></sup>. A possible explanation for the success of the fine-tuning is that most of the features that the model has to learn are already present in the pre-trained model. The adjustments of the weights needed to adapt to the specifics of the dataset may, in comparison to the vast amount of information needed to train a model from scratch, be quite small.</p>
+<h4 id="adaptability">Adaptability<a class="headerlink" href="#adaptability" title="Permanent link">&para;</a></h4>
+<p>Fine-Tuning allows to adjust for different specifics of new datasets. In this case, the model was able to adjust for different resolutions, a different acquisition season, and a new classification scheme. However, also the model that has been trained on the mixed-resolution dataset performed worse on 20 cm and 40 cm resolution input than on 10 cm resolution input. This could be due to the fact that the model has been trained on 4 times as many 10 cm resolution tiles as on 20 cm resolution tiles and 16 times as many 10 cm resolution tiles as on 40 cm resolution tiles. As a result, the model could be biased towards the 10 cm resolution. Another explanation imaginable could be that the defined classes are more easily identifiable in high-resolution input in general. While e.g., the IoU values for the class "sol_vegetalise" does not fluctuate much between the different resolutions, the IoU values for e.g., the class "roche_dure_meuble" seems to depend considerably on the resolution.</p>
+<h4 id="square-artefacts">Square Artefacts<a class="headerlink" href="#square-artefacts" title="Permanent link">&para;</a></h4>
+<p>While a decreased resolution and fine-tuning could not remove the square artefacts completely, their occurence could be drastically reduced. Even more so in the binary case, where the depicted confusion between water and vegetated soil in Figure 27 seems to contribute the most to the square artefacts, which could be reduced by a post-processing step, using known waterbodies as a mask. These water square artefacts that appear by decreasing the resolution, show that the model depends on both resolution and context. Indeed, the lower resolution seems to have removed the specific texture of mountainous meadow and rendered it similar to waterbody. Another factor contributing to this confusion could be a possible bias in the ground truth caused by overrepresented lake sediments that resemble soil.</p>
+<p>The resolution decrease affects also the size of the smallest object segmentable. Luckily, urban areas profit the most from high resolution and are not prone to square artefacts, which means that a trade-off could be circumvented by a spatial seperation of high- and low-resolution inferences (e.g., urban: 10 cm, countryside: 40 cm).</p>
+<h3 id="73-remarks-from-beneficiaries">7.3 Remarks from Beneficiaries<a class="headerlink" href="#73-remarks-from-beneficiaries" title="Permanent link">&para;</a></h3>
+<p>The beneficiaries provided a feedback of the final state of the model. They were especially content with the performance in heterogeneous areas (i.e., urban areas) and stressed the quality of the inference regarding ambiguous features: the model is able to distinguish between soil and non-soil even in areas where the ground is covered by large objects (e.g., truck trailers), or where the soil is covered by canopies. The model is also not affected by shadows, which was a great concern at the beginning of the project, and shows a good separability of gravel and concrete, which could be used for mapping impervious surfaces. However, the square artefacts are still leading to soil/non-soil confusion, typically appearing as 51.2x51.2m squares in homogeneous areas (with 10 cm resolution). The beneficiaries concluded that around buildings, the soil map produced by the model appears more reliable than other available products and offers the opportunity to cross-reference the binary result (soil – non-soil) with existing indicative maps and to improve the quantitative assessment of the soil concerned by pollutions.</p>
+<h2 id="8-conclusion">8. Conclusion<a class="headerlink" href="#8-conclusion" title="Permanent link">&para;</a></h2>
+<p>One of the main findings of this project is that modern deep learning models are feasible tools to segment various land cover classes on aerial imagery. Furthermore, even complicated models can be fine-tuned for derived specifics and enhanced performance, even in the case of small datasets.</p>
+<p>As the mixed-resolution model produces overall better results than the 10cm-only model, it can be considered as the main output of this project. It performs quite well, with an MCC value of 0.938 on the 10 cm validation set. It was able to adapt to the specifics of the Swiss dataset, which incorporates different resolutions, a different acquisition season, and a new classification scheme. The model performs especially well in urban and other high-frequency context areas, where the issue with square artefacts is less pronounced.</p>
+<p>The project provides a methodology on how to compare different segmentation models in the geographic domain, gives insights in how a best-suited model can be chosen, and how it can be fine-tuned to adapt to a specific dataset.</p>
+<h3 id="81-limitations">8.1 Limitations<a class="headerlink" href="#81-limitations" title="Permanent link">&para;</a></h3>
+<p>The main limitation of this project is the extent of the ground truth data. The ground truth data is only available for a small area in the canton of Fribourg. With a larger dataset, the model may have been able to perform even better and the generalization to other areas may have been better, because each class could have been presented to the model in a more nuanced way.</p>
+<p>Another limitation of this project is that the seasonal diversity in the imagery used for this project is very limited. We showed that the model is able to adapt to different vegetation appearances, but the produced model has only been fine-tuned for the vegetation period of the imagery used for training. The model might perform worse in other vegetation periods.</p>
+<p>Last but not least, the square artefacts, which were a main concern in the project, still occur within the inferences. The fine-tuning of the model on a mixed-resolution dataset was able to mitigate the effect of the artefacts, but not to remove it completely.</p>
+<h3 id="82-outlook">8.2 Outlook<a class="headerlink" href="#82-outlook" title="Permanent link">&para;</a></h3>
+<p>Some ideas that emerged during the project but could not be implemented due to time constraints are:</p>
+<ul>
+<li>
+<p>As the square artefacts are not much of a problem in urban, high-frequency areas and a lower resolution can help to mitigate the effect of the artefacts in low-frequency, countryside areas, a possible approach could be to infer the model on 10 cm in the urban areas and on 40 cm in the countryside areas. Another way to combine low- and high-resolution inferences could be to make use of an ensemble technique, which combines the predictions of different models to get “the best of both worlds”.</p>
+</li>
+<li>
+<p>The confusion between water and vegetated soil is a main cause of error in the binary predictions. A post-processing step to remove these square artefacts could be conducted by using known waterbodies as a mask.</p>
+</li>
+<li>Another outlook is to conduct further experiments on the effect of the vegetation period on the model performance. This could be done by training the model on different vegetation periods and evaluating it on the same extent.</li>
+<li>Many hyperparameters of the model have been left at their default values that have been set by HEIG-VD. They could be optimized to further increase the model's performance.</li>
+</ul>
+<h3 id="83-acknowledgements">8.3 Acknowledgements<a class="headerlink" href="#83-acknowledgements" title="Permanent link">&para;</a></h3>
+<p>We would like to express our gratitude to the people working at HEIG-VD, IGN, and OFS, which contributed significantly to this project by sharing not only their code and models, but also their thoughts and experiences with us. It was a pleasure to collaborate with them.</p>
+<h2 id="9-appendices">9. Appendices<a class="headerlink" href="#9-appendices" title="Permanent link">&para;</a></h2>
+<div align="center" style="font-style: italic">
+  <img
+  src="images/appendix/cm_heigvd-10cm-71k-10cm_mc_seed6-adjusted.png"
+  alt="Confusion matrix of the HEIG-VD-10cm-71k model on the 10 cm validation set."
+  width = "100%" >
+  <figcaption>Figure 29: Confusion matrix of the HEIG-VD-10cm-71k model on the 10 cm validation set.</figcaption>
+</div>
+
+<div align="center" style="font-style: italic">
+  <img
+  src="images/appendix/cm_heigvd-mixed-145k-10cm_mc_seed6-adjusted.png"
+  alt="Confusion matrix of the HEIG-VD-mixed-145k model on the 10 cm validation set."
+  width = "100%" >
+  <figcaption>Figure 30: Confusion matrix of the HEIG-VD-mixed-145k model on the 10 cm validation set.</figcaption>
+</div>
+
+<div align="center" style="font-style: italic">
+  <img
+  src="images/appendix/cm_heigvd-10cm-71k-20cm_mc_seed6-adjusted.png"
+  alt="Confusion matrix of the HEIG-VD-10cm-71k model on the 20 cm validation set."
+  width = "100%" >
+  <figcaption>Figure 31: Confusion matrix of the HEIG-VD-10cm-71k model on the 20 cm validation set.</figcaption>
+</div>
+
+<div align="center" style="font-style: italic">
+  <img
+  src="images/appendix/cm_heigvd-mixed-145k-20cm_mc_seed6-adjusted.png"
+  alt="Confusion matrix of the HEIG-VD-mixed-145k model on the 20 cm validation set."
+  width = "100%" >
+  <figcaption>Figure 32: Confusion matrix of the HEIG-VD-mixed-145k model on the 20 cm validation set.</figcaption>
+</div>
+
+<div align="center" style="font-style: italic">
+  <img
+  src="images/appendix/cm_heigvd-10cm-71k-40cm_mc_seed6-adjusted.png"
+  alt="Confusion matrix of the HEIG-VD-10cm-71k model on the 40 cm validation set."
+  width = "100%" >
+  <figcaption>Figure 33: Confusion matrix of the HEIG-VD-10cm-71k model on the 40 cm validation set.</figcaption>
+</div>
+
+<div align="center" style="font-style: italic">
+  <img
+  src="images/appendix/cm_heigvd-mixed-145k-40cm_mc_seed6-adjusted.png"
+  alt="Confusion matrix of the HEIG-VD-mixed-145k model on the 40 cm validation set."
+  width = "100%" >
+  <figcaption>Figure 34: Confusion matrix of the HEIG-VD-mixed-145k model on the 40 cm validation set.</figcaption>
+</div>
+
+<div align="center" style="font-style: italic">
+  <img
+  src="images/appendix/cm_heigvd_mc_extent1.png"
+  alt="Confusion matrix of the original HEIG-VD model on the extent1."
+  width = "100%" >
+  <figcaption>Figure 35: Confusion matrix of the original HEIG-VD model on Extent 1.</figcaption>
+</div>
+
+<div align="center" style="font-style: italic">
+  <img
+  src="images/appendix/cm_heigvd_mc_extent2.png"
+  alt="Confusion matrix of the original HEIG-VD model on the extent2."
+  width = "100%" >
+  <figcaption>Figure 36: Confusion matrix of the original HEIG-VD model on Extent 2.</figcaption>
+</div>
+
+<div align="center" style="font-style: italic">
+  <img
+  src="images/appendix/cm_ign_mc_extent1.png"
+  alt="Confusion matrix of the IGN model smp-unet-resnet34-imagenet_RVBI on Extent 1."
+  width = "100%" >
+  <figcaption>Figure 37: Confusion matrix of the IGN model smp-unet-resnet34-imagenet_RVBI on Extent 1.</figcaption>
+</div>
+
+<div align="center" style="font-style: italic">
+  <img
+  src="images/appendix/cm_ign_mc_extent2.png"
+  alt="Confusion matrix of the IGN model smp-unet-resnet34-imagenet_RVBI on Extent 2."
+  width = "100%" >
+  <figcaption>Figure 38: Confusion matrix of the IGN model smp-unet-resnet34-imagenet_RVBI on Extent 2.</figcaption>
+</div>
+
+<div align="center" style="font-style: italic">
+  <img
+  src="images/appendix/cm_pytorch-25cm_mc_extent1.png"
+  alt="Confusion matrix of the OFS model OFS_ADELE2(+SAM) on Extent 1."
+  width = "100%" >
+  <figcaption>Figure 39: Confusion matrix of the OFS model OFS_ADELE2(+SAM) on Extent 1.</figcaption>
+</div>
+
+<h2 id="10-bibliography">10. Bibliography<a class="headerlink" href="#10-bibliography" title="Permanent link">&para;</a></h2>
+<!-- markdownlint-configure-file {
+  "MD033": false,
+  "MD007": false,
+  "MD024": false,
+  } -->
+<div class="footnote">
+<hr />
+<ol>
+<li id="fn:1">
+<p>Pieter Poldervaart and Bundesamt für Umwelt BAFU \textbar  Office fédéral de l'environnement OFEV \textbar  Ufficio federale dell'ambiente UFAM. Bleibelastung: Schweres Erbe in Gärten und auf Spielplätzen. September 2020. URL: <a href="https://www.bafu.admin.ch/bafu/de/home/themen/thema-altlasten/altlasten--dossiers/bleibelastung-schweres-erbe-in-gaerten-und-auf-spielplaetzen.html">https://www.bafu.admin.ch/bafu/de/home/themen/thema-altlasten/altlasten--dossiers/bleibelastung-schweres-erbe-in-gaerten-und-auf-spielplaetzen.html</a> (visited on 2024-01-04).&#160;<a class="footnote-backref" href="#fnref:1" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+</li>
+<li id="fn:2">
+<p>Christian Niederer. Schwermetallbelastungen in Hausgärten in Freiburgs Altstadt (Kurzfassung), Studie im Auftrag des Amtes für Umwelt des Kantons Freiburg. Technical Report, BMG Engineering AG, 2015.&#160;<a class="footnote-backref" href="#fnref:2" title="Jump back to footnote 2 in the text">&#8617;</a></p>
+</li>
+<li id="fn:3">
+<p>Davide Chicco and Giuseppe Jurman. The advantages of the Matthews correlation coefficient (MCC) over F1 score and accuracy in binary classification evaluation. <em>BMC Genomics</em>, 21(1):6, January 2020. URL: <a href="https://doi.org/10.1186/s12864-019-6413-7">https://doi.org/10.1186/s12864-019-6413-7</a> (visited on 2024-02-05), <a href="https://doi.org/10.1186/s12864-019-6413-7">doi:10.1186/s12864-019-6413-7</a>.&#160;<a class="footnote-backref" href="#fnref:3" title="Jump back to footnote 3 in the text">&#8617;</a></p>
+</li>
+<li id="fn:4">
+<p>Conseil fédéral suisse. Ordonnance sur les atteintes portées aux sols. 1998. URL: <a href="https://www.fedlex.admin.ch/eli/cc/1998/1854_1854_1854/fr">https://www.fedlex.admin.ch/eli/cc/1998/1854_1854_1854/fr</a>.&#160;<a class="footnote-backref" href="#fnref:4" title="Jump back to footnote 4 in the text">&#8617;</a></p>
+</li>
+<li id="fn:5">
+<p>Pavel Iakubovskii. Segmentation Models Pytorch. 2019. Publication Title: GitHub repository. URL: <a href="https://github.com/qubvel/segmentation_models.pytorch">https://github.com/qubvel/segmentation_models.pytorch</a>.&#160;<a class="footnote-backref" href="#fnref:5" title="Jump back to footnote 5 in the text">&#8617;</a></p>
+</li>
+<li id="fn:6">
+<p>Rikiya Yamashita, Mizuho Nishio, Richard Kinh Gian Do, and Kaori Togashi. Convolutional neural networks: an overview and application in radiology. <em>Insights into Imaging</em>, 9(4):611–629, August 2018. Number: 4 Publisher: SpringerOpen. URL: <a href="https://insightsimaging.springeropen.com/articles/10.1007/s13244-018-0639-9">https://insightsimaging.springeropen.com/articles/10.1007/s13244-018-0639-9</a> (visited on 2024-04-08), <a href="https://doi.org/10.1007/s13244-018-0639-9">doi:10.1007/s13244-018-0639-9</a>.&#160;<a class="footnote-backref" href="#fnref:6" title="Jump back to footnote 6 in the text">&#8617;</a></p>
+</li>
+<li id="fn:7">
+<p>Bowen Cheng, Ishan Misra, Alexander G. Schwing, Alexander Kirillov, and Rohit Girdhar. Masked-attention Mask Transformer for Universal Image Segmentation. June 2022. arXiv:2112.01527 [cs]. URL: <a href="http://arxiv.org/abs/2112.01527">http://arxiv.org/abs/2112.01527</a> (visited on 2024-03-21), <a href="https://doi.org/10.48550/arXiv.2112.01527">doi:10.48550/arXiv.2112.01527</a>.&#160;<a class="footnote-backref" href="#fnref:7" title="Jump back to footnote 7 in the text">&#8617;</a></p>
+</li>
+<li id="fn:8">
+<p>Meng-Hao Guo, Tian-Xing Xu, Jiang-Jiang Liu, Zheng-Ning Liu, Peng-Tao Jiang, Tai-Jiang Mu, Song-Hai Zhang, Ralph R. Martin, Ming-Ming Cheng, and Shi-Min Hu. Attention Mechanisms in Computer Vision: A Survey. <em>Computational Visual Media</em>, 8(3):331–368, September 2022. arXiv:2111.07624 [cs]. URL: <a href="http://arxiv.org/abs/2111.07624">http://arxiv.org/abs/2111.07624</a> (visited on 2024-04-08), <a href="https://doi.org/10.1007/s41095-022-0271-y">doi:10.1007/s41095-022-0271-y</a>.&#160;<a class="footnote-backref" href="#fnref:8" title="Jump back to footnote 8 in the text">&#8617;</a></p>
+</li>
+<li id="fn:9">
+<p>Alexander Kirillov, Eric Mintun, Nikhila Ravi, Hanzi Mao, Chloe Rolland, Laura Gustafson, Tete Xiao, Spencer Whitehead, Alexander C. Berg, Wan-Yen Lo, Piotr Dollár, and Ross Girshick. Segment Anything. April 2023. arXiv:2304.02643 [cs]. URL: <a href="http://arxiv.org/abs/2304.02643">http://arxiv.org/abs/2304.02643</a> (visited on 2024-04-05), <a href="https://doi.org/10.48550/arXiv.2304.02643">doi:10.48550/arXiv.2304.02643</a>.&#160;<a class="footnote-backref" href="#fnref:9" title="Jump back to footnote 9 in the text">&#8617;</a></p>
+</li>
+<li id="fn:10">
+<p>Unknown. <em>Arealstatistik Schweiz. Erhebung der Bodennutzung und der Bodenbedeckung. (Ausgabe 2019 / 2020)</em>. Number 9406112. Bundesamt für Statistik (BFS), Neuchâtel, September 2019. Backup Publisher: Bundesamt für Statistik (BFS). URL: <a href="https://dam-api.bfs.admin.ch/hub/api/dam/assets/9406112/master">https://dam-api.bfs.admin.ch/hub/api/dam/assets/9406112/master</a>.&#160;<a class="footnote-backref" href="#fnref:10" title="Jump back to footnote 10 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:10" title="Jump back to footnote 10 in the text">&#8617;</a></p>
+</li>
+<li id="fn:11">
+<p>Zhuang Liu, Hanzi Mao, Chao-Yuan Wu, Christoph Feichtenhofer, Trevor Darrell, and Saining Xie. A ConvNet for the 2020s. March 2022. arXiv:2201.03545 [cs]. URL: <a href="http://arxiv.org/abs/2201.03545">http://arxiv.org/abs/2201.03545</a> (visited on 2024-03-21), <a href="https://doi.org/10.48550/arXiv.2201.03545">doi:10.48550/arXiv.2201.03545</a>.&#160;<a class="footnote-backref" href="#fnref:11" title="Jump back to footnote 11 in the text">&#8617;</a></p>
+</li>
+<li id="fn:12">
+<p>Dirk Merkel. Docker: lightweight linux containers for consistent development and deployment. <em>Linux journal</em>, 2014(239):2, 2014.&#160;<a class="footnote-backref" href="#fnref:12" title="Jump back to footnote 12 in the text">&#8617;</a></p>
+</li>
+<li id="fn:13">
+<p>Adam Paszke, Sam Gross, Francisco Massa, Adam Lerer, James Bradbury, Gregory Chanan, Trevor Killeen, Zeming Lin, Natalia Gimelshein, Luca Antiga, Alban Desmaison, Andreas Köpf, Edward Yang, Zach DeVito, Martin Raison, Alykhan Tejani, Sasank Chilamkurthy, Benoit Steiner, Lu Fang, Junjie Bai, and Soumith Chintala. PyTorch: An Imperative Style, High-Performance Deep Learning Library. December 2019. arXiv:1912.01703 [cs, stat]. URL: <a href="http://arxiv.org/abs/1912.01703">http://arxiv.org/abs/1912.01703</a> (visited on 2024-04-02), <a href="https://doi.org/10.48550/arXiv.1912.01703">doi:10.48550/arXiv.1912.01703</a>.&#160;<a class="footnote-backref" href="#fnref:13" title="Jump back to footnote 13 in the text">&#8617;</a></p>
+</li>
+<li id="fn:14">
+<p>MMSegmentation Contributors. MMSegmentation: OpenMMLab Semantic Segmentation Toolbox and Benchmark. 2020. URL: <a href="https://github.com/open-mmlab/mmsegmentation">https://github.com/open-mmlab/mmsegmentation</a>.&#160;<a class="footnote-backref" href="#fnref:14" title="Jump back to footnote 14 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:14" title="Jump back to footnote 14 in the text">&#8617;</a></p>
+</li>
+<li id="fn:15">
+<p>Abdul Mueed Hafiz, Shabir Ahmad Parah, and Rouf Ul Alam Bhat. Attention mechanisms and deep learning for machine vision: A survey of the state of the art. June 2021. arXiv:2106.07550 [cs]. URL: <a href="http://arxiv.org/abs/2106.07550">http://arxiv.org/abs/2106.07550</a> (visited on 2024-04-09).&#160;<a class="footnote-backref" href="#fnref:15" title="Jump back to footnote 15 in the text">&#8617;</a></p>
+</li>
+</ol>
+</div>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2020-2021 Swiss Territorial Data Lab
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        <div class="md-social">
+  
+    
+    
+    
+    
+    <a href="https://github.com/swiss-territorial-data-lab" target="_blank" rel="noopener" title="Repo on Github" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.3.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+    </a>
+  
+    
+    
+    
+    
+    <a href="mailto:<info@stdl.ch>" target="_blank" rel="noopener" title="Send us an eMail!" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.3.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M498.1 5.6c10.1 7 15.4 19.1 13.5 31.2l-64 416c-1.5 9.7-7.4 18.2-16 23s-18.9 5.4-28 1.6L284 427.7l-68.5 74.1c-8.9 9.7-22.9 12.9-35.2 8.1S160 493.2 160 480v-83.6c0-4 1.5-7.8 4.2-10.7l167.6-182.9c5.8-6.3 5.6-16-.4-22s-15.7-6.4-22-.7L106 360.8l-88.3-44.2C7.1 311.3.3 300.7 0 288.9s5.9-22.8 16.1-28.7l448-256c10.7-6.1 23.9-5.5 34 1.4z"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.expand"], "search": "../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.2a6f1dda.min.js"></script>
+      
+        <script src="../assets/javascripts/config.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>
