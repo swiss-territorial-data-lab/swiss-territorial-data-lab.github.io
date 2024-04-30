@@ -9,7 +9,7 @@
       
       
       <link rel="icon" href="../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-8.5.10">
+      <meta name="generator" content="mkdocs-1.4.0, mkdocs-material-8.5.6">
     
     
       
@@ -17,10 +17,10 @@
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.472b142f.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.20d9efc8.min.css">
       
         
-        <link rel="stylesheet" href="../assets/stylesheets/palette.08040f6c.min.css">
+        <link rel="stylesheet" href="../assets/stylesheets/palette.cbb835fc.min.css">
         
       
       
@@ -54,7 +54,7 @@
     
     
     
-    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="None" data-md-color-accent="None">
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="none" data-md-color-accent="none">
   
     
     
@@ -517,7 +517,7 @@
 <p>Nicolas Beglinger (swisstopo) - Clotilde Marmy (ExoLabs) - Alessandro Cerioni (Canton of Geneva) - Roxane Pott (swisstopo) - Thilo Dürr-Auster (Canton of Fribourg) - Daniel Käser (Canton of Fribourg)</p>
 <p>Proposed by the <a href="https://www.fr.ch/dime/sen">Service de l'environnement</a> (SEn) of the Canton of Fribourg - PROJ-SOILS<br/>
 May 2023 to April 2024 - Published in April 2024</p>
-<p>All code is available on <a href="https://github.com/swiss-territorial-data-lab/proj-soil">GitHub</a>.</p>
+<p>All code is available on <a href="https://github.com/swiss-territorial-data-lab/proj-soils">GitHub</a>.</p>
 <p><em><strong>Abstract</strong>: This project focuses on developing an automated methodology to distinguish areas covered by pedological soil from areas comprised of non-soil. The goal is to generate high-resolution maps (10cm) to aid in the location and assessment of polluted soils. Towards this end, we utilize deep learning models to classify land cover types using raw, raster-based aerial imagery and digital elevation models (DEMs). Specifically, we assess models developed by the Institut National de l’Information Géographique et Forestière (IGN), the Haute Ecole d'Ingénierie et de Gestion du Canton de Vaud (HEIG-VD), and the Office Fédéral de la Statistique (OFS). The performance of the models is evaluated with the Matthew's correlation coefficient (MCC) and the Intersection over Union (IoU), as well as with qualitatifve assessments conducted by the beneficiaries of the project. In addition to testing pre-existing models, we fine-tuned the model developed by the HEIG-VD on a dataset specifically created for this project. The fine-tuning aimed to optimize the model performance on the specific use-case and to adapt it to the characteristics of the dataset: higher resolution imagery, different vegetation appearances due to seasonal differences, and a unique classification scheme. Fine-tuning with a mixed-resolution dataset improved the model performance of its application on lower-resolution imagery, which is proposed to be a solution to square artefacts that are common in inferences of attention-based models. Reaching an MCC score of 0.983, the findings demonstrate promising performance. The derived model produces satisfactory results, which have to be evaluated in a broader context before being published by the beneficiaries. Lastly, this report sheds light on potential improvements and highlights considerations for future work.</em></p>
 <h2 id="1-introduction">1. Introduction<a class="headerlink" href="#1-introduction" title="Permanent link">&para;</a></h2>
 <p>Polluted soils present diverse health risks. In particular, contamination with lead, mercury, and polycyclic aromatic hydrocarbons (PAHs) currently mobilizes the Federal Office for the Environment <sup id="fnref:1"><a class="footnote-ref" href="#fn:1">1</a></sup>. Therefore, it is necessary to know about the location of contaminated soils, like for prevention and management of soil displacement during construction works.</p>
@@ -629,7 +629,7 @@ The IoU, also known as the Jaccard index, measures the overlap between two datas
 <p>OFS has also created a deep learning model prototype to automatically segment land cover types. However, different than the models of IGN and  HEIG-VD, it works with two steps:</p>
 <ol>
 <li>The input imagery is processed by the <em>Segment Anything Model (SAM)</em> by Meta <sup id="fnref:9"><a class="footnote-ref" href="#fn:9">9</a></sup>. This step is used to create segments of pixels that belong to the same class without labeling the produced segments.</li>
-<li>In a second step, the formerly produced segments are classified using a part of the <em>ADELE</em> pipeline, which is designed to automatize the acquisition of the <a href="https://www.bfs.admin.ch/bfs/fr/home/statistiques/espace-environnement/enquetes/area.html"><em>Statistique suisse de la superficie</em></a>, a point sampling grid with a mesh width of 100 meters. The data points on this grid are only representative for the exact coordinate that they lay on, not for the 100 meter square they are in, which means that the ground truth cannot be treated as an image <sup id="fnref:10"><a class="footnote-ref" href="#fn:10">10</a></sup>. As a result, their model has been trained to classify the land cover class of only the centre pixel in an input image. To classify a segment, then, the model is used to classify a small number of sample pixels of a segment and the most frequent class is chosen as the class of the segment. The used architecture is a ConvNeXtTiny<sup id="fnref:11"><a class="footnote-ref" href="#fn:11">11</a></sup> architecture, which is a CNN. The model is limited to RGB imagery only and has been trained with a spatial resolution of 25 cm.</li>
+<li>In a second step, the formerly produced segments are classified using a part of the <em>ADELE</em> pipeline, which is designed to automatize the acquisition of the <a href="https://www.bfs.admin.ch/bfs/fr/home/statistiques/espace-environnement/enquetes/area.html"><em>Statistique suisse de la superficie</em></a>, a point sampling grid with a mesh width of 100 meters. The data points on this grid are only representative for the exact coordinate that they lay on, not for the 100 meter square they are in, which means that the ground truth cannot be treated as an image <sup id="fnref2:10"><a class="footnote-ref" href="#fn:10">10</a></sup>. As a result, their model has been trained to classify the land cover class of only the centre pixel in an input image. To classify a segment, then, the model is used to classify a small number of sample pixels of a segment and the most frequent class is chosen as the class of the segment. The used architecture is a ConvNeXtLarge<sup id="fnref:11"><a class="footnote-ref" href="#fn:11">11</a></sup> architecture, which is a CNN. The model is limited to RGB imagery only and has been trained with a spatial resolution of 25 cm.</li>
 </ol>
 <h2 id="5-methodology">5. Methodology<a class="headerlink" href="#5-methodology" title="Permanent link">&para;</a></h2>
 <p>The Methodology section describes the infrastructure used to run the models and to reproduce the project. Furthermore, it describes precisely the evaluation and fine-tuning approaches.</p>
@@ -1042,7 +1042,7 @@ Regarding Extent 1, the model <em>IGN_smp-unet-resnet34-imagenet_RVBI</em> produ
 <p><strong>HEIG-VD</strong>
 The <em>HEIG-VD</em> model, although it is outperformed by the other two institutions' models on Extent 1, performs significantly better in masked Extent 1 and in Extent 2. The model also performed best in the qualitative assessment. The assessment of the performance in Extent 2 shows that the square artefacts are responsible for a great share of false predictions.</p>
 <p><strong>OFS</strong>
-The OFS model <em>OFS_ADELE2(+SAM)</em> performs similarly to the best-performing IGN model, its outputs are not prone to square artefacts, and the inferences are very clean due to its usage of the SAM model.</p>
+The OFS model <em>OFS_ADELE2(+SAM)</em> performs similarly to the best-performing IGN model, its outputs are not prone to square artefacts, and the inferences are very clean due to its usage of the SAM model. The downside of the OFS model is that it is specifically adapted for the <em>Statistique suisse de la superficie</em><sup id="fnref:10"><a class="footnote-ref" href="#fn:10">10</a></sup> and thus cannot be retrained on a different dataset.</p>
 <p>The goal of the evaluation phase was to identify the most promising model for further steps in the project. Based on the results of the evaluation, the HEIG-VD model was chosen. It performed best in masked Extent 1 and in Extent 2, and it performed best in the qualitative assessment. Additionally, the model needs only aerial imagery with the three RGB channels which allows for an easier reproducibility. The model weights and source code of the HEIG-VD model were kindly shared with us, which enabled us to fine-tune the model to adapt to the specifics of this project. However, the premise of choosing the HEIG-VD model was that we are able to mitigate the square artefacts to an acceptable degree.</p>
 <h3 id="72-fine-tuning">7.2 Fine-Tuning<a class="headerlink" href="#72-fine-tuning" title="Permanent link">&para;</a></h3>
 <p>The following keypoints can be extracted from the fine-tuning results:</p>
@@ -1200,10 +1200,10 @@ The OFS model <em>OFS_ADELE2(+SAM)</em> performs similarly to the best-performin
 <p>Meng-Hao Guo, Tian-Xing Xu, Jiang-Jiang Liu, Zheng-Ning Liu, Peng-Tao Jiang, Tai-Jiang Mu, Song-Hai Zhang, Ralph R. Martin, Ming-Ming Cheng, and Shi-Min Hu. Attention Mechanisms in Computer Vision: A Survey. <em>Computational Visual Media</em>, 8(3):331–368, September 2022. arXiv:2111.07624 [cs]. URL: <a href="http://arxiv.org/abs/2111.07624">http://arxiv.org/abs/2111.07624</a> (visited on 2024-04-08), <a href="https://doi.org/10.1007/s41095-022-0271-y">doi:10.1007/s41095-022-0271-y</a>.&#160;<a class="footnote-backref" href="#fnref:8" title="Jump back to footnote 8 in the text">&#8617;</a></p>
 </li>
 <li id="fn:9">
-<p>Alexander Kirillov, Eric Mintun, Nikhila Ravi, Hanzi Mao, Chloe Rolland, Laura Gustafson, Tete Xiao, Spencer Whitehead, Alexander C. Berg, Wan-Yen Lo, Piotr Dollár, and Ross Girshick. Segment Anything. April 2023. arXiv:2304.02643 [cs]. URL: <a href="http://arxiv.org/abs/2304.02643">http://arxiv.org/abs/2304.02643</a> (visited on 2024-04-05), <a href="https://doi.org/10.48550/arXiv.2304.02643">doi:10.48550/arXiv.2304.02643</a>.&#160;<a class="footnote-backref" href="#fnref:9" title="Jump back to footnote 9 in the text">&#8617;</a></p>
+<p>Alexander Kirillov, Eric Mintun, Nikhila Ravi, Hanzi Mao, Chloe Rolland, Laura Gustafson, Tete Xiao, Spencer Whitehead, Alexander C. Berg, Wan-Yen Lo, Piotr Dollár, and Ross Girshick. Segment Anything. April 2023. arXiv:2304.02643 [cs]. URL: <a href="http://arxiv.org/abs/2304.02643">http://arxiv.org/abs/2304.02643</a> (visited on 2024-04-09).&#160;<a class="footnote-backref" href="#fnref:9" title="Jump back to footnote 9 in the text">&#8617;</a></p>
 </li>
 <li id="fn:10">
-<p>Unknown. <em>Arealstatistik Schweiz. Erhebung der Bodennutzung und der Bodenbedeckung. (Ausgabe 2019 / 2020)</em>. Number 9406112. Bundesamt für Statistik (BFS), Neuchâtel, September 2019. Backup Publisher: Bundesamt für Statistik (BFS). URL: <a href="https://dam-api.bfs.admin.ch/hub/api/dam/assets/9406112/master">https://dam-api.bfs.admin.ch/hub/api/dam/assets/9406112/master</a>.&#160;<a class="footnote-backref" href="#fnref:10" title="Jump back to footnote 10 in the text">&#8617;</a></p>
+<p>Unknown. <em>Arealstatistik Schweiz. Erhebung der Bodennutzung und der Bodenbedeckung. (Ausgabe 2019 / 2020)</em>. Number 9406112. Bundesamt für Statistik (BFS), Neuchâtel, September 2019. Backup Publisher: Bundesamt für Statistik (BFS). URL: <a href="https://dam-api.bfs.admin.ch/hub/api/dam/assets/9406112/master">https://dam-api.bfs.admin.ch/hub/api/dam/assets/9406112/master</a>.&#160;<a class="footnote-backref" href="#fnref:10" title="Jump back to footnote 10 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:10" title="Jump back to footnote 10 in the text">&#8617;</a></p>
 </li>
 <li id="fn:11">
 <p>Zhuang Liu, Hanzi Mao, Chao-Yuan Wu, Christoph Feichtenhofer, Trevor Darrell, and Saining Xie. A ConvNet for the 2020s. March 2022. arXiv:2201.03545 [cs]. URL: <a href="http://arxiv.org/abs/2201.03545">http://arxiv.org/abs/2201.03545</a> (visited on 2024-03-21), <a href="https://doi.org/10.48550/arXiv.2201.03545">doi:10.48550/arXiv.2201.03545</a>.&#160;<a class="footnote-backref" href="#fnref:11" title="Jump back to footnote 11 in the text">&#8617;</a></p>
@@ -1279,10 +1279,10 @@ The OFS model <em>OFS_ADELE2(+SAM)</em> performs similarly to the best-performin
       <div class="md-dialog__inner md-typeset"></div>
     </div>
     
-    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.expand"], "search": "../assets/javascripts/workers/search.16e2a7d4.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.expand"], "search": "../assets/javascripts/workers/search.5bf1dace.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
     
     
-      <script src="../assets/javascripts/bundle.d6c3db9e.min.js"></script>
+      <script src="../assets/javascripts/bundle.078830c0.min.js"></script>
       
         <script src="../assets/javascripts/config.js"></script>
       

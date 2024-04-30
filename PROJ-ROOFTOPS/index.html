@@ -1,0 +1,1864 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.4.0, mkdocs-material-8.5.6">
+    
+    
+      
+        <title>Index - Swiss Territorial Data Lab</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.20d9efc8.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.cbb835fc.min.css">
+        
+      
+      
+
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="none" data-md-color-accent="none">
+  
+    
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#detection-of-occupied-and-free-surfaces-on-rooftops" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Swiss Territorial Data Lab" class="md-header__button md-logo" aria-label="Swiss Territorial Data Lab" data-md-component="logo">
+      
+  <img src="../assets/logo-stdl-transparent.svg" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Swiss Territorial Data Lab
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Index
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/swiss-territorial-data-lab" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    STDL on Github
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Swiss Territorial Data Lab" class="md-nav__button md-logo" aria-label="Swiss Territorial Data Lab" data-md-component="logo">
+      
+  <img src="../assets/logo-stdl-transparent.svg" alt="logo">
+
+    </a>
+    Swiss Territorial Data Lab
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/swiss-territorial-data-lab" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    STDL on Github
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        Homepage
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://github.com/swiss-territorial-data-lab" class="md-nav__link">
+        GitHub
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-introduction" class="md-nav__link">
+    1. Introduction
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-input-data" class="md-nav__link">
+    2. Input data
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Input data">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21-lidar-point-cloud" class="md-nav__link">
+    2.1 LiDAR point cloud
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22-true-orthophotos" class="md-nav__link">
+    2.2 True orthophotos
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#23-delimitation-of-the-roofs" class="md-nav__link">
+    2.3 Delimitation of the roofs
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#24-ground-truth" class="md-nav__link">
+    2.4 Ground truth
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-evaluation-of-the-results" class="md-nav__link">
+    3. Evaluation of the results
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Evaluation of the results">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31-metrics" class="md-nav__link">
+    3.1 Metrics
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32-hyperparameter-optimization" class="md-nav__link">
+    3.2 Hyperparameter optimization
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#33-evaluating-the-relevance-of-the-detections" class="md-nav__link">
+    3.3 Evaluating the relevance of the detections
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-classification-of-roof-plane-occupancy" class="md-nav__link">
+    4. Classification of roof plane occupancy
+  </a>
+  
+    <nav class="md-nav" aria-label="4. Classification of roof plane occupancy">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#41-method" class="md-nav__link">
+    4.1 Method
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#42-results" class="md-nav__link">
+    4.2 Results
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#43-discussion" class="md-nav__link">
+    4.3 Discussion
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-lidar-segmentation" class="md-nav__link">
+    5. LiDAR segmentation
+  </a>
+  
+    <nav class="md-nav" aria-label="5. LiDAR segmentation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#51-method" class="md-nav__link">
+    5.1 Method
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#52-results" class="md-nav__link">
+    5.2 Results
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#53-discussion" class="md-nav__link">
+    5.3 Discussion
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-image-segmentation" class="md-nav__link">
+    6. Image segmentation
+  </a>
+  
+    <nav class="md-nav" aria-label="6. Image segmentation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#61-method" class="md-nav__link">
+    6.1 Method
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#62-results" class="md-nav__link">
+    6.2 Results
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#63-discussion" class="md-nav__link">
+    6.3 Discussion
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-combination-of-results" class="md-nav__link">
+    7. Combination of results
+  </a>
+  
+    <nav class="md-nav" aria-label="7. Combination of results">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#71-method" class="md-nav__link">
+    7.1 Method
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#72-results" class="md-nav__link">
+    7.2 Results
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#73-discussion" class="md-nav__link">
+    7.3 Discussion
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-conclusion" class="md-nav__link">
+    8. Conclusion
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#code-availability" class="md-nav__link">
+    Code availability
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#acknowledgements" class="md-nav__link">
+    Acknowledgements
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#appendix" class="md-nav__link">
+    Appendix
+  </a>
+  
+    <nav class="md-nav" aria-label="Appendix">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#a-variable-importance-in-the-random-forests" class="md-nav__link">
+    A. Variable importance in the random forests
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#references" class="md-nav__link">
+    References
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="detection-of-occupied-and-free-surfaces-on-rooftops">Detection of occupied and free surfaces on rooftops<a class="headerlink" href="#detection-of-occupied-and-free-surfaces-on-rooftops" title="Permanent link">&para;</a></h1>
+<p>Clémence Herny (Exolabs) - Gwenaëlle Salamin (Exolabs) - Alessandro Cerioni (État de Genève) - Roxane Pott (swisstopo)</p>
+<p>Proposed by the Canton of Geneva - PROJ-ROOFTOPS <br>
+Mars 2023 to January 2024 - Published in May 2024</p>
+<p><em><strong>Abstract</strong>: Free roof surfaces offer great potential for the installation of new infrastructure such as solar panels and vegetated rooftops, which are essential for adapting cities to climate change. The arrangement of objects on rooftops can be complex and dynamic. Inventories of existing roof objects are often scarce, incomplete and difficult to update, making it difficult to assess their potential. <br>
+In this project, in collaboration with the Canton of Geneva, we have developed and tested three methods to automatically identify occupied and free surfaces on roofs: (1) classification of roof plane occupancy based on a random forest, (2) segmentation of objects in LiDAR point clouds based on a clustering and (3) segmentation of objects in aerial imagery based on a deep learning. The results are vector layers containing information about surface occupancy. True orthophotos and LiDAR data acquired over the canton of Geneva in 2019 were used. The methods were developed using a subset of 122 buildings selected to be representative of a diversity of objects and roofs, and on which the ground truth objects were manually vectorized. <br>
+The developed methods achieved satisfactory performance. About 85% of the roof planes were correctly classified. The segmentation method was able to detect most of the objects with f1 scores of 0.78 and 0.75 for the LiDAR-based segmentation and the image-based segmentation respectively. The global shape of the occupied surface was more difficult to reproduce with a median intersection over the union of 0.35 and 0.37 respectively.  <br>
+The results of all three methods were considered satisfactory by the experts, with 70% to 95% of the results considered acceptable. Considering the quality of the results and the computational time, only the classification method was selected for an application at the cantonal level.</em></p>
+<h2 id="1-introduction">1. Introduction<a class="headerlink" href="#1-introduction" title="Permanent link">&para;</a></h2>
+<p>To address the challenges of the climate crisis and the ecological transition, local authorities need to adapt their land use policies. One possible measure is to use the surface available on rooftops to install new infrastructure while minimizing the impact on land use. For instance, solar panels can be installed on rooftops to produce local energy with a minimal impact on the landscape<sup id="fnref:1"><a class="footnote-ref" href="#fn:1">1</a></sup>. Rooftops can also accommodate vegetated areas, promoting biodiversity in cities and mitigating the heat island effect<sup id="fnref:2"><a class="footnote-ref" href="#fn:2">2</a></sup>. <br>
+Accurate knowledge of available rooftop surface and an inventory of the existing infrastructure, such as solar panels and vegetated rooftops, are required to plan and prioritize future investments. Ignoring rooftop objects could firstly lead to overestimating the potential for new infrastructure, such as the solar potential<sup id="fnref2:1"><a class="footnote-ref" href="#fn:1">1</a></sup>, and secondly, slowing down the process of new installations. Unfortunately, information on this topic is often scarce and difficult to keep up to date, especially in big cities, limiting our understanding of the current situation. This can be explained by the number and diversity of roofs and roof objects. In addition, the rooftop landscape is dynamic and requires regular monitoring. <br></p>
+<p>With increasing urbanization and the need for sustainable cities, there is a growing interest in knowing the potential of rooftops. The availability of high-resolution satellite and aerial imagery, as well as LiDAR data, along with the development of advanced numerical methods, has yielded to the multiplication of studies. <br>
+The crowdsourcing approach<sup id="fnref:3"><a class="footnote-ref" href="#fn:3">3</a></sup> makes it possible to vectorize objects on a large scale, but requires a large workforce and can suffer from a lack of homogeneity. Computer vision-based solutions show promising results for segmenting objects of interest. A deterministic approach based on pixel analysis and a 3D building model, developed by Narjabadifam et al. (2022)<sup id="fnref:4"><a class="footnote-ref" href="#fn:4">4</a></sup>, was able to detect suitable areas for installing solar panels, taking into account large roof objects (<em>e.g.</em> ventilation). The watershed method is commonly used for image segmentation. It can detect small objects (<em>e.g.</em> roof windows) in high-resolution images but involves a complex workflow to achieve satisfactory results<sup id="fnref:5"><a class="footnote-ref" href="#fn:5">5</a></sup>. Deep learning (DL) methods are used to train detection models for objects of interest such as solar panels<sup id="fnref:6"><a class="footnote-ref" href="#fn:6">6</a></sup>, vegetated roofs<sup id="fnref2:5"><a class="footnote-ref" href="#fn:5">5</a></sup>, superstructures on roofs<sup id="fnref:9"><a class="footnote-ref" href="#fn:9">7</a></sup> or available roof area<sup id="fnref:10"><a class="footnote-ref" href="#fn:10">8</a></sup><sup id="fnref:11"><a class="footnote-ref" href="#fn:11">9</a></sup> with variable performances depending on studies and studied objects. The main difficulty in training DL models is the availability of a qualitative dataset of labels<sup id="fnref2:9"><a class="footnote-ref" href="#fn:9">7</a></sup> as the production of such dataset is a time-consuming task. <br>
+LiDAR data is often used to assess the solar potential of rooftops by segmenting their main planes<sup id="fnref:12"><a class="footnote-ref" href="#fn:12">10</a></sup><sup id="fnref:13"><a class="footnote-ref" href="#fn:13">11</a></sup>. Continuous improvements in point density make it possible today to retrieve the detailed morphology of the roof, including superstructures (<em>e.g.</em> dormers) but also smaller objects, such as chimneys. Therefore, segmentation of objects protruding from flat roof planes provides valuable information about the area available on rooftops. <br></p>
+<p>In this context, the State of Geneva, through the Cantonal Office for Energy (OCEN) and the Cantonal Office for Agriculture and Nature (OCAN), contacted the STDL to explore possibilities of improving knowledge of rooftops. Both offices have developed methods for producing vector layers for solar panels and vegetated rooftops, respectively, but neither provided a satisfactory level of automation, accuracy, or completeness. Besides, information on other objects present on the rooftops, like air conditioners, pipes or windows, is incomplete. Therefore, both offices expressed the need to further automate the detection of available roof surfaces to assess the potential, define realistic objectives and strategies to achieve them, and prioritize investments. <br>
+The objective for the STDL was to produce a binary vector layer of the available and occupied surfaces on roofs in the canton of Geneva. <br>
+In this report, we first describe the data used, including high-resolution aerial imagery, 3D LiDAR point clouds and available vector layers of rooftops. We then present the methods and results of three approaches developed to evaluate available rooftop surface, namely, (1) LiDAR-based classification of roof occupancy, (2) LiDAR-based object segmentation, and (3) image-based object segmentation. Next, we discuss the possibility of combining the results of the different methods to improve the results. Finally, we provide conclusions on the ability of the developed methods to address the problem and on the most appropriate solution.</p>
+<h2 id="2-input-data">2. Input data<a class="headerlink" href="#2-input-data" title="Permanent link">&para;</a></h2>
+<h3 id="21-lidar-point-cloud">2.1 LiDAR point cloud<a class="headerlink" href="#21-lidar-point-cloud" title="Permanent link">&para;</a></h3>
+<p>The <a href="https://ge.ch/sitg/sitg_catalog/sitg_donnees?keyword=&amp;geodataid=1827&amp;topic=tous&amp;service=tous&amp;datatype=tous&amp;distribution=tous&amp;sort=auto">LiDAR point cloud</a> was acquired in March 2019 by the State of Geneva. It has a density of 25 pts/m<sup>2</sup>, an altimetric accuracy of +/- 10 cm and a planimetric accuracy of 20 cm. It is distributed in georeferenced tiles of 500 m each. <br>
+The point cloud is classified into 11 classes, including a "building" class. This class includes the whole building without distinction for the facades, rooftop or roof superstructures. Within the framework of the classification of the roof plane occupancy, the presence of the class "building" was evaluated, as explained in Section <a href="#412-classification-with-manual-thresholds">4.1.2</a>. To avoid the influence of classification errors, points from all classes were considered in the LiDAR segmentation.</p>
+<h3 id="22-true-orthophotos">2.2 True orthophotos<a class="headerlink" href="#22-true-orthophotos" title="Permanent link">&para;</a></h3>
+<p>The RGB aerial imagery was acquired in May 2019 by the State of Geneva with a ground sampling distance of 5 cm. A true orthophoto was derived based on a photomesh. It has a ground sampling distance of 6.8 cm. The product, available on request, is served as RGB GeoTIFF images with a size of 500 m. <br>
+True orthophotos are more complicated to obtain than orthophotos, and thus rarer. Their use was motivated by the fact that orthorectification aligns the roofs and bases of buildings. As a result, the objects detected on true orthophotos have the true position, allowing us to compare our results with those obtained with LiDAR data. </p>
+<h3 id="23-delimitation-of-the-roofs">2.3 Delimitation of the roofs<a class="headerlink" href="#23-delimitation-of-the-roofs" title="Permanent link">&para;</a></h3>
+<p>Information on building roofs is provided by the <a href="https://ge.ch/sitg/fiche/0635">roof vector layer</a> produced by the State of Geneva. It includes the main roof planes and some superstructure elements, defined by their area between 1 m<sup>2</sup> and 9 m<sup>2</sup>. Each roof has been assigned the following attributes:</p>
+<ul>
+<li>Roof plane identifier;</li>
+<li>Federal identifier of the building, called EGID;</li>
+<li>Minimum and maximum altitude of the roof plane.</li>
+</ul>
+<p>The vector layer is regularly updated to reflect of the destruction and construction of buildings. The version used for this project was downloaded in March 2023.</p>
+<h3 id="24-ground-truth">2.4 Ground truth<a class="headerlink" href="#24-ground-truth" title="Permanent link">&para;</a></h3>
+<p>In the Canton of Geneva, several vector layers exist for roof objects (see the <a href="https://ge.ch/sitg/sitg_catalog/sitg_donnees">SITG catalog</a>) but are incomplete for the purposes of our project. Consequently, it was decided to produce a precise ground truth (GT) dedicated to the project instead of using existing layers. It consists of a vector layer segmenting all the visible objects on the roofs, the objects partially covering the roofs, such as trees, as well as the delimitation of free surfaces. This work was performed manually on the 2019 true orthophotos. A single GT was produced for both the LiDAR and the true orthophoto datasets as they are aligned and synchronized in time. All vectorized objects were assigned to a class listed in Figure 1.</p>
+<div align="center" style="font-style: italic">
+<img src="images/counts_object_class_GT.png" width="100%" alt="Bar chart of training and test distribution of object classes"> <br/>
+<i>
+Figure 1: Number of objects per class of the ground truth for the training and test datasets.</i>
+</div>
+
+<p>The GT is a list of 122 buildings chosen to be representative of the diversity (villas, industrial buildings, old town...). Of these, 105 were used to develop and optimize the workflows, <em>i.e.</em> as a training dataset, and 17 were used to check the stability of metrics, <em>i.e.</em> as a test dataset. The labeled objects in the GT, occupying surfaces on the selected roofs, represent about 50% of the total surface in both training and test datasets (Table 1). <br></p>
+<p><center></p>
+<table>
+<thead>
+<tr>
+<th align="left">Dataset</th>
+<th align="center">Number of buildings</th>
+<th align="center">Occupied area (m<sup>2</sup>)</th>
+<th align="center">Free area (m<sup>2</sup>)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">Training subset</td>
+<td align="center">25</td>
+<td align="center">3,087</td>
+<td align="center">14,147</td>
+</tr>
+<tr>
+<td align="left">Training</td>
+<td align="center">105</td>
+<td align="center">57,303</td>
+<td align="center">60,526</td>
+</tr>
+<tr>
+<td align="left">Test</td>
+<td align="center">17</td>
+<td align="center">6,214</td>
+<td align="center">7,415</td>
+</tr>
+</tbody>
+</table>
+<figcaption><i>Table 1: Occupied and free surface areas for the different ground truth datasets. The training subset is specific to the image segmentation workflow (see Section 6.1.4). </i>
+</figcaption>
+<p></center></p>
+<p>Buildings were classified by occupation, hereinafter referred to as the building type, and roof typology, hereinafter referred to as the roof type, to evaluate the impact of these parameters on the results. <br>
+The following building types were selected:</p>
+<ul>
+<li>7 administrative,</li>
+<li>18 industrial buildings, including commercial buildings,</li>
+<li>97 residential buildings.</li>
+</ul>
+<p>The following roof types were selected:</p>
+<ul>
+<li>72 flat roofs,</li>
+<li>29 pitched roofs,</li>
+<li>21 mixed (combination of the first two classes) roofs.</li>
+</ul>
+<p>Note that all administrative and industrial roofs have a flat roof and all the pitched roofs are residential. The GT was used to optimize and assess the different workflows. No custom training was done for this project.</p>
+<h2 id="3-evaluation-of-the-results">3. Evaluation of the results<a class="headerlink" href="#3-evaluation-of-the-results" title="Permanent link">&para;</a></h2>
+<h3 id="31-metrics">3.1 Metrics<a class="headerlink" href="#31-metrics" title="Permanent link">&para;</a></h3>
+<p>The performances of the developed methods were evaluated by computing the number of GT labels detected, namely, the precision P and the ability of the algorithm to be exhaustive with its detections, namely the recall R. The two were combined to obtain the f1 score. The respective formulas are presented below:</p>
+<ul>
+<li><span class="arithmatex">\(\mbox{P} = \frac{\mbox{TP}}{\mbox{TP} + \mbox{FP}}\)</span> </li>
+<li><span class="arithmatex">\(\mbox{R} = \frac{\mbox{TP}}{\mbox{TP} + \mbox{FN}}\)</span> </li>
+<li><span class="arithmatex">\(f_1 = 2\times \frac{\mbox{P}\;\times\;\mbox{R}}{\mbox{P}\; +\; \mbox{R}}\)</span></li>
+</ul>
+<p>with:</p>
+<ul>
+<li>TP: true positives, <em>i.e.</em> a detection overlapping a label above a given threshold</li>
+<li>FN: false negative, <em>i.e.</em> a missed label</li>
+<li>FP: false positive, <em>i.e.</em> an excess detection</li>
+</ul>
+<p>The main challenge in calculating these metrics is related to the count of TP. Indeed, roof objects can have complex shapes, such as pipes, aeration outlets and solar panels, which can be vectorized in many ways, all of them possibly correct (Fig. 2). It can be difficult to reproduce the labels with detections, especially from one algorithm to another. Several detections may well cover one label, just as one detection may well cover several labels and be equally correct for all. <br></p>
+<div align="center" style="font-style: italic">
+<img src="images/object_vectorization.webp" width="100%" alt="Vectorization examples"> <br/>
+<i>
+Figure 2: Illustration of different approaches to object vectorization and possible segmentation results. Solar panels can be vectorized as a group (left), as lines (middle) or as individual panels (right). </i>
+</div>
+
+<p>To account for this aspect, a connected-component method was adopted. <a href="https://en.wikipedia.org/wiki/Component_(graph_theory)">Graphs</a> of overlapping detections and labels were generated as illustrated in Figure 3. A detection was considered to overlap a label when more than 10% of the detection surface was covered. All the elements in a connected graph were tagged as TP. Detections within the group were merged and the assigned TP value is equal to the number of labels within the connected graph. The labels and detections that were not part of any connected graph were assigned FN and FP labels respectively.</p>
+<div align="center" style="font-style: italic">
+<img src="images/method_metrics.webp" alt="Example of intersections between graph and labels"> <br/>
+<i>
+Figure 3: Labels (a) and detected obstacles (b) for the EGID 1005001, the corresponding graphs for the numbered elements on the balconies (c) and the resulting merged tagged detections (d). </i>
+</div>
+
+<p>In addition to object detection, the ability to reproduce the shape of the occupied surface was evaluated. The main objective of the project is to recover the delimitation of free and occupied surfaces. Because of the difficulty of pairing detections and labels and the fact that it is not necessary to know the delimitation of objects inside an occupied surface, we calculated the intersection over union (IoU) of the detections and the labels at the roof scale:</p>
+<div class="arithmatex">\[\begin{align}
+\
+    \mbox{IoU} = {A_{detections \cap labels} \over A_{detections \cup labels}}
+\
+\end{align}\]</div>
+<p>with:</p>
+<ul>
+<li><span class="arithmatex">\(A_{detections \cap labels}\)</span>: the area shared by detection and label;</li>
+<li><span class="arithmatex">\(A_{detections \cup labels}\)</span>: the union area between detections and labels.</li>
+</ul>
+<p>The median IoU (mIoU) of all the roof provide the evaluation metric for the dataset considered.</p>
+<p>The optimal value for the selected metrics, <em>i.e.</em> f1 score and mIoU, is 1.</p>
+<h3 id="32-hyperparameter-optimization">3.2 Hyperparameter optimization<a class="headerlink" href="#32-hyperparameter-optimization" title="Permanent link">&para;</a></h3>
+<p>The algorithms used and developed in this project involve numerous hyperparameters. We adopted the <a href="https://optuna.org/"><em>Optuna</em></a> framework to automate the search for the value of each hyperparameter giving the best results. The optimization was performed for the LiDAR segmentation and the image segmentation workflows. Although the values to be optimized are different, the strategy is similar.</p>
+<p>We sought to maximize the f1 score and the mIoU. The search for the best hyperparameter value was performed using the Tree-structured Parzen Estimator<sup id="fnref:14"><a class="footnote-ref" href="#fn:14">12</a></sup> (TPE) algorithm. At each iteration, the workflow was executed from segmentation to assessment. At the end of the process, the best hyperparameter combinations optimizing the metrics were provided. <br>
+In addition, the relative importance of precision compared to recall can be tuned by adding one of these metrics to the list of value to be optimized. </p>
+<p>The hyperparameters obtained for the whole training dataset are referred to as "global". Specific optimization can be performed given the building type or the roof type to take into account of specific features. In this case, the obtained hyperparameters are referred to as "specialized". <br></p>
+<h3 id="33-evaluating-the-relevance-of-the-detections">3.3 Evaluating the relevance of the detections<a class="headerlink" href="#33-evaluating-the-relevance-of-the-detections" title="Permanent link">&para;</a></h3>
+<p>In addition to the selected metrics, the results were analyzed in terms of object characteristics relevant to the project objective, <em>i.e.</em> providing indications of potential surface available for the installation of new facilities such as solar panels and vegetated rooftops. <br>
+The experts expect to get an estimate of the free surface available to estimate the potential. Therefore, the occupied and free areas obtained with the different methods were computed and compared to the GT to evaluate the accuracy. <br>
+In addition, the continuity of the roof surface is an important parameter to consider when installing facilities. It depends on the size of the objects and their position on the roof. A large object or an object located in the middle of a roof can constitute an obstacle. To evaluate the models' ability to detect such objects, the surface area of the object and the position of its centroid relative to the roof edge were computed, and the metrics were analyzed accordingly.</p>
+<h2 id="4-classification-of-roof-plane-occupancy">4. Classification of roof plane occupancy<a class="headerlink" href="#4-classification-of-roof-plane-occupancy" title="Permanent link">&para;</a></h2>
+<p>A first method was developed to identify potentially free and occupied surfaces on rooftops. It consists of using statistics derived from LiDAR data as an indicator of occupancy. We assumed that some LiDAR properties can capture the presence of objects on the target roofs. For instance, changes in intensity could be caused by the LiDAR hitting different objects. In addition, a surface covered with objects is likely to be rougher than a flat, free surface. Zonal statistics on these two parameters, intensity and roughness, were used in addition to the LiDAR classification and roof plane area to classify roof planes into three classes:</p>
+<ul>
+<li>“occupied”: no usable surface for additional facilities;</li>
+<li>“potentially free”: possible free surface;</li>
+<li>“undefined”: surface under which the LiDAR point cloud is not classified as “building”.</li>
+</ul>
+<h3 id="41-method">4.1 Method<a class="headerlink" href="#41-method" title="Permanent link">&para;</a></h3>
+<h4 id="411-initial-processing">4.1.1 Initial processing<a class="headerlink" href="#411-initial-processing" title="Permanent link">&para;</a></h4>
+<p>First, the intensity values of the LiDAR points classified as building were interpolated with inverse distance weighting and converted to raster. Second, a DEM was computed from the LiDAR point cloud and roughness was derived and saved as raster. The Python library <a href="https://www.whiteboxgeo.com/"><em>WhiteboxTools</em></a> was used for this processing. The roughness was calculated at a scale of 1 m, which was the smallest possible scale. The produced rasters of intensity and roughness have a resolution of 0.3 m/px.</p>
+<p>Zonal statistics of intensity and roughness were computed for each roof plane and used to classify them with manual thresholds and a random forest (RF), as described in the next two sections. If a roof plane extended over several tiles, then the result was kept for the tile with the largest overlap.</p>
+<p>The initial processing was performed for all the roofs of the 45 LiDAR tiles containing GT and eight test tiles selected in the city center, representing a total of 95,699 roof planes. It took around 30 minutes to create the rasters and get the zonal statistics for the LiDAR tiles, while the classification took less than a minute with 32 GB of RAM and a i7-1260P CPU.</p>
+<h4 id="412-classification-with-manual-thresholds">4.1.2 Classification with manual thresholds<a class="headerlink" href="#412-classification-with-manual-thresholds" title="Permanent link">&para;</a></h4>
+<p>Roof planes smaller than 2 m<sup>2</sup> were classified as "occupied", because they are too small for solar or vegetated installations. In addition, roof planes for which the LiDAR point cloud was classified as "building" for less than 25% of the area were classified as "undefined". To classify the remaining roof planes, thresholds were set on the statistical values presented in Table 2. They were selected to reflect the variations in intensity and roughness induced by the presence of objects on the roof, as well as the presence of non-building classes in the LiDAR point cloud.</p>
+<p><center></p>
+<table>
+<thead>
+<tr>
+<th align="left">Variable</th>
+<th align="center">Threshold</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">Margin of error of intensity</td>
+<td align="center">400</td>
+</tr>
+<tr>
+<td align="left">Standard deviation of intensity</td>
+<td align="center">5500</td>
+</tr>
+<tr>
+<td align="left">Median roughness (m)</td>
+<td align="center">7.5</td>
+</tr>
+<tr>
+<td align="left">Overlap with interpolated pixels not classified as building (%)</td>
+<td align="center">25</td>
+</tr>
+</tbody>
+</table>
+<p><i>Table 2: Variables considered to classify the roof planes and the thresholds at which they are classified as occupied. </i>
+</center></p>
+<p>A roof was classified as occupied if it exceeds the threshold for at least one statistical value. The thresholds were set through trials and errors until we came to a satisfying result. <br>
+The resulting classification was reviewed by the experts for 650 roof planes. A satisfaction rate was calculated (Section <a href="#422-expert-assessment">4.2.2</a>). Further tests were performed to improve them by adjusting the thresholds, but no better combination could be found.</p>
+<h4 id="413-classification-with-random-forest">4.1.3 Classification with random forest<a class="headerlink" href="#413-classification-with-random-forest" title="Permanent link">&para;</a></h4>
+<p>To avoid classification based on arbitrary thresholds, RF was used with zonal statistics (Tables A1 and A2). The manual threshold classification, reviewed by the experts, was used as GT to train two RFs, one for each office. The roof planes of the class "undefined" and the ones smaller than 2 m<sup>2</sup> were ignored. The number of roof planes used in the training of each RF is presented in Table 3.</p>
+<p><center></p>
+<table>
+<thead>
+<tr>
+<th>Office</th>
+<th align="center">Potentially free</th>
+<th align="center">Occupied</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>OCAN</td>
+<td align="center">258</td>
+<td align="center">324</td>
+</tr>
+<tr>
+<td>OCEN</td>
+<td align="center">301</td>
+<td align="center">297</td>
+</tr>
+</tbody>
+</table>
+<p><i>Table 3: Correct classification of the roof reviewed by the experts and used as the ground truth for the random forest.</i>
+</center></p>
+<p>The GT was split with 80% of the roof planes for training and 20% for testing. Satisfaction rates were calculated on the test dataset to evaluate the performance.</p>
+<p>Only roofs that could be used for potential solar and vegetated installations were classified by the RF. We excluded the roof planes smaller than 2 m<sup>2</sup> that are automatically classified as "occupied", and the roof planes classified as "undefined".</p>
+<h3 id="42-results">4.2 Results<a class="headerlink" href="#42-results" title="Permanent link">&para;</a></h3>
+<h4 id="421-classification">4.2.1 Classification<a class="headerlink" href="#421-classification" title="Permanent link">&para;</a></h4>
+<p>Examples of roof plane classification obtained with the manual thresholds and the RF models are shown in Figure 4. The results for the OCAN are closer to the results obtained with the manual thresholds than the ones for the OCEN. In addition, let us note that the RF for the OCAN is classifying more roof planes as "occupied" than the RF for the OCEN.</p>
+<div align="center" style="font-style: italic">
+<img src="images/results_classif_RF.webp" alt=""> <br/>
+<i>
+Figure 4: Results of the manual thresholds, the random forest for the classification of occupancy for the OCAN and the OCEN.</i>
+</div>
+
+<p>The visualization of the results shows that not only roofs with obstacles are classified as "occupied", but also some of small or narrow empty roof planes, because  they display high median roughness and/or high minimum roughness. <br>
+The roof planes classified as "undefined" can often be considered as occupied due to the presence of vegetation or walkways. The corresponding areas in the LiDAR point cloud is mostly classified as ground and vegetation.</p>
+<h4 id="422-expert-assessment">4.2.2 Expert assessment<a class="headerlink" href="#422-expert-assessment" title="Permanent link">&para;</a></h4>
+<p>OCEN and OCAN experts are generally satisfied with the classification based on the manual thresholds (Table 4), with global satisfaction rates ranging from 83% to 89%.</p>
+<p><center></p>
+<table>
+<thead>
+<tr>
+<th align="left">Office</th>
+<th align="center">Global</th>
+<th align="center">Occupied</th>
+<th align="center">Potentially free</th>
+<th align="center">Undefined</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">OCAN</td>
+<td align="center">89%</td>
+<td align="center">86%</td>
+<td align="center">93%</td>
+<td align="center">66%</td>
+</tr>
+<tr>
+<td align="left">OCEN</td>
+<td align="center">83%</td>
+<td align="center">84%</td>
+<td align="center">81%</td>
+<td align="center">-</td>
+</tr>
+</tbody>
+</table>
+<figcaption><i>Table 4: Satisfaction rates of the OCAN and OCEN experts with the classification of 650 roof planes using manual thresholds. Global satisfaction rates were computed only for planes classified as "occupied" and "potentially free". The review of planes classified as "undefined" is not available for OCEN. </i>
+</figcaption>
+
+<p></center></p>
+<p>Satisfaction rates for the "occupied" roof planes are similar for both offices, while that for "potentially free" roof planes is 12 points higher for OCAN, reaching an excellent score of 93%. For the OCEN expert, small roof planes are more easily considered as occupied than for the OCAN expert. The OCAN expert approved the "undefined" class in 66% of the cases, while this class was not reviewed by the OCEN expert.</p>
+<p><center>
+<i> Manual threshold classification </i>   </p>
+<table>
+<thead>
+<tr>
+<th align="left"></th>
+<th align="center">Global</th>
+<th align="center">Occupied</th>
+<th align="center">Potentially free</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">OCAN</td>
+<td align="center">79%</td>
+<td align="center">70%</td>
+<td align="center">91%</td>
+</tr>
+<tr>
+<td align="left">OCEN</td>
+<td align="center">77%</td>
+<td align="center">72%</td>
+<td align="center">82%</td>
+</tr>
+</tbody>
+</table>
+<p><i> RF classification </i>   </p>
+<table>
+<thead>
+<tr>
+<th align="left"></th>
+<th align="center">Global</th>
+<th align="center">Occupied</th>
+<th align="center">Potentially free</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">OCAN</td>
+<td align="center">86%</td>
+<td align="center">78%</td>
+<td align="center">96%</td>
+</tr>
+<tr>
+<td align="left">OCEN</td>
+<td align="center">83%</td>
+<td align="center">74%</td>
+<td align="center">91%</td>
+</tr>
+</tbody>
+</table>
+<p><i>Table 5: Satisfaction rates of the OCAN and OCEN experts on the test dataset for the two classification methods. </i></p>
+<p></center></p>
+<p>The satisfaction rates obtained with the manual thresholds and the RF on the test dataset are presented in Table 5. The classification with RF outperforms the manual thresholds, with satisfaction rates increasing by 7 and 6 points for OCAN and OCEN respectively. Note that the satisfaction rates are improved by between 2 and 9 points, for the "occupied" and "potentially free" classes. </p>
+<h4 id="423-variable-importance">4.2.3 Variable importance<a class="headerlink" href="#423-variable-importance" title="Permanent link">&para;</a></h4>
+<p>The influence of the variables considered in the two RF models can be identified by their relative importance (Tables A1 and A2 in Appendix <a href="#a-variable-importance-in-the-random-forests">A</a>) provided by the algorithm.</p>
+<p>The models are consistent, with four common variables, namely the margin of error (MOE) of intensity, the median roughness, the mean roughness and the minimum roughness, in the top 5 most influential variables with an importance higher than 7%. Note that the ranking differs. In particular, the median roughness is showing the greatest divergence, with a difference of 11 points between the two models. It plays the most important role in the OCAN's RF (19.3%) while its role is limited in the OCEN's model (8.3%). Difference in importance for the other variables does not exceed 3.2 points. The roof plane area plays a non-negligible role in the OCEN's RF (13.6%), while this is less the case in the OCAN's RF (5.8%). The standard deviation of intensity has a greater influence in the OCAN's RF (7.8%) than in the OCEN's RF (4.6%). The percentage of overlap with non-building pixels with less than 2%, is the least important parameter for both RF.</p>
+<h3 id="43-discussion">4.3 Discussion<a class="headerlink" href="#43-discussion" title="Permanent link">&para;</a></h3>
+<h4 id="431-manual-thresholds-vs-rf">4.3.1 Manual thresholds vs RF<a class="headerlink" href="#431-manual-thresholds-vs-rf" title="Permanent link">&para;</a></h4>
+<p>Although both the manual threshold and the RF methods give satisfactory results (Tables 3 and 4), classification with RF is better. This result was expected, as RF is a machine learning algorithm based on 14 variables, whereas the threshold method involves manual adjustments of only 4 variables. <br> 
+The choice of a small number of variables for the manual thresholds was made for simplicity sake. Our choices of selecting the MOE of intensity and the median roughness were pertinent as these variables are among the most influential (Tables A1 and A2). The standard deviation of intensity plays a stronger role for the OCEN's model but its significance remains limited (7.8%). Selecting the percentage of overlap with non-building data appears to not be relevant as this variables comes last in the list of relative importance (&lt; 2%) for both RF models. <br> 
+On the other hand, we missed important variables in the manual thresholds such as the minimum roughness and the mean roughness of roof planes playing a significant role (&gt; 10%) in the RF models. The mean roughness was absent of the manual thresholds as it was considered redundant with the median roughness.</p>
+<p>Both methods have their advantages. The manual threshold method is easy to set up and does not require GT, while the RF method is automated, <em>i.e.</em> it does not require an operator to perform manual testing, which can be tedious.</p>
+<h4 id="432-classification-of-small-roof-planes">4.3.2 Classification of small roof planes<a class="headerlink" href="#432-classification-of-small-roof-planes" title="Permanent link">&para;</a></h4>
+<p>When using the manual thresholds, small or narrow roof planes are often classified as "occupied", because of their median roughness above the threshold. As the roughness was calculated at a scale of 1 m (Section <a href="#411-initial-processing">4.1.1</a>), objects located up to 1 m away from the pixel will affect its value. As a result, the roughness of small or narrow roof planes is more influenced by their surroundings than the larger ones. This is the case, for example, with empty roof planes receding or protruding from other planes. <br>
+This interpretation is supported by the fact that the minimum roughness of roof planes is a critical parameter in the RF (Tables A1 and A2). For the considered roughness scale of 1 m, the minimum value strongly depends on the dimensions of the roof plane. A large roof plane can have a low minimum value, because the obstacles on it and its surroundings do not affect the roughness values over the whole plane as can be the case for a small one.</p>
+<p>Small unobstructed roof planes could be used for the installation of solar panels or vegetation. However, the more receding or protruding they are, the more difficult it is to install facilities on them. In addition, due to the limited benefits they would represent in comparison to the effort necessary to develop them, they are not a priority in the planning strategy of the Canton of Geneva. <br>
+Therefore, the fact that the algorithm often classifies small roof planes as occupied suited the experts.</p>
+<h4 id="433-differences-between-random-forests">4.3.3 Differences between random forests<a class="headerlink" href="#433-differences-between-random-forests" title="Permanent link">&para;</a></h4>
+<p>The differences in the results obtained for OCAN and OCEN can be explained by their different requirements (Tables 3, A1 and A2).</p>
+<p>From the OCAN's point of view, which aims to develop vegetated rooftops, some surfaces already covered with low vegetation can be considered as "occupied". Conversely, the presence of some obstacles on the roof plane may not prevent the installation of vegetated rooftops and can be considered as "potentially free". The tolerance of the presence of sparse objects on roof planes could be captured by the median roughness driving the OCAN's RF classification. <br> 
+From the OCEN's point of view, which aims to install solar panels, large continuous area are required for a roof plane to be considered as "potentially free". This is consistent with the fact that the surface area of roof planes and the minimum roughness are critical parameters in OCEN's RF.</p>
+<h4 id="434-relevance-of-the-methods">4.3.4 Relevance of the methods<a class="headerlink" href="#434-relevance-of-the-methods" title="Permanent link">&para;</a></h4>
+<p>The primary goal of classifying roof planes is to provide a product that assists experts in identifying available surfaces for the installation of future equipment. The surfaces classified as "potentially free" need to be examined to assess their actual potential. The surfaces classified as "occupied" are assumed to be unusable and should not be taken into account when estimating potential. It is therefore important to obtain robust results for this class. The experts did not specify a minimum satisfaction rate, but were satisfied with the provided results. <br>
+Thus, it is planned to apply the developed method on a larger scale for use by the experts. The generated vector layers can be used alone or combined with the results of other methods, such as the those presented in Sections <a href="#5-lidar-segmentation">5</a> and <a href="#6-image-segmentation">6</a>. <br></p>
+<p>It should to be recognized that the classification only evaluates the occupancy of a roof plane. Other factors such as roof slope or roof material were ignored. In addition, although the LiDAR intensity was normalized, its value can vary from one acquisition campaign to another, potentially affecting the results of the classification.</p>
+<h2 id="5-lidar-segmentation">5. LiDAR segmentation<a class="headerlink" href="#5-lidar-segmentation" title="Permanent link">&para;</a></h2>
+<p>The goal of this second method based on LiDAR point cloud is to detect objects on rooftops. It is assumed that each roof plane can be approximated by a flat plane and that obstacles protrude from it. The processing resulted in the production of a vector layer of occupied and free surfaces per building.</p>
+<h3 id="51-method">5.1 Method<a class="headerlink" href="#51-method" title="Permanent link">&para;</a></h3>
+<p>The roof plane vectors were merged by EGID to obtain the roof delimitation for each building. Next, the point cloud was clipped according to the roof shape using <a href="https://www.whiteboxgeo.com/"><em>WhiteboxTools</em></a>. If the building extended over several LiDAR tiles, the clipped point clouds were merged. Finally, the point clouds were filtered with the minimum altitude of the roof to retain only the roof points.</p>
+<p>Roof segmentation was performed per building using <a href="https://www.open3d.org/"><em>Open3D</em></a>. <br>
+Each plane in the 3D point cloud was segmented using the <a href="https://www.open3d.org/docs/latest/tutorial/Basic/pointcloud.html#Plane-segmentation">RANSAC algorithm</a>. The <a href="https://www.open3d.org/docs/latest/tutorial/Basic/pointcloud.html#DBSCAN-clustering">DBSCAN algorithm</a> was applied to the points of the potential plane to mitigate noise. The cluster with the largest number of points was retained and considered as a roof plane. This process was repeated with the rest of the point cloud for the expected number of roof planes, given by the roof vector layer, as long as enough points remained. Finally, the remaining points were clustered using DBSCAN and considered as obstacles. <br>
+Despite our endeavors to fix the seed and make the process deterministic, slight variations remained in the output of the RANSAC algorithm. However, the observed impact was only a few hundredths on the final metrics.</p>
+<p>The planes and obstacles were transformed from point clusters to concave polygons using the <a href="https://alphashape.readthedocs.io/en/latest/readme.html">alpha shape algorithm</a>. A minimum, respectively maximum, threshold was set on the projected area of the planes, respectively obstacles. If a polygon had a value that did not meet the threshold of its category, its category was changed.</p>
+<p>The results were evaluated using the metrics described in Section <a href="#31-metrics">3.1</a>. Note that the GT was adapted for the optimization of this method. Indeed, LiDAR segmentation is unable to detect low objects such as lawns, extensive vegetation and empty terraces and balconies. However, these objects can occupy entire flat roofs, creating a bias in the optimization of the process that would tend to segment entire roof planes as objects. Therefore, the aforementioned objects were excluded from the ground truth when running the optimization. <br>
+As explained in Section <a href="#32-optimization-of-the-hyperparameters">3.2</a>, the hyperparameters of the RANSAC and the DBSCAN algorithms, as well as the thresholds on area, were optimized for the training dataset and for subsets based on the building type and the roof type. Combinations were tested between results obtained with different sets of hyperparameters, depending on the types.</p>
+<p>The resulting detection shapes were unsatisfactory. They were shaky and sometimes had a lot of overlap due to the 3D component of the LiDAR data as visible in Figure 5 (left). To improve the rendering, the polygons were smoothed by buffering and cropping and by applying the <a href="https://en.wikipedia.org/wiki/Visvalingam%E2%80%93Whyatt_algorithm">Visvalingam-Wyatt algorithm</a>. Though the polygons aspect have been improved by the simplifications, they still present a shaky aspect (Fig. 5, right). 
+Then, the overlapping detection polygons were merged for each EGID and compared to the roof extend to create a partition of the occupied and free surfaces on roofs. This post-processing was performed after the optimization.</p>
+<div align="center" style="font-style: italic">
+<img src="images/simplified_LiDAR_results.webp" alt="Original and simplified results of LiDAR segmentation"> <br/>
+<i>
+Figure 5: Original (left) and simplified (right) polygons obtained with LiDAR segmentation.</i>
+</div>
+
+<p>Finally, the results were submitted to the OCAN and OCEN's experts for assessment.</p>
+<h3 id="52-results">5.2 Results<a class="headerlink" href="#52-results" title="Permanent link">&para;</a></h3>
+<div align="center" style="font-style: italic">
+<img src="images/results_LiDAR_segmentation.webp" alt="Results of the LiDAR segmentation representing the free and occupied space." style="width:90%"> <br/>
+<i>
+Figure 6: Example of LiDAR segmentation results.</i>
+</div>
+
+<p>Figure 6 shows the results for seven buildings of the GT. </p>
+<h4 id="521-effect-of-the-optimized-hyperparameters">5.2.1 Effect of the optimized hyperparameters<a class="headerlink" href="#521-effect-of-the-optimized-hyperparameters" title="Permanent link">&para;</a></h4>
+<p>A f1 score of 0.70 and a mIoU of 0.34 were obtained on the adapted GT with the global hyperparameters. The specialized hyperparameters have different influence according to the building and roof type considered (Table 6). Administrative buildings and pitched roofs show lower f1 scores than those of other categories with values around 0.70. The mIoU is lower than 0.5 for all subsets.</p>
+<p><center></p>
+<p><i>Global hyperparameters</i></p>
+<table>
+<thead>
+<tr>
+<th>Metric</th>
+<th align="center">Administrative</th>
+<th align="center">Industrial</th>
+<th align="center">Residential</th>
+<th></th>
+<th align="center">Flat</th>
+<th align="center">Mixed</th>
+<th align="center">Pitched</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>f1 score</td>
+<td align="center">0.41</td>
+<td align="center">0.70</td>
+<td align="center">0.72</td>
+<td></td>
+<td align="center">0.73</td>
+<td align="center">0.71</td>
+<td align="center">0.59</td>
+</tr>
+<tr>
+<td>mIoU</td>
+<td align="center">0.14</td>
+<td align="center">0.50</td>
+<td align="center">0.30</td>
+<td></td>
+<td align="center">0.42</td>
+<td align="center">0.45</td>
+<td align="center">0.13</td>
+</tr>
+</tbody>
+</table>
+<p><i>Specialized hyperparameters</i></p>
+<table>
+<thead>
+<tr>
+<th>Metric</th>
+<th align="center">Administrative</th>
+<th align="center">Industrial</th>
+<th align="center">Residential</th>
+<th></th>
+<th align="center">Flat</th>
+<th align="center">Mixed</th>
+<th align="center">Pitched</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>f1 score</td>
+<td align="center">0.63</td>
+<td align="center">0.72</td>
+<td align="center">0.72</td>
+<td></td>
+<td align="center">0.67</td>
+<td align="center">0.68</td>
+<td align="center">0.49</td>
+</tr>
+<tr>
+<td>mIoU</td>
+<td align="center">0.11</td>
+<td align="center">0.49</td>
+<td align="center">0.38</td>
+<td></td>
+<td align="center">0.44</td>
+<td align="center">0.23</td>
+<td align="center">0.31</td>
+</tr>
+</tbody>
+</table>
+<p><i>Table 6: Metrics obtained with the global and specialized hyperparameters on the subsets for each type of building and roof with the adapted GT.</i></p>
+<p></center></p>
+<p>The f1 score obtained for administrative buildings using specialized hyperparameters is improved by about 50%, while the mIoU is reduced by about 20%. The impact of specialized hyperparameters on the segmentation of industrial and residential buildings is rather limited, with a variation of less than 2.5%, except for the mIoU of the residential buildings, which increases by about 25%. <br>
+The flat roofs do not benefit from specific optimization, with variations in the f1 score and mIoU of less than 8%. On the contrary, the pitched roofs are affected by the use of specialized hyperparameters, with a decrease in the f1 score of about 27% and an increase in mIoU of 150%. In this specific case, the general hyperparameters favor the segmentation of the entire roof as an obstacle, while the specialized hyperparameters improve the distinction between roof planes and obstacles (Fig. 7). The metrics of mixed roofs are a combination of the two previous types, with a f1 score that is little affected by the use of specialized hyperparameters (&lt; 5%) and a mIoU 50% lower. <br></p>
+<div align="center" style="font-style: italic">
+<img src="images/global_vs_spacialized_parameters.webp" alt="Global vs specialized parameters on pitched roofs"> <br/>
+<i>
+Figure 7: Comparison of results obtained with global (left) and specialized (right) hyperparameters on buildings with pitched roofs.</i>
+</div>
+
+<p>To take advantage of the best segmentation results, combinations were produced (Table 7).</p>
+<p><center></p>
+<table>
+<thead>
+<tr>
+<th>Metric</th>
+<th align="center">Global</th>
+<th align="center">Combined with <br> administrative buildings</th>
+<th align="center">Combined with <br> pitched roofs</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>f1 score</td>
+<td align="center">0.72</td>
+<td align="center">0.73</td>
+<td align="center">0.70</td>
+</tr>
+<tr>
+<td>mIoU</td>
+<td align="center">0.37</td>
+<td align="center">0.37</td>
+<td align="center">0.41</td>
+</tr>
+</tbody>
+</table>
+<p><i>Table 7: Metrics obtained for the global results and for their combination with specialized results on the training dataset with the adapted GT.</i>
+</center></p>
+<p>The influence of combining the global results with the specialized hyperparameter ones is limited. The metrics vary by less than 4%, except for the mIoU, which improves by 11% when combined with the optimized results for the pitched roofs. The improvement in object segmentation is sufficient to choose to use specialized hyperparameters for the pitched roofs. In addition, this is necessary to ensure results sufficiently discriminating, as visible on Figure 7. </p>
+<p>After applying the post-processing procedure to the combined results, the final metrics are a f1 score of 0.77 and a mIoU of 0.42. The metrics are improved by the better coverage of the detected objects thanks to polygons smoothing and merging of the detections as visible on Figure 5.</p>
+<h4 id="522-global-results">5.2.2 Global results<a class="headerlink" href="#522-global-results" title="Permanent link">&para;</a></h4>
+<p><center></p>
+<table>
+<thead>
+<tr>
+<th align="left">Ground truth</th>
+<th align="center">Precision</th>
+<th align="center">Recall</th>
+<th align="center">f1 score</th>
+<th align="center">mIoU</th>
+<th align="center">Relative error (%)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">adapted GT, training set</td>
+<td align="center">0.77</td>
+<td align="center">0.77</td>
+<td align="center">0.77</td>
+<td align="center">0.42</td>
+<td align="center">11</td>
+</tr>
+<tr>
+<td align="left">whole GT, training set</td>
+<td align="center">0.78</td>
+<td align="center">0.77</td>
+<td align="center">0.78</td>
+<td align="center">0.35</td>
+<td align="center">38</td>
+</tr>
+<tr>
+<td align="left">whole GT, test set</td>
+<td align="center">0.75</td>
+<td align="center">0.80</td>
+<td align="center">0.77</td>
+<td align="center">0.38</td>
+<td align="center">26</td>
+</tr>
+</tbody>
+</table>
+<p><i>Table 8: Metrics and relative error on the occupied area for the training dataset when using the GT adapted for the LiDAR optimization or the whole GT, as well as for the test set on the whole GT.</i>
+</center></p>
+<p>The f1 score remains stable when using the whole GT (Table 8), meaning that the extensive vegetation, lawn and terraces that were removed are detected. However, they are not correctly delineated, resulting in a drop of about 17% in the mIoU and an increase in the relative error of the occupied area by a factor of 3.5. <br> 
+The values for the precision and recall are always close. The results obtained with the test dataset are consistent with those obtained with the training dataset (Table 8). The observations made in the following sections about the characteristics of the detections in the training dataset, are also valid for the test dataset.</p>
+<h4 id="523-detection-characteristics">5.2.3 Detection characteristics<a class="headerlink" href="#523-detection-characteristics" title="Permanent link">&para;</a></h4>
+<div align="center" style="font-style: italic">
+<img src="images/counts_area.png" alt="Count of the tags per area range."> <br/>
+<i>
+Figure 8: Number of TP, FP and FN as a function of object area.</i>
+</div>
+
+<p>Figure 8 shows that labeled objects with an area greater than 1 m<sup>2</sup> are well detected, with f1 scores between 0.82 and 0.92. On the other hand, detection of objects with an area lower than 1 m<sup>2</sup> is less trustworthy with a majority of FP detections and almost half of the labels tagged as FN.</p>
+<div align="center" style="font-style: italic">
+<img src="images/counts_nearest_distance_centroid.png" alt="Count of the tags per range of the distance to the roof edge."> <br/>
+<i>
+Figure 9: Number of TP, FP and FN as a function of the distance of the centroid of the object from the roof edge.</i>
+</div>
+
+<p>Figure 9 shows that labeled objects whose centroid is more than 1 m from the roof edge are well detected with a f1 score between 0.80 and 0.85. On the other hand, among the detections whose centroid is less than 1 m from the roof edge, 65% are FP, making them less trustworthy.</p>
+<p>Visualizing the detections, we note that FP covering no obstacle, although they do exist, are rare. Most of the FP form a group of small detections delimiting a roof edge, sometimes detecting barriers that have not been vectorized as obstacles in the GT. Therefore, the FP having an area smaller than 1 m<sup>2</sup> must often be the same as those with a centroid closer than 1 m from the roof edge.</p>
+<p><center></p>
+<table>
+<thead>
+<tr>
+<th>Object class</th>
+<th align="center">Recall</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Antenna</td>
+<td align="center">0.24</td>
+</tr>
+<tr>
+<td>Pipe</td>
+<td align="center">0.59</td>
+</tr>
+<tr>
+<td>Lawn</td>
+<td align="center">0.70</td>
+</tr>
+<tr>
+<td>Other obstacle</td>
+<td align="center">0.70</td>
+</tr>
+<tr>
+<td>Extensive vegetation</td>
+<td align="center">0.72</td>
+</tr>
+<tr>
+<td>Window</td>
+<td align="center">0.76</td>
+</tr>
+<tr>
+<td>Chimney</td>
+<td align="center">0.79</td>
+</tr>
+<tr>
+<td>Aero</td>
+<td align="center">0.83</td>
+</tr>
+<tr>
+<td>Solar thermal</td>
+<td align="center">0.83</td>
+</tr>
+<tr>
+<td>Intensive vegetation</td>
+<td align="center">0.88</td>
+</tr>
+<tr>
+<td>Solar unknown</td>
+<td align="center">0.89</td>
+</tr>
+<tr>
+<td>Balcony / terrace</td>
+<td align="center">0.90</td>
+</tr>
+<tr>
+<td>Solar photovoltaic</td>
+<td align="center">0.92</td>
+</tr>
+</tbody>
+</table>
+<p><i>Table 9: Recall for each object class of the ground truth.</i>
+</center></p>
+<p>The developed method shows good performance in detecting most of the object classes (Table 9). Aeration outlets, balconies and terraces, intensive vegetation, and solar facilities all have recalls greater than 0.80. Antennas are the most difficult class to detect with a recall of 0.24. Next come pipes lawn, other obstacles and extensive vegetation with recall values between 0.59 and 0.72. Windows and chimneys, which are low and thin objects respectively, are detected satisfactorily with a recall of 0.76 and 0.78 respectively.</p>
+<p>Although the detection of objects is globally satisfactory, the reproduction of their shape was not assessed. For example, only the upper parts of solar panels are generally detected as shown in Figure 10. </p>
+<div align="center" style="font-style: italic">
+<img src="images/segmentation_solar_panels.webp" alt="Example of the varying delimitation of the solar panels in the segmentation." style="width:80%"> <br/>
+<i>
+Figure 10: Example of results for the segmentation of solar panels using the segmentation of LiDAR data.</i>
+</div>
+
+<p>The same goes for lawn and extensive vegetation, which are always partially detected (Fig 11).</p>
+<div align="center" style="font-style: italic">
+<img src="images/delineation_problem.webp" alt="Roof with a extensive lawn detected as TP, but badly delineated." style="width:100%"> <br/>
+<i>
+Figure 11: Roof with a terrace and an area of extensive vegetation (left). Both are detected as TP, but are not covered by the area detected as occupied (right).</i>
+</div>
+
+<h4 id="524-estimated-area">5.2.4 Estimated area<a class="headerlink" href="#524-estimated-area" title="Permanent link">&para;</a></h4>
+<p><center></p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th align="center">Administrative</th>
+<th align="center">Industrial</th>
+<th align="center">Residential</th>
+<th></th>
+<th align="center">Flat</th>
+<th align="center">Mixed</th>
+<th align="center">Pitched</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Area <strong>labeled</strong> as occupied</td>
+<td align="center">4,986</td>
+<td align="center">32,720</td>
+<td align="center">19,399</td>
+<td></td>
+<td align="center">54,875</td>
+<td align="center">1,386</td>
+<td align="center">844</td>
+</tr>
+<tr>
+<td>Area <strong>detected</strong> as occupied</td>
+<td align="center">1,195</td>
+<td align="center">20,953</td>
+<td align="center">12,986</td>
+<td></td>
+<td align="center">30,980</td>
+<td align="center">3,052</td>
+<td align="center">1,102</td>
+</tr>
+<tr>
+<td>Total area</td>
+<td align="center">6,692</td>
+<td align="center">78,011</td>
+<td align="center">33,278</td>
+<td></td>
+<td align="center">108,415</td>
+<td align="center">5,018</td>
+<td align="center">4,584</td>
+</tr>
+</tbody>
+</table>
+<p><i>Table 10: Occupied area for the labels and the detections, as well as the total roof area in m<sup>2</sup>.</i>
+</center></p>
+<p>In total, 35,134 m<sup>2</sup> of roofs were detected as occupied while 57,105 m<sup>2</sup> were labeled as such (Table 10). This represents an error of 38%. <br>
+Administrative buildings have the largest error in estimating the occupied area with an error of 76% compared to less than 37% for other building types. <br>
+The occupied area is underestimated for flat roofs, while it is overestimated for pitched and mixed roofs. The mixed roofs have an error of 120%, <em>i.e.</em> the estimated occupied area is about twice larger than the actual value. Flat and pitched roofs each have an error of 44% and 30% respectively.</p>
+<h4 id="525-expert-assessment">5.2.5 Expert assessment<a class="headerlink" href="#525-expert-assessment" title="Permanent link">&para;</a></h4>
+<p>The experts were at least partially satisfied by more than 69% of the segmented roofs (Table 11). <br></p>
+<p><center></p>
+<table>
+<thead>
+<tr>
+<th align="left">Evaluation</th>
+<th align="center">OCAN</th>
+<th align="center">OCEN</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">Not satisfied</td>
+<td align="center">22%</td>
+<td align="center">31%</td>
+</tr>
+<tr>
+<td align="left">Partially satisfied</td>
+<td align="center">54%</td>
+<td align="center">33%</td>
+</tr>
+<tr>
+<td align="left">Satisfied</td>
+<td align="center">24%</td>
+<td align="center">36%</td>
+</tr>
+</tbody>
+</table>
+<p><i>Table 11: Expert's satisfaction with the results produced using segmentation of LiDAR data. OCAN's expert assessed 122 buildings, while OCEN's expert assessed 39 buildings.</i>
+</center></p>
+<p>The most satisfactory types were the administrative buildings and the flat roofs, while the most unsatisfactory types were the industrial buildings and the mixed roofs. This is in contradiction with the metrics for which the administrative buildings have the lowest mIoU.</p>
+<h3 id="53-discussion">5.3 Discussion<a class="headerlink" href="#53-discussion" title="Permanent link">&para;</a></h3>
+<h4 id="531-global-capability-of-the-method">5.3.1 Global capability of the method<a class="headerlink" href="#531-global-capability-of-the-method" title="Permanent link">&para;</a></h4>
+<p>The method proved its ability to detect objects with a f1 score of 0.78 on the whole GT. The primary goal, which was to detect in priority large and roof-centered objects, was satisfactorily achieved. Indeed, objects larger than 1 m<sup>2</sup> have a f1 score higher than 0.81 and objects with their centroid at more than 1 m from the roof edge have a f1 score higher than 0.79.</p>
+<p>However, the mIoU remains lower than 0.50, indicating that the shapes of the detections are poorly reproduced. It should be noted that this metric seems to be sensitive to small variations in shape, making it a very strict metric. In addition, it should be remembered that the mIoU evaluates the delimitation of the occupied surface at the roof scale, including TP, FP and FN detections.</p>
+<p>In addition to the low mIoU, the global estimation of the occupied area is medium with an error of 38%. However, this value is reduced to 11% when the lawn, the empty balconies and most of the extensive vegetation are removed from the ground truth. This highlights that the method is generally good, except for the segmentation of low objects. Indeed, although the aforementioned classes have a recall of 0.70 or higher, we note that their total area is largely underestimated, as visible on Figures 10 and 11. Once those classes removed from the GT, most of the false detections and missed objects have a small area (Fig. 8).</p>
+<h4 id="532-problematic-detections-and-labels">5.3.2 Problematic detections and labels<a class="headerlink" href="#532-problematic-detections-and-labels" title="Permanent link">&para;</a></h4>
+<h5 id="5321-false-positive-detections">5.3.2.1 False positive detections<a class="headerlink" href="#5321-false-positive-detections" title="Permanent link">&para;</a></h5>
+<p>The majority of FP detections cover small areas (Fig. 8) and are located near the roof edges (Fig. 9). In many cases, FP detections near to the edge actually detect barriers that are not labeled in the GT. It may be considered that the protruding roof edges should be included in the annotation to improve the precision and better reflect the actual performance of the method.</p>
+<h5 id="5322-by-object-type">5.3.2.2 By object type<a class="headerlink" href="#5322-by-object-type" title="Permanent link">&para;</a></h5>
+<p>Antennas are often missed (Table 9). We think that LiDAR points due to the presence of an antenna were considered as noise during point clustering, because the object is represented by only a few points due to its morphology and the LiDAR density. Improving antenna detection in the LiDAR point cloud may require specific developments or the use of a denser point cloud. Other thin objects, such as small chimneys, are also missed.</p>
+<p>As shown in Section <a href="#523-detection-characteristics">5.2.3</a>, low objects such as windows, extensive vegetation, lawns, and pipes are more difficult to detect, as they do not protrude above roof planes. The recall, between 0.58 and 0.76, is acceptable, but the shape of objects is always only partially detected.</p>
+<p>Finally, the method also has trouble detecting objects in the "other obstacle" class (Table 9). However, the lack of a precise definition for this category makes it difficult to label and it encompasses several types of objects. In particular, it would be necessary to define with measurable values when a roof part is labeled as a free surface or as "other obstacle".</p>
+<h5 id="5323-by-building-type-and-roof-type">5.3.2.3 By building type and roof type<a class="headerlink" href="#5323-by-building-type-and-roof-type" title="Permanent link">&para;</a></h5>
+<p>We notice that administrative buildings tend to have low or small objects, such as windows, extensive vegetation, or small chimneys. In addition, there are many FP detections because of the roof edges. The use of specialized hyperparameters does not improve the metrics on the adapted GT used for the optimization (Tables 6 and 7), supporting the difficulty to detect these objects. At the cantonal level, the error on the estimated surface should have a limited impact, since the administrative buildings represent only a small fraction of all the buildings. However, as they belong to the state, they could be prioritized for the installation of facilities on their roof.</p>
+<p>The pitched roofs are often segmented into a single obstacle when using the global hyperparameters (Fig. 7). This could be explained by the fact they have a different typology than other roofs. In addition, the training dataset is dominated by flat roofs, with 72 buildings against 29 buildings with pitched roofs. The hyperparameters resulting from the optimization are therefore better suited to the typology of flat roofs, motivating our choice to use specialized hyperparameters for pitched roofs. <br>
+Pitched roofs can be automatically identified in the Canton of Geneva using the slope available in the roofs and buildings vector layers. If this information is not available, for instance in another city or canton, areas of interest can be defined, as pitched roofs are generally located in residential areas and old towns.</p>
+<p>Most of the 21 roofs assigned to the "mixed" type have the entirety of their flat or pitched planes segmented as obstacles. Some of them would have benefited from being segmented with the parameters for pitched roofs. The definition of a pitched roof have to be studied further to define more precisely when to use the specialized hyperparameters.</p>
+<h4 id="533-limitation-and-further-developments">5.3.3 Limitation and further developments<a class="headerlink" href="#533-limitation-and-further-developments" title="Permanent link">&para;</a></h4>
+<p>The process relies on a roof vector layer. Methods exist to produce this information automatically<sup id="fnref2:12"><a class="footnote-ref" href="#fn:12">10</a></sup><sup id="fnref:15"><a class="footnote-ref" href="#fn:15">13</a></sup>. Their application should be tested in order to extend the project to areas where a roof vector layer does not yet  exist. The one for the Canton of Geneva is produced manually to guarantee its quality.</p>
+<p>Variations in detection quality were observed from one building to another. In addition, the detection shapes are not intuitive, making them difficult to interpret and less pleasing to the eye. Therefore, despite the method's respectable results, the experts were not interested in taking the algorithm to the production stage.</p>
+<p>The visual aspect of the results could be improved by modifying the vectorization function to smooth the polygons directly during their production. <br>
+Alternatively, more advanced processing could try to take advantage of the fact that obstacles have simple geometries, like a cylinder for straight pipes or a parallelepiped for aeration. by trying to match these shapes to the clustered point cloud, more precise and visually pleasing detections could be produced.</p>
+<h2 id="6-image-segmentation">6. Image segmentation<a class="headerlink" href="#6-image-segmentation" title="Permanent link">&para;</a></h2>
+<p>The third method consists of segmenting all the potential objects present in a given image. The processing resulted in the production of a vector layer of occupied surfaces per building. </p>
+<h3 id="61-method">6.1 Method<a class="headerlink" href="#61-method" title="Permanent link">&para;</a></h3>
+<div align="center" style="font-style: italic">
+<img src="images/imgseg_workflow.webp" width="100%" alt="image segmentation workflow in images"> <br/>
+<i>
+Figure 12: Illustration of the different steps in the image segmentation workflow for EGID 1005027. Black polygons correspond to the roof delimitation. (a) Bounding box (blue polygon) used to clip the true orthophotos for a given roof with a 1 m positive buffer. (b) Segmentation masks (colored pixels) obtained by processing the tile with SAM. (c) Vector masks (red polygons) of the detected objects after post-processing. (d) Detection tags assigned to the vectors. </i>
+</div>
+
+<h4 id="611-image-preparation">6.1.1 Image preparation<a class="headerlink" href="#611-image-preparation" title="Permanent link">&para;</a></h4>
+<p>Similar to the LiDAR segmentation workflow, we adopted a per-roof processing strategy to process the true orthophotos. For each selected building, the roof delimitation was used to derive a bounding box from which the true orthophoto was clipped (Fig. 12(a)). In case the roof was spread over several true orthophotos, the images were first merged. One tile was obtained for each roof considered. The tiles have the same pixel resolution as the true orthophotos, but different sizes according to the roof size.</p>
+<h4 id="612-object-segmentation-and-vectorization">6.1.2 Object segmentation and vectorization<a class="headerlink" href="#612-object-segmentation-and-vectorization" title="Permanent link">&para;</a></h4>
+<p>First, potential objects visible in images were segmented using <a href="https://github.com/facebookresearch/segment-anything">Segment Anything Model</a><sup id="fnref:16"><a class="footnote-ref" href="#fn:16">14</a></sup> (SAM) implemented with PyTorch. It aims to be an open-source foundation model for object segmentation in images with strong zero-shot generalization capabilities. Instance segmentation is performed using a vision transformer (ViT-H) model and a mask is produced for each detected object (Fig. 12(b)). For the project, the default pre-trained model (checkpoints: <code>sam_vit_h_4b8939</code>) was used without any fine-tuning specific to roof objects. Although the object classes are available in the GT dataset, no classification was performed. <br>
+Second, SAM does not handle georeferenced datasets. To simplify the process of leveraging SAM for geospatial data analysis, we used the Python library <a href="https://github.com/opengeos/segment-geospatial">segment-geospatial</a><sup id="fnref:17"><a class="footnote-ref" href="#fn:17">15</a></sup> (<em>samgeo</em>). Georeferenced tiles are used as input to the algorithm. The coordinate reference system of the image is assigned to the SAM masks and their corresponding polygon vectors (Fig. 12&#40;c)). </p>
+<p>Some large buildings, up to 300 m in length, may be encountered. In this case, the number of pixels in the tile can saturate the RAM during image segmentation. To handle this issue, large tiles are split into smaller sub-tiles of 512 px size. Boundary effects are the downside of this method. Sub-tiles are processed individually by SAM. The output masks are then merged to recover the original tile extent, but the joints between the sub-tile masks may not match, causing artifacts in the vector layer (Fig. 13).</p>
+<div align="center" style="font-style: italic">
+<img src="images/large_tiles_artifact.webp" width="100%" alt="Large tile artifact"> <br/>
+<i>
+Figure 13: The squared orange polygon is an artifact due to the tiling performed ot process large tiles (EGID 1011376). The tagged detections are superimposed on (left) the segmented masks (white: detection, black: background) and (right) the true orthophotos. Grey and black polygons correspond to the building delineation. </i>
+</div>
+
+<h4 id="613-result-filtering">6.1.3 Result filtering<a class="headerlink" href="#613-result-filtering" title="Permanent link">&para;</a></h4>
+<p>To improve the quality of the results, post-processing tasks were performed. Polygons were discarded based on geometric considerations:</p>
+<ul>
+<li>polygons equal to or smaller than 0.2 m<sup>2</sup> were considered noise,</li>
+<li>polygons whose area (without holes) was close (90%) to the roof area were likely to correspond to the segmentation of the whole roof by SAM and were therefore not relevant to keep, </li>
+<li>polygons with more than half of their area not intersecting the roof, as the detected object is unlikely to be located on the roof.</li>
+</ul>
+<p>The vector layer of detected objects was clipped with the roof delimitation polygon to ensure that objects did not overlap several roofs (Fig. 12&#40;c)).</p>
+<p>Each building was processed independently. The vector layers were finally merged into a single layer.</p>
+<h4 id="614-assessment-and-hyperparameter-optimization">6.1.4 Assessment and hyperparameter optimization<a class="headerlink" href="#614-assessment-and-hyperparameter-optimization" title="Permanent link">&para;</a></h4>
+<p>The detections were compared to the GT labels (Fig. 12(d)) and metrics were calculated (Section <a href="#31-metrics">3.1</a>) to evaluate the performance of the algorithm and the choice of post-processing parameters. </p>
+<p>SAM displays numerous <a href="https://github.com/facebookresearch/segment-anything/blob/main/segment_anything/automatic_mask_generator.py">hyperparameters</a> for which values were assigned after running the optimization workflow presented in Section <a href="#32-hyperparameter-optimization">3.2</a>. Depending on some hyperparameter values and the image size, processing a single image can take several minutes. Since the optimization requires tens of iterations, it was unreasonable to run the process on the entire training dataset. Therefore, we chose to sub-sample the training dataset down to 25 roofs (Table 1), selected to be representative of the entire dataset. Running the optimization process on this subset for 50 iterations took between 1 and 2 days using a 16 GiB GPU machine. <br>
+Based on several replications of the optimization process, including one performed on 100 trials, four of the most influential hyperparameters<sup id="fnref2:16"><a class="footnote-ref" href="#fn:16">14</a></sup> were identified: (1) the threshold on the stability score of the predicted mask, (2) the stability score offset, (3) the box IoU cutoff used by non-maximal suppression to filter duplicated masks and (4) the prediction threshold. <br>
+The other SAM hyperparameters have a limited impact on the value ranges explored. However, we noticed that the number of points sampled per side strongly influence the processing duration (Table 12). 64 points per side is a good trade-off between performance and computation time, which guided our final choice to set this value.</p>
+<p><center></p>
+<table>
+<thead>
+<tr>
+<th align="center">Points per side</th>
+<th align="center">f1 score</th>
+<th align="center">mIoU</th>
+<th align="center">Duration (min)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">128</td>
+<td align="center">0.75</td>
+<td align="center">0.40</td>
+<td align="center">43</td>
+</tr>
+<tr>
+<td align="center">96</td>
+<td align="center">0.75</td>
+<td align="center">0.44</td>
+<td align="center">25</td>
+</tr>
+<tr>
+<td align="center">64</td>
+<td align="center">0.74</td>
+<td align="center">0.41</td>
+<td align="center">12</td>
+</tr>
+<tr>
+<td align="center">32</td>
+<td align="center">0.66</td>
+<td align="center">0.40</td>
+<td align="center">4</td>
+</tr>
+</tbody>
+</table>
+<p><i>Table 12: Influence of the number of points sampled per image side on the f1 score, mIoU and duration of segmentation using SAM on a 16 GiB GPU machine. Results obtained on the training sub-sampled dataset with the optimized hyperparameter values set in the configuration file and only varying the points per side. </i>
+</center></p>
+<p>The selected hyperparameter values can be found in the <a href="https://github.com/swiss-territorial-data-lab/proj-rooftops/blob/ch/imgseg/config/config_imgseg.yaml">
+configuration file</a> of the image segmentation workflow. </p>
+<h3 id="62-results">6.2 Results<a class="headerlink" href="#62-results" title="Permanent link">&para;</a></h3>
+<h4 id="621-global">6.2.1 Global<a class="headerlink" href="#621-global" title="Permanent link">&para;</a></h4>
+<div align="center" style="font-style: italic">
+<img src="images/imgseg_free-occ_surface_example.webp" width="100%" alt="Example of imgseg results of free and occupied surface"> <br/>
+<i>
+Figure 14: Example of a result obtained with the image segmentation workflow. Free surfaces were obtained by subtracting detected objects from the roof boundary (black polygons). </i>
+</div>
+
+<p>The image segmentation method produced vectors of detected objects for each roof considered (Fig. 14). The metrics obtained for the different datasets are presented in Table 13. They were obtained for a set of hyperparameters that balanced the precision and the recall as much as possible. Alternative result, obtained with a set of hyperparameters promoting the recall over the precision was also produced and evaluated but was not preferred by the experts, in particular due to the presence of large FP detections segmenting whole roofs. <br> Overall, similar metric values are obtained for the different datasets, demonstrating the consistency of the method. </p>
+<p><center></p>
+<table>
+<thead>
+<tr>
+<th align="left">Dataset</th>
+<th align="center">Precision</th>
+<th align="center">Recall</th>
+<th align="center">f1 score</th>
+<th align="center">mIoU</th>
+<th align="center">Relative error (%)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">Training subset</td>
+<td align="center">0.73</td>
+<td align="center">0.78</td>
+<td align="center">0.75</td>
+<td align="center">0.41</td>
+<td align="center">7</td>
+</tr>
+<tr>
+<td align="left">Training</td>
+<td align="center">0.75</td>
+<td align="center">0.82</td>
+<td align="center">0.78</td>
+<td align="center">0.37</td>
+<td align="center">42</td>
+</tr>
+<tr>
+<td align="left">Test</td>
+<td align="center">0.75</td>
+<td align="center">0.71</td>
+<td align="center">0.73</td>
+<td align="center">0.37</td>
+<td align="center">23</td>
+</tr>
+</tbody>
+</table>
+<p><i>Table 13: Metrics and relative errors on the occupied area for the training and the test datasets.</i>
+</center></p>
+<p>Satisfactory f1 scores, between 0.73 and 0.78, are achieved. We note a slight imbalance, from 4 to 7 points, between the precision and the recall according to the different datasets. <br>
+The value of the mIoU are modest, ranging between 0.37 and 0.41, with a standard deviation of about 0.20 (later noted as +/- 0.20). High mIoU (&gt;= 0.70) are associated with high f1 score (0.87 +/- 0.11 in average) but the opposite is not true (Fig. 15). When an object is detected, the method usually shows good ability to segment it accurately. However, small discrepencies with GT shapes lower down the IoU value significantly. </p>
+<div align="center" style="font-style: italic">
+<img src="images/imgseg_detection_iou_examples.webp" width="100%" alt="Example of roof with good and average IoU"> <br/>
+<i>
+Figure 15: Examples of detections with high f1 scores but variables IoU. (left) Roof segmentation (EGID 295060134) with both high f1 score and IoU and (right) roof segmentation (EGID 1023590) with a high f1 score and an averaged IoU. </i>
+</div>
+
+<p>Finally, the surface area occupied by the detected objects in the training and test datasets, which represents about 30% of the total area, is significantly underestimated compared with the 50% of the GT (Table 1). This results in relative errors between 23% and 42%, for the test and training datasets respectively. Note the significant variation in relative errors depending on the dataset considered, in particular, the variability between the training subset and the training datasets. This highlights that errors concerning large objects can drastically increase the relative error on area estimations.</p>
+<h4 id="622-roof-characteristics">6.2.2 Roof characteristics<a class="headerlink" href="#622-roof-characteristics" title="Permanent link">&para;</a></h4>
+<p><center></p>
+<table>
+<thead>
+<tr>
+<th align="left">Metric</th>
+<th align="center">Administrative</th>
+<th align="center">Industrial</th>
+<th align="center">Residential</th>
+<th></th>
+<th align="center">Flat</th>
+<th align="center">Mixed</th>
+<th align="center">Pitched</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">f1 score</td>
+<td align="center">0.81</td>
+<td align="center">0.80</td>
+<td align="center">0.77</td>
+<td></td>
+<td align="center">0.79</td>
+<td align="center">0.75</td>
+<td align="center">0.74</td>
+</tr>
+<tr>
+<td align="left">mIoU</td>
+<td align="center">0.23</td>
+<td align="center">0.33</td>
+<td align="center">0.38</td>
+<td></td>
+<td align="center">0.30</td>
+<td align="center">0.39</td>
+<td align="center">0.51</td>
+</tr>
+</tbody>
+</table>
+<p><i>Table 14: Metrics calculated by building and roof type for the training dataset. </i>
+</center></p>
+<p>Table 14 shows that the model detects objects similarly for the different building and roof types with a f1 score within 5 points for each types. <br>
+The mIoU depends on the roof characteristics. Industrial and residential buildings have a mIoU of about 0.35, while the value for the administrative buildings is about 35% lower. The mIoU increases from flat, to mixed, to pitched roof over a range of about 20 points.</p>
+<div align="center" style="font-style: italic">
+<img src="images/imgseg_training_roof_types_area.png" width="100%" alt="Surface comparison"> <br/>
+<i>Figure 16: Comparison of the occupied and free surface areas of the GT labels and the detections according to (top) the building types and (bottom) the roof types for the training dataset. </i>
+</div>
+
+<p>The detected occupied areas are underestimated regardless of the building type (Fig. 16, top). Industrial and residential buildings have a relative error of about 40%, while the administrative buildings have a higher error of 67%. <br>
+The occupied areas of pitched and mixed roofs are accurately estimated with a relative error of about 10%, while the performance for the flat roof is worse, with an error of 43% (Fig. 16, bottom. Remember that all administrative and industrial roofs have a flat roof.</p>
+<p>Considering the similar f1 scores obtained for all the roof properties and the significant amount of time required to run the optimization workflow, no specific optimization was carried out to date.</p>
+<h4 id="623-object-characteristics">6.2.3 Object characteristics<a class="headerlink" href="#623-object-characteristics" title="Permanent link">&para;</a></h4>
+<h4 id="6231-class">6.2.3.1 Class<a class="headerlink" href="#6231-class" title="Permanent link">&para;</a></h4>
+<p>The image segmentation method detects objects of different classes (Fig. 17) with an average recall of 0.80 +/- 0.11, with the exception of pipes, which performs significantly worse with a recall of 0.27.</p>
+<div align="center" style="font-style: italic">
+<img src="images/imgseg_training_metrics_object_class.png" width="100%" alt="Recall of all object classes"> <br/>
+<i>
+Figure 17: Recall for each object class. The results are obtained for the training dataset. </i>
+</div>
+
+<p>Lawns, PV panels and windows are particularly well detected with recall values above 0.93.</p>
+<h4 id="6232-surface-area">6.2.3.2 Surface area<a class="headerlink" href="#6232-surface-area" title="Permanent link">&para;</a></h4>
+<p>Figure 18 shows that objects with a surface area between 0.5 m<sup>2</sup> and 100 m<sup>2</sup> are detected with equal performances by the algorithm with a recall of 0.84 +/- 0.02. Smaller and larger objects are more difficult to detect, with 65% and 76% of GT objects detected, respectively.</p>
+<div align="center" style="font-style: italic">
+<img src="images/imgseg_training_counts_area.png" width="100%" alt="Number of detections and labels in each assessment tag according to object surface"> <br/>
+<i>
+Figure 18: Number of TP and FN labels, as well as FP detections, depending on the object area (m<sup>2</sup>). The results are obtained on the training dataset. </i>
+</div>
+
+<p>The proportion of FP detections increases for surface areas of less than 1 m<sup>2</sup> leading to an average precision of 0.60 +/- 0.06, while the average precision for larger objects is 0.83 +/- 0.05.</p>
+<h4 id="6233-position-on-the-roof">6.2.3.3 Position on the roof<a class="headerlink" href="#6233-position-on-the-roof" title="Permanent link">&para;</a></h4>
+<p>Objects are well detected, with an average recall of 0.83 +/- 0.04, as long as their centroid is more than 1 m from the roof edge (Fig. 19). For objects closer to the roof edge, the recall is only 0.56.</p>
+<div align="center" style="font-style: italic">
+<img src="images/imgseg_training_counts_nearest_distance_centroid.png" width="100%" alt="Number of detections and labels in each assessment tag according to object position to the roof edge"> <br/>
+<i>
+Figure 19: Number of TP and FN labels, as well as FP detections, depending on the distance of the object centroid to the roof edge (m). The results are obtained for the training dataset. </i>
+</div>
+
+<p>The precision also decreases significantly for objects located near to the roof edge, from an average of 0.77 +/- 0.03 for object centroids more than 1 m away to 0.51 below, due to an increase of FP detections. </p>
+<h4 id="624-expert-assessment">6.2.4 Expert assessment<a class="headerlink" href="#624-expert-assessment" title="Permanent link">&para;</a></h4>
+<p>The experts are at least partially satisfied by over 86% with the image segmentation method (Table 15).</p>
+<p><center></p>
+<table>
+<thead>
+<tr>
+<th align="left">Evaluation</th>
+<th align="center">OCAN</th>
+<th align="center">OCEN</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">Not satisfied</td>
+<td align="center">6%</td>
+<td align="center">14%</td>
+</tr>
+<tr>
+<td align="left">Partially satisfied</td>
+<td align="center">40%</td>
+<td align="center">49%</td>
+</tr>
+<tr>
+<td align="left">Satisfied</td>
+<td align="center">54%</td>
+<td align="center">37%</td>
+</tr>
+</tbody>
+</table>
+<p><i>Table 15: Expert's satisfaction with the results produced using image segmentation. OCAN's expert assessed 122 buildings, while OCEN's expert assessed 39.</i>
+</center></p>
+<p>Satisfaction is independent of the building type and the roof type which is consistent with the f1 score (Table 13). Slightly lower satisfaction are attributed to the administrative buildings and the flat roofs, which is consistent with the fact that these types have the lowest mIoU.</p>
+<p>The experts are generally satisfied with the shapes of the detection polygons and the consistency of the results from one building to another. </p>
+<h3 id="63-discussion">6.3 Discussion<a class="headerlink" href="#63-discussion" title="Permanent link">&para;</a></h3>
+<h4 id="631-limits-to-object-segmentation">6.3.1 Limits to object segmentation<a class="headerlink" href="#631-limits-to-object-segmentation" title="Permanent link">&para;</a></h4>
+<p>Although the workflow provides overall satisfactory results, there are inherent limitations when using the SAM algorithm to detect roof objects:</p>
+<ul>
+<li>pipe detection: the detection of objects belonging to the "pipe" class is more difficult than for other classes (Fig. 20(a)). The reason could be due to:<ul>
+<li>lack of contrast with the background roof ;</li>
+<li>pipes are long but narrow objects, the point sampling in the image may be too large to detect these objects.  </li>
+</ul>
+</li>
+<li>color change: the SAM algorithm is very sensitive to color changes that can be interpreted as an object and segmented. <ul>
+<li>Roof color (Fig. 20(b)): roof surface can have different colors due to durtiness or material change. In this case, it is difficult to address this issue in both pre- and post-processing.</li>
+<li>Shadows (Fig. 20&#40;c)): although aerial images were acquired at a time of the day minimizing the presence of shadows, some are still present and can be detected as objects due to color change. Methods<sup id="fnref:18"><a class="footnote-ref" href="#fn:18">16</a></sup> exist to mitigate the presence of shadows in images and could be considered in future developments.</li>
+<li>Segmentation of roof planes (Fig. 20(d)): the segmentation of entire roof planes by SAM occurs on both flat and pitched roofs. This is due to color contrast under different illumination associated to different heights and/or inclinations between roof planes. A filter was applied to discard polygons with the same size as the roof, but it was not applied to roof planes because their sizes were sometimes comparable to some labeled objects. The detection of large roof planes may strongly influences the mIoU and the calculation of the occupied surface.</li>
+</ul>
+</li>
+<li>difficulty in detecting small objects (Fig. 18): this can be explained by the number of points sampled per image. Increasing the number may improve the detection of small objects, but it may also lead to over-segmentation of some objects. In addition, the processing time is greatly increased (Table 12). As these objects represent only a limited fraction of the occupied surface (&lt; 0.4%), we decided to prioritize a reasonable computation time over the detection of small objects, which are considered less critical to be detected.</li>
+</ul>
+<div align="center" style="font-style: italic">
+<img src="images/imgseg_bad_examples.webp" width="100%" alt="FP and FN detections"> <br/>
+<i>
+Figure 20: Examples of problems encountered with the image segmentation method. (a) Missing pipe detections; (b) Color changes interpreted as the presence of objects; (c) Dormer shadows detected as objects; (d) Roof plane segmentation. </i>
+</div>
+
+<p>SAM is a pre-trained model showing good zero-shot generalization performance but is not dedicated to detect objects on roofs. The possibility of <a href="https://medium.com/cord-tech/how-to-fine-tune-segment-anything-26295494f9fb">fine-tuning</a> the model can be considered to improve the performance. It would require additional training with the dataset at our disposal (true orthophotos plus GT annotation).</p>
+<h4 id="632-reproduction-of-object-shape">6.3.2 Reproduction of object shape<a class="headerlink" href="#632-reproduction-of-object-shape" title="Permanent link">&para;</a></h4>
+<p>We acknowledge that the mIoU has low values on the training and test datasets (Table 13), but note that this metric is strict. <br>
+It is sensitive to the detection or not of an object as it was computed on all the polygons present on the roof, including TP, FP and FN. Thus, if a large object is not detected or if there is a large FP detection, the mIoU value will be strongly affected. <br>
+In addition, the IoU metric is also sensitive to discrepancies in polygon shapes with the GT (Fig. 16(b)). While the object delineation may appear satisfactory from visual inspection, the metric may display low value. This aspect is difficult to improve as it dependents on the segmentation model and the GT delineation strategy. Overall, the shape of the object is usually satisfactorily reproduced when detected (Figs. 16 and 21). </p>
+<p>The method tends to underestimate the occupied surface area (Fig. 17). Thus, the estimated free surface constitutes an upper limit to assess the potential. <br>
+The small relative error of 10% obtained on the occupied area for the mixed and pitched roofs can be explained by the fact that they generally correspond to villas with limited roof surfaces and a "simple" arrangement of small objects. In comparison, industrial roofs can be large with complex arrangements of objects such as pipes, solar panels or ventilation systems. Therefore, detection errors on villas have usually less impact on the area estimation than detection errors on large industrial buildings.</p>
+<h4 id="633-relevance-of-the-method">6.3.3 Relevance of the method<a class="headerlink" href="#633-relevance-of-the-method" title="Permanent link">&para;</a></h4>
+<p>The results provide strong arguments in favor of the ability of the image segmentation method to correctly detect and segment objects. The fact that the metrics are consistent between the different datasets (Table 13) is encouraging for its applicability to a wider area with a variety of buildings. </p>
+<p>The performance of the method is lower for small objects (Fig. 19) and objects close to the roof edge (Fig. 20). However, the accurate detection of these objects is less critical as they interfere less with the continuity of the roof for the potential installation of solar panels and vegetated roofs.</p>
+<p>The experts were satisfied with the results and interested in putting the method into production. However, the current processing time, about 12 min for 25 buildings, is an hindrance to extending the method to the whole canton of Geneva, gathering about 80,000 buildings. Parallelizing the algorithm to apply the method to an area of interest should be considered.</p>
+<p>Finally, true orthophotos were used in this case. These provide the actual position of an object on a roof. However such product is rare because it is more expensive to produce. Thus, the product may not be available or regularly updated. However, we are confident that this segmentation method can be applied to orthophotos, more regularly acquired. In this case, methods for reprojecting the position of roofs and/or vectors will need to be explored.</p>
+<h2 id="7-combination-of-results">7. Combination of results<a class="headerlink" href="#7-combination-of-results" title="Permanent link">&para;</a></h2>
+<p>The developed methods display different strengths and weaknesses. For instance, LiDAR segmentation has difficulty detecting low and thin objects, which image segmentation does not. Conversely, image segmentation has difficulty with color change segmentation and pipe detection, which LiDAR segmentation does not. Therefore, combining the two results could yield interesting outcomes.</p>
+<h3 id="71-method">7.1 Method<a class="headerlink" href="#71-method" title="Permanent link">&para;</a></h3>
+<p>Two combinations of results were tested:</p>
+<ul>
+<li>concatenation of detected objects from the vector layers produced by LiDAR segmentation and image segmentation;</li>
+<li>selection of overlapping polygons of detected objects from the vector layers produced by LiDAR segmentation and image segmentation with a spatial join. In this case, the image segmentation polygons were retained because they provide the most satisfactory delineation.</li>
+</ul>
+<p>The resulting combined vector layers were then assessed with metrics but not by the experts.</p>
+<h3 id="72-results">7.2 Results<a class="headerlink" href="#72-results" title="Permanent link">&para;</a></h3>
+<p><center></p>
+<table>
+<thead>
+<tr>
+<th align="left">Combination method</th>
+<th align="center">Precision</th>
+<th align="center">Recall</th>
+<th align="center">f1 score</th>
+<th align="center">mIoU</th>
+<th align="center">Relative error (%)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">Concatenation</td>
+<td align="center">0.68</td>
+<td align="center">0.94</td>
+<td align="center">0.79</td>
+<td align="center">0.45</td>
+<td align="center">8</td>
+</tr>
+<tr>
+<td align="left">Spatial join</td>
+<td align="center">0.81</td>
+<td align="center">0.69</td>
+<td align="center">0.75</td>
+<td align="center">0.33</td>
+<td align="center">48</td>
+</tr>
+</tbody>
+</table>
+<p><i>Table 16: Metrics obtained for the training dataset.</i>
+</center></p>
+<p>Comparing Tables 8 and 13 with Table 16, we note that the combination results in similar f1 scores, around 0.77. However, precision and recall values are affected differently. <br>
+The recall increases by more than 10 points with the concatenation method, reaching the excellent value of 0.94. This means that most of the GT objects are detected, including the pipes reaching the satisfactory value of 0.68. On the other hand, the proportion of FPs increases, diminishing the precision by about 8 points. <br>
+The spatial join discards all the single FP detections, improving the precision by 3 to 6 points. Non-overlapping TPs are discarded as well, reducing the recall value by more than 8 points.</p>
+<p>The concatenation has a positive impact, more than 10 points, on the mIoU compared to the spatial join, which provides higher values than the segmentation methods. <br>
+Finally, the relative error on the occupied surface is significantly reduced to less than 10% by concatenating the results while it increases to about 50% with the spatial join method. </p>
+<h3 id="73-discussion">7.3 Discussion<a class="headerlink" href="#73-discussion" title="Permanent link">&para;</a></h3>
+<p>Combining the results does not improve the f1 score, but allows for modulation of the results, <em>i.e.</em> whether favor precision or recall, depending on the needs (Table 16).</p>
+<p>The high recall value obtained with concatenation proves the complementarity of the two methods for detecting different objects. Note that in this case, the final vector layer contains polygons with different aspects. A higher recall value tends to favor the mIoU, since more GT objects are detected, despite the addition of FP. The surface of the detected object is thus improved, but the addition of FPs also contributes to the reduction of the relative error on the occupied surface, which must be carefully analyzed.</p>
+<p>Note that the results of the object segmentation can also be combined with occupancy classification to refine the information on the "potentially free" roof planes. Finally, although incomplete, the <a href="https://ge.ch/sitg/sitg_catalog/sitg_donnees?keyword=CAD_BATIMENTS_HORSOL_TOIT&amp;topic=tous&amp;service=tous&amp;datatype=tous&amp;distribution=tous&amp;sort=auto">roof</a> and <a href="https://ge.ch/sitg/sitg_catalog/sitg_donnees?keyword=superstructure&amp;topic=tous&amp;service=tous&amp;datatype=tous&amp;distribution=tous&amp;sort=auto">roof superstructure</a> vector layers produced by the State of Geneva contain vectors of some roof objects that can be used additionally to improve the accuracy of the results.</p>
+<h2 id="8-conclusion">8. Conclusion<a class="headerlink" href="#8-conclusion" title="Permanent link">&para;</a></h2>
+<p>Detecting objects on rooftops is a key aspect of assessing the potential for installing facilities in cities, such as solar panels and vegetated rooftops. The STDL explored three methods to achieve this objective, based on machine learning and deep learning algorithms and on LiDAR, aerial imagery and vector data. All methods provided satisfactory results. Occupancy classification enabled roof planes to be classified with 85% accuracy. The two segmentation methods reached similar results, with a f1-score of about 0.77, a mIoU of about 0.36 and a relative error on the detected occupied area of 40%. In particular, segmentation methods have made it possible to accurately detect large objects and objects centered on the roof, which are most likely to constitute obstacles to the installation of facilities.</p>
+<p>Overall, the beneficiaries were satisfied with all the methods, with at least 70% of buildings having satisfactory detections. Despite similar performance to image segmentation, LiDAR segmentation was considered the least satisfactory due to the appearance of the detection shapes and the varying results between buildings and object classes. Image segmentation gives satisfactory results overall, but at the current stage, the processing time is unrealistic to consider scaling up the method at the cantonal level. Further developments are required to reduce the computational cost. Finally, the classification method reconciles both accurate results and fast processing time. Therefore, it was selected for an application at the cantonal level. A vector layer indicating the presumed occupancy of roof planes will be produced helping the beneficiaries to find and assess areas potentially available for new installations.</p>
+<p>Combining the results is an asset to enhance the strengths of the different methods. Combining segmentation results increases either precision or recall, depending on the chosen method, without changing the f1 score. A better recall translated into an enhanced delineation of the occupied area on a roof. Cross-referencing information sources, such as occupation classification and published vector layers, can improve results accuracy and help identify areas of interest.</p>
+<p>It should be noted that the results are in line with the STDL's objective to automatically detect occupied and free surfaces on roofs. These results from numerical models are indications that need to be verified by an expert as part of an installation project. Our results do not indicate whether a facility can actually be installed. Additional parameters such as roof material, slope, solar potential, protected buildings, etc., which affect the possibility and prioritization of an installation, are not taken into account and are the responsibility of the beneficiaries.</p>
+<h2 id="code-availability">Code availability<a class="headerlink" href="#code-availability" title="Permanent link">&para;</a></h2>
+<p>The codes are available on the STDL's GitHub repository: <a href="https://github.com/swiss-territorial-data-lab/proj-rooftops">proj-rooftops</a></p>
+<h2 id="acknowledgements">Acknowledgements<a class="headerlink" href="#acknowledgements" title="Permanent link">&para;</a></h2>
+<p>This project was made possible thanks to a tight collaboration between the STDL team and beneficiaries from the offices of the <em>Etat de Genève</em>. In particular, the STDL team acknowledges the key contributions from Basile Grandjean (OCEN), Benjamin Guinaudeau (OCAN), Alisa Freyre (PanData), Mayeul Gaillet (DIT) and Geraldine Chollet (OCAN). We thank PanData for the production of the ground truth. This project has been funded by <em>Strategie Suisse pour la Géoinformation</em>.</p>
+<h2 id="appendix">Appendix<a class="headerlink" href="#appendix" title="Permanent link">&para;</a></h2>
+<h3 id="a-variable-importance-in-the-random-forests">A. Variable importance in the random forests<a class="headerlink" href="#a-variable-importance-in-the-random-forests" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Variable</th>
+<th align="center">Importance for OCAN</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>median roughness</td>
+<td align="center">19.3</td>
+</tr>
+<tr>
+<td>margin of error of intensity</td>
+<td align="center">16.8</td>
+</tr>
+<tr>
+<td>mean roughness</td>
+<td align="center">15.7</td>
+</tr>
+<tr>
+<td>minimum roughness</td>
+<td align="center">10.6</td>
+</tr>
+<tr>
+<td>standard deviation of intensity</td>
+<td align="center">7.8</td>
+</tr>
+<tr>
+<td>area</td>
+<td align="center">5.8</td>
+</tr>
+<tr>
+<td>mean intensity</td>
+<td align="center">4.5</td>
+</tr>
+<tr>
+<td>median intensity</td>
+<td align="center">3.9</td>
+</tr>
+<tr>
+<td>minimum altitude</td>
+<td align="center">3.5</td>
+</tr>
+<tr>
+<td>standard deviation of roughness</td>
+<td align="center">3.3</td>
+</tr>
+<tr>
+<td>maximum intensity</td>
+<td align="center">3.0</td>
+</tr>
+<tr>
+<td>maximum roughness</td>
+<td align="center">2.5</td>
+</tr>
+<tr>
+<td>minimum intensity</td>
+<td align="center">2.4</td>
+</tr>
+<tr>
+<td>% of overlap with non-building data</td>
+<td align="center">1.1</td>
+</tr>
+</tbody>
+</table>
+<p><i>Table A1: List of the variables considered in the random forest and their importance in the classification for the OCAN.</i></p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th align="center">Importance for OCEN</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>margin of error of intensity</td>
+<td align="center">17.6</td>
+</tr>
+<tr>
+<td>minimum roughness</td>
+<td align="center">17.4</td>
+</tr>
+<tr>
+<td>area</td>
+<td align="center">13.5</td>
+</tr>
+<tr>
+<td>mean roughness</td>
+<td align="center">10.7</td>
+</tr>
+<tr>
+<td>median roughness</td>
+<td align="center">8.3</td>
+</tr>
+<tr>
+<td>standard deviation of roughness</td>
+<td align="center">5.5</td>
+</tr>
+<tr>
+<td>standard deviation of intensity</td>
+<td align="center">4.6</td>
+</tr>
+<tr>
+<td>maximum roughness</td>
+<td align="center">4.2</td>
+</tr>
+<tr>
+<td>maximum intensity</td>
+<td align="center">4.1</td>
+</tr>
+<tr>
+<td>minimum altitude</td>
+<td align="center">3.6</td>
+</tr>
+<tr>
+<td>mean intensity</td>
+<td align="center">3.1</td>
+</tr>
+<tr>
+<td>minimum intensity</td>
+<td align="center">3.0</td>
+</tr>
+<tr>
+<td>median intensity</td>
+<td align="center">2.4</td>
+</tr>
+<tr>
+<td>% of overlap with non-building data</td>
+<td align="center">2</td>
+</tr>
+</tbody>
+</table>
+<p><i>Table A2: List of the variables considered in the random forest and their importance in the classification for the OCEN.</i></p>
+<h2 id="references">References<a class="headerlink" href="#references" title="Permanent link">&para;</a></h2>
+<div class="footnote">
+<hr />
+<ol>
+<li id="fn:1">
+<p>Qing Zhong, Jake R. Nelson, Daoqin Tong, and Tony H. Grubesic. A spatial optimization approach to increase the accuracy of rooftop solar energy assessments. <em>Applied Energy</em>, 316:119128, June 2022. URL: <a href="https://linkinghub.elsevier.com/retrieve/pii/S0306261922005062">https://linkinghub.elsevier.com/retrieve/pii/S0306261922005062</a> (visited on 2022-05-27), <a href="https://doi.org/10.1016/j.apenergy.2022.119128">doi:10.1016/j.apenergy.2022.119128</a>.&#160;<a class="footnote-backref" href="#fnref:1" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:1" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+</li>
+<li id="fn:2">
+<p>Junjing Yang, Devi Llamathy Mohan Kumar, Andri Pyrgou, Adrian Chong, Mat Santamouris, Denia Kolokotsa, and Siew Eang Lee. Green and cool roofs’ urban heat island mitigation potential in tropical climate. <em>Solar Energy</em>, 173:597–609, October 2018. URL: <a href="https://linkinghub.elsevier.com/retrieve/pii/S0038092X18307667">https://linkinghub.elsevier.com/retrieve/pii/S0038092X18307667</a> (visited on 2024-03-21), <a href="https://doi.org/10.1016/j.solener.2018.08.006">doi:10.1016/j.solener.2018.08.006</a>.&#160;<a class="footnote-backref" href="#fnref:2" title="Jump back to footnote 2 in the text">&#8617;</a></p>
+</li>
+<li id="fn:3">
+<p>Dan Stowell, Jack Kelly, Damien Tanner, Jamie Taylor, Ethan Jones, James Geddes, and Ed Chalstrey. A harmonised, high-coverage, open dataset of solar photovoltaic installations in the UK. <em>Scientific Data</em>, 7(1):394, November 2020. URL: <a href="https://www.nature.com/articles/s41597-020-00739-0">https://www.nature.com/articles/s41597-020-00739-0</a> (visited on 2024-03-21), <a href="https://doi.org/10.1038/s41597-020-00739-0">doi:10.1038/s41597-020-00739-0</a>.&#160;<a class="footnote-backref" href="#fnref:3" title="Jump back to footnote 3 in the text">&#8617;</a></p>
+</li>
+<li id="fn:4">
+<p>Nima Narjabadifam, Mohammed Al-Saffar, Yongquan Zhang, Joseph Nofech, Asdrubal Cheng Cen, Hadia Awad, Michael Versteege, and Mustafa Gül. Framework for Mapping and Optimizing the Solar Rooftop Potential of Buildings in Urban Systems. <em>Energies</em>, 15(5):1738, February 2022. URL: <a href="https://www.mdpi.com/1996-1073/15/5/1738">https://www.mdpi.com/1996-1073/15/5/1738</a> (visited on 2024-03-21), <a href="https://doi.org/10.3390/en15051738">doi:10.3390/en15051738</a>.&#160;<a class="footnote-backref" href="#fnref:4" title="Jump back to footnote 4 in the text">&#8617;</a></p>
+</li>
+<li id="fn:5">
+<p>Youssef El Merabet, Cyril Meurie, Yassine Ruichek, Abderrahmane Sbihi, and Raja Touahni. Building Roof Segmentation from Aerial Images Using a Line and Region-Based Watershed Segmentation Technique. <em>Sensors</em>, 15(2):3172–3203, February 2015. URL: <a href="http://www.mdpi.com/1424-8220/15/2/3172">http://www.mdpi.com/1424-8220/15/2/3172</a> (visited on 2023-03-28), <a href="https://doi.org/10.3390/s150203172">doi:10.3390/s150203172</a>.&#160;<a class="footnote-backref" href="#fnref:5" title="Jump back to footnote 5 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:5" title="Jump back to footnote 5 in the text">&#8617;</a></p>
+</li>
+<li id="fn:6">
+<p>Jordan M. Malof, Kyle Bradbury, Leslie M. Collins, and Richard G. Newell. Automatic detection of solar photovoltaic arrays in high resolution aerial imagery. <em>Applied Energy</em>, 183:229–240, December 2016. URL: <a href="https://linkinghub.elsevier.com/retrieve/pii/S0306261916313009">https://linkinghub.elsevier.com/retrieve/pii/S0306261916313009</a> (visited on 2024-03-21), <a href="https://doi.org/10.1016/j.apenergy.2016.08.191">doi:10.1016/j.apenergy.2016.08.191</a>.&#160;<a class="footnote-backref" href="#fnref:6" title="Jump back to footnote 6 in the text">&#8617;</a></p>
+</li>
+<li id="fn:9">
+<p>Sebastian Krapf, Lukas Bogenrieder, Fabian Netzler, Georg Balke, and Markus Lienkamp. RID—Roof Information Dataset for Computer Vision-Based Photovoltaic Potential Assessment. <em>Remote Sensing</em>, 14(10):2299, May 2022. URL: <a href="https://www.mdpi.com/2072-4292/14/10/2299">https://www.mdpi.com/2072-4292/14/10/2299</a> (visited on 2022-05-27), <a href="https://doi.org/10.3390/rs14102299">doi:10.3390/rs14102299</a>.&#160;<a class="footnote-backref" href="#fnref:9" title="Jump back to footnote 7 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:9" title="Jump back to footnote 7 in the text">&#8617;</a></p>
+</li>
+<li id="fn:10">
+<p>Roberto Castello, Simon Roquette, Martin Esguerra, Adrian Guerra, and Jean-Louis Scartezzini. Deep learning in the built environment: automatic detection of rooftop solar panels using Convolutional Neural Networks. <em>Journal of Physics: Conference Series</em>, 1343(1):012034, November 2019. URL: <a href="https://iopscience.iop.org/article/10.1088/1742-6596/1343/1/012034">https://iopscience.iop.org/article/10.1088/1742-6596/1343/1/012034</a> (visited on 2024-03-21), <a href="https://doi.org/10.1088/1742-6596/1343/1/012034">doi:10.1088/1742-6596/1343/1/012034</a>.&#160;<a class="footnote-backref" href="#fnref:10" title="Jump back to footnote 8 in the text">&#8617;</a></p>
+</li>
+<li id="fn:11">
+<p>Alexander Apostolov, August Baum, Ghali Chraibi, and Roberto Castello. Automatic detection of available area for rooftop solar panel installation. Technical Report, EPFL, December 2020. URL: <a href="https://www.epfl.ch/labs/mlo/wp-content/uploads/2021/05/crpmlcourse-paper859.pdf">https://www.epfl.ch/labs/mlo/wp-content/uploads/2021/05/crpmlcourse-paper859.pdf</a>.&#160;<a class="footnote-backref" href="#fnref:11" title="Jump back to footnote 9 in the text">&#8617;</a></p>
+</li>
+<li id="fn:12">
+<p>Fayez Tarsha Kurdi, Mohammad Awrangjeb, and Alan Wee-Chung Liew. Automated Building Footprint and 3D Building Model Generation from Lidar Point Cloud Data. In <em>2019 Digital Image Computing: Techniques and Applications (DICTA)</em>, 1–8. Perth, Australia, December 2019. IEEE. URL: <a href="https://ieeexplore.ieee.org/document/8946008/">https://ieeexplore.ieee.org/document/8946008/</a> (visited on 2024-03-21), <a href="https://doi.org/10.1109/DICTA47822.2019.8946008">doi:10.1109/DICTA47822.2019.8946008</a>.&#160;<a class="footnote-backref" href="#fnref:12" title="Jump back to footnote 10 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:12" title="Jump back to footnote 10 in the text">&#8617;</a></p>
+</li>
+<li id="fn:13">
+<p>Mohammad Aslani and Stefan Seipel. Automatic identification of utilizable rooftop areas in digital surface models for photovoltaics potential assessment. <em>Applied Energy</em>, 306:118033, January 2022. URL: <a href="https://www.sciencedirect.com/science/article/pii/S0306261921013283">https://www.sciencedirect.com/science/article/pii/S0306261921013283</a> (visited on 2023-03-24), <a href="https://doi.org/10.1016/j.apenergy.2021.118033">doi:10.1016/j.apenergy.2021.118033</a>.&#160;<a class="footnote-backref" href="#fnref:13" title="Jump back to footnote 11 in the text">&#8617;</a></p>
+</li>
+<li id="fn:14">
+<p>Shuhei Watanabe. Tree-Structured Parzen Estimator: Understanding Its Algorithm Components and Their Roles for Better Empirical Performance. Technical Report, University of Freiburg, May 2023. arXiv:2304.11127 [cs]. URL: <a href="http://arxiv.org/abs/2304.11127">http://arxiv.org/abs/2304.11127</a> (visited on 2024-04-29), <a href="https://doi.org/10.48550/arXiv.2304.11127">doi:10.48550/arXiv.2304.11127</a>.&#160;<a class="footnote-backref" href="#fnref:14" title="Jump back to footnote 12 in the text">&#8617;</a></p>
+</li>
+<li id="fn:15">
+<p>Zhen Qian, Min Chen, Teng Zhong, Fan Zhang, Rui Zhu, Zhixin Zhang, Kai Zhang, Zhuo Sun, and Guonian Lü. Deep Roof Refiner: A detail-oriented deep learning network for refined delineation of roof structure lines using satellite imagery. <em>International Journal of Applied Earth Observation and Geoinformation</em>, 107:102680, March 2022. URL: <a href="https://linkinghub.elsevier.com/retrieve/pii/S030324342200006X">https://linkinghub.elsevier.com/retrieve/pii/S030324342200006X</a> (visited on 2022-05-27), <a href="https://doi.org/10.1016/j.jag.2022.102680">doi:10.1016/j.jag.2022.102680</a>.&#160;<a class="footnote-backref" href="#fnref:15" title="Jump back to footnote 13 in the text">&#8617;</a></p>
+</li>
+<li id="fn:16">
+<p>Alexander Kirillov, Eric Mintun, Nikhila Ravi, Hanzi Mao, Chloe Rolland, Laura Gustafson, Tete Xiao, Spencer Whitehead, Alexander C. Berg, Wan-Yen Lo, Piotr Dollár, and Ross Girshick. Segment Anything. April 2023. arXiv:2304.02643 [cs]. URL: <a href="http://arxiv.org/abs/2304.02643">http://arxiv.org/abs/2304.02643</a> (visited on 2024-04-09).&#160;<a class="footnote-backref" href="#fnref:16" title="Jump back to footnote 14 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:16" title="Jump back to footnote 14 in the text">&#8617;</a></p>
+</li>
+<li id="fn:17">
+<p>Qiusheng Wu and Lucas Prado Osco. Samgeo: A Python package for segmenting geospatial data with the Segment Anything Model (SAM). <em>Journal of Open Source Software</em>, 8(89):5663, September 2023. URL: <a href="https://joss.theoj.org/papers/10.21105/joss.05663">https://joss.theoj.org/papers/10.21105/joss.05663</a> (visited on 2024-03-22), <a href="https://doi.org/10.21105/joss.05663">doi:10.21105/joss.05663</a>.&#160;<a class="footnote-backref" href="#fnref:17" title="Jump back to footnote 15 in the text">&#8617;</a></p>
+</li>
+<li id="fn:18">
+<p>Xiaoxia Liu, Fengbao Yang, Hong Wei, and Min Gao. Shadow Removal from UAV Images Based on Color and Texture Equalization Compensation of Local Homogeneous Regions. <em>Remote Sensing</em>, 14(11):2616, May 2022. URL: <a href="https://www.mdpi.com/2072-4292/14/11/2616">https://www.mdpi.com/2072-4292/14/11/2616</a> (visited on 2024-03-22), <a href="https://doi.org/10.3390/rs14112616">doi:10.3390/rs14112616</a>.&#160;<a class="footnote-backref" href="#fnref:18" title="Jump back to footnote 16 in the text">&#8617;</a></p>
+</li>
+</ol>
+</div>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2020-2021 Swiss Territorial Data Lab
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        <div class="md-social">
+  
+    
+    
+    <a href="https://github.com/swiss-territorial-data-lab" target="_blank" rel="noopener" title="Repo on Github" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+    </a>
+  
+    
+    
+    <a href="mailto:<info@stdl.ch>" target="_blank" rel="noopener" title="Send us an eMail!" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M498.1 5.6c10.1 7 15.4 19.1 13.5 31.2l-64 416c-1.5 9.7-7.4 18.2-16 23s-18.9 5.4-28 1.6l-126.3-52.5-40.1 74.5c-5.2 9.7-16.3 14.6-27 11.9S192 499 192 488v-96c0-5.3 1.8-10.5 5.1-14.7l165.3-212.6c2.5-7.1-6.5-14.3-13-8.4l-179 161.9-32 28.9c-9.2 8.3-22.3 10.6-33.8 5.8l-85-35.4C8.4 312.8.8 302.2.1 290s5.5-23.7 16.1-29.8l448-256c10.7-6.1 23.9-5.5 34 1.4z"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.expand"], "search": "../assets/javascripts/workers/search.5bf1dace.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.078830c0.min.js"></script>
+      
+        <script src="../assets/javascripts/config.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>

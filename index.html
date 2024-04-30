@@ -9,7 +9,7 @@
       
       
       <link rel="icon" href="assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-8.5.10">
+      <meta name="generator" content="mkdocs-1.4.0, mkdocs-material-8.5.6">
     
     
       
@@ -17,10 +17,10 @@
       
     
     
-      <link rel="stylesheet" href="assets/stylesheets/main.472b142f.min.css">
+      <link rel="stylesheet" href="assets/stylesheets/main.20d9efc8.min.css">
       
         
-        <link rel="stylesheet" href="assets/stylesheets/palette.08040f6c.min.css">
+        <link rel="stylesheet" href="assets/stylesheets/palette.cbb835fc.min.css">
         
       
       
@@ -54,7 +54,7 @@
     
     
     
-    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="None" data-md-color-accent="None">
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="none" data-md-color-accent="none">
   
     
     
@@ -365,6 +365,11 @@
 <h2 id="exploratory-projects">Exploratory Projects<a class="headerlink" href="#exploratory-projects" title="Permanent link">&para;</a></h2>
 <p>Exploratory projects in the field of the Swiss territorial data are conducted at the demand of institutions or actors of the Swiss territory. The exploratory projects are conducted with the supervision of the principal in order to closely analyze the answers to the specifications along the project. The goal of exploratory project aims to provide proof-of-concept and expertise in the application of technologies to Swiss territorial data.</p>
 <details class="abstract" open="open">
+<summary><a href="PROJ-ROOFTOPS/"><span style="text-transform:uppercase; font-weight:bold;"> Detection of occupied and free surfaces on rooftops </span> <br/> May 2024</a></summary>
+<p><strong>Clémence Herny (Exolabs) - Gwenaëlle Salamin (Exolabs) - Alessandro Cerioni (État de Genève) - Roxane Pott (swisstopo)</strong> <br /> Proposed by the Canton of Geneva- PROJ-ROOFTOPS <br /> <br /> <em>Free roof surfaces offer great potential for the installation of new infrastructure, such as solar panels and vegetated rooftops. In this project, in collaboration with the Canton of Geneva, we have developed and tested three methods to automatically identify occupied and free surfaces on roofs: (1) classification of roof plane occupancy based on a random forest, (2) segmentation of objects in LiDAR point clouds based on a clustering and (3) segmentation of objects in aerial imagery based on a deep learning. The results are vector layers containing information about surface occupancy. The methods developed on a subset of 122 buildings achieved satisfactory performance. About 85% of the roof planes were correctly classified. The segmentation method was able to detect most of the objects with f1 scores of 0.78 and 0.75 for the LiDAR-based segmentation and the image-based segmentation respectively. The global shape of the occupied surface was more difficult to reproduce with a median intersection over the union of 0.35 and 0.37 respectively. The results of all three methods were considered satisfactory by the experts, with 70% to 95% of the results considered acceptable. Considering the quality of the results and the computational time, only the classification method was selected for application at the cantonal level.</em></p>
+<p><div style="text-align: right"><a class="md-button" href="PROJ-ROOFTOPS/">Full article</a></div></p>
+</details>
+<details class="abstract">
 <summary><a href="PROJ-SOILS/"><span style="text-transform:uppercase; font-weight:bold;"> Automatic Soil Segmentation </span> <br/> April 2024</a></summary>
 <p><strong>Nicolas Beglinger (swisstopo) - Clotilde Marmy (ExoLabs) - Alessandro Cerioni (Canton of Geneva) - Roxane Pott (swisstopo)</strong> <br /> Proposed by the Canton of Fribourg - PROJ-SOILS <br /> <br /> <em>This project focuses on developing an automated methodology to distinguish areas covered by pedological soil from areas comprised of non-soil. The goal is to generate high-resolution maps (10cm) to aid in the location and assessment of polluted soils. Towards this end, we utilize deep learning models to classify land cover types using raw, raster-based aerial imagery and digital elevation models (DEMs). Specifically, we assess models developed by the Institut National de l’Information Géographique et Forestière (IGN), the Haute Ecole d'Ingénierie et de Gestion du Canton de Vaud (HEIG-VD), and the Office Fédéral de la Statistique (OFS). The performance of the models is evaluated with the Matthew's correlation coefficient (MCC) and the Intersection over Union (IoU), as well as with qualitatifve assessments conducted by the beneficiaries of the project. In addition to testing pre-existing models, we fine-tuned the model developed by the HEIG-VD on a dataset specifically created for this project. The fine-tuning aimed to optimize the model performance on the specific use-case and to adapt it to the characteristics of the dataset: higher resolution imagery, different vegetation appearances due to seasonal differences, and a unique classification scheme. Fine-tuning with a mixed-resolution dataset improved the model performance of its application on lower-resolution imagery, which is proposed to be a solution to square artefacts that are common in inferences of attention-based models. Reaching an MCC score of 0.983, the findings demonstrate promising performance. The derived model produces satisfactory results, which have to be evaluated in a broader context before being published by the beneficiaries. Lastly, this report sheds light on potential improvements and highlights considerations for future work.</em></p>
 <p><div style="text-align: right"><a class="md-button" href="PROJ-SOILS/">Full article</a></div></p>
@@ -512,10 +517,10 @@
       <div class="md-dialog__inner md-typeset"></div>
     </div>
     
-    <script id="__config" type="application/json">{"base": ".", "features": ["navigation.expand"], "search": "assets/javascripts/workers/search.16e2a7d4.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": ".", "features": ["navigation.expand"], "search": "assets/javascripts/workers/search.5bf1dace.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
     
     
-      <script src="assets/javascripts/bundle.d6c3db9e.min.js"></script>
+      <script src="assets/javascripts/bundle.078830c0.min.js"></script>
       
         <script src="assets/javascripts/config.js"></script>
       
