@@ -431,16 +431,16 @@ Updated on December 12, 2023</p>
 <p>For the time being, training, validation and test tiles are chosen exclusively among the tiles within the AoI which include one or more ground truth labels.</p>
 </li>
 <li>
-<p>In inference-only scenarios, a single COCO tileset labeled as "other" is generated (<code>oth</code> is the abbreviation we use).</p>
+<p>In inference-only scenarios, a single COCO tileset labeled as "other" is generated (<code>oth</code>).</p>
 </li>
 <li>
-<p>In training + inference scenarios, the full collection of tilesets is generated: <code>trn</code>, <code>val</code>, <code>tst</code>, <code>oth</code>.</p>
+<p>In training AND inference scenarios, the full collection of tilesets is generated: <code>trn</code>, <code>val</code>, <code>tst</code>, <code>oth</code>.</p>
 </li>
 </ol>
 <h3 id="2-model-training">2. Model training<a class="headerlink" href="#2-model-training" title="Permanent link">&para;</a></h3>
 <p>The 1st step provides a collection of tiled images, sharing the same size and resolution, plus the corresponding COCO files (<code>trn</code> + <code>val</code> + <code>tst</code> and/or <code>oth</code> depending on the scenario).</p>
 <p>The 2nd step performs the actual training of a predictive model, iterating over the training dataset. As already mentioned, we delegate this crucial part of the process to the <a href="https://github.com/facebookresearch/detectron2">Detectron2</a> library; support for other libraries may be implemented in the future, if suitable. Detectron2 comes with a large collection of pre-trained models tailored for various tasks. In particular, as far as instance segmentation is concerned, pre-trained models can be selected from <a href="https://github.com/facebookresearch/detectron2/blob/master/MODEL_ZOO.md#coco-instance-segmentation-baselines-with-mask-r-cnn">this list</a>. </p>
-<p>In our workflow, we setup Detectron2 in such a way that inference is made on the validation dataset every N training iterations, being N a user-defined parameter. By doing this, we can monitor both the training and validation losses all along the iterative learning and decide when to stop. Typically, learning is stopped when the validation loss reaches a minimum (see <em>e.g.</em> <a href="https://machinelearningmastery.com/early-stopping-to-avoid-overtraining-neural-network-models/">this article</a> for further information on early stopping). As training and validation loss curves are somewhat noisy, these curves can be smoothed on the fly in order to reveal steady trends. Other metrics may be tracked and used to decide when to stop. For now, within our framework (early) stopping can be done manually and is left to the user; it will be made automatic in the future, following some suitable criterion.</p>
+<p>In our workflow, we setup Detectron2 in such a way that inference is made on the validation dataset every N training iterations, N being an user-defined parameter. By doing this, we can monitor both the training and validation losses all along the iterative learning and decide when to stop. Typically, learning is stopped when the validation loss reaches a minimum (see <em>e.g.</em> <a href="https://machinelearningmastery.com/early-stopping-to-avoid-overtraining-neural-network-models/">this article</a> for further information on early stopping). As training and validation loss curves are somewhat noisy, these curves can be smoothed on the fly in order to reveal steady trends. Other metrics may be tracked and used to decide when to stop. For now, within our framework (early) stopping can be done manually and is left to the user; it will be made automatic in the future, following some suitable criterion.</p>
 <p align="center">
 <img src='image/trn_vs_val_loss.svg' alt='Training vs Validation Loss'/>
 <br />
