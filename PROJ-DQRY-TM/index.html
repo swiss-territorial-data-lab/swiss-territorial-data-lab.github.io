@@ -8,8 +8,11 @@
       
       
       
+      
+      
+      
       <link rel="icon" href="../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-8.5.10">
+      <meta name="generator" content="mkdocs-1.6.0, mkdocs-material-9.5.21">
     
     
       
@@ -17,15 +20,14 @@
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.472b142f.min.css">
-      
-        
-        <link rel="stylesheet" href="../assets/stylesheets/palette.08040f6c.min.css">
-        
+      <link rel="stylesheet" href="../assets/stylesheets/main.66ac8b77.min.css">
       
       
 
+
     
+    
+      
     
     
       
@@ -49,14 +51,8 @@
   </head>
   
   
-    
-    
-    
-    
-    
-    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="None" data-md-color-accent="None">
+    <body dir="ltr">
   
-    
     
     <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
@@ -76,7 +72,9 @@
     
       
 
-<header class="md-header" data-md-component="header">
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
     <a href=".." title="Swiss Territorial Data Lab" class="md-header__button md-logo" aria-label="Swiss Territorial Data Lab" data-md-component="logo">
       
@@ -84,6 +82,7 @@
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
+      
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
     </label>
     <div class="md-header__title" data-md-component="header-title">
@@ -104,8 +103,12 @@
     </div>
     
     
+      <script>var media,input,key,value,palette=__md_get("__palette");if(palette&&palette.color){"(prefers-color-scheme)"===palette.color.media&&(media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']"),palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent"));for([key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
     
       <label class="md-header__button md-icon" for="__search">
+        
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
       </label>
       <div class="md-search" data-md-component="search" role="dialog">
@@ -114,12 +117,15 @@
     <form class="md-search__form" name="search">
       <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
       <label class="md-search__icon md-icon" for="__search">
+        
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
       </label>
       <nav class="md-search__options" aria-label="Search">
         
         <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
         </button>
       </nav>
@@ -131,7 +137,7 @@
           <div class="md-search-result__meta">
             Initializing search
           </div>
-          <ol class="md-search-result__list"></ol>
+          <ol class="md-search-result__list" role="presentation"></ol>
         </div>
       </div>
     </div>
@@ -143,7 +149,7 @@
         <a href="https://github.com/swiss-territorial-data-lab" title="Go to repository" class="md-source" data-md-component="source">
   <div class="md-source__icon md-icon">
     
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
   </div>
   <div class="md-source__repository">
     STDL on Github
@@ -173,6 +179,7 @@
                     
 
 
+
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
     <a href=".." title="Swiss Territorial Data Lab" class="md-nav__button md-logo" aria-label="Swiss Territorial Data Lab" data-md-component="logo">
@@ -187,7 +194,7 @@
       <a href="https://github.com/swiss-territorial-data-lab" title="Go to repository" class="md-source" data-md-component="source">
   <div class="md-source__icon md-icon">
     
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
   </div>
   <div class="md-source__repository">
     STDL on Github
@@ -199,14 +206,19 @@
     
       
       
-      
-
+  
   
   
   
     <li class="md-nav__item">
       <a href=".." class="md-nav__link">
-        Homepage
+        
+  
+  <span class="md-ellipsis">
+    Homepage
+  </span>
+  
+
       </a>
     </li>
   
@@ -214,14 +226,19 @@
     
       
       
-      
-
+  
   
   
   
     <li class="md-nav__item">
       <a href="https://github.com/swiss-territorial-data-lab" class="md-nav__link">
-        GitHub
+        
+  
+  <span class="md-ellipsis">
+    GitHub
+  </span>
+  
+
       </a>
     </li>
   
@@ -255,7 +272,9 @@
       
         <li class="md-nav__item">
   <a href="#1-introduction" class="md-nav__link">
-    1. Introduction
+    <span class="md-ellipsis">
+      1. Introduction
+    </span>
   </a>
   
     <nav class="md-nav" aria-label="1. Introduction">
@@ -263,14 +282,18 @@
         
           <li class="md-nav__item">
   <a href="#11-context" class="md-nav__link">
-    1.1 Context
+    <span class="md-ellipsis">
+      1.1 Context
+    </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#12-approach" class="md-nav__link">
-    1.2. Approach
+    <span class="md-ellipsis">
+      1.2. Approach
+    </span>
   </a>
   
 </li>
@@ -282,7 +305,9 @@
       
         <li class="md-nav__item">
   <a href="#2-data" class="md-nav__link">
-    2. Data
+    <span class="md-ellipsis">
+      2. Data
+    </span>
   </a>
   
     <nav class="md-nav" aria-label="2. Data">
@@ -290,21 +315,27 @@
         
           <li class="md-nav__item">
   <a href="#21-images-and-area-of-interest" class="md-nav__link">
-    2.1 Images and area of interest
+    <span class="md-ellipsis">
+      2.1 Images and area of interest
+    </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#22-image-fetching" class="md-nav__link">
-    2.2 Image fetching
+    <span class="md-ellipsis">
+      2.2 Image fetching
+    </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#23-ground-truth" class="md-nav__link">
-    2.3 Ground truth
+    <span class="md-ellipsis">
+      2.3 Ground truth
+    </span>
   </a>
   
 </li>
@@ -316,7 +347,9 @@
       
         <li class="md-nav__item">
   <a href="#3-automatic-detection-methodology" class="md-nav__link">
-    3. Automatic detection methodology
+    <span class="md-ellipsis">
+      3. Automatic detection methodology
+    </span>
   </a>
   
     <nav class="md-nav" aria-label="3. Automatic detection methodology">
@@ -324,21 +357,27 @@
         
           <li class="md-nav__item">
   <a href="#31-deep-learning-algorithm-for-object-detection" class="md-nav__link">
-    3.1 Deep learning algorithm for object detection
+    <span class="md-ellipsis">
+      3.1 Deep learning algorithm for object detection
+    </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#32-model-training" class="md-nav__link">
-    3.2 Model training
+    <span class="md-ellipsis">
+      3.2 Model training
+    </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#33-metrics" class="md-nav__link">
-    3.3 Metrics
+    <span class="md-ellipsis">
+      3.3 Metrics
+    </span>
   </a>
   
 </li>
@@ -350,7 +389,9 @@
       
         <li class="md-nav__item">
   <a href="#4-automatic-detection-model-analysis" class="md-nav__link">
-    4. Automatic detection model analysis
+    <span class="md-ellipsis">
+      4. Automatic detection model analysis
+    </span>
   </a>
   
     <nav class="md-nav" aria-label="4. Automatic detection model analysis">
@@ -358,21 +399,27 @@
         
           <li class="md-nav__item">
   <a href="#41-model-performance-and-replicability" class="md-nav__link">
-    4.1. Model performance and replicability
+    <span class="md-ellipsis">
+      4.1. Model performance and replicability
+    </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#42-sensitivity-to-the-zoom-level" class="md-nav__link">
-    4.2 Sensitivity to the zoom level
+    <span class="md-ellipsis">
+      4.2 Sensitivity to the zoom level
+    </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#43-model-choice" class="md-nav__link">
-    4.3 Model choice
+    <span class="md-ellipsis">
+      4.3 Model choice
+    </span>
   </a>
   
 </li>
@@ -384,7 +431,9 @@
       
         <li class="md-nav__item">
   <a href="#5-automatic-detection-of-mes" class="md-nav__link">
-    5. Automatic detection of MES
+    <span class="md-ellipsis">
+      5. Automatic detection of MES
+    </span>
   </a>
   
     <nav class="md-nav" aria-label="5. Automatic detection of MES">
@@ -392,14 +441,18 @@
         
           <li class="md-nav__item">
   <a href="#51-detection-post-processing" class="md-nav__link">
-    5.1 Detection post-processing
+    <span class="md-ellipsis">
+      5.1 Detection post-processing
+    </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#52-inference-detections" class="md-nav__link">
-    5.2 Inference detections
+    <span class="md-ellipsis">
+      5.2 Inference detections
+    </span>
   </a>
   
 </li>
@@ -411,7 +464,9 @@
       
         <li class="md-nav__item">
   <a href="#6-observation-of-mes-evolution" class="md-nav__link">
-    6. Observation of MES evolution
+    <span class="md-ellipsis">
+      6. Observation of MES evolution
+    </span>
   </a>
   
     <nav class="md-nav" aria-label="6. Observation of MES evolution">
@@ -419,14 +474,18 @@
         
           <li class="md-nav__item">
   <a href="#61-object-tracking-strategy" class="md-nav__link">
-    6.1 Object tracking strategy
+    <span class="md-ellipsis">
+      6.1 Object tracking strategy
+    </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#62-evolution-of-mes-over-years" class="md-nav__link">
-    6.2 Evolution of MES over years
+    <span class="md-ellipsis">
+      6.2 Evolution of MES over years
+    </span>
   </a>
   
 </li>
@@ -438,28 +497,36 @@
       
         <li class="md-nav__item">
   <a href="#7-conclusion-and-perspectives" class="md-nav__link">
-    7. Conclusion and perspectives
+    <span class="md-ellipsis">
+      7. Conclusion and perspectives
+    </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#code-availability" class="md-nav__link">
-    Code availability
+    <span class="md-ellipsis">
+      Code availability
+    </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#acknowledgements" class="md-nav__link">
-    Acknowledgements
+    <span class="md-ellipsis">
+      Acknowledgements
+    </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#appendix" class="md-nav__link">
-    Appendix
+    <span class="md-ellipsis">
+      Appendix
+    </span>
   </a>
   
     <nav class="md-nav" aria-label="Appendix">
@@ -467,21 +534,27 @@
         
           <li class="md-nav__item">
   <a href="#a1-influence-of-empty-tiles-addition-to-model-performance" class="md-nav__link">
-    A.1 Influence of empty tiles addition to model performance
+    <span class="md-ellipsis">
+      A.1 Influence of empty tiles addition to model performance
+    </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#a2-sensitivity-of-the-model-to-the-number-of-images-per-batch" class="md-nav__link">
-    A.2 Sensitivity of the model to the number of images per batch
+    <span class="md-ellipsis">
+      A.2 Sensitivity of the model to the number of images per batch
+    </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#a3-evaluation-of-trained-models" class="md-nav__link">
-    A.3 Evaluation of trained models
+    <span class="md-ellipsis">
+      A.3 Evaluation of trained models
+    </span>
   </a>
   
 </li>
@@ -538,30 +611,30 @@ Figure 1: Workflow diagram for automatic MES detection.
 <table>
 <thead>
 <tr>
-<th align="center">Product</th>
-<th align="center">Year</th>
-<th align="center">Coordinate system</th>
-<th align="center">Spatial resolution</th>
+<th style="text-align: center;">Product</th>
+<th style="text-align: center;">Year</th>
+<th style="text-align: center;">Coordinate system</th>
+<th style="text-align: center;">Spatial resolution</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td align="center">SWISSIMAGE 10 cm</td>
-<td align="center">2017 - current</td>
-<td align="center">CH1903+/MN95 (EPSG:2056)</td>
-<td align="center">0.10 m (<span class="arithmatex">\(\sigma\)</span> <span class="arithmatex">\(\pm\)</span> 0.15 m) - 0.25 m</td>
+<td style="text-align: center;">SWISSIMAGE 10 cm</td>
+<td style="text-align: center;">2017 - current</td>
+<td style="text-align: center;">CH1903+/MN95 (EPSG:2056)</td>
+<td style="text-align: center;">0.10 m (<span class="arithmatex">\(\sigma\)</span> <span class="arithmatex">\(\pm\)</span> 0.15 m) - 0.25 m</td>
 </tr>
 <tr>
-<td align="center">SWISSIMAGE 25 cm</td>
-<td align="center">2005 - 2016</td>
-<td align="center">MN03 (2005 - 2007) and MN95 (since 2008)</td>
-<td align="center">0.25 m (<span class="arithmatex">\(\sigma\)</span> <span class="arithmatex">\(\pm\)</span> 0.25 m) - 0.50 m (<span class="arithmatex">\(\sigma\)</span> <span class="arithmatex">\(\pm\)</span> 3.00 - 5.00 m)</td>
+<td style="text-align: center;">SWISSIMAGE 25 cm</td>
+<td style="text-align: center;">2005 - 2016</td>
+<td style="text-align: center;">MN03 (2005 - 2007) and MN95 (since 2008)</td>
+<td style="text-align: center;">0.25 m (<span class="arithmatex">\(\sigma\)</span> <span class="arithmatex">\(\pm\)</span> 0.25 m) - 0.50 m (<span class="arithmatex">\(\sigma\)</span> <span class="arithmatex">\(\pm\)</span> 3.00 - 5.00 m)</td>
 </tr>
 <tr>
-<td align="center">SWISSIMAGE 50 cm</td>
-<td align="center">1998 - 2004</td>
-<td align="center">MN03</td>
-<td align="center">0.50 m (<span class="arithmatex">\(\sigma\)</span> <span class="arithmatex">\(\pm\)</span> 0.50 m)</td>
+<td style="text-align: center;">SWISSIMAGE 50 cm</td>
+<td style="text-align: center;">1998 - 2004</td>
+<td style="text-align: center;">MN03</td>
+<td style="text-align: center;">0.50 m (<span class="arithmatex">\(\sigma\)</span> <span class="arithmatex">\(\pm\)</span> 0.50 m)</td>
 </tr>
 </tbody>
 </table>
@@ -665,42 +738,42 @@ Figure 9: Evaluation of the trained model performance obtained at zoom level 16 
 <table>
 <thead>
 <tr>
-<th align="center">model</th>
-<th align="center">precision</th>
-<th align="center">recall</th>
-<th align="center">f1</th>
+<th style="text-align: center;">model</th>
+<th style="text-align: center;">precision</th>
+<th style="text-align: center;">recall</th>
+<th style="text-align: center;">f1</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td align="center">replicate 1</td>
-<td align="center">0.84</td>
-<td align="center">0.79</td>
-<td align="center">0.82</td>
+<td style="text-align: center;">replicate 1</td>
+<td style="text-align: center;">0.84</td>
+<td style="text-align: center;">0.79</td>
+<td style="text-align: center;">0.82</td>
 </tr>
 <tr>
-<td align="center">replicate 2</td>
-<td align="center">0.77</td>
-<td align="center">0.76</td>
-<td align="center">0.76</td>
+<td style="text-align: center;">replicate 2</td>
+<td style="text-align: center;">0.77</td>
+<td style="text-align: center;">0.76</td>
+<td style="text-align: center;">0.76</td>
 </tr>
 <tr>
-<td align="center">replicate 3</td>
-<td align="center">0.83</td>
-<td align="center">0.81</td>
-<td align="center">0.82</td>
+<td style="text-align: center;">replicate 3</td>
+<td style="text-align: center;">0.83</td>
+<td style="text-align: center;">0.81</td>
+<td style="text-align: center;">0.82</td>
 </tr>
 <tr>
-<td align="center">replicate 4</td>
-<td align="center">0.89</td>
-<td align="center">0.77</td>
-<td align="center">0.82</td>
+<td style="text-align: center;">replicate 4</td>
+<td style="text-align: center;">0.89</td>
+<td style="text-align: center;">0.77</td>
+<td style="text-align: center;">0.82</td>
 </tr>
 <tr>
-<td align="center">replicate 5</td>
-<td align="center">0.78</td>
-<td align="center">0.82</td>
-<td align="center">0.80</td>
+<td style="text-align: center;">replicate 5</td>
+<td style="text-align: center;">0.78</td>
+<td style="text-align: center;">0.82</td>
+<td style="text-align: center;">0.80</td>
 </tr>
 </tbody>
 </table>
@@ -752,69 +825,69 @@ Figure 12: MES detection filtering. (a) Overview of the automatic detection of M
 <table>
 <thead>
 <tr>
-<th align="center">filters combination</th>
-<th align="center">score threshold</th>
-<th align="center">elevation threshold (m)</th>
-<th align="center">area threshold (m<sup>2</sup>)</th>
-<th align="center">distance threshold (m)</th>
-<th align="center">number of detection</th>
-<th align="center">label detection (%)</th>
+<th style="text-align: center;">filters combination</th>
+<th style="text-align: center;">score threshold</th>
+<th style="text-align: center;">elevation threshold (m)</th>
+<th style="text-align: center;">area threshold (m<sup>2</sup>)</th>
+<th style="text-align: center;">distance threshold (m)</th>
+<th style="text-align: center;">number of detection</th>
+<th style="text-align: center;">label detection (%)</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td align="center">1</td>
-<td align="center">0.95</td>
-<td align="center">2000</td>
-<td align="center">1100</td>
-<td align="center">10</td>
-<td align="center">1745</td>
-<td align="center">85.1</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">0.95</td>
+<td style="text-align: center;">2000</td>
+<td style="text-align: center;">1100</td>
+<td style="text-align: center;">10</td>
+<td style="text-align: center;">1745</td>
+<td style="text-align: center;">85.1</td>
 </tr>
 <tr>
-<td align="center">2</td>
-<td align="center">0.95</td>
-<td align="center">2000</td>
-<td align="center">1200</td>
-<td align="center">10</td>
-<td align="center">1862</td>
-<td align="center">86.6</td>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">0.95</td>
+<td style="text-align: center;">2000</td>
+<td style="text-align: center;">1200</td>
+<td style="text-align: center;">10</td>
+<td style="text-align: center;">1862</td>
+<td style="text-align: center;">86.6</td>
 </tr>
 <tr>
-<td align="center">3</td>
-<td align="center">0.95</td>
-<td align="center">5000</td>
-<td align="center">1200</td>
-<td align="center">10</td>
-<td align="center">1347</td>
-<td align="center">82.1</td>
+<td style="text-align: center;">3</td>
+<td style="text-align: center;">0.95</td>
+<td style="text-align: center;">5000</td>
+<td style="text-align: center;">1200</td>
+<td style="text-align: center;">10</td>
+<td style="text-align: center;">1347</td>
+<td style="text-align: center;">82.1</td>
 </tr>
 <tr>
-<td align="center">4</td>
-<td align="center">0.96</td>
-<td align="center">2000</td>
-<td align="center">1100</td>
-<td align="center">10</td>
-<td align="center">1331</td>
-<td align="center">81.3</td>
+<td style="text-align: center;">4</td>
+<td style="text-align: center;">0.96</td>
+<td style="text-align: center;">2000</td>
+<td style="text-align: center;">1100</td>
+<td style="text-align: center;">10</td>
+<td style="text-align: center;">1331</td>
+<td style="text-align: center;">81.3</td>
 </tr>
 <tr>
-<td align="center">5</td>
-<td align="center">0.96</td>
-<td align="center">2000</td>
-<td align="center">1200</td>
-<td align="center">8</td>
-<td align="center">1445</td>
-<td align="center">78.7</td>
+<td style="text-align: center;">5</td>
+<td style="text-align: center;">0.96</td>
+<td style="text-align: center;">2000</td>
+<td style="text-align: center;">1200</td>
+<td style="text-align: center;">8</td>
+<td style="text-align: center;">1445</td>
+<td style="text-align: center;">78.7</td>
 </tr>
 <tr>
-<td align="center">6</td>
-<td align="center">0.96</td>
-<td align="center">5000</td>
-<td align="center">1200</td>
-<td align="center">10</td>
-<td align="center">1004</td>
-<td align="center">74.3</td>
+<td style="text-align: center;">6</td>
+<td style="text-align: center;">0.96</td>
+<td style="text-align: center;">5000</td>
+<td style="text-align: center;">1200</td>
+<td style="text-align: center;">10</td>
+<td style="text-align: center;">1004</td>
+<td style="text-align: center;">74.3</td>
 </tr>
 </tbody>
 </table>
@@ -919,356 +992,356 @@ more images to the batch is the reduction of the metrics variability between rep
 <table>
 <thead>
 <tr>
-<th align="center">zoom level</th>
-<th align="center">model</th>
-<th align="center">empty tiles (%)</th>
-<th align="center">image per batch</th>
-<th align="center">optimum iteration</th>
-<th align="center">precision</th>
-<th align="center">recall</th>
-<th align="center">f1</th>
+<th style="text-align: center;">zoom level</th>
+<th style="text-align: center;">model</th>
+<th style="text-align: center;">empty tiles (%)</th>
+<th style="text-align: center;">image per batch</th>
+<th style="text-align: center;">optimum iteration</th>
+<th style="text-align: center;">precision</th>
+<th style="text-align: center;">recall</th>
+<th style="text-align: center;">f1</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td align="center">15</td>
-<td align="center">replicate 1</td>
-<td align="center">0</td>
-<td align="center">2</td>
-<td align="center">1000</td>
-<td align="center">0.727</td>
-<td align="center">0.810</td>
-<td align="center">0.766</td>
+<td style="text-align: center;">15</td>
+<td style="text-align: center;">replicate 1</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">1000</td>
+<td style="text-align: center;">0.727</td>
+<td style="text-align: center;">0.810</td>
+<td style="text-align: center;">0.766</td>
 </tr>
 <tr>
-<td align="center">16</td>
-<td align="center">replicate 1</td>
-<td align="center">0</td>
-<td align="center">2</td>
-<td align="center">2000</td>
-<td align="center">0.842</td>
-<td align="center">0.793</td>
-<td align="center">0.817</td>
+<td style="text-align: center;">16</td>
+<td style="text-align: center;">replicate 1</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">2000</td>
+<td style="text-align: center;">0.842</td>
+<td style="text-align: center;">0.793</td>
+<td style="text-align: center;">0.817</td>
 </tr>
 <tr>
-<td align="center">16</td>
-<td align="center">replicate 2</td>
-<td align="center">0</td>
-<td align="center">2</td>
-<td align="center">2000</td>
-<td align="center">0.767</td>
-<td align="center">0.760</td>
-<td align="center">0.763</td>
+<td style="text-align: center;">16</td>
+<td style="text-align: center;">replicate 2</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">2000</td>
+<td style="text-align: center;">0.767</td>
+<td style="text-align: center;">0.760</td>
+<td style="text-align: center;">0.763</td>
 </tr>
 <tr>
-<td align="center">16</td>
-<td align="center">replicate 3</td>
-<td align="center">0</td>
-<td align="center">2</td>
-<td align="center">3000</td>
-<td align="center">0.831</td>
-<td align="center">0.810</td>
-<td align="center">0.820</td>
+<td style="text-align: center;">16</td>
+<td style="text-align: center;">replicate 3</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">3000</td>
+<td style="text-align: center;">0.831</td>
+<td style="text-align: center;">0.810</td>
+<td style="text-align: center;">0.820</td>
 </tr>
 <tr>
-<td align="center">16</td>
-<td align="center">replicate 4</td>
-<td align="center">0</td>
-<td align="center">2</td>
-<td align="center">2000</td>
-<td align="center">0.886</td>
-<td align="center">0.769</td>
-<td align="center">0.826</td>
+<td style="text-align: center;">16</td>
+<td style="text-align: center;">replicate 4</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">2000</td>
+<td style="text-align: center;">0.886</td>
+<td style="text-align: center;">0.769</td>
+<td style="text-align: center;">0.826</td>
 </tr>
 <tr>
-<td align="center">16</td>
-<td align="center">replicate 5</td>
-<td align="center">0</td>
-<td align="center">2</td>
-<td align="center">2000</td>
-<td align="center">0.780</td>
-<td align="center">0.818</td>
-<td align="center">0.798</td>
+<td style="text-align: center;">16</td>
+<td style="text-align: center;">replicate 5</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">2000</td>
+<td style="text-align: center;">0.780</td>
+<td style="text-align: center;">0.818</td>
+<td style="text-align: center;">0.798</td>
 </tr>
 <tr>
-<td align="center">16</td>
-<td align="center">replicate 6</td>
-<td align="center">0</td>
-<td align="center">2</td>
-<td align="center">3000</td>
-<td align="center">0.781</td>
-<td align="center">0.826</td>
-<td align="center">0.803</td>
+<td style="text-align: center;">16</td>
+<td style="text-align: center;">replicate 6</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">3000</td>
+<td style="text-align: center;">0.781</td>
+<td style="text-align: center;">0.826</td>
+<td style="text-align: center;">0.803</td>
 </tr>
 <tr>
-<td align="center">16</td>
-<td align="center">replicate 7</td>
-<td align="center">0</td>
-<td align="center">4</td>
-<td align="center">1000</td>
-<td align="center">0.748</td>
-<td align="center">0.860</td>
-<td align="center">0.800</td>
+<td style="text-align: center;">16</td>
+<td style="text-align: center;">replicate 7</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">4</td>
+<td style="text-align: center;">1000</td>
+<td style="text-align: center;">0.748</td>
+<td style="text-align: center;">0.860</td>
+<td style="text-align: center;">0.800</td>
 </tr>
 <tr>
-<td align="center">16</td>
-<td align="center">replicate 8</td>
-<td align="center">0</td>
-<td align="center">4</td>
-<td align="center">1000</td>
-<td align="center">0.779</td>
-<td align="center">0.785</td>
-<td align="center">0.782</td>
+<td style="text-align: center;">16</td>
+<td style="text-align: center;">replicate 8</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">4</td>
+<td style="text-align: center;">1000</td>
+<td style="text-align: center;">0.779</td>
+<td style="text-align: center;">0.785</td>
+<td style="text-align: center;">0.782</td>
 </tr>
 <tr>
-<td align="center">16</td>
-<td align="center">replicate 9</td>
-<td align="center">0</td>
-<td align="center">8</td>
-<td align="center">1500</td>
-<td align="center">0.800</td>
-<td align="center">0.793</td>
-<td align="center">0.797</td>
+<td style="text-align: center;">16</td>
+<td style="text-align: center;">replicate 9</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">8</td>
+<td style="text-align: center;">1500</td>
+<td style="text-align: center;">0.800</td>
+<td style="text-align: center;">0.793</td>
+<td style="text-align: center;">0.797</td>
 </tr>
 <tr>
-<td align="center">16</td>
-<td align="center">replicate 10</td>
-<td align="center">0</td>
-<td align="center">4</td>
-<td align="center">1000</td>
-<td align="center">0.796</td>
-<td align="center">0.744</td>
-<td align="center">0.769</td>
+<td style="text-align: center;">16</td>
+<td style="text-align: center;">replicate 10</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">4</td>
+<td style="text-align: center;">1000</td>
+<td style="text-align: center;">0.796</td>
+<td style="text-align: center;">0.744</td>
+<td style="text-align: center;">0.769</td>
 </tr>
 <tr>
-<td align="center">16</td>
-<td align="center">replicate 11</td>
-<td align="center">0</td>
-<td align="center">8</td>
-<td align="center">1000</td>
-<td align="center">0.802</td>
-<td align="center">0.769</td>
-<td align="center">0.785</td>
+<td style="text-align: center;">16</td>
+<td style="text-align: center;">replicate 11</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">8</td>
+<td style="text-align: center;">1000</td>
+<td style="text-align: center;">0.802</td>
+<td style="text-align: center;">0.769</td>
+<td style="text-align: center;">0.785</td>
 </tr>
 <tr>
-<td align="center">16</td>
-<td align="center">ET-250_allDS_1</td>
-<td align="center">34.2</td>
-<td align="center">2</td>
-<td align="center">2000</td>
-<td align="center">0.723</td>
-<td align="center">0.770</td>
-<td align="center">0.746</td>
+<td style="text-align: center;">16</td>
+<td style="text-align: center;">ET-250_allDS_1</td>
+<td style="text-align: center;">34.2</td>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">2000</td>
+<td style="text-align: center;">0.723</td>
+<td style="text-align: center;">0.770</td>
+<td style="text-align: center;">0.746</td>
 </tr>
 <tr>
-<td align="center">16</td>
-<td align="center">ET-250_allDS_2</td>
-<td align="center">34.2</td>
-<td align="center">2</td>
-<td align="center">3000</td>
-<td align="center">0.748</td>
-<td align="center">0.803</td>
-<td align="center">0.775</td>
+<td style="text-align: center;">16</td>
+<td style="text-align: center;">ET-250_allDS_2</td>
+<td style="text-align: center;">34.2</td>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">3000</td>
+<td style="text-align: center;">0.748</td>
+<td style="text-align: center;">0.803</td>
+<td style="text-align: center;">0.775</td>
 </tr>
 <tr>
-<td align="center">16</td>
-<td align="center">ET-1000_allDS_1</td>
-<td align="center">73.8</td>
-<td align="center">2</td>
-<td align="center">6000</td>
-<td align="center">0.782</td>
-<td align="center">0.815</td>
-<td align="center">0.798</td>
+<td style="text-align: center;">16</td>
+<td style="text-align: center;">ET-1000_allDS_1</td>
+<td style="text-align: center;">73.8</td>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">6000</td>
+<td style="text-align: center;">0.782</td>
+<td style="text-align: center;">0.815</td>
+<td style="text-align: center;">0.798</td>
 </tr>
 <tr>
-<td align="center">16</td>
-<td align="center">ET-1000_allDS_2</td>
-<td align="center">69.8</td>
-<td align="center">2</td>
-<td align="center">6000</td>
-<td align="center">0.786</td>
-<td align="center">0.767</td>
-<td align="center">0.776</td>
+<td style="text-align: center;">16</td>
+<td style="text-align: center;">ET-1000_allDS_2</td>
+<td style="text-align: center;">69.8</td>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">6000</td>
+<td style="text-align: center;">0.786</td>
+<td style="text-align: center;">0.767</td>
+<td style="text-align: center;">0.776</td>
 </tr>
 <tr>
-<td align="center">16</td>
-<td align="center">ET-1000_allDS_3</td>
-<td align="center">70.9</td>
-<td align="center">2</td>
-<td align="center">6000</td>
-<td align="center">0.777</td>
-<td align="center">0.810</td>
-<td align="center">0.793</td>
+<td style="text-align: center;">16</td>
+<td style="text-align: center;">ET-1000_allDS_3</td>
+<td style="text-align: center;">70.9</td>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">6000</td>
+<td style="text-align: center;">0.777</td>
+<td style="text-align: center;">0.810</td>
+<td style="text-align: center;">0.793</td>
 </tr>
 <tr>
-<td align="center">16</td>
-<td align="center">ET-1000_allDS_4</td>
-<td align="center">73.8</td>
-<td align="center">2</td>
-<td align="center">6000</td>
-<td align="center">0.768</td>
-<td align="center">0.807</td>
-<td align="center">0.787</td>
+<td style="text-align: center;">16</td>
+<td style="text-align: center;">ET-1000_allDS_4</td>
+<td style="text-align: center;">73.8</td>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">6000</td>
+<td style="text-align: center;">0.768</td>
+<td style="text-align: center;">0.807</td>
+<td style="text-align: center;">0.787</td>
 </tr>
 <tr>
-<td align="center">16</td>
-<td align="center">ET-2000_allDS_1</td>
-<td align="center">143.2</td>
-<td align="center">2</td>
-<td align="center">6000</td>
-<td align="center">0.761</td>
-<td align="center">0.748</td>
-<td align="center">0.754</td>
+<td style="text-align: center;">16</td>
+<td style="text-align: center;">ET-2000_allDS_1</td>
+<td style="text-align: center;">143.2</td>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">6000</td>
+<td style="text-align: center;">0.761</td>
+<td style="text-align: center;">0.748</td>
+<td style="text-align: center;">0.754</td>
 </tr>
 <tr>
-<td align="center">16</td>
-<td align="center">ET-80_trnDS_1</td>
-<td align="center">5.4</td>
-<td align="center">2</td>
-<td align="center">2000</td>
-<td align="center">0.814</td>
-<td align="center">0.793</td>
-<td align="center">0.803</td>
+<td style="text-align: center;">16</td>
+<td style="text-align: center;">ET-80_trnDS_1</td>
+<td style="text-align: center;">5.4</td>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">2000</td>
+<td style="text-align: center;">0.814</td>
+<td style="text-align: center;">0.793</td>
+<td style="text-align: center;">0.803</td>
 </tr>
 <tr>
-<td align="center">16</td>
-<td align="center">ET-80_trnDS_2</td>
-<td align="center">5.4</td>
-<td align="center">2</td>
-<td align="center">2000</td>
-<td align="center">0.835</td>
-<td align="center">0.752</td>
-<td align="center">0.791</td>
+<td style="text-align: center;">16</td>
+<td style="text-align: center;">ET-80_trnDS_2</td>
+<td style="text-align: center;">5.4</td>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">2000</td>
+<td style="text-align: center;">0.835</td>
+<td style="text-align: center;">0.752</td>
+<td style="text-align: center;">0.791</td>
 </tr>
 <tr>
-<td align="center">16</td>
-<td align="center">ET-80_trnDS_3</td>
-<td align="center">5.4</td>
-<td align="center">2</td>
-<td align="center">2000</td>
-<td align="center">0.764</td>
-<td align="center">0.802</td>
-<td align="center">0.782</td>
+<td style="text-align: center;">16</td>
+<td style="text-align: center;">ET-80_trnDS_3</td>
+<td style="text-align: center;">5.4</td>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">2000</td>
+<td style="text-align: center;">0.764</td>
+<td style="text-align: center;">0.802</td>
+<td style="text-align: center;">0.782</td>
 </tr>
 <tr>
-<td align="center">16</td>
-<td align="center">ET-400_trnDS_1</td>
-<td align="center">29.5</td>
-<td align="center">2</td>
-<td align="center">6000</td>
-<td align="center">0.817</td>
-<td align="center">0.777</td>
-<td align="center">0.797</td>
+<td style="text-align: center;">16</td>
+<td style="text-align: center;">ET-400_trnDS_1</td>
+<td style="text-align: center;">29.5</td>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">6000</td>
+<td style="text-align: center;">0.817</td>
+<td style="text-align: center;">0.777</td>
+<td style="text-align: center;">0.797</td>
 </tr>
 <tr>
-<td align="center">16</td>
-<td align="center">ET-400_trnDS_2</td>
-<td align="center">29.5</td>
-<td align="center">2</td>
-<td align="center">5000</td>
-<td align="center">0.848</td>
-<td align="center">0.785</td>
-<td align="center">0.815</td>
+<td style="text-align: center;">16</td>
+<td style="text-align: center;">ET-400_trnDS_2</td>
+<td style="text-align: center;">29.5</td>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">5000</td>
+<td style="text-align: center;">0.848</td>
+<td style="text-align: center;">0.785</td>
+<td style="text-align: center;">0.815</td>
 </tr>
 <tr>
-<td align="center">16</td>
-<td align="center">ET-400_trnDS_3</td>
-<td align="center">29.5</td>
-<td align="center">2</td>
-<td align="center">4000</td>
-<td align="center">0.758</td>
-<td align="center">0.802</td>
-<td align="center">0.779</td>
+<td style="text-align: center;">16</td>
+<td style="text-align: center;">ET-400_trnDS_3</td>
+<td style="text-align: center;">29.5</td>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">4000</td>
+<td style="text-align: center;">0.758</td>
+<td style="text-align: center;">0.802</td>
+<td style="text-align: center;">0.779</td>
 </tr>
 <tr>
-<td align="center">16</td>
-<td align="center">ET-400_trnDS_4</td>
-<td align="center">29.5</td>
-<td align="center">4</td>
-<td align="center">2000</td>
-<td align="center">0.798</td>
-<td align="center">0.818</td>
-<td align="center">0.808</td>
+<td style="text-align: center;">16</td>
+<td style="text-align: center;">ET-400_trnDS_4</td>
+<td style="text-align: center;">29.5</td>
+<td style="text-align: center;">4</td>
+<td style="text-align: center;">2000</td>
+<td style="text-align: center;">0.798</td>
+<td style="text-align: center;">0.818</td>
+<td style="text-align: center;">0.808</td>
 </tr>
 <tr>
-<td align="center">16</td>
-<td align="center">ET-400_trnDS_5</td>
-<td align="center">29.5</td>
-<td align="center">4</td>
-<td align="center">1000</td>
-<td align="center">0.825</td>
-<td align="center">0.777</td>
-<td align="center">0.800</td>
+<td style="text-align: center;">16</td>
+<td style="text-align: center;">ET-400_trnDS_5</td>
+<td style="text-align: center;">29.5</td>
+<td style="text-align: center;">4</td>
+<td style="text-align: center;">1000</td>
+<td style="text-align: center;">0.825</td>
+<td style="text-align: center;">0.777</td>
+<td style="text-align: center;">0.800</td>
 </tr>
 <tr>
-<td align="center">16</td>
-<td align="center">ET-1000_trnDS_1</td>
-<td align="center">0</td>
-<td align="center">2</td>
-<td align="center">4000</td>
-<td align="center">0.758</td>
-<td align="center">0.802</td>
-<td align="center">0.779</td>
+<td style="text-align: center;">16</td>
+<td style="text-align: center;">ET-1000_trnDS_1</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">4000</td>
+<td style="text-align: center;">0.758</td>
+<td style="text-align: center;">0.802</td>
+<td style="text-align: center;">0.779</td>
 </tr>
 <tr>
-<td align="center">17</td>
-<td align="center">replicate 1</td>
-<td align="center">0</td>
-<td align="center">2</td>
-<td align="center">5000</td>
-<td align="center">0.819</td>
-<td align="center">0.853</td>
-<td align="center">0.835</td>
+<td style="text-align: center;">17</td>
+<td style="text-align: center;">replicate 1</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">5000</td>
+<td style="text-align: center;">0.819</td>
+<td style="text-align: center;">0.853</td>
+<td style="text-align: center;">0.835</td>
 </tr>
 <tr>
-<td align="center">17</td>
-<td align="center">replicate 1</td>
-<td align="center">0</td>
-<td align="center">2</td>
-<td align="center">5000</td>
-<td align="center">0.803</td>
-<td align="center">0.891</td>
-<td align="center">0.845</td>
+<td style="text-align: center;">17</td>
+<td style="text-align: center;">replicate 1</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">5000</td>
+<td style="text-align: center;">0.803</td>
+<td style="text-align: center;">0.891</td>
+<td style="text-align: center;">0.845</td>
 </tr>
 <tr>
-<td align="center">17</td>
-<td align="center">replicate 1</td>
-<td align="center">0</td>
-<td align="center">2</td>
-<td align="center">5000</td>
-<td align="center">0.872</td>
-<td align="center">0.813</td>
-<td align="center">0.841</td>
+<td style="text-align: center;">17</td>
+<td style="text-align: center;">replicate 1</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">5000</td>
+<td style="text-align: center;">0.872</td>
+<td style="text-align: center;">0.813</td>
+<td style="text-align: center;">0.841</td>
 </tr>
 <tr>
-<td align="center">17</td>
-<td align="center">ET-250_allDS_1</td>
-<td align="center">16.8</td>
-<td align="center">2</td>
-<td align="center">3000</td>
-<td align="center">0.801</td>
-<td align="center">0.794</td>
-<td align="center">0.797</td>
+<td style="text-align: center;">17</td>
+<td style="text-align: center;">ET-250_allDS_1</td>
+<td style="text-align: center;">16.8</td>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">3000</td>
+<td style="text-align: center;">0.801</td>
+<td style="text-align: center;">0.794</td>
+<td style="text-align: center;">0.797</td>
 </tr>
 <tr>
-<td align="center">17</td>
-<td align="center">ET-1000_allDS_1</td>
-<td align="center">72.2</td>
-<td align="center">2</td>
-<td align="center">7000</td>
-<td align="center">0.743</td>
-<td align="center">0.765</td>
-<td align="center">0.754</td>
+<td style="text-align: center;">17</td>
+<td style="text-align: center;">ET-1000_allDS_1</td>
+<td style="text-align: center;">72.2</td>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">7000</td>
+<td style="text-align: center;">0.743</td>
+<td style="text-align: center;">0.765</td>
+<td style="text-align: center;">0.754</td>
 </tr>
 <tr>
-<td align="center">18</td>
-<td align="center">replicate 1</td>
-<td align="center">0</td>
-<td align="center">2</td>
-<td align="center">10000</td>
-<td align="center">0.864</td>
-<td align="center">0.855</td>
-<td align="center">0.859</td>
+<td style="text-align: center;">18</td>
+<td style="text-align: center;">replicate 1</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">10000</td>
+<td style="text-align: center;">0.864</td>
+<td style="text-align: center;">0.855</td>
+<td style="text-align: center;">0.859</td>
 </tr>
 </tbody>
 </table>
@@ -1311,11 +1384,19 @@ more images to the batch is the reduction of the metrics variability between rep
 
 
 
+
+
+
+
+
+
+
                 
               </article>
             </div>
           
           
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
         </div>
         
       </main>
@@ -1342,14 +1423,18 @@ more images to the batch is the reduction of the metrics variability between rep
   
     
     
+    
+    
     <a href="https://github.com/swiss-territorial-data-lab" target="_blank" rel="noopener" title="Repo on Github" class="md-social__link">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
     </a>
   
     
     
+    
+    
     <a href="mailto:<info@stdl.ch>" target="_blank" rel="noopener" title="Send us an eMail!" class="md-social__link">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M498.1 5.6c10.1 7 15.4 19.1 13.5 31.2l-64 416c-1.5 9.7-7.4 18.2-16 23s-18.9 5.4-28 1.6l-126.3-52.5-40.1 74.5c-5.2 9.7-16.3 14.6-27 11.9S192 499 192 488v-96c0-5.3 1.8-10.5 5.1-14.7l165.3-212.6c2.5-7.1-6.5-14.3-13-8.4l-179 161.9-32 28.9c-9.2 8.3-22.3 10.6-33.8 5.8l-85-35.4C8.4 312.8.8 302.2.1 290s5.5-23.7 16.1-29.8l448-256c10.7-6.1 23.9-5.5 34 1.4z"/></svg>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M498.1 5.6c10.1 7 15.4 19.1 13.5 31.2l-64 416c-1.5 9.7-7.4 18.2-16 23s-18.9 5.4-28 1.6L284 427.7l-68.5 74.1c-8.9 9.7-22.9 12.9-35.2 8.1S160 493.2 160 480v-83.6c0-4 1.5-7.8 4.2-10.7l167.6-182.9c5.8-6.3 5.6-16-.4-22s-15.7-6.4-22-.7L106 360.8l-88.3-44.2C7.1 311.3.3 300.7 0 288.9s5.9-22.8 16.1-28.7l448-256c10.7-6.1 23.9-5.5 34 1.4z"/></svg>
     </a>
   
 </div>
@@ -1363,10 +1448,11 @@ more images to the batch is the reduction of the metrics variability between rep
       <div class="md-dialog__inner md-typeset"></div>
     </div>
     
-    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.expand"], "search": "../assets/javascripts/workers/search.16e2a7d4.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
+    
+    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.expand"], "search": "../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="../assets/javascripts/bundle.d6c3db9e.min.js"></script>
+      <script src="../assets/javascripts/bundle.a7c05c9e.min.js"></script>
       
         <script src="../assets/javascripts/config.js"></script>
       

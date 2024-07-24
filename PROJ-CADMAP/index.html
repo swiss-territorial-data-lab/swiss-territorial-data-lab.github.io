@@ -1,0 +1,1242 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.0, mkdocs-material-9.5.21">
+    
+    
+      
+        <title>Vectorization of historical cadastral plans from the 1850s in the Canton of Geneva - Swiss Territorial Data Lab</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.66ac8b77.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#vectorization-of-historical-cadastral-plans-from-the-1850s-in-the-canton-of-geneva" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Swiss Territorial Data Lab" class="md-header__button md-logo" aria-label="Swiss Territorial Data Lab" data-md-component="logo">
+      
+  <img src="../assets/logo-stdl-transparent.svg" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Swiss Territorial Data Lab
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Vectorization of historical cadastral plans from the 1850s in the Canton of Geneva
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var media,input,key,value,palette=__md_get("__palette");if(palette&&palette.color){"(prefers-color-scheme)"===palette.color.media&&(media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']"),palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent"));for([key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/swiss-territorial-data-lab" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    STDL on Github
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Swiss Territorial Data Lab" class="md-nav__button md-logo" aria-label="Swiss Territorial Data Lab" data-md-component="logo">
+      
+  <img src="../assets/logo-stdl-transparent.svg" alt="logo">
+
+    </a>
+    Swiss Territorial Data Lab
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/swiss-territorial-data-lab" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    STDL on Github
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Homepage
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://github.com/swiss-territorial-data-lab" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    GitHub
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-introduction" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Introduction
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-data" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Data
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Data">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21-geneva-cadastral-plans" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.1 Geneva cadastral plans
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22-lausanne-and-neuchatel-cadastral-plans" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.2 Lausanne and Neuchatel cadastral plans
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-methods" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Methods
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Methods">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31-global-workflow" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.1 Global workflow
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32-metrics" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.2 Metrics
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-annotation" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. Annotation
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-semantic-segmentation" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. Semantic segmentation
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5. Semantic segmentation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#51-binary-semantic-segmentation" class="md-nav__link">
+    <span class="md-ellipsis">
+      5.1 Binary semantic segmentation
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#52-multi-class-semantic-segmentation" class="md-nav__link">
+    <span class="md-ellipsis">
+      5.2 Multi-Class semantic segmentation
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-vectorization" class="md-nav__link">
+    <span class="md-ellipsis">
+      6. Vectorization
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6. Vectorization">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#61-strategy" class="md-nav__link">
+    <span class="md-ellipsis">
+      6.1 Strategy
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#62-elementary-delineation-method" class="md-nav__link">
+    <span class="md-ellipsis">
+      6.2 Elementary delineation method
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#63-sophisticated-delineation-method" class="md-nav__link">
+    <span class="md-ellipsis">
+      6.3 Sophisticated delineation method
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#64-raster-to-vector-conversion" class="md-nav__link">
+    <span class="md-ellipsis">
+      6.4 Raster to vector conversion
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#65-method-evaluation-and-discussion" class="md-nav__link">
+    <span class="md-ellipsis">
+      6.5 Method evaluation and discussion
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-index-recognition" class="md-nav__link">
+    <span class="md-ellipsis">
+      7. Index recognition
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-combination-of-results" class="md-nav__link">
+    <span class="md-ellipsis">
+      8. Combination of results
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="8. Combination of results">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#81-assignment-of-semantic-classes-and-indexes" class="md-nav__link">
+    <span class="md-ellipsis">
+      8.1 Assignment of semantic classes and indexes
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#82-georeferencing" class="md-nav__link">
+    <span class="md-ellipsis">
+      8.2 Georeferencing
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9-conclusion" class="md-nav__link">
+    <span class="md-ellipsis">
+      9. Conclusion
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#10-perspectives" class="md-nav__link">
+    <span class="md-ellipsis">
+      10. Perspectives
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="10. Perspectives">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#101-transfer-learning" class="md-nav__link">
+    <span class="md-ellipsis">
+      10.1. Transfer Learning
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#102-improving-boundary-detection" class="md-nav__link">
+    <span class="md-ellipsis">
+      10.2 Improving boundary detection
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#code-availability" class="md-nav__link">
+    <span class="md-ellipsis">
+      Code availability
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#acknowledgements" class="md-nav__link">
+    <span class="md-ellipsis">
+      Acknowledgements
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#references" class="md-nav__link">
+    <span class="md-ellipsis">
+      References
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="vectorization-of-historical-cadastral-plans-from-the-1850s-in-the-canton-of-geneva">Vectorization of historical cadastral plans from the 1850s in the Canton of Geneva<a class="headerlink" href="#vectorization-of-historical-cadastral-plans-from-the-1850s-in-the-canton-of-geneva" title="Permanent link">&para;</a></h1>
+<p>Shanci Li (Uzufly) - Alessandro Cerioni (Canton of Geneva) - Clémence Herny (ExoLabs) - Henrich Duriaux (Canton of Geneva) - Roxane Pott (swisstopo)</p>
+<p>Proposed by the Canton of Geneva - PROJ-CADMAP <br/>
+March 2023 to August 2023 - Published on July 2024</p>
+<p><br/> <em><strong>Abstract</strong>: This project aims to vectorize historical cadastral plans using an innovative AI-driven pipeline. To overcome the complexities of plans manually-crafted by experts, the pipeline uses GIS software, computer vision algorithm and advanced deep learning techniques, such as deformable convolutional networks and vision transformers for automated map topology extraction and vectorization. The process includes removing background noise, deciphering symbols and improving vectorization accuracy using graph-based methods. An optical character recognition model extracts parcel indices and all information is combined in a spatially-referenced vector polygon format. Final vectorization yields a median Hausdorff distance of 3 pixels, while semantic classification of the detected polygons achieves an IoU of 0.98. Although most of the tasks are automated, minor manual corrections are still required to achieve satisfactory results. This semi-automated workflow saves at least 90% of the time required for fully manual vectorization of the entire historical plan. The vectorization of historical plans greatly facilitates the analysis of historical geographical data.</em> </p>
+<h2 id="1-introduction">1. Introduction<a class="headerlink" href="#1-introduction" title="Permanent link">&para;</a></h2>
+<p>Since the introduction of the Swiss Civil Code in 1912, cadastral plans (Fig. 1) have complied with federal standards for cadastral surveying. Cadastral plans witnessed the evolution of territories since the nineteenth century, providing valuable insights into urban development, land use and social structures. However, their potential remains underused as these handmade paper documents are difficult to store, search and valorize compared to data used with Geographic Information Systems (GIS) nowadays. There is a growing interest in converting cadastral plans into vector data, opening up new perspectives for the community (researchers, administrations, citizens), such as the creation of large-scale geo-historical databases, macroscopic context understanding or the ability to study urban development across diverse landscapes.</p>
+<p align="center">
+<img src="./image/urban_carouge_cadmap.jpg" alt="Cadastral map of Geneva in 1850s: City Center" width="100%"/>
+<br />
+<i>Figure 1: Cadastral plan of Geneva in the 1850s: City center.</i>
+</p>
+
+<p>Vectorization of historical plans is generally carried out manually, using high-resolution scans and GIS software. This work provides an accurate rendering of the plans, but depending on the size, number and complexity, it can be time-consuming and require an excessive allocation of resources.</p>
+<p>With growing interest in exploiting the information contained in these plans and the development of new numerical methods, research has been conducted to facilitate the process. Automatic solutions have been developed based on traditional computer vision algorithms such as color segmentation, template matching, shape descriptors or mathematical morphological operators, which can efficiently extract high-level features and produce acceptable initial results<sup id="fnref:1"><a class="footnote-ref" href="#fn:1">1</a></sup><sup id="fnref:2"><a class="footnote-ref" href="#fn:2">2</a></sup><sup id="fnref:3"><a class="footnote-ref" href="#fn:3">3</a></sup>. Recently, hopes have been pinned on deep learning, particularly Convolutional Neural Networks<sup id="fnref:4"><a class="footnote-ref" href="#fn:4">4</a></sup><sup id="fnref:5"><a class="footnote-ref" href="#fn:5">5</a></sup><sup id="fnref:6"><a class="footnote-ref" href="#fn:6">6</a></sup> (CNN), which are used to perform semantic segmentation to detect topology contours. The developed methods use segmentation algorithms, corner points detection and active contour models to extract closed shapes after CNN processing. Weiwei et al. (2020)<sup id="fnref:7"><a class="footnote-ref" href="#fn:7">7</a></sup> attempted to align the modern vector map with the georeferenced historical map with reinforcement learning. Finally, Li et al. (2019)[li2019topological] introduced a novel PolyMapper model with CNN-RNN architecture, which directly generates vector lines or polygon results.</p>
+<p>Various attempts to automate the vectorization workflow have validated the viability of these approaches, however, their overall efficiency remains limited<sup id="fnref:8"><a class="footnote-ref" href="#fn:8">8</a></sup><sup id="fnref2:2"><a class="footnote-ref" href="#fn:2">2</a></sup>. The primary difficulty is the complixity of the cartographic pattern, which typically exhibits tailored designs aimed at specific objectives, such as roads, buildings or wetlands. The cartographic representation is not always consistent as plans are occasionally generated without strict adherence to the designed ontology, varying from one map to another. Furthermore, potential defects can arise due to pollution or cartographic errors introduced during the production. Besides, current numerical tools cannot proficiently analyze complex scenarios where symbology overlaps. </p>
+<p>The objective of this project is to provide a tool to fasten the process of vectorizing raster plans. The Dufour cadastral plans of Geneva from the 1850s were used for this project. The cadastral plans contain a wealth of information, but the priority was given to the vectorization of parcels, buildings, roads, rivers and their respective numerical indices. The vectorization of walls and streams was secondary. The final product is a georeferenced vector map compatible with GIS software. To achieve this, we developed a semi-automated vectorization workflow based on semantic segmentation, computer vision algorithm, graph-based approach and optical character recognition methods. <br>
+In this report, we first describe the historical plans and the overall methodology used to process them. Next, we briefly present the annotation method. The semantic segmentation methods used to extract boundaries and object classes and the vectorization approaches tested are presented in detail. Next comes the handwritten index recognition pipieline. All results are finally combined together and vectors are projected to obtain a GIS-compatible map. Finally, we present a conclusion and outlook of the projects.</p>
+<h2 id="2-data">2. Data<a class="headerlink" href="#2-data" title="Permanent link">&para;</a></h2>
+<h3 id="21-geneva-cadastral-plans">2.1 Geneva cadastral plans<a class="headerlink" href="#21-geneva-cadastral-plans" title="Permanent link">&para;</a></h3>
+<p>The Geneva cadastral plan dataset, examples of which are shown in Figures 1 and 2 (left), consists of the Dufour plans dating from the 1850s. Approximately 2,000 paper plans were scanned at high resolution by the <em><a href="https://www.ge.ch/organisation/direction-information-du-territoire-dit">Direction de l'Information du Territoire</a></em> (DIT) of the State of Geneva. Each plan was georeferenced (GeoTIFF) using the <em>Geneva local</em> coordinate reference system. Parcels are represented by closed black shapes and buildings by closed red shapes, with their respective index numbers. Overlaps or omissions of shapes between several cadastral plans are addressed by marking unique areas with thick yellow or red lines, providing a useful indication of the plan assembly.</p>
+<p align="center">
+<img src="./image/geneva_dataset.png" alt="Cadastral map (left) and semantic mask (right) of Geneva dataset"/>
+<br />
+<i>Figure 2: Cadastral plan (left) and semantic masks (right) of the Geneva dataset.</i>
+</p>
+
+<p>To proceed with the vectorization, the main ojects in the cadastral plans were classified into seven classes (Fig. 2 (right)): (1) unbuilt parcel, (2) building, (3) wall, (4) road, (5) river, (6) parcel borderline and (7) background. Dashed lines representing closed structures were classified as continuous, while those indicating distance were omitted. These classes were used to annotate the map according to the workflow presented in <a href="#4.Annotation">Section 4</a>. In total, eight plans were annotated with a size exceeding 12,000 x 8,000 pixels.</p>
+<h3 id="22-lausanne-and-neuchatel-cadastral-plans">2.2 Lausanne and Neuchatel cadastral plans<a class="headerlink" href="#22-lausanne-and-neuchatel-cadastral-plans" title="Permanent link">&para;</a></h3>
+<p>Historical cadastral plans follow standardized rules. However, these rules and their representation can vary according to the period, the location (urban, rural) and the author of the plan, making it difficult to develop a common vectorization methodology. To assess the generalizability of the developed methodology, the DHLAB (EPFL) provided us with 10 cadastral plans of Lausanne and 10 cadastral plans of Neuchâtel with their annotations. </p>
+<p align="center">
+<img src="./image/neuchatel_dataset.png" alt="Semantic segmentation dataset example from Neuchatel: borderline - white, road - yellow, building - red, unbuilt - blue, stairs - green"/>
+<br />
+<i>Figure 3: Cadastral plan (left) and semantic masks (right) of the Neuchatel dataset. The legend of the semantic segmentation is the following: unbuilt parcel - blue, building - red, borderline - white, road - yellow, stairs - green.</i>
+</p>
+
+<p>These plans, dated between 1827 and 1869, are contemporaneous with the creation of the Geneva cadastral plans. Despite differences in symbology and ontology, they share significant similarities with the Geneva plans, such as the closed black shape for parcels and the red shape for buildings. This suggests a potential for transfer learning between the different datasets. 
+The Lausanne and Neuchatel plans were annotated into six classes (Fig. 3): (1) background, (2) building, (3) unbuilt parcel, (4) road, (5) stair/brick, and (6) borderline.</p>
+<h2 id="3-methods">3. Methods<a class="headerlink" href="#3-methods" title="Permanent link">&para;</a></h2>
+<h3 id="31-global-workflow">3.1 Global workflow<a class="headerlink" href="#31-global-workflow" title="Permanent link">&para;</a></h3>
+<p align="center">
+<img src="./image/methodology_pipeline.png" alt="General pipeline of proposed vectorization process"/>
+<br />
+<i>Figure 4: Global workflow for the vectorization of cadastral plans.</i>
+</p>
+
+<p>Figure 4 illustrates the proposed workflow. The first step was the preparation of the annotated dataset. Then, the workflow branches into three modules, each anchored by a dedicated deep learning approach with neural networks serving different purposes:</p>
+<ul>
+<li>Vectorization of parcel borderlines: The binary semantic segmentation module extracts the borderline mask of the elements in the raster (<em>i.e.</em> parcel, building, etc). The detected borderlines were then vectorized as polygons.  </li>
+<li>Polygon classification: The multi-class semantic segmentation module classifies the semantics of the derived polygons based on the classes defined in <a href="#2.1-Geneva-cadastral-plans">Section 2.1</a>.  </li>
+<li>Handwritten text recognition: the Optical Character Recognition (OCR) module focuses on parcel and building index recognition. </li>
+</ul>
+<p>The strategy of performing segmentation tasks with two different neuronal networks was motivated by the observation that segmentation performance degrades with an increasing number of classes<sup id="fnref:9"><a class="footnote-ref" href="#fn:9">9</a></sup>. The design of a dedicated network for borderline detection aimed to optimize topology identification and recovery.</p>
+<p>The extracted information, object class and index, was then assigned to the respective polygons and the vectors were georeferenced to produce a vectorial cadastral plan. Finally, the results were evaluated using metrics defined in <a href="#3.2-Metrics">Section 3.2</a>.</p>
+<h3 id="32-metrics">3.2 Metrics<a class="headerlink" href="#32-metrics" title="Permanent link">&para;</a></h3>
+<p>Pixel Accuracy (<span class="arithmatex">\(PA\)</span>), Intersection over Union (<span class="arithmatex">\(IoU\)</span>) and Hausdorff distance (<span class="arithmatex">\(d_H\)</span>) were used as metrics to assess the performance of semantic segmentation models and vectorization (Fig. 5).</p>
+<ul>
+<li><strong>Pixel Accuracy</strong>: <span class="arithmatex">\(PA\)</span> serves as a metric in semantic segmentation, indicating the proportion of accurately classified pixels in an image. It is computed by dividing the sum of correctly classified pixels by the total number of pixels in the image. Specifically, it follows the formula:
+<center>
+    <span class="arithmatex">\(PA = \frac{\sum_{j=1}^{k} n_{jj}}{\sum_{j=1}^{k} t_j}\)</span>
+</center> 
+Here, <span class="arithmatex">\(n_{jj}\)</span> denotes the total number of pixels classified and labeled as class <span class="arithmatex">\(j\)</span>, representing   true positives for that class, while <span class="arithmatex">\(t_j\)</span> stands for the total number of pixels labeled as class <span class="arithmatex">\(j\)</span>.</li>
+</ul>
+<p align="center">
+<img src="./image/metric.png" alt="Left: the formula of IoU; Right: the illumination of Hausdorff distance definition" width="70%"/>
+<br />
+<i>Figure 5: IoU (left) and Hausdorff distance (right) definitions.</i>
+</p>
+
+<ul>
+<li><strong>Intersection over Union</strong>：The <span class="arithmatex">\(IoU\)</span> assesses the accuracy of a segmentation model by quantifying the overlap between predicted and ground truth masks for each class. The <span class="arithmatex">\(IoU\)</span> provides a balanced evaluation, taking into account both false positives and false negatives. Its strength lies in its robustness, especially in scenarios where the distribution of classes is unbalanced. Mathematically, it is defined as follows:</li>
+</ul>
+<div class="arithmatex">\[\begin{align}
+IoU = \frac{\text{Intersection area}}{\text{Union area}}
+\end{align}\]</div>
+<ul>
+<li><strong>Hausdorff distance</strong>：The <span class="arithmatex">\(d_H\)</span> evaluates the dissimilarity between vector polygons by measuring the greatest distance between a point on one polygon and the nearest point on the other, considering both directions. This metric is effective for precise boundary delineation, capturing shape variations, distortions, and local deformations. Sensitivity to outliers is a notable aspect, as a single distant point can significantly affect the result. Although computationally intensive for complex polygons, its detailed insights into shape similarity makes it a valuable metric for evaluations requiring accurate boundary representation. Mathematically, <span class="arithmatex">\(d_H\)</span> between two sets of points <span class="arithmatex">\(X\)</span> and <span class="arithmatex">\(Y\)</span> can be defined as follows:</li>
+</ul>
+<div class="arithmatex">\[\begin{align}
+d_H(X, Y) = \max \left( \sup_{x \in X} \inf_{y \in Y} d(x, y), \sup_{y \in Y} \inf_{x \in X} d(x, y) \right)
+\end{align}\]</div>
+<p>The <span class="arithmatex">\(IoU\)</span> is computed for both the semantic segmentation and the final vectorized polygons, together with the model's performance in terms of pixel accuracy. During the process of binary semantic segmentation for the borderlines extraction, the <span class="arithmatex">\(IoU\)</span> is relevant for the topology retrieval. However, it is neither linearly positive nor deterministic. The main goal was to detect the existence of the line, not to accurately recover all the borderline pixels. <br>
+The Hausdorff distance is only applied to the final vectorized results, as it represents the geometry-level accuracy. Absolute distance in meter is obtained after vector projection.</p>
+<h2 id="4-annotation">4. Annotation<a class="headerlink" href="#4-annotation" title="Permanent link">&para;</a></h2>
+<p>Ground truth labels in raster format of the defined classes are required to train and evaluate supervised deep learning networks.</p>
+<p>Cadastral plans do not have distinct textures for the objects depicted, making it difficult to interpret closed shapes without global topology information. For example, on the cadastral plan of Geneva, it can be difficult to distinguish roads, unbuilt areas, and river centers based on texture alone. The vectorization of cadastral plans requires not only visual interpretation but also high-level semantic understanding of topology. </p>
+<p>However, previous studies<sup id="fnref2:9"><a class="footnote-ref" href="#fn:9">9</a></sup> on annotation strategies of cadastral plans emphasized the importance of limiting annotations to visual properties of the objects such as color, texture and morphology. This designation aims to be consistent with the neural network method for object identification and categorization, which are not capable for topology recognition yet. Therefore, the following guidelines were concluded:</p>
+<ul>
+<li>Annotated objects must be comprehensible and classifiable based on visual attributes alone, without consideration of latent semantics.</li>
+<li>Objects belonging to a semantic category should have distinctive visual characteristics within their class and share reasonable visual features in order to be grouped.</li>
+<li>Minimize the number of semantic categories.</li>
+<li>Maintain uniformity of annotations across instances. </li>
+<li>Take an iterative approach; validate preliminary results and add additional data if necessary.</li>
+</ul>
+<p>Annotation of the raster plans was performed using ArcGIS Pro and Photoshop, following the workflow presented in Figure 6. First, the borderlines were vectorized to create a dedicated borderline layer and a classified polygon layer. The layers were then converted to raster masks. This vector-based approach facilitates the process of annotating and editing the label raster. Details of the annotation procedure can be found in this <a href="page 14">report</a>. </p>
+<p align="center">
+<img src="./image/annotate_pipe.png" alt="annotate_pipe"/>
+<br />
+<i>Figure 6: Annotation workflow: (a) initial cadastral plan, (b) polyline annotation,
+(c) buffered borderline polygon, (d) plan object polygons, (e) merged vector masks, (f) rasterized masks.</i>
+</p>
+
+<p>Annotation speed correlates with plan complexity; rural areas required 4 to 6 hours per plan, while urban areas required 2 to 3 times as much effort. After generating ground truth labels, the high-resolution plans and labels were divided into tiles of 1024 x 1024 pixels to reduce the GPU memory cost, as input for training semantic segmentation models.</p>
+<h2 id="5-semantic-segmentation">5. Semantic segmentation<a class="headerlink" href="#5-semantic-segmentation" title="Permanent link">&para;</a></h2>
+<p>To achieve the semantic segmentation task, we investigated the performance of different networks. The <a href="https://github.com/dhlab-epfl/dhSegment">dhSegment</a> segmentation network was adopted as a baseline, but note it relies on the <a href="https://arxiv.org/pdf/1505.04597.pdf">Unet</a> architecture, which is not the current state-of-the-art. The <a href="https://github.com/opengvlab/internimage">InternImage</a> framework, using deformable convolution to improve receptive fields and achieve comparable performance while not being as data-hungry as transformers, was adopted for this project. Compatible with conventional CNNs, we chose UperNet<sup id="fnref:10"><a class="footnote-ref" href="#fn:10">10</a></sup> as the backbone, which excels at capturing both fine details in images and broader contextual understanding by integrating features from different levels of a convolutional network. In addition, <a href="https://github.com/NVlabs/SegFormer">Segformer</a>, a transformer-based segmentation network with Multi-Head Self-Attention (MHSA) for global information capture was also tested<sup id="fnref:11"><a class="footnote-ref" href="#fn:11">11</a></sup>. </p>
+<h4 id="data-preparation-and-requirements">Data preparation and requirements:<a class="headerlink" href="#data-preparation-and-requirements" title="Permanent link">&para;</a></h4>
+<ul>
+<li>8 maps were selected and split into training (6), validation (1), and test (1) sets</li>
+<li>The high resolution of the original cadastral map challenges GPU memory requiring an image resizing. Training image dataset were cropped to a size of 1024 x 1024 px.</li>
+<li>InternImage framework requires 512 x 1024 input due to GPU constraints.</li>
+<li>NVIDIA V100 32GB GPUs limit the batch size to 2 for Segformer and UperNet models.</li>
+<li>Because of high resolution, inference on a complete map uses sliding windows for patch-wise prediction, followed by concatenation.</li>
+</ul>
+<h4 id="performance-enhancement">Performance enhancement:<a class="headerlink" href="#performance-enhancement" title="Permanent link">&para;</a></h4>
+<ul>
+<li>Random data augmentation (rotation, flipping, resizing, photometric distortion) boosts model adaptability to diverse lighting, contrast, and color scenarios.</li>
+</ul>
+<h4 id="optimization">Optimization:<a class="headerlink" href="#optimization" title="Permanent link">&para;</a></h4>
+<ul>
+<li><a href="https://pytorch.org/docs/stable/generated/torch.optim.AdamW.html">AdamW</a> optimizer was chose for stability and convergence in neural networks.</li>
+<li>Incorporates weight decay, restrains weight growth, and sustains adaptive learning rate features.</li>
+<li>Prevents overfitting and improves overall training efficiency.</li>
+<li>160,000 iterations (batch size 2) on Segformer architecture with 4 NVIDIA V100 take approximatly 24 hours. The best mIoU occurs on iteration 72,000.</li>
+</ul>
+<h3 id="51-binary-semantic-segmentation">5.1 Binary semantic segmentation<a class="headerlink" href="#51-binary-semantic-segmentation" title="Permanent link">&para;</a></h3>
+<p>A binary semantic segmentation module is dedicated to the extraction of object borderlines, mitigating interference from other annotated classes<sup id="fnref3:9"><a class="footnote-ref" href="#fn:9">9</a></sup> (<a href="#4-Annotation">Section 4</a>). Model capabilities were evaluated through several numerical experiments with networks based on dhSegment or InternImage using Segformer or UperNet architectures, trained on the Geneva dataset. The transfer learning potential was assessed by training a model on the Lausanne-Neuchatel dataset and then applying it to the Geneva cadastral map for a zero-shot scenario. A fine-tuning scenario was also tested, involving a two-step process of pre-training a model on the Lausanne-Neuchatel dataset and fine-tuning the model on the Geneva dataset. The aim was to enhance segmentation performance by leveraging an enriched dataset.</p>
+<h4 id="511-quantitative-analysis">5.1.1 Quantitative analysis<a class="headerlink" href="#511-quantitative-analysis" title="Permanent link">&para;</a></h4>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">Model</th>
+<th style="text-align: center;">In domain (Geneva dataset)</th>
+<th style="text-align: center;">Transfer learning (zero-shot)</th>
+<th style="text-align: center;">Transfer learning (fine-tuned)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">dhSegment</td>
+<td style="text-align: center;">0.645</td>
+<td style="text-align: center;">Not tested</td>
+<td style="text-align: center;">Not tested</td>
+</tr>
+<tr>
+<td style="text-align: center;">Segformer</td>
+<td style="text-align: center;">0.711</td>
+<td style="text-align: center;">0.622</td>
+<td style="text-align: center;">0.721</td>
+</tr>
+<tr>
+<td style="text-align: center;">UperNet</td>
+<td style="text-align: center;">0.732</td>
+<td style="text-align: center;">0.649</td>
+<td style="text-align: center;">0.734</td>
+</tr>
+</tbody>
+</table>
+<div align="center">
+    <i>Table 1: Comparison of borderline IoU on different models and scenarios</i>
+</div>
+<p><br></p>
+<p>Table 1 summarizes the IoU metrics for the different networks tested. For models trained solely on the Geneva dataset, UperNet achieves an IoU of 0.732, outperforming Segformer by about 3% and dhSegment by about 13%. In the transfer learning scenarios, UperNet slightly outperforms Segformer by about 4% for the zero-shot case but show similar results for the fine-tuned case. Overall, the performance of UperNet and Segformer are close, with UperNet slightly outperforming. 
+The transfer learning with a zero-shot model provides IoU about 10% lower than in domain model while the results are slighlty above when the model is fine-tuned with Geneva data.</p>
+<h4 id="512-qualitative-analysis">5.1.2 Qualitative analysis<a class="headerlink" href="#512-qualitative-analysis" title="Permanent link">&para;</a></h4>
+<ul>
+<li><strong>dhSegment:</strong> As a baseline model, the dhSegment successfully captures most of the line features (Fig. 7), which is essential for the next step of topology extraction. However, it struggles with the Geneva dataset due to challenges like vegetation blending with the borderline, leading to false positives. Issues arise as well from text overlap and closely adjacent lines, impacting accurate topology detection. </li>
+</ul>
+<p align="center">
+<img src="./image/dhseg_geneva_01.png"/>
+<br />
+<i>Figure 7: Example of results obtained with the dhSegment model trained on the Geneva dataset: Input cadastral map tile (left); Borderlines ground truth (middle); Borderlines model predictions (right). Some predictions issues are outlined with the red boxes. It includes detection of vegetation features (largest box), text overlaping bordline (upper right box) and closely adjacent lines (lower right box). </i>
+</p>
+
+<ul>
+<li><strong>Segformer and UperNet:</strong> Consistently with similar IoU metrics (Table 1), both networks exhibit similar qualitative performance (Fig. 8) and outperform the dhSegment model. These models consistently produce accurate predictions for borderlines, effectively reducing noise impact from text and other patterns. </li>
+</ul>
+<p align="center">
+<img src="./image/result_sample_segformer_upernet.png"/>
+<br />
+<i>Figure 8: Comparison of borderlines predictions obtained with Segformer (a, c) and UperNet (b, d). Some predictions issues are outlined with the red boxes.</i>
+</p>
+
+<p>Segformer and UperNet show an enhanced comprehension of complex background object patterns compared to dhSegment. The integration of an advanced network architecture addresses the limitations of the dhSegment model, surpassing initial expectations by distinguishing between desired and undesired dashed lines based on manual annotations. While defects emerge when conditions are not ideal, such as red borderlines with insufficient color depth (Fig. 9), the overall outcome remains promising for proceeding with the vectorization module. </p>
+<p><br /></p>
+<p align="center">
+<img src="./image/concerns.png"/>
+<br />
+<i>Figure 9: Examples of defects encountered with borderline prediction outlined with red boxes: <br />(a) several adjacent lines; (b) false negatives - topology broken; <br />(c) polluted document; (d) false positives for graticule line. </i>
+</p>
+
+<p align="center">
+<img src="./image/comparison_dhseg_segformer_upernet.png"/>
+<br />
+<i>Figure 10: Comparison of predictions performed on the  Geneva dataset with different framework. <br />(a) Ground Truth; (b) dhSegment; (c) Segformer; (d) Upernet</i>
+</p>
+
+<p>Figure 10 compares the model performance. Both Segformer and UperNet demonstrate versatility and competitiveness in all scenarios. Ultimately, UperNet is selected for the binary semantic segmentation module due to its superior performance (mean IoU).</p>
+<h4 id="514-discussion-on-models-performance-and-connectivity">5.1.4 Discussion on models performance and connectivity<a class="headerlink" href="#514-discussion-on-models-performance-and-connectivity" title="Permanent link">&para;</a></h4>
+<p>The best mIoU of Segformer and UperNet are obtained at 72,000 and 98,000 iterations respectively. While Segformer's transformer architecture and broader MHSA theoretically imply superior performance, UperNet achieves slightly better metrics (Table 1). This might be due to UperNet's optimized streamlined architecture and the integration of deformable convolution. Segformer's performance may be hindered by the limited dataset size, which consists of only 6 cadastral plans with approximately 400 patches.</p>
+<p>IoU is a comprehensive metric for line segmentation, but maximizing it does not guarantee optimal historical plan vectorization. The segmentation module aims to detect lines regardless of width, prioritizing connected topology. The default decision threshold of 0.5 for binary classification may not be optimal, lowering it enhances connectivity and topology, but may result in more false positives. Adjusting the threshold affects the prediction area, line thickness and connectivity. Lower threshold is more consistent to preserve topology information, but adjacent line predictions may merge. The challenge of adjacent lines persists despite adjustments.</p>
+<p>Transfer learning does not significantly improve segmentation performance. However, the zero-shot model trained on the Lausane-Neuchatel data achieves performance close (around 10% less) to that of the in-domain and fine-tuned models, making it possible to use the model for other datasets without the time-consuming task of acquiring an exhaustive ground truth.</p>
+<h3 id="52-multi-class-semantic-segmentation">5.2 Multi-Class semantic segmentation<a class="headerlink" href="#52-multi-class-semantic-segmentation" title="Permanent link">&para;</a></h3>
+<p>To perform the multi-class semantic segmentation task we opted for an adaptation of the models designed for the binary semantic segmentation. Models, Segformer and UperNet, were trained with multi-class annotated plans (<a href="#4-Annotation">Section 4</a>). <br>
+In the context of the non-uniformity of the semantic classes and the variations in the cartographic ontology between the different cadastral plan datasets, the application of transfer learning for multi-class semantic segmentation was not relevant.</p>
+<p>Both, Segformer and UperNet models, perform well at classifying pixels with semantic classes (Fig. 11) reaching a mean pixel accuracy of about 0.855 and a mean IoU of about 0.776 (Table 2). </p>
+<p><br></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">Segformer - iteration 60,000</th>
+<th style="text-align: center;"></th>
+<th style="text-align: center;"></th>
+<th style="text-align: center;">UperNet - iteration 108,000</th>
+<th style="text-align: center;"></th>
+<th style="text-align: center;"></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;"><strong>Class</strong></td>
+<td style="text-align: center;"><strong>IoU</strong></td>
+<td style="text-align: center;"><strong>PA</strong></td>
+<td style="text-align: center;"><strong>Class</strong></td>
+<td style="text-align: center;"><strong>IoU</strong></td>
+<td style="text-align: center;"><strong>PA</strong></td>
+</tr>
+<tr>
+<td style="text-align: center;">Background</td>
+<td style="text-align: center;">0.996</td>
+<td style="text-align: center;">0.999</td>
+<td style="text-align: center;">Background</td>
+<td style="text-align: center;">0.997</td>
+<td style="text-align: center;">0.998</td>
+</tr>
+<tr>
+<td style="text-align: center;">Borderline</td>
+<td style="text-align: center;">0.694</td>
+<td style="text-align: center;">0.723</td>
+<td style="text-align: center;">Borderline</td>
+<td style="text-align: center;">0.710</td>
+<td style="text-align: center;">0.746</td>
+</tr>
+<tr>
+<td style="text-align: center;">Building</td>
+<td style="text-align: center;">0.879</td>
+<td style="text-align: center;">0.887</td>
+<td style="text-align: center;">Building</td>
+<td style="text-align: center;">0.892</td>
+<td style="text-align: center;">0.901</td>
+</tr>
+<tr>
+<td style="text-align: center;">Unbuilt</td>
+<td style="text-align: center;">0.937</td>
+<td style="text-align: center;">0.997</td>
+<td style="text-align: center;">Unbuilt</td>
+<td style="text-align: center;">0.939</td>
+<td style="text-align: center;">0.997</td>
+</tr>
+<tr>
+<td style="text-align: center;">Wall</td>
+<td style="text-align: center;">0.449</td>
+<td style="text-align: center;">0.602</td>
+<td style="text-align: center;">Wall</td>
+<td style="text-align: center;">0.506</td>
+<td style="text-align: center;">0.647</td>
+</tr>
+<tr>
+<td style="text-align: center;">Road</td>
+<td style="text-align: center;">0.752</td>
+<td style="text-align: center;">0.772</td>
+<td style="text-align: center;">Road</td>
+<td style="text-align: center;">0.743</td>
+<td style="text-align: center;">0.757</td>
+</tr>
+<tr>
+<td style="text-align: center;">River</td>
+<td style="text-align: center;">0.713</td>
+<td style="text-align: center;">0.979</td>
+<td style="text-align: center;">River</td>
+<td style="text-align: center;">0.663</td>
+<td style="text-align: center;">0.986</td>
+</tr>
+<tr>
+<td style="text-align: center;"><strong>aPA</strong></td>
+<td style="text-align: center;"><strong>mIoU</strong></td>
+<td style="text-align: center;"><strong>mPA</strong></td>
+<td style="text-align: center;"><strong>aPA</strong></td>
+<td style="text-align: center;"><strong>mIoU</strong></td>
+<td style="text-align: center;"><strong>mPA</strong></td>
+</tr>
+<tr>
+<td style="text-align: center;">95.3</td>
+<td style="text-align: center;">0.774</td>
+<td style="text-align: center;">0.851</td>
+<td style="text-align: center;">0.954</td>
+<td style="text-align: center;">0.778</td>
+<td style="text-align: center;">0.862</td>
+</tr>
+</tbody>
+</table>
+<p><small>
+    PA: Pixel Accuracy  &emsp;  mPA: mean Pixel Accuracy of all classes  &emsp;  aPA: all Pixel Accuracy
+</small></p>
+<div align="center">
+    <i>Table 2: Multi-class semantic segmentation performance. Value are given in percentage.</i>
+</div>
+<p><br></p>
+<p>In particular, the performances obtained for the "Background" and "Unbuilt" classes are excellent, with a mean pixel accuracy greater than 0.99. The "Wall" class, on the other hand, performs less well, with a mean pixel accuracy between 0.60 and 0.65 and a mean IoU between 0.45 and 0.50. This can be explained by "Borderlines" predictions invading "Wall" pixels, since these elements are often adjacent and close in distance (Fig. 12). Besides, similar textures in "Roads", "Unbuilt" areas and middle parts of the 'River' classes complicate classification. </p>
+<p align="center">
+<img src="./image/multi-class-seg.jpg" width="90%"/>
+<br />
+<i>Figure 11: Example of multi-class semantic segmentation predictions (left) and ground truth (right) on a cadastral plan of Carouge. </i>
+</p>
+
+<p>With sliding-window inference, the fixed input size of the model limits the prediction to solely rely on the current patch, while the global information from a larger scope can not be accessed. According to the comparative study carried out between the two models and despite the theoretically better capabilities of the Segformer model, UperNet performs slightly better by about 1% overall in mIoU and pixel accuracy for all classes except the "Road" class (Table 2).</p>
+<p>Segformer peaks at 60,000 iterations, while UperNet achieves the best mIoU at 108,000 iterations. This might suggest that Segformer converges faster, but faces underfitting issues leading to not exploiting the full capacity of the model.</p>
+<p>For these reasons, and to be consistent with the choice made for binary semantic segmentation, we selected UperNet to perform multi-class semantic segmentation. </p>
+<h2 id="6-vectorization">6. Vectorization<a class="headerlink" href="#6-vectorization" title="Permanent link">&para;</a></h2>
+<h3 id="61-strategy">6.1 Strategy<a class="headerlink" href="#61-strategy" title="Permanent link">&para;</a></h3>
+<p>Binary segmentation rasters are used as input for the vectorization of the cadastral plan objects. The main elements to be vectorized are parcels, buildings, roads and major rivers. Objects such as walls and streams (Fig. 12) are secondary. </p>
+<p align="center">
+<img src="./image/wall_steam.png" />
+<br />
+<i>Figure 12: Second priority objects. Left: streams with blue color; Right: walls represented by adjacent black and red lines.</i>
+</p>
+
+<p>The accuracy of the vectorization depends on the quality of the raster masks and defects (Fig. 9) can be a source of challenges:</p>
+<ul>
+<li>A first concern is the vectorization of noise/pollution or undesired elements. Pollution is rare in the Geneva dataset. For example, graticule lines will result in polygons during the vectorization process that are not relevant to the project. </li>
+<li>A second problem concerns adjacent lines. In particular, wall parcel and building lines can lead to connected pixels in the binary semantic segmentation raster (Fig. 9a). During the vectorization process, these lines can result in a large number of false negative polygons, which affects the accuracy of the vectorized topology. </li>
+</ul>
+<p>One solution to mitigate both of these problems is to lower the decision threshold for binary semantic segmentation, resulting in wider borderline prediction.</p>
+<p>Recent research shows that the delineation of the raster mask can be performed using different strategies:</p>
+<ul>
+<li>Image segmentation; </li>
+<li>Corner points detection; </li>
+<li>Graph-based approach. </li>
+</ul>
+<p align="center">
+<img src="./image/watershed-f-sample.png" />
+<br />
+<i>Figure 13: Test results with watershed (a, c) and felzenszwalb (b, d) algorithm for cities (a, b) and rural (c, d) areas.</i>
+</p>
+
+<p>The image segmentation strategy uses algorithms such as watershed<sup id="fnref:12"><a class="footnote-ref" href="#fn:12">12</a></sup> and Felzenszwalb<sup id="fnref:13"><a class="footnote-ref" href="#fn:13">13</a></sup>. However, these algorithms do not perform satisfactorily in our case (Fig. 13). They are challenged by intricated object topologies, like roads, and are affected by segmentation mask noise, resulting in false positives. For these reasons this approach was excluded.</p>
+<p>The other two strategies involve converting raster maks to one-pixel-wide raster lines through skeletonization: </p>
+<ul>
+<li>Corner points detection identifies points to generate vector output, focusing on preserving critical points rather than capturing every detail<sup id="fnref2:1"><a class="footnote-ref" href="#fn:1">1</a></sup>. </li>
+<li>Graph-based approach comprehensively vectorizes all intricacies, closely matching the ground truth<sup id="fnref:14"><a class="footnote-ref" href="#fn:14">14</a></sup><sup id="fnref:15"><a class="footnote-ref" href="#fn:15">15</a></sup><sup id="fnref:16"><a class="footnote-ref" href="#fn:16">16</a></sup>. It could help to solve the problem of untangling adjacent lines in the binary segmented mask and allow to vectorize walls. </li>
+</ul>
+<p>We adopted a vectorization strategy based on a one-pixel-wide skeleton delineation from the borderline masks, followed by vectorization into polylines and finally polygon transformation. To address different levels of object vectorization details, two delineation methods, an elementary one (<a href="#6.2-Elementary-delineation-method">Section 6.2</a>) and a sophisticated one (<a href="#6.3-Sophisticated-delineation-method">Section 6.3</a>) were developed.</p>
+<h3 id="62-elementary-delineation-method">6.2 Elementary delineation method<a class="headerlink" href="#62-elementary-delineation-method" title="Permanent link">&para;</a></h3>
+<p>The global workflow of the elementary delineation method is summarized by Figure 14. </p>
+<p align="center">
+<img src="./image/simple_pipelien.png" />
+<br />
+<i>Figure 14: Elementary method pipeline: (a) cadastral map, (b) binary semantic segmentation result, (c) completed mask, (d) skeletonized mask, (e) vectorized topology, (f) topology simplification, (g, h) vectorized samples. </i>
+</p>
+
+<p>Skeletonization of borderline masks surrounding a small area of background pixel can lead to meaningless polygons after vectorization. This is especially the case with segmantic segmentation of adjacent lines (Fig. 14b). To prevent this, mask completion, converting small area of background pixels to mask pixels (Fig. 15) was implemented based on <a href="https://imagemagick.org/script/connected-components.php">Connected Component Analysis</a> (CCA) and adaptive filtering before proceeding to skeletonization. </p>
+<h4 id="621-mask-completion">6.2.1 Mask completion<a class="headerlink" href="#621-mask-completion" title="Permanent link">&para;</a></h4>
+<ul>
+<li><strong>CCA</strong>: CCA, a key image processing technique, detects connected regions in binary images. In the case of the borderline masks, connected components denote foreground regions with shared connectivity through neighboring pixels. The algorithm assigns unique labels to these foreground components, while assigning a single label to background pixels. In Figure 15, two CCA iterations invert the foreground and background, ensuring accurate elimination of both small false positive and false negative regions. </li>
+</ul>
+<p align="center">
+<img src="./image/mask_complete.png" />
+<br />
+<i>Figure 15: Mask completion of the binary mask (left) performed with Connected Component Analysis and adaptive filtering (right).</i>
+</p>
+
+<ul>
+<li><strong>Adaptive filtering</strong>: After collecting data on connected component positions and statistics, a region-specific pixel threshold is essential to eliminate small regions that would generate meaningless polygons. Figure 16 illustrates the stable statistical distribution of the CCA with the x-axis representing the region pixel counts and the y-axis representing the count of these regions. The power law distribution, highlighted by the smoothed curve of the distribution, places regions of interest at the tail of the distribution and the small region area at the head of the distribution. The optimal threshold for the dominant borderline mask is defined as the knee point determined by the curvature or second derivative, as it is representative to split the head and tail of the distribution. <br>
+The threshold value depends on the location and scale of the cadastral plan; urban plans display a lower threshold than rural ones. The adaptive filtering with knee point on pixel statistics automates this process to minimize manual intervention.</li>
+</ul>
+<p align="center">
+<img src="./image/adaptive thred.png" width="70%"/>
+<br />
+<i>Figure 16: Distribution of connected component on the borderline mask. Dark blue curve corresponds to the smoothed distribution and the dashed blue line to the knee point detection.</i>
+</p>
+
+<p>The mask completion enhances the borderline mask topology, essential for accurate vectorization. Aligning the vector line at the center of the raster line mask area is not feasible with this approach. However, it excludes intricate semantics consisting of thin or small topology like walls and streams. <br></p>
+<h4 id="622-skeletonization">6.2.2 Skeletonization<a class="headerlink" href="#622-skeletonization" title="Permanent link">&para;</a></h4>
+<p>The completed borderline masks, with lines that can be several pixels wide, serve as input to a skeletonization algorithm that performs a morphological operation to obtain a one-pixel-wide line (Fig. 14d) suitable for vector conversion. </p>
+<h3 id="63-sophisticated-delineation-method">6.3 Sophisticated delineation method<a class="headerlink" href="#63-sophisticated-delineation-method" title="Permanent link">&para;</a></h3>
+<p>A more sophisticated approach was also explored to tackle the complex task of identifying small objects and accurately delineating boundaries, especially when adjacent lines are encountered (Fig. 15, left). One possible solution would be to use technology such as super-resolution to better separate adjacent lines into distinct topological objects. However, relying on improved resolution alone is not promising, as augmented information remains relatively scarce. Therefore, our strategy is to re-examine the image pixels and explore algorithms from traditional computer vision that are more robust to this task than neural network methods.</p>
+<p align="center">
+<img src="./image/adv_pipe.png" />
+<br />
+<i>Figure 17: Sophisticated method pipeline: (a) cadastral map, (b) Laplacian operator, (c) connect endpoints, (d) defects with ground truth and T-junction outlined in red, (e) connect with potential links, (f) vectorized polygons.</i>
+</p>
+
+<p>The global vectorization workflow using the sophisticated delineation method is summarized by Figure 17 and the delineation methodology is explained in the following paragraphs.</p>
+<h4 id="631-delineation">6.3.1 Delineation<a class="headerlink" href="#631-delineation" title="Permanent link">&para;</a></h4>
+<p>Applying delineation algorithms directly on the original cadastral plan resulted in undesirable closed shapes due to background noise and intersections of text with borders (Fig. 18b). The use of the completed borderline mask enabled to isolate the areas of interest to be vectorized in the cadastral plan filtering out some background noise and facilitating the extraction of boundary topology (Fig. 18c).</p>
+<p align="center">
+<img src="./image/adv_pre.png" />
+<br />
+<i>Figure 18: Delineation and masking of the sophisticated method: (a) cadastral map, (b) edge detection, (c) filter noise with completed borderline mask, (d) Canny detector with intensity, (e) Sobel operator, (f) Laplacian operator.</i>
+</p>
+
+<p>In pursuing one-pixel-wide raster lines with delineation algorithms, the <a href="https://docs.opencv.org/4.x/da/d22/tutorial_py_canny.html">Canny edge detector</a>, though employing non-maximum suppression, identifies two edge pixels for a single borderline. To address this, a modification incorporates the unique statistical characteristic of deep black or red center pixels representing local minimum in intensity within the gradient direction, resulting in accurate borderline delineation (Fig. 18d). While the modified Canny detector effectively identifies central pixels, it disrupts raster line connectivity and produces false positives in the background (Fig. 18d). <br>
+To overcome this, <a href="https://docs.opencv.org/3.4/d2/d2c/tutorial_sobel_derivatives.html">Sobel</a> and <a href="https://docs.opencv.org/3.4/d5/db5/tutorial_laplace_operator.html">Laplacian</a> operators, both employed with non-maximum suppression from Canny detector, are introduced for delineation (Fig. 18e, f). After fine-tuning and evaluation, the most promising outcome is achieved using the Laplacian operator following manual assessment.</p>
+<h4 id="632-graph-based-endpoints-connection">6.3.2 Graph-based endpoints connection<a class="headerlink" href="#632-graph-based-endpoints-connection" title="Permanent link">&para;</a></h4>
+<p align="center">
+<img src="./image/advaced_algo.png" />
+<br />
+<i>Figure 19: Graph weights assignment (left) and visualization of connecting endpoints (right).</i>
+</p>
+
+<p>To improve the continuity of the delineation produced by the Laplacian operator, we developed a graph-based algorithm (Fig. 19, left). It detects endpoints using a specialized convolution kernel, ensuring that each endpoint has a single adjacent line pixel. Pixels become nodes in a directed graph with assigned weights. Negative pixels in the segmentation mask incur a high background penalty (&gt; 255), pixels of the delineated lines have a weight of 1, and the rest follow the intensity values. This weighting facilitates the connection of adjacent endpoints along the shortest path, thus completing the missing part of the line mask. False positives are addressed (Fig. 19, right) by ensuring that the shortest path crosses positive pixels of the line mask and those with minimal intensity between endpoints, while avoiding bright background pixels. Undesirable connections (red arrow) were filtered out by thresholding the highest pixel intensity on the path.</p>
+<h4 id="633-active-contour-on-endpoints">6.3.3 Active contour on endpoints<a class="headerlink" href="#633-active-contour-on-endpoints" title="Permanent link">&para;</a></h4>
+<p>Despite the improved continuity of the borderline masks with connections between endpoints (Figs. 17a, b, c), issues persist at T-junction, hindering the topology recovery. Ground truth defects, such as parcel boundary disconnection, remained unaddressed. A dedicated graph-based method, addressing the defect depicted in Figure 18d was developed to identify connecting pixels by searching nearby candidates, mitigating defects with additional connections (Figs. 18e, f).</p>
+<h3 id="64-raster-to-vector-conversion">6.4 Raster to vector conversion<a class="headerlink" href="#64-raster-to-vector-conversion" title="Permanent link">&para;</a></h3>
+<p>The same raster to vector conversion method was used for the results of both delineation methods (Figs. 14g, h, 17f). ArcGIS Pro tools were used to convert the skelotonized raster to polylines and then to polygons. The output vectors have a wavy shape while borderlines in cadastral plans are straight lines. To improve the quality of our results, a topology simplification algorithm (<a href="https://pro.arcgis.com/en/pro-app/latest/tool-reference/cartography/simplify-shared-edges.htm">Visvalingam-Whyatt</a> available in ArcGIS Pro) was applied. It iteratively removes insignificant vertices based on triangle area offering flexibility in retaining critical points, bends or effective areas. Smoothed polygons satisfactory aligned with the ground truth (Table 3).</p>
+<p>With both methods, intricate small semantic objects such as walls and streams were omitted or resulted in disordered topologies. In addition, with the sophisticated method, some polylines lost small parts due to ground truth defects that prevented the formation of closed polygons. However, since most of the polylines were satisfactory detected, a limited manual correction, including segmentation of single map areas, removal of error detection and annotation of missing geometry was performed to improve significantly the results (Table 3). These corrections were performed after raster line vectorization but before the polygon construction.</p>
+<h3 id="65-method-evaluation-and-discussion">6.5 Method evaluation and discussion<a class="headerlink" href="#65-method-evaluation-and-discussion" title="Permanent link">&para;</a></h3>
+<h4 id="651-quantitative-analysis">6.5.1 Quantitative analysis<a class="headerlink" href="#651-quantitative-analysis" title="Permanent link">&para;</a></h4>
+<p>Note that the vectorization results presented in Table 3 were assessed with metrics after the manual rectification mentionned in (<a href="#6.4-Raster-to-vector-conversion">Section 6.4</a>). <br>
+As there might be missed or extra detected polygons, only polygons with an IoU above 0.7 were retained for evaluation. Ambiguities in ground truth annotation of the cadastral plans can lead to outliers with high Hausdorff distances, but these are not necessarily errors. To mitigate this, mean IoU and median Hausdorff distance were relied upon for evaluation. </p>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">Method</th>
+<th style="text-align: center;">Number of detected polygons</th>
+<th style="text-align: center;">Mean IoU</th>
+<th style="text-align: center;">Median Hausdorff distance (cm)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">Elementary</td>
+<td style="text-align: center;">199</td>
+<td style="text-align: center;">0.979</td>
+<td style="text-align: center;">11.7</td>
+</tr>
+<tr>
+<td style="text-align: center;">Sophisticated</td>
+<td style="text-align: center;">202</td>
+<td style="text-align: center;">0.971</td>
+<td style="text-align: center;">13.3</td>
+</tr>
+</tbody>
+</table>
+<div align="center">
+    <i>Table 3: Performance of the elementary and sophisticated methods after manual corrections. The number of polygons vectrorized in the ground truth is 223. </i>
+</div>
+<p><br></p>
+<p>The elementary and sophisticated delineation methods perform equally well. They detect 89% and 91% of the polygons of the ground truth, respectively. The mean IoU exceeds 0.97 in both cases. The median Hausdorff distance is slightly higher, about 14%, for the sophisticated method than for the elementary method, but translates to 3 pixels for both on the raster cadastral map. </p>
+<h4 id="652-qualitative-analysis">6.5.2 Qualitative analysis<a class="headerlink" href="#652-qualitative-analysis" title="Permanent link">&para;</a></h4>
+<p align="center">
+<img src="./image/adv_defects.png" />
+<br />
+<i>Figure 20: Vectorization (cyan lines) defects obtained with elementary and sophisticated delineation methods are highlighted with red circles. Vectorized boundaries are not perfectly aligned with the black parcel line (left) and dashed lines are missed and undesired polygons are generated (right).</i>
+</p>
+
+<p>A qualitative assessment reveals the strengths and weaknesses of both delineation methods (Fig. 20). The elementary method excels in identifying polygons but lacks seamless boundary alignment and struggles with small object detection. The sophisticated method improves boundary alignment but struggles with dashed lines, creating meaningless polygons.</p>
+<h4 id="653-discussion">6.5.3 Discussion<a class="headerlink" href="#653-discussion" title="Permanent link">&para;</a></h4>
+<p>A manual correction of the vectorized lines is required to obtain satisfactory polygons. We evaluated the time and effort required for this manual correction comapared to a full vectorization of a cadastral plans. For a countryside plan of Geneva, full manual digitization takes about 6 hours. The elementary delineation method requires 20 minutes for correction, while the sophisticated method requires twice as much time. Therefore the hybrid approach, involving algoritmh results and manual correction, permits to save at least 90% of manual work compared to a fully manual approach. <br> 
+Both methods perform well for simple plans, but the sophisticated delineation method is required for city center maps if accurate topology is desired and dense walls exist. </p>
+<h2 id="7-index-recognition">7. Index recognition<a class="headerlink" href="#7-index-recognition" title="Permanent link">&para;</a></h2>
+<p>In the cadastral plans, parcels and buildings are indexed with handwritten numbers (Fig. 2, left). <a href="https://github.com/JaidedAI/EasyOCR">EasyOCR</a>, an Optical Character Recognition (OCR) model, was used to identify index numbers in the Geneva cadastral plans. The tool uses pre-trained models, with printed text for over 70 languages, to automate text recognition from images and scanned documents.</p>
+<p align="center">
+<img src="./image/ocr-result.png" />
+<br />
+<i>Figure 21: Automatic text recognition with EasyOCR on part of a Geneva cadastral plan. Recognized text is surrounded by a blue bounding box with a confidence score. The parcel index is written in black and the building index in red. </i>
+</p>
+
+<p>Figure 21 depicts the results of the EasyOCR's pre-trained model on a cadastral plan of Geneva. For this plan, text recognition achieved an accuracy of about 90%, with minor fusion anomalies in adjacent regions. However, recognition accuracy varies from plan to plan and can produce unsatisfactory results. The main error identified is the misidentification of the digits 1, 4, and 7, which is attributed to their similarity in the style of the author. Globally, the performance of the pre-trained OCR model for our project is not robust yet.</p>
+<p>The variation in performance is attributed to the fact that the EasyOCR model was trained on printed text datasets, while the plans were drawn with different handwriting styles. Despite community support in providing input material for model training, text accuracy depends on image quality, font and language complexity. Verification of the extracted text, especially for handwritten content, is required after inference with a pre-trained model. </br>
+Improvement in text recognition can be achieved by fine-tuning the model with a customized dataset. This task was not performed in the current project due to time constraints but is considered for future development. </p>
+<h2 id="8-combination-of-results">8. Combination of results<a class="headerlink" href="#8-combination-of-results" title="Permanent link">&para;</a></h2>
+<h3 id="81-assignment-of-semantic-classes-and-indexes">8.1 Assignment of semantic classes and indexes<a class="headerlink" href="#81-assignment-of-semantic-classes-and-indexes" title="Permanent link">&para;</a></h3>
+<p>Digitized cadastral plans, multi-class semantic segmentation rasters, text recognition rasters, and vectorized polygons were first displayed in the same coordinate system (Cartesian plane with origin (0, 0) at the bottom left) to perform spatial comparison. </p>
+<p align="center">
+<img src="./image/aggregation_res.png" width="70%"/>
+<br />
+<i>Figure 22: The results of semantic classification and text recognition are associated with the respective polygons as attributes.</i>
+</p>
+
+<p>Polygon classification was determined using a majority voting approach, <em>i.e.</em> the majority class of pixels within the polygon that overlaps the multi-class raster determines the polygon class. With this approach, there is only one false prediction in both city center (223 polygons) and rural area (122 polygons) scenarios, supporting the effectiveness of polygon classification.</p>
+<p>The index is assigned to the polygon overlapping the text recognition bounding box. In the cadastral plans, each parcel has a unique index written in black and each building has a unique index written in red. Buildings contain both the building index and the associated parcel index. To differentiate the indexes, color statistics analysis was performed on the red channel in text regions. In the case of regions with multiple texts in a polygon, the final vector results were determined based on confidence scores, as shown in Figure 22.</p>
+<h3 id="82-georeferencing">8.2 Georeferencing<a class="headerlink" href="#82-georeferencing" title="Permanent link">&para;</a></h3>
+<p align="center">
+<img src="./image/final_result.png" width="100%"/>
+<br />
+<i>Figure 23: Georeferencing of generated polygons in the Geneva local reference coordinate system.</i>
+</p>
+
+<p>Finally, the vectors were georeferenced in the <em>Geneva local</em> coordinate system to produce the desired vector map of the Geneva's historic cadastral plans (Fig. 23). This was achieved by applying an affine transformation, determined from at least three control points, to the generated vectors. The <a href="https://www.perrygeo.com/python-affine-transforms.html">Affine</a> library, which handles non-zero rotation parameters, was used.</p>
+<h2 id="9-conclusion">9. Conclusion<a class="headerlink" href="#9-conclusion" title="Permanent link">&para;</a></h2>
+<p align="center">
+<img src="./image/current_pipeline.png" />
+<br />
+<i>Figure 24: Vectorization of cadastral plan workflow. </i>
+</p>
+
+<p>We developped a pipeline to perform the vectorization of historical plan with the help of AI methods. Figure 24 outlines the developed workflow:
+1. We elaborated a comprehensive method for annotating the cadastral plan with ground truth in raster and vector format, which can be generalized to any historical image dataset.
+2. We built a prototype to automatically vectorize cadastral plans. Binary and multi-class semantic segmentation is performed using neural network. A model trained with in-domain data is used for borderline extraction and parcel classification. Besides, a graph-based approach is adapted to improve vectorization performance. Automated vectorization is followed by manual correction for topology extraction. 
+3. We used an open-source text recognition framework to detect parcel and building indices.
+4. Finally, the vectorization pipeline is completed by combining the extracted information and georeferencing the vectorized plans. </p>
+<p>The pipeline achieves accurate vectorization with around 90% of polygons detected with an average IoU of 0.975 and a Hausdorff distance of around 3 px (12 cm). However, fully automated vectorization of historical cadastral plans remains a difficult task, even with the help of artificial intelligence techniques. Indeed, manual intervention is always necessary. Nevertheless, the hybrid method enables a significant reduction in workload of over 90%.</p>
+<p>This exploratory project aims to be the starting point for automating the historical reconstitution of a parcel over time. By harnessing computer vision and vectorization automation techniques, we aspire to streamline archival research, reconstruct the historical evolution of cadastral objects and populate a temporal database within the cantonal geographic information systems.</p>
+<h2 id="10-perspectives">10. Perspectives<a class="headerlink" href="#10-perspectives" title="Permanent link">&para;</a></h2>
+<h3 id="101-transfer-learning">10.1. Transfer Learning<a class="headerlink" href="#101-transfer-learning" title="Permanent link">&para;</a></h3>
+<p align="center">
+<img src="./image/transfer_pipeline.png" />
+<br />
+<i>Figure 25: Workflow updated with transfer learning.</i>
+</p>
+
+<p>Ground truth annotation was acquired manually. This tedious task can be alleviated by using a pre-trained model with transfer learning. This was evaluated with a model trained with Lausanne and Neuchatel data (<a href="#5.1.1-Quantitative-analysis">Section 5.1.1</a>), achieving an IoU of around 0.65 (Table 1). Although less accurate than in-domain training, it provides an acceptable topology for vectorization. Therefore, an adapted workflow (Fig. 25) can be considered. It starts with zero-shot transfer learning for automated segmentation and vectorization, reducing the workload associated with manual annotation. A second iteration fine-tunes the model using the data refined in the first iteration's domain to achieve optimal performance, as in the current workflow.</p>
+<h3 id="102-improving-boundary-detection">10.2 Improving boundary detection<a class="headerlink" href="#102-improving-boundary-detection" title="Permanent link">&para;</a></h3>
+<p align="center">
+<img src="./image/future-snake.png" />
+<br />
+<i>Figure 26: Samples to illustrate Network SNAKEs (Butenuth et al. 2012). <br />(a)left: initial contour; right: results of Network SNAKEs (solid line) and traditional SNAKEs (dashed line). (b) Network SNAKEs in an intricate pattern that can simulate dashed lines in cadastral plans. (c, d) Network SNAKEs performance on the road network topology.</i>
+</p>
+
+<p>Our proposed sophisticated approach works optimally by centering the vectorized boundary on borderline pixels. Manual rectification is twice as effortful due to dashed line recognition issues. Both methods struggle with complex wall and stream patterns. Refining the elementary method to center the vectorized boundary on borderline pixels would outperform the sophisticated approach.</p>
+<p>Active Contour Models, also known as SNAKEs (Fig. 26), effectively detect object boundaries and segment images<sup id="fnref:17"><a class="footnote-ref" href="#fn:17">17</a></sup>. They adapt to irregular shapes but struggle with multiple polygons. Network SNAKEs, an extension, address this limitation by capturing intricate interconnected structures using graph-based representations. They excel where traditional models fall short, offering a powerful solution for complex network scenarios.</p>
+<p>Due to time constraints, it was not possible to build the algorithm from scratch. Despite efforts to obtain the original algorithm, it was lost. Preliminary outcomes suggest that network SNAKEs could refine topology and accurately align with theborderline.</p>
+<h2 id="code-availability">Code availability<a class="headerlink" href="#code-availability" title="Permanent link">&para;</a></h2>
+<p>The codes are available on the STDL's GitHub repository: <a href="https://github.com/swiss-territorial-data-lab/proj_vect_cadmap">proj_vect_cadmap</a></p>
+<h2 id="acknowledgements">Acknowledgements<a class="headerlink" href="#acknowledgements" title="Permanent link">&para;</a></h2>
+<p>This project was made possible thanks to a tight collaboration between the STDL team and beneficiaries from the State of Geneva. In particular, the STDL team acknowledges the key contribution from Henrich Duriaux (DIT). This project has been funded by <em>Strategie Suisse pour la Géoinformation</em>. </p>
+<h2 id="references">References<a class="headerlink" href="#references" title="Permanent link">&para;</a></h2>
+<div class="footnote">
+<hr />
+<ol>
+<li id="fn:1">
+<p>Magnus Heitzler and Lorenz Hurni. Cartographic reconstruction of building footprints from historical maps: a study on the swiss siegfried map. <em>Transactions in GIS</em>, 24(2):442–461, 2020.&#160;<a class="footnote-backref" href="#fnref:1" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:1" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+</li>
+<li id="fn:2">
+<p>Drolias Garyfallos Chrysovalantis and Tziokas Nikolaos. Building footprint extraction from historic maps utilizing automatic vectorisation methods in open source gis software. <em>Automatic vectorisation of historical maps. Department of Cartography and Geoinformatics, ELTE Eötvös Loránd University, Budapest</em>, pages 9–17, 2020.&#160;<a class="footnote-backref" href="#fnref:2" title="Jump back to footnote 2 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:2" title="Jump back to footnote 2 in the text">&#8617;</a></p>
+</li>
+<li id="fn:3">
+<p>Yancong Lin, Silvia L Pintea, and Jan C van Gemert. Deep hough-transform line priors. In <em>Computer Vision–ECCV 2020: 16th European Conference, Glasgow, UK, August 23–28, 2020, Proceedings, Part XXII 16</em>, 323–340. Springer, 2020.&#160;<a class="footnote-backref" href="#fnref:3" title="Jump back to footnote 3 in the text">&#8617;</a></p>
+</li>
+<li id="fn:4">
+<p>Rémi Guillaume Petitpierre, Frédéric Kaplan, and Isabella Di Lenardo. Generic semantic segmentation of historical maps. In <em>CEUR Workshop Proceedings</em>, volume 2989, 228–248. 2021.&#160;<a class="footnote-backref" href="#fnref:4" title="Jump back to footnote 4 in the text">&#8617;</a></p>
+</li>
+<li id="fn:5">
+<p>Rémi Petitpierre. Neural networks for semantic segmentation of historical city maps: cross-cultural performance and the impact of figurative diversity. <em>arXiv preprint arXiv:2101.12478</em>, 2021.&#160;<a class="footnote-backref" href="#fnref:5" title="Jump back to footnote 5 in the text">&#8617;</a></p>
+</li>
+<li id="fn:6">
+<p>Chenjing Jiao, Magnus Heitzler, and Lorenz Hurni. Extracting wetlands from swiss historical maps with convolutionalneural networks. In <em>Automatic Vectorisation of Historical Maps. International workshop organized by the ICA Commission on Cartographic Heritage into the Digital 13 March, 2020 Budapest. Proceedings</em>, 33–38. Department of Cartography and Geoinformatics, ELTE Eötvös Loránd University, 2020.&#160;<a class="footnote-backref" href="#fnref:6" title="Jump back to footnote 6 in the text">&#8617;</a></p>
+</li>
+<li id="fn:7">
+<p>Weiwei Duan, Yao-Yi Chiang, Stefan Leyk, Johannes H Uhl, and Craig A Knoblock. Automatic alignment of contemporary vector data and georeferenced historical maps using reinforcement learning. <em>International Journal of Geographical Information Science</em>, 34(4):824–849, 2020.&#160;<a class="footnote-backref" href="#fnref:7" title="Jump back to footnote 7 in the text">&#8617;</a></p>
+</li>
+<li id="fn:8">
+<p>Ionut Iosifescu, Angeliki Tsorlini, and Lorenz Hurni. Towards a comprehensive methodology for automatic vectorization of raster historical maps. <em>e-Perimetron</em>, 11(2):57–76, 2016.&#160;<a class="footnote-backref" href="#fnref:8" title="Jump back to footnote 8 in the text">&#8617;</a></p>
+</li>
+<li id="fn:9">
+<p>Remi Petitpierre and Paul Guhennec. Effective annotation for the automatic vectorization of cadastral maps. <em>Digital Scholarship in the Humanities</em>, pages fqad006, 2023.&#160;<a class="footnote-backref" href="#fnref:9" title="Jump back to footnote 9 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:9" title="Jump back to footnote 9 in the text">&#8617;</a><a class="footnote-backref" href="#fnref3:9" title="Jump back to footnote 9 in the text">&#8617;</a></p>
+</li>
+<li id="fn:10">
+<p>Tete Xiao, Yingcheng Liu, Bolei Zhou, Yuning Jiang, and Jian Sun. Unified perceptual parsing for scene understanding. In <em>Proceedings of the European conference on computer vision (ECCV)</em>, 418–434. 2018.&#160;<a class="footnote-backref" href="#fnref:10" title="Jump back to footnote 10 in the text">&#8617;</a></p>
+</li>
+<li id="fn:11">
+<p>Enze Xie, Wenhai Wang, Zhiding Yu, Anima Anandkumar, Jose M Alvarez, and Ping Luo. Segformer: simple and efficient design for semantic segmentation with transformers. <em>Advances in Neural Information Processing Systems</em>, 34:12077–12090, 2021.&#160;<a class="footnote-backref" href="#fnref:11" title="Jump back to footnote 11 in the text">&#8617;</a></p>
+</li>
+<li id="fn:12">
+<p>Jos BTM Roerdink and Arnold Meijster. The watershed transform: definitions, algorithms and parallelization strategies. <em>Fundamenta informaticae</em>, 41(1-2):187–228, 2000.&#160;<a class="footnote-backref" href="#fnref:12" title="Jump back to footnote 12 in the text">&#8617;</a></p>
+</li>
+<li id="fn:13">
+<p>Pedro F Felzenszwalb and Daniel P Huttenlocher. Efficient graph-based image segmentation. <em>International journal of computer vision</em>, 59:167–181, 2004.&#160;<a class="footnote-backref" href="#fnref:13" title="Jump back to footnote 13 in the text">&#8617;</a></p>
+</li>
+<li id="fn:14">
+<p>Fernando A Velasco and Jose L Marroquin. Growing snakes: active contours for complex topologies. <em>Pattern Recognition</em>, 36(2):475–482, 2003.&#160;<a class="footnote-backref" href="#fnref:14" title="Jump back to footnote 14 in the text">&#8617;</a></p>
+</li>
+<li id="fn:15">
+<p>Matthias P Wagner and Natascha Oppelt. Extracting agricultural fields from remote sensing imagery using graph-based growing contours. <em>Remote sensing</em>, 12(7):1205, 2020.&#160;<a class="footnote-backref" href="#fnref:15" title="Jump back to footnote 15 in the text">&#8617;</a></p>
+</li>
+<li id="fn:16">
+<p>Matthias P Wagner and Natascha Oppelt. Deep learning and adaptive graph-based growing contours for agricultural field extraction. <em>Remote sensing</em>, 12(12):1990, 2020.&#160;<a class="footnote-backref" href="#fnref:16" title="Jump back to footnote 16 in the text">&#8617;</a></p>
+</li>
+<li id="fn:17">
+<p>Matthias Butenuth and Christian Heipke. Network snakes: graph-based object delineation with active contour models. <em>Machine Vision and Applications</em>, 23:91–109, 2012.&#160;<a class="footnote-backref" href="#fnref:17" title="Jump back to footnote 17 in the text">&#8617;</a></p>
+</li>
+</ol>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2020-2021 Swiss Territorial Data Lab
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        <div class="md-social">
+  
+    
+    
+    
+    
+    <a href="https://github.com/swiss-territorial-data-lab" target="_blank" rel="noopener" title="Repo on Github" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+    </a>
+  
+    
+    
+    
+    
+    <a href="mailto:<info@stdl.ch>" target="_blank" rel="noopener" title="Send us an eMail!" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M498.1 5.6c10.1 7 15.4 19.1 13.5 31.2l-64 416c-1.5 9.7-7.4 18.2-16 23s-18.9 5.4-28 1.6L284 427.7l-68.5 74.1c-8.9 9.7-22.9 12.9-35.2 8.1S160 493.2 160 480v-83.6c0-4 1.5-7.8 4.2-10.7l167.6-182.9c5.8-6.3 5.6-16-.4-22s-15.7-6.4-22-.7L106 360.8l-88.3-44.2C7.1 311.3.3 300.7 0 288.9s5.9-22.8 16.1-28.7l448-256c10.7-6.1 23.9-5.5 34 1.4z"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.expand"], "search": "../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.a7c05c9e.min.js"></script>
+      
+        <script src="../assets/javascripts/config.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>
