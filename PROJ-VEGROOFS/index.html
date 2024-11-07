@@ -1,0 +1,2101 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.0, mkdocs-material-9.5.21">
+    
+    
+      
+        <title>Green roofs: automatic detection of roof vegetation, vegetation type and covered surface from aerial imagery - Swiss Territorial Data Lab</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.66ac8b77.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#green-roofs-automatic-detection-of-roof-vegetation-vegetation-type-and-covered-surface-from-aerial-imagery" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Swiss Territorial Data Lab" class="md-header__button md-logo" aria-label="Swiss Territorial Data Lab" data-md-component="logo">
+      
+  <img src="../assets/logo-stdl-transparent.svg" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Swiss Territorial Data Lab
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Green roofs: automatic detection of roof vegetation, vegetation type and covered surface from aerial imagery
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var media,input,key,value,palette=__md_get("__palette");if(palette&&palette.color){"(prefers-color-scheme)"===palette.color.media&&(media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']"),palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent"));for([key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/swiss-territorial-data-lab" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    STDL on Github
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Swiss Territorial Data Lab" class="md-nav__button md-logo" aria-label="Swiss Territorial Data Lab" data-md-component="logo">
+      
+  <img src="../assets/logo-stdl-transparent.svg" alt="logo">
+
+    </a>
+    Swiss Territorial Data Lab
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/swiss-territorial-data-lab" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    STDL on Github
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Homepage
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://github.com/swiss-territorial-data-lab" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    GitHub
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-introduction" class="md-nav__link">
+    <span class="md-ellipsis">
+      1 Introduction
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-study-areas" class="md-nav__link">
+    <span class="md-ellipsis">
+      2 Study areas
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-data" class="md-nav__link">
+    <span class="md-ellipsis">
+      3 Data
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3 Data">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31-aerial-imagery" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.1 Aerial imagery
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32-ground-truth" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.2 Ground truth
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#33-other-data" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.3 Other data
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-method" class="md-nav__link">
+    <span class="md-ellipsis">
+      4 Method
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4 Method">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#41-evaluation-metrics" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.1 Evaluation metrics
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#42-classification-by-machine-learning" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.2 Classification by machine learning
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#43-multiclass-classification-by-deep-learning" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.3 Multiclass classification by deep learning
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-results-and-discussion" class="md-nav__link">
+    <span class="md-ellipsis">
+      5 Results and discussion
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5 Results and discussion">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#51-binary-classification-by-machine-learning" class="md-nav__link">
+    <span class="md-ellipsis">
+      5.1 Binary classification by machine learning
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#52-multiclass-classification-by-deep-learning" class="md-nav__link">
+    <span class="md-ellipsis">
+      5.2 Multiclass classification by deep learning
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-conclusions-and-outlooks" class="md-nav__link">
+    <span class="md-ellipsis">
+      6 Conclusions and outlooks
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-appendixes" class="md-nav__link">
+    <span class="md-ellipsis">
+      7 Appendixes
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="7 Appendixes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#71-boxplots-of-the-statistics-for-the-luminosity-pixels-per-roof-in-the-study-area-per-class" class="md-nav__link">
+    <span class="md-ellipsis">
+      7.1 Boxplots of the statistics for the luminosity pixels per roof in the study area per class
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#72-boxplots-of-the-statistics-for-the-near-infrared-pixels-per-roof-in-the-study-area-per-class" class="md-nav__link">
+    <span class="md-ellipsis">
+      7.2 Boxplots of the statistics for the near infrared pixels per roof in the study area per class
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#73-boxplots-of-the-statistics-for-the-red-pixels-per-roof-in-the-study-area-per-class" class="md-nav__link">
+    <span class="md-ellipsis">
+      7.3 Boxplots of the statistics for the red pixels per roof in the study area per class
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#74-boxplots-of-the-statistics-for-the-green-pixels-per-roof-in-the-study-area-per-class" class="md-nav__link">
+    <span class="md-ellipsis">
+      7.4 Boxplots of the statistics for the green pixels per roof in the study area per class
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#75-boxplots-of-the-statistics-for-the-blue-pixels-per-roof-in-the-study-area-per-class" class="md-nav__link">
+    <span class="md-ellipsis">
+      7.5 Boxplots of the statistics for the blue pixels per roof in the study area per class
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#76-results-of-the-parameter-optimization-of-the-random-forest" class="md-nav__link">
+    <span class="md-ellipsis">
+      7.6 Results of the parameter optimization of the random forest
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#77-results-of-the-parameter-optimization-of-the-logistic-regression" class="md-nav__link">
+    <span class="md-ellipsis">
+      7.7 Results of the parameter optimization of the logistic regression
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#78-permutation-importance-of-the-random-forest" class="md-nav__link">
+    <span class="md-ellipsis">
+      7.8 Permutation importance of the random forest
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#79-permutation-importance-of-the-logistice-regression" class="md-nav__link">
+    <span class="md-ellipsis">
+      7.9 Permutation importance of the logistice regression
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#710-boxplots-of-the-statistics-for-the-near-infrared-pixels-per-potential-greenery-per-class" class="md-nav__link">
+    <span class="md-ellipsis">
+      7.10 Boxplots of the statistics for the near infrared pixels per potential greenery per class
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#711-boxplots-of-the-statistics-for-the-red-pixels-per-potential-greenery-per-class" class="md-nav__link">
+    <span class="md-ellipsis">
+      7.11 Boxplots of the statistics for the red pixels per potential greenery per class
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#712-boxplots-of-the-statistics-for-the-green-pixels-per-potential-greenery-per-class" class="md-nav__link">
+    <span class="md-ellipsis">
+      7.12 Boxplots of the statistics for the green pixels per potential greenery per class
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#713-boxplots-of-the-statistics-for-the-blue-pixels-per-potential-greenery-per-class" class="md-nav__link">
+    <span class="md-ellipsis">
+      7.13 Boxplots of the statistics for the blue pixels per potential greenery per class
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-sources-and-references" class="md-nav__link">
+    <span class="md-ellipsis">
+      8 Sources and references
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="green-roofs-automatic-detection-of-roof-vegetation-vegetation-type-and-covered-surface-from-aerial-imagery">Green roofs: automatic detection of roof vegetation, vegetation type and covered surface from aerial imagery<a class="headerlink" href="#green-roofs-automatic-detection-of-roof-vegetation-vegetation-type-and-covered-surface-from-aerial-imagery" title="Permanent link">&para;</a></h1>
+<p>Clotilde Marmy (ExoLabs) - Ueli Mauch (Canton of Zürich) - Swann Destouches (Uzufly) - Alessandro Cerioni (Canton of Geneva) - Roxane Pott (swisstopo)</p>
+<p>Proposed by the Canton of Zürich and Canton of Geneva - PROJ-VEGROOFS<br/>
+Project start in November 2023 - Intermediate publication on November 7, 2024</p>
+<p>All scripts are available on <a href="https://github.com/swiss-territorial-data-lab/proj-vegroofs/tree/main">GitHub</a>.</p>
+<p xmlns:cc="http://creativecommons.org/ns#" >This work by <a rel="cc:attributionURL dct:creator" property="cc:attributionName" href="https://stdl.ch">STDL</a> is licensed under <a href="https://creativecommons.org/licenses/by-sa/4.0/?ref=chooser-v1" target="_blank" rel="license noopener noreferrer" style="display:inline-block;">CC BY-SA 4.0<img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1" alt=""><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/by.svg?ref=chooser-v1" alt=""><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/sa.svg?ref=chooser-v1" alt=""></a></p>
+
+<p><br/></p>
+<p><em><strong>Abstract</strong>: With rising temperatures and increased rainfall, mapping green roofs is becoming important for urban planning in dense areas like Geneva, Zürich and the surrounding areas. Green roofs, whether engineered or spontaneous, provide cooling, rain capture, and habitats, supporting biodiversity. Using national aerial imagery and land survey data, the study focuses on identifying green roofs and distinguishing among various vegetation types, including extensive, intensive, spontaneous, lawn, and terrace categories. Machine learning and deep learning approaches have been developed to detect and classify green roofs in two study areas on the cantons of Geneva and Zürich. Regarding the machine learning setup, statistical descriptors for the roof occupancy were derived from airborne images to train a random forest and a logistic regression predicting if a roof was green or not. Metrics on the test dataset showed that the best performance was achieved by combining a random forest and logistic regression models, trained with pixel statistics from potential vegetated areas defined by NDVI and luminosity thresholds on the original images. This combination yielded a recall of 0.87 for the green class and an F1-score of 0.85. The approach leveraging a deep neural network for classification of the roofs in the six classes of the project is still in development.</em></p>
+<h2 id="1-introduction">1 Introduction<a class="headerlink" href="#1-introduction" title="Permanent link">&para;</a></h2>
+<p>With the rise of temperatures, the intensification of rain events and the care for biodiversity, mapping green roofs for urban planning is gaining importance. In cantons with dense urban regions, like Canton of Geneva and Canton of Zürich, the presence of green roofs is an aspect to be taken into account in urban planning given the role they play in creating cool islands, capturing rainfall and hosting biodiversity. </p>
+<p>Vegetation is generally found on flat roofs, flat part of roofs or slightly tilted roofs. Formally, green roofs are engineered systems for growing plants on rooftop, like extensive and intensive green roofs. The former one hosting mosses, grasses, small vegetation; the later one hosting lawn, bushes and even trees. The green roofs concept can be extended to spontaneous green roofs and terraces. The former ones are developing spontaneously. Both are considered as green roofs for biodiversity reasons. </p>
+<p>The detection of green roofs can be addressed by different methods applied on aerial imagery: thresholding on NDVI bands, classification by machine learning based on engineered features, object detection by deep learning. In the literature <sup id="fnref:1"><a class="footnote-ref" href="#fn:1">1</a></sup>, <sup id="fnref:2"><a class="footnote-ref" href="#fn:2">2</a></sup>, the use of thresholds on NDVI gave versatile performance and required consequent manual work. This is due to the variability of the NDVI, either caused by meteorological events preceding image acquisition, or by the vegetation period during image acquisition, or because of other site-specific reflectance factors that have an impact on image rendering. On the other hand, the classification of entire roofs with traditional machine learning showed good ability <sup id="fnref:3"><a class="footnote-ref" href="#fn:3">3</a></sup>. For detection of the green patches on roofs, object detection by deep learning has been explored <sup id="fnref:4"><a class="footnote-ref" href="#fn:4">4</a></sup>,<sup id="fnref:5"><a class="footnote-ref" href="#fn:5">5</a></sup>, <sup id="fnref:6"><a class="footnote-ref" href="#fn:6">6</a></sup>, but such method require a significant effort for ground truth (GT) labeling. </p>
+<p>Although the binary problem, i.e. the distinction between bare and green roofs, is treated in the literature, no work on the multiclass problem was found. However, image classification technique is applied to classify roofs according to their geometries <sup id="fnref:7"><a class="footnote-ref" href="#fn:7">7</a></sup>, <sup id="fnref:8"><a class="footnote-ref" href="#fn:8">8</a></sup> or according to their materials <sup id="fnref:9"><a class="footnote-ref" href="#fn:9">9</a></sup>, <sup id="fnref:10"><a class="footnote-ref" href="#fn:10">10</a></sup>. This encourages to try a similar approach for green rooftops classification into several classes.  </p>
+<p>The aim of this project is first to detect green roofs using national aerial imagery and land survey. Secondly, the project will explore the  classification of green roofs into different existing types. Finally, the vegetated surface area of the green roofs will be estimated.  </p>
+<h2 id="2-study-areas">2 Study areas<a class="headerlink" href="#2-study-areas" title="Permanent link">&para;</a></h2>
+<p>The study areas on both cantons of Geneva and Zürich have been defined to contain a variety of green roof types and bare roofs. Figures 1 and 2 show the study areas.</p>
+<div align="center" style="font-style: italic">
+<img src="./images/AOIs.jpg" alt="Study area"> <br />
+<i>
+Figure 1: Study area over the city of Geneva and surrounding area.
+</i>
+</div>
+
+<div align="center" style="font-style: italic">
+<img src="./images/AOIs_2.jpg" alt="Study area"> <br />
+<i>
+Figure 2: Study area over the city of Zürich and surrounding area.
+</i>
+</div>
+
+<h2 id="3-data">3 Data<a class="headerlink" href="#3-data" title="Permanent link">&para;</a></h2>
+<p>The main input data of the project are aerial images and a vector layer of labeled building footprints as a ground truth. </p>
+<h3 id="31-aerial-imagery">3.1 Aerial imagery<a class="headerlink" href="#31-aerial-imagery" title="Permanent link">&para;</a></h3>
+<p>Aerial images acquired in early summer every six years by the national aerial imagery survey, <a href="https://www.swisstopo.admin.ch/en/orthoimage-swissimage-rs">SWISSIMAGE RS</a>, have been used. This corresponds to acquisitions in 2022 and 2023, for Zürich and Geneva respectively. The project makes use of the 10 cm resolution and the red, green, blue and near infrared channels of the product. The original product is delivered in the form of raw image captures encoded in 16 bit. However, for lighter processing and normalization, the imagery is converted to regular-sized 8-bit images, hereafter referred to as SWISSIMAGE RS 8-bit.</p>
+<h3 id="32-ground-truth">3.2 Ground truth<a class="headerlink" href="#32-ground-truth" title="Permanent link">&para;</a></h3>
+<p>For training and testing of machine learning techniques, a ground truth is necessary. The building footprints documented in the land survey, established and maintained by the cantons, have been used as geometry for the ground truth. Then, the beneficiaries have visualized the footprints on top of the aerial imagery to attribute a vegetation tag (vegetated or not) and a class: bare, terrace, spontaneous, extensive, lawn and intensive as depicted in Figure 4. </p>
+<div align="center" style="font-style: italic">
+<img src="./images/pentatique.jpg" alt="Green roof classes"> <br />
+<i>
+Figure 4: Along bare roofs, five classes of green roofs are present in the ground truth : green terraces and lawns, as well as spontaneous, extensive and intensive roofs.
+</i>
+</div>
+
+<p>The <a href="https://www.swisstopo.admin.ch/en/timetravel-aerial-images">time travel function for SWISSIMAGE</a> and the construction year of the buildings have been helpful to attribute the correct class (hopefully) without going on site. However, an error free ground truth is not ensured. Table 1 summarizes the diversity in the ground truth. </p>
+<p><center></p>
+<p><i>Table 1: Summary of the ground truth data, showing the number of roofs and their attribution into specific categories. </i></p>
+<table>
+<thead>
+<tr>
+<th>Class</th>
+<th>GE</th>
+<th>ZH</th>
+<th>Total</th>
+<th>Percentage</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Bare</td>
+<td>2102</td>
+<td>875</td>
+<td>2977</td>
+<td>78.6</td>
+</tr>
+<tr>
+<td>Extensive</td>
+<td>47</td>
+<td>398</td>
+<td>445</td>
+<td>11.8</td>
+</tr>
+<tr>
+<td>Spontaneous</td>
+<td>48</td>
+<td>78</td>
+<td>126</td>
+<td>3.3</td>
+</tr>
+<tr>
+<td>Lawn</td>
+<td>64</td>
+<td>23</td>
+<td>87</td>
+<td>2.3</td>
+</tr>
+<tr>
+<td>Intensive</td>
+<td>68</td>
+<td>14</td>
+<td>82</td>
+<td>2.2</td>
+</tr>
+<tr>
+<td>Terrace</td>
+<td>50</td>
+<td>17</td>
+<td>67</td>
+<td>1.8</td>
+</tr>
+</tbody>
+</table>
+<p></center></p>
+<p>Moreover, here are the characteristics of each class:</p>
+<ul>
+<li>bare: In this project, roofs with less than 10% of vegetation cover are considered bare. They are made of roof tiles, concrete, metal, glass or solar panels. </li>
+<li>extensive: They show a marble effect, due to height variation in the substrate and to the different species used: moss, sedum and grasses.</li>
+<li>spontaneous: Roofs that have been spontaneously colonized by plants. Vegetation is likely to develop in depressions of the roofs and is more dependent of external factors. Patches can be observed. Spontaneous green roofs are heterogeneous (color, height of vegetation, texture). At a young state, they do not cover all the available space and, above all, when going back a few years in time, evolution is observable.</li>
+<li>lawn: Lawn can be found on roof tops or on top of underground car parks (fake soil). This is kind of a sub-class of intensive green roofs.</li>
+<li>intensive: Intensive roofs are made out of lawn, shrubs, bushes and trees. They grow on a thicker substrate than extensive roofs. </li>
+<li>terraces: These are roofs with movable vegetation. Unlike green roofs, terraces are often designed for recreational use, although some can show quite developed vegetation.</li>
+</ul>
+<h3 id="33-other-data">3.3 Other data<a class="headerlink" href="#33-other-data" title="Permanent link">&para;</a></h3>
+<p>In addition, the canopy height models (CHM) derived from LiDAR acquisitions have been used to mask pixels corresponding to the vegetation of overhanging trees as illustrated in Figure 5. </p>
+<div align="center" style="font-style: italic">
+<img src="./images/overhanging.jpg" alt="Study area"      
+    width="400" 
+    height="389" />  <br />
+<i>
+Figure 5: Illustration of an overhanging tree above a garage.
+</i>
+</div>
+
+<p>For the study area in Zürich, the available <a href="https://data.stadt-zuerich.ch/dataset/geo_baumhoehen_2022__chm_aus_lidar_">WMS of the CHM</a> produced by the City of Zürich with a LiDAR acquisition of 2022 has been converted to a binary raster and vectorized. For the canton of Geneva, the already <a href="https://ge.ch/sitg/sitg_catalog/sitg_donnees?keyword=&amp;geodataid=1884&amp;topic=tous&amp;service=tous&amp;datatype=tous&amp;distribution=tous&amp;sort=auto">vectorized layer of the CHM</a> from LiDAR acquisition of 2019 has been used. </p>
+<h2 id="4-method">4 Method<a class="headerlink" href="#4-method" title="Permanent link">&para;</a></h2>
+<p>The Method chapter consists of two main parts: binary classification by machine learning and multiclass classification by deep learning.</p>
+<h3 id="41-evaluation-metrics">4.1 Evaluation metrics<a class="headerlink" href="#41-evaluation-metrics" title="Permanent link">&para;</a></h3>
+<p>To evaluate the performance of the machine learning algorithms, traditional metrics have been chosen:</p>
+<ul>
+<li>Overall accuracy (OA): the proportion of correctly predicted samples over the entire ground truth.</li>
+</ul>
+<div class="arithmatex">\[\begin{align}
+\
+OA = {TP+TN \over P+N}
+\
+\end{align}\]</div>
+<ul>
+<li>Recall of the green class: measures how sensitive the model is to the green roofs. </li>
+</ul>
+<div class="arithmatex">\[\begin{align}
+\
+Recall = {TP \over P}
+\
+\end{align}\]</div>
+<ul>
+<li>Balanced accuracy (BA): deals with imbalanced datasets as it corresponds to the average of recall obtained on each class.</li>
+</ul>
+<!-- From scikit-learn doc: The balanced accuracy in binary and multiclass classification problems to deal with imbalanced datasets. It is defined as the average of recall obtained on each class. The best value is 1 and the worst value is 0 when adjusted=False. -->
+
+<div class="arithmatex">\[\begin{align}
+\
+Balanced Accuracy={{1 \over C} \sum_{\substack{i=1}}^{C} {TPi \over FN_i+TP_i}}
+\
+\end{align}\]</div>
+<ul>
+<li>F1-score: keeps an eye on the precision. The F1-score overcomes the limitations of overall accuracy in cases of dataset imbalance. </li>
+</ul>
+<div class="arithmatex">\[\begin{align}
+\
+F1{-}score = {TP \over TP+0.5*(FP+FN)}
+\
+\end{align}\]</div>
+<p>In the three aforementioned equations, the variables used are: </p>
+<ul>
+<li>TP are true positives, green roofs correctly predicted as such</li>
+<li>TN are true negatives, bare roofs correctly predicted as such</li>
+<li>FN are false negatives, green roofs not detected</li>
+<li>FP are false positives, bare roofs predicted as green</li>
+<li>P are the green roofs in the ground truth</li>
+<li>N are the bare roofs in the ground truth</li>
+</ul>
+<p>Each metric ranges between 0 and 1, respectively the lowest and the highest values to be measured.</p>
+<h3 id="42-classification-by-machine-learning">4.2 Classification by machine learning<a class="headerlink" href="#42-classification-by-machine-learning" title="Permanent link">&para;</a></h3>
+<p>Machine learning algorithms make use of descriptors to learns characteristics about the classes to predict. In this project, descriptors were derived from the NRGB images. </p>
+<h4 id="421-raster-preparation">4.2.1 Raster preparation<a class="headerlink" href="#421-raster-preparation" title="Permanent link">&para;</a></h4>
+<p>A first step was to compute the normalized difference vegetation index (NDVI) and luminosity rasters corresponding to the images following these equations: </p>
+<div class="arithmatex">\[\begin{align}
+\
+NDVI = {NIR-R \over NIR+R},
+\
+\end{align}\]</div>
+<div class="arithmatex">\[\begin{align}
+\
+Luminosity = {R + G + B},
+\
+\end{align}\]</div>
+<p>where R, G, B and NIR stand respectively for the pixels of the red, green, blue and near infrared (NIR) bands. The resulting NDVI index is between -1 and 1, whereas the luminosity range depends on the image format: 0 to 765 in 8-bit, 0 to 196605 in 16-bit.</p>
+<h4 id="422-overhanging-trees">4.2.2 Overhanging trees<a class="headerlink" href="#422-overhanging-trees" title="Permanent link">&para;</a></h4>
+<p>As mentioned in <a href="#33-other-data">Section 3.3</a>, it was observed on the images that some big trees besides buildings may cover the roofs and erroneously lead to detection of green roofs. The mask derived from the CHM was buffered by 1  m to exclude all misleading pixels.</p>
+<h4 id="423-statistics-per-roof">4.2.3 Statistics per roof<a class="headerlink" href="#423-statistics-per-roof" title="Permanent link">&para;</a></h4>
+<p>After having filtered the bands for overhanging vegetation, computation of the following statistics of pixels per roofs were performed on the red, green, blue, NIR, luminosity and NDVI bands:</p>
+<ul>
+<li>mean</li>
+<li>median</li>
+<li>minimum</li>
+<li>maximum</li>
+<li>standard deviation</li>
+</ul>
+<p>This leads to 30 descriptors. For instance, for the roof in Figure 6, the statistics (min, max, mean, median, standard deviation) of the pixels in the green band (image on the right) are: </p>
+<ul>
+<li>min = 6</li>
+<li>max = 255 </li>
+<li>mean = 122.272 </li>
+<li>median = 123</li>
+<li>standard deviation = 43.22</li>
+</ul>
+<p>Furthermore, leaning of the buildings in the image can lead to mismatch between the building in the image and in the land survey. To overcome that, an inner buffer of 1 m was applied to the geometry prior to the statistic computation.</p>
+<div align="center" style="font-style: italic">
+<img src="./images/show_stat.jpg" alt="Illustration of statistics per roofs."> <br />
+<i>
+
+Figure 6: The statistics (min, max, mean, median, standard deviation) of the pixels within the roof perimeter are computed for each building. Here, for the green band (image on the right), the statistic values obtained are: min = 6, max = 255, mean = 122.272, median = 123 and standard deviation = 43.22.
+</i>
+</div>
+
+<h4 id="423-potential-greenery">4.2.3 Potential greenery<a class="headerlink" href="#423-potential-greenery" title="Permanent link">&para;</a></h4>
+<p>On Figure 6, one can see that the building footprint encompasses not only the roof but also a courtyard and that, on the roof, infrastructures like solar panels are also considered in the statistics. Therefore, the extensive roof in Figure 6 is likely to show different statistics than an extensive roof without courtyard and/or without solar panels. To overcome that and focus primarily on the vegetated area, the potential greenery area on each roof was extracted based on NDVI and luminosity threshold values, and then vectorized. The term "potential greenery" is chosen because in the extracted areas, pixels corresponding to bare materials may still be found.</p>
+<p>To chose the threshold values to apply on the NDVI and luminosity rasters, one can load the rasters in a visualizer and evaluate the effect of thresholds via the styling of the layer. </p>
+<p>This potential greenery vector layer offers an alternative layer to the one of the building footprint from the land survey. For instance, Figure 7 shows the potential greenery extracted from the roof. The <a href="#423-statistics-per-roof">statistics per roof</a> can be recomputed for this layer.</p>
+<div align="center" style="font-style: italic">
+<img src="./images/show_potential_greenery.jpg" alt="Illustration of extracted potential greenery."> <br />
+<i>
+
+Figure 7: Extracted potential greenery for NDVI values greater than 0 and for luminosity values lower than 500.  
+</i>
+</div>
+
+<h4 id="423-training-and-testing">4.2.3 Training and testing<a class="headerlink" href="#423-training-and-testing" title="Permanent link">&para;</a></h4>
+<p>The roofs in the ground truth were randomly split into a training set (70 %) and a test set (30 %) following the original multiclass distribution. Two machine learning algorithms were trained with the <em>scikit-learn</em> <sup id="fnref:11"><a class="footnote-ref" href="#fn:11">11</a></sup> library in Python, a random forest (RF) and a logistic regression (LR). The hyperparameters were optimized by means of a grid search strategy during training:</p>
+<ul>
+<li>
+<p>random forest:</p>
+<ul>
+<li>number of trees to grow: 200, 500, 800.</li>
+<li>number of features to test at split: square root of the number of descriptors plus or minus one. This leads to three values to test.</li>
+</ul>
+</li>
+<li>
+<p>logistic regression:</p>
+<ul>
+<li>solver: liblinear, newton-cg</li>
+<li>regularization technique: l2</li>
+<li>inverse of regularization strength: 1, 0.5, 0.1.</li>
+<li>number of iterations: 200, 500, 800.</li>
+</ul>
+</li>
+</ul>
+<p>The random state is fixed before training the algorithms. The classes are weighted inversely proportional to the class frequencies in the input data.</p>
+<p>When optimizing the training with the <em>GridSearchCV</em> function from the Python library <em>scikit-learn</em>, 5-fold cross-validation is performed and evaluated using balanced accuracy. </p>
+<p>The trained models are evaluated on the test set, and compared with the balanced accuracy, recall and F1-score. For instance, the beneficiaries can opt for the model with less green rooftops missed (high recall) or the model with less errors (high F1-score). </p>
+<p>The importance of the descriptors has been evaluated with the <em>permutation_importance</em> function of the <em>scikit-learn</em> Python library. It shuffles values for each descriptor and measures the change in the model performance for the given scorer to use. In the present case, the balanced accuracy was used. Afterwards, an ablation study of the descriptors is carried out to observe the effective contribution of different sets of descriptors to the model. </p>
+<p>The models were optimized once for the binary problem: green or not; once for the multiclass problem: is the roof bare, a green terrace, a spontaneous green roof, an extensive green roof, a lawn or an intensive green roof.</p>
+<h3 id="43-multiclass-classification-by-deep-learning">4.3 Multiclass classification by deep learning<a class="headerlink" href="#43-multiclass-classification-by-deep-learning" title="Permanent link">&para;</a></h3>
+<p>[Currently in development]</p>
+<h2 id="5-results-and-discussion">5 Results and discussion<a class="headerlink" href="#5-results-and-discussion" title="Permanent link">&para;</a></h2>
+<p>Results regarding the binary classification by machine learning and the multiclass classification by deep learning are presented and discussed directly.</p>
+<h3 id="51-binary-classification-by-machine-learning">5.1 Binary classification by machine learning<a class="headerlink" href="#51-binary-classification-by-machine-learning" title="Permanent link">&para;</a></h3>
+<p>Before presenting the results obtained by machine learning, the intermediate results from the data preprocessing steps are shown. </p>
+<h4 id="511-data-preprocessing">5.1.1 Data preprocessing<a class="headerlink" href="#511-data-preprocessing" title="Permanent link">&para;</a></h4>
+<p>Table 2 summarizes the composition of the GT after the preprocessing steps: inner buffer of 1 m and masking with the CHM. The ratios between the classes remain in the same order of magnitude as in the original dataset. It is also worth noting that the inner buffer of 1 m leads to exclusion of 65 roofs narrower than 2 m, which are mainly small bare surfaces of tiny built parts attached to buildings or garden sheds. 95 more roofs are excluded by the mask for the overhanging vegetation. </p>
+<p><center></p>
+<p><i>Table 2: Composition of the ground truth after preprocessing steps. </i></p>
+<table>
+<thead>
+<tr>
+<th>Class</th>
+<th>GT original</th>
+<th>GT after inner buffer of 1 m</th>
+<th>GT after inner buffer of 1 m <br />and after masking <br />with the CHM</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Bare</td>
+<td>2977</td>
+<td>2915</td>
+<td>2830</td>
+</tr>
+<tr>
+<td>Extensive</td>
+<td>445</td>
+<td>445</td>
+<td>445</td>
+</tr>
+<tr>
+<td>Spontaneous</td>
+<td>126</td>
+<td>124</td>
+<td>122</td>
+</tr>
+<tr>
+<td>Lawn</td>
+<td>87</td>
+<td>86</td>
+<td>82</td>
+</tr>
+<tr>
+<td>Intensive</td>
+<td>82</td>
+<td>82</td>
+<td>78</td>
+</tr>
+<tr>
+<td>Terrace</td>
+<td>67</td>
+<td>67</td>
+<td>67</td>
+</tr>
+<tr>
+<td>Total</td>
+<td>3784</td>
+<td>3719</td>
+<td>3624</td>
+</tr>
+</tbody>
+</table>
+<p></center></p>
+<p>Furthermore, it appears that the mask derived from the CHM was not excluding all the pixels corresponding to overhanging vegetation. Therefore, an additional subset of bare roofs with mean NDVI value greater than 0.05 has been excluded from the dataset. 43 bare roofs were concerned. </p>
+<p>With this new version of the ground truth, the statistics on the red, green, blue, NIR, NDVI and luminosity bands were computed per roof. The results for the NDVI are given in Figure 8. One can observe, on the boxplot of the NDVI means, that the interquartile's range of  the classes of the classes <em>bare (b)</em> and <em>terraces (t)</em> are largely overlapping. That is also the case between the <em>terraces</em> and <em>spontaneous (s)</em> classes, and between <em>spontaneous</em> and <em>extensive (e)</em> roofs. Furthermore, the <em>intensive (i)</em> class shows a wide interquartile range which is overlapping with those of the three aforementioned classes and <em>lawn (l)</em>. Similar observations can be made about the boxplots of the means. The distribution of the minimum and maximum pixel values per roof per class shows also that similar values are to be find between classes, tough the distribution for the classes <em>bare</em>, <em>spontaneous</em> and <em>extensive</em> have a lower interquartile range than the others. Finally, from the distributions of the standard deviation, two groups are distinguishable: high standard deviations for the <em>terraces</em>, <em>lawn</em> and <em>intensive</em> classes; low ones for the <em>bare</em>, <em>spontaneous</em> and <em>extensive</em> classes. The former roofs have often a mix of bare materials and vegetation in a good health state; whereas the latter are often homogeneously covered and the spontaneous and extensive vegetation may be weak. </p>
+<div align="center" style="font-style: italic">
+<img src="./images/boxplot_stats_band_ndvi.jpg" alt="Boxplots of NDVI."> <br />
+<i>
+Figure 8: Boxplots of the statistics for the NDVI pixels per roof in the study area per class.
+</i>
+</div>
+
+<p>In Appendices <a href="#71-boxplots-of-the-statistics-for-the-luminosity-pixels-per-roof-in-the-study-area-per-class">7.1</a>, <a href="#72-boxplots-of-the-statistics-for-the-near-infrared-pixels-per-roof-in-the-study-area-per-class">7.2</a>, <a href="#73-boxplots-of-the-statistics-for-the-red-pixels-per-roof-in-the-study-area-per-class">7.3</a>, <a href="#74-boxplots-of-the-statistics-for-the-green-pixels-per-roof-in-the-study-area-per-class">7.4</a> and <a href="#75-boxplots-of-the-statistics-for-the-blue-pixels-per-roof-in-the-study-area-per-class">7.5</a>, the interested reader can visualize similar boxplots as depicted in Figure 8 respectively for the luminosity, near infrared, red, green and blue bands. A general conclusion is that the descriptors contain information even if overlap is observable between classes. There is the potential of leveraging ML algorithms to learn pattern from these data. </p>
+<h4 id="512-parameter-optimization-and-ablation-of-the-descriptors">5.1.2 Parameter optimization and ablation of the descriptors<a class="headerlink" href="#512-parameter-optimization-and-ablation-of-the-descriptors" title="Permanent link">&para;</a></h4>
+<p>The best sets of hyperparameters after optimization of the random forest and logistic regression are given in Tables 3 and 4 for the sets of descriptors tested. </p>
+<p>In Table 3, the best results of the runs made with the random forest were achieved with all the descriptors and with 800 trees grown and 6 descriptors tested at each split. During the optimization phase, the best model for each tested configuration have been kept. The results are given in <a href="#76-results-of-the-parameter-optimization-of-the-random-forest">Appendix 7.6</a>. The evaluation of the models by means of the k-fold validation test indicated that all set of parameters performed similarly: 0.01 of difference in the k-fold mean balanced accuracy. This indicates that the range of parameters to test was suitable to extract information from the data. </p>
+<p><center></p>
+<p><i>Table 3: Metrics for the test set trained with random forest.</i></p>
+<table>
+<thead>
+<tr>
+<th>Descriptors</th>
+<th># of trees</th>
+<th># of descriptors</th>
+<th>Balanced accuracy</th>
+<th>Recall</th>
+<th>F1-score</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ndvi+lum+nrgb</td>
+<td>800</td>
+<td>6</td>
+<td>0.83</td>
+<td>0.69</td>
+<td>0.78</td>
+</tr>
+<tr>
+<td>lum+nrgb</td>
+<td>200</td>
+<td>5</td>
+<td>0.82</td>
+<td>0.65</td>
+<td>0.77</td>
+</tr>
+<tr>
+<td>nrgb</td>
+<td>800</td>
+<td>5</td>
+<td>0.83</td>
+<td>0.67</td>
+<td>0.78</td>
+</tr>
+<tr>
+<td>rgb</td>
+<td>200</td>
+<td>5</td>
+<td>0.80</td>
+<td>0.60</td>
+<td>0.73</td>
+</tr>
+</tbody>
+</table>
+<p></center></p>
+<p>Table 4 shows that the best model for the runs made with the logistic regression is for 200 iterations, 1 coefficient of penalty and the newton-cg solver. In <a href="#77-results-of-the-parameter-optimization-of-the-logistic-regression">Appendix 7.7</a>, the rest of the optimized models can be found. Again, one can notice the similarity of performances (0.01 of difference in the mean balanced accuracy). </p>
+<p><center></p>
+<p><i>Table 4: Metrics for the test set trained with logistic regression.</i></p>
+<table>
+<thead>
+<tr>
+<th>Descriptors</th>
+<th>Iterations</th>
+<th>C</th>
+<th>Solver</th>
+<th>Balanced accuracy</th>
+<th>Recall</th>
+<th>F1-score</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ndvi+lum+nrgb</td>
+<td>200</td>
+<td>1.00</td>
+<td>newton-cg</td>
+<td>0.89</td>
+<td>0.86</td>
+<td>0.80</td>
+</tr>
+<tr>
+<td>lum+nrgb</td>
+<td>200</td>
+<td>1.00</td>
+<td>newton-cg</td>
+<td>0.89</td>
+<td>0.87</td>
+<td>0.81</td>
+</tr>
+<tr>
+<td>nrgb</td>
+<td>200</td>
+<td>1.00</td>
+<td>liblinear</td>
+<td>0.89</td>
+<td>0.86</td>
+<td>0.80</td>
+</tr>
+<tr>
+<td>rgb</td>
+<td>200</td>
+<td>0.50</td>
+<td>liblinear</td>
+<td>0.87</td>
+<td>0.85</td>
+<td>0.77</td>
+</tr>
+</tbody>
+</table>
+<p></center></p>
+<p>The permutation importance results indicated that the important descriptors are different for the random forest and the logistic regression. In the random forest, the six most important descriptors are:</p>
+<ol>
+<li>NDVI standard deviation</li>
+<li>NDVI mean</li>
+<li>standard deviation of the blue pixels</li>
+<li>NDVI median</li>
+<li>NDVI maximum</li>
+<li>NIR mean</li>
+</ol>
+<p>The rest of the important descriptors are given in <a href="#78-permutation-importance-of-the-random-forest">Appendix 7.8</a>. Indeed, in the ablation study shown in Table 3, the recall goes from 0.69 to 0.65 after removing the descriptors derived from the NDVI pixels (<em>ndvi</em>). It decreases further from 0.67 to 0.60 when removing the descriptors derived from the NIR band. A lot of information is in the NIR band and by extension in the NDVI.</p>
+<p>Regarding,the logistic regression, the six most important descriptors are: </p>
+<ol>
+<li>luminosity median</li>
+<li>standard deviation of the blue pixels</li>
+<li>mean of the red pixels</li>
+<li>mean of the green pixels</li>
+<li>luminosity standard deviation</li>
+<li>median of the green pixels</li>
+</ol>
+<p>The rest of the important descriptors are given in <a href="#79-permutation-importance-of-the-logistic-regression">Appendix 7.9</a>. Those results highlight the fact that the logistic regression learns differently from the data than the random forest. Moreover, in the ablation study in Table 4, there are only 1% of decrease in recall and 3% in F1-score between the full model and the <em>rgb</em> model. These results indicate that the NIR band, while not providing much information for green roofs detection, helps slightly to avoid false positives</p>
+<p>Furthermore, when comparing the recall in Tables 3 and 4, one observes that the LR is more sensitive to the green class than the RF (0.86 vs. 0.69). However, the balanced accuracy, which is the mean of the recall for the bare class and for the green class, indicates that the recall for the bare class in the RF is higher than the one in the LR. </p>
+<p>Therefore, the mean of the probability estimates by LR and of the predicted class probabilities by RF for the green class have been computed to take advantage of both ways of learning from the data. For values higher than 0.5, the corresponding roofs have been considered as green; otherwise, they were assigned to the bare class. The metrics for the RF, LR and combination of both are summarized in Table 5. One can appreciate the stability of the balanced accuracy and the increase of performance for the F1-score; although more green roofs are wrongly classified than by the LR only, the overall classification is getting better. Knowing the imbalance of classes in the reality, this leads to way less errors in the outputs. However, for detection purposes with allocated resources for manual control, the LR model would be more appropriate. </p>
+<p><center></p>
+<p><i>Table 5: Metrics obtained for the test set after training with all the statistics per roofs.</i></p>
+<table>
+<thead>
+<tr>
+<th>Model</th>
+<th>Balanced accuracy</th>
+<th>Recall</th>
+<th>F1-score</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>RF</td>
+<td>0.83</td>
+<td>0, 69</td>
+<td>0.78</td>
+</tr>
+<tr>
+<td>LR</td>
+<td>0.89</td>
+<td>0.86</td>
+<td>0.80</td>
+</tr>
+<tr>
+<td>RF+LR</td>
+<td>0.89</td>
+<td>0.81</td>
+<td>0.83</td>
+</tr>
+</tbody>
+</table>
+<p></center></p>
+<h4 id="514-results-on-potential-greenery-areas">5.1.4 Results on potential greenery areas<a class="headerlink" href="#514-results-on-potential-greenery-areas" title="Permanent link">&para;</a></h4>
+<p>In a second step, the focus was put on potential greenery areas. The threshold values to apply on the NDVI and luminosity bands have been set  to 0 and 500 respectively after visualizing the rasters in QGIS and masked for these values. An illustration is given in Figure 9. Pixels with a NDVI value smaller than 0 are overlaid with transparent blue and pixel with a luminosity value greater than 500 are overlaid with transparent red. The bright green pixels correspond to the potential vegetation identified. </p>
+<div align="center" style="font-style: italic">
+<img src="./images/green_threshold.jpg" alt="Boxplots of NDVI."> <br />
+<i>
+Figure 9: Visualization of the threshold effect on the NDVI and luminosity rasters. Pixels with a NDVI value smaller than 0 are overlaid with transparent blue and pixel with a luminosity value greater than 500 are overlaid with transparent red. The vibrant green pixels correspond to the potential vegetation.
+</i>
+</div>
+
+<p>When referring to Figure 8 displaying the boxplots corresponding to the statistics of the NDVI band computed per entire roof, one can observe that a large majority of roofs have at least one pixel with a NDVI value greater than 0. When filtering the surface of the roofs according to NDVI and luminosity to focus on potential vegetated areas, 3189 out of 3624 roofs were indeed still included in the analysis as shown in Table 7.</p>
+<p><center></p>
+<p><i>Table 7: Comparison of the composition of the ground truth before and after filtering for the potential greenery area. </i></p>
+<table>
+<thead>
+<tr>
+<th>Class</th>
+<th>GT after inner buffer of 1 m <br />and after masking <br />with the CHM</th>
+<th>GT after filtering on NDVI <br />and luminosity</th>
+<th>Difference</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Bare</td>
+<td>2830</td>
+<td>2397</td>
+<td>433</td>
+</tr>
+<tr>
+<td>Extensive</td>
+<td>445</td>
+<td>444</td>
+<td>1</td>
+</tr>
+<tr>
+<td>Spontaneous</td>
+<td>122</td>
+<td>121</td>
+<td>1</td>
+</tr>
+<tr>
+<td>Lawn</td>
+<td>82</td>
+<td>82</td>
+<td>0</td>
+</tr>
+<tr>
+<td>Intensive</td>
+<td>78</td>
+<td>78</td>
+<td>0</td>
+</tr>
+<tr>
+<td>Terrace</td>
+<td>67</td>
+<td>67</td>
+<td>0</td>
+</tr>
+<tr>
+<td>Total</td>
+<td>3624</td>
+<td>3189</td>
+<td>435</td>
+</tr>
+</tbody>
+</table>
+<p></center></p>
+<p>Once again, the statistics of the NDVI, luminosity and NRGB pixels were computed per class, but this time, they were computed on the potential greenery. The boxplot of the NDVI mean of the class <em>terraces</em> in Figure 10, with a median around 0.18 instead of -0.18 in the boxplot of the NDVI mean per entire roof (see Figure 8), illustrates that the potential greenery layer allows to focus on the vegetated part of the terraces. Increase is also to be noted in the other classes, but the increase for the <em>terraces</em> is particularly interesting, as the median of the distribution reached those of lawns and intensive roofs; whereas it was similar to the median of the <em>bare</em> class before (see Figure 8). </p>
+<p>The <em>bare</em> class benefits also from the threshold, with a median for the distribution of the NDVI similar to those of the classes <em>spontaneous</em> and <em>extensive</em>. Moreover, Figure 11 shows the boxplots for statistics on luminosity where it can be seen that the medians of luminosity are generally lower on the <em>bare</em> class than the others. This corresponds to the fact that higher NDVI values are mostly to be found on the part of roofs in shadow as highlighted by Figure 9.</p>
+<div align="center" style="font-style: italic">
+<img src="./images/boxplot_stats_band_ndvi_green.jpg" alt="Boxplots of NDVI."> <br />
+<i>
+Figure 10: Boxplots of the statistics for the NDVI pixels per potential greenery in the study area per class.
+</i>
+</div>
+
+<div align="center" style="font-style: italic">
+<img src="./images/boxplot_stats_band_lum_green.jpg" alt="Boxplots of luminosity."> <br />
+<i>
+Figure 11: Boxplots of the statistics for the luminosity pixels per potential greenery in the study area per class.
+</i>
+</div>
+
+<p>The boxplots of statistics on the NRGB bands are given in Appendices <a href="#710-boxplots-of-the-statistics-for-the-near-infrared-pixels-per-potential-greenery-per-class">7.10</a>, <a href="#711-boxplots-of-the-statistics-for-the-red-pixels-per-potential-greenery-per-class">7.11</a>, <a href="#712-boxplots-of-the-statistics-for-the-green-pixels-per-potential-greenery-per-class">7.12</a> and <a href="#713-boxplots-of-the-statistics-for-the-blue-pixels-per-potential-greenery-per-class">7.13</a>.</p>
+<p>Since the statistics showed different characteristics on the potential greenery area than the entire roofs, another optimization was performed on the training based on the potential greenery area. The corresponding optimized parameters and metrics on the test set are shown in Table 8. For the random forest, the best model is reached for 5 features to test at the split and 200 trees to grow. Regarding, the logistic regression, 200 iterations are performed with a penalty coefficient of 1 and the newton-cg solver. 
+Again, the combination of predictions from the RF and the LR is computed and corresponding metrics are also given in Table 8. </p>
+<p>In the last row of Table 8, the combination of the RF and LR on the entire roofs have been trained and evaluated on the same dataset than the potential greenery one. It is worth noting that the model trained with the descriptors computed on the potential greenery surfaces performs better at detecting the green roofs than the models trained with the descriptors computed over the entire roofs (0.87 vs 0.84 of recall), but in overall leads to more bare roofs predicted as green (0.85 against 0.86 of F1-score).</p>
+<p><center></p>
+<p><i>Table 8: Metrics for the test set for statistics over the potential greenery area.</i></p>
+<table>
+<thead>
+<tr>
+<th>Model</th>
+<th>Balanced accuracy</th>
+<th>Recall</th>
+<th>F1-score</th>
+<th>Optimized parameters</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>RF</td>
+<td>0.87</td>
+<td>0.76</td>
+<td>0.82</td>
+<td># of features = 5  <br /> # of trees = 200</td>
+</tr>
+<tr>
+<td>LR</td>
+<td>0.88</td>
+<td>0.87</td>
+<td>0.80</td>
+<td>C=1  <br /> # of iterations = 200 <br /> solver = newton-cg</td>
+</tr>
+<tr>
+<td>RF+LR</td>
+<td>0.91</td>
+<td>0.87</td>
+<td>0.85</td>
+<td></td>
+</tr>
+<tr>
+<td>RF+LR on entire roofs</td>
+<td>0.90</td>
+<td>0.84</td>
+<td>0.86</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p></center> </p>
+<h4 id="515-results-and-use">5.1.5 Results and use<a class="headerlink" href="#515-results-and-use" title="Permanent link">&para;</a></h4>
+<p>Result of the best model trained on the entire roofs and on the potential greenery are shown in Figure 12. According to the metrics, the user interested in detecting green roofs should use the combination of RF and LR trained on the potential greenery since this model is more sensitive to green roofs and produces a limited number of wrong predictions (second best F1-score obtained). The geometry of the potential greenery may help to fasten the control when zooming on the roofs, whereas aggregation of the results on the original geometry of roofs delivers a better overview of the situation. </p>
+<div align="center" style="font-style: italic">
+<img src="./images/inference.jpg" alt="Boxplots of luminosity."> <br />
+<i>
+Figure 12: Results on an inference area.
+</i>
+</div>
+
+<h4 id="514-multiclass-classification-insights">5.1.4 Multiclass classification insights<a class="headerlink" href="#514-multiclass-classification-insights" title="Permanent link">&para;</a></h4>
+<p>Results for the multiclass classification with traditional machine learning were not satisfactory. Confusion between classes indicated that scarce vegetation for terraces, spontaneous and extensive roofs leads to confusion with bare roofs. From these tests, it appears that global statistics of the samples are not sufficient for the task. Hence, a strategy including the spatial structure of the rooftop might be needed (e.g. Deep-learning approach).</p>
+<h3 id="52-multiclass-classification-by-deep-learning">5.2 Multiclass classification by deep learning<a class="headerlink" href="#52-multiclass-classification-by-deep-learning" title="Permanent link">&para;</a></h3>
+<p>[Currently in development]</p>
+<h2 id="6-conclusions-and-outlooks">6 Conclusions and outlooks<a class="headerlink" href="#6-conclusions-and-outlooks" title="Permanent link">&para;</a></h2>
+<p>This study showed the effectiveness of using aerial imagery and machine learning models in detecting green roofs.</p>
+<p>In the machine learning parts, the results demonstrated the ability of a random forest and logistic regression algorithms to detect green roofs among bare roofs, based on vegetation and material reflectance in airborne images. The metrics, with a recall of 0.87 and an F1-score of 0.85 for the green class on the test set, reveal that the combination of both models trained on pixels statistics derived from vegetated areas defined by NDVI and luminosity thresholds, achieved the best performances. These metrics highlight the model’s ability to accurately detect green roof coverage, making it a reliable tool for large-scale urban mapping.</p>
+<p>Some further outlooks and insights:</p>
+<ul>
+<li>By training and testing the models with two areas separated by approximately 300 kilometers, with images acquired in two different years and with six types of roofs represented in the ground truth, the models have already a certain ability for generalization.</li>
+<li>From the scores in the k-folds cross-validations in Annexes <a href="#76-results-of-the-parameter-optimization-of-the-random-forest">7.6</a> and <a href="#77-results-of-the-parameter-optimization-of-the-logistic-regression">7.7</a>, it is to be expected that the metrics vary of approx. 5% according to the ground truth split into train and test sets. </li>
+<li>Machine learning approach needing engineered features (descriptors) in entry let always rooms for improvement by including additional descriptors. </li>
+<li>Finally, the experts mentioned that, even using SWISSIMAGE Time Travel WMTS and the construction year of the buildings, they could not insure an error free ground truth. This may have had an impact on model training and evaluation, as well as on manual correction of results in the future. </li>
+</ul>
+<h2 id="7-appendixes">7 Appendixes<a class="headerlink" href="#7-appendixes" title="Permanent link">&para;</a></h2>
+<h3 id="71-boxplots-of-the-statistics-for-the-luminosity-pixels-per-roof-in-the-study-area-per-class">7.1 Boxplots of the statistics for the luminosity pixels per roof in the study area per class<a class="headerlink" href="#71-boxplots-of-the-statistics-for-the-luminosity-pixels-per-roof-in-the-study-area-per-class" title="Permanent link">&para;</a></h3>
+<div align="center" style="font-style: italic">
+<img src="./images/boxplot_stats_band_lum.jpg" alt="Boxplots of luminosity."> <br />
+<i>
+Figure 13: Boxplots of the statistics for the luminosity pixels per roof in the study area per class.
+</i>
+</div>
+
+<h3 id="72-boxplots-of-the-statistics-for-the-near-infrared-pixels-per-roof-in-the-study-area-per-class">7.2 Boxplots of the statistics for the near infrared pixels per roof in the study area per class<a class="headerlink" href="#72-boxplots-of-the-statistics-for-the-near-infrared-pixels-per-roof-in-the-study-area-per-class" title="Permanent link">&para;</a></h3>
+<div align="center" style="font-style: italic">
+<img src="./images/boxplot_stats_band_nir.jpg" alt="Boxplots of the NIR band."> <br />
+<i>
+Figure 14: Boxplots of the statistics for the near infrared pixels per roof in the study area per class.
+</i>
+</div>
+
+<h3 id="73-boxplots-of-the-statistics-for-the-red-pixels-per-roof-in-the-study-area-per-class">7.3 Boxplots of the statistics for the red pixels per roof in the study area per class<a class="headerlink" href="#73-boxplots-of-the-statistics-for-the-red-pixels-per-roof-in-the-study-area-per-class" title="Permanent link">&para;</a></h3>
+<div align="center" style="font-style: italic">
+<img src="./images/boxplot_stats_band_red.jpg" alt="Boxplots of the red band."> <br />
+<i>
+Figure 15: Boxplots of the statistics for the red pixels per roof in the study area per class.
+</i>
+</div>
+
+<h3 id="74-boxplots-of-the-statistics-for-the-green-pixels-per-roof-in-the-study-area-per-class">7.4 Boxplots of the statistics for the green pixels per roof in the study area per class<a class="headerlink" href="#74-boxplots-of-the-statistics-for-the-green-pixels-per-roof-in-the-study-area-per-class" title="Permanent link">&para;</a></h3>
+<div align="center" style="font-style: italic">
+<img src="./images/boxplot_stats_band_green.jpg" alt="Boxplots of the green band."> <br />
+<i>
+Figure 16: Boxplots of the statistics for the green pixels per roof in the study area per class.
+</i>
+</div>
+
+<h3 id="75-boxplots-of-the-statistics-for-the-blue-pixels-per-roof-in-the-study-area-per-class">7.5 Boxplots of the statistics for the blue pixels per roof in the study area per class<a class="headerlink" href="#75-boxplots-of-the-statistics-for-the-blue-pixels-per-roof-in-the-study-area-per-class" title="Permanent link">&para;</a></h3>
+<div align="center" style="font-style: italic">
+<img src="./images/boxplot_stats_band_blue.jpg" alt="Boxplots of the blue band."> <br />
+<i>
+Figure 17: Boxplots of the statistics for the blue pixels per roof in the study area per class.
+</i>
+</div>
+
+<h3 id="76-results-of-the-parameter-optimization-of-the-random-forest">7.6 Results of the parameter optimization of the random forest<a class="headerlink" href="#76-results-of-the-parameter-optimization-of-the-random-forest" title="Permanent link">&para;</a></h3>
+<p><center> </p>
+<p><i>Table 9: Results of the parameter optimization of the random forest. Optimized parameters: number of trees to grow and number of descriptors to test at each split.</i></p>
+<table>
+<thead>
+<tr>
+<th>param_max_features</th>
+<th>param_n_estimators</th>
+<th>split0_test_score</th>
+<th>split1_test_score</th>
+<th>split2_test_score</th>
+<th>split3_test_score</th>
+<th>split4_test_score</th>
+<th>mean_test_score</th>
+<th>std_test_score</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>6</td>
+<td>800</td>
+<td>0.877</td>
+<td>0.834</td>
+<td>0.857</td>
+<td>0.875</td>
+<td>0.855</td>
+<td>0.860</td>
+<td>0.016</td>
+</tr>
+<tr>
+<td>5</td>
+<td>200</td>
+<td>0.870</td>
+<td>0.830</td>
+<td>0.849</td>
+<td>0.870</td>
+<td>0.864</td>
+<td>0.857</td>
+<td>0.015</td>
+</tr>
+<tr>
+<td>6</td>
+<td>500</td>
+<td>0.877</td>
+<td>0.839</td>
+<td>0.841</td>
+<td>0.875</td>
+<td>0.850</td>
+<td>0.857</td>
+<td>0.017</td>
+</tr>
+<tr>
+<td>6</td>
+<td>200</td>
+<td>0.877</td>
+<td>0.825</td>
+<td>0.846</td>
+<td>0.870</td>
+<td>0.862</td>
+<td>0.856</td>
+<td>0.019</td>
+</tr>
+<tr>
+<td>5</td>
+<td>800</td>
+<td>0.864</td>
+<td>0.830</td>
+<td>0.852</td>
+<td>0.875</td>
+<td>0.853</td>
+<td>0.855</td>
+<td>0.015</td>
+</tr>
+<tr>
+<td>5</td>
+<td>500</td>
+<td>0.872</td>
+<td>0.825</td>
+<td>0.841</td>
+<td>0.878</td>
+<td>0.852</td>
+<td>0.854</td>
+<td>0.020</td>
+</tr>
+<tr>
+<td>4</td>
+<td>800</td>
+<td>0.868</td>
+<td>0.820</td>
+<td>0.853</td>
+<td>0.870</td>
+<td>0.849</td>
+<td>0.852</td>
+<td>0.018</td>
+</tr>
+<tr>
+<td>4</td>
+<td>200</td>
+<td>0.870</td>
+<td>0.820</td>
+<td>0.852</td>
+<td>0.863</td>
+<td>0.839</td>
+<td>0.849</td>
+<td>0.018</td>
+</tr>
+<tr>
+<td>4</td>
+<td>500</td>
+<td>0.864</td>
+<td>0.820</td>
+<td>0.843</td>
+<td>0.874</td>
+<td>0.839</td>
+<td>0.848</td>
+<td>0.019</td>
+</tr>
+</tbody>
+</table>
+<p></center> </p>
+<h3 id="77-results-of-the-parameter-optimization-of-the-logistic-regression">7.7 Results of the parameter optimization of the logistic regression<a class="headerlink" href="#77-results-of-the-parameter-optimization-of-the-logistic-regression" title="Permanent link">&para;</a></h3>
+<p><center> </p>
+<p><i>Table 10: Results of the parameter optimization of the random forest. Optimized parameters: penalty, penalty coefficient and solver.</i></p>
+<table>
+<thead>
+<tr>
+<th>param_C</th>
+<th>param_max_iter</th>
+<th>param_solver</th>
+<th>split0_test_score</th>
+<th>split1_test_score</th>
+<th>split2_test_score</th>
+<th>split3_test_score</th>
+<th>split4_test_score</th>
+<th>mean_test_score</th>
+<th>std_test_score</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>200</td>
+<td>newton-cg</td>
+<td>0.882</td>
+<td>0.859</td>
+<td>0.919</td>
+<td>0.885</td>
+<td>0.922</td>
+<td>0.893</td>
+<td>0.024</td>
+</tr>
+<tr>
+<td>1</td>
+<td>500</td>
+<td>newton-cg</td>
+<td>0.882</td>
+<td>0.859</td>
+<td>0.919</td>
+<td>0.885</td>
+<td>0.922</td>
+<td>0.893</td>
+<td>0.024</td>
+</tr>
+<tr>
+<td>1</td>
+<td>800</td>
+<td>newton-cg</td>
+<td>0.882</td>
+<td>0.859</td>
+<td>0.919</td>
+<td>0.885</td>
+<td>0.922</td>
+<td>0.893</td>
+<td>0.024</td>
+</tr>
+<tr>
+<td>0.5</td>
+<td>200</td>
+<td>newton-cg</td>
+<td>0.882</td>
+<td>0.859</td>
+<td>0.915</td>
+<td>0.892</td>
+<td>0.917</td>
+<td>0.893</td>
+<td>0.022</td>
+</tr>
+<tr>
+<td>0.5</td>
+<td>500</td>
+<td>newton-cg</td>
+<td>0.882</td>
+<td>0.859</td>
+<td>0.915</td>
+<td>0.892</td>
+<td>0.917</td>
+<td>0.893</td>
+<td>0.022</td>
+</tr>
+<tr>
+<td>0.5</td>
+<td>800</td>
+<td>newton-cg</td>
+<td>0.882</td>
+<td>0.859</td>
+<td>0.915</td>
+<td>0.892</td>
+<td>0.917</td>
+<td>0.893</td>
+<td>0.022</td>
+</tr>
+<tr>
+<td>0.1</td>
+<td>200</td>
+<td>newton-cg</td>
+<td>0.892</td>
+<td>0.844</td>
+<td>0.907</td>
+<td>0.901</td>
+<td>0.919</td>
+<td>0.893</td>
+<td>0.026</td>
+</tr>
+<tr>
+<td>0.1</td>
+<td>500</td>
+<td>newton-cg</td>
+<td>0.892</td>
+<td>0.844</td>
+<td>0.907</td>
+<td>0.901</td>
+<td>0.919</td>
+<td>0.893</td>
+<td>0.026</td>
+</tr>
+<tr>
+<td>0.1</td>
+<td>800</td>
+<td>newton-cg</td>
+<td>0.892</td>
+<td>0.844</td>
+<td>0.907</td>
+<td>0.901</td>
+<td>0.919</td>
+<td>0.893</td>
+<td>0.026</td>
+</tr>
+<tr>
+<td>1</td>
+<td>200</td>
+<td>liblinear</td>
+<td>0.881</td>
+<td>0.856</td>
+<td>0.908</td>
+<td>0.893</td>
+<td>0.912</td>
+<td>0.890</td>
+<td>0.020</td>
+</tr>
+<tr>
+<td>1</td>
+<td>500</td>
+<td>liblinear</td>
+<td>0.881</td>
+<td>0.856</td>
+<td>0.908</td>
+<td>0.893</td>
+<td>0.912</td>
+<td>0.890</td>
+<td>0.020</td>
+</tr>
+<tr>
+<td>1</td>
+<td>800</td>
+<td>liblinear</td>
+<td>0.881</td>
+<td>0.856</td>
+<td>0.908</td>
+<td>0.893</td>
+<td>0.912</td>
+<td>0.890</td>
+<td>0.020</td>
+</tr>
+<tr>
+<td>0.5</td>
+<td>200</td>
+<td>liblinear</td>
+<td>0.881</td>
+<td>0.847</td>
+<td>0.907</td>
+<td>0.898</td>
+<td>0.910</td>
+<td>0.889</td>
+<td>0.023</td>
+</tr>
+<tr>
+<td>0.5</td>
+<td>500</td>
+<td>liblinear</td>
+<td>0.881</td>
+<td>0.847</td>
+<td>0.907</td>
+<td>0.898</td>
+<td>0.910</td>
+<td>0.889</td>
+<td>0.023</td>
+</tr>
+<tr>
+<td>0.5</td>
+<td>800</td>
+<td>liblinear</td>
+<td>0.881</td>
+<td>0.847</td>
+<td>0.907</td>
+<td>0.898</td>
+<td>0.910</td>
+<td>0.889</td>
+<td>0.023</td>
+</tr>
+<tr>
+<td>0.1</td>
+<td>200</td>
+<td>liblinear</td>
+<td>0.889</td>
+<td>0.840</td>
+<td>0.896</td>
+<td>0.898</td>
+<td>0.900</td>
+<td>0.885</td>
+<td>0.022</td>
+</tr>
+<tr>
+<td>0.1</td>
+<td>500</td>
+<td>liblinear</td>
+<td>0.889</td>
+<td>0.840</td>
+<td>0.896</td>
+<td>0.898</td>
+<td>0.900</td>
+<td>0.885</td>
+<td>0.022</td>
+</tr>
+<tr>
+<td>0.1</td>
+<td>800</td>
+<td>liblinear</td>
+<td>0.889</td>
+<td>0.840</td>
+<td>0.896</td>
+<td>0.898</td>
+<td>0.900</td>
+<td>0.885</td>
+<td>0.022</td>
+</tr>
+</tbody>
+</table>
+<p></center> </p>
+<h3 id="78-permutation-importance-of-the-random-forest">7.8 Permutation importance of the random forest<a class="headerlink" href="#78-permutation-importance-of-the-random-forest" title="Permanent link">&para;</a></h3>
+<p><center></p>
+<p><i>Table 11: Permutation importance of the random forest. </i></p>
+<table>
+<thead>
+<tr>
+<th>Descriptor set</th>
+<th>Statistic</th>
+<th>% drop in balanced accuracy</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>NDVI</td>
+<td>standard deviation</td>
+<td>0.086</td>
+</tr>
+<tr>
+<td>NDVI</td>
+<td>mean</td>
+<td>0.079</td>
+</tr>
+<tr>
+<td>Blue</td>
+<td>standard deviation</td>
+<td>0.014</td>
+</tr>
+<tr>
+<td>NDVI</td>
+<td>median</td>
+<td>0.013</td>
+</tr>
+<tr>
+<td>NDVI</td>
+<td>maximum</td>
+<td>0.011</td>
+</tr>
+<tr>
+<td>NIR</td>
+<td>mean</td>
+<td>0.011</td>
+</tr>
+<tr>
+<td>NIR</td>
+<td>maximum</td>
+<td>0.010</td>
+</tr>
+<tr>
+<td>NIR</td>
+<td>median</td>
+<td>0.006</td>
+</tr>
+<tr>
+<td>NIR</td>
+<td>standard deviation</td>
+<td>0.003</td>
+</tr>
+<tr>
+<td>Green</td>
+<td>minimum</td>
+<td>0.001</td>
+</tr>
+<tr>
+<td>Red</td>
+<td>standard deviation</td>
+<td>0.001</td>
+</tr>
+<tr>
+<td>Red</td>
+<td>median</td>
+<td>0.001</td>
+</tr>
+<tr>
+<td>Blue</td>
+<td>median</td>
+<td>0.001</td>
+</tr>
+<tr>
+<td>NIR</td>
+<td>minimum</td>
+<td>0.001</td>
+</tr>
+<tr>
+<td>NDVI</td>
+<td>minimum</td>
+<td>0.000</td>
+</tr>
+<tr>
+<td>Luminosity</td>
+<td>minimum</td>
+<td>0.000</td>
+</tr>
+<tr>
+<td>Luminosity</td>
+<td>maximum</td>
+<td>0.000</td>
+</tr>
+<tr>
+<td>Luminosity</td>
+<td>mean</td>
+<td>0.000</td>
+</tr>
+<tr>
+<td>Luminosity</td>
+<td>medain</td>
+<td>0.000</td>
+</tr>
+<tr>
+<td>Luminosity</td>
+<td>standard deviation</td>
+<td>0.000</td>
+</tr>
+<tr>
+<td>Red</td>
+<td>minimum</td>
+<td>0.000</td>
+</tr>
+<tr>
+<td>Red</td>
+<td>maximum</td>
+<td>0.000</td>
+</tr>
+<tr>
+<td>Red</td>
+<td>mean</td>
+<td>0.000</td>
+</tr>
+<tr>
+<td>Blue</td>
+<td>minimum</td>
+<td>0.000</td>
+</tr>
+<tr>
+<td>Blue</td>
+<td>maximum</td>
+<td>0.000</td>
+</tr>
+<tr>
+<td>Blue</td>
+<td>mean</td>
+<td>0.000</td>
+</tr>
+<tr>
+<td>Green</td>
+<td>maximum</td>
+<td>0.000</td>
+</tr>
+<tr>
+<td>Green</td>
+<td>mean</td>
+<td>0.000</td>
+</tr>
+<tr>
+<td>Green</td>
+<td>median</td>
+<td>0.000</td>
+</tr>
+<tr>
+<td>Green</td>
+<td>standard deviation</td>
+<td>0.000</td>
+</tr>
+</tbody>
+</table>
+<p></center> </p>
+<h3 id="79-permutation-importance-of-the-logistice-regression">7.9 Permutation importance of the logistice regression<a class="headerlink" href="#79-permutation-importance-of-the-logistice-regression" title="Permanent link">&para;</a></h3>
+<p><center></p>
+<p><i>Table 12: Permutation importance of the logistic regression.</i></p>
+<table>
+<thead>
+<tr>
+<th>Descriptor set</th>
+<th>Statistic</th>
+<th>% drop in balanced accuracy</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Luminosity</td>
+<td>median</td>
+<td>0.318</td>
+</tr>
+<tr>
+<td>Blue</td>
+<td>standard deviation</td>
+<td>0.277</td>
+</tr>
+<tr>
+<td>Red</td>
+<td>mean</td>
+<td>0.219</td>
+</tr>
+<tr>
+<td>Green</td>
+<td>mean</td>
+<td>0.207</td>
+</tr>
+<tr>
+<td>Luminosity</td>
+<td>standard deviation</td>
+<td>0.199</td>
+</tr>
+<tr>
+<td>Green</td>
+<td>median</td>
+<td>0.168</td>
+</tr>
+<tr>
+<td>NIR</td>
+<td>mean</td>
+<td>0.157</td>
+</tr>
+<tr>
+<td>Green</td>
+<td>standard deviation</td>
+<td>0.144</td>
+</tr>
+<tr>
+<td>Luminosity</td>
+<td>maximum</td>
+<td>0.131</td>
+</tr>
+<tr>
+<td>Green</td>
+<td>maximum</td>
+<td>0.110</td>
+</tr>
+<tr>
+<td>Red</td>
+<td>median</td>
+<td>0.110</td>
+</tr>
+<tr>
+<td>Blue</td>
+<td>mean</td>
+<td>0.108</td>
+</tr>
+<tr>
+<td>Blue</td>
+<td>median</td>
+<td>0.099</td>
+</tr>
+<tr>
+<td>Luminosity</td>
+<td>minimum</td>
+<td>0.056</td>
+</tr>
+<tr>
+<td>Luminosity</td>
+<td>mean</td>
+<td>0.045</td>
+</tr>
+<tr>
+<td>NIR</td>
+<td>median</td>
+<td>0.044</td>
+</tr>
+<tr>
+<td>Red</td>
+<td>maximum</td>
+<td>0.029</td>
+</tr>
+<tr>
+<td>NDVI</td>
+<td>maximum</td>
+<td>0.012</td>
+</tr>
+<tr>
+<td>Red</td>
+<td>standard deviation</td>
+<td>0.011</td>
+</tr>
+<tr>
+<td>NIR</td>
+<td>minimum</td>
+<td>0.010</td>
+</tr>
+<tr>
+<td>Green</td>
+<td>minimum</td>
+<td>0.008</td>
+</tr>
+<tr>
+<td>Red</td>
+<td>minimum</td>
+<td>0.002</td>
+</tr>
+<tr>
+<td>NIR</td>
+<td>standard deviation</td>
+<td>0.001</td>
+</tr>
+<tr>
+<td>NDVI</td>
+<td>median</td>
+<td>0.000</td>
+</tr>
+<tr>
+<td>NDVI</td>
+<td>mean</td>
+<td>-0.001</td>
+</tr>
+<tr>
+<td>Blue</td>
+<td>minimum</td>
+<td>-0.001</td>
+</tr>
+<tr>
+<td>NDVI</td>
+<td>standard deviation</td>
+<td>-0.002</td>
+</tr>
+<tr>
+<td>Blue</td>
+<td>maximum</td>
+<td>-0.003</td>
+</tr>
+<tr>
+<td>NDVI</td>
+<td>minimum</td>
+<td>-0.003</td>
+</tr>
+<tr>
+<td>NIR</td>
+<td>maximum</td>
+<td>-0.004</td>
+</tr>
+</tbody>
+</table>
+<p></center> </p>
+<h3 id="710-boxplots-of-the-statistics-for-the-near-infrared-pixels-per-potential-greenery-per-class">7.10 Boxplots of the statistics for the near infrared pixels per potential greenery per class<a class="headerlink" href="#710-boxplots-of-the-statistics-for-the-near-infrared-pixels-per-potential-greenery-per-class" title="Permanent link">&para;</a></h3>
+<div align="center" style="font-style: italic">
+<img src="./images/boxplot_stats_band_nir_green.jpg" alt="Boxplots of luminosity."> <br />
+<i>
+Figure 18: Boxplots of the statistics for the near infrared pixels per potential greenery in the study area per class.
+</i>
+</div>
+
+<h3 id="711-boxplots-of-the-statistics-for-the-red-pixels-per-potential-greenery-per-class">7.11 Boxplots of the statistics for the red pixels per potential greenery per class<a class="headerlink" href="#711-boxplots-of-the-statistics-for-the-red-pixels-per-potential-greenery-per-class" title="Permanent link">&para;</a></h3>
+<div align="center" style="font-style: italic">
+<img src="./images/boxplot_stats_band_red_green.jpg" alt="Boxplots of luminosity."> <br />
+<i>
+Figure 19: Boxplots of the statistics for the red pixels per potential greenery in the study area per class.
+</i>
+</div>
+
+<h3 id="712-boxplots-of-the-statistics-for-the-green-pixels-per-potential-greenery-per-class">7.12 Boxplots of the statistics for the green pixels per potential greenery per class<a class="headerlink" href="#712-boxplots-of-the-statistics-for-the-green-pixels-per-potential-greenery-per-class" title="Permanent link">&para;</a></h3>
+<div align="center" style="font-style: italic">
+<img src="./images/boxplot_stats_band_green_green.jpg" alt="Boxplots of luminosity."> <br />
+<i>
+Figure 20: Boxplots of the statistics for the green pixels per potential greenery in the study area per class.
+</i>
+</div>
+
+<h3 id="713-boxplots-of-the-statistics-for-the-blue-pixels-per-potential-greenery-per-class">7.13 Boxplots of the statistics for the blue pixels per potential greenery per class<a class="headerlink" href="#713-boxplots-of-the-statistics-for-the-blue-pixels-per-potential-greenery-per-class" title="Permanent link">&para;</a></h3>
+<div align="center" style="font-style: italic">
+<img src="./images/boxplot_stats_band_blue_green.jpg" alt="Boxplots of luminosity."> <br />
+<i>
+Figure 21: Boxplots of the statistics for the green pixels per potential greenery in the study area per class.
+</i>
+</div>
+
+<h2 id="8-sources-and-references">8 Sources and references<a class="headerlink" href="#8-sources-and-references" title="Permanent link">&para;</a></h2>
+<p>Indications on software and hardware requirements, as well as the code used to perform the project, are available on GitHub: https://github.com/swiss-territorial-data-lab/proj-hetres/tree/main.</p>
+<p>Other sources of information mentioned in this documentation are listed here:</p>
+<div class="footnote">
+<hr />
+<ol>
+<li id="fn:1">
+<p>Grün Stadt Zürich. Extensive Flachdachbegrünungen in der Stadt Zürich. Technical Report, Grün Stadt Zürich, March 2017. URL: <a href="https://www.google.com/url?sa=t&amp;source=web&amp;rct=j&amp;opi=89978449&amp;url=https://www.stadt-zuerich.ch/content/dam/stzh/ted/Deutsch/gsz_2/publikationen/beratung-und-wissen/wohn-und-arbeitsumfeld/dach-vertikalgruen/dachbegr%25C3%25BCnung/ErfolgskontrolleFlachdachbegruenungen170329.pdf&amp;ved=2ahUKEwi0ptz_v8KJAxXogf0HHdVEIZ0QFnoECAwQAQ&amp;usg=AOvVaw0lJtD7ffmgNMzGfse2ns1G">https://www.google.com/url?sa=t&amp;source=web&amp;rct=j&amp;opi=89978449&amp;url=https://www.stadt-zuerich.ch/content/dam/stzh/ted/Deutsch/gsz_2/publikationen/beratung-und-wissen/wohn-und-arbeitsumfeld/dach-vertikalgruen/dachbegr%25C3%25BCnung/ErfolgskontrolleFlachdachbegruenungen170329.pdf&amp;ved=2ahUKEwi0ptz_v8KJAxXogf0HHdVEIZ0QFnoECAwQAQ&amp;usg=AOvVaw0lJtD7ffmgNMzGfse2ns1G</a>.&#160;<a class="footnote-backref" href="#fnref:1" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+</li>
+<li id="fn:2">
+<p>J Massy, P Martin, and N Wyler. Cartographie semi-automatisée des toitures végétalisées de la Ville de Genève. <em>Géomatique Expert</em>, 81(Juillet-Août):26 – 31, 2011.&#160;<a class="footnote-backref" href="#fnref:2" title="Jump back to footnote 2 in the text">&#8617;</a></p>
+</li>
+<li id="fn:3">
+<p>Tanguy Louis-Lucas, Flavie Mayrand, Philippe Clergeau, and Nathalie Machon. Remote sensing for assessing vegetated roofs with a new replicable method in Paris, France. <em>Journal of Applied Remote Sensing</em>, 15(1):014501, January 2021. Publisher: SPIE. URL: <a href="https://www.spiedigitallibrary.org/journals/journal-of-applied-remote-sensing/volume-15/issue-1/014501/Remote-sensing-for-assessing-vegetated-roofs-with-a-new-replicable/10.1117/1.JRS.15.014501.full">https://www.spiedigitallibrary.org/journals/journal-of-applied-remote-sensing/volume-15/issue-1/014501/Remote-sensing-for-assessing-vegetated-roofs-with-a-new-replicable/10.1117/1.JRS.15.014501.full</a> (visited on 2023-06-15), <a href="https://doi.org/10.1117/1.JRS.15.014501">doi:10.1117/1.JRS.15.014501</a>.&#160;<a class="footnote-backref" href="#fnref:3" title="Jump back to footnote 3 in the text">&#8617;</a></p>
+</li>
+<li id="fn:4">
+<p>Annika Pauligk. Green Roofs 2020. March 2023. https://www.berlin.de/umweltatlas/_assets/literatur/ab_gruendach_2020.pdf. URL: <a href="https://www.berlin.de/umweltatlas/en/land-use/green-roofs/2020/methodology/">https://www.berlin.de/umweltatlas/en/land-use/green-roofs/2020/methodology/</a> (visited on 2023-12-28).&#160;<a class="footnote-backref" href="#fnref:4" title="Jump back to footnote 4 in the text">&#8617;</a></p>
+</li>
+<li id="fn:5">
+<p>Abraham Noah Wu and Filip Biljecki. Roofpedia: Automatic mapping of green and solar roofs for an open roofscape registry and evaluation of urban sustainability. <em>Landscape and Urban Planning</em>, 214:104167, October 2021. URL: <a href="https://www.sciencedirect.com/science/article/pii/S0169204621001304">https://www.sciencedirect.com/science/article/pii/S0169204621001304</a> (visited on 2023-10-26), <a href="https://doi.org/10.1016/j.landurbplan.2021.104167">doi:10.1016/j.landurbplan.2021.104167</a>.&#160;<a class="footnote-backref" href="#fnref:5" title="Jump back to footnote 5 in the text">&#8617;</a></p>
+</li>
+<li id="fn:6">
+<p>Charles H. Simpson, Oscar Brousse, Nahid Mohajeri, Michael Davies, and Clare Heaviside. An Open-Source Automatic Survey of Green Roofs in London using Segmentation of Aerial Imagery. preprint, ESSD – Land/Land Cover and Land Use, August 2022. URL: <a href="https://essd.copernicus.org/preprints/essd-2022-259/">https://essd.copernicus.org/preprints/essd-2022-259/</a> (visited on 2023-03-21), <a href="https://doi.org/10.5194/essd-2022-259">doi:10.5194/essd-2022-259</a>.&#160;<a class="footnote-backref" href="#fnref:6" title="Jump back to footnote 6 in the text">&#8617;</a></p>
+</li>
+<li id="fn:7">
+<p>Yanjun Wang, Shaochun Li, Fei Teng, Yunhao Lin, Mengjie Wang, and Hengfan Cai. Improved Mask R-CNN for Rural Building Roof Type Recognition from UAV High-Resolution Images: A Case Study in Hunan Province, China. <em>Remote Sensing</em>, 14(2):265, January 2022. Number: 2 Publisher: Multidisciplinary Digital Publishing Institute. URL: <a href="https://www.mdpi.com/2072-4292/14/2/265">https://www.mdpi.com/2072-4292/14/2/265</a> (visited on 2024-01-16), <a href="https://doi.org/10.3390/rs14020265">doi:10.3390/rs14020265</a>.&#160;<a class="footnote-backref" href="#fnref:7" title="Jump back to footnote 7 in the text">&#8617;</a></p>
+</li>
+<li id="fn:8">
+<p>M. Buyukdemircioglu, R. Can, and S. Kocaman. DEEP LEARNING BASED ROOF TYPE CLASSIFICATION USING VERY HIGH RESOLUTION AERIAL IMAGERY. <em>The International Archives of the Photogrammetry, Remote Sensing and Spatial Information Sciences</em>, XLIII-B3-2021:55–60, June 2021. URL: <a href="https://isprs-archives.copernicus.org/articles/XLIII-B3-2021/55/2021/">https://isprs-archives.copernicus.org/articles/XLIII-B3-2021/55/2021/</a> (visited on 2024-01-16), <a href="https://doi.org/10.5194/isprs-archives-XLIII-B3-2021-55-2021">doi:10.5194/isprs-archives-XLIII-B3-2021-55-2021</a>.&#160;<a class="footnote-backref" href="#fnref:8" title="Jump back to footnote 8 in the text">&#8617;</a></p>
+</li>
+<li id="fn:9">
+<p>Małgorzata Krówczyńska, Edwin Raczko, Natalia Staniszewska, and Ewa Wilk. Asbestos—Cement Roofing Identification Using Remote Sensing and Convolutional Neural Networks (CNNs). <em>Remote Sensing</em>, 12(3):408, January 2020. Number: 3 Publisher: Multidisciplinary Digital Publishing Institute. URL: <a href="https://www.mdpi.com/2072-4292/12/3/408">https://www.mdpi.com/2072-4292/12/3/408</a> (visited on 2024-01-16), <a href="https://doi.org/10.3390/rs12030408">doi:10.3390/rs12030408</a>.&#160;<a class="footnote-backref" href="#fnref:9" title="Jump back to footnote 9 in the text">&#8617;</a></p>
+</li>
+<li id="fn:10">
+<p>Jonguk Kim, Hyansu Bae, Hyunwoo Kang, and Suk Gyu Lee. CNN Algorithm for Roof Detection and Material Classification in Satellite Images. <em>Electronics</em>, 10(13):1592, January 2021. Number: 13 Publisher: Multidisciplinary Digital Publishing Institute. URL: <a href="https://www.mdpi.com/2079-9292/10/13/1592">https://www.mdpi.com/2079-9292/10/13/1592</a> (visited on 2024-01-16), <a href="https://doi.org/10.3390/electronics10131592">doi:10.3390/electronics10131592</a>.&#160;<a class="footnote-backref" href="#fnref:10" title="Jump back to footnote 10 in the text">&#8617;</a></p>
+</li>
+<li id="fn:11">
+<p>Fabian Pedregosa, Gaël Varoquaux, Alexandre Gramfort, Vincent Michel, Bertrand Thirion, Olivier Grisel, Mathieu Blondel, Peter Prettenhofer, Ron Weiss, Vincent Dubourg, Jake Vanderplas, Alexandre Passos, David Cournapeau, Matthieu Brucher, Matthieu Perrot, and Édouard Duchesnay. Scikit-learn: Machine Learning in Python. <em>Journal of Machine Learning Research</em>, 12(85):2825–2830, 2011. URL: <a href="http://jmlr.org/papers/v12/pedregosa11a.html">http://jmlr.org/papers/v12/pedregosa11a.html</a> (visited on 2024-11-01).&#160;<a class="footnote-backref" href="#fnref:11" title="Jump back to footnote 11 in the text">&#8617;</a></p>
+</li>
+</ol>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2020-2021 Swiss Territorial Data Lab
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        <div class="md-social">
+  
+    
+    
+    
+    
+    <a href="https://github.com/swiss-territorial-data-lab" target="_blank" rel="noopener" title="Repo on Github" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+    </a>
+  
+    
+    
+    
+    
+    <a href="mailto:<info@stdl.ch>" target="_blank" rel="noopener" title="Send us an eMail!" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M498.1 5.6c10.1 7 15.4 19.1 13.5 31.2l-64 416c-1.5 9.7-7.4 18.2-16 23s-18.9 5.4-28 1.6L284 427.7l-68.5 74.1c-8.9 9.7-22.9 12.9-35.2 8.1S160 493.2 160 480v-83.6c0-4 1.5-7.8 4.2-10.7l167.6-182.9c5.8-6.3 5.6-16-.4-22s-15.7-6.4-22-.7L106 360.8l-88.3-44.2C7.1 311.3.3 300.7 0 288.9s5.9-22.8 16.1-28.7l448-256c10.7-6.1 23.9-5.5 34 1.4z"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.expand"], "search": "../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.a7c05c9e.min.js"></script>
+      
+        <script src="../assets/javascripts/config.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>
