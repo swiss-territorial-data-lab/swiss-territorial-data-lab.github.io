@@ -605,6 +605,14 @@ Figure 2: Study area over the city of Zürich and surrounding area.
 <p>The main input data of the project are aerial images and a vector layer of labeled building footprints as a ground truth. </p>
 <h3 id="31-aerial-imagery">3.1 Aerial imagery<a class="headerlink" href="#31-aerial-imagery" title="Permanent link">&para;</a></h3>
 <p>Aerial images acquired in early summer every six years by the national aerial imagery survey, <a href="https://www.swisstopo.admin.ch/en/orthoimage-swissimage-rs">SWISSIMAGE RS</a>, have been used. This corresponds to acquisitions in 2022 and 2023, for Zürich and Geneva respectively. The project makes use of the 10 cm resolution and the red, green, blue and near infrared channels of the product. The original product is delivered in the form of raw image captures encoded in 16 bit. However, for lighter processing and normalization, the imagery is converted to regular-sized 8-bit images, hereafter referred to as SWISSIMAGE RS 8-bit.</p>
+<p>In addition, an in-development product, derived from SWISSIMAGE RS, is also available for testing. It consists of SWISSIMAGE RS orthorectified on the roofs of the <a href="https://www.swisstopo.admin.ch/en/landscape-model-swisstlm3d">large-scale topographic landscape model of Switzerland swissTLM3D</a> (layer <em>TLM TLM_GEBAEUDE_FOOTPRINT</em>). The advantage of this innovative data is that the tilt of the building is mostly corrected, so the image and the land survey vector layer are aligned as illustrated in Figure 3. </p>
+<div align="center" style="font-style: italic">
+<img src="./images/tilt.jpg" alt="Study area"> <br />
+<i>
+Figure 3: Tilted building on the orthophoto and orthorectified orthophoto for the rootop.
+</i>
+</div>
+
 <h3 id="32-ground-truth">3.2 Ground truth<a class="headerlink" href="#32-ground-truth" title="Permanent link">&para;</a></h3>
 <p>For training and testing of machine learning techniques, a ground truth is necessary. The building footprints documented in the land survey, established and maintained by the cantons, have been used as geometry for the ground truth. Then, the beneficiaries have visualized the footprints on top of the aerial imagery to attribute a vegetation tag (vegetated or not) and a class: bare, terrace, spontaneous, extensive, lawn and intensive as depicted in Figure 4. </p>
 <div align="center" style="font-style: italic">
@@ -777,6 +785,9 @@ Luminosity = {R + G + B},
 <li>standard deviation = 43.22</li>
 </ul>
 <p>Furthermore, leaning of the buildings in the image can lead to mismatch between the building in the image and in the land survey. To overcome that, an inner buffer of 1 m was applied to the geometry prior to the statistic computation.</p>
+<!--Furthermore, Figure 3 shows the leaning of the building in the image, leading to mismatch between the building in the image and in the land survey. To overcome that, an inner buffer of 1 m was applied to the geometry prior to the statistic computation. 
+-->
+
 <div align="center" style="font-style: italic">
 <img src="./images/show_stat.jpg" alt="Illustration of statistics per roofs."> <br />
 <i>
@@ -822,6 +833,7 @@ Figure 7: Extracted potential greenery for NDVI values greater than 0 and for lu
 <p>The trained models are evaluated on the test set, and compared with the balanced accuracy, recall and F1-score. For instance, the beneficiaries can opt for the model with less green rooftops missed (high recall) or the model with less errors (high F1-score). </p>
 <p>The importance of the descriptors has been evaluated with the <em>permutation_importance</em> function of the <em>scikit-learn</em> Python library. It shuffles values for each descriptor and measures the change in the model performance for the given scorer to use. In the present case, the balanced accuracy was used. Afterwards, an ablation study of the descriptors is carried out to observe the effective contribution of different sets of descriptors to the model. </p>
 <p>The models were optimized once for the binary problem: green or not; once for the multiclass problem: is the roof bare, a green terrace, a spontaneous green roof, an extensive green roof, a lawn or an intensive green roof.</p>
+<p>Finally, the best set of descriptors are used to train a model on the SWISSIMAGE RS orthorectified on the building footprints of the TLM and compare the metrics with those obtained on the original images. </p>
 <h3 id="43-multiclass-classification-by-deep-learning">4.3 Multiclass classification by deep learning<a class="headerlink" href="#43-multiclass-classification-by-deep-learning" title="Permanent link">&para;</a></h3>
 <p>[Currently in development]</p>
 <h2 id="5-results-and-discussion">5 Results and discussion<a class="headerlink" href="#5-results-and-discussion" title="Permanent link">&para;</a></h2>
@@ -1054,6 +1066,52 @@ Figure 8: Boxplots of the statistics for the NDVI pixels per roof in the study a
 <td>RF+LR</td>
 <td>0.89</td>
 <td>0.81</td>
+<td>0.83</td>
+</tr>
+</tbody>
+</table>
+<p></center></p>
+<h4 id="513-performance-on-swissimage-rs-and-on-swissimage-rs-orthorectified-on-tlm">5.1.3 Performance on SWISSIMAGE RS and on SWISSIMAGE RS orthorectified on TLM<a class="headerlink" href="#513-performance-on-swissimage-rs-and-on-swissimage-rs-orthorectified-on-tlm" title="Permanent link">&para;</a></h4>
+<p>Finally, Table 6 shows the metrics of the test set with models trained on the descriptors derived from the projected orthophotos on rooftops. One can observe that a similar range of performances is reached. Therefore, it seems that the tilt of the buildings in the orthoimage and its implication on the calculation of the descriptors is negligible, or that the application of a negative buffer on the land survey footprint geometries has made it possible to focus on the roofs and not include too much of the inclined facade in the descriptors. </p>
+<p><center></p>
+<p><i>Table 6: Metrics for the test set on SWISSIMAGE RS and on SWISSIMAGE RS orthorectified on TLM.</i></p>
+<table>
+<thead>
+<tr>
+<th>Model</th>
+<th>Images</th>
+<th>Balanced accuracy</th>
+<th>Recall</th>
+<th>F1-score</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>RF</td>
+<td>SWISSIMAGE RS 8-bit</td>
+<td>0.87</td>
+<td>0.77</td>
+<td>0.84</td>
+</tr>
+<tr>
+<td>RF</td>
+<td>SWISSIMAGE RS orthorectified on TLM</td>
+<td>0.89</td>
+<td>0.81</td>
+<td>0.87</td>
+</tr>
+<tr>
+<td>LR</td>
+<td>SWISSIMAGE RS 8-bit</td>
+<td>0.91</td>
+<td>0.89</td>
+<td>0.85</td>
+</tr>
+<tr>
+<td>LR</td>
+<td>SWISSIMAGE RS orthorectified on TLM</td>
+<td>0.89</td>
+<td>0.85</td>
 <td>0.83</td>
 </tr>
 </tbody>
