@@ -1,0 +1,1734 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.0, mkdocs-material-9.5.21">
+    
+    
+      
+        <title>Classification of border points on old cadastral plans - Swiss Territorial Data Lab</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.66ac8b77.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#classification-of-border-points-on-old-cadastral-plans" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Swiss Territorial Data Lab" class="md-header__button md-logo" aria-label="Swiss Territorial Data Lab" data-md-component="logo">
+      
+  <img src="../assets/logo-stdl-transparent.svg" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Swiss Territorial Data Lab
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Classification of border points on old cadastral plans
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var media,input,key,value,palette=__md_get("__palette");if(palette&&palette.color){"(prefers-color-scheme)"===palette.color.media&&(media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']"),palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent"));for([key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/swiss-territorial-data-lab" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    STDL on Github
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Swiss Territorial Data Lab" class="md-nav__button md-logo" aria-label="Swiss Territorial Data Lab" data-md-component="logo">
+      
+  <img src="../assets/logo-stdl-transparent.svg" alt="logo">
+
+    </a>
+    Swiss Territorial Data Lab
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/swiss-territorial-data-lab" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    STDL on Github
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Homepage
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://github.com/swiss-territorial-data-lab" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    GitHub
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-introduction" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Introduction
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-data" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Data
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Data">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21-cadastral-plans" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.1 Cadastral plans
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22-approximate-border-points" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.2 Approximate border points
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#23-ground-truth" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.3 Ground truth
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#24-swisstlm3d" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.4 swissTLM3D
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-metrics" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Metrics
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-instance-segmentation" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. Instance segmentation
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. Instance segmentation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#41-method" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.1 Method
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#42-results" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.2 Results
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#43-discussion" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.3 Discussion
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-symbol-classification" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. Symbol classification
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5. Symbol classification">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#51-method" class="md-nav__link">
+    <span class="md-ellipsis">
+      5.1. Method
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#52-results" class="md-nav__link">
+    <span class="md-ellipsis">
+      5.2 Results
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#53-discussion" class="md-nav__link">
+    <span class="md-ellipsis">
+      5.3 Discussion
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-conclusion" class="md-nav__link">
+    <span class="md-ellipsis">
+      6. Conclusion
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#appendix" class="md-nav__link">
+    <span class="md-ellipsis">
+      Appendix
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#image-references" class="md-nav__link">
+    <span class="md-ellipsis">
+      Image references
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="classification-of-border-points-on-old-cadastral-plans">Classification of border points on old cadastral plans<a class="headerlink" href="#classification-of-border-points-on-old-cadastral-plans" title="Permanent link">&para;</a></h1>
+<p>Gwenaëlle Salamin (Exolabs), Clémence Herny (Exolabs), Alessandro Cerioni (Canton of Geneva), Roxane Pott (swisstopo), Swann Destouches (Uzufly)</p>
+<p>Proposed by the Canton of Fribourg - PROJ-BORDERPOINTS <br>
+March 2024 to September 2024 - Published December 3, 2024</p>
+<p xmlns:cc="http://creativecommons.org/ns#" >This work by <a rel="cc:attributionURL dct:creator" property="cc:attributionName" href="https://stdl.ch">STDL</a> is licensed under <a href="https://creativecommons.org/licenses/by-sa/4.0/?ref=chooser-v1" target="_blank" rel="license noopener noreferrer" style="display:inline-block;">CC BY-SA 4.0<img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1" alt=""><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/by.svg?ref=chooser-v1" alt=""><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/sa.svg?ref=chooser-v1" alt=""></a></p>
+
+<p><em><strong>Abstract</strong>: Currently, all the lines delineating ground parcels have been approximately digitized in the canton of Fribourg, but the border points at the intersections have never been materialized in a dataset. However, it is the points and not the lines that have legal value. Besides, their nature must be known before they can be validated at the federal level. As 80,000 points are currently missing, an automatic classification based on historical cadastral plans would save the Canton a lot of time. <br>
+The STDL tested two methods to classify the nature of border points: instance segmentation with a match between detections and approximate border points, and image classification on the neighborhood of each approximate point. Both methods achieved a balanced f1 score of over 0.75 on a test dataset. However, the method based on instance segmentation was proved more versatile for the wide variety of configuration that can be encountered on historical cadastral plans. Consequently, the expert examined only those results at the scale of entire plans and he declared himself satisfied with the quality of the classification.</em></p>
+<h2 id="1-introduction">1. Introduction<a class="headerlink" href="#1-introduction" title="Permanent link">&para;</a></h2>
+<p>In some municipalities in the Canton of Fribourg, the cadastral surveying has not yet been fully approved by the land registry. The parcel borderlines were digitized manually based on old cadastral plans, but not the border points. Approximately 80,000 points are missing, causing errors in automatic data consistency checks and making it difficult for users to understand the data. Many of the missing boundary points can be identified on old paper plans from the late 19<sup>th</sup> century, but manually digitizing and classifying them would represent a considerable amount of work.<br></p>
+<p>Automatic vectorization of maps and diagram has been a topic of research for the past 30 years<sup id="fnref:1"><a class="footnote-ref" href="#fn:1">1</a></sup><sup id="fnref:2"><a class="footnote-ref" href="#fn:2">2</a></sup> as these historical documents contain invaluable information on territorial organization. This task is very challenging because the large variety of symbols and plan origin, as well as the quality of the drawings, make it difficult to develop a generic method. <br>
+The text retrieval on diagrams has quickly attracted a lot of attention<sup id="fnref2:1"><a class="footnote-ref" href="#fn:1">1</a></sup> and some attempts were made to extract surface areas such as land cover and parcels from maps based on image processing<sup id="fnref2:2"><a class="footnote-ref" href="#fn:2">2</a></sup><sup id="fnref:3"><a class="footnote-ref" href="#fn:3">3</a></sup>. The application of semantic segmentation for the classification of map areas greatly improved map vectorization<sup id="fnref3:2"><a class="footnote-ref" href="#fn:2">2</a></sup>. For Ignjatic et al. (2018)<sup id="fnref:4"><a class="footnote-ref" href="#fn:4">4</a></sup>, deep neural networks are the state-of-the-art for object recognition on cadastral map and their performance should allow their full integration in the domain. <br>
+Liu et al. (2017)<sup id="fnref:5"><a class="footnote-ref" href="#fn:5">5</a></sup> introduced raster-to-vector transformation methods, employing AI-driven junction detection and classification to improve the accuracy of edge extraction from floor plans. However, this article is rather an exception, as most of the vectorization works start with lines, then work toward other elements. Franken et al. (2021)<sup id="fnref:6"><a class="footnote-ref" href="#fn:6">6</a></sup> used AI-driven approaches for image enhancement, line detection, and handwritten sketch interpretation to automate the extraction of border points, achieving a high level of accuracy in reconstructing parcel boundaries of the Dutch cadastral plans. This work demonstrates how AI, particularly in image recognition, can resolve challenges posed by the inconsistent quality of hand-drawn cadastral maps. Oliveira et al. (2019)<sup id="fnref:7"><a class="footnote-ref" href="#fn:7">7</a></sup> also use a deep neural network to vectorize lines. From the vectorized lines, they determine the parcel polygons and the text position.  <br>
+Deep learning can also prove valuable for symbol extraction, but its application remains relatively uncommon. García-Molsosa et al. (2021)<sup id="fnref:8"><a class="footnote-ref" href="#fn:8">8</a></sup> demonstrated its potential for segmenting archaeological features, such as conventional signs and line drawings, and Qui et al. (2023)<sup id="fnref:9"><a class="footnote-ref" href="#fn:9">9</a></sup> achieved very good results for the classification of geological symbols with their convolutional recursive neural network. <br></p>
+<p>In this project, we developed two algorithms for classifying the border points in the Canton of Fribourg based on old georeferenced cadastral plans. The first is based on the <a href="https://github.com/swiss-territorial-data-lab/object-detector">STDL object detector</a>, a deep learning tool for instance segmentation. The second tests if the task can also be performed with a lighter machine learning model for symbol classification. The final product is a geographical dataset with the classified border points.</p>
+<h2 id="2-data">2. Data<a class="headerlink" href="#2-data" title="Permanent link">&para;</a></h2>
+<h3 id="21-cadastral-plans">2.1 Cadastral plans<a class="headerlink" href="#21-cadastral-plans" title="Permanent link">&para;</a></h3>
+<div align="center" style="font-style: italic">
+<img src="images/Neirivue_plan.webp" width="90%" alt="A georeferenced cadastral plan"> <br>
+<i>
+Figure 1: Cadastral plan of Neirivue at scale 1:500 dating 1906.</i>
+</div>
+
+<p>The cadastral plans were produced by various geometers from 1853 to 1911. Some annotations were added later to indicate changes in the parcel borders. <br>
+For this proof of concept, 30 plans are considered: 6 at 1:500 scale, 10 at 1:1000 scale, 10 at 1:2000 scale, and 14 at 1:4000 scale. They were manually georeferenced in the EPSG:2056 coordinate system (Fig. 1). They are saved in GeoTIFF format as a single band with a color map. </p>
+<p>To be used by the detection and classification algorithms, the cadastral plans were first transformed from a single band with a color map to RGB images. These were renamed with a plan number and their original name. <br>
+For the latter steps of the algorithms, to comply with the naming scheme of the STDL object detector, produced tiles must have an identifier consisting of three numbers: the plan number, the latitude, and the longitude. The zoom level is usually used for the identifier, but as there can be many overlaps of plans at the same scale, duplicated names for slightly shifted tiles would be possible. The plan number was then preferred.</p>
+<h3 id="22-approximate-border-points">2.2 Approximate border points<a class="headerlink" href="#22-approximate-border-points" title="Permanent link">&para;</a></h3>
+<p>Border points are landmarks used by geometers to cadaster parcel borders. They are the backbone of Swiss cadastral surveying. Borderlines are subsequently drawn between the surveyed border points. </p>
+<div align="center" style="font-style: italic">
+<img src="images/Zones_without_points.webp" width="90%" alt="Canton of Fribourg with the polygons of the parcels missing border points"> <br>
+<i>
+Figure 2: Parcels with missing border points over the Canton of Fribourg.</i>
+</div>
+
+<p>The parcels with missing border points can be identified from the cadastral survey dataset (Fig. 2). They were created from lines that were digitized manually on old cadastral plans 10 years ago. The border points were never digitized, but their approximate position can be deduced from the lines, as each line end is a border point. <br>
+Several cadastral plans can correspond to a same area, and a selection was made for the line digitization. Some discrepancies therefore exist between some plans and approximated points, with some plan symbols not corresponding to any points and inversely.</p>
+<p>The border points are filtered to keep only those overlapping a plan. A unique id is produced for each point based on a generated point number and the point coordinates rounded to one meter. A combo id is produced by combining the plan id and the point id to deal with points intersecting multiple plans.</p>
+<h3 id="23-ground-truth">2.3 Ground truth<a class="headerlink" href="#23-ground-truth" title="Permanent link">&para;</a></h3>
+<h4 id="231-areas-of-interest">2.3.1 Areas of interest<a class="headerlink" href="#231-areas-of-interest" title="Permanent link">&para;</a></h4>
+<div align="center" style="font-style: italic">
+<img src="images/AOI.webp" width="90%" alt="Areas of interest"> <br>
+<i>
+Figure 3: Location of the areas of interest over the Canton of Fribourg with the indication of the original plan scale.
+</i>
+</div>
+
+<p>Considering the large amount of work and low variation in style that would represent the full digitization of border points on one entire plan, small areas of interest (AOIs) were defined over several plans. They provide a panel of representative plan areas supplied by different geometers at different scales. Figure 3 shows the 35 AOIs spreading over 30 plans.</p>
+<h4 id="232-digitized-border-points">2.3.2 Digitized border points<a class="headerlink" href="#232-digitized-border-points" title="Permanent link">&para;</a></h4>
+<p>For the various needs of the developed methods, three versions of the ground truth (GT) were produced:</p>
+<ol>
+<li>
+<p>Polygon GT: </p>
+<ul>
+<li>border points of the AOIs delineated and classified by the expert in the form of polygons (Fig. 4),</li>
+<li>used to train and test the instance segmentation model.</li>
+</ul>
+<p><div align="center" style="font-style: italic">
+    <img src="images/GT_polygons.webp" width="100%" alt="One of the areas digitized for the ground truth with the digitized polygons"> <br>
+    <i>Figure 4: Digitized area in Neirivue with the polygons of the GT colored by class.</i>
+</div></p>
+</li>
+<li>
+<p>Point GT, version a (GTa): </p>
+<ul>
+<li>approximate border points, for which the localization was improved, classified by a spatial join with the polygon GT and by our team (Fig. 5),</li>
+<li>used to assess the results of the instance segmentation model after the post-processing steps.</li>
+</ul>
+<p><div align="center" style="font-style: italic">
+    <img src="images/GT_points.webp" width="100%" alt="One of the areas digitized for the ground truth with the digitized points"> <br>
+    <i>Figure 5: Digitized area in Neirivue with the points of the GT with a different symbol for each class.</i>
+</div></p>
+</li>
+<li>
+<p>Point GT, version b (GTb):</p>
+<ul>
+<li>GTa with five additional zones digitized to decrease some class confusions in the symbol classification,</li>
+<li>used to train and assess the symbol classification model.</li>
+</ul>
+</li>
+</ol>
+<p>The border points were classified based on their nature and color. The different natures of border points are defined in the official model. The following types are considered in this project with the numbering defined by the expert:</p>
+<ol>
+<li>Artificial marker</li>
+<li>Plugs</li>
+<li>Cross</li>
+<li>Post</li>
+<li>Non-materialized point</li>
+</ol>
+<p>The color of certain border point natures is important because it informs on how the point was created. The following possibilities were present on the cadastral plans:</p>
+<ul>
+<li>Black: it is the original point,</li>
+<li>Red: this point was mutated, <em>i.e.</em> the parcel limit changed and the point was created or relocated, before 1970,</li>
+<li>Blue: this point was mutated after 1970.</li>
+</ul>
+<p>The information about the nature and the color of the points were aggregated. For the colors, the first letter of the French translation was used (black=n, blue=b, red=r). Consequently, the following categories are present in the dataset:</p>
+<p><center></p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th style="text-align: center;">Black (n)</th>
+<th style="text-align: center;">Blue (b)</th>
+<th style="text-align: center;">Red (r)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1. Artificial marker</td>
+<td style="text-align: center;">1n <img alt="black circle" src="images/1n.jpg" /></td>
+<td style="text-align: center;">1b <img alt="large blue circle" src="images/1b.jpg" /></td>
+<td style="text-align: center;">1r <img alt="red circle" src="images/1r.jpg" /></td>
+</tr>
+<tr>
+<td>2. Plug</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">2b <img alt="small blue circle" src="images/2b.jpg" /></td>
+<td style="text-align: center;">-</td>
+</tr>
+<tr>
+<td>3. Cross</td>
+<td style="text-align: center;">3n <img alt="black cross" src="images/3n.jpg" /></td>
+<td style="text-align: center;">3b <img alt="blue cross" src="images/3ba.jpg" /> <img alt="blue cross" src="images/3bb.jpg" /></td>
+<td style="text-align: center;">3r <img alt="red cross" src="images/3ra.jpg" /> <img alt="red cross" src="images/3rb.jpg" /></td>
+</tr>
+<tr>
+<td>4. Post</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">-</td>
+</tr>
+<tr>
+<td>5. Non-materialized point</td>
+<td style="text-align: center;">5n <img alt="line intersection" src="images/5n.jpg" /> <img alt="line intersection" src="images/5n2.jpg" /></td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">-</td>
+</tr>
+</tbody>
+</table>
+<p><i>Table 1: Acronym of the border point classes with illustrations of the corresponding symbols. </i>
+</center></p>
+<p>As only the artificial markers and the crosses exists in several colors, it makes 8 classes (Table 1). In the polygon GT, the class "<strong>0s</strong>" was added for outdated points, struck in red, because of the high risk of confusion with valid points. In GTa and GTb, a class was added for <strong>undetermined</strong> points, <em>i.e.</em> points that are not overlapping with any symbol.</p>
+<p><center></p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th style="text-align: center;"><strong>Black</strong></th>
+<th style="text-align: center;"><strong>Blue</strong></th>
+<th style="text-align: center;"><strong>Red</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><em>1. Artificial marker</em></td>
+<td style="text-align: center;">202</td>
+<td style="text-align: center;">398</td>
+<td style="text-align: center;">61</td>
+</tr>
+<tr>
+<td><em>2. Plug</em></td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">170</td>
+<td style="text-align: center;">-</td>
+</tr>
+<tr>
+<td><em>3. Cross</em></td>
+<td style="text-align: center;">6</td>
+<td style="text-align: center;">77</td>
+<td style="text-align: center;">166</td>
+</tr>
+<tr>
+<td><em>4. Post</em></td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">-</td>
+</tr>
+<tr>
+<td><em>5. Non-materialized point</em></td>
+<td style="text-align: center;">124</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">-</td>
+</tr>
+</tbody>
+</table>
+<p><i>Table 2: Number of ground truth points digitized as polygons and classified based on nature and color by the expert. </i>
+</center></p>
+<p>The expert digitized 1,204 border points (Table 2) and 194 outdated points for the training and test of the instance segmentation model. <br></p>
+<p><center></p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th style="text-align: center;"><strong>Black</strong></th>
+<th style="text-align: center;"><strong>Blue</strong></th>
+<th style="text-align: center;"><strong>Red</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><em>1. Artificial marker</em></td>
+<td style="text-align: center;">175(a) / 182(b)</td>
+<td style="text-align: center;">304(a) / 307(b)</td>
+<td style="text-align: center;">48</td>
+</tr>
+<tr>
+<td><em>2. Plug</em></td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">158</td>
+<td style="text-align: center;">-</td>
+</tr>
+<tr>
+<td><em>3. Cross</em></td>
+<td style="text-align: center;">3</td>
+<td style="text-align: center;">68</td>
+<td style="text-align: center;">159</td>
+</tr>
+<tr>
+<td><em>4. Post</em></td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">-</td>
+</tr>
+<tr>
+<td><em>5. Non-materialized point</em></td>
+<td style="text-align: center;">218(a) / 242(b)</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">-</td>
+</tr>
+</tbody>
+</table>
+<p><i>Table 3: Number of points in the ground truth by nature and color once transformed from polygons to points in the original GT (a) and with five additional zones added for the symbol classification procedure (b).</i>
+</center></p>
+<p>The point GT contains 1,254 points in version a, including 121 undetermined ones, and 1,491 points in version b, including 324 undetermined ones (Table 3). <br></p>
+<p>Because of the small quantity of black crosses over the canton and in the ground truth (Table 2 and 3), this category is filtered out of the dataset in preprocessing.</p>
+<h3 id="24-swisstlm3d">2.4 swissTLM3D<a class="headerlink" href="#24-swisstlm3d" title="Permanent link">&para;</a></h3>
+<p>The product <a href="https://www.swisstopo.admin.ch/en/landscape-model-swisstlm3d">swissTLM3D</a> is the Swiss large-scale topographic landscape model produced by the Federal Office of Topography. In post-processing, we used the stagnant water from the land cover layer and the building layer for border point classification. Indeed, border points intersecting these features have a very high chance of being non-materialized points. We consider that those features are quite stable through time and the discrepancies between the point dataset and the swissTLM3D were small enough to be ignored.</p>
+<h2 id="3-metrics">3. Metrics<a class="headerlink" href="#3-metrics" title="Permanent link">&para;</a></h2>
+<!--
+- TP, FP, FN
+- P, R, f1 score
+- confusion matrix
+-->
+
+<p>To evaluate the results, the reliability of the detections, namely the precision <em>P</em>, and the exhaustiveness, namely the recall <em>R</em>, were computed for each class <em>k</em> and globally. They were then combined to obtain the f1 score. The respective formulas are presented below:</p>
+<ul>
+<li><span class="arithmatex">\(P_k = \frac{TP_k}{TP_k + FP_k}\)</span> </li>
+<li><span class="arithmatex">\(R_k = \frac{TP_k}{TP_k + FN_k}\)</span></li>
+<li>
+<p><span class="arithmatex">\(f_{1, k} = 2\cdot\frac{P_k \cdot R_k}{P_k + R_k}\)</span></p>
+<p>with:</p>
+<ul>
+<li><em>TP<sub>k</sub></em>: true positives of the class <em>k</em>, <em>i.e.</em> a detection overlapping a label</li>
+<li><em>FN<sub>k</sub></em>: false negative of the class <em>k</em>, <em>i.e.</em> a missed label</li>
+<li><em>FP<sub>k</sub></em>: false positive of the class <em>k</em>, <em>i.e.</em> an excess detection</li>
+</ul>
+</li>
+</ul>
+<p>Each value was first calculated per class. Then, the macro average of precision and recall were computed to get the global metrics, <em>i.e.</em> each class was considered to have the same weight regardless of the number of individuals. The global f1 score was determined from the global precision and recall.</p>
+<ul>
+<li>Macro precision: <span class="arithmatex">\(\mbox{P} = \frac{\sum_{k=1}^{n_{cls}}{P_k}}{n_{cls}}\)</span></li>
+<li>Macro recall: <span class="arithmatex">\(\mbox{R} = \frac{\sum_{k=1}^{n_{cls}}{R_k}}{n_{cls}}\)</span></li>
+<li>
+<p>Global f1 score: <span class="arithmatex">\(f_1 = 2\cdot \frac{P \cdot R}{P + R}\)</span></p>
+<p>with <em>n<sub>cls</sub></em> being the number of classes.</p>
+</li>
+</ul>
+<p>The global f1 score was used as the discriminating factor when comparing two models for instance segmentation, while the macro recall was used for the symbol classification.</p>
+<p>To identify class confusion, the confusion matrix was output using the <code>scikit-learn</code> library<sup id="fnref:10"><a class="footnote-ref" href="#fn:10">10</a></sup>. It uses labels as row entries and detected categories as columns entries.</p>
+<h2 id="4-instance-segmentation">4. Instance segmentation<a class="headerlink" href="#4-instance-segmentation" title="Permanent link">&para;</a></h2>
+<p>Only the approximate position of the border points was known, meaning the points are not always located directly over a symbol. In this condition, using instance segmentation allows assessing the capacity of a model to classify border point symbols without being affected by their approximate localization. The influence of this imprecise data is assessed in a second step, after matching detections to approximate border points.</p>
+<h3 id="41-method">4.1 Method<a class="headerlink" href="#41-method" title="Permanent link">&para;</a></h3>
+<h4 id="411-image-generation">4.1.1 Image generation<a class="headerlink" href="#411-image-generation" title="Permanent link">&para;</a></h4>
+<div align="center" style="font-style: italic">
+<img src="images/bbox_subdivision.webp" width="66%" alt="Plan clipped to an area of interest with a grid of two different sizes covering it."> <br>
+<i>Figure 6: Area of interest in Comba d'Avau with the clipped plan and the corresponding grid with one tile of 512x512 pixels (down left) and five tiles of 256x256 pixels clipped to the image. Tiles are rectangular, because the pixels were rectangular on some plans. </i>
+</div>
+
+<p>The RGB images are clipped to the AOIs. For each AOI, a grid of cells with 512<span class="arithmatex">\(\times\)</span>512 pixels is generated based on its origin and its pixel size. Where the grid cells overlap the AOI by less than 50%, 256<span class="arithmatex">\(\times\)</span>256 pixel cells are generated. If the overlap is less than 25% for those smaller cells, no tiles are generated for that image part. Else, the cells are clipped to the AOI. The result is shown in Figure 6. The old cadastral plan is clipped to the grid to obtain the tiles passed to the instance segmentation algorithm.</p>
+<h4 id="412-instance-segmentation">4.1.2 Instance segmentation<a class="headerlink" href="#412-instance-segmentation" title="Permanent link">&para;</a></h4>
+<p>The instance segmentation is performed using the STDL object detector and the polygon GT. The STDL object detector a deep learning framework based on detectron2 and is described in detail in the <a href="https://tech.stdl.ch/TASK-IDET/">dedicated documentation</a>. The most important points are given here.</p>
+<p>The tiles were split into a training, validation, and test dataset according to the following proportions: 70% training, 15% validation, and 15% test. The split was performed so that the classes were distributed approximately in the same proportions across datasets. A mask R-CNN model was the trained to detect and classify border points. When the validation loss started increasing, the training was stopped. The model was then used to make detections on all datasets. <br>
+During the assessment, the threshold on the confidence score was selected to maximize the global f1 score on the validation dataset. Next, the metrics were calculated for each dataset. <br>
+Detectron2 hyperparameters were calibrated to obtain the best performance, <em>i.e.</em> the model providing the highest f1 score on the test dataset.</p>
+<p>We obtain georeferenced polygons of the detected and classified border points with a confidence score. The results are cut by tile.</p>
+<h4 id="413-detection-post-processing">4.1.3 Detection post-processing<a class="headerlink" href="#413-detection-post-processing" title="Permanent link">&para;</a></h4>
+<p>The polygons of detections were filtered according to their confidence score and area. The minimum confidence score is 0.65. The minimum and maximum areas are dependent on the original plan scale (Table A1 in Appendix) and were determined based on the visualization of the results to avoid cases of absurdly small or large detections.<br>
+Some detections were cut in two by the edge of a tile. We assume that two detections within 10 cm of each other, of the same class, but on different tiles, represent the same point. They are then dissolved. Overlapping detections of different classes with an intersection over union greater than 75% are also considered to represent the same point. The detection with the lowest confidence score is discarded.</p>
+<p>The results are assessed a second time after the post-processing.</p>
+<h4 id="414-classification-approximate-border-points">4.1.4 Classification approximate border points<a class="headerlink" href="#414-classification-approximate-border-points" title="Permanent link">&para;</a></h4>
+<p>The approximate border points are classified by using a spatial join with the border point detection. In the event of a conflict, when a point intersects several detections, a new score is calculated for each of those detections by multiplying the distance from the point to the centroid by the inverse of the confidence score, </p>
+<p><span class="arithmatex">\(new \; score = \frac{dist_{pt, \, centroid}}{confidence \; score}\)</span></p>
+<p>The pair with the lowest <em>new score</em> is the right match. We call the spatial joining and the control of the number of intersections "matching".<br>
+For approximated border points without any intersecting detections, a second matching is performed after applying a spatial buffer depending on the plan scale to the detections (Table A1 in Appendix). <br>
+Then, points that are still undetermined are tested for an intersection with the swissTLM3D buildings and stagnant waters. Intersecting points are classified as non-materialized points (class 5n). <br> 
+The remaining points belong to the undetermined class.</p>
+<p>The classified border points are assessed with the point GTa. The detections without a matching approximate border point are ignored, they are not considered as false positive.</p>
+<h4 id="415-management-of-the-unmatched-detections">4.1.5 Management of the unmatched detections<a class="headerlink" href="#415-management-of-the-unmatched-detections" title="Permanent link">&para;</a></h4>
+<p>Several detections were not matched with any approximate border points. As mentioned in Section <a href="#21-cadastral-plans">2.1</a>, there can be some discrepancies between the plans and the approximate border points. However, we noticed that it was sometimes due to a lack of precision in georeferencing the plans or digitizing the lines. It results in a shift between the detections and the approximate border points. <br>
+For this reason, it was decided to keep the false positives in the final dataset only if they were in a certain distance of an approximate border points (Fig. 7). The range at each scale is given in Appendix (Table A1).</p>
+<div align="center" width="50%">
+    <img src="images/FP_filtering_full.webp" alt="Undetermined point with a buffer around it. An FP detection is in the buffer and another is outside."/> <br>
+    <i>Figure 7: Spatial filtering of the false positives to keep only those in the vicinity, materialized as the green circle, of a border point classified as undetermined.</i>
+</div>
+
+<p>To identify regions with shift problems, a heatmap was produced by counting the number of points in a grid of 100<span class="arithmatex">\(\times\)</span>100 m cells. Cells with a large number of points generally correspond to mismatches between the detections and the border points due to digitization problems.</p>
+<h4 id="416-visualization-by-the-expert">4.1.6 Visualization by the expert<a class="headerlink" href="#416-visualization-by-the-expert" title="Permanent link">&para;</a></h4>
+<p>The results were generated for the entirety of the cadastral plans. They were reviewed by the expert in the form of detection polygons, classified border points, and heatmap of the false positives.</p>
+<h3 id="42-results">4.2 Results<a class="headerlink" href="#42-results" title="Permanent link">&para;</a></h3>
+<p>The results are subject to slight variations due to detectron2 not being a deterministic framework, but the main observations remain the same.</p>
+<div align="center" style="font-style: italic">
+    <img src="images/classified_points.webp" width="100%" alt="Detections as polygons (a and b) and points before and after classification (c and d)"><br>
+    <i>Figure 8: Points detected and classified by the object detector: raw (a), post-processed (b), and as the final product (d) after being matched with the approximate border points (c). </i>
+</div>
+
+<p>The polygons obtained directly from the object detector (Fig. 8a) contain several detections for the same points. Moreover, artifacts can be seen due to the tile borders. The post-processing allows removing these artifacts and keep the best polygon for each border point (Fig. 8b), as described in Section <a href="#413-detection-post-processing">4.1.3</a>. The approximate border points (Fig. 8c) are generally located precisely enough to overlap the detections. A class is assigned if possible; otherwise, the point is classified as undetermined (Fig. 8d).</p>
+<h4 id="421-assessment-through-the-metrics-and-confusion-matrices">4.2.1 Assessment through the metrics and confusion matrices<a class="headerlink" href="#421-assessment-through-the-metrics-and-confusion-matrices" title="Permanent link">&para;</a></h4>
+<p><center></p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th style="text-align: center;"><strong>Precision</strong></th>
+<th style="text-align: center;"><strong>Recall</strong></th>
+<th style="text-align: center;"><strong>f1 score</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Output of the object detector</td>
+<td style="text-align: center;">0.90</td>
+<td style="text-align: center;">0.64</td>
+<td style="text-align: center;">0.75</td>
+</tr>
+<tr>
+<td>Output of post-processing</td>
+<td style="text-align: center;">0.90</td>
+<td style="text-align: center;">0.64</td>
+<td style="text-align: center;">0.75</td>
+</tr>
+<tr>
+<td>Classified points</td>
+<td style="text-align: center;">0.88</td>
+<td style="text-align: center;">0.81</td>
+<td style="text-align: center;">0.85</td>
+</tr>
+</tbody>
+</table>
+<p><i>Table 4: Metrics on the test dataset at different steps of the process. </i>
+</center></p>
+<p>As visible on Table 4, the f1 score is 0.75 on the test dataset for the output of the object detector filtered on the confidence score. The precision is higher than the recall by 0.26 points. Hence, only 10% of the detected points are misclassified, but 36% of all border points are missed during the instance segmentation.<br>
+The results do not improve with the post-processing. It means that once calibrated, the model does not miss label parts when the labels are split across tiles. It also means that it does not produce overly large or small detections or exceedingly overlapping detections with a high confidence score. <br>
+The matching of the detections and approximate points and the comparison with the land cover increases the recall by 0.17 points and decreases the precision by 0.02. This brings the final f1 score to 0.85.</p>
+<p><center></p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th style="text-align: center;">0s</th>
+<th style="text-align: center;">1b</th>
+<th style="text-align: center;">1n</th>
+<th style="text-align: center;">1r</th>
+<th style="text-align: center;">2b</th>
+<th style="text-align: center;">3b</th>
+<th style="text-align: center;">3r</th>
+<th style="text-align: center;">5n</th>
+<th style="text-align: center;">missed labels</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0s</td>
+<td style="text-align: center;">16</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">16</td>
+</tr>
+<tr>
+<td>1b</td>
+<td style="text-align: center;">3</td>
+<td style="text-align: center;">39</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">3</td>
+</tr>
+<tr>
+<td>1n</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">37</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">1</td>
+</tr>
+<tr>
+<td>1r</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">16</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">12</td>
+</tr>
+<tr>
+<td>2b</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">4</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">16</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">3</td>
+</tr>
+<tr>
+<td>3b</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">7</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">3</td>
+</tr>
+<tr>
+<td>3r</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">22</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">6</td>
+</tr>
+<tr>
+<td>5n</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">11</td>
+</tr>
+<tr>
+<td>background</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">3</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">0</td>
+</tr>
+</tbody>
+</table>
+<p><i>Table 5: Confusion matrix for the detection polygons after the post-processing on the test dataset. </i>
+</center></p>
+<p>There is little confusion between classes after post-processing as visible in Table 5. The only errors are for the outdated points (0s) and some blue plugs (2b) predicted as artificial markers (1b).<br>
+It is important to note that a lot of labels were missed. More than 43% of the labels were missed for the outdated points (0s) and the red artificial markers (1r). All non-materialized points (5n) except two were missed.<br>
+On the other hand, some detections do not overlap any labels, only background. Their impact on the results remains limited and they never exceed 14% of the detected points in one class.  <br></p>
+<p><center></p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th style="text-align: center;">1b</th>
+<th style="text-align: center;">1n</th>
+<th style="text-align: center;">1r</th>
+<th style="text-align: center;">2b</th>
+<th style="text-align: center;">3b</th>
+<th style="text-align: center;">3r</th>
+<th style="text-align: center;">5n</th>
+<th style="text-align: center;">undetermined</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1b</td>
+<td style="text-align: center;">35</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">3</td>
+</tr>
+<tr>
+<td>1n</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">33</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">1</td>
+</tr>
+<tr>
+<td>1r</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">14</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">7</td>
+</tr>
+<tr>
+<td>2b</td>
+<td style="text-align: center;">3</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">15</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">1</td>
+</tr>
+<tr>
+<td>3b</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">7</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">2</td>
+</tr>
+<tr>
+<td>3r</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">20</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">2</td>
+</tr>
+<tr>
+<td>5n</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">12</td>
+<td style="text-align: center;">13</td>
+</tr>
+<tr>
+<td>undetermined</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">8</td>
+</tr>
+</tbody>
+</table>
+<p><i>Table 6: Confusion matrix of the test dataset for the final classified points. Row entries are the labels and column entries are the detected categories.</i> 
+</center></p>
+<p>According to Table 6, most of the confusion between classes happens because of points wrongly classified as  "undetermined". Those points are assigned to this class by default in absence of a detection by the OD. One third of the red artificial points (1r) and one half of the non-materialized points (5n) are assigned to the "undetermined" class.<br>
+Otherwise, there is little confusion between the other classes. The only confusion occurs between the blue artificial points (1b) and the blue plugs (2b), for which 3%, respectively 16%, are classified in the other class.</p>
+<h4 id="422-assessment-through-the-visualization-by-an-expert">4.2.2 Assessment through the visualization by an expert<a class="headerlink" href="#422-assessment-through-the-visualization-by-an-expert" title="Permanent link">&para;</a></h4>
+<div align="center" style="font-style: italic">
+    <img src="images/marker_vs_plug.jpg" alt="Plan area with varying size for the artificial markers inducing some strong confusion with the plugs."><br>
+    <i>Figure 9: Post-processed detections with some confusion between plugs and markers. The points on the lower line of the pathway are correctly classified between artificial markers and plugs. The points on the upper side of the pathway have a middle size compared to others and are wrongly classified as plugs. </i>
+</div>
+
+<p>The expert noted some recurrent confusions between classes.<br>
+Firstly, there is a lot of confusion between the blue artificial markers (1b) and the blue plugs (2b). The two classes are visually close, as shown on Figure 9, and only the size of the symbol allows to differentiate between them. <br>
+Secondly, several confusions were noted between the different colors of artificial markers. Those were especially noted in areas where several lines of different colors overlap or where the color is not clear. Then, the wrong color is predicted by the algorithm for the symbol class, as visible on the bottom right of Figure 8.<br></p>
+<div align="center" style="font-style: italic">
+    <img src="images/undetermined_points.webp" width="66%" alt='Image of an area with a river and a dashed line both indicated with points classified as "undetermined"'> <br>
+    <i>Figure 10: Cadastral plans with a river and a dashed line, both indicated with non-materialized points classified as "undetermined".</i>
+</div>
+
+<p>Some points are also missed. In particular, few non-materialized points (5n) are detected by the object detector (Fig. 10). In some cases, the points are correctly classified in the right class thanks to the use of the land cover. However, these points can be found in many situations and a lot of them are wrongly classified as "undetermined" because of the lack of detection, as indicated in the confusion matrices (Tables 5 and 6).<br>
+Regarding the other classes, the missed points were rare enough not to be problematic.</p>
+<p>In the end, the expert was satisfied with the results. He estimated that the result would allow him to save a lot of time for the digitization.</p>
+<div align="center" style="font-style: italic">
+    <img src="images/heatmap.webp" width="100%" alt="double image with the final classified and FP points on the heatmap (left) or directly on the plan (right)."/><br>
+    <i>Figure 11: final classified points with classified border points and the FP points over the heatmap (left) or directly on the plan (right).</i>
+</div>
+
+<p>He reported that the heatmap was useful to highlight problems with the data digitization (Fig. 11). He decided to proceed with some corrections of the plan georeferencement and the line digitization.</p>
+<h3 id="43-discussion">4.3 Discussion<a class="headerlink" href="#43-discussion" title="Permanent link">&para;</a></h3>
+<h4 id="431-evolution-of-the-metrics">4.3.1 Evolution of the metrics<a class="headerlink" href="#431-evolution-of-the-metrics" title="Permanent link">&para;</a></h4>
+<div align="center" style="font-style: italic">
+    <img src="images/Absurdly_big_examples.webp" width="66%" alt="Three images with different scriptures detected as various classes with a confidence score higher than 0.65."/><br>
+    <i>Figure 12: Images of scriptures detected as absurdly large border points. The detections all have a confidence score higher than 0.65.<br>
+    a) The name "Montbovon" overlaps with three detected blue artificial markers (1b),<br>
+    b) Two plans are visible in transparency, the algorithm classified the "O" of "Ost" as a black artificial marker (1n) on the upper one and properly detected another black artificial marker (1b) on the lower one,<br>
+    c) Red scriptures are split between two tiles and are detected as red crosses on both tiles.</i>
+</div>
+
+<p>As visible in Table 4, the f1 score does not increase after post-processing. Nonetheless, we decided to keep the post-processing step, because it had a positive impact on the previous, less well-calibrated models and it allows cleaning the results. <br>
+In addition, the object detector has some difficulties to consider the object size in its predictions, even after the adjustment of the parameters. Not only a significant confusion between blue artificial markers (1b) and blue plugs (2b) is noted (Tables 5 and 6), but also some elements on the plans, generally scriptures, are sometimes detected as border points with a high confidence score, as visible on Figure 12. Those elements are filtered out in post-processing based on the maximum area.</p>
+<p>As seen in Table 5, a significant number of outdated points (0s) and red artificial markers (1r) are missed.<br>
+Regarding the outdated points, this class was created only to avoid false positives due to their presence and similarity with valid points. It is ignored when performing the matching with the approximate border points and is of no interest to the expert.<br>
+Regarding the red artificial markers (1r), their classification will require a manual work by the expert for the establishment of the public dataset. However, as they are not a very widespread type of point, it is not a big issue. The missed points are probably due to overlap between elements. Another reason could be that in the presence of other colored lines, the algorithm is confused between red artificial markers (1r) and outdated points (0s) that are crossed out in red and produces lower confidence scores.</p>
+<p>As visible on Tables 5 and 6, there are fewer elements once the polygon detections are matched with the approximate border points. This is probably because of the time gap between the analyzed plans and the ones on which the lines were digitized. Indeed, for the polygon GT, all visible border points were digitized, while for the point GT, the existing approximate border points were corrected and classified. No new feature was created in the point GT to cover all the border points, meaning a few ones that were detected are lost due to the absence of a corresponding feature. <br>
+Only with the non-materialized points (5n), an increase in the number of points is visible. It was already visible in the ground truth (Tables 2 and 3). Non-materialized points are either signaled by a black dot or are just implied by the intersection of two lines. Therefore, it seems possible that some of them were overlooked when they were digitized using polygons. Regarding the point ground truth, the dataset of the approximate border points was used and corrected. It was therefore easier to find them all as all the points had to be classified and controlled.</p>
+<p>The classification improves after the matching of the detections with the approximate border points, as the recall increases significantly (Table 5). This improvement is mostly due to the use of the land cover to classify non-materialized points (5n) overlapping buildings or stagnant water. The repartition in the confusion matrices remains the same, except for this class. Before the matching between the points and detections, 15% of the non-materialized points (5n) are correctly classified and the rest are false negatives (Table 5). After the matching, 52% are correctly classified and the rest is assigned to the class "undetermined" (Table 6). This leads to a significant increase of the recall.<br>
+On the other hand, the precision is slightly lower after the matching with the approximate points. However, there are fewer misclassified points in Table 6 than in Table 5, meaning that, among the points that were lost during the matching, more were correctly classified. Their removal from the dataset lowered the precision.</p>
+<h4 id="432-feedback-of-the-expert">4.3.2 Feedback of the expert<a class="headerlink" href="#432-feedback-of-the-expert" title="Permanent link">&para;</a></h4>
+<p>As mentioned in Section <a href="#422-assessment-through-the-visualization-by-an-expert">4.2.2</a>, the expert noted significant confusion between the blue artificial markers (1b) and blue plugs (2b). We note that the two classes are often detected for the same location by the object detector and they are filtered in post-processing based on the confidence score. As there are much more blue artificial markers (1b), this class tends to have higher confidence scores. In Table 6, three points, <em>i.e.</em> 16%, of the blue plugs (2b) are classified as blue artificial markers (1b), which seems to reflect the observation at the scale of entire plans. On the other hand, only one point, <em>i.e.</em> 3%, of the blue artificial markers (1b) are classified as blue plugs (2b). There may be a bias for the most frequent class. <br>
+The expert also reported several confusions between the different colors of artificial markers (1b, 1n, 1r). However, the number of concerned points is small and an error on the point color does not have an impact on the geometer work. This information is for statistical purpose. In addition, let us note that the confusion between types of artificial markers is absent from confusion matrices. The confusion might arise in some rare configurations differing too much from the ground truth.<br>
+Indeed, when the ground truth was created, a special attention was paid to have a representative panel of plans and digitized areas. However, the possible configurations in cadastral survey are numerous and some are too rare to be taught to an algorithm, such as black crosses. As the expert said, in some cases, even geometers could argue on the interpretation of some blue artificial markers (1b) and plugs (2b). We trained a model that is versatile enough to classify the majority of the border points properly. However, there are some configurations that are harder to interpret and that can lead to errors in the classification.<br>
+Let us note that, concerning the non-materialized points, several configurations were under represented in the ground truth. That would be the cases of the dashed lines in the country side and of the river borders, as visible on Figure 10. This was signaled to the expert, but he decided not to produce more ground truth. As the other classes are well classified in these zones, we can deduce that most of the "undetermined" points are non-materialized ones (5n). Therefore, for him, it was not worth the effort to correct that situation.</p>
+<p>In the end, the expert declared himself satisfied with the results. The large majority of points was correctly classified, which reflects the final good f1 score, and it would allow him to save a lot of time for the digitization.</p>
+<h4 id="433-further-developments">4.3.3 Further developments<a class="headerlink" href="#433-further-developments" title="Permanent link">&para;</a></h4>
+<p>The model had apparently a lot of difficulties to detect non-materialized points (5n). It is difficult for a non-expert person to understand when a building corner is a non-materialized point and when not, as only a slight black dot is visible on the map. We can then assume that the model faces the same difficulties. Besides, every line breaks and intersections without a symbol on should be classified as non-materialized points (5n). However, as mentioned in the previous section, those were not systematically digitized properly in the ground truth. Therefore, an improvement of the ground truth for this class could help to improve the classification. </p>
+<p>For the confusion between blue artificial markers (1b) and blue plugs (2b), some additional post-processing steps could help decrease the confusion between them. Indeed, as the scale of each plan is known, minimum, respectively maximum, diameter could be set for the size of artificial markers, respectively plugs. If the detected class were not coherent with the threshold, it could be changed. However, to ensure that the right threshold is chosen, the analysis should be extended beyond the ground truth to areas such as the one illustrated in Figure 9.</p>
+<p>The STDL object detector is currently based on <a href="https://github.com/facebookresearch/detectron2">detectron2</a>. It limits the possible adaptation of the framework. At the time of the project, detectron2 was not updated with the latest deep learning models. In addition, it would not be easily possible to adapt the loss function or add a binary layer of attention to guide the model toward the approximate location of the border points and decrease the quantity of FP and FN.</p>
+<h2 id="5-symbol-classification">5. Symbol classification<a class="headerlink" href="#5-symbol-classification" title="Permanent link">&para;</a></h2>
+<p>As the approximate location of the border points is known, it is possible to clip the plan around them to produce one image per border point with the symbol to classify on it. Then, we would be sure to have a prediction for each border point. This is the approach tested in this chapter. <br>
+Regarding this second test, we decided to test a method that, if sufficiently efficient, could overcome the high computational cost required by deep learning methods. Consequently, although deep learning models reach state-of-the-art results in image classification, we decided to use a lighter and non-GPU-demanding approach through machine learning techniques.</p>
+<h3 id="51-method">5.1. Method<a class="headerlink" href="#51-method" title="Permanent link">&para;</a></h3>
+<p>The image transformations were performed with the <code>scikit-image</code> library<sup id="fnref:11"><a class="footnote-ref" href="#fn:11">11</a></sup>.<br>
+The models and functions used for the feature selections, the model training and the assessment were pre-implemented architectures from the <code>scikit-learn</code> library<sup id="fnref2:10"><a class="footnote-ref" href="#fn:10">10</a></sup>.</p>
+<h4 id="511-image-generation">5.1.1 Image generation<a class="headerlink" href="#511-image-generation" title="Permanent link">&para;</a></h4>
+<div align="center" style="font-style: italic">
+    <img src="images/example_GT_SC.webp" width="75%" alt="Up the cadastral plan with the square buffer around points and down the labeled images saved to files."><br>
+    <i>Figure 13: Square polygons generated with a buffer around the GTb points (up) and labeled images produced by clipping the cadastral plans to the buffers (down).</i>
+</div>
+
+<p>The maximum symbol size at each scale was determined based on the polygon GT. A buffer of half the maximum symbol size was applied on each point of the GTb. The flat cap style was used. It generated a square polygon around each GT point. By clipping the plans to these squares, we obtained the dataset of the labeled images (Fig. 13). The images were saved to GEOTIFF files and named after the plan number and point coordinates.<br>
+With this method, some points that are less than one meter apart will share the same id. We decided not to add numbers to the ids which would increase its precision, because the chances that we can properly classify two very close points are very low. Indeed, on those configurations, the algorithm will see almost the same image for the two points and would classify the two of them in the same class, which is generally wrong. Hence, we decided it is preferable to signal those points with a special output and to let an expert deal with them.</p>
+<h4 id="512-data-augmentation">5.1.2 Data augmentation<a class="headerlink" href="#512-data-augmentation" title="Permanent link">&para;</a></h4>
+<p>The tiles were augmented to double the number of images. As their size would be standardized in a later step and the color is important for the classification, the augmentation was restricted to slightly changing the colors and flipping the images vertically and horizontally.<br>
+Each image was randomly darkened, lightened, equalized by histogram equalization, or the background was reddened. Then, it was randomly flipped vertically or horizontally.</p>
+<h4 id="513-feature-extraction">5.1.3 Feature extraction<a class="headerlink" href="#513-feature-extraction" title="Permanent link">&para;</a></h4>
+<p>To classify the border point symbols, their shape and color needed to be extracted from the images.<br> 
+To resume the shape, we decided to perform a histogram of oriented gradients (HOG). First, the black and white images are scaled to a standard size. Then, the features are extracted. To reduce the information, a minimum threshold is set on the feature variance.<br>
+As the whitish background fills most of the image, it was necessary to limit the extracted color information to the symbol area. The images were transformed into the HSV color space and filtered to retain only the blue, red, and black areas. The minimum, maximum, mean, median and standard deviation were then calculated for each RGB band for all images with <code>rasterstats</code>. The results were plotted in boxplots separately for each class. Their correlation matrix was computed. Based on the boxplots, we removed the features with a very low variance:</p>
+<ul>
+<li>maximum on the red band,</li>
+<li>maximum on the green band.</li>
+</ul>
+<p>Based on the correlations, we removed redundant features from the dataset:</p>
+<ul>
+<li>mean and standard deviation on the red band,</li>
+<li>mean and minimum on the green band,</li>
+<li>mean and standard deviation on the blue band.</li>
+</ul>
+<h4 id="514-model-training-and-assessment">5.1.4 Model training and assessment<a class="headerlink" href="#514-model-training-and-assessment" title="Permanent link">&para;</a></h4>
+<p>Three classifiers were tested: support-vector machine (SVM), random forest (RF) and histogram gradient boosting (HGB). The ground truth is standardized and split with 80% for training and 20% for testing. To avoid overfitting, a grid search cross validation was used on the training dataset to select the classifier parameters. </p>
+<div align="center" style="font-style: italic">
+    <img src="images/double_model_classif_tree.webp" width="60%" alt="Decision tree taking the shape and color and determining the classes based on the different possible combinations."><br>
+    <i>Figure 14: Decision tree to determine the final class based on the detected shape and color.</i>
+</div>
+
+<p>Two methods were tested for predicting the class with the tested classifiers:</p>
+<ol>
+<li>Training of one classifier, called the single model, to predict the shape and color of border points;</li>
+<li>Training of two classifiers, one for shape and the other for color and called the double model, and merging the predictions following the decision tree shown in Figure 14, which is based on result observations.</li>
+</ol>
+<p>When training the classifier only on color features, the class "5n" with the non-materialized points was excluded. Those symbols are theoretically black; however, they can also sometimes be blue. Besides, their size is too small for the color to have a meaningful impact on the feature.</p>
+<p>For each test, the pipeline, consisting of the fitted scaling process and the trained model, was saved to file. In addition, the confusion matrix and the classification report were output. The best model was selected based on the macro average recall on the test dataset. <br>
+For all classifiers, the feature importance was determined based on permutations.</p>
+<h4 id="515-optimization">5.1.5 Optimization<a class="headerlink" href="#515-optimization" title="Permanent link">&para;</a></h4>
+<div align="center" style="font-style: italic">
+    <img src="images/Optimization.webp" width="75%" alt="Flowchart of the optimization process with the extraction features and the model training and assessment."><br>
+    <i>Figure 15: Flowchart of the parameter optimization for the histogram of oriented gradients with optuna.</i>
+</div>
+
+<p>The features output by the HOG depend on many parameters. We used <code>optuna</code><sup id="fnref:12"><a class="footnote-ref" href="#fn:12">12</a></sup> to find the set of parameters that would maximize the macro average recall. The process is illustrated in Figure 15. The following parameters are optimized:</p>
+<ul>
+<li>image size: size in pixels to which the symbol images are scaled</li>
+<li>ppc: pixels per cells for the calculation of the HOG</li>
+<li>cpb: cells per blocks for the calculation of the HOG</li>
+<li>orientations: number of directions in which to calculate the HOG</li>
+<li>variance threshold: minimum variance for a feature from the HOG to be saved and used in the model.</li>
+</ul>
+<h4 id="516-visualization-on-entire-plans">5.1.6 Visualization on entire plans<a class="headerlink" href="#516-visualization-on-entire-plans" title="Permanent link">&para;</a></h4>
+<p>The results were generated for the entire cadastral plans used to produce the ground truth with the trained models. We assessed them visually.</p>
+<h3 id="52-results">5.2 Results<a class="headerlink" href="#52-results" title="Permanent link">&para;</a></h3>
+<h4 id="521-metrics-and-confusion-matrix">5.2.1 Metrics and confusion matrix<a class="headerlink" href="#521-metrics-and-confusion-matrix" title="Permanent link">&para;</a></h4>
+<p><center></p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th style="text-align: center;"><strong>SVM</strong></th>
+<th style="text-align: center;"><strong>RF</strong></th>
+<th style="text-align: center;"><strong>HGB</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Single model</td>
+<td style="text-align: center;">0.71</td>
+<td style="text-align: center;">0.68</td>
+<td style="text-align: center;">0.70</td>
+</tr>
+<tr>
+<td>Double model, shape</td>
+<td style="text-align: center;">0.68</td>
+<td style="text-align: center;">0.63</td>
+<td style="text-align: center;">0.65</td>
+</tr>
+<tr>
+<td>Double model, color</td>
+<td style="text-align: center;">0.83</td>
+<td style="text-align: center;">0.81</td>
+<td style="text-align: center;">0.79</td>
+</tr>
+<tr>
+<td>Double model, merged</td>
+<td style="text-align: center;">0.73</td>
+<td style="text-align: center;">0.64</td>
+<td style="text-align: center;">0.70</td>
+</tr>
+</tbody>
+</table>
+<p><i>Table 7: macro average recall on the test set for the model classifying to the defined classes of border points (single) and the models classifying color and shape separately (double). </i>
+</center></p>
+<p>The best model is the double SVM classifier with the macro average recall of 0.73 (Table 7). The second-best model is the single SVM classifier with 0.02 points less. <br>
+When using separate models to classify the symbol shape and color, the classifier for color always perform significantly better than the one for shape or than a global one. On the other hand, the classifier for shape performs worse than a global classifier. <br>
+In the end, using separate models only improve the classification with the SVM classifier. Otherwise, the final metrics are worse than with a single model and the computing time is longer.</p>
+<p>We comment here the results for the best single and double models, <em>i.e.</em> the SVM models.</p>
+<h5 id="5211-single-model">5.2.1.1 Single model<a class="headerlink" href="#5211-single-model" title="Permanent link">&para;</a></h5>
+<p><center></p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th style="text-align: center;">1b</th>
+<th style="text-align: center;">1n</th>
+<th style="text-align: center;">1r</th>
+<th style="text-align: center;">2b</th>
+<th style="text-align: center;">3b</th>
+<th style="text-align: center;">3r</th>
+<th style="text-align: center;">5n</th>
+<th style="text-align: center;">undetermined</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1b</td>
+<td style="text-align: center;">47</td>
+<td style="text-align: center;">4</td>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">3</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">3</td>
+<td style="text-align: center;">3</td>
+</tr>
+<tr>
+<td>1n</td>
+<td style="text-align: center;">5</td>
+<td style="text-align: center;">24</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">3</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">4</td>
+<td style="text-align: center;">0</td>
+</tr>
+<tr>
+<td>1r</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">6</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">2</td>
+</tr>
+<tr>
+<td>2b</td>
+<td style="text-align: center;">4</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">22</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">3</td>
+<td style="text-align: center;">1</td>
+</tr>
+<tr>
+<td>3b</td>
+<td style="text-align: center;">4</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">8</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">0</td>
+</tr>
+<tr>
+<td>3r</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">27</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">2</td>
+</tr>
+<tr>
+<td>5n</td>
+<td style="text-align: center;">6</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">3</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">31</td>
+<td style="text-align: center;">4</td>
+</tr>
+<tr>
+<td>undetermined</td>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">6</td>
+<td style="text-align: center;">39</td>
+</tr>
+</tbody>
+</table>
+<p><i>Table 8: Confusion matrix of the test dataset with the SVM single model. Row entries are the labels and column entries are the detected categories.</i>
+</center></p>
+<p>Several confusions were highlighted by the confusion matrix (Table 8), but no class is classified wrongly for the majority of its labeled or detected points.<br>
+The blue artificial markers (1b), the blue plugs (2b), the non-materialized points (5n) and the undetermined points are confused with most of the other classes and between themselves. However, no tendencies are observed, as no points are classified in another class in a large amount.</p>
+<p>With 63% of precision and 65% of recall, the non-materialized points (5n) are the most problematic class. Next come the red artificial markers (1r) with a precision of 75% and a recall of 60%. This class only has 10 labeled points in the test dataset. Therefore, its metrics can change drastically with a single error. Nevertheless, it can be seen that several of the labeled points were wrongly classified as non-materialized points (5n) or undetermined points. In addition, there is a general confusion between the different color of artificial markers (1b, 1n, 1r).</p>
+<h5 id="5212-double-model">5.2.1.2 Double model<a class="headerlink" href="#5212-double-model" title="Permanent link">&para;</a></h5>
+<p><center></p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th style="text-align: center;">1b</th>
+<th style="text-align: center;">1n</th>
+<th style="text-align: center;">1r</th>
+<th style="text-align: center;">2b</th>
+<th style="text-align: center;">3b</th>
+<th style="text-align: center;">3r</th>
+<th style="text-align: center;">5n</th>
+<th style="text-align: center;">undetermined</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1b</td>
+<td style="text-align: center;">55</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">3</td>
+<td style="text-align: center;">4</td>
+</tr>
+<tr>
+<td>1n</td>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">29</td>
+<td style="text-align: center;">3</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">2</td>
+</tr>
+<tr>
+<td>1r</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">5</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">0</td>
+</tr>
+<tr>
+<td>2b</td>
+<td style="text-align: center;">10</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">10</td>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">6</td>
+<td style="text-align: center;">2</td>
+</tr>
+<tr>
+<td>3b</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">9</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">1</td>
+</tr>
+<tr>
+<td>3r</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">25</td>
+<td style="text-align: center;">4</td>
+<td style="text-align: center;">2</td>
+</tr>
+<tr>
+<td>5n</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">28</td>
+<td style="text-align: center;">20</td>
+</tr>
+<tr>
+<td>undetermined</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">6</td>
+<td style="text-align: center;">40</td>
+</tr>
+</tbody>
+</table>
+<p><i>Table 9: Confusion matrix of the test dataset with the SVM double model. Row entries are the labels and column entries are the detected categories.</i>
+</center></p>
+<p>There is not much confusion between classes in Table 9. However, there is a very strong confusion among some specific classes. <br>
+The labeled blue plugs (2b) are mostly classified into other classes. In particular, 32% are classified as blue artificial markers (1b) and 19% as non-materialized points (5n).<br>
+Some points of every class except the artificial markers (1r) are wrongly classified as undetermined. In particular, among the non-materialized points (5n), 42% are classified as undetermined.</p>
+<p>The class with the worst results is the blue plugs (2b) with a precision of 77% and a recall of 32%. Then come the red artificial markers with a precision of 38% and a recall of 100%. We observe here a high degree of confusion with 31% of points predicted as other types of artificial markers (1b and 1n), 15% as red crosses (3r) and 15% as undetermined points.</p>
+<h4 id="522-feature-importance">5.2.2 Feature importance<a class="headerlink" href="#522-feature-importance" title="Permanent link">&para;</a></h4>
+<h5 id="5221-single-model">5.2.2.1 Single model<a class="headerlink" href="#5221-single-model" title="Permanent link">&para;</a></h5>
+<p align="center">
+    <iframe src="images/feature_importance_permutations.html" width="800px" height="500px" frameborder="0" scrolling="no" alt="Bar plot of the feature importance with the standard deviation as whiskers"></iframe><br>
+    <i>Figure 16: Permutation feature importance with its standard deviation for the features passed to the single model.</i>
+</p>
+
+<p>When we perform the classification with all the features at once, the median on the blue band is clearly the dominating one with a mean accuracy decrease of 0.0174 (Fig. 16). The next three most important ones, which are the minimum and the median on the red band and the standard deviation on the green band, are around 0.0077. <br>
+The most important HOG feature has a mean accuracy decrease of 0.0042. It is more or less the same as the rest of the color features, namely the minimum and maximum on the blue band and the median on the green band. <br>
+The HOG feature 212 has a negative value of -0.0003. Its standard deviation on the value leaves not doubt that the impact of this feature is negative or null. However, its impact is small enough to be ignored.</p>
+<h5 id="5222-double-model">5.2.2.2 Double model<a class="headerlink" href="#5222-double-model" title="Permanent link">&para;</a></h5>
+<p align="center">
+    <iframe src="images/feature_importance_permutations_shape.html" width="800px" height="500px" frameborder="0" scrolling="no" alt="Bar plot of the feature importance for the determination of the shape with the standard deviation as whiskers"></iframe><br>
+    <i>Figure 17: Permutation feature importance with its standard deviation for the determination of the symbol shape based on the HOG features passed to the double model.</i>
+</p>
+
+<p>For the majority of features, the accuracy decrease is negative when they are shuffled (Fig. 17), meaning that those features have a clear negative impact on the model. Besides, the importance of the features with a positive impact is small as their mean accuracy decrease do not exceed 0.0032 and the range of their standard deviation overlaps with the null axis.</p>
+<p align="center">
+    <iframe src="images/feature_importance_permutations_color.html" width="800px" height="500px" frameborder="0" scrolling="no" alt="Bar plot of the feature importance for the determination of the color with the standard deviation as whiskers"></iframe><br>
+    <i>Figure 18: Permutation feature importance with its standard deviation for the determination of the symbol color based on the color features passed to the double model.</i>
+</p>
+
+<p>The color features are all important to the model as the accuracy decreases at least by 0.05 when they are shuffled  (Fig. 18).<br>
+The most important feature is the median on the blue band with a mean accuracy decrease of 0.25. Then come the red features with a mean accuracy decrease around 0.13, the green ones around 0.09 and the rest of the blue ones around 0.05.</p>
+<h4 id="523-visual-assessment-over-entire-plans">5.2.3 Visual assessment over entire plans<a class="headerlink" href="#523-visual-assessment-over-entire-plans" title="Permanent link">&para;</a></h4>
+<h5 id="5231-single-model">5.2.3.1 Single model<a class="headerlink" href="#5231-single-model" title="Permanent link">&para;</a></h5>
+<div align="center">
+    <img src="images/examples_single_model.webp" width="66%" alt="Four examples of new areas with some confusion in the class classification."><br>
+    <i>Figure 19: Four examples of the types of mistakes that were noticed during the result visualization when using the single model.<br>
+    a) River area
+    b) Non-materialized points on a building
+    c) Non-materialized points on a building and a blue line
+    d) Legend area of a cadastral plan
+    </i>
+</div>
+
+<p>We notice that the color seems to have a great importance on the detected classes. It is visible on rivers (Fig. 19a) where some points on the river side are classified as blue classes (1b, 2b, 3b) although there is no resemblance with the corresponding symbol. The same was noticed with non-materialized points on blue lines being classified as blue plugs.<br>
+The points on buildings are often classified as red crosses (3r), even if this configuration was never present in the ground truth (Fig 19b and 19c). The non-materialized points (5n) are particularly impacted by this problem.<br></p>
+<p>In the end, the results were never sent to the expert, because they were not satisfying. Even if the majority of symbols is correctly classified, there are many errors and too much confusion between the classes.</p>
+<h5 id="5232-double-model">5.2.3.2. Double model<a class="headerlink" href="#5232-double-model" title="Permanent link">&para;</a></h5>
+<div align="center">
+    <img src="images/examples_double_model.webp" width="66%" alt="Four examples of new areas with some confusion in the class classification."><br>
+    <i>Figure 20: Four examples of the types of mistakes that were noticed during the result visualization when using the double model.<br>
+    a) River area
+    b) Non-materialized points on a building
+    c) Non-materialized points on a building and a blue line
+    d) Legend area of a cadastral plan
+    </i>
+</div>
+
+<p>Regarding the double model, it can be seen on Figure 20a that points near rivers are misclassified as blue artificial markers (1b) or plugs (2b). It would be enough for either shape or color to be predicted as "undetermined" for the point to be classified as undetermined (Fig. 14). Otherwise, if the shape were correctly predicted as a non-materialized point, they would be classified as non-materialized no matter the color. In the end, the points are found in the blue classes, because the shape was never detected as undetermined or non-materialized, and the color was predicted as blue.<br>
+Similarly, the red crosses (3r) detected on the buildings (Fig. 20b and 20c) are classified wrong because the shape was not detected as a non-materialized point, but as a cross. <br>
+We also notice several artificial markers where the shape is correct and the color is wrong because of some background elements (Fig. 20a). <br>
+On the other hand, using the double model improved the situation for undetermined points on the plan borders (Fig. 20d).</p>
+<p>In the end, the results were never sent to the experts, because they were not satisfying. Even if the majority of symbols is correctly classified, there are many errors and too much confusion between the classes.</p>
+<h3 id="53-discussion">5.3 Discussion<a class="headerlink" href="#53-discussion" title="Permanent link">&para;</a></h3>
+<p>The final recalls are quite good for all models with value over 0.64 (Table 7). <br>
+The difference in performances between the single and double SVM classifiers and the other single models is negligible, 0.05 at most. Hence, we could decide to choose the single HGB model if the class probabilities were needed for some further processing. However, it was not the case here.</p>
+<h4 id="531-single-model">5.3.1 Single model<a class="headerlink" href="#531-single-model" title="Permanent link">&para;</a></h4>
+<h5 id="5311-confusion-between-classes">5.3.1.1 Confusion between classes<a class="headerlink" href="#5311-confusion-between-classes" title="Permanent link">&para;</a></h5>
+<p>Although we chose a metric balanced between class, the model tends to over-predict the most common classes (Table 8), which are the blue artificial markers (1b), the non-materialized points (5n) and the undetermined points.</p>
+<p>In particular, blue artificial markers (1b) get overpredicted for blue symbols (1b, 2b, 3b). It is also overpredicted in presence of blue elements on the image. <br>
+In addition, the artificial markers (1b, 1n, 1r) and the blue plugs (2b) are affected by the proximity of the border points in built-up areas. Often, two are present in the same image and the same class is predicted for both. This is a disadvantage of this method. A possible solution would be to decrease the precision of the point id. Doing so, more points would be reported to the expert as too close for classification. However, if most of them were classified wrong, it would be worth it.</p>
+<p>Non-materialized points (5n) and the undetermined ones are often confused with the other classes for unclear reasons. Most of the time, a perfectly visible symbol is missed by the algorithm which predicts one of those two classes. <br>
+The confusion between non-materialized points (5n) and undetermined ones generally happens along continuous or dotted lines that are straight or slightly curved. The algorithm does not seem to be able to determine when a line contains a non-materialized point. As non-materialized points are identified mostly from context and not thanks to a large symbol, this result was to be expected.</p>
+<h5 id="5312-influence-of-the-features">5.3.1.2 Influence of the features<a class="headerlink" href="#5312-influence-of-the-features" title="Permanent link">&para;</a></h5>
+<p>The median of the blue band over the symbol is critical for the results (Fig. 16). Even if the blue symbols (1b, 2b, 3b) are subject to confusion with the other classes, the vast majority is classified correctly. This feature probably plays an important role here. </p>
+<p>All HOG features seem to have a low importance. As they describe altogether the shape of the symbol, it is, indeed, expected that the information they bring individually is limited. However, these results could be the effect of a correlation between the variables. Indeed, we selected the best features based on their variance, but we did not check for the presence of correlation in the HOG data. <br>
+Removing the correlated features could improve the results and would probably change the feature importance significantly. However, an automated method should be set up since it would not be efficient to check the correlation among the 250 features manually.</p>
+<h5 id="5313-visualization-on-entire-plans">5.3.1.3 Visualization on entire plans<a class="headerlink" href="#5313-visualization-on-entire-plans" title="Permanent link">&para;</a></h5>
+<p>When we produced the results for the entire plans, new problems appeared, which were not observed on the test dataset. The fairly good metrics and the confusion matrix did not reflect the large quantity of misclassifications observed when visualizing the results on entire plans.</p>
+<p>No strong confusion for the points detected as red crosses could be found in the test set (Tab 7). However, when visualizing the results, many points on buildings were wrongly classified as red crosses (Fig 19b and 19c). This error might come from the building color and the cross-like shape of some building intersections. This would mean that the method is not versatile enough, because this configuration is present in the ground truth and the model should have learned from it.<br>
+Moreover, blue artificial markers (1b) were over-predicted, especially on images containing blue parts. It confirms the impression from the confusion matrix (Table 8) that the model favors the most represented ones when performing the classification.</p>
+<p>Some mistakes are difficult to interpret and even with a machine learning algorithm, it can be difficult to determine why a point will end up in the wrong class, like the red cross (3r) and the two black artificial markers (1n) at the top of Figure 19d where there is no symbol.</p>
+<p>In conclusion, the confusion seems to increase for all the classes when performing the classification on entire plans. This affects area types that were well represented in the ground truth. We conclude that the model we trained based on color and HOG features is not versatile enough to produce satisfying results on entire plans.</p>
+<h4 id="532-double-model">5.3.2 Double model<a class="headerlink" href="#532-double-model" title="Permanent link">&para;</a></h4>
+<h5 id="5321-confusion-between-classes">5.3.2.1 Confusion between classes<a class="headerlink" href="#5321-confusion-between-classes" title="Permanent link">&para;</a></h5>
+<p>The use of the double model does improve the macro average recall (Table 7). However, the result is more unbalanced between classes. <br>
+Indeed, the error was more evenly spread between classes with the single model, with 0.23 points between the best and the worst class. With the double model, the gap increases to 0.42 because of the recall of the blue plugs (2b) which dropped to 32% with almost half of the points being classified as blue artificial markers (1b). <br></p>
+<p>The model seems to have difficulties to classify plugs correctly. Indeed, if the round shape is correctly detected, the algorithm will most of the time predict an artificial marker, and if the round shape is missed, a non-materialized point is predicted. This problem might come from the difference in size between artificial markers and plugs being  too small to be correctly handled by the classifier.</p>
+<p>As explained in the method, non-materialized points (5n) do not have a specific color. Consequently, points of the test dataset belonging to this class can only be classified correctly if the shape is predicted correctly, because no color is provided for them. Any other predicted shape would result in the point being classified as "undetermined". Therefore, there is a bias here and if we had predicted the color, many non-materialized points (5n) would have been predicted as artificial markers (1b, 1n, 1r) or as crosses (3b, 3r). <br>
+Among non-materialized points classified as "undetermined", only 25% of the predicted shapes are indeed "undetermined". It concerns mostly dashed lines. In more complex environment, most of the shapes were classified as "artificial markers".</p>
+<p>The double model significantly improved the classification of the blue and black artificial markers (1b, 1n), and the blue crosses (3b). <br>
+Most of the errors concerning those classes and the red artificial markers (1r) were caused by the presence of several colors on the classified image.</p>
+<p>The process was optimized with optuna and with a fixed decision tree to treat the combination of shape and color (Fig. 14). The regular adaptation of the decision tree during the optimization could help improve the final result, but a dynamic implementation would be needed. This is left as a potential future development.</p>
+<h5 id="5322-feature-importance">5.3.2.2 Feature importance<a class="headerlink" href="#5322-feature-importance" title="Permanent link">&para;</a></h5>
+<p>All the color features have a significant impact on the final result (Fig. 18). <br>
+The median of the blue band followed by the median and minimum of the red band have the most impact. This is in accordance with the blue classes having by far the most individuals. Red symbols are as frequent in the test dataset than the black ones, but buildings and many scriptures are red on the studied plans.</p>
+<p>Only a small part of the HOG features have a positive impact on the classification and based on their standard deviation, their effect can change depending on the permutation round (Fig. 17). On the other hand, some HOG features have a constant negative impact on the classification. <br>
+Considering the impact of the different features on the test dataset, it is surprising that the macro average recall of the shape classifier is 0.68. However, these importance results are probably biased by some correlation between features. As explained in Section <a href="#513-feature-extraction">5.1.3</a>, the correlation clusters among HOG features were not controlled before the classification.</p>
+<h5 id="5323-visualization-on-entire-plans">5.3.2.3 Visualization on entire plans<a class="headerlink" href="#5323-visualization-on-entire-plans" title="Permanent link">&para;</a></h5>
+<p>When visualizing the results on entire plans, we note that the use of a double model does not solve the problem of the predictions of red crosses on buildings instead of non-materialized points (5n) (Fig. 20b and 20c). In addition, non-materialized points (5n) are often classified as undetermined points like indicated by the confusion matrix (Table 9). Moreover, they tend to be classified as blue plugs near rivers and on the intersections with blue lines. However, based on a visual assessment, the double model improved the classification of non-materialized points (5n) compared to the single model. <br>
+The double model did slightly improve the classification of artificial markers (Fig. 20a, 20c, 20d). There is less confusion between the colors of artificial markers and with other symbols.</p>
+<p>Even if the double model seems better than the single model, the low quality of the results on buildings and the high quantity of undetermined points dissuaded us from trying this model at a larger scale.</p>
+<h4 id="533-further-developments">5.3.3 Further developments<a class="headerlink" href="#533-further-developments" title="Permanent link">&para;</a></h4>
+<p>In the end, the current machine learning models are not versatile enough to produce sufficiently accurate results on the wide range of possible configurations in historical cadastral plans. This type of model was chosen because we wanted a model that would not necessitate a GPU. However, efficient deep learning models exist for image classification and it would be meaningful to test them if we wanted to try further to improve the results.</p>
+<p>Another possibility for improvements, which would not change much the method, would be to invest more time in the development of the color feature extraction. Currently, we are in the obligation of keeping all black, red and blue elements in the images. An additional analysis could help to separate symbols that fit in a small square and lines from background color and shapes. </p>
+<p>It is also important to mention that we corrected the approximate border points for the GTb so that they would always be near the corresponding symbol, but we did not put them perfectly centered on it every time. Indeed, we tried to stay as close as possible to the real dataset, in which the approximate points tend to be offset from the symbol. <br>
+In a situation where the points were not approximate, the generated images could be at least 1/3 smaller. Doing so, there would be fewer errors because of interference of other elements on the image and points being always well centered would probably help the classifier.</p>
+<h2 id="6-conclusion">6. Conclusion<a class="headerlink" href="#6-conclusion" title="Permanent link">&para;</a></h2>
+<p>In this project, two methods were tested to classify border points with an approximate localization on historical cadastral plans. <br>
+The first method, based on instance segmentation with the STDL object detector, produced satisfying results. The classified points have a macro average precision of 0.88 and a recall of 0.81. The expert reviewed the results produced on entire maps and declared himself satisfied with the quality. The only disadvantage of this method is the high amount of missed non-materialized points. However, as most missed points are non-materialized ones, it should not be too time-consuming to process them manually. Let us note that the detection of non-materialized points could be improved with the production of labeled samples with dashed lines and intersections without symbols.<br>
+Regarding the second method, images of each approximate point neighborhood was classified by a machine-learning algorithm to assign a category to each point. Although the final metrics are almost as good as for the first method, with a macro average recall of 0.73 for the best model, the results are disappointing when extended to entire plans. We therefore concluded that the algorithm produced was not versatile enough to deal with the large variety of configurations present on historical cadastral plans. <br></p>
+<p>As the expert was satisfied with the final results, we proceeded with the classification of the approximate points on all available cadastral plans. <br></p>
+<h2 id="appendix">Appendix<a class="headerlink" href="#appendix" title="Permanent link">&para;</a></h2>
+<p><center></p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th style="text-align: center;"><strong>1:500</strong></th>
+<th style="text-align: center;"><strong>1:1000</strong></th>
+<th style="text-align: center;"><strong>1:2000</strong></th>
+<th style="text-align: center;"><strong>1:4000</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Detection minimum area [m<sup>2</sup>]</td>
+<td style="text-align: center;">0.1</td>
+<td style="text-align: center;">0.2</td>
+<td style="text-align: center;">1.3</td>
+<td style="text-align: center;">5</td>
+</tr>
+<tr>
+<td>Detection maximum area [m<sup>2</sup>]</td>
+<td style="text-align: center;">4.5</td>
+<td style="text-align: center;">17</td>
+<td style="text-align: center;">53</td>
+<td style="text-align: center;">190</td>
+</tr>
+<tr>
+<td>Maximum point size [m]</td>
+<td style="text-align: center;">2.4</td>
+<td style="text-align: center;">4.5</td>
+<td style="text-align: center;">6.8</td>
+<td style="text-align: center;">17.3</td>
+</tr>
+<tr>
+<td>Buffer for second matching with points [m]</td>
+<td style="text-align: center;">0.300</td>
+<td style="text-align: center;">0.563</td>
+<td style="text-align: center;">0.850</td>
+<td style="text-align: center;">2.163</td>
+</tr>
+<tr>
+<td>Range around undetermined points for FP [m]</td>
+<td style="text-align: center;">2.4</td>
+<td style="text-align: center;">4.5</td>
+<td style="text-align: center;">6.8</td>
+<td style="text-align: center;">17.3</td>
+</tr>
+</tbody>
+</table>
+<p><i>Table A1: Parameters dependent on scale used in the different steps of the post-processing and point processing.</i>
+</center></p>
+<h2 id="image-references">Image references<a class="headerlink" href="#image-references" title="Permanent link">&para;</a></h2>
+<p>Icons:</p>
+<ul>
+<li>Scissor: https://www.flaticon.com/free-icon/scissors_27, 15.06.2023</li>
+<li>Image stack: https://www.flaticon.com/free-icon/image-files_2182242, 15.10.2024</li>
+<li>Table: https://www.flaticon.com/free-icon/table_7604036, 15.10.2024</li>
+</ul>
+<div class="footnote">
+<hr />
+<ol>
+<li id="fn:1">
+<p>Carlos Francisco Moreno-García, Eyad Elyan, and Chrisina Jayne. New trends on digitisation of complex engineering drawings. <em>Neural Computing and Applications</em>, 31(6):1695–1712, June 2019. URL: <a href="http://link.springer.com/10.1007/s00521-018-3583-1">http://link.springer.com/10.1007/s00521-018-3583-1</a> (visited on 2024-01-11), <a href="https://doi.org/10.1007/s00521-018-3583-1">doi:10.1007/s00521-018-3583-1</a>.&#160;<a class="footnote-backref" href="#fnref:1" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:1" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+</li>
+<li id="fn:2">
+<p>Remi Petitpierre and Paul Guhennec. Effective annotation for the automatic vectorization of cadastral maps. <em>Digital Scholarship in the Humanities</em>, 38(3):1227–1237, August 2023. URL: <a href="https://academic.oup.com/dsh/article/38/3/1227/7074303">https://academic.oup.com/dsh/article/38/3/1227/7074303</a> (visited on 2024-01-15), <a href="https://doi.org/10.1093/llc/fqad006">doi:10.1093/llc/fqad006</a>.&#160;<a class="footnote-backref" href="#fnref:2" title="Jump back to footnote 2 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:2" title="Jump back to footnote 2 in the text">&#8617;</a><a class="footnote-backref" href="#fnref3:2" title="Jump back to footnote 2 in the text">&#8617;</a></p>
+</li>
+<li id="fn:3">
+<p>Stefano Gobbi, Marco Ciolli, Nicola La Porta, Duccio Rocchini, Clara Tattoni, and Paolo Zatelli. New Tools for the Classification and Filtering of Historical Maps. <em>ISPRS International Journal of Geo-Information</em>, 8(10):455, October 2019. URL: <a href="https://www.mdpi.com/2220-9964/8/10/455">https://www.mdpi.com/2220-9964/8/10/455</a> (visited on 2024-01-09), <a href="https://doi.org/10.3390/ijgi8100455">doi:10.3390/ijgi8100455</a>.&#160;<a class="footnote-backref" href="#fnref:3" title="Jump back to footnote 3 in the text">&#8617;</a></p>
+</li>
+<li id="fn:4">
+<p>Jelena Ignjatić, Bojana Nikolić, Aleksandar Rikalović, and Dubravko Ćulibrk. Deep Learning for Historical Cadastral Maps Digitization: Overview, Challenges and Potential. In <em>WSCG 2018: poster papers proceedings: 26th International Conference in Central Europe on Computer Graphics, Visualization and Computer Vision</em>. Pilsen, Czech Republic, 2018. Václav Skala - UNION Agency. URL: <a href="http://wscg.zcu.cz/WSCG2018/2018-papers/!!_CSRN-2803-6.pdf">http://wscg.zcu.cz/WSCG2018/2018-papers/!!_CSRN-2803-6.pdf</a> (visited on 2024-01-09), <a href="https://doi.org/10.24132/CSRN.2018.2803.6">doi:10.24132/CSRN.2018.2803.6</a>.&#160;<a class="footnote-backref" href="#fnref:4" title="Jump back to footnote 4 in the text">&#8617;</a></p>
+</li>
+<li id="fn:5">
+<p>Chen Liu, Jiajun Wu, Pushmeet Kohli, and Yasutaka Furukawa. Raster-To-Vector: Revisiting Floorplan Transformation. In <em>Proceedings of the IEEE International Conference on Computer Vision (ICCV)</em>, 2195–2203. Venice, Italy, October 2017. URL: <a href="https://openaccess.thecvf.com/content_ICCV_2017/papers/Liu_Raster-To-Vector_Revisiting_Floorplan_ICCV_2017_paper.pdf">https://openaccess.thecvf.com/content_ICCV_2017/papers/Liu_Raster-To-Vector_Revisiting_Floorplan_ICCV_2017_paper.pdf</a> (visited on 2024-01-08).&#160;<a class="footnote-backref" href="#fnref:5" title="Jump back to footnote 5 in the text">&#8617;</a></p>
+</li>
+<li id="fn:6">
+<p>Jeroen FRANKEN, Wim FLORIJN, Maarten HOEKSTRA, and Eric HAGEMANS. Rebuilding the Cadastral Map of The Netherlands: The Artificial Intelligence Solution. In <em>Netherlands and Land Administration: Best Practice and Vision for the Future</em>, volume Virtually in the Netherlands. online, June 2021. URL: <a href="https://fig.net/resources/proceedings/fig_proceedings/fig2021/papers/nl01/NL01_jeroen_florijn_et_al_11000.pdf">https://fig.net/resources/proceedings/fig_proceedings/fig2021/papers/nl01/NL01_jeroen_florijn_et_al_11000.pdf</a> (visited on 2024-01-08).&#160;<a class="footnote-backref" href="#fnref:6" title="Jump back to footnote 6 in the text">&#8617;</a></p>
+</li>
+<li id="fn:7">
+<p>Sofia Ares Oliveira, Isabella di Lenardo, Bastien Tourenc, and Frédéric Kaplan. A deep learning approach to Cadastral Computing. In <em>Digital Humanities Conference</em>. Utrecht, Netherlands, July 2019. HAL. URL: <a href="https://hal.science/hal-03988983/">https://hal.science/hal-03988983/</a> (visited on 2024-01-09).&#160;<a class="footnote-backref" href="#fnref:7" title="Jump back to footnote 7 in the text">&#8617;</a></p>
+</li>
+<li id="fn:8">
+<p>Arnau Garcia‐Molsosa, Hector A. Orengo, Dan Lawrence, Graham Philip, Kristen Hopper, and Cameron A. Petrie. Potential of deep learning segmentation for the extraction of archaeological features from historical map series. <em>Archaeological Prospection</em>, 28(2):187–199, April 2021. URL: <a href="https://onlinelibrary.wiley.com/doi/10.1002/arp.1807">https://onlinelibrary.wiley.com/doi/10.1002/arp.1807</a> (visited on 2024-01-09), <a href="https://doi.org/10.1002/arp.1807">doi:10.1002/arp.1807</a>.&#160;<a class="footnote-backref" href="#fnref:8" title="Jump back to footnote 8 in the text">&#8617;</a></p>
+</li>
+<li id="fn:9">
+<p>Qinjun Qiu, Yongjian Tan, Kai Ma, Miao Tian, Zhong Xie, and Liufeng Tao. Geological symbol recognition on geological map using convolutional recurrent neural network with augmented data. <em>Ore Geology Reviews</em>, 153:105262, December 2023. URL: <a href="https://www.sciencedirect.com/science/article/pii/S0169136822005704?via%3Dihub#section-cited-by">https://www.sciencedirect.com/science/article/pii/S0169136822005704?via%3Dihub#section-cited-by</a> (visited on 2024-01-11), <a href="https://doi.org/10.1016/j.oregeorev.2022.105262">doi:10.1016/j.oregeorev.2022.105262</a>.&#160;<a class="footnote-backref" href="#fnref:9" title="Jump back to footnote 9 in the text">&#8617;</a></p>
+</li>
+<li id="fn:10">
+<p>Fabian Pedregosa, Gaël Varoquaux, Alexandre Gramfort, Vincent Michel, Bertrand Thirion, Olivier Grisel, Mathieu Blondel, Peter Prettenhofer, Ron Weiss, Vincent Dubourg, Jake Vanderplas, Alexandre Passos, David Cournapeau, Matthieu Brucher, Matthieu Perrot, and Édouard Duchesnay. Scikit-learn: Machine Learning in Python. <em>Journal of Machine Learning Research</em>, 12(85):2825–2830, 2011. URL: <a href="http://jmlr.org/papers/v12/pedregosa11a.html">http://jmlr.org/papers/v12/pedregosa11a.html</a> (visited on 2024-11-01).&#160;<a class="footnote-backref" href="#fnref:10" title="Jump back to footnote 10 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:10" title="Jump back to footnote 10 in the text">&#8617;</a></p>
+</li>
+<li id="fn:11">
+<p>Stéfan Van Der Walt, Johannes L. Schönberger, Juan Nunez-Iglesias, François Boulogne, Joshua D. Warner, Neil Yager, Emmanuelle Gouillart, and Tony Yu. Scikit-image: image processing in Python. <em>PeerJ</em>, 2:e453, June 2014. URL: <a href="https://peerj.com/articles/453">https://peerj.com/articles/453</a> (visited on 2024-11-29), <a href="https://doi.org/10.7717/peerj.453">doi:10.7717/peerj.453</a>.&#160;<a class="footnote-backref" href="#fnref:11" title="Jump back to footnote 11 in the text">&#8617;</a></p>
+</li>
+<li id="fn:12">
+<p>Takuya Akiba, Shotaro Sano, Toshihiko Yanase, Takeru Ohta, and Masanori Koyama. Optuna: A Next-generation Hyperparameter Optimization Framework. In <em>Proceedings of the 25th ACM SIGKDD International Conference on Knowledge Discovery &amp; Data Mining</em>, 2623–2631. Anchorage AK USA, July 2019. ACM. URL: <a href="https://dl.acm.org/doi/10.1145/3292500.3330701">https://dl.acm.org/doi/10.1145/3292500.3330701</a> (visited on 2024-11-29), <a href="https://doi.org/10.1145/3292500.3330701">doi:10.1145/3292500.3330701</a>.&#160;<a class="footnote-backref" href="#fnref:12" title="Jump back to footnote 12 in the text">&#8617;</a></p>
+</li>
+</ol>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2020-2021 Swiss Territorial Data Lab
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        <div class="md-social">
+  
+    
+    
+    
+    
+    <a href="https://github.com/swiss-territorial-data-lab" target="_blank" rel="noopener" title="Repo on Github" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+    </a>
+  
+    
+    
+    
+    
+    <a href="mailto:<info@stdl.ch>" target="_blank" rel="noopener" title="Send us an eMail!" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M498.1 5.6c10.1 7 15.4 19.1 13.5 31.2l-64 416c-1.5 9.7-7.4 18.2-16 23s-18.9 5.4-28 1.6L284 427.7l-68.5 74.1c-8.9 9.7-22.9 12.9-35.2 8.1S160 493.2 160 480v-83.6c0-4 1.5-7.8 4.2-10.7l167.6-182.9c5.8-6.3 5.6-16-.4-22s-15.7-6.4-22-.7L106 360.8l-88.3-44.2C7.1 311.3.3 300.7 0 288.9s5.9-22.8 16.1-28.7l448-256c10.7-6.1 23.9-5.5 34 1.4z"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.expand"], "search": "../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.a7c05c9e.min.js"></script>
+      
+        <script src="../assets/javascripts/config.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>

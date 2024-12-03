@@ -730,21 +730,21 @@ Therefore, the best model is based on labels deduced from the TLM and using the 
 <tbody>
 <tr>
 <td style="text-align: left;">Precision</td>
-<td style="text-align: center;">0.99</td>
-<td style="text-align: center;">0.74</td>
-<td style="text-align: center;">0.87</td>
+<td style="text-align: center;">0.98</td>
+<td style="text-align: center;">0.66</td>
+<td style="text-align: center;">0.82</td>
 </tr>
 <tr>
 <td style="text-align: left;">Recall</td>
-<td style="text-align: center;">0.97</td>
-<td style="text-align: center;">0.74</td>
-<td style="text-align: center;">0.86</td>
+<td style="text-align: center;">0.96</td>
+<td style="text-align: center;">0.59</td>
+<td style="text-align: center;">0.77</td>
 </tr>
 <tr>
 <td style="text-align: left;">F1 score (1)</td>
-<td style="text-align: center;">0.98</td>
-<td style="text-align: center;">0.74</td>
-<td style="text-align: center;">0.86</td>
+<td style="text-align: center;">0.97</td>
+<td style="text-align: center;">0.62</td>
+<td style="text-align: center;">0.80</td>
 </tr>
 <tr>
 <td style="text-align: left;"><em>F1 score for the BLM</em> (2)</td>
@@ -754,13 +754,13 @@ Therefore, the best model is based on labels deduced from the TLM and using the 
 </tr>
 <tr>
 <td style="text-align: left;">Improvement: (1)-(2)</td>
-<td style="text-align: center;">0</td>
-<td style="text-align: center;">0.74</td>
-<td style="text-align: center;">0.32</td>
+<td style="text-align: center;">-0.01</td>
+<td style="text-align: center;">0.62</td>
+<td style="text-align: center;">0.31</td>
 </tr>
 </tbody>
 </table>
-<p><i>Table 2: metrics for the best model over the training, test and validation area.</i></p>
+<p><i>Table 2: metrics for the best model over the test dataset.</i></p>
 <p>The F1 score for the natural roads and the global one outperformed the BLM. The per-class F1 scores has been judged as satisfying by the beneficiaries.</p>
 <table>
 <thead>
@@ -775,20 +775,20 @@ Therefore, the best model is based on labels deduced from the TLM and using the 
 <tr>
 <td style="text-align: left;">Precision</td>
 <td style="text-align: center;">0.98</td>
-<td style="text-align: center;">0.22</td>
+<td style="text-align: center;">0.12</td>
 <td style="text-align: center;">0.60</td>
 </tr>
 <tr>
 <td style="text-align: left;">Recall</td>
-<td style="text-align: center;">0.95</td>
-<td style="text-align: center;">0.26</td>
+<td style="text-align: center;">0.92</td>
+<td style="text-align: center;">0.30</td>
 <td style="text-align: center;">0.61</td>
 </tr>
 <tr>
 <td style="text-align: left;">F1 score (1)</td>
-<td style="text-align: center;">0.96</td>
-<td style="text-align: center;">0.24</td>
-<td style="text-align: center;">0.60</td>
+<td style="text-align: center;">0.95</td>
+<td style="text-align: center;">0.17</td>
+<td style="text-align: center;">0.58</td>
 </tr>
 <tr>
 <td style="text-align: left;"><em>F1 score for the BLM</em> (2)</td>
@@ -798,20 +798,20 @@ Therefore, the best model is based on labels deduced from the TLM and using the 
 </tr>
 <tr>
 <td style="text-align: left;">Improvement: (1)-(2)</td>
-<td style="text-align: center;">-0.02</td>
-<td style="text-align: center;">0.24</td>
-<td style="text-align: center;">0.11</td>
+<td style="text-align: center;">-0.03</td>
+<td style="text-align: center;">0.17</td>
+<td style="text-align: center;">0.09</td>
 </tr>
 </tbody>
 </table>
-<p><i>Table 3: metrics for the best model over the inference-only area.</i></p>
+<p><i>Table 3: metrics for the best model over the inference-only dataset.</i></p>
 <p>Those metrics are worse than the ones obtained over the training area. The global F1 score is still higher than for the BLM. However, the natural F1 score is not high enough. <br></p>
 <figure  align="center">
     <image src="images/barplots_new_zone.jpg" alt="Absolute and relative repartition of the roads in the inference-only zone" style="width:75%"></image>
     <figcaption align="center"><i>Figure 11: Absolute and relative repartition of the roads in the inference-only zone. </i></figcaption>
 </figure>
 
-<p>93.2% of the roads are correctly classified, 4.2% are in the wrong class and 2.6% are undetected or undetermined. Nearly half of the natural roads are either undetected or in the wrong class, but as they represent a tiny proportion of the dataset, they impact little the accuracy. <br>
+<p>93.1% of the roads are correctly classified, 5.4% are in the wrong class and 1.5% are undetected or undetermined. Nearly half of the natural roads are either undetected or in the wrong class, but as they represent a tiny proportion of the dataset, they impact little the accuracy. <br>
 In the training zone, only 2% of the roads are in the wrong class and 1.7% are undetected or undetermined. <br></p>
 <figure  align="center">
     <image src="images/reliability_diagram.jpg" alt="Reliability curve for the training zone and the inference-only zone." style="width:75%"></image>
