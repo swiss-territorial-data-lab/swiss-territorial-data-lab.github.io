@@ -450,6 +450,15 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#references" class="md-nav__link">
+    <span class="md-ellipsis">
+      References
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -471,10 +480,10 @@
 March 2024 to September 2024 - Published December 3, 2024</p>
 <p xmlns:cc="http://creativecommons.org/ns#" >This work by <a rel="cc:attributionURL dct:creator" property="cc:attributionName" href="https://stdl.ch">STDL</a> is licensed under <a href="https://creativecommons.org/licenses/by-sa/4.0/?ref=chooser-v1" target="_blank" rel="license noopener noreferrer" style="display:inline-block;">CC BY-SA 4.0<img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1" alt=""><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/by.svg?ref=chooser-v1" alt=""><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/sa.svg?ref=chooser-v1" alt=""></a></p>
 
-<p><em><strong>Abstract</strong>: Currently, all the lines delineating ground parcels have been approximately digitized in the canton of Fribourg, but the border points at the intersections have never been materialized in a dataset. However, it is the points and not the lines that have legal value. Besides, their nature must be known before they can be validated at the federal level. As 80,000 points are currently missing, an automatic classification based on historical cadastral plans would save the Canton a lot of time. <br>
+<p><em><strong>Abstract</strong>: Currently, all the lines delineating ground parcels have been approximately digitized in the canton of Fribourg, but the border points at the intersections have never been materialized in a dataset. However, it is the points and not the lines that have legal value. Besides, their nature must be known before they can be validated at the federal level. As 50,000 points are currently missing, an automatic classification based on historical cadastral plans would save the Canton a lot of time. <br>
 The STDL tested two methods to classify the nature of border points: instance segmentation with a match between detections and approximate border points, and image classification on the neighborhood of each approximate point. Both methods achieved a balanced f1 score of over 0.75 on a test dataset. However, the method based on instance segmentation was proved more versatile for the wide variety of configuration that can be encountered on historical cadastral plans. Consequently, the expert examined only those results at the scale of entire plans and he declared himself satisfied with the quality of the classification.</em></p>
 <h2 id="1-introduction">1. Introduction<a class="headerlink" href="#1-introduction" title="Permanent link">&para;</a></h2>
-<p>In some municipalities in the Canton of Fribourg, the cadastral surveying has not yet been fully approved by the land registry. The parcel borderlines were digitized manually based on old cadastral plans, but not the border points. Approximately 80,000 points are missing, causing errors in automatic data consistency checks and making it difficult for users to understand the data. Many of the missing boundary points can be identified on old paper plans from the late 19<sup>th</sup> century, but manually digitizing and classifying them would represent a considerable amount of work.<br></p>
+<p>In some municipalities in the Canton of Fribourg, the cadastral surveying has not yet been fully approved by the land registry. The parcel borderlines were digitized manually based on old cadastral plans, but not the border points. Approximately 50,000 points are missing, causing errors in automatic data consistency checks and making it difficult for users to understand the data. Many of the missing boundary points can be identified on old paper plans from the late 19<sup>th</sup> century, but manually digitizing and classifying them would represent a considerable amount of work.<br></p>
 <p>Automatic vectorization of maps and diagram has been a topic of research for the past 30 years<sup id="fnref:1"><a class="footnote-ref" href="#fn:1">1</a></sup><sup id="fnref:2"><a class="footnote-ref" href="#fn:2">2</a></sup> as these historical documents contain invaluable information on territorial organization. This task is very challenging because the large variety of symbols and plan origin, as well as the quality of the drawings, make it difficult to develop a generic method. <br>
 The text retrieval on diagrams has quickly attracted a lot of attention<sup id="fnref2:1"><a class="footnote-ref" href="#fn:1">1</a></sup> and some attempts were made to extract surface areas such as land cover and parcels from maps based on image processing<sup id="fnref2:2"><a class="footnote-ref" href="#fn:2">2</a></sup><sup id="fnref:3"><a class="footnote-ref" href="#fn:3">3</a></sup>. The application of semantic segmentation for the classification of map areas greatly improved map vectorization<sup id="fnref3:2"><a class="footnote-ref" href="#fn:2">2</a></sup>. For Ignjatic et al. (2018)<sup id="fnref:4"><a class="footnote-ref" href="#fn:4">4</a></sup>, deep neural networks are the state-of-the-art for object recognition on cadastral map and their performance should allow their full integration in the domain. <br>
 Liu et al. (2017)<sup id="fnref:5"><a class="footnote-ref" href="#fn:5">5</a></sup> introduced raster-to-vector transformation methods, employing AI-driven junction detection and classification to improve the accuracy of edge extraction from floor plans. However, this article is rather an exception, as most of the vectorization works start with lines, then work toward other elements. Franken et al. (2021)<sup id="fnref:6"><a class="footnote-ref" href="#fn:6">6</a></sup> used AI-driven approaches for image enhancement, line detection, and handwritten sketch interpretation to automate the extraction of border points, achieving a high level of accuracy in reconstructing parcel boundaries of the Dutch cadastral plans. This work demonstrates how AI, particularly in image recognition, can resolve challenges posed by the inconsistent quality of hand-drawn cadastral maps. Oliveira et al. (2019)<sup id="fnref:7"><a class="footnote-ref" href="#fn:7">7</a></sup> also use a deep neural network to vectorize lines. From the vectorized lines, they determine the parcel polygons and the text position.  <br>
@@ -1607,6 +1616,7 @@ Regarding the second method, images of each approximate point neighborhood was c
 <li>Image stack: https://www.flaticon.com/free-icon/image-files_2182242, 15.10.2024</li>
 <li>Table: https://www.flaticon.com/free-icon/table_7604036, 15.10.2024</li>
 </ul>
+<h2 id="references">References<a class="headerlink" href="#references" title="Permanent link">&para;</a></h2>
 <div class="footnote">
 <hr />
 <ol>
