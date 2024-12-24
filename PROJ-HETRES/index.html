@@ -478,6 +478,15 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#73-reproducibility-of-the-exploratory-project-with-data-produced-by-swisstopo" class="md-nav__link">
+    <span class="md-ellipsis">
+      7.3 Reproducibility of the exploratory project with data produced by swisstopo
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1105,14 +1114,14 @@ In addition, the edge detection was maybe not the right choice for dead branches
 <p>Even if the performance varies according to the dataset partition, the important descriptors remain quite similar between the two partitions as displayed in Figure 17.A and Figure 17.B. The yearly difference of NDVI between 2018 and 2019 (<em>NDVI_diff_1918</em>) is the most important descriptor; standard deviation on the blue band (<em>b_std</em>) and the mean on the NIR band and NDVI (<em>nir_mean</em> and <em>ndvi_mean</em>) are standing out in both cases; from the LiDAR, the standard deviation of canopy cover (<em>sdcc</em>) and of the LiDAR reflectance (<em>i_sd_seg</em>) are the most important descriptors. <!--The descriptors important in both models are: yearly variation of NDVI between 2018 and 2019, the standard deviation of the blue band, the mean of the NIR band, the NDVI mean derived from airborne imagery, the standard deviation of the LiDAR reflectance and the standard deviation of the canopy cover.--><br />
 The order of magnitude explains the better performance on partition B with the airborne-based model: for instance, the <em>b_std</em> has the magnitude of 7.6 instead of 4.6 with Partition B. </p>
 <div align="center" style="font-style: italic">
-<img src="images/F17A_all_VarImp.png" alt="Important descriptors for the full model, dataset, partition A." style="width:75%"> <br/>
+<img src="images/F17A_all_VarImp.png" alt="Important descriptors for the full model, dataset, partition A."> <br/>
 <i>
 Figure 17.A: Important descriptors for the full model, dataset partition A. 
 </i>
 </div>
 <p><br></p>
 <div align="center" style="font-style: italic">
-<img src="images/F17B_all_VarImp.png" alt="Important descriptors for the full model, dataset partition B." style="width:75%"> <br/>
+<img src="images/F17B_all_VarImp.png" alt="Important descriptors for the full model, dataset partition B."> <br/>
 <i>
 Figure 17.B: Important descriptors for the full model, dataset partition B. 
 </i>
@@ -1124,7 +1133,7 @@ Figure 17.B: Important descriptors for the full model, dataset partition B.
 <h4 id="542-ground-truth-analysis">5.4.2 Ground truth analysis<a class="headerlink" href="#542-ground-truth-analysis" title="Permanent link">&para;</a></h4>
 <p>With progressive removal of sample individuals from the training set, impact of individual beech trees on the performance is further analyzed. The performance variation is shown in Figure 18. The performance is rather stable in the sense that the sensitivities stay in a range of values similar to the initial one up to 40 samples removed, but with each removal, a slight instability in the metrics is visible. The size of the peaks indicates variations of 1 prediction for the dead class, but up to 6 predictions for the unhealthy class and up to 7 for the healthy class. During the sample removal, some samples were always predicted correctly, whereas others were often misclassified leading to the peaks in Figure 18. With the large number of descriptors in the full model, there is no straightforward profile of outliers to identify. </p>
 <div align="center" style="font-style: italic">
-<img src="images/F18_sample_removal.jpg" alt="Sensitivity when removal" style="width:75%"> <br/>
+<img src="images/F18_sample_removal.jpg" alt="Sensitivity when removal"> <br/>
 <i>
 Figure 18: Evolution of the per-class sensitivity with removal of samples.
 </i>
@@ -1219,7 +1228,7 @@ Figure 18: Evolution of the per-class sensitivity with removal of samples.
 <p></center></p>
 <p>Control by forestry experts reported that the predictions mostly correspond to the field situation and that a weak vote fraction often corresponds to false predictions. They confirmed that the map is delivering useful information to help plan beech tree felling. The final model retained after excursion on the field is the full model.</p>
 <div align="center" style="font-style: italic">
-<img src="images/F19_thematic_health_map.png" alt="Thematic health map" style="width:75%"> <br/>
+<img src="images/F19_thematic_health_map.png" alt="Thematic health map"> <br/>
 <i>
 Figure 19: Extract of the predicted thematic health map. Green is for healthy, yellow for unhealthy, and red for dead trees. Hues indicate the RF fraction of votes. The predictions can be compared with the true orthophoto in the background. The polygons approximating the tree crowns correspond to the delimitation of segmented trees.
 </i>
@@ -1818,6 +1827,189 @@ Finally, the model trained and tested on downgraded data gave an OA of 0.84 and 
 </tbody>
 </table>
 <p></center></p>
+<h3 id="73-reproducibility-of-the-exploratory-project-with-data-produced-by-swisstopo">7.3 Reproducibility of the exploratory project with data produced by swisstopo<a class="headerlink" href="#73-reproducibility-of-the-exploratory-project-with-data-produced-by-swisstopo" title="Permanent link">&para;</a></h3>
+<h4 id="introduction">Introduction<a class="headerlink" href="#introduction" title="Permanent link">&para;</a></h4>
+<p>Following repeated drought events since 2018, beech dieback has been observed in Jura forests. In this context, the Republic and Canton of Jura contacted the Swiss Territorial Data Lab to develop a new monitoring solution based on aerial images, LiDAR point clouds and satellite images. The method developed is documented on the <a href="https://tech.stdl.ch/PROJ-HETRES/">STDL technical website</a>, and the related scripts are available on <a href="https://github.com/swiss-territorial-data-lab/proj-hetres">GitHub</a>. </p>
+<p>The method was developed with data acquired simultaneously, to ensure temporal concordance between the different sources. The question arose to whether the method can be reproduced using existing data, or whether specific data acquisition is required. </p>
+<p>In the Swiss context, the use of data produced by swisstopo and accessible across the country was explored.</p>
+<h4 id="data">Data<a class="headerlink" href="#data" title="Permanent link">&para;</a></h4>
+<p>The exploratory project is based on a true orthophoto (RGB-NIR) at 3 cm resolution acquired in August 2022, a LiDAR point cloud acquired simultaneously, ground truth categorizing the health state of beech trees into three classes (healthy, unhealthy, dead) and annual differences in NDVI calculated by the University of Agricultural, Forestry and Food Sciences HAFL and the Federal Office for the Environment and available for the whole of Switzerland on waldmonitoring.ch. </p>
+<p>Every 6 years, swisstopo acquires orthophotos (NIR-RGB) for the entire country during the summer season. This is the <a href="https://www.swisstopo.admin.ch/fr/orthophotos-swissimage-rs">SWISSIMAGE RS</a> product. In the canton of Jura, orthophotos at 10 cm resolution, on which the leaves are fully developed , are available for the year 2020. </p>
+<p>When adapting the algorithm to swisstopo products, as SWISSIMAGE RS is not a true orthophoto, LiDAR was not integrated into the method, as it is not superimposed on the tilted trees in the image. In order to be able to carry out an analysis at the tree level, the <a href="https://github.com/RaffiBienz/arborizer">arborizer</a> tool, developed by Raffael Bienz and available on GitHub, was used to segment tree crowns from SWISSIMAGE RS. The method is based on deep learning. The use of a GPU is highly recommended in order to stay within reasonable computation times. A guide to setting up the environment is available in the later section <a href="#setting-up-the-arborizer-environment">Setting up the arborizer environment</a>.</p>
+<p>It should be noted that the ground truth was acquired in 2022, two years after the images were acquired by swisstopo, and that the evolution of symptoms due to drought is not necessarily linear. </p>
+<p>Tables 15 and 16 below summarize, respectively, the volume required for data storage and the calculation times for the most time-consuming parts of the method:</p>
+<p><center></p>
+<p><i>Table 15: Memory space required for data.</i>  </p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>MB/km2</th>
+<th>MB/300 km²</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>SWISSIMAGE RS</td>
+<td>619.05</td>
+<td>185714.29</td>
+</tr>
+<tr>
+<td>Time series of NDVI differences</td>
+<td>0.03</td>
+<td>7.58</td>
+</tr>
+</tbody>
+</table>
+<p></center></p>
+<p><center></p>
+<p><i>Table 16: Main calculation times required.</i>  </p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>h/km2</th>
+<th>h/300km²</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Compute NDVI rasters</td>
+<td>0.01</td>
+<td>2.86</td>
+</tr>
+<tr>
+<td>Arborizer on GPU</td>
+<td>6.06</td>
+<td>1818.18</td>
+</tr>
+<tr>
+<td>Arborizer on CPU</td>
+<td>57.61</td>
+<td>17283.95</td>
+</tr>
+<tr>
+<td>Stats per tree</td>
+<td>0.25</td>
+<td>73.86</td>
+</tr>
+</tbody>
+</table>
+<p></center></p>
+<h4 id="results">Results<a class="headerlink" href="#results" title="Permanent link">&para;</a></h4>
+<p>To reproduce the results with other data, the model needs to be re-trained and evaluated. Indeed, the random forest learned to classify for colorimetry specific to acquisition period, sensor and environmental conditions images acquired on August 16, 2022 for the project. Table 17 summarizes the performance obtained for the different data sources tested. </p>
+<p><center></p>
+<p><i>Table 17: Test data results: 21 healthy, 20 affected and 17 dead.</i>  </p>
+<table>
+<thead>
+<tr>
+<th>Descriptors</th>
+<th>Correct predictions, all classes [%]</th>
+<th>Correct predictions, healthy [%]</th>
+<th>Correct predictions, unhealthy [%]</th>
+<th>Correct predictions, dead [%]</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Images of 2022</td>
+<td>75.9</td>
+<td>52.3</td>
+<td>80.0</td>
+<td>1.0</td>
+</tr>
+<tr>
+<td>Images of 2020</td>
+<td>67.2</td>
+<td>57.1</td>
+<td>70.0</td>
+<td>76.5</td>
+</tr>
+<tr>
+<td>Images of 2022 and times series of NDVI differences</td>
+<td>79.3</td>
+<td>66.7</td>
+<td>75.0</td>
+<td>1.0</td>
+</tr>
+<tr>
+<td>Images of 2020 and times series of NDVI differences</td>
+<td>74.1</td>
+<td>71.4</td>
+<td>65.0</td>
+<td>88.2</td>
+</tr>
+<tr>
+<td>Times series of NDVI differences</td>
+<td>63.7</td>
+<td>71.4</td>
+<td>50.0</td>
+<td>70.6</td>
+</tr>
+</tbody>
+</table>
+<p></center></p>
+<p>In addition to the metrics given in Table 17, it is interesting to visualize the results for two regions shown in Figure 21: a continuous surface in the study area (results in Figure 22) and in another area of the canton where damage has been observed (results in Figure 23). Without knowledge of the terrain, it is difficult to assess the accuracy of the predictions. The corresponding data are available <a href="https://sftpgo.stdl.ch/web/client/pubshares/kmh4XFw96FBbm5AnPGwsXX/browse">here</a>.</p>
+<div align="center" style="font-style: italic">
+<img src="images/F20_aoi_additional.png" alt=""> <br/>
+<i>
+Figure 20: Circled in blue are the study areas and in red, the additional inference zone. Sources: République et Canton du Jura (damage zones), background map (swisstopo). </i>
+</div>
+<p><br></p>
+<div align="center" style="font-style: italic">
+<img src="images/F21_Miecourt.png" alt=""> <br/>
+<i>
+Figure 21: Inference in the study area. Blue corresponds to healthy trees, yellow to unhealthy trees and red to dead trees. Shades indicate the fraction of random forest votes shown in square brackets. Trees with low votes are more likely to be incorrectly classified.</i>
+</div>
+<p><br></p>
+<div align="center" style="font-style: italic">
+<img src="images/F22_Courchapoix.png" alt=""> <br/>
+<i>
+Figure 22: Inference in Val Terbi. Blue corresponds to healthy trees, yellow to unhealthy trees and red to dead trees. Shades indicate the fraction of random forest votes shown in square brackets. Trees with low votes are more likely to be incorrectly classified. </i>
+</div>
+<p><br></p>
+<h4 id="recommendations">Recommendations<a class="headerlink" href="#recommendations" title="Permanent link">&para;</a></h4>
+<p>Finally, here are a few recommendations for a productive application of the method developed: </p>
+<ul>
+<li>The ground truth plays a very important role in model learning and robustness. For the exploratory project, its size and completeness remain limited, and slightly poorer results can be expected in reality than with the test data. In addition, ground-truth acquisition or adaptation must be planned to match the temporality of the other data used. The ground truth polygons must also match the trees on the image, as illustrated in Figures 23 and 24. </li>
+</ul>
+<div align="center" style="font-style: italic">
+<img src="images/F23_gt_original.png" alt=""> <br/>
+<i>
+Figure 23: Original ground truth (solid line) and ground truth adapted to SWISSIMAGE RS (hatched polygon). Background: true orthophoto acquired in 2022. </i>
+</div>
+<p><br></p>
+<div align="center" style="font-style: italic">
+<img src="images/F24_gt_swissimag_rs.png" alt=""> <br/>
+<i>
+Figure 24: Original ground truth (solid line) and ground truth adapted to SWISSIMAGE RS (hatched polygon). Background: SWISSIMAGE RS acquired in 2020. </i>
+</div>
+<p><br></p>
+<ul>
+<li>Similarly, specific training may be required for each new acquisition and new zone, due to variability in image colorimetry or LiDAR intensity. </li>
+<li>When using arborizer, not all trees are detected, and trees that are hidden or difficult to see on the image will not be segmented. This approach would not be satisfactory for inventory purposes. </li>
+<li>When computing the pixel statistics on the tree footprint, it is worth mentioning that the size of the tree footprint obtained by arborizer has a non-negligible impact. The use of a negative buffer is recommended to focus on the tree crown and not on the forest floor around the trees as shown in Figure 25. </li>
+</ul>
+<div align="center" style="font-style: italic">
+<img src="images/F25_arborizer.png" alt="" style="width:50%"> <br/>
+<i>
+Figure 25: Example of area considered for tree statistics if a negative buffer of 2 m is applied. </i>
+</div>
+<p><br></p>
+<h4 id="setting-up-the-arborizer-environment">Setting up the arborizer environment<a class="headerlink" href="#setting-up-the-arborizer-environment" title="Permanent link">&para;</a></h4>
+<p>Here is how arborizer was set up for the tests in this project.</p>
+<p>To run arborizer on the GPU, one needs to install the CUDA components correctly, as well as Python, as explained here: <a href="https://mxnet.apache.org/versions/1.3.1/install/index.html?platform=Linux&amp;language=Python&amp;processor=GPU">Installing MXNet - mxnet</a>. </p>
+<p>However, according to the Ubuntu version or other IT-dependencies, specific sets of versions are necessary. One working combination is Ubuntu 20.04, CUDA Drivers 12.5, CUDA Toolkit 11.3, cuDNN 8, pyhton 3.8 and mxnet-cu112 (python library).</p>
+<ul>
+<li><a href="https://developer.nvidia.com/cuda-downloads?target_os=Linux&amp;target_arch=x86_64&amp;Distribution=Ubuntu&amp;target_version=20.04&amp;target_type=deb_network">Cuda installation</a></li>
+<li><a href="https://developer.nvidia.com/cudnn-downloads?target_os=Linux&amp;target_arch=x86_64&amp;Distribution=Ubuntu&amp;target_version=20.04&amp;target_type=deb_network">Cudnn installation</a></li>
+</ul>
+<p>One needs to set the environment variables, if necessary, in this  case (c.f. https://github.com/tensorflow/tensorflow/issues/20271): </p>
+<ul>
+<li>export LD_LIBRARY_PATH=/usr/local/cuda-11.3/targets/x86_64-linux/lib/:$LD_LIBRARY_PATH</li>
+<li>export LD_LIBRARY_PATH=/home/proj-treedet/arborizer/lib/python3.8/site-packages/nvidia/cudnn/lib/:$LD_LIBRARY_PATH</li>
+</ul>
+<p>For Docker, use the image corresponding to the versions of the CUDA components installed, for instance: <a href="https://hub.docker.com/layers/nvidia/cuda/11.3.1-cudnn8-runtime-ubuntu20.04/images/sha256-8bc42aa46603a499c634ed532879b6613c8f78cdaa616c2f6a15956951f38b15">nvidia/cuda:11.3.1-cudnn8-devel-ubuntu20.04</a>.</p>
 <h2 id="8-sources-and-references">8 Sources and references<a class="headerlink" href="#8-sources-and-references" title="Permanent link">&para;</a></h2>
 <p>Indications on software and hardware requirements, as well as the code used to perform the project, are available on GitHub: https://github.com/swiss-territorial-data-lab/proj-hetres/tree/main.</p>
 <p>Other sources of information mentioned in this documentation are listed here: </p>
