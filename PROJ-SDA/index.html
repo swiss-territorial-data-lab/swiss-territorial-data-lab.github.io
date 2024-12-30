@@ -1163,20 +1163,20 @@ Fourthly, the confidence score given by the deep learning algorithm is provided 
 <p>Addition of GT elements: Increasing the number of GT elements improves the measurements. Model 12 was trained with a previous version of the GT containing about half of the GT elements shown in Table 2. The f1-scores before and after processing are lower than those of the models trained with the GT elements in Table 2, with a value of 0.34 and 0.21 respectively. In particular, the class "non-agricultural activity" performs poorly.</p>
 </li>
 <li>
-<p>Addition of FP tiles: Adding empty tiles (model 5) with previously detected FPs does not improve the metrics, but it should be noted that it does not reduce them either despite the addition of tiles containing objects that could potentially be a source of confusion.</p>
+<p>Addition of FP tiles: Adding empty tiles (Model 5) with previously detected FPs does not improve the metrics, but it should be noted that it does not reduce them either despite the addition of tiles containing objects that could potentially be a source of confusion.</p>
 </li>
 <li>
-<p>Number of image per batch: Increasing the number of images per batch (models 6 and 7) has no influence or decreases performance for the non-agricultural activity class.</p>
+<p>Number of image per batch: Increasing the number of images per batch (Model 6 and Model 7) has no influence or decreases performance for the non-agricultural activity class.</p>
 </li>
 <li>
-<p>Convert RGB images to greyscale: No influence is observed in the metrics (model 8).</p>
+<p>Convert RGB images to greyscale: No influence is observed in the metrics (Model 8).</p>
 </li>
 <li>
-<p>Convert greyscale images to RGB: No influence is observed in the metrics (model 9).</p>
+<p>Convert greyscale images to RGB: No influence is observed in the metrics (Model 9).</p>
 </li>
 </ul>
 <p>No parameter significantly improve the performance of the model, apart from adding elements to the GT. However, these observations must be treated with caution, because it is difficult to decipher the influence of the parameters on the variability metrics due to the non-deterministic behaviour of the algorithm.</p>
-<p>Finally, model 1 was selected for the inference because it gave satisfactory metrics before and after processing (Table 3). With this model, the land movement class is better detected and less mixed up than for the non-agricultural activity class (Table 4).</p>
+<p>Finally, Model 1 was selected for the inference because it gave satisfactory metrics before and after processing (Table 3). With this model, the land movement class is better detected and less mixed up than for the non-agricultural activity class (Table 4).</p>
 <p><center></p>
 <table>
 <thead>
