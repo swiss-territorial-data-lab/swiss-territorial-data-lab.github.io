@@ -1460,10 +1460,10 @@ Figure 16: Results on an inference area.
 <p>Results for the multiclass classification with traditional machine learning were not satisfactory. Confusion between classes indicated that scarce vegetation for terraces, spontaneous and extensive roofs leads to confusion with bare roofs. From these tests, it appears that global statistics of the samples are not sufficient for the task. Hence, a strategy including the spatial structure of the rooftop might be needed (e.g. deep-learning approach).</p>
 <h3 id="52-multiclass-classification-by-deep-learning">5.2 Multiclass classification by deep learning<a class="headerlink" href="#52-multiclass-classification-by-deep-learning" title="Permanent link">&para;</a></h3>
 <p>As well as with the binary classification by machine learning, the results and discussions regarding the different tests on the deep learning solution are presented in this section.</p>
-<p>Moreover, the beneficiaries of this project labeled more samples for this approach so that the model could generalize on a wider span of cases. Table 10 shows the distribution of the final dataset.</p>
+<p>Moreover, the beneficiaries of this project labeled more samples for this approach so that the model could generalize on a wider span of cases. Table 9 shows the distribution of the final dataset.</p>
 <p><center>
 <i>
-Table 9: Distribution of the final training set with additional labeled samples from both cantons.
+Table 9: Distribution of the final dataset with additional labeled samples from both cantons.
 </i></p>
 <table>
 <thead>
@@ -1512,9 +1512,9 @@ Figure 17: Results on multiple metrics for different range limitation methods. T
 </div>
 
 <h5 id="5212-comparison">5.2.1.2 Comparison<a class="headerlink" href="#5212-comparison" title="Permanent link">&para;</a></h5>
-<p>Once the best configuration for <em>SWISSIMAGE RS orthorectified on TLM</em> specifications was found, a comparison was made between this datasets and the <em>SWISSIMAGE 8-bit</em> dataset in order to define which data structure is fitting best the task at hand. As seen in Table 9, the results of both trainings were quite similar, highlighting the fact that both structures are showing enough important information for the model to classify accurately.</p>
+<p>Once the best configuration for <em>SWISSIMAGE RS orthorectified on TLM</em> specifications was found, a comparison was made between this datasets and the <em>SWISSIMAGE 8-bit</em> dataset in order to define which data structure is fitting best the task at hand. As seen in Table 10, the results of both trainings were quite similar, highlighting the fact that both structures are showing enough important information for the model to classify accurately.</p>
 <p><center>
-<i>Table 9: Comparison of results between the SWISSIMAGE 8-bit dataset and the SWISSIMAGE RS orthorectified on TLM dataset with same configuration.</i></p>
+<i>Table 10: Comparison of results between the SWISSIMAGE 8-bit dataset and the SWISSIMAGE RS orthorectified on TLM dataset with same configuration.</i></p>
 <table>
 <thead>
 <tr>
@@ -1732,7 +1732,7 @@ Figure 28: Confusion matrix (on the left) and metrics (on the right) of the deep
 
 <p>However, given the fact that the machine-learning-based solution gave also very good results and is lighter (no need of GPU power), the choice was made to enter the production phase with this model. This choice was also driven by the fact that the multiclass classification is done by the deep learning solution, whose predictions can be derived into binary classification.</p>
 <h4 id="527-insights-of-the-results">5.2.7 Insights of the results<a class="headerlink" href="#527-insights-of-the-results" title="Permanent link">&para;</a></h4>
-<p>In order to compare results, Figure 29 shows a customed confusion matrix of the predictions on the two classes <em>bare</em> and <em>vegetated</em> made by the 3 different models on the final training set, together with the ground truth. Regarding the multiclass classification model, the predictions for the different vegetation classes were projected into one.<br />
+<p>In order to compare results, Figure 29 shows a customed confusion matrix of the predictions on the two classes <em>bare</em> and <em>vegetated</em> made by the 3 different models on the final dataset, together with the ground truth. Regarding the multiclass classification model, the predictions for the different vegetation classes were projected into one.<br />
 As shown by the colored arrows, the lower triangular part of the matrices represent the partition of the <em>bare</em> samples into the <em>vegetated</em> category and the upper triangular part represent the partition of the <em>vegetated</em> samples into the <em>bare</em> category. The plot on the left shows the count of samples while the plot on the right shows the fraction of samples.<br />
 For this test, the used dataset contains 2293 <em>bare</em> samples and 1404 <em>vegetated</em> samples.</p>
 <div align="center" style="font-style: italic">
@@ -1748,7 +1748,7 @@ The overview of the matrices shows that the two deep-learning-based models got r
 <li>4.14% (16.83%-12.69%) and 7.19% (16.83%-9.64%) regarding <em>bare</em> predicted as <em>vegetated</em> (see first column).</li>
 <li>6.98% (12.04%-5.06%) and 5.70% (12.04%-6.34%) regarding <em>vegetated</em> predicted as <em>bare</em> (see first row).</li>
 </ul>
-<p>However, one should be careful with these comparisons since the machine learning models were trained based on the previous, smaller dataset. The distribution of both state of the dataset before preprocessing have been given in <a href="#32-ground-truth">Table 1</a> and <a href="#525-best-configuration">Table 10</a>. In the best scenario, all the models performances should be train on the same dataset to be compared but a lack of time prevented us from doing it. Hence, for future use, it might be interesting to retrain the logistic regression and the random forest.   </p>
+<p>However, one should be careful with these comparisons since the machine learning models were trained based on the previous, smaller dataset. The distribution of both state of the dataset before preprocessing have been given in <a href="#32-ground-truth">Table 1</a> and <a href="#52-multiclass-classification-by-deep-learning">Table 9</a>. In the best scenario, all the models performances should be train on the same dataset to be compared but a lack of time prevented us from doing it. Hence, for future use, it might be interesting to retrain the logistic regression and the random forest.   </p>
 <h2 id="6-conclusions-and-outlooks">6 Conclusions and outlooks<a class="headerlink" href="#6-conclusions-and-outlooks" title="Permanent link">&para;</a></h2>
 <p>This study showed the effectiveness of using aerial imagery and machine learning models in detecting green roofs.</p>
 <p>In the machine learning parts, the results demonstrated the ability of a random forest and logistic regression algorithms to detect green roofs among bare roofs, based on vegetation and material reflectance in airborne images. The metrics, with a recall of 0.87 for the green class and an F1-score of 0.85 on the entire test set, reveal that the combination of both models trained on pixels statistics derived from vegetated areas defined by NDVI and luminosity thresholds, achieved the best performances. These metrics highlight the model’s ability to accurately detect green roof coverage, making it a reliable tool for large-scale urban mapping.</p>
