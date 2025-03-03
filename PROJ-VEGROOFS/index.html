@@ -16,7 +16,7 @@
     
     
       
-        <title>Green roofs: automatic detection of roof vegetation, vegetation type and covered surface from aerial imagery - Swiss Territorial Data Lab</title>
+        <title>Green roofs: automatic detection of green roofs and vegetation type from aerial imagery - Swiss Territorial Data Lab</title>
       
     
     
@@ -60,7 +60,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#green-roofs-automatic-detection-of-roof-vegetation-vegetation-type-and-covered-surface-from-aerial-imagery" class="md-skip">
+        <a href="#green-roofs-automatic-detection-of-green-roofs-and-vegetation-type-from-aerial-imagery" class="md-skip">
           Skip to content
         </a>
       
@@ -95,7 +95,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Green roofs: automatic detection of roof vegetation, vegetation type and covered surface from aerial imagery
+              Green roofs: automatic detection of green roofs and vegetation type from aerial imagery
             
           </span>
         </div>
@@ -350,18 +350,27 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#42-classification-by-machine-learning" class="md-nav__link">
+  <a href="#42-uncertainty-and-calibration-metrics" class="md-nav__link">
     <span class="md-ellipsis">
-      4.2 Classification by machine learning
+      4.2 Uncertainty and calibration metrics
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#43-multiclass-classification-by-deep-learning" class="md-nav__link">
+  <a href="#43-classification-by-machine-learning" class="md-nav__link">
     <span class="md-ellipsis">
-      4.3 Multiclass classification by deep learning
+      4.3 Classification by machine learning
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#44-classification-by-deep-learning" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.4 Classification by deep learning
     </span>
   </a>
   
@@ -497,9 +506,9 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#79-permutation-importance-of-the-logistice-regression" class="md-nav__link">
+  <a href="#79-permutation-importance-of-the-logistic-regression" class="md-nav__link">
     <span class="md-ellipsis">
-      7.9 Permutation importance of the logistice regression
+      7.9 Permutation importance of the logistic regression
     </span>
   </a>
   
@@ -541,6 +550,15 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#714-examples-of-difficult-samples" class="md-nav__link">
+    <span class="md-ellipsis">
+      7.14 Examples of difficult samples
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -570,21 +588,23 @@
                   
 
 
-<h1 id="green-roofs-automatic-detection-of-roof-vegetation-vegetation-type-and-covered-surface-from-aerial-imagery">Green roofs: automatic detection of roof vegetation, vegetation type and covered surface from aerial imagery<a class="headerlink" href="#green-roofs-automatic-detection-of-roof-vegetation-vegetation-type-and-covered-surface-from-aerial-imagery" title="Permanent link">&para;</a></h1>
-<p>Clotilde Marmy (ExoLabs) - Ueli Mauch (Canton of Zürich) - Swann Destouches (Uzufly) - Alessandro Cerioni (Canton of Geneva) - Roxane Pott (swisstopo)</p>
+<h1 id="green-roofs-automatic-detection-of-green-roofs-and-vegetation-type-from-aerial-imagery">Green roofs: automatic detection of green roofs and vegetation type from aerial imagery<a class="headerlink" href="#green-roofs-automatic-detection-of-green-roofs-and-vegetation-type-from-aerial-imagery" title="Permanent link">&para;</a></h1>
+<p><a href="https://hackmd.io/-V9XwL96SyCjYK8GGVifXg"><img alt="hackmd-github-sync-badge" src="https://hackmd.io/-V9XwL96SyCjYK8GGVifXg/badge" /></a></p>
+<p>Clotilde Marmy (ExoLabs) - Swann Destouches (Uzufly) - Ueli Mauch (Canton of Zürich) - Alessandro Cerioni (Canton of Geneva) - Roxane Pott (swisstopo)</p>
 <p>Proposed by the Canton of Zürich and Canton of Geneva - PROJ-VEGROOFS<br/>
-Project start in November 2023 - Intermediate publication on November 7, 2024</p>
-<p>All scripts are available on <a href="https://github.com/swiss-territorial-data-lab/proj-vegroofs/tree/main">GitHub</a>.</p>
+Project start in November 2023 - Intermediate publication on November 7, 2024 - Complementary publication on March 3, 2025</p>
+<p>All scripts are available on GitHub: the <a href="https://github.com/swiss-territorial-data-lab/proj-vegroofs/tree/main">traditional machine learning approach</a> and the <a href="https://github.com/swiss-territorial-data-lab/proj-vegroofs-DL">deep learning approach</a>.</p>
 <p xmlns:cc="http://creativecommons.org/ns#" >This work by <a rel="cc:attributionURL dct:creator" property="cc:attributionName" href="https://stdl.ch">STDL</a> is licensed under <a href="https://creativecommons.org/licenses/by-sa/4.0/?ref=chooser-v1" target="_blank" rel="license noopener noreferrer" style="display:inline-block;">CC BY-SA 4.0<img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1" alt=""><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/by.svg?ref=chooser-v1" alt=""><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/sa.svg?ref=chooser-v1" alt=""></a></p>
 
 <p><br/></p>
-<p><em><strong>Abstract</strong>: With rising temperatures and increased rainfall, mapping green roofs is becoming important for urban planning in dense areas like Geneva, Zürich and the surrounding areas. Green roofs, whether engineered or spontaneous, provide cooling, rain capture, and habitats, supporting biodiversity. Using national aerial imagery and land survey data, the study focuses on identifying green roofs and distinguishing among various vegetation types, including extensive, intensive, spontaneous, lawn, and terrace categories. Machine learning and deep learning approaches have been developed to detect and classify green roofs in two study areas on the cantons of Geneva and Zürich. Regarding the machine learning setup, statistical descriptors for the roof occupancy were derived from airborne images to train a random forest and a logistic regression predicting if a roof was green or not. Metrics on the test dataset showed that the best performance was achieved by combining a random forest and logistic regression models, trained with pixel statistics from potential vegetated areas defined by NDVI and luminosity thresholds on the original images. This combination yielded a recall of 0.87 for the green class and an F1-score of 0.85. The approach leveraging a deep neural network for classification of the roofs in the six classes of the project is still in development.</em></p>
+<p><em><strong>Abstract</strong>: With rising temperatures and increased rainfall, mapping green roofs is becoming important for urban planning in dense areas like Geneva, Zürich and the surrounding areas. Green roofs, whether engineered or spontaneous, provide cooling, rain capture, and habitats, supporting biodiversity. Using national aerial imagery and land survey data, the study focuses on identifying green roofs and distinguishing among various vegetation types, including extensive, intensive, spontaneous, lawn, and terrace categories. Machine learning and deep learning approaches have been developed to detect and classify green roofs in two study areas on the cantons of Geneva and Zürich. Regarding the machine learning setup, statistical descriptors for the roof occupancy were derived from airborne images to train a random forest and a logistic regression predicting if a roof was green or not. Metrics on the test dataset showed that the best performance was achieved by combining two models, a random forest and a logistic regression, trained with pixel statistics from potential vegetated areas defined by NDVI and luminosity thresholds on the original images. This combination yielded a recall of 0.87 for the green class and an F1-score of 0.85 on the entire test set. 
+Secondly, in the approach leveraging deep learning techniques, a customed alogrithm has been implemented. The model is an adaptation of the DeepLabV3 model. It reuses its ASPP (Atrous Spatial Pyramid Pooling) module and processes its output signal in order to achieve image classification. The model consists of three blocks: the backbone, the ASPP and a residual Multi-Layer Perceptron (MLP). The backbone itself is a convolutional encoder with adjustable width and depth. The model has been trained to perform multiclass classification among the following categories: bare, terrace, spontaneous, extensive, lawn and intensive, on which it achieved recall scores of 0.91, 0,77, 0.67, 0.79, 0.68 and 0.50 respectively. To challenge the machine learning approach, it has also been trained for the binary classes, resulting in a F1-score of 0.92 on its validation set.</em></p>
 <h2 id="1-introduction">1 Introduction<a class="headerlink" href="#1-introduction" title="Permanent link">&para;</a></h2>
 <p>With the rise of temperatures, the intensification of rain events and the care for biodiversity, mapping green roofs for urban planning is gaining importance. In cantons with dense urban regions, like Canton of Geneva and Canton of Zürich, the presence of green roofs is an aspect to be taken into account in urban planning given the role they play in creating cool islands, capturing rainfall and hosting biodiversity. </p>
 <p>Vegetation is generally found on flat roofs, flat part of roofs or slightly tilted roofs. Formally, green roofs are engineered systems for growing plants on rooftop, like extensive and intensive green roofs. The former one hosting mosses, grasses, small vegetation; the later one hosting lawn, bushes and even trees. The green roofs concept can be extended to spontaneous green roofs and terraces. The former ones are developing spontaneously. Both are considered as green roofs for biodiversity reasons. </p>
-<p>The detection of green roofs can be addressed by different methods applied on aerial imagery: thresholding on NDVI bands, classification by machine learning based on engineered features, object detection by deep learning. In the literature <sup id="fnref:1"><a class="footnote-ref" href="#fn:1">1</a></sup>, <sup id="fnref:2"><a class="footnote-ref" href="#fn:2">2</a></sup>, the use of thresholds on NDVI gave versatile performance and required consequent manual work. This is due to the variability of the NDVI, either caused by meteorological events preceding image acquisition, or by the vegetation period during image acquisition, or because of other site-specific reflectance factors that have an impact on image rendering. On the other hand, the classification of entire roofs with traditional machine learning showed good ability <sup id="fnref:3"><a class="footnote-ref" href="#fn:3">3</a></sup>. For detection of the green patches on roofs, object detection by deep learning has been explored <sup id="fnref:4"><a class="footnote-ref" href="#fn:4">4</a></sup>,<sup id="fnref:5"><a class="footnote-ref" href="#fn:5">5</a></sup>, <sup id="fnref:6"><a class="footnote-ref" href="#fn:6">6</a></sup>, but such method require a significant effort for ground truth (GT) labeling. </p>
+<p>The detection of green roofs can be addressed by different methods applied on aerial imagery: thresholding on NDVI bands, classification by machine-learning-based on engineered features, object detection by deep learning. In the literature <sup id="fnref:1"><a class="footnote-ref" href="#fn:1">1</a></sup>, <sup id="fnref:2"><a class="footnote-ref" href="#fn:2">2</a></sup>, the use of thresholds on NDVI gave versatile performance and required consequent manual work. This is due to the variability of the NDVI, either caused by meteorological events preceding image acquisition, or by the vegetation period during image acquisition, or because of other site-specific reflectance factors that have an impact on image rendering. On the other hand, the classification of entire roofs with traditional machine learning showed good ability <sup id="fnref:3"><a class="footnote-ref" href="#fn:3">3</a></sup>. For detection of the green patches on roofs, object detection by deep learning has been explored <sup id="fnref:4"><a class="footnote-ref" href="#fn:4">4</a></sup>,<sup id="fnref:5"><a class="footnote-ref" href="#fn:5">5</a></sup>, <sup id="fnref:6"><a class="footnote-ref" href="#fn:6">6</a></sup>, but such method require a significant effort of ground truth (GT) labeling. </p>
 <p>Although the binary problem, i.e. the distinction between bare and green roofs, is treated in the literature, no work on the multiclass problem was found. However, image classification technique is applied to classify roofs according to their geometries <sup id="fnref:7"><a class="footnote-ref" href="#fn:7">7</a></sup>, <sup id="fnref:8"><a class="footnote-ref" href="#fn:8">8</a></sup> or according to their materials <sup id="fnref:9"><a class="footnote-ref" href="#fn:9">9</a></sup>, <sup id="fnref:10"><a class="footnote-ref" href="#fn:10">10</a></sup>. This encourages to try a similar approach for green rooftops classification into several classes.  </p>
-<p>The aim of this project is first to detect green roofs using national aerial imagery and land survey. Secondly, the project will explore the  classification of green roofs into different existing types. Finally, the vegetated surface area of the green roofs will be estimated.  </p>
+<p>The aim of this project is first to detect green roofs using national aerial imagery and land survey. Secondly, the project will explore the classification of green roofs into different existing types.</p>
 <h2 id="2-study-areas">2 Study areas<a class="headerlink" href="#2-study-areas" title="Permanent link">&para;</a></h2>
 <p>The study areas on both cantons of Geneva and Zürich have been defined to contain a variety of green roof types and bare roofs. Figures 1 and 2 show the study areas.</p>
 <div align="center" style="font-style: italic">
@@ -604,8 +624,8 @@ Figure 2: Study area over the city of Zürich and surrounding area.
 <h2 id="3-data">3 Data<a class="headerlink" href="#3-data" title="Permanent link">&para;</a></h2>
 <p>The main input data of the project are aerial images and a vector layer of labeled building footprints as a ground truth. </p>
 <h3 id="31-aerial-imagery">3.1 Aerial imagery<a class="headerlink" href="#31-aerial-imagery" title="Permanent link">&para;</a></h3>
-<p>Aerial images acquired in early summer every six years by the national aerial imagery survey, <a href="https://www.swisstopo.admin.ch/en/orthoimage-swissimage-rs">SWISSIMAGE RS</a>, have been used. This corresponds to acquisitions in 2022 and 2023, for Zürich and Geneva respectively. The project makes use of the 10 cm resolution and the red, green, blue and near infrared channels of the product. The original product is delivered in the form of raw image captures encoded in 16 bit. However, for lighter processing and normalization, the imagery is converted to regular-sized 8-bit images, hereafter referred to as SWISSIMAGE RS 8-bit.</p>
-<p>In addition, an in-development product, derived from SWISSIMAGE RS, is also available for testing. It consists of SWISSIMAGE RS orthorectified on the roofs of the <a href="https://www.swisstopo.admin.ch/en/landscape-model-swisstlm3d">large-scale topographic landscape model of Switzerland swissTLM3D</a> (layer <em>TLM TLM_GEBAEUDE_FOOTPRINT</em>). The advantage of this innovative data is that the tilt of the building is mostly corrected, so the image and the land survey vector layer are aligned as illustrated in Figure 3. </p>
+<p>Aerial images acquired in early summer every six years by the national aerial imagery survey, <a href="https://www.swisstopo.admin.ch/en/orthoimage-swissimage-rs">SWISSIMAGE RS</a>, have been used. This corresponds to acquisitions in 2022 and 2023, for Zürich and Geneva respectively. The project makes use of the 10 cm resolution and the red, green, blue and near infrared channels of the product. The original product is acquired in the form of raw image captures encoded in 16-bit, but for lighter processing and normalization, the imagery was converted and delivered as regular-sized 8-bit images, hereafter referred to as <em>SWISSIMAGE RS 8-bit</em>.</p>
+<p>In addition, an in-development product, derived from SWISSIMAGE RS, is also available for testing. It consists of SWISSIMAGE RS orthorectified on the building footprints of the <a href="https://www.swisstopo.admin.ch/en/landscape-model-swisstlm3d">large-scale topographic landscape model of Switzerland swissTLM3D</a> (layer <em>TLM TLM_GEBAEUDE_FOOTPRINT</em>). The advantage of this innovative data is that the tilt of the building is mostly corrected, so the image and the land survey vector layer are aligned as illustrated in Figure 3. </p>
 <div align="center" style="font-style: italic">
 <img src="./images/tilt.jpg" alt="Study area"> <br />
 <i>
@@ -614,15 +634,24 @@ Figure 3: Tilted building on the orthophoto and orthorectified orthophoto for th
 </div>
 
 <h3 id="32-ground-truth">3.2 Ground truth<a class="headerlink" href="#32-ground-truth" title="Permanent link">&para;</a></h3>
-<p>For training and testing of machine learning techniques, a ground truth is necessary. The building footprints documented in the land survey, established and maintained by the cantons, have been used as geometry for the ground truth. Then, the beneficiaries have visualized the footprints on top of the aerial imagery to attribute a vegetation tag (vegetated or not) and a class: bare, terrace, spontaneous, extensive, lawn and intensive as depicted in Figure 4. </p>
+<p>For training and testing of machine learning techniques, a ground truth is necessary. The building footprints documented in the land survey, established and maintained by the cantons, have been used as geometry for the ground truth. Then, the beneficiaries have visualized the footprints on top of the aerial imagery to attribute a vegetation tag (vegetated or not) and a class: <em>bare</em>, <em>terrace</em>, <em>spontaneous</em>, <em>extensive</em>, <em>lawn</em> and <em>intensive</em> as depicted in Figure 4. </p>
 <div align="center" style="font-style: italic">
 <img src="./images/pentatique.jpg" alt="Green roof classes"> <br />
 <i>
-Figure 4: Along bare roofs, five classes of green roofs are present in the ground truth : green terraces and lawns, as well as spontaneous, extensive and intensive roofs.
+Figure 4: Along bare roofs, five classes of green roofs are present in the ground truth: green terraces and lawns, as well as spontaneous, extensive and intensive roofs.
 </i>
 </div>
 
-<p>The <a href="https://www.swisstopo.admin.ch/en/timetravel-aerial-images">time travel function for SWISSIMAGE</a> and the construction year of the buildings have been helpful to attribute the correct class (hopefully) without going on site. However, an error free ground truth is not ensured. Table 1 summarizes the diversity in the ground truth. </p>
+<p>Here are the characteristics of each class:</p>
+<ul>
+<li>bare: In this project, roofs with less than 10% of vegetation cover are considered bare. They are made of roof tiles, concrete, metal, glass or solar panels. </li>
+<li>extensive: They show a marble effect, due to height variation in the substrate and to the different species used: moss, sedum and grasses.</li>
+<li>spontaneous: Roofs that have been spontaneously colonized by plants. Vegetation is likely to develop in depressions of the roofs and is more dependent of external factors. Patches can be observed. Spontaneous green roofs are heterogeneous (color, height of vegetation, texture). At a young state, they do not cover all the available space and, above all, when going back a few years in time, evolution is observable.</li>
+<li>lawn: Lawn can be found on roof tops or on top of underground car parks (fake soil). This is kind of a sub-class of intensive green roofs.</li>
+<li>intensive: Intensive roofs are made out of lawn, shrubs, bushes and trees. They grow on a thicker substrate than extensive roofs. </li>
+<li>terraces: These are roofs with movable vegetation. Unlike green roofs, terraces are often designed for recreational use, although some can show quite developed vegetation.</li>
+</ul>
+<p>Table 1 summarizes the class diversity in the ground truth. </p>
 <p><center></p>
 <p><i>Table 1: Summary of the ground truth data, showing the number of roofs and their attribution into specific categories. </i></p>
 <table>
@@ -681,14 +710,14 @@ Figure 4: Along bare roofs, five classes of green roofs are present in the groun
 </tbody>
 </table>
 <p></center></p>
-<p>Moreover, here are the characteristics of each class:</p>
+<h4 id="321-challenging-patterns-in-sample-labeling">3.2.1 Challenging patterns in sample labeling<a class="headerlink" href="#321-challenging-patterns-in-sample-labeling" title="Permanent link">&para;</a></h4>
+<p>Some roofs were difficult to label, although the <a href="https://www.swisstopo.admin.ch/en/timetravel-aerial-images">time travel function for SWISSIMAGE</a> and the construction year of the buildings were used to best assess the condition of the roof without going on site. However, an error free ground truth is not ensured. The choice of the corresponding class for a sample is not always a trivial task and part of the decision was made subjectively. </p>
+<p>Since multiple experts were involved in this project, they were provided with the same subset of samples to label, in order to highlight difficult patterns. The chosen subset consists in the samples that were misclassified the most during the training of the DL model. It was made of 57 samples, from which 14 were not classified the same by the two experts. While this experiment did help to point out some patterns, its small size and the nature of its selection gives it no statistical value and should not be extrapolated to the full dataset.</p>
+<p>However, the following tendencies have been highlighted:</p>
 <ul>
-<li>bare: In this project, roofs with less than 10% of vegetation cover are considered bare. They are made of roof tiles, concrete, metal, glass or solar panels. </li>
-<li>extensive: They show a marble effect, due to height variation in the substrate and to the different species used: moss, sedum and grasses.</li>
-<li>spontaneous: Roofs that have been spontaneously colonized by plants. Vegetation is likely to develop in depressions of the roofs and is more dependent of external factors. Patches can be observed. Spontaneous green roofs are heterogeneous (color, height of vegetation, texture). At a young state, they do not cover all the available space and, above all, when going back a few years in time, evolution is observable.</li>
-<li>lawn: Lawn can be found on roof tops or on top of underground car parks (fake soil). This is kind of a sub-class of intensive green roofs.</li>
-<li>intensive: Intensive roofs are made out of lawn, shrubs, bushes and trees. They grow on a thicker substrate than extensive roofs. </li>
-<li>terraces: These are roofs with movable vegetation. Unlike green roofs, terraces are often designed for recreational use, although some can show quite developed vegetation.</li>
+<li>The classes <em><strong>terrace</strong></em> and <em><strong>bare</strong></em> tend to be difficult to tell apart. The verdict was that, a lot of time, terraces represent a very small portion of the sample and experts have to set a threshold from their own opinion, which can be quite different from one person to another. Examples are given in <a href="#7141-terrace-vs-bare">Annexes 7.14.1</a>.</li>
+<li>The classes <em><strong>spontaneous</strong></em> and <em><strong>extensive</strong></em> tend to be difficult to distinguish. Indeed, the difference can be of some more light-green parts on the roof and be quite subtle. Looking at the temporal evolution of the roof can help to evaluate the situation, but not always. Examples are given in <a href="#7142-spontaneous-vs-extensive">Annexes 7.14.2</a>.</li>
+<li>More globally, the first tendency applies between almost every <em>green</em> class and the <em>bare</em> one. Instead of performing a visual estimation of the portion of greenery of a roof, it could be interesting to have a method to quantify it. The method developed in the machine learning solution and documented in Sections <a href="#434-potential-greenery">4.3.4</a> and <a href="#514-results-on-potential-greenery-areas">5.1.4</a> is going in that direction, but shadows, dry vegetation and other terrain conditions prevent to focus only on the correct area. </li>
 </ul>
 <h3 id="33-other-data">3.3 Other data<a class="headerlink" href="#33-other-data" title="Permanent link">&para;</a></h3>
 <p>In addition, the canopy height models (CHM) derived from LiDAR acquisitions have been used to mask pixels corresponding to the vegetation of overhanging trees as illustrated in Figure 5. </p>
@@ -703,7 +732,7 @@ Figure 5: Illustration of an overhanging tree above a garage.
 
 <p>For the study area in Zürich, the available <a href="https://data.stadt-zuerich.ch/dataset/geo_baumhoehen_2022__chm_aus_lidar_">WMS of the CHM</a> produced by the City of Zürich with a LiDAR acquisition of 2022 has been converted to a binary raster and vectorized. For the canton of Geneva, the already <a href="https://ge.ch/sitg/sitg_catalog/sitg_donnees?keyword=&amp;geodataid=1884&amp;topic=tous&amp;service=tous&amp;datatype=tous&amp;distribution=tous&amp;sort=auto">vectorized layer of the CHM</a> from LiDAR acquisition of 2019 has been used. </p>
 <h2 id="4-method">4 Method<a class="headerlink" href="#4-method" title="Permanent link">&para;</a></h2>
-<p>The Method chapter consists of two main parts: binary classification by machine learning and multiclass classification by deep learning.</p>
+<p>The Method chapter consists of two main parts: classification by machine learning and by deep learning.</p>
 <h3 id="41-evaluation-metrics">4.1 Evaluation metrics<a class="headerlink" href="#41-evaluation-metrics" title="Permanent link">&para;</a></h3>
 <p>To evaluate the performance of the machine learning algorithms, traditional metrics have been chosen:</p>
 <ul>
@@ -715,11 +744,19 @@ OA = {TP+TN \over P+N}
 \
 \end{align}\]</div>
 <ul>
-<li>Recall of the green class: measures how sensitive the model is to the green roofs. </li>
+<li>Recall of the <em>green</em> class: measures how sensitive the model is to the green roofs. </li>
 </ul>
 <div class="arithmatex">\[\begin{align}
 \
 Recall = {TP \over P}
+\
+\end{align}\]</div>
+<ul>
+<li>Precision: is useful in cases where false positives are more critical than false negatives.</li>
+</ul>
+<div class="arithmatex">\[\begin{align}
+\
+Precision = {TP \over TP + FP}
 \
 \end{align}\]</div>
 <ul>
@@ -733,13 +770,25 @@ Balanced Accuracy={{1 \over C} \sum_{\substack{i=1}}^{C} {TPi \over FN_i+TP_i}}
 \
 \end{align}\]</div>
 <ul>
-<li>F1-score: keeps an eye on the precision. The F1-score overcomes the limitations of overall accuracy in cases of dataset imbalance. </li>
+<li>F1-score: Harmonic mean of precision and recall. The F1-score overcomes the limitations of overall accuracy in cases of dataset imbalance. </li>
 </ul>
 <div class="arithmatex">\[\begin{align}
 \
-F1{-}score = {TP \over TP+0.5*(FP+FN)}
+F1 = {TP \over TP+0.5*(FP+FN)} = 2 {precision \cdot recall \over precision + recall}
 \
 \end{align}\]</div>
+<ul>
+<li>F2-score: F1-score with emphasis on the recall.</li>
+</ul>
+<div class="arithmatex">\[
+F2 = \frac{5}{\frac{4}{precision} + \frac{1}{recall}}
+\]</div>
+<ul>
+<li>F0.5-score: F1-score with emphasis on the precision.</li>
+</ul>
+<div class="arithmatex">\[
+F0.5 = 1.25\frac{precision \cdot recall}{0.25\cdot precision + recall}
+\]</div>
 <p>In the three aforementioned equations, the variables used are: </p>
 <ul>
 <li>TP are true positives, green roofs correctly predicted as such</li>
@@ -749,10 +798,47 @@ F1{-}score = {TP \over TP+0.5*(FP+FN)}
 <li>P are the green roofs in the ground truth</li>
 <li>N are the bare roofs in the ground truth</li>
 </ul>
-<p>Each metric ranges between 0 and 1, respectively the lowest and the highest values to be measured.</p>
-<h3 id="42-classification-by-machine-learning">4.2 Classification by machine learning<a class="headerlink" href="#42-classification-by-machine-learning" title="Permanent link">&para;</a></h3>
+<p>That works in the binary case. In the multiclass case, however, each class (P) is evaluated against all others (N). Each metric ranges between 0 and 1, respectively the lowest and the highest values to be measured.</p>
+<h3 id="42-uncertainty-and-calibration-metrics">4.2 Uncertainty and calibration metrics<a class="headerlink" href="#42-uncertainty-and-calibration-metrics" title="Permanent link">&para;</a></h3>
+<p>In combination with evaluation metrics, uncertainty and calibration metrics allow to account for overconfidence in predictions. In particular, the neural networks are known to be prone to overconfidence in their predictions. </p>
+<p>In order to monitor the behaviour of the models during the training, several uncertainty and calibration metrics have been implemented:</p>
+<ul>
+<li>The <a href="https://en.wikipedia.org/wiki/Brier_score"><strong><em>Brier score</em></strong></a>: measures the mean squared difference between predicted probabilities and actual outcomes. Common in classification tasks for evaluating probabilistic predictions.</li>
+</ul>
+<div class="arithmatex">\[
+Brier Score = \frac{1}{N}\sum_{i=1}^N\sum_{k=1}^K( p_{i,k} - y_{i,k})^2 \quad,\,\, Brier Score \in[0, 1]
+\]</div>
+<p><span class="arithmatex">\(p_{i,k}\)</span> = predicted probability for class <span class="arithmatex">\(k\)</span> for instance <span class="arithmatex">\(i\)</span>, <span class="arithmatex">\(y_{i,k}\)</span> = ground truth (1 if class <span class="arithmatex">\(k\)</span> is correct, else 0), <span class="arithmatex">\(N\)</span> = number of samples, <span class="arithmatex">\(K\)</span> = number of classes.  </p>
+<ul>
+<li>The <a href="https://towardsdatascience.com/expected-calibration-error-ece-a-step-by-step-visual-explanation-with-python-code-c3e9aa12937d/"><strong><em>Expected Calibration Error (ECE)</em></strong></a>: measures how well predicted probabilities align with observed frequencies and indicates how well the predicted confidence matches the true likelihood of correctness.</li>
+</ul>
+<div class="arithmatex">\[
+ECE = \sum_{b=1}^B\frac{|S_b|}{N}|acc(S_b) - conf(S_b)|\quad,\,\, ECE \in[0, 1]
+\]</div>
+<p><span class="arithmatex">\(S_b\)</span> = set of samples in bin <span class="arithmatex">\(b\)</span> ; <span class="arithmatex">\(acc(S_b)\)</span> = accuracy in <span class="arithmatex">\(b\)</span> ; <span class="arithmatex">\(conf(S_b)\)</span> = mean confidence in <span class="arithmatex">\(b\)</span> ; <span class="arithmatex">\(N\)</span> = total number of samples. </p>
+<ul>
+<li>The <a href="https://en.wikipedia.org/wiki/Entropy_(information_theory)"><strong><em>Average Prediction Entropy (APE)</em></strong></a>: measures the average uncertainty of predictions based on the entropy of the predicted probability distribution. Higher entropy means greater uncertainty in predictions.</li>
+</ul>
+<div class="arithmatex">\[
+H(\hat{y}) = - \frac{1}{N}\sum_{i=1}^N\sum_{k=1}^Kp_{i,k}\,log(p_{i,k})\quad,\,\, H \in[0, log(K)]
+\]</div>
+<p><span class="arithmatex">\(p_{i, k}\)</span> = predicted probability for class <span class="arithmatex">\(k\)</span> for instance <span class="arithmatex">\(i\)</span> ; <span class="arithmatex">\(N\)</span> = number of samples ; <span class="arithmatex">\(K\)</span> = number of classes </p>
+<ul>
+<li>The <a href="https://towardsdatascience.com/cross-entropy-negative-log-likelihood-and-all-that-jazz-47a95bd2e81/"><strong><em>Negative Log-Likelihood (NLL)</em></strong></a>: measures the log-loss of predicted probabilities relative to the true labels. It quantifies how well the probabilistic predictions match the ground truth. Standard metric in probabilistic classification models, particularly in deep learning. Higher values indicate the model is both accurate and confident in its predictions.</li>
+</ul>
+<div class="arithmatex">\[
+NLL = -\frac{1}{N}\sum_{i=1}^N log(p_{i,y_i})\quad,\,\, NLL \in[0, \infty [
+\]</div>
+<p><span class="arithmatex">\(p_{i,y_i}\)</span> = predicted probability for correct class <span class="arithmatex">\(y_i\)</span> for sample <span class="arithmatex">\(i\)</span> ; <span class="arithmatex">\(N\)</span> = number of samples.  </p>
+<ul>
+<li>The <strong><em>Uncertainty-Aware Accuracy (UAA)</em></strong>: is an extension of accuracy that takes into account the model’s uncertainty by considering confident and correct predictions.</li>
+</ul>
+<div class="arithmatex">\[
+UAA = \frac{\text{Correct prediction with confidence &gt; threshold}}{\text{Total predictions}}\quad,\,\, UAA \in[0, 1]
+\]</div>
+<h3 id="43-classification-by-machine-learning">4.3 Classification by machine learning<a class="headerlink" href="#43-classification-by-machine-learning" title="Permanent link">&para;</a></h3>
 <p>Machine learning algorithms make use of descriptors to learns characteristics about the classes to predict. In this project, descriptors were derived from the NRGB images. </p>
-<h4 id="421-raster-preparation">4.2.1 Raster preparation<a class="headerlink" href="#421-raster-preparation" title="Permanent link">&para;</a></h4>
+<h4 id="431-raster-preparation">4.3.1 Raster preparation<a class="headerlink" href="#431-raster-preparation" title="Permanent link">&para;</a></h4>
 <p>A first step was to compute the normalized difference vegetation index (NDVI) and luminosity rasters corresponding to the images following these equations: </p>
 <div class="arithmatex">\[\begin{align}
 \
@@ -765,9 +851,9 @@ Luminosity = {R + G + B},
 \
 \end{align}\]</div>
 <p>where R, G, B and NIR stand respectively for the pixels of the red, green, blue and near infrared (NIR) bands. The resulting NDVI index is between -1 and 1, whereas the luminosity range depends on the image format: 0 to 765 in 8-bit, 0 to 196605 in 16-bit.</p>
-<h4 id="422-overhanging-trees">4.2.2 Overhanging trees<a class="headerlink" href="#422-overhanging-trees" title="Permanent link">&para;</a></h4>
-<p>As mentioned in <a href="#33-other-data">Section 3.3</a>, it was observed on the images that some big trees besides buildings may cover the roofs and erroneously lead to detection of green roofs. The mask derived from the CHM was buffered by 1  m to exclude all misleading pixels.</p>
-<h4 id="423-statistics-per-roof">4.2.3 Statistics per roof<a class="headerlink" href="#423-statistics-per-roof" title="Permanent link">&para;</a></h4>
+<h4 id="432-overhanging-trees">4.3.2 Overhanging trees<a class="headerlink" href="#432-overhanging-trees" title="Permanent link">&para;</a></h4>
+<p>As mentioned in <a href="#33-other-data">Section 3.3</a>, it was observed on the images that some big trees beside buildings may cover the roofs and erroneously lead to detection of green roofs. The mask derived from the CHM was buffered by 1 m to exclude misleading pixels.</p>
+<h4 id="433-statistics-per-roof">4.3.3 Statistics per roof<a class="headerlink" href="#433-statistics-per-roof" title="Permanent link">&para;</a></h4>
 <p>After having filtered the bands for overhanging vegetation, computation of the following statistics of pixels per roofs were performed on the red, green, blue, NIR, luminosity and NDVI bands:</p>
 <ul>
 <li>mean</li>
@@ -784,10 +870,7 @@ Luminosity = {R + G + B},
 <li>median = 123</li>
 <li>standard deviation = 43.22</li>
 </ul>
-<p>Furthermore, leaning of the buildings in the image can lead to mismatch between the building in the image and in the land survey. To overcome that, an inner buffer of 1 m was applied to the geometry prior to the statistic computation.</p>
-<!--Furthermore, Figure 3 shows the leaning of the building in the image, leading to mismatch between the building in the image and in the land survey. To overcome that, an inner buffer of 1 m was applied to the geometry prior to the statistic computation. 
--->
-
+<p>Furthermore, Figure 3 shows the leaning of the building in the image, leading to mismatch between the building in the image and in the land survey. To overcome that, an inner buffer of 1 m was applied to the geometry prior to the statistic computation. </p>
 <div align="center" style="font-style: italic">
 <img src="./images/show_stat.jpg" alt="Illustration of statistics per roofs."> <br />
 <i>
@@ -796,10 +879,10 @@ Figure 6: The statistics (min, max, mean, median, standard deviation) of the pix
 </i>
 </div>
 
-<h4 id="423-potential-greenery">4.2.3 Potential greenery<a class="headerlink" href="#423-potential-greenery" title="Permanent link">&para;</a></h4>
+<h4 id="434-potential-greenery">4.3.4 Potential greenery<a class="headerlink" href="#434-potential-greenery" title="Permanent link">&para;</a></h4>
 <p>On Figure 6, one can see that the building footprint encompasses not only the roof but also a courtyard and that, on the roof, infrastructures like solar panels are also considered in the statistics. Therefore, the extensive roof in Figure 6 is likely to show different statistics than an extensive roof without courtyard and/or without solar panels. To overcome that and focus primarily on the vegetated area, the potential greenery area on each roof was extracted based on NDVI and luminosity threshold values, and then vectorized. The term "potential greenery" is chosen because in the extracted areas, pixels corresponding to bare materials may still be found.</p>
 <p>To chose the threshold values to apply on the NDVI and luminosity rasters, one can load the rasters in a visualizer and evaluate the effect of thresholds via the styling of the layer. </p>
-<p>This potential greenery vector layer offers an alternative layer to the one of the building footprint from the land survey. For instance, Figure 7 shows the potential greenery extracted from the roof. The <a href="#423-statistics-per-roof">statistics per roof</a> can be recomputed for this layer.</p>
+<p>This potential greenery vector layer offers an alternative layer to the one of the building footprint from the land survey. For instance, Figure 7 shows the potential greenery extracted from the roof. The <a href="#433-statistics-per-roof">statistics per roof</a> can be recomputed for this layer.</p>
 <div align="center" style="font-style: italic">
 <img src="./images/show_potential_greenery.jpg" alt="Illustration of extracted potential greenery."> <br />
 <i>
@@ -808,8 +891,8 @@ Figure 7: Extracted potential greenery for NDVI values greater than 0 and for lu
 </i>
 </div>
 
-<h4 id="423-training-and-testing">4.2.3 Training and testing<a class="headerlink" href="#423-training-and-testing" title="Permanent link">&para;</a></h4>
-<p>The roofs in the ground truth were randomly split into a training set (70 %) and a test set (30 %) following the original multiclass distribution. Two machine learning algorithms were trained with the <em>scikit-learn</em> <sup id="fnref:11"><a class="footnote-ref" href="#fn:11">11</a></sup> library in Python, a random forest (RF) and a logistic regression (LR). The hyperparameters were optimized by means of a grid search strategy during training:</p>
+<h4 id="435-training-and-testing">4.3.5 Training and testing<a class="headerlink" href="#435-training-and-testing" title="Permanent link">&para;</a></h4>
+<p>The roofs in the ground truth were randomly split into a training set (70%) and a test set (30%) following the original multiclass distribution. Two machine learning algorithms were trained with the <em>scikit-learn</em> <sup id="fnref:11"><a class="footnote-ref" href="#fn:11">11</a></sup> library in Python, a random forest (RF) and a logistic regression (LR). The hyperparameters were optimized by means of a grid search strategy during training:</p>
 <ul>
 <li>
 <p>random forest:</p>
@@ -828,20 +911,136 @@ Figure 7: Extracted potential greenery for NDVI values greater than 0 and for lu
 </ul>
 </li>
 </ul>
-<p>The random state is fixed before training the algorithms. The classes are weighted inversely proportional to the class frequencies in the input data.</p>
+<p>The random state is fixed before training the algorithms. Classes are weighted in inverse proportion to their frequency in the input data.</p>
 <p>When optimizing the training with the <em>GridSearchCV</em> function from the Python library <em>scikit-learn</em>, 5-fold cross-validation is performed and evaluated using balanced accuracy. </p>
 <p>The trained models are evaluated on the test set, and compared with the balanced accuracy, recall and F1-score. For instance, the beneficiaries can opt for the model with less green rooftops missed (high recall) or the model with less errors (high F1-score). </p>
 <p>The importance of the descriptors has been evaluated with the <em>permutation_importance</em> function of the <em>scikit-learn</em> Python library. It shuffles values for each descriptor and measures the change in the model performance for the given scorer to use. In the present case, the balanced accuracy was used. Afterwards, an ablation study of the descriptors is carried out to observe the effective contribution of different sets of descriptors to the model. </p>
 <p>The models were optimized once for the binary problem: green or not; once for the multiclass problem: is the roof bare, a green terrace, a spontaneous green roof, an extensive green roof, a lawn or an intensive green roof.</p>
 <p>Finally, the best set of descriptors are used to train a model on the SWISSIMAGE RS orthorectified on the building footprints of the TLM and compare the metrics with those obtained on the original images. </p>
-<h3 id="43-multiclass-classification-by-deep-learning">4.3 Multiclass classification by deep learning<a class="headerlink" href="#43-multiclass-classification-by-deep-learning" title="Permanent link">&para;</a></h3>
-<p>[Currently in development]</p>
+<h3 id="44-classification-by-deep-learning">4.4 Classification by deep learning<a class="headerlink" href="#44-classification-by-deep-learning" title="Permanent link">&para;</a></h3>
+<p>Since the traditional machine learning approach gave non-satisfying results for the multiclass classification as documented in <a href="#516-multiclass-classification-insights">Section 5.1.6</a>, a deep learning (DL) approach was address which could also benefits the binary results.  </p>
+<p>In the following, the implemented data preprocessing and DL model are introduced. </p>
+<h4 id="441-preprocessing">4.4.1 Preprocessing<a class="headerlink" href="#441-preprocessing" title="Permanent link">&para;</a></h4>
+<p>The preprocessing aims at transforming the raw data into a well-structured dataset, ready for use by the model.</p>
+<p>The sources used to create the dataset are:</p>
+<ul>
+<li>rasters from the <a href="#31-aerial-imagery">aerial measurings</a> in the R, G, B, NIR bands.</li>
+<li>building's footprints as vectors.</li>
+</ul>
+<p>To obtain a ready-to-use dataset, the bounding box of each polygon is clipped to the rasters in order to get a single image sample per roof which is then saved in separated folder by vegetation class.</p>
+<p>Afterwards, multiple processes are applied on the samples to prepare them for the model :</p>
+<ul>
+<li>Cropping: The sample is cropped on the geometry of the building's footprint.</li>
+<li>NDVI layer: The NDVI is computed and added as a fifth layer.</li>
+<li>Size normalization: The sample's sizes are homogenized to a predefined standard size (e.g. 256x256, 512x512, 1024x1024, ...) using one of the two methods described in Section <a href="#444-image-resizing-type">4.4.4</a>.</li>
+</ul>
+<p>Moreover, for the image dataset <em>SWISSIMAGE RS orthorectified on TLM</em>, an additional preprocessing step is performed. As shown in Figure 8, the distribution of measurements in the 16-bit range is highly unbalanced. Indeed, in the graphs on the left part of the figure, one has zoomed on the first tenth of the range, where most of the information is. Most of the 16-bit range is used very little, if at all. This could cause troubles to the model to catch small differences when the values are projected from the range 0-2<sup>16</sup> to the range 0-1.</p>
+<div align="center" style="font-style: italic">
+<img src="./images/DL_tlm_range_values.png" alt="TLM range values"> <br />
+<i>
+Figure 8: Distribution of values on SWISSIMAGE RS orthorectified on TLM. In the graphs on the left, one can see that most of the information is on the first tenth of the 16-bit range. 
+</i>
+</div>
+
+<p>Multiple methods are compared to narrow down the range of values:</p>
+<ul>
+<li><strong>clip</strong>: clipping all values before 0 and after an arbitrary threshold, 10'000. </li>
+<li><strong>norm</strong>: normalizing the values between 0 and an arbitrary threshold, 10'000. </li>
+<li><strong>lognorm</strong>: normalizing the log of the values between 0 and the log of an arbitrary threshold, 10'000. </li>
+<li><strong>selfmaxnorm</strong>: normalizing each image with respect to its max value.</li>
+</ul>
+<h4 id="442-data-augmentation">4.4.2 Data augmentation<a class="headerlink" href="#442-data-augmentation" title="Permanent link">&para;</a></h4>
+<p>As seen in Table 1 from <a href="#32-ground-truth">Section 3.2</a>, the representation of the different classes is extremely unbalanced. This is a common difficulty in machine learning since this may cause a model to pay extra attention to an over-represented class. To avoid such a problem, different techniques exist and one of them is to artificially tweak copies of the samples of under-represented classes. Here are the ones used in this project:</p>
+<ul>
+<li>
+<p><strong>Samples rotation</strong>: The most common way of doing data augmentation on images is to rotate them. Since the samples are resized to be squared images, the least represented classes (all but <em>bare</em>) are rotated 3 times by angles of 90°, 180° and 270°. This allows the multiplication of those class sizes by 4.</p>
+</li>
+<li>
+<p><strong>Samples flipping</strong>: Another geometric transformation is flipping along vertical and horizontal axis. By doing so, and combining it with the rotation, it allows to end up with up to 16 times the number of initial samples.</p>
+</li>
+</ul>
+<h4 id="443-model">4.4.3 Model<a class="headerlink" href="#443-model" title="Permanent link">&para;</a></h4>
+<p>The choice for the model was based on the well-known <em>DeepLabV3</em> <sup id="fnref:12"><a class="footnote-ref" href="#fn:12">12</a></sup>, reusing its ASPP (Atrous Spatial Pyramid Pooling) module and processing its output signal in order to achieve classification instead of segmentation.
+The pipeline, shown in Figure 9, is made of 3 blocks: the <strong>backbone</strong>, the <strong>ASPP</strong> and the <strong>RMLP</strong> (called <em>Residual block</em> in the diagram)</p>
+<div align="center" style="font-style: italic">
+<img src="./images/DL_model_architecture.jpg" alt="architecture of NN model"> <br />
+<i>
+Figure 9: Architecture of the multiclass deep learning model implemented to process images, made of 3 blocks: the backbone, the ASPP and the RMLP.
+</i>
+</div>
+
+<h5 id="4431-the-backbone">4.4.3.1 The backbone<a class="headerlink" href="#4431-the-backbone" title="Permanent link">&para;</a></h5>
+<p>The backbone is made of a series of levels, each of them constituted of a subseries of blocks. Each of those blocks is made of a convolutional layer and a batch normalization layer. After the last block of a level, a max-pool layer is applied in order to reduce the signal's cardinality and augment its depth. Doing so, each level will specialize in recognition of patterns with increasing level of complexity.<br />
+When it comes to fine-tuning the backbone, this part of the model has been designed so that the number of levels and the number of layers within each level are customizable.<br />
+In order to find the best configuration, the different combinations of the following parameters were tested:</p>
+<ul>
+<li>number of levels: 2, 3</li>
+<li>number of layers: 1, 2, 3</li>
+</ul>
+<h5 id="4432-the-aspp-block">4.4.3.2 The ASPP block<a class="headerlink" href="#4432-the-aspp-block" title="Permanent link">&para;</a></h5>
+<p>The ASPP block uses dilated convolution layers in parallel before concatenating them into a single signal. This method allows to enlarge the receptive field of the model while keeping it light.<br />
+The dilating factor of each convolution layer is scalable in order to adapt the ASPP block to the input signal's size.<br />
+In order to fine the best configuration the following sets of dilating factors were compared: [4, 8, 12], [8, 16, 32], [12, 24, 36], [4, 16, 36] and [16, 32, 48].</p>
+<h5 id="4433-the-rmlp">4.4.3.3 The RMLP<a class="headerlink" href="#4433-the-rmlp" title="Permanent link">&para;</a></h5>
+<p>In order to transform the output signal of the ASPP block into a prediction between the different classes, a <strong>Residual Multi-Layer Perceptron</strong> is then set.<br />
+This block's aim is to transform the multi-dimensional signal into a <em>vector-like</em> signal that is reduced layer from layer until a vector of the size of the number of classes is reached. Finally, this layer goes through a softmax function which produces a prediction for each class.</p>
+<h5 id="4434-confidence-analysis">4.4.3.4 Confidence analysis<a class="headerlink" href="#4434-confidence-analysis" title="Permanent link">&para;</a></h5>
+<p>In order to understand better the behavior of the model regarding its predictions, the analysis of the confidence is done. Indeed, an overconfident model tends to be prone to high noise sensitivity and will generalize poorly on slightly different data. Moreover, it makes it difficult to use techniques based on confidence like threshold tuning, here one could adjust the cutoff value of the classification to optimize performance metrics like precision, recall, or F1-score.</p>
+<p>For all those reasons, it might be interesting to implement mechanics, like label smoothing, that help the model having less drastic predictions.</p>
+<h5 id="4434-label-smoothing">4.4.3.4 Label smoothing<a class="headerlink" href="#4434-label-smoothing" title="Permanent link">&para;</a></h5>
+<p>This method is implemented in the model to help having less confidence in predictions by modifying slightly the labels during the training phase. Instead of providing a one-hot vector with 1.0 to the right class and 0.0 to all the others, it will twist slightly this vector by removing a small value from the 1.0 and adding a small value to all the others.</p>
+<p>Typically, the label vector will be replaced by the following:</p>
+<div class="arithmatex">\[
+y_{smooth} = (1 - \epsilon)\cdot y + \frac{\epsilon}{C}\quad,\,\,
+\]</div>
+<p>where <span class="arithmatex">\(C\)</span> is the number of classes and <span class="arithmatex">\(y\)</span> is the sample label.</p>
+<p>The model is trained with a label smoothing of <span class="arithmatex">\(\epsilon=10\%\)</span>.</p>
+<h4 id="444-image-resizing-type">4.4.4 Image resizing type<a class="headerlink" href="#444-image-resizing-type" title="Permanent link">&para;</a></h4>
+<p>A restriction of the model described is that the input samples need to have a normalized shape. Therefore, the images need to be resized to a common value. In order to do so, two techniques were investigated: </p>
+<ul>
+<li><strong>Reshaping</strong>: The reshaping mode uses the function <code>transform.resize</code> of the library <code>scikit-image</code>. It keeps the relative proportion of the image to the image size. However, this method looses the original proportion.</li>
+<li><strong>Padding</strong>: The padding mode keeps the original image's size if it is smaller than the targeted one and resizes it if it is bigger. The image is then placed at the center of the final image with a black padding to reach the predefined sample's size. Doing so, the proportions of the original image are kept but, as it can be seen in Figure 10, the small roofs information is contained on a small fraction of the final sample.</li>
+</ul>
+<div align="center" style="font-style: italic">
+<img src="./images/DL_resisizing_methods.png" alt="resizing methods"> <br />
+<i>
+Figure 10: Comparison of the two different methods of resizing images into the predefined samples shape.
+</i>
+</div>
+
+<h4 id="445-threshold-on-sample-size">4.4.5 Threshold on sample size<a class="headerlink" href="#445-threshold-on-sample-size" title="Permanent link">&para;</a></h4>
+<p>Giving the fact that the smallest samples hold less information and look the most pixelize when resized, the following hypothesis was tested: </p>
+<p><center>
+<i>"Images under a certain threshold will produce more errors"</i>
+</center></p>
+<p>In order to do so, a threshold on the area (in pixels) of the roofs was set. Meaning that, in the preprocessing, all images with area smaller than the threshold were dismissed and no sample was made from them.</p>
+<h4 id="446-binary-classification-using-deep-learning-solution">4.4.6 Binary classification using deep learning solution<a class="headerlink" href="#446-binary-classification-using-deep-learning-solution" title="Permanent link">&para;</a></h4>
+<p>In addition to the multiclass classification, the architecture was tested on the binary classification task to be compared to the ML method. In order to do so, small modifications were done on the structure of the model itself, as well as on the preprocessing pipeline. Indeed, the final prediction is made by a softmax function, which is not ideal for binary classification. Hence a flag was added to the model in order to make this final prediction using a sigmoid function if the model is in binary mode.</p>
+<p>Regarding, the preprocessing, only the mapping of the input labels to the correct categories has to be changed.  </p>
+<h4 id="447-multi-modal-model">4.4.7 Multi-modal model<a class="headerlink" href="#447-multi-modal-model" title="Permanent link">&para;</a></h4>
+<p>The current model focuses solely on spatial information and could benefit of other types of data. An attempt was made to modify the pipeline so that it could be fed on two different types of features: the multi-band images, plus the global statistics for each band, in the form of a vector of size 30 (same features used with the machine learning solution, see <a href="#433-statistics-per-roof">Section 4.3.3</a>).</p>
+<p>Such model dataset is called multi-modal and the corresponding architecture of the model is shown in Figure 11.</p>
+<p>However, the project encountered issues that could not be resolved during the allowed time. Hence, the decision was made to keep it on a <a href="https://github.com/swiss-territorial-data-lab/proj-vegroofs-DL/tree/multi-modal-model">side branch on GitHub</a> for whom would be interested in completing it.</p>
+<div align="center" style="font-style: italic">
+<img src="./images/DL_model_architecture_multimodal.png" alt="multimodal architecture"> <br />
+<i>
+Figure 11: Architecture of the multi-modal model implemented to process images and global statistics.
+</i>
+</div>
+
+<h4 id="448-experiments">4.4.8 Experiments<a class="headerlink" href="#448-experiments" title="Permanent link">&para;</a></h4>
+<p>Finally, the sequence of planned experiments should allow to find the best model for the multiclass classifcation of green roofs and be reused to train a binary classification. </p>
+<p>The best data sources between <em>SWISSMAGE RS 8-bit</em> and <em>SWISSIMAGE RS orthorectified on the TLM</em> is chosen after training of the basic model. Similarly, a study on the sample size is lead to fix it before finetuning. </p>
+<p>The strategy of label smoothing is tested on top, before finetuning the model parameters: number of levels, number of layers, and dilating factor of ASPP module. </p>
+<p>The best model is evaluated according to the confusion matrix, the metrics, the training evolution, and the uncertainty and calibration measures. </p>
+<p>Furthermore, the best configuration is also trained for binary classification.</p>
+<p>In order to make possible the inference of new data with a trained model, a small pipeline was created and the preprocessing and dataset scripts were modified. </p>
 <h2 id="5-results-and-discussion">5 Results and discussion<a class="headerlink" href="#5-results-and-discussion" title="Permanent link">&para;</a></h2>
-<p>Results regarding the binary classification by machine learning and the multiclass classification by deep learning are presented and discussed directly.</p>
+<p>Results regarding the binary classification by machine learning and the classifications by deep learning are presented and discussed directly.</p>
 <h3 id="51-binary-classification-by-machine-learning">5.1 Binary classification by machine learning<a class="headerlink" href="#51-binary-classification-by-machine-learning" title="Permanent link">&para;</a></h3>
 <p>Before presenting the results obtained by machine learning, the intermediate results from the data preprocessing steps are shown. </p>
 <h4 id="511-data-preprocessing">5.1.1 Data preprocessing<a class="headerlink" href="#511-data-preprocessing" title="Permanent link">&para;</a></h4>
-<p>Table 2 summarizes the composition of the GT after the preprocessing steps: inner buffer of 1 m and masking with the CHM. The ratios between the classes remain in the same order of magnitude as in the original dataset. It is also worth noting that the inner buffer of 1 m leads to exclusion of 65 roofs narrower than 2 m, which are mainly small bare surfaces of tiny built parts attached to buildings or garden sheds. 95 more roofs are excluded by the mask for the overhanging vegetation. </p>
+<p>Table 2 summarizes the composition of the GT after the preprocessing steps: inner buffering of 1 m and masking with the CHM. The ratios between the classes remain in the same order of magnitude as in the original dataset. It is also worth noting that the inner buffer of 1 m leads to exclusion of 65 roofs narrower than 2 m, which are mainly small bare surfaces of tiny built parts attached to buildings or garden sheds. 95 more roofs are excluded by the mask for the overhanging vegetation. </p>
 <p><center></p>
 <p><i>Table 2: Composition of the ground truth after preprocessing steps. </i></p>
 <table>
@@ -849,8 +1048,8 @@ Figure 7: Extracted potential greenery for NDVI values greater than 0 and for lu
 <tr>
 <th>Class</th>
 <th>GT original</th>
-<th>GT after inner buffer of 1 m</th>
-<th>GT after inner buffer of 1 m <br />and after masking <br />with the CHM</th>
+<th>GT after inner <br />buffering of 1 m</th>
+<th>GT after inner buffering <br />of 1 m and after masking <br />with the CHM</th>
 </tr>
 </thead>
 <tbody>
@@ -900,15 +1099,15 @@ Figure 7: Extracted potential greenery for NDVI values greater than 0 and for lu
 </table>
 <p></center></p>
 <p>Furthermore, it appears that the mask derived from the CHM was not excluding all the pixels corresponding to overhanging vegetation. Therefore, an additional subset of bare roofs with mean NDVI value greater than 0.05 has been excluded from the dataset. 43 bare roofs were concerned. </p>
-<p>With this new version of the ground truth, the statistics on the red, green, blue, NIR, NDVI and luminosity bands were computed per roof. The results for the NDVI are given in Figure 8. One can observe, on the boxplot of the NDVI means, that the interquartile's range of  the classes of the classes <em>bare (b)</em> and <em>terraces (t)</em> are largely overlapping. That is also the case between the <em>terraces</em> and <em>spontaneous (s)</em> classes, and between <em>spontaneous</em> and <em>extensive (e)</em> roofs. Furthermore, the <em>intensive (i)</em> class shows a wide interquartile range which is overlapping with those of the three aforementioned classes and <em>lawn (l)</em>. Similar observations can be made about the boxplots of the means. The distribution of the minimum and maximum pixel values per roof per class shows also that similar values are to be find between classes, tough the distribution for the classes <em>bare</em>, <em>spontaneous</em> and <em>extensive</em> have a lower interquartile range than the others. Finally, from the distributions of the standard deviation, two groups are distinguishable: high standard deviations for the <em>terraces</em>, <em>lawn</em> and <em>intensive</em> classes; low ones for the <em>bare</em>, <em>spontaneous</em> and <em>extensive</em> classes. The former roofs have often a mix of bare materials and vegetation in a good health state; whereas the latter are often homogeneously covered and the spontaneous and extensive vegetation may be weak. </p>
+<p>With this new version of the ground truth, the statistics on the red, green, blue, NIR, NDVI and luminosity bands were computed per roof. The results for the NDVI are given in Figure 12. One can observe, on the boxplot of the NDVI means, that the interquartile's range of the classes of the classes <em>bare (b)</em> and <em>terraces (t)</em> are largely overlapping. That is also the case between the <em>terraces</em> and <em>spontaneous (s)</em> classes, and between <em>spontaneous</em> and <em>extensive (e)</em> roofs. Furthermore, the <em>intensive (i)</em> class shows a wide interquartile range which is overlapping with those of the three aforementioned classes and <em>lawn (l)</em>. Similar observations can be made about the boxplots of the means. The distribution of the minimum and maximum pixel values per roof per class shows also that similar values are to be find between classes, tough the distribution for the classes <em>bare</em>, <em>spontaneous</em> and <em>extensive</em> have a lower interquartile range than the others. Finally, from the distributions of the standard deviation, two groups are distinguishable: high standard deviations for the <em>terraces</em>, <em>lawn</em> and <em>intensive</em> classes; low ones for the <em>bare</em>, <em>spontaneous</em> and <em>extensive</em> classes. The former roofs have often a mix of bare materials and vegetation in a good health state; whereas the latter are often homogeneously covered and the spontaneous and extensive vegetation may be weak. </p>
 <div align="center" style="font-style: italic">
 <img src="./images/boxplot_stats_band_ndvi.jpg" alt="Boxplots of NDVI."> <br />
 <i>
-Figure 8: Boxplots of the statistics for the NDVI pixels per roof in the study area per class.
+Figure 12: Boxplots of the statistics for the NDVI pixels per roof in the study area per class.
 </i>
 </div>
 
-<p>In Appendices <a href="#71-boxplots-of-the-statistics-for-the-luminosity-pixels-per-roof-in-the-study-area-per-class">7.1</a>, <a href="#72-boxplots-of-the-statistics-for-the-near-infrared-pixels-per-roof-in-the-study-area-per-class">7.2</a>, <a href="#73-boxplots-of-the-statistics-for-the-red-pixels-per-roof-in-the-study-area-per-class">7.3</a>, <a href="#74-boxplots-of-the-statistics-for-the-green-pixels-per-roof-in-the-study-area-per-class">7.4</a> and <a href="#75-boxplots-of-the-statistics-for-the-blue-pixels-per-roof-in-the-study-area-per-class">7.5</a>, the interested reader can visualize similar boxplots as depicted in Figure 8 respectively for the luminosity, near infrared, red, green and blue bands. A general conclusion is that the descriptors contain information even if overlap is observable between classes. There is the potential of leveraging ML algorithms to learn pattern from these data. </p>
+<p>In Appendices <a href="#71-boxplots-of-the-statistics-for-the-luminosity-pixels-per-roof-in-the-study-area-per-class">7.1</a>, <a href="#72-boxplots-of-the-statistics-for-the-near-infrared-pixels-per-roof-in-the-study-area-per-class">7.2</a>, <a href="#73-boxplots-of-the-statistics-for-the-red-pixels-per-roof-in-the-study-area-per-class">7.3</a>, <a href="#74-boxplots-of-the-statistics-for-the-green-pixels-per-roof-in-the-study-area-per-class">7.4</a> and <a href="#75-boxplots-of-the-statistics-for-the-blue-pixels-per-roof-in-the-study-area-per-class">7.5</a>, the interested reader can visualize similar boxplots as depicted in Figure 12 respectively for the luminosity, near infrared, red, green and blue bands. A general conclusion is that the descriptors contain information even if overlap is observable between classes. There is the potential of leveraging ML algorithms to learn pattern from these data. </p>
 <h4 id="512-parameter-optimization-and-ablation-of-the-descriptors">5.1.2 Parameter optimization and ablation of the descriptors<a class="headerlink" href="#512-parameter-optimization-and-ablation-of-the-descriptors" title="Permanent link">&para;</a></h4>
 <p>The best sets of hyperparameters after optimization of the random forest and logistic regression are given in Tables 3 and 4 for the sets of descriptors tested. </p>
 <p>In Table 3, the best results of the runs made with the random forest were achieved with all the descriptors and with 800 trees grown and 6 descriptors tested at each split. During the optimization phase, the best model for each tested configuration have been kept. The results are given in <a href="#76-results-of-the-parameter-optimization-of-the-random-forest">Appendix 7.6</a>. The evaluation of the models by means of the k-fold validation test indicated that all set of parameters performed similarly: 0.01 of difference in the k-fold mean balanced accuracy. This indicates that the range of parameters to test was suitable to extract information from the data. </p>
@@ -1025,7 +1224,7 @@ Figure 8: Boxplots of the statistics for the NDVI pixels per roof in the study a
 <li>NDVI maximum</li>
 <li>NIR mean</li>
 </ol>
-<p>The rest of the important descriptors are given in <a href="#78-permutation-importance-of-the-random-forest">Appendix 7.8</a>. Indeed, in the ablation study shown in Table 3, the recall goes from 0.69 to 0.65 after removing the descriptors derived from the NDVI pixels (<em>ndvi</em>). It decreases further from 0.67 to 0.60 when removing the descriptors derived from the NIR band. A lot of information is in the NIR band and by extension in the NDVI.</p>
+<p>The rest of the important descriptors are given in <a href="#78-permutation-importance-of-the-random-forest">Appendix 7.8</a>. Indeed, in the ablation study shown in Table 3, the recall goes from 0.69 to 0.65 after removing the descriptors derived from the NDVI pixels (<em>ndvi+lum+nrgb</em> to <em>lum+nrgb</em>). It decreases further from 0.67 to 0.60 when removing the descriptors derived from the NIR band (<em>nrgb</em> to <em>rgb</em>). A lot of information is in the NIR band and by extension in the NDVI.</p>
 <p>Regarding,the logistic regression, the six most important descriptors are: </p>
 <ol>
 <li>luminosity median</li>
@@ -1035,9 +1234,9 @@ Figure 8: Boxplots of the statistics for the NDVI pixels per roof in the study a
 <li>luminosity standard deviation</li>
 <li>median of the green pixels</li>
 </ol>
-<p>The rest of the important descriptors are given in <a href="#79-permutation-importance-of-the-logistic-regression">Appendix 7.9</a>. Those results highlight the fact that the logistic regression learns differently from the data than the random forest. Moreover, in the ablation study in Table 4, there are only 1% of decrease in recall and 3% in F1-score between the full model and the <em>rgb</em> model. These results indicate that the NIR band, while not providing much information for green roofs detection, helps slightly to avoid false positives</p>
-<p>Furthermore, when comparing the recall in Tables 3 and 4, one observes that the LR is more sensitive to the green class than the RF (0.86 vs. 0.69). However, the balanced accuracy, which is the mean of the recall for the bare class and for the green class, indicates that the recall for the bare class in the RF is higher than the one in the LR. </p>
-<p>Therefore, the mean of the probability estimates by LR and of the predicted class probabilities by RF for the green class have been computed to take advantage of both ways of learning from the data. For values higher than 0.5, the corresponding roofs have been considered as green; otherwise, they were assigned to the bare class. The metrics for the RF, LR and combination of both are summarized in Table 5. One can appreciate the stability of the balanced accuracy and the increase of performance for the F1-score; although more green roofs are wrongly classified than by the LR only, the overall classification is getting better. Knowing the imbalance of classes in the reality, this leads to way less errors in the outputs. However, for detection purposes with allocated resources for manual control, the LR model would be more appropriate. </p>
+<p>The rest of the important descriptors are given in <a href="#79-permutation-importance-of-the-logistic-regression">Appendix 7.9</a>. Those results highlight the fact that the logistic regression learns differently from the data than the random forest. Moreover, in the ablation study in Table 4, there are only 1% of decrease in recall and 3% in F1-score between the full model (<em>ndvi+lum+nrgb</em>) and the <em>rgb</em> model. These results indicate that the NIR band, while not providing much information for green roofs detection, helps slightly to avoid false positives</p>
+<p>Furthermore, when comparing the recall in Tables 3 and 4, one observes that the LR is more sensitive to the <em>green</em> class than the RF (0.86 vs 0.69). However, the balanced accuracy, which is the mean of the recall for the <em>bare</em> class and for the <em>green</em> class, indicates that the recall for the <em>bare</em> class in the RF is higher than the one in the LR. </p>
+<p>Therefore, the mean of the probability estimates by LR and of the predicted class probabilities by RF for the <em>green</em> class have been computed to take advantage of both ways of learning from the data. For values higher than 0.5, the corresponding roofs have been considered as green; otherwise, they were assigned to the <em>bare</em> class. The metrics for the RF, LR and combination of both are summarized in Table 5. One can appreciate the stability of the balanced accuracy and the increase of performance for the F1-score; although more green roofs are wrongly classified than by the LR only, the overall classification is getting better. Knowing the imbalance of classes in the reality, this leads to way less errors in the outputs. </p>
 <p><center></p>
 <p><i>Table 5: Metrics obtained for the test set after training with all the statistics per roofs.</i></p>
 <table>
@@ -1118,15 +1317,15 @@ Figure 8: Boxplots of the statistics for the NDVI pixels per roof in the study a
 </table>
 <p></center></p>
 <h4 id="514-results-on-potential-greenery-areas">5.1.4 Results on potential greenery areas<a class="headerlink" href="#514-results-on-potential-greenery-areas" title="Permanent link">&para;</a></h4>
-<p>In a second step, the focus was put on potential greenery areas. The threshold values to apply on the NDVI and luminosity bands have been set  to 0 and 500 respectively after visualizing the rasters in QGIS and masked for these values. An illustration is given in Figure 9. Pixels with a NDVI value smaller than 0 are overlaid with transparent blue and pixel with a luminosity value greater than 500 are overlaid with transparent red. The bright green pixels correspond to the potential vegetation identified. </p>
+<p>In a second step, the focus was put on potential greenery areas. The threshold values to apply on the NDVI and luminosity bands have been set to 0 and 500 respectively after visualizing the rasters in QGIS and masked for these values. An illustration is given in Figure 13. Pixels with a NDVI value smaller than 0 are overlaid with transparent blue and pixel with a luminosity value greater than 500 are overlaid with transparent red. The bright green pixels correspond to the potential vegetation identified. </p>
 <div align="center" style="font-style: italic">
 <img src="./images/green_threshold.jpg" alt="Boxplots of NDVI."> <br />
 <i>
-Figure 9: Visualization of the threshold effect on the NDVI and luminosity rasters. Pixels with a NDVI value smaller than 0 are overlaid with transparent blue and pixel with a luminosity value greater than 500 are overlaid with transparent red. The vibrant green pixels correspond to the potential vegetation.
+Figure 13: Visualization of the threshold effect on the NDVI and luminosity rasters. Pixels with a NDVI value smaller than 0 are overlaid with transparent blue and pixel with a luminosity value greater than 500 are overlaid with transparent red. The vibrant green pixels correspond to the potential vegetation.
 </i>
 </div>
 
-<p>When referring to Figure 8 displaying the boxplots corresponding to the statistics of the NDVI band computed per entire roof, one can observe that a large majority of roofs have at least one pixel with a NDVI value greater than 0. When filtering the surface of the roofs according to NDVI and luminosity to focus on potential vegetated areas, 3189 out of 3624 roofs were indeed still included in the analysis as shown in Table 7.</p>
+<p>When referring to Figure 12 displaying the boxplots corresponding to the statistics of the NDVI band computed per entire roof, one can observe that a large majority of roofs have at least one pixel with a NDVI value greater than 0. When filtering the surface of the roofs according to NDVI and luminosity to focus on potential vegetated areas, 3189 out of 3624 roofs were indeed still included in the analysis as shown in Table 7.</p>
 <p><center></p>
 <p><i>Table 7: Comparison of the composition of the ground truth before and after filtering for the potential greenery area. </i></p>
 <table>
@@ -1184,26 +1383,26 @@ Figure 9: Visualization of the threshold effect on the NDVI and luminosity raste
 </tbody>
 </table>
 <p></center></p>
-<p>Once again, the statistics of the NDVI, luminosity and NRGB pixels were computed per class, but this time, they were computed on the potential greenery. The boxplot of the NDVI mean of the class <em>terraces</em> in Figure 10, with a median around 0.18 instead of -0.18 in the boxplot of the NDVI mean per entire roof (see Figure 8), illustrates that the potential greenery layer allows to focus on the vegetated part of the terraces. Increase is also to be noted in the other classes, but the increase for the <em>terraces</em> is particularly interesting, as the median of the distribution reached those of lawns and intensive roofs; whereas it was similar to the median of the <em>bare</em> class before (see Figure 8). </p>
-<p>The <em>bare</em> class benefits also from the threshold, with a median for the distribution of the NDVI similar to those of the classes <em>spontaneous</em> and <em>extensive</em>. Moreover, Figure 11 shows the boxplots for statistics on luminosity where it can be seen that the medians of luminosity are generally lower on the <em>bare</em> class than the others. This corresponds to the fact that higher NDVI values are mostly to be found on the part of roofs in shadow as highlighted by Figure 9.</p>
+<p>Once again, the statistics of the NDVI, luminosity and NRGB pixels were computed per class, but this time, they were computed on the potential greenery. The boxplot of the NDVI mean of the class <em>terraces</em> in Figure 14, with a median around 0.18 instead of -0.18 in the boxplot of the NDVI mean per entire roof (see Figure 12), illustrates that the potential greenery layer allows to focus on the vegetated part of the terraces. Increase is also to be noted in the other classes, but the increase for the <em>terraces</em> is particularly interesting, as the median of the distribution reached those of lawns and intensive roofs; whereas it was similar to the median of the <em>bare</em> class before (see Figure 12). </p>
+<p>The <em>bare</em> class benefits also from the threshold, with a median for the distribution of the NDVI similar to those of the classes <em>spontaneous</em> and <em>extensive</em>. Moreover, Figure 15 shows the boxplots for statistics on luminosity where it can be seen that the medians of luminosity are generally lower on the <em>bare</em> class than the others. This corresponds to the fact that higher NDVI values are mostly to be found on the part of roofs in shadow as highlighted by Figure 15.</p>
 <div align="center" style="font-style: italic">
 <img src="./images/boxplot_stats_band_ndvi_green.jpg" alt="Boxplots of NDVI."> <br />
 <i>
-Figure 10: Boxplots of the statistics for the NDVI pixels per potential greenery in the study area per class.
+Figure 14: Boxplots of the statistics for the NDVI pixels per potential greenery in the study area per class.
 </i>
 </div>
 
 <div align="center" style="font-style: italic">
 <img src="./images/boxplot_stats_band_lum_green.jpg" alt="Boxplots of luminosity."> <br />
 <i>
-Figure 11: Boxplots of the statistics for the luminosity pixels per potential greenery in the study area per class.
+Figure 15: Boxplots of the statistics for the luminosity pixels per potential greenery in the study area per class.
 </i>
 </div>
 
 <p>The boxplots of statistics on the NRGB bands are given in Appendices <a href="#710-boxplots-of-the-statistics-for-the-near-infrared-pixels-per-potential-greenery-per-class">7.10</a>, <a href="#711-boxplots-of-the-statistics-for-the-red-pixels-per-potential-greenery-per-class">7.11</a>, <a href="#712-boxplots-of-the-statistics-for-the-green-pixels-per-potential-greenery-per-class">7.12</a> and <a href="#713-boxplots-of-the-statistics-for-the-blue-pixels-per-potential-greenery-per-class">7.13</a>.</p>
 <p>Since the statistics showed different characteristics on the potential greenery area than the entire roofs, another optimization was performed on the training based on the potential greenery area. The corresponding optimized parameters and metrics on the test set are shown in Table 8. For the random forest, the best model is reached for 5 features to test at the split and 200 trees to grow. Regarding, the logistic regression, 200 iterations are performed with a penalty coefficient of 1 and the newton-cg solver. 
 Again, the combination of predictions from the RF and the LR is computed and corresponding metrics are also given in Table 8. </p>
-<p>In the last row of Table 8, the combination of the RF and LR on the entire roofs have been trained and evaluated on the same dataset than the potential greenery one. It is worth noting that the model trained with the descriptors computed on the potential greenery surfaces performs better at detecting the green roofs than the models trained with the descriptors computed over the entire roofs (0.87 vs 0.84 of recall), but in overall leads to more bare roofs predicted as green (0.85 against 0.86 of F1-score).</p>
+<p>In the last row of Table 8, the RF and LR on the entire roofs have been trained and evaluated on the same dataset than the potential greenery one, then combined. It is worth noting that the model trained with the descriptors computed on the potential greenery surfaces performs better at detecting the green roofs than the models trained with the descriptors computed over the entire roofs (0.87 vs 0.84 of recall), but in overall leads to more bare roofs predicted as green (0.85 against 0.86 of F1-score).</p>
 <p><center></p>
 <p><i>Table 8: Metrics for the test set for statistics over the potential greenery area.</i></p>
 <table>
@@ -1249,34 +1448,325 @@ Again, the combination of predictions from the RF and the LR is computed and cor
 </table>
 <p></center> </p>
 <h4 id="515-results-and-use">5.1.5 Results and use<a class="headerlink" href="#515-results-and-use" title="Permanent link">&para;</a></h4>
-<p>Result of the best model trained on the entire roofs and on the potential greenery are shown in Figure 12. According to the metrics, the user interested in detecting green roofs should use the combination of RF and LR trained on the potential greenery since this model is more sensitive to green roofs and produces a limited number of wrong predictions (second best F1-score obtained). The geometry of the potential greenery may help to fasten the control when zooming on the roofs, whereas aggregation of the results on the original geometry of roofs delivers a better overview of the situation. </p>
+<p>Result of the best model trained on the entire roofs and on the potential greenery are shown in Figure 16. According to the metrics, the user interested in detecting green roofs should use the combination of RF and LR trained on the potential greenery since this model is more sensitive to green roofs and produces a limited number of wrong predictions (second best F1-score obtained). The geometry of the potential greenery may help to fasten the control when zooming on the roofs, whereas aggregation of the results on the original geometry of roofs delivers a better overview of the situation. </p>
 <div align="center" style="font-style: italic">
 <img src="./images/inference.jpg" alt="Boxplots of luminosity."> <br />
 <i>
-Figure 12: Results on an inference area.
+Figure 16: Results on an inference area.
 </i>
 </div>
 
-<h4 id="514-multiclass-classification-insights">5.1.4 Multiclass classification insights<a class="headerlink" href="#514-multiclass-classification-insights" title="Permanent link">&para;</a></h4>
-<p>Results for the multiclass classification with traditional machine learning were not satisfactory. Confusion between classes indicated that scarce vegetation for terraces, spontaneous and extensive roofs leads to confusion with bare roofs. From these tests, it appears that global statistics of the samples are not sufficient for the task. Hence, a strategy including the spatial structure of the rooftop might be needed (e.g. Deep-learning approach).</p>
+<h4 id="516-multiclass-classification-insights">5.1.6 Multiclass classification insights<a class="headerlink" href="#516-multiclass-classification-insights" title="Permanent link">&para;</a></h4>
+<p>Results for the multiclass classification with traditional machine learning were not satisfactory. Confusion between classes indicated that scarce vegetation for terraces, spontaneous and extensive roofs leads to confusion with bare roofs. From these tests, it appears that global statistics of the samples are not sufficient for the task. Hence, a strategy including the spatial structure of the rooftop might be needed (e.g. deep-learning approach).</p>
 <h3 id="52-multiclass-classification-by-deep-learning">5.2 Multiclass classification by deep learning<a class="headerlink" href="#52-multiclass-classification-by-deep-learning" title="Permanent link">&para;</a></h3>
-<p>[Currently in development]</p>
+<p>As well as with the binary classification by machine learning, the results and discussions regarding the different tests on the deep learning solution are presented in this section.</p>
+<p>Moreover, the beneficiaries of this project labeled more samples for this approach so that the model could generalize on a wider span of cases. Table 10 shows the distribution of the final dataset.</p>
+<p><center>
+<i>
+Table 9: Distribution of the final training set with additional labeled samples from both cantons.
+</i></p>
+<table>
+<thead>
+<tr>
+<th>Class</th>
+<th>Bare</th>
+<th>Terrace</th>
+<th>Spontaneous</th>
+<th>Extensive</th>
+<th>Lawn</th>
+<th>Intensive</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Count [-]</td>
+<td>2756</td>
+<td>259</td>
+<td>344</td>
+<td>672</td>
+<td>93</td>
+<td>100</td>
+</tr>
+<tr>
+<td>Frac [%]</td>
+<td>65.25</td>
+<td>6.13</td>
+<td>8.14</td>
+<td>15.91</td>
+<td>2.20</td>
+<td>2.34</td>
+</tr>
+</tbody>
+</table>
+<p></center></p>
+<p>By comparing Table 9 with <a href="#32-ground-truth">Table 1</a>, it can be seen that the new dataset increased significantly the number of roofs in under-represented classes - in particular in the <em>terrace</em>, <em>spontaneous</em> and <em>extensive</em> classes - and manage to balance a bit better the representation of each class. While this dataset is still very small for such task, those new samples will help greatly the model to catch more of the distinguishing signature on every class.</p>
+<h4 id="521-swissimage-rs-8-bit-vs-swissimage-rs-orthorectified-on-tlm">5.2.1 SWISSIMAGE RS 8-bit vs SWISSIMAGE RS orthorectified on TLM<a class="headerlink" href="#521-swissimage-rs-8-bit-vs-swissimage-rs-orthorectified-on-tlm" title="Permanent link">&para;</a></h4>
+<p>As in the machine learning part, both image datasets at disposal - <a href="#31-aerial-imagery">SWISSIMAGE RS 8-bit and SWISSIMAGE RS orthorectified on TLM</a> - have been alternatively tested in input of the DL model (3 levels of 3 layers and ASPP dilation rates of [4, 8, 12]). The chosen sample's size was 512 px and the resizing type was <em>reshaping</em>.</p>
+<p>After initial tests to narrow down the range of value in the <em>SWISSIMAGE RS orthorectified on TLM</em>, the clipping method quickly shown to be the worst method by far and hence, has been dismissed from the trainings. 
+On Figure 17, are shown the training results on the different normalization techniques, plus a training without any range limitation technique. It can be seen that the best results were reached, regarding almost every metrics, using no range limitation method (<em>none</em>). This shows that the small differences of pixel values in 16-bit were high enough to be caught by the model and not generate numerical artefacts. Hence, the best method was the trivial one, by not altering the values at all before mapping it to the range [0, 1].</p>
+<div align="center" style="font-style: italic">
+<img src="./images/DL_range_norm_modes_results.png" alt="Range norm modes results"> <br />
+<i>
+Figure 17: Results on multiple metrics for different range limitation methods. The threshold for each method was set to 10'000. The best results were reached, regarding almost every metrics, using no range limitation method (none).
+</i>
+</div>
+
+<h5 id="5212-comparison">5.2.1.2 Comparison<a class="headerlink" href="#5212-comparison" title="Permanent link">&para;</a></h5>
+<p>Once the best configuration for <em>SWISSIMAGE RS orthorectified on TLM</em> specifications was found, a comparison was made between this datasets and the <em>SWISSIMAGE 8-bit</em> dataset in order to define which data structure is fitting best the task at hand. As seen in Table 9, the results of both trainings were quite similar, highlighting the fact that both structures are showing enough important information for the model to classify accurately.</p>
+<p><center>
+<i>Table 9: Comparison of results between the SWISSIMAGE 8-bit dataset and the SWISSIMAGE RS orthorectified on TLM dataset with same configuration.</i></p>
+<table>
+<thead>
+<tr>
+<th>Dataset</th>
+<th>OA</th>
+<th>Recall</th>
+<th>F2</th>
+<th>F1</th>
+<th>F0.5</th>
+<th>Precision</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>SWISSIMAGE 8-bit</td>
+<td>0.81</td>
+<td><strong>0.69</strong></td>
+<td><strong>0.62</strong></td>
+<td><strong>0.56</strong></td>
+<td><strong>0.53</strong></td>
+<td>0.53</td>
+</tr>
+<tr>
+<td>SWISSIMAGE RS orthorectified on TLM</td>
+<td><strong>0.82</strong></td>
+<td>0.64</td>
+<td>0.56</td>
+<td>0.53</td>
+<td>0.52</td>
+<td><strong>0.54</strong></td>
+</tr>
+</tbody>
+</table>
+<p></center></p>
+<p>However, the <em>SWISSIMAGE 8-bit</em> dataset shown slightly better results, notably, regarding the F2-score, which is the most relevant metric regarding the needs of this project. For this reason and because it is lighter (encoded in 8-bit) and a more universal datatype, the decision was made to continue this project with only the <em>SWISSIMAGE 8-bit</em> dataset.</p>
+<h4 id="522-sample-size">5.2.2 Sample size<a class="headerlink" href="#522-sample-size" title="Permanent link">&para;</a></h4>
+<p>The sample size is a simple, but very important parameter. </p>
+<p>Figure 18 shows metrics from trainings done with the same configuration and by using different sample sizes. One can observe that all metrics are better for the size 1024 and reach the conclusion that the bigger the samples, the more accurate the model is going to be. However, the size 1024 seems to be the highest reasonable size that can be set because the size 2048 was also tested during this project but was generating too heavy feature maps during the training and the 24 Go VRAM of the graphic card were being saturated even with batches of 2 samples.</p>
+<div align="center" style="font-style: italic">
+<img src="./images/DL_sample_size_results.png" alt="Sample size results."> <br />
+<i>
+Figure 18: Results on multiple metrics for different sample sizes. The bigger the samples, the more accurate the model is.
+</i>
+</div>
+
+<h5 id="5221-threshold-on-sample-size">5.2.2.1 Threshold on sample size<a class="headerlink" href="#5221-threshold-on-sample-size" title="Permanent link">&para;</a></h5>
+<p>Multiple trainings were done with different threshold on the sample size and the results were then compared, as shown in Figure 19.</p>
+<div align="center" style="font-style: italic">
+<img src="./images/DL_sample_size_threshold.png" alt="Sample size threshold results."> <br />
+<i>
+Figure 19: Results on multiple metrics for different sample size thresholds.
+</i>
+</div>
+
+<p>Given the fact that applying the threshold giving the best results, 2000 px, was more or less as efficient as applying no threshold at all, and since the use of such threshold would have dismissed all roofs smaller than 20m^2 (1px=10cm), the logical choice was made to continue without this filter.</p>
+<h4 id="523-confidence-analysis">5.2.3 Confidence analysis<a class="headerlink" href="#523-confidence-analysis" title="Permanent link">&para;</a></h4>
+<p>An interesting output to look at, in addition to the prediction, is the confidence in the prediction. Figure 20 shows the partition of ranges of confidence per class. It can be seen that the model has almost 100% confidence (99%-100%) for more than half of the <em>bare</em> samples. Regarding the other classes, this range is a little less represented but still has more samples in the classes <em>terrace</em>, <em>spontaneous</em> and <em>extensive</em>.</p>
+<div align="center" style="font-style: italic">
+<img src="./images/DL_conf_preds.png" alt="Confidence in predictions"> <br />
+<i>
+Figure 20: Partition of the confidence in predictions for the different classes. The model has almost 100% confidence (99%-100%) for more than half of the bare samples. Regarding the other classes, this range is a less represented, in particular for lawn and intensive classes. 
+</i>
+</div>
+
+<h5 id="5231-label-smoothing">5.2.3.1 Label smoothing<a class="headerlink" href="#5231-label-smoothing" title="Permanent link">&para;</a></h5>
+<p>After adding the label smoothing with <span class="arithmatex">\(\epsilon=10\%\)</span>, the model was retrained and the resulting confidence in prediction can be shown in Figure 21.</p>
+<div align="center" style="font-style: italic">
+<img src="./images/DL_label_smoothing_impact.png" alt="Label smoothing impact"> <br />
+<i>
+Figure 21: Comparison of confidence with and without label smoothing
+</i>
+</div>
+
+<p>The adding of a small smoothing factor <span class="arithmatex">\(\epsilon\)</span> already reduced the number of predictions between 99-100% by 16%. The choice was then made to continue with this parameter. </p>
+<h5 id="524-model-finetuning">5.2.4 Model finetuning<a class="headerlink" href="#524-model-finetuning" title="Permanent link">&para;</a></h5>
+<p>Three parameters of the model have been finetuned; the number of levels and number of layers in the backbone, and the dilation rates in the ASPP module.</p>
+<h5 id="5241-backbone-module">5.2.4.1 Backbone module<a class="headerlink" href="#5241-backbone-module" title="Permanent link">&para;</a></h5>
+<p>In order to find the perfect width and depth of the backbone, 6 different trainings were done tweaking the number of levels and the number of layers. Corresponding F2-scores are shown in Figure 22. On the x-axis are the different tested values for the number of layers (width) and on the y-axis are the different tested values for the number of levels (depth). However, there is not a clear winning configuration. The most plausible explanation is that the model can already do as best as it can with this dataset and a factor that help distinguish those configurations from each other would be to train it on a bigger dataset.<br />
+Regarding the current project, the configuration with 3 levels and 1 layers was chosen since it allows catching complex patterns and holds, in our opinion, a higher potential.</p>
+<div align="center" style="font-style: italic">
+<img src="./images/DL_gridsearch_backbone.png" alt="finetuning backbone"> <br />
+<i>
+Figure 22: Finetuning of the depth and width of the backbone, evaluated on the F2-score. On the x-axis are the different tested values for the number of layers (width) and on the y-axis are the different tested values for the number of levels (depth). All configurations gave relatively similar results. 
+</i>
+</div>
+
+<h5 id="5242-aspp-module">5.2.4.2 ASPP module<a class="headerlink" href="#5242-aspp-module" title="Permanent link">&para;</a></h5>
+<p>Furthermore, Figure 23 shows the results of 5 trainings done with different sets of dilation rates. Even though a wide range of values has been tested, the results stay quite close. The training that provided the best recall, F1-score and F2-score is the one with the smallest set of dilation rates ([4, 8, 12]). Therefore, this is the one kept for the trainings. However, regarding the metrics on the precision-side, other configurations become competitive.</p>
+<div align="center" style="font-style: italic">
+<img src="./images/DL_aspp_atrous_rates.png" alt="ASPP atrous rates"> <br />
+<i>
+Figure 23: Results on multiple metrics for different sets of dilation rates on the ASPP module of the model. The training with the best recall, F1-score and F2-score is the one with the smallest set of dilation rates (\[4, 8, 12\]). However, considering the precision, other configurations become competitive.
+</i>
+</div>
+
+<h4 id="525-best-configuration">5.2.5 Best configuration<a class="headerlink" href="#525-best-configuration" title="Permanent link">&para;</a></h4>
+<p>After finetuning all those degrees of freedom, a <em>final model</em> was trained choosing a configuration that would produce the best possible results while still producing a model not too demanding in terms of setup.</p>
+<!-- Moreover, the beneficiaries of this project labeled more samples for this final training so that the model could generalize on a wider span of cases. Table 10 shows the distribution of the final dataset.
+
+
+<center>
+<i>
+Table 10: Distribution of the final training set with additional labeled samples from both cantons.
+</i>
+
+| Class | Bare | Terrace | Spontaneous | Extensive | Lawn | Intensive |
+| ----- | ---- | ------- | ----------- | --------- | ---- | --------- |
+| Count [-] | 2756 | 259     | 344         | 672       | 93   | 100       |
+| Frac [%] |65.25|6.13|8.14|15.91|2.20|2.34|
+
+</center>
+
+By comparing Table 10 with [Table 1](#32-ground-truth), it can be seen that the new dataset increased significantly the number of roofs in under-represented classes - in particular in the *terrace*, *spontaneous* and *extensive* classes - and manage to balance a bit better the representation of each class. While this dataset is still very small for such task, those new samples will help greatly the model to catch more of the distinguishing signature on every class. -->
+
+<h5 id="5251-configuration">5.2.5.1 Configuration<a class="headerlink" href="#5251-configuration" title="Permanent link">&para;</a></h5>
+<p>The configuration used for the final model is the following:</p>
+<ul>
+<li>Sample size: 1024</li>
+<li>Split Training set / Validation set: 70% / 30%</li>
+<li>Training length: 100 epochs</li>
+<li>label smoothing factor: 0.1</li>
+<li>ASPP atrous rates: [4, 8, 12]</li>
+<li>Backbone - number of levels: 3</li>
+<li>Backbone - number of layers: 1</li>
+</ul>
+<p>The reason for the choice of 100 epochs is that, while the performances of the model on the validation set tend to plateau after 20-30 epochs, some training runs showed slight improvement after 50 epochs.</p>
+<h5 id="5252-confusion-matrix-and-metrics">5.2.5.2 Confusion matrix and metrics<a class="headerlink" href="#5252-confusion-matrix-and-metrics" title="Permanent link">&para;</a></h5>
+<p>On Figure 24 are shown:</p>
+<ul>
+<li>the confusion matrix on the left: showing the production accuracy (row-normalized) of the validation set for each class (representing the recall).</li>
+<li>on the right, the scores regarding different metrics for each class and at a global scale. This last metric is the average of the score for all the classes. Doing so, the data imbalance is not affecting these final scores.</li>
+</ul>
+<div align="center" style="font-style: italic">
+<img src="./images/DL_confusion_matrix_final.png" alt="conf matrix final"> <br />
+<i>
+Figure 24: Confusion matrix and metrics of the final training with optimal configuration.
+</i>
+</div>
+
+<p>The confusion matrix shows results that we considered satisfying considering the relative small size of the dataset with respect to the task at hand.</p>
+<p>However, by keeping the same configuration and just changing the random seed used to fix the way data are shuffled, some important difference in scores can be seen, as illustrated by Table 11. This happens, in particular, in the <em>extensive</em>, <em>lawn</em> and <em>intensive</em> classes. This underlines the fact that the model still has room for improvement in terms of generalization and would benefit from being trained on a bigger labeled dataset.</p>
+<p><center></p>
+<p><i>Table 11: Recall score of each class on a model with same configuration and different shuffling of the dataset.</i></p>
+<table>
+<thead>
+<tr>
+<th>Model</th>
+<th>Bare</th>
+<th>Terrace</th>
+<th>Spontaneous</th>
+<th>Extensive</th>
+<th>Lawn</th>
+<th>Intensive</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>#1</td>
+<td>0.91</td>
+<td>0.77</td>
+<td>0.63</td>
+<td>0.78</td>
+<td>0.91</td>
+<td>0.55</td>
+</tr>
+<tr>
+<td>#2</td>
+<td>0.87</td>
+<td>0.77</td>
+<td>0.66</td>
+<td>0.69</td>
+<td>0.77</td>
+<td>0.36</td>
+</tr>
+</tbody>
+</table>
+<p></center></p>
+<h5 id="5253-training-evolution">5.2.5.3 Training evolution<a class="headerlink" href="#5253-training-evolution" title="Permanent link">&para;</a></h5>
+<p>Figure 25 shows the evolution of the training. The evolution of the loss is particularly interesting to focus on. Both training and validation losses start by dropping and then stay more or less constant. This indicates that the model is not able to overfit on the training set. An explanation to this is the use of batch normalization at many places in the model which is known to help generalizing and to avoid overfitting of the model.</p>
+<div align="center" style="font-style: italic">
+<img src="./images/DL_acc_loss_final.png" alt="Training evolution final"> <br />
+<i>
+Figure 25: Evolution of the loss and accuracy during the training of the final model with optimal configuration. The evolution of the loss, during both training and validation, starts by dropping and then stay more or less constant. This indicates that the model is not able to overfit on the training set.
+</i>
+</div>
+
+<h5 id="5254-precision-and-recall-evolution">5.2.5.4 Precision and recall evolution<a class="headerlink" href="#5254-precision-and-recall-evolution" title="Permanent link">&para;</a></h5>
+<p>On Figure 26 are shown the evolution of the precision and recall along the training. Both curves start low with quite erratic jumps to then grow and stabilize in terms of mean and variance.</p>
+<p>The recall is higher than the precision, meaning that this model is doing a better job at minimizing the number of false positives than maximizing the number of true positives.</p>
+<div align="center" style="font-style: italic">
+<img src="./images/DL_precision_recall_final.png" alt="precision and recall final"> <br />
+<i>
+Figure 26: Evolution of the precision and recall during the training of the final model with optimal configuration. The recall is higher than the precision, meaning that this model is rather minimizing the number of false positives than maximizing the number of true positives.
+</i>
+</div>
+
+<h5 id="5255-uncertainty-and-calibration-evolution">5.2.5.5 Uncertainty and calibration evolution<a class="headerlink" href="#5255-uncertainty-and-calibration-evolution" title="Permanent link">&para;</a></h5>
+<p>On Figure 27, is shown the evolution of the different uncertainty and calibration metrics. Every metrics indicate a better score with lower values except the uncertainty-aware accuracy which indicate a better score with higher values.
+As shown on the figure, the different metrics keep increasing in the quality of their score along the training which is a wanted behavior.</p>
+<div align="center" style="font-style: italic">
+<img src="./images/DL_uncertainty_final.png" alt="ASPP atrous rates"> <br />
+<i>
+Figure 27: Evolution of the different confidence matrix during the training of the final model with optimal configuration. The different metrics keep increasing in the quality of their score along the training which is a wanted behavior.
+</i>
+</div>
+
+<h4 id="526-binary-results-by-deep-learning">5.2.6 Binary results by deep learning<a class="headerlink" href="#526-binary-results-by-deep-learning" title="Permanent link">&para;</a></h4>
+<p>As mentioned in <a href="#446-binary-classification-using-deep-learning-solution">Section 4.4.6</a>, the architecture was built such that it could also be trained for binary classification. The results on the validation set are shown in Figure 28. Since these scores are obtained for another set of roofs than the one used to evaluate the machine learning models, they can not be stricly compared with the scores in <a href="#514-results-on-potential-greenery-areas">Table 8</a>. However, one notices that a higher range of values is reached. </p>
+<div align="center" style="font-style: italic">
+<img src="./images/DL_confusion_matrix_binary.png" alt="CM of binary model"> <br />
+<i>
+Figure 28: Confusion matrix (on the left) and metrics (on the right) of the deep learning solution on binary classification.
+</i>
+</div>
+
+<p>However, given the fact that the machine-learning-based solution gave also very good results and is lighter (no need of GPU power), the choice was made to enter the production phase with this model. This choice was also driven by the fact that the multiclass classification is done by the deep learning solution, whose predictions can be derived into binary classification.</p>
+<h4 id="527-insights-of-the-results">5.2.7 Insights of the results<a class="headerlink" href="#527-insights-of-the-results" title="Permanent link">&para;</a></h4>
+<p>In order to compare results, Figure 29 shows a customed confusion matrix of the predictions on the two classes <em>bare</em> and <em>vegetated</em> made by the 3 different models on the final training set, together with the ground truth. Regarding the multiclass classification model, the predictions for the different vegetation classes were projected into one.<br />
+As shown by the colored arrows, the lower triangular part of the matrices represent the partition of the <em>bare</em> samples into the <em>vegetated</em> category and the upper triangular part represent the partition of the <em>vegetated</em> samples into the <em>bare</em> category. The plot on the left shows the count of samples while the plot on the right shows the fraction of samples.<br />
+For this test, the used dataset contains 2293 <em>bare</em> samples and 1404 <em>vegetated</em> samples.</p>
+<div align="center" style="font-style: italic">
+<img src="./images/DL_comparison_predictions.png" alt="Comparison of models preds and gt"> <br />
+<i>
+Figure 29: Comparison of the binary predictions by the different models between them and with the ground truth. gt= ground truth, ml_bin = machine learning binary classification, dl_bin = deep learning binary classification and dl_multi = deep learning multiclass classification. As shown by the colored arrows, the lower triangular part of the matrices represent the partition of the bare samples into the _vegetated_ category and the upper triangular part represent the partition of the _vegetated_ samples into the bare category.
+</i>
+</div>
+
+<p>By subtracting the numbers of the plot on the right to 100, it can be seen that all the models were classifying the <em>vegetated</em> samples correctly with an accuracy equal or higher to 84.15% with the deep learning binary solution reaching the highest score of 87.96%. 
+The overview of the matrices shows that the two deep-learning-based models got results closer to each other than the machine-learning-based one which is to be expected due to the similarity of their architecture. Indeed, the percentage of <em>vegetated</em> sample predicted as <em>bare</em> with the deep learning classification are 6.34% and 5.06%, against 12.04% for the machine learning one. These numbers are respectively 9.64%, 12.69% and 16.83% for the percentage of <em>bare</em> sample predicted as vegetated. Moreover, subtracting percentages from the first row and column, the multiclass and binary classifications by deep learning models outperform the machine learning model by respectively: </p>
+<ul>
+<li>4.14% (16.83%-12.69%) and 7.19% (16.83%-9.64%) regarding <em>bare</em> predicted as <em>vegetated</em> (see first column).</li>
+<li>6.98% (12.04%-5.06%) and 5.70% (12.04%-6.34%) regarding <em>vegetated</em> predicted as <em>bare</em> (see first row).</li>
+</ul>
+<p>However, one should be careful with these comparisons since the machine learning models were trained based on the previous, smaller dataset. The distribution of both state of the dataset before preprocessing have been given in <a href="#32-ground-truth">Table 1</a> and <a href="#525-best-configuration">Table 10</a>. In the best scenario, all the models performances should be train on the same dataset to be compared but a lack of time prevented us from doing it. Hence, for future use, it might be interesting to retrain the logistic regression and the random forest.   </p>
 <h2 id="6-conclusions-and-outlooks">6 Conclusions and outlooks<a class="headerlink" href="#6-conclusions-and-outlooks" title="Permanent link">&para;</a></h2>
 <p>This study showed the effectiveness of using aerial imagery and machine learning models in detecting green roofs.</p>
-<p>In the machine learning parts, the results demonstrated the ability of a random forest and logistic regression algorithms to detect green roofs among bare roofs, based on vegetation and material reflectance in airborne images. The metrics, with a recall of 0.87 and an F1-score of 0.85 for the green class on the test set, reveal that the combination of both models trained on pixels statistics derived from vegetated areas defined by NDVI and luminosity thresholds, achieved the best performances. These metrics highlight the model’s ability to accurately detect green roof coverage, making it a reliable tool for large-scale urban mapping.</p>
+<p>In the machine learning parts, the results demonstrated the ability of a random forest and logistic regression algorithms to detect green roofs among bare roofs, based on vegetation and material reflectance in airborne images. The metrics, with a recall of 0.87 for the green class and an F1-score of 0.85 on the entire test set, reveal that the combination of both models trained on pixels statistics derived from vegetated areas defined by NDVI and luminosity thresholds, achieved the best performances. These metrics highlight the model’s ability to accurately detect green roof coverage, making it a reliable tool for large-scale urban mapping.</p>
+<p>The multiclass classification of vegetation type by deep learning approach shows promising performances with a F1-score of 0.68 and an overall accuracy of 0.85. However, this approach requires more data than the machine learning one to be trained. Moreover, the number of classes in the multiclass classification task is greater than in the binary classification one and thus, more data is required. Hence, there are indications that the DL model would benefit from a larger set of labeled images. In particular, the dataset the model was trained on is heavily imbalanced and, even by using strategies to correct it, more samples of some underrepresented classes (<em>intensive</em>, <em>lawn</em>, <em>spontaneous</em> and <em>terrace</em>) would surely help greatly to better generalize and distinguish between them.</p>
 <p>Some further outlooks and insights:</p>
 <ul>
-<li>By training and testing the models with two areas separated by approximately 300 kilometers, with images acquired in two different years and with six types of roofs represented in the ground truth, the models have already a certain ability for generalization.</li>
-<li>From the scores in the k-folds cross-validations in Annexes <a href="#76-results-of-the-parameter-optimization-of-the-random-forest">7.6</a> and <a href="#77-results-of-the-parameter-optimization-of-the-logistic-regression">7.7</a>, it is to be expected that the metrics vary of approx. 5% according to the ground truth split into train and test sets. </li>
-<li>Machine learning approach needing engineered features (descriptors) in entry let always rooms for improvement by including additional descriptors. </li>
-<li>Finally, the experts mentioned that, even using SWISSIMAGE Time Travel WMTS and the construction year of the buildings, they could not insure an error free ground truth. This may have had an impact on model training and evaluation, as well as on manual correction of results in the future. </li>
+<li>By training and testing the models with two areas separated by approximately 300 km, with images acquired in two different years and with six types of roofs represented in the ground truth, the models have already a certain ability for generalization. Moreover, the DL model explored showed great potential and, in the future, with more labeled data, it would be valuable to retrain it on a broader range of the feature space, allowing it to reach its full potential.</li>
+<li>From the scores in the k-folds cross-validations of the ML algorithms in Annexes <a href="#76-results-of-the-parameter-optimization-of-the-random-forest">7.6</a> and <a href="#77-results-of-the-parameter-optimization-of-the-logistic-regression">7.7</a>, it is to be expected that the metrics vary of approx. 5% according to the ground truth split into train and test sets. Such behavior has also been observed with the deep learning approach. </li>
+<li>Machine learning approaches needing engineered features (descriptors) in entry let always rooms for improvement by including additional descriptors.</li>
+<li>The deep learning model showed to have a higher recall than precision, with corresponding overall scores of 0.72 and 0.66 respectively in <a href="#5252-confusion-matrix-and-metrics">Figure 24</a>. This can be imputed to the way the model adapted to the imbalance dataset. However, in the case of future applications of the model requiring higher precision, a solution would be to adapt the precision over recall ratio through threshold tuning <sup id="fnref:13"><a class="footnote-ref" href="#fn:13">13</a></sup>. </li>
+<li>Finally, the experts mentioned that, even using <em>SWISSIMAGE Time Travel WMTS</em> and the construction year of the buildings, they could not insure an error free ground truth. This may have had an impact on model training and evaluation, as well as on manual correction of results in the future. </li>
 </ul>
 <h2 id="7-appendixes">7 Appendixes<a class="headerlink" href="#7-appendixes" title="Permanent link">&para;</a></h2>
 <h3 id="71-boxplots-of-the-statistics-for-the-luminosity-pixels-per-roof-in-the-study-area-per-class">7.1 Boxplots of the statistics for the luminosity pixels per roof in the study area per class<a class="headerlink" href="#71-boxplots-of-the-statistics-for-the-luminosity-pixels-per-roof-in-the-study-area-per-class" title="Permanent link">&para;</a></h3>
 <div align="center" style="font-style: italic">
 <img src="./images/boxplot_stats_band_lum.jpg" alt="Boxplots of luminosity."> <br />
 <i>
-Figure 13: Boxplots of the statistics for the luminosity pixels per roof in the study area per class.
+Figure 30: Boxplots of the statistics for the luminosity pixels per roof in the study area per class.
 </i>
 </div>
 
@@ -1284,7 +1774,7 @@ Figure 13: Boxplots of the statistics for the luminosity pixels per roof in the 
 <div align="center" style="font-style: italic">
 <img src="./images/boxplot_stats_band_nir.jpg" alt="Boxplots of the NIR band."> <br />
 <i>
-Figure 14: Boxplots of the statistics for the near infrared pixels per roof in the study area per class.
+Figure 31: Boxplots of the statistics for the near infrared pixels per roof in the study area per class.
 </i>
 </div>
 
@@ -1292,7 +1782,7 @@ Figure 14: Boxplots of the statistics for the near infrared pixels per roof in t
 <div align="center" style="font-style: italic">
 <img src="./images/boxplot_stats_band_red.jpg" alt="Boxplots of the red band."> <br />
 <i>
-Figure 15: Boxplots of the statistics for the red pixels per roof in the study area per class.
+Figure 32: Boxplots of the statistics for the red pixels per roof in the study area per class.
 </i>
 </div>
 
@@ -1300,7 +1790,7 @@ Figure 15: Boxplots of the statistics for the red pixels per roof in the study a
 <div align="center" style="font-style: italic">
 <img src="./images/boxplot_stats_band_green.jpg" alt="Boxplots of the green band."> <br />
 <i>
-Figure 16: Boxplots of the statistics for the green pixels per roof in the study area per class.
+Figure 33: Boxplots of the statistics for the green pixels per roof in the study area per class.
 </i>
 </div>
 
@@ -1308,13 +1798,13 @@ Figure 16: Boxplots of the statistics for the green pixels per roof in the study
 <div align="center" style="font-style: italic">
 <img src="./images/boxplot_stats_band_blue.jpg" alt="Boxplots of the blue band."> <br />
 <i>
-Figure 17: Boxplots of the statistics for the blue pixels per roof in the study area per class.
+Figure 34: Boxplots of the statistics for the blue pixels per roof in the study area per class.
 </i>
 </div>
 
 <h3 id="76-results-of-the-parameter-optimization-of-the-random-forest">7.6 Results of the parameter optimization of the random forest<a class="headerlink" href="#76-results-of-the-parameter-optimization-of-the-random-forest" title="Permanent link">&para;</a></h3>
 <p><center> </p>
-<p><i>Table 9: Results of the parameter optimization of the random forest. Optimized parameters: number of trees to grow and number of descriptors to test at each split.</i></p>
+<p><i>Table 12: Results of the parameter optimization of the random forest. Optimized parameters: number of trees to grow and number of descriptors to test at each split.</i></p>
 <table>
 <thead>
 <tr>
@@ -1434,7 +1924,7 @@ Figure 17: Boxplots of the statistics for the blue pixels per roof in the study 
 <p></center> </p>
 <h3 id="77-results-of-the-parameter-optimization-of-the-logistic-regression">7.7 Results of the parameter optimization of the logistic regression<a class="headerlink" href="#77-results-of-the-parameter-optimization-of-the-logistic-regression" title="Permanent link">&para;</a></h3>
 <p><center> </p>
-<p><i>Table 10: Results of the parameter optimization of the random forest. Optimized parameters: penalty, penalty coefficient and solver.</i></p>
+<p><i>Table 13: Results of the parameter optimization of the logistic regression. Optimized parameters: penalty, penalty coefficient and solver.</i></p>
 <table>
 <thead>
 <tr>
@@ -1672,7 +2162,7 @@ Figure 17: Boxplots of the statistics for the blue pixels per roof in the study 
 <p></center> </p>
 <h3 id="78-permutation-importance-of-the-random-forest">7.8 Permutation importance of the random forest<a class="headerlink" href="#78-permutation-importance-of-the-random-forest" title="Permanent link">&para;</a></h3>
 <p><center></p>
-<p><i>Table 11: Permutation importance of the random forest. </i></p>
+<p><i>Table 14: Permutation importance of the random forest. </i></p>
 <table>
 <thead>
 <tr>
@@ -1835,9 +2325,9 @@ Figure 17: Boxplots of the statistics for the blue pixels per roof in the study 
 </tbody>
 </table>
 <p></center> </p>
-<h3 id="79-permutation-importance-of-the-logistice-regression">7.9 Permutation importance of the logistice regression<a class="headerlink" href="#79-permutation-importance-of-the-logistice-regression" title="Permanent link">&para;</a></h3>
+<h3 id="79-permutation-importance-of-the-logistic-regression">7.9 Permutation importance of the logistic regression<a class="headerlink" href="#79-permutation-importance-of-the-logistic-regression" title="Permanent link">&para;</a></h3>
 <p><center></p>
-<p><i>Table 12: Permutation importance of the logistic regression.</i></p>
+<p><i>Table 15: Permutation importance of the logistic regression.</i></p>
 <table>
 <thead>
 <tr>
@@ -2004,7 +2494,7 @@ Figure 17: Boxplots of the statistics for the blue pixels per roof in the study 
 <div align="center" style="font-style: italic">
 <img src="./images/boxplot_stats_band_nir_green.jpg" alt="Boxplots of luminosity."> <br />
 <i>
-Figure 18: Boxplots of the statistics for the near infrared pixels per potential greenery in the study area per class.
+Figure 35: Boxplots of the statistics for the near infrared pixels per potential greenery in the study area per class.
 </i>
 </div>
 
@@ -2012,7 +2502,7 @@ Figure 18: Boxplots of the statistics for the near infrared pixels per potential
 <div align="center" style="font-style: italic">
 <img src="./images/boxplot_stats_band_red_green.jpg" alt="Boxplots of luminosity."> <br />
 <i>
-Figure 19: Boxplots of the statistics for the red pixels per potential greenery in the study area per class.
+Figure 36: Boxplots of the statistics for the red pixels per potential greenery in the study area per class.
 </i>
 </div>
 
@@ -2020,7 +2510,7 @@ Figure 19: Boxplots of the statistics for the red pixels per potential greenery 
 <div align="center" style="font-style: italic">
 <img src="./images/boxplot_stats_band_green_green.jpg" alt="Boxplots of luminosity."> <br />
 <i>
-Figure 20: Boxplots of the statistics for the green pixels per potential greenery in the study area per class.
+Figure 37: Boxplots of the statistics for the green pixels per potential greenery in the study area per class.
 </i>
 </div>
 
@@ -2028,12 +2518,29 @@ Figure 20: Boxplots of the statistics for the green pixels per potential greener
 <div align="center" style="font-style: italic">
 <img src="./images/boxplot_stats_band_blue_green.jpg" alt="Boxplots of luminosity."> <br />
 <i>
-Figure 21: Boxplots of the statistics for the green pixels per potential greenery in the study area per class.
+Figure 38: Boxplots of the statistics for the blue pixels per potential greenery in the study area per class.
+</i>
+</div>
+
+<h3 id="714-examples-of-difficult-samples">7.14 Examples of difficult samples<a class="headerlink" href="#714-examples-of-difficult-samples" title="Permanent link">&para;</a></h3>
+<h4 id="7141-terrace-vs-bare">7.14.1 Terrace vs Bare<a class="headerlink" href="#7141-terrace-vs-bare" title="Permanent link">&para;</a></h4>
+<div align="center" style="font-style: italic">
+<img src="./images/DL_examples_TvsB.png" alt="examples Terrace vs Bare"> <br />
+<i>
+Figure 39: Samples that illustrate the difficulty to distinguish terraces and bare rooftops. The red circles highlight the locations of greenery on the roofs.
+</i>
+</div>
+
+<h4 id="7142-spontaneous-vs-extensive">7.14.2 Spontaneous vs Extensive<a class="headerlink" href="#7142-spontaneous-vs-extensive" title="Permanent link">&para;</a></h4>
+<div align="center" style="font-style: italic">
+<img src="./images/DL_examples_EvsS.png" alt="examples Extensive vs Spontaneous"> <br />
+<i>
+Figure 40: Samples that illustrate the difficulty to distinguish extensive and spontaneous rooftops. The red circles highlight the locations where the vegetation can induce errors.
 </i>
 </div>
 
 <h2 id="8-sources-and-references">8 Sources and references<a class="headerlink" href="#8-sources-and-references" title="Permanent link">&para;</a></h2>
-<p>Indications on software and hardware requirements, as well as the code used to perform the project, are available on GitHub: https://github.com/swiss-territorial-data-lab/proj-hetres/tree/main.</p>
+<p>Indications on software and hardware requirements, as well as the code used to perform the project, are available on GitHub: the <a href="https://github.com/swiss-territorial-data-lab/proj-vegroofs/tree/main">traditional machine learning approach</a> and the <a href="https://github.com/swiss-territorial-data-lab/proj-vegroofs-DL">deep learning approach</a>.</p>
 <p>Other sources of information mentioned in this documentation are listed here:</p>
 <div class="footnote">
 <hr />
@@ -2051,7 +2558,7 @@ Figure 21: Boxplots of the statistics for the green pixels per potential greener
 <p>Annika Pauligk. Green Roofs 2020. March 2023. https://www.berlin.de/umweltatlas/_assets/literatur/ab_gruendach_2020.pdf. URL: <a href="https://www.berlin.de/umweltatlas/en/land-use/green-roofs/2020/methodology/">https://www.berlin.de/umweltatlas/en/land-use/green-roofs/2020/methodology/</a> (visited on 2023-12-28).&#160;<a class="footnote-backref" href="#fnref:4" title="Jump back to footnote 4 in the text">&#8617;</a></p>
 </li>
 <li id="fn:5">
-<p>Abraham Noah Wu and Filip Biljecki. Roofpedia: Automatic mapping of green and solar roofs for an open roofscape registry and evaluation of urban sustainability. <em>Landscape and Urban Planning</em>, 214:104167, October 2021. URL: <a href="https://www.sciencedirect.com/science/article/pii/S0169204621001304">https://www.sciencedirect.com/science/article/pii/S0169204621001304</a> (visited on 2023-10-26), <a href="https://doi.org/10.1016/j.landurbplan.2021.104167">doi:10.1016/j.landurbplan.2021.104167</a>.&#160;<a class="footnote-backref" href="#fnref:5" title="Jump back to footnote 5 in the text">&#8617;</a></p>
+<p>Abraham Noah Wu and Filip Biljecki. Roofpedia: Automatic mapping of green and solar roofs for an open roofscape registry and evaluation of urban sustainability. <em>Landscape and Urban Planning</em>, 214:104167, October 2021. URL: <a href="https://linkinghub.elsevier.com/retrieve/pii/S0169204621001304">https://linkinghub.elsevier.com/retrieve/pii/S0169204621001304</a> (visited on 2022-05-23), <a href="https://doi.org/10.1016/j.landurbplan.2021.104167">doi:10.1016/j.landurbplan.2021.104167</a>.&#160;<a class="footnote-backref" href="#fnref:5" title="Jump back to footnote 5 in the text">&#8617;</a></p>
 </li>
 <li id="fn:6">
 <p>Charles H. Simpson, Oscar Brousse, Nahid Mohajeri, Michael Davies, and Clare Heaviside. An Open-Source Automatic Survey of Green Roofs in London using Segmentation of Aerial Imagery. preprint, ESSD – Land/Land Cover and Land Use, August 2022. URL: <a href="https://essd.copernicus.org/preprints/essd-2022-259/">https://essd.copernicus.org/preprints/essd-2022-259/</a> (visited on 2023-03-21), <a href="https://doi.org/10.5194/essd-2022-259">doi:10.5194/essd-2022-259</a>.&#160;<a class="footnote-backref" href="#fnref:6" title="Jump back to footnote 6 in the text">&#8617;</a></p>
@@ -2069,7 +2576,13 @@ Figure 21: Boxplots of the statistics for the green pixels per potential greener
 <p>Jonguk Kim, Hyansu Bae, Hyunwoo Kang, and Suk Gyu Lee. CNN Algorithm for Roof Detection and Material Classification in Satellite Images. <em>Electronics</em>, 10(13):1592, January 2021. Number: 13 Publisher: Multidisciplinary Digital Publishing Institute. URL: <a href="https://www.mdpi.com/2079-9292/10/13/1592">https://www.mdpi.com/2079-9292/10/13/1592</a> (visited on 2024-01-16), <a href="https://doi.org/10.3390/electronics10131592">doi:10.3390/electronics10131592</a>.&#160;<a class="footnote-backref" href="#fnref:10" title="Jump back to footnote 10 in the text">&#8617;</a></p>
 </li>
 <li id="fn:11">
-<p>Fabian Pedregosa, Gaël Varoquaux, Alexandre Gramfort, Vincent Michel, Bertrand Thirion, Olivier Grisel, Mathieu Blondel, Peter Prettenhofer, Ron Weiss, Vincent Dubourg, Jake Vanderplas, Alexandre Passos, David Cournapeau, Matthieu Brucher, Matthieu Perrot, and Édouard Duchesnay. Scikit-learn: Machine Learning in Python. <em>Journal of Machine Learning Research</em>, 12(85):2825–2830, 2011. URL: <a href="http://jmlr.org/papers/v12/pedregosa11a.html">http://jmlr.org/papers/v12/pedregosa11a.html</a> (visited on 2024-11-01).&#160;<a class="footnote-backref" href="#fnref:11" title="Jump back to footnote 11 in the text">&#8617;</a></p>
+<p>Fabian Pedregosa, Gaël Varoquaux, Alexandre Gramfort, Vincent Michel, Bertrand Thirion, Olivier Grisel, Mathieu Blondel, Peter Prettenhofer, Ron Weiss, Vincent Dubourg, Jake Vanderplas, Alexandre Passos, David Cournapeau, Matthieu Brucher, Matthieu Perrot, and Édourard Duchesnay. Scikit-learn: Machine Learning in Python. <em>Journal of Machine Learning Research</em>, 12:2825–2830, 2011. URL: <a href="https://scikit-learn.org/stable/index.html">https://scikit-learn.org/stable/index.html</a>.&#160;<a class="footnote-backref" href="#fnref:11" title="Jump back to footnote 11 in the text">&#8617;</a></p>
+</li>
+<li id="fn:12">
+<p>DeepLabV3 Guide: Key to Image Segmentation. URL: <a href="https://www.ikomia.ai/blog/understanding-deeplabv3-image-segmentation">https://www.ikomia.ai/blog/understanding-deeplabv3-image-segmentation</a> (visited on 2025-02-07).&#160;<a class="footnote-backref" href="#fnref:12" title="Jump back to footnote 12 in the text">&#8617;</a></p>
+</li>
+<li id="fn:13">
+<p>Brett-Kennedy. Brett-Kennedy/ClassificationThresholdTuner. February 2025. original-date: 2024-06-12T19:58:33Z. URL: <a href="https://github.com/Brett-Kennedy/ClassificationThresholdTuner">https://github.com/Brett-Kennedy/ClassificationThresholdTuner</a> (visited on 2025-02-17).&#160;<a class="footnote-backref" href="#fnref:13" title="Jump back to footnote 13 in the text">&#8617;</a></p>
 </li>
 </ol>
 </div>

@@ -919,7 +919,7 @@ May 2021 to March 2022 - Published on April 22, 2022</p>
 (**) We used the excellent <a href="https://github.com/potree/potree">Potree</a> Free and Open Source software for visualization.
 </small></p>
 <p></center></p>
-<p>The following sections are devoted to brief descriptions of these two tools; further details will be provided in <a href="#4-terrascan-parameters-space">Section 4</a> and <a href="#5-dft-parameters-space">Section 5</a>.</p>
+<p>The following sections are devoted to brief descriptions of these two tools; further details will be provided in <a href="#22-running-terrascan">Section 2.2</a> and <a href="#23-running-dft">Section 2.3</a>.</p>
 <h4 id="151-terrascan">1.5.1 Terrascan<a class="headerlink" href="#151-terrascan" title="Permanent link">&para;</a></h4>
 <p><a href="https://terrasolid.com/products/terrascan/">Terrascan</a> is a proprietary software, developed and commercialized by <a href="https://terrasolid.com/">Terrasolid</a>, a <a href="https://www.bentley.com/fr/products/brands/microstation">MicroStation</a> and <a href="https://spatix.com/">Spatix</a> plugin which is capable of performing several tasks on point clouds, including visualisation, classification. As far as tree detection is concerned, Terrascan offers multiple options to</p>
 <ul>
@@ -1600,7 +1600,7 @@ The default value is 20 points, which is very low in light of the high density o
 </tbody>
 </table>
 <p></center></p>
-<p>Figure 3.3 provides a graphical representation of the same findings, with the addition of the metrics we computed before <a href="#21-pre-processing-point-cloud-cleaning-and-reclassification">cleaning and reclassifying</a> the LiDAR point cloud.</p>
+<p>Figure 3.3 provides a graphical representation of the same findings, with the addition of the metrics we computed before <a href="#21-pre-processing-point-cloud-reclassification-and-cleaning">cleaning and reclassifying</a> the LiDAR point cloud.</p>
 <p align="center">
 <img src="./image/071-precision-recall-cleaning.png" alt="Impact of cleaning and reclassification on metrics"/>
 <br />
@@ -1777,10 +1777,10 @@ For the global context both, Precision and Recall, could be increased slighty.</
 <p>Detections coming from two or more independent trials (obtained with different software or else with the same software but different parameters) could be combined in order to improve either precision or recall:</p>
 <ol>
 <li>
-<p>recall would be improved (i.e.&nbsp;the number of false negatives would be reduced) if detections coming from multiple trials were merged. In order to prevent double counting, two or more detections coming from two or more sources could be counted as just one if they were found within a given distance from each other. The algorithm would follow along similar lines as the ones which led us to the "tagging and counting algorithm" presented <a href="./#the-tagging-and-counting-algorithm">here above</a>;</p>
+<p>recall would be improved (i.e.&nbsp;the number of false negatives would be reduced) if detections coming from multiple trials were merged. In order to prevent double counting, two or more detections coming from two or more sources could be counted as just one if they were found within a given distance from each other. The algorithm would follow along similar lines as the ones which led us to the "tagging and counting algorithm" presented <a href="#241-the-tagging-and-counting-algorithm">here above</a>;</p>
 </li>
 <li>
-<p>precision would be improved (i.e.&nbsp;the number of false positives would be reduced) if we considered only those detections for which a consensus could be established among two or more trials, and discarded the rest. A distance-based criterion could be used to establish such consensus, along similar lines as those leading to our <a href="./#the-tagging-and-counting-algorithm">"tagging and counting algorithm"</a>.</p>
+<p>precision would be improved (i.e.&nbsp;the number of false positives would be reduced) if we considered only those detections for which a consensus could be established among two or more trials, and discarded the rest. A distance-based criterion could be used to establish such consensus, along similar lines as those leading to our <a href="#241-the-tagging-and-counting-algorithm">"tagging and counting algorithm"</a>.</p>
 </li>
 </ol>
 <h3 id="44-use-generic-point-cloud-segmentation-algorithms">4.4 Use generic point cloud segmentation algorithms<a class="headerlink" href="#44-use-generic-point-cloud-segmentation-algorithms" title="Permanent link">&para;</a></h3>
