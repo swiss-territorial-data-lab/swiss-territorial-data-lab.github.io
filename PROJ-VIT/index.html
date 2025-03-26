@@ -1,0 +1,1004 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.0, mkdocs-material-9.5.21">
+    
+    
+      
+        <title>Vision Transformer for Multi-modal Remote Sensing Imagery - Swiss Territorial Data Lab</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.66ac8b77.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#vision-transformer-for-multi-modal-remote-sensing-imagery" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Swiss Territorial Data Lab" class="md-header__button md-logo" aria-label="Swiss Territorial Data Lab" data-md-component="logo">
+      
+  <img src="../assets/logo-stdl-transparent.svg" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Swiss Territorial Data Lab
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Vision Transformer for Multi-modal Remote Sensing Imagery
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var media,input,key,value,palette=__md_get("__palette");if(palette&&palette.color){"(prefers-color-scheme)"===palette.color.media&&(media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']"),palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent"));for([key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/swiss-territorial-data-lab" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    STDL on Github
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Swiss Territorial Data Lab" class="md-nav__button md-logo" aria-label="Swiss Territorial Data Lab" data-md-component="logo">
+      
+  <img src="../assets/logo-stdl-transparent.svg" alt="logo">
+
+    </a>
+    Swiss Territorial Data Lab
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/swiss-territorial-data-lab" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    STDL on Github
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Homepage
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://github.com/swiss-territorial-data-lab" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    GitHub
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#introduction" class="md-nav__link">
+    <span class="md-ellipsis">
+      Introduction
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dataset-consolidation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Dataset consolidation
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Dataset consolidation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-sources-and-statistics" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Sources and Statistics
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-data-generation-workflow" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Data Generation Workflow
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#experiments" class="md-nav__link">
+    <span class="md-ellipsis">
+      Experiments
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Experiments">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#pre-training" class="md-nav__link">
+    <span class="md-ellipsis">
+      Pre-training
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fine-tuning" class="md-nav__link">
+    <span class="md-ellipsis">
+      Fine-tuning
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ablation-study" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ablation Study
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#conclusion-and-outlooks" class="md-nav__link">
+    <span class="md-ellipsis">
+      Conclusion and Outlooks
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="vision-transformer-for-multi-modal-remote-sensing-imagery"><span style="text-transform:uppercase;"> Vision Transformer for Multi-modal Remote Sensing Imagery </span><a class="headerlink" href="#vision-transformer-for-multi-modal-remote-sensing-imagery" title="Permanent link">&para;</a></h1>
+<p><i>Shanci Li, HEIG-VD - Adrien Gressin, HEIG-VD - Alessandro Cerioni, Etat de Geneve - Roxane Pott, swisstopo</i></p>
+<p>October 2023 to June 2024 - Published in March 2025</p>
+<p xmlns:cc="http://creativecommons.org/ns#" >This work by <a rel="cc:attributionURL dct:creator" property="cc:attributionName" href="https://stdl.ch">STDL</a> is licensed under <a href="https://creativecommons.org/licenses/by-sa/4.0/?ref=chooser-v1" target="_blank" rel="license noopener noreferrer" style="display:inline-block;">CC BY-SA 4.0<img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1" alt=""><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/by.svg?ref=chooser-v1" alt=""><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/sa.svg?ref=chooser-v1" alt=""></a></p>
+
+<p><em><strong>Abstract</strong>: The STDL and HEIG-VD jointly conducted an exploratory project to reveal the potential of large-scale multi-modal remote sensing imagery and Foundation Models with vision transformers (ViT) for earth observation tasks. In this project, besides multi-spectral aerial orthoimages, the normalized Digital Surface Model that is fine-grain calibrated is introduced as the second modality. Utilizing self-supervised learning techniques, we pre-train the encoder of the ViT with around 500 GB unlabelled data and further finetune the model on downstream applications with labelled ground truth. This article documents the construction of the dataset and analyzes the performance of the ViTs.</em></p>
+<h2 id="introduction">Introduction<a class="headerlink" href="#introduction" title="Permanent link">&para;</a></h2>
+<p>Participating in the <a href="https://codalab.lisn.upsaclay.fr/competitions/8769">FLAIR challenge</a> launched by <a href="https://www.ign.fr/">IGN</a>, HEIG-VD was motivated to investigate the capabilities of large-scale multi-modal remote sensing imagery alongside the advanced ViT architecture. In collaboration with STDL, this project is directed towards exploring the domain and implementing the state-of-the-art methodology within one of STDL's projects to assess its efficacy.</p>
+<p>Remote sensing (RS) imagery stands as a pivotal data source for observing ground surfaces and land objects. A comprehensive grasp of RS images holds immense value across domains including urban planning, environmental assessment, and disaster monitoring. Leveraging the inherent ability to autonomously extract intricate features, the deep learning techniques notably excel in all kinds of earth observation tasks like quarry detection, land cover and use classification, and building block extraction. Typically, deep neural networks are pre-trained on  ImageNet, one of the most diverse labelled natural image datasets, with almost 21,000 labelled classes. However, the disparities between natural and RS images pose challenges. RS images, captured from a bird's-eye perspective, lack the variety of natural images and exhibit lower spatial resolution. Therefore, models pretrained on natural images may not achieve optimal performance on RS downstream tasks.</p>
+<p align="center">
+<img src='image/Foundation models.png' alt='Framework of the RSFMs' width="80%"/>
+<br />
+<i>Fig.&nbsp;1 Framework of the RSFMs. The models are trained with large-scale multimodality data and can be adapted to downstream applications.</i>
+</p>
+
+<p>Addressing these challenges necessitates the development of Remote Sensing Foundation Models (RSFMs) adept at extracting representative image features. Introduced from natural language processing, the Vision Transformer (ViT) succeeds in both scalability and flexibility, outperforming most traditional Convolutional Neural Networks. Fig.&nbsp;1 from this <a href="https://ieeexplore.ieee.org/document/10254282">review paper</a> illustrates the framework of RSFM. The paper made a detailed survey about the current research in this domain.</p>
+<p>However, ViTs are extremely data hungry and the scarcity of large annotated RS datasets has long hindered progress in this domain. Recent efforts, such as the introduction of <a href="https://captain-whu.github.io/DiRS/">MillionAID</a> dataset, have sparked interest in supervised RS pretraining, showcasing the feasibility of leveraging large-scale RS datasets. Yet, RS tasks are sensitive to the geo-context of the target application area and supervised pretraining with a limited dataset from global collections would potentially distract the model while it entails significant expertise and labour costs for labelling.</p>
+<p>In fact, the development of aerial and satellite technology has facilitated access to vast amounts of unlabeled RS imagery collection. Effectively harnessing these unlabeled resources is crucial for developing resilient models. For deep learning, Self-Supervised Learning (SSL) is a promising method for learning from unlabeled data. Techniques like contrastive learning and generative-based methods have shown efficacy in learning effective feature representations. However, designing pretext tasks and gathering requisite data for SSL can be problematic, prompting the exploration of more streamlined approaches like Masked Image Modelling (MIM) and Masked AutoEncoder (MAE).  </p>
+<p>Besides, while existing research often focuses on a single data source, there's potential for integrating information from diverse modalities to enhance model capabilities. Taking data availability into consideration, we decided to introduce the following two additional bands:</p>
+<ol>
+<li>Near-InfraRed (NIR)</li>
+<li>Normalized Digital Surface Model (nDSM): </li>
+</ol>
+<p>spectral information that sensitive to vegetation. 
+provides a reference for the pixel height above ground, which brings extra information other than optical reflection. </p>
+<p>Therefore, three objectives of this project were proposed:</p>
+<ol>
+<li>Introduce the multi-spectral and multi-modal resources in the RS imagery. Construct a large-scale unlabelled dataset with 5 bands: Red, Green, Blue, NIR and nDSM.  </li>
+<li>Implement the SSL with large-scale unlabelled RS imagery in the Europe area and pre-train a ViT encoder to extract representative features and explore the potential of the architecture.</li>
+<li>Finetune the RSFM with a pre-trained encoder on semantic segmentation tasks and compare the downstream performance with the counterpart pre-trained on the natural imagery.</li>
+</ol>
+<h2 id="dataset-consolidation">Dataset consolidation<a class="headerlink" href="#dataset-consolidation" title="Permanent link">&para;</a></h2>
+<h3 id="1-sources-and-statistics">1. Sources and Statistics<a class="headerlink" href="#1-sources-and-statistics" title="Permanent link">&para;</a></h3>
+<p>Open datasets and sources:</p>
+<ul>
+<li>
+<p>LiDAR point cloud: </p>
+<p>#1 <a href="https://www.swisstopo.admin.ch/en/height-model-swisssurface3d">swissSURFACE3D - swisstopo</a> </p>
+<p>#2 <a href="https://geoservices.ign.fr/lidarhd#telechargementclassifiees">LIDAR HD - IGN, France</a></p>
+</li>
+<li>
+<p>Aerial images: </p>
+<p>#3 <a href="https://www.swisstopo.admin.ch/fr/orthophotos-swissimage-rs">SWISSIMAGE RS/scratch - swisstopo</a></p>
+<p>#4 <a href="https://ignf.github.io/FLAIR/#FLAIR1">FLAIR - IGN, France</a></p>
+<p>#5 <a href="https://geoservices.ign.fr/bdortho">BD ORTHO - IGN, France</a> </p>
+<p>#6 <a href="https://dati.comune.fe.it/dataset/ortofofo2022">Ortofoto 2022 area urbana - City of Ferrara, Italy</a></p>
+</li>
+<li>
+<p>Satellite images: </p>
+<ul>
+<li><a href="https://docs.sentinel-hub.com/api/latest/">SentinelHub</a></li>
+<li><a href="https://browser.dataspace.copernicus.eu/">Copernicus</a></li>
+</ul>
+</li>
+</ul>
+<p align="center">
+<img src='image/image sample.png' alt='image sample' width="100%"/>
+<br />
+<i>Fig.&nbsp;2  5-channel RS imagery dataset sample: left - True color (RGB); middle - False color (NIR-R-G); right - Elevation (nDSM) </i>
+</p>
+
+<p>We generated a large-scale 5-band unlabelled RS imagery dataset to facilitate the pretraining of the ViT encoder from the above data source, an accurately geo-referenced sample image shown in Fig.&nbsp;2. Table&nbsp;1 shows the composition and the statistic of this dataset, which are distributed across three nearby European countries: Switzerland, France and Italy. For each region, we collect the high-resolution 4-band aerial orthoimage from open data and calculate the nDSM channel from the LiDAR point cloud. </p>
+<p><center></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">Source Data</th>
+<th style="text-align: center;">Country</th>
+<th style="text-align: center;">Scene</th>
+<th style="text-align: center;">Area (km<sup>2</sup>)</th>
+<th style="text-align: center;">Resolution</th>
+<th style="text-align: center;">No. of images</th>
+<th style="text-align: center;">Size (GB)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;"><a href="https://www.swisstopo.admin.ch/fr/orthophotos-swissimage-rs">SWISSIMAGE</a></td>
+<td style="text-align: center;">Swiss</td>
+<td style="text-align: center;">Mixed</td>
+<td style="text-align: center;">2,172</td>
+<td style="text-align: center;">10/25 cm</td>
+<td style="text-align: center;">282,243</td>
+<td style="text-align: center;">346</td>
+</tr>
+<tr>
+<td style="text-align: center;"><a href="https://github.com/3DOM-FBK/USAGE_Geospatial?tab=readme-ov-file">City of Ferrara</a></td>
+<td style="text-align: center;">Italy</td>
+<td style="text-align: center;">Mixed</td>
+<td style="text-align: center;">95</td>
+<td style="text-align: center;">10 cm</td>
+<td style="text-align: center;">39,907</td>
+<td style="text-align: center;">49</td>
+</tr>
+<tr>
+<td style="text-align: center;"><a href="https://ignf.github.io/FLAIR/#FLAIR1">FLAIR</a></td>
+<td style="text-align: center;">France</td>
+<td style="text-align: center;">City</td>
+<td style="text-align: center;">810</td>
+<td style="text-align: center;">20 cm</td>
+<td style="text-align: center;">77,762</td>
+<td style="text-align: center;">96</td>
+</tr>
+<tr>
+<td style="text-align: center;">Sum</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">3,077</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">399,912</td>
+<td style="text-align: center;">491</td>
+</tr>
+</tbody>
+</table>
+<p><i>Table 1 Composition and statistics of generated large-scale Remote Sensing imagery dataset.</i></p>
+<p></center></p>
+<p>The initial idea of the project was to generate a terabyte-scale dataset, but we found it not feasible for training with our current computation resources (5 * NVIDIA A40 GPU). As performance improvements in deep learning models require exponential growth in dataset size in most cases, we ended up compromising to a dataset size of around 500 GB. Concerning this constraint, we processed each region with a different strategy.  </p>
+<p>Concerning Italy, all the available orthoimages and LiDAR covering the City of Ferrara (#6) were included in the dataset . The terrain is limited to urban areas and suburbs, and a small amount of farmland can also be observed.</p>
+<p align="center">
+<img src='image/flair1dist.png' width="60%"/>
+<br />
+<i>Fig.&nbsp;3  Class frequency and temporal distribution for train, validation and test set of FLAIR #1 </i>
+</p>
+
+<p>For France, the BD ORTHO® database (#5) is currently updated on a 3 or 4-year basis with a default resolution of 20 cm in RGB and NIR channels all over France. However, the publishing of LiDAR data (#2) has not been finished yet and can be tracked following <a href="https://macarte.ign.fr/carte/322ea69dab4c7e5afabc6ec7043b5994/acquisitionslidarhd">this link</a>. The tools to download and calculate the nDSM from this source are developed while matching the acquisition time of orthoimages and LiDAR is time-consuming, here we use the FLAIR (#4) dataset constructed with the same source data to introduce France terrain features. The class frequency and temporal distribution are shown in Fig.&nbsp;3.</p>
+<p align="center">
+<img src='image/swiss_sampled_location.png' width="100%"/>
+<br />
+<i>Fig.&nbsp;4 Sampled area in Switzerland  </i>
+</p>
+
+<p>For Switzerland, over 2/3 of the area has published swissSURFACE3D LiDAR data (#1) and SWISSIMAGE RS (#3, 10-50 cm resolution) is available across Switzerland if requested from swisstopo. This part takes up the majority of the dataset and we carefully balanced the terrain distribution given the land cover statistics from <a href="https://www.bfs.admin.ch/bfs/en/home/services/geostat/swiss-federal-statistics-geodata/land-use-cover-suitability/swiss-land-use-statistics.html">Arealstatistic</a> project, which classified Swiss terrain into 6 p domains. Fig.&nbsp;4 shows the location of the sampled areas. We manually selected city centre in Geneva, Lausanne, Zurich and Lugano while trying to balance the principal domain of the remaining dataset by curated sampling strategy. As shown in Fig.&nbsp;5, the proportion of artificial areas, brush and watery areas have been increased compared with the natural terrain distribution across Switzerland.</p>
+<p align="center">
+<img src='image/swiss_sampled_distribution.png' alt='image sample' width="100%"/>
+<br />
+<i>Fig.&nbsp;5 Land cover distribution for the entire Switzerland and for the areas sampled by our consolidated dataset</i>
+</p>
+
+<p>Regardless of computational constraints, the scripts to generate high-resolution 5-band RS images can scale up the dataset easily given the current open data. We also explored the potential of satellite imagery which contains rich spectral information with much lower spatial resolution (10 meters). However, it is difficult to get a cloudless image within the time window of LiDAR acquisition. Considering the data quality and labour cost for sanity checks, we did not include this data source in our dataset. </p>
+<h3 id="2-data-generation-workflow">2. Data Generation Workflow<a class="headerlink" href="#2-data-generation-workflow" title="Permanent link">&para;</a></h3>
+<p align="center">
+<img src='image/img_workflow.png' width="80%"/>
+<br />
+<i>Fig.&nbsp;6 Workflow to generate 5-band images with classified LiDAR and orthoimages </i>
+</p>
+
+<p>We first tried to search for existing DSM and DTM (Digital Terrain Model) open data and differentiate the normalized DSM, namely the height of the ground objects (buildings, vegetation, etc.). However, coupling the acquisition time of DSM (elevation of the tops of all off-terrain objects) and DTM (elevation of the bare-Earth surface) is problematic from the current resource. Thus, we searched for classified point cloud open data and then derived nDSM with <a href="https://pdal.io/en/2.7-maintenance/">PDAL library</a> and <a href="https://www.whiteboxgeo.com/manual/wbt_book/available_tools/lidar_tools.html">WhiteboxTools (WBT)</a> following the workflow shown in Fig.&nbsp;6. </p>
+<p>Classified point cloud is first filtered to class between 2 and 17, which follows the <a href="https://desktop.arcgis.com/en/arcmap/latest/manage-data/las-dataset/lidar-point-classification.htm">LAS Classification codes</a>. This step is necessary as there might be user-defined classes and unclassified points outside this range, which mostly is noise reflection from cloud and would destroy the terrain model. The LiDAR products come from aerial LiDAR acquisition with a density of at least 5 points per m², a mean of around 15-20 pts/m². As the resolution of orthoimages is usually higher (10 cm), the normalized DSM is resampled when calculated. To maintain the height information of objects above ground, we resampled the ground points (class 2) and others respectively. Then, with <a href="https://www.whiteboxgeo.com/manual/wbt_book/available_tools/lidar_tools.html#HeightAboveGround">HeightAboveGround</a> and <a href="https://www.whiteboxgeo.com/manual/wbt_book/available_tools/lidar_tools.html#LidarDigitalSurfaceModel">LidarDigitalSurfaceModel</a> tools from WBT, z-values in resampled point cloud is converted from elevations to heights above the nearest ground-classified point and transformed to raster GeoTIFF afterwards. </p>
+<p align="center">
+<img src='image/ndsm_dist.png' alt='image sample' width="95%"/>
+<br />
+<i>Fig.&nbsp;7 nDSM distribution over the test area: <br />left - difference of DSM and DTM; right - derived from classified LiDAR point cloud </i>
+</p>
+
+<p>In the logarithmic scale, Fig.&nbsp;7 shows the nDSM from inconsistent DSM and DTM and the nDSM from the LiDAR point cloud. The former centres near zero and has massive negative values, which is apparently not the fact, while the latter is much more reasonable as most heights range from 0 to 45 meters. Therefore, numerical post-processing is learned from the FLAIR dataset, the 32-bit float value of nDSM is multiplied by a factor of 5 and encoded as an 8-bit unsigned integer datatype (uint8) to optimize the storage and keep consistent with other channels. The scaling clips the nDSM value between 0 and 255 with 0.2 meters resolution. Except only positive values are allowed, heights above 51 meters are also cut off. Fig. 8 visualizes the process, as the majority of height information is preserved after processing. </p>
+<p align="center">
+<img src='image/scale_ndsm.png' width="80%"/>
+<br />
+<i>Fig.&nbsp;8  nDSM numerical post-processing: left - Before; right - After </i>
+</p>
+
+<p>Finally, integrated with RGB-NIR orthoimages, the 5-band remote sensing imagery is constructed.</p>
+<h2 id="experiments">Experiments<a class="headerlink" href="#experiments" title="Permanent link">&para;</a></h2>
+<p>As discussed in Section 1, Foundation Models with specific architecture for RS imagery is of significance and Self-Supervised Learning is the key to utilising large-scale unlabelled datasets for pre-training. Through a literature review of <a href="https://github.com/Jack-bo1220/Awesome-Remote-Sensing-Foundation-Models">state-of-the-art models</a> for both natural and RS imagery, we explored various architecture and SSL training methods while investigating their computation costs. Equivalent training time in GPU hours is estimated between different models by this <a href="https://lambdalabs.com/gpu-benchmarks">benchmark</a>. Some representative models and features are listed in Table 2 below: </p>
+<!DOCTYPE html>
+
+<html>
+<head>
+
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+    <title></title>e
+    <meta name="AppVersion" content="16.0300"/>
+
+    <style type="text/css">
+        a.comment-indicator:hover + comment { background:#ffd; position:absolute; display:block; border:1px solid black; padding:0.5em;  } 
+        a.comment-indicator { background:red; display:inline-block; border:1px solid black; width:0.5em; height:0.5em;  } 
+        comment { display:none;  } 
+    </style>
+
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Example</title>
+<style>
+  table, th, td {
+    white-space: nowrap;
+  }
+</style>
+</head>
+<body>
+<table cellspacing="0" border="0">
+    <colgroup width="80"></colgroup>
+    <colgroup width="125"></colgroup>
+    <colgroup width="147"></colgroup>
+    <colgroup width="150"></colgroup>
+    <colgroup span="3" width="200"></colgroup>
+    <colgroup width="289"></colgroup>
+    <colgroup width="383"></colgroup>
+    <tr>
+        <td height="38" align="left" valign=bottom><font color="#000000"><br></font></td>
+        <td align="center" valign=middle><font color="#000000">Model </font></td>
+        <td align="center" valign=middle><font color="#000000">Backbone </font></td>
+        <td align="center" valign=middle><font color="#000000">Pretraining Dataset</font></td>
+        <td align="center" valign=middle><font color="#000000">Model Size</font></td>
+        <td align="center" valign=middle><font color="#000000">GPU</font></td>
+        <td align="center" valign=middle><font color="#000000">GPU hours</font></td>
+        <td align="center" valign=middle><font color="#000000">Est. Training Time<br>(5 * NVIDIA A40)</font></td>
+        <td align="center" valign=middle><font color="#000000">Features</font></td>
+    </tr>
+    <tr>
+        <td rowspan=4 height="192" align="center" valign=middle><font color="#000000">Natural <br>FMs</font></td>
+        <td align="center" valign=middle>Swin</td>
+        <td align="center" valign=middle><font color="#000000">Swin-T/S/B/L</font></td>
+        <td align="center" valign=middle><font color="#000000">ImageNet (150G)</font></td>
+        <td align="center" valign=middle><font color="#000000">29M/50M/88M/197M</font></td>
+        <td align="center" valign=middle><font color="#000000">V100</font></td>
+        <td align="center" valign=middle sdval="850" sdnum="1033;"><font color="#000000">850</font></td>
+        <td align="center" valign=middle><font color="#000000">5 days</font></td>
+        <td align="center" valign=middle><font color="#000000">Hierarchical Transformer Architecture;<br>Window-based Self-Attention Mechanism;<br>Shifted Window Attention</font></td>
+    </tr>
+    <tr>
+        <td align="center" valign=middle><font color="#000000">I-JEPA</font></td>
+        <td align="center" valign=middle><font color="#000000">ViT-B/L/H</font></td>
+        <td align="center" valign=middle><font color="#000000">ImageNet (150G)</font></td>
+        <td align="center" valign=middle><font color="#000000">633M<br>(ViT-H-14)</font></td>
+        <td align="center" valign=middle><font color="#000000">16 * A100 80G</font></td>
+        <td align="center" valign=middle sdval="1152" sdnum="1033;"><font color="#000000">1152</font></td>
+        <td align="center" valign=middle><font color="#000000">35 days</font></td>
+        <td align="center" valign=middle><font color="#000000">Joint-Embedding Predictive Architectures;<br>Training Efficient - 5.3x to MAE</font></td>
+    </tr>
+    <tr>
+        <td align="center" valign=middle><font color="#000000">MAE</font></td>
+        <td align="center" valign=middle><font color="#000000">ViT-B/L/H</font></td>
+        <td align="center" valign=middle><font color="#000000">ImageNet (150G)</font></td>
+        <td align="center" valign=middle><font color="#000000">307M<br>(ViT-L) </font></td>
+        <td align="center" valign=middle><font color="#000000">64 * V100</font></td>
+        <td align="center" valign=middle sdval="2688" sdnum="1033;"><font color="#000000">2688</font></td>
+        <td align="center" valign=middle><font color="#000000">15 days </font></td>
+        <td align="center" valign=middle><font color="#000000">Masked Autoencoders;<br>Masked image encoding</font></td>
+    </tr>
+    <tr>
+        <td align="center" valign=middle>SAM</td>
+        <td align="center" valign=middle><font color="#000000">ViT-H</font></td>
+        <td align="center" valign=middle><font color="#000000">SA-1B <br>(11M images <br>/ 1B masks)</font></td>
+        <td align="center" valign=middle><font color="#000000">636M<br>(ViT-H/16)</font></td>
+        <td align="center" valign=middle><font color="#000000">256 * A100</font></td>
+        <td align="center" valign=middle sdval="17408" sdnum="1033;"><font color="#000000">17408</font></td>
+        <td align="center" valign=middle><font color="#000000"> 520 days</font></td>
+        <td align="center" valign=middle><font color="#000000">Image encoder;<br>Prompt encoder;<br>Mask decoder</font></td>
+    </tr>
+    <tr>
+        <td rowspan=5 height="266" align="center" valign=middle><font color="#000000">RSFMs</font></td>
+        <td align="center" valign=middle><font color="#000000">RVSA</font></td>
+        <td align="center" valign=middle><font color="#000000">ViT-B</font></td>
+        <td align="center" valign=middle><font color="#000000">MillionAID</font></td>
+        <td align="center" valign=middle><font color="#000000">86M<br>(ViT-B)</font></td>
+        <td align="center" valign=middle><font color="#000000">8 * A100 80G</font></td>
+        <td align="center" valign=middle><font color="#000000">-</font></td>
+        <td align="center" valign=middle><font color="#000000">-</font></td>
+        <td align="center" valign=middle><font color="#000000">Plain ViTs; <br>Rotated varied-size window attention; </font></td>
+    </tr>
+    <tr>
+        <td align="center" valign=middle><font color="#000000">SatMAE</font></td>
+        <td align="center" valign=middle><font color="#000000">ViT-L</font></td>
+        <td align="center" valign=middle><font color="#000000">fMoW-RGB<br>(200G)</font></td>
+        <td align="center" valign=middle><font color="#000000">307M<br>(ViT-L) </font></td>
+        <td align="center" valign=middle><font color="#000000"> 8 * V100 16G</font></td>
+        <td align="center" valign=middle sdval="960" sdnum="1033;"><font color="#000000">960</font></td>
+        <td align="center" valign=middle><font color="#000000">5 days</font></td>
+        <td align="center" valign=middle><font color="#000000"> Temporal Encoding;<br>Multi-spectral RS image input </font></td>
+    </tr>
+    <tr>
+        <td align="center" valign=middle><font color="#C00000">ScaleMAE</font></td>
+        <td align="center" valign=middle><font color="#000000">ViT-L</font></td>
+        <td align="center" valign=middle><font color="#000000">fMoW-RGB<br>(200G)</font></td>
+        <td align="center" valign=middle><font color="#000000">307M<br>(ViT-L) </font></td>
+        <td align="center" valign=middle><font color="#000000">-</font></td>
+        <td align="center" valign=middle><font color="#000000">-</font></td>
+        <td align="center" valign=middle><font color="#000000">-</font></td>
+        <td align="center" valign=middle><font color="#000000">GSD Positional Encoding; <br>Super-resolution; <br>Multiscale Features</font></td>
+    </tr>
+    <tr>
+        <td align="center" valign=middle><font color="#000000">Cross-Scale MAE</font></td>
+        <td align="center" valign=middle><font color="#000000">ViT-B/L</font></td>
+        <td align="center" valign=middle><font color="#000000">fMoW-RGB<br>(200G)</font></td>
+        <td align="center" valign=middle><font color="#000000">307M<br>(ViT-L) </font></td>
+        <td align="center" valign=middle><font color="#000000">A6000</font></td>
+        <td align="center" valign=middle><font color="#000000">-</font></td>
+        <td align="center" valign=middle><font color="#000000">-</font></td>
+        <td align="center" valign=middle><font color="#000000">Multi-Scale Augmentation; <br>Cross-Scale Information Consistency; <br>Contrastive learning; <br>GSD Positional Encoding</font></td>
+    </tr>
+    <tr>
+        <td align="center" valign=middle><font color="#000000">Multi-MAE</font></td>
+        <td align="center" valign=middle><font color="#000000">ViT-B </font></td>
+        <td align="center" valign=middle><font color="#000000">ImageNet (150G)</font></td>
+        <td align="center" valign=middle><font color="#000000">86M<br>(ViT-B)</font></td>
+        <td align="center" valign=middle><font color="#000000">8 * A100 80G</font></td>
+        <td align="center" valign=middle><font color="#000000">320</font></td>
+        <td align="center" valign=middle><font color="#000000">10 days </font></td>
+        <td align="center" valign=middle><font color="#000000">Multi-task; <br>Cross-modality: depth and semantic; <br>Pseudo labeling</font></td>
+    </tr>
+</table>
+<!-- ************************************************************************** -->
+</body>
+
+</html>
+</html>
+<p><center>
+<i>Table 2 Summary and training cost estimation of recent natural FMs and RSFMs. </i>
+</center>
+<br></p>
+<p>The limited resources constrain our choice of a feasible solution. Detailed model performance on various downstream tasks can be found in this <a href="https://ieeexplore.ieee.org/document/10254282">review paper</a>. Among the list, <strong><a href="https://github.com/bair-climate-initiative/scale-mae">ScaleMAE</a></strong> stands out with <em>GSD Positional Encoding</em> and <em>Multiscale Features</em>. While the author did not clarify the training cost, they followed the implementation of <em><a href="https://sustainlab-group.github.io/SatMAE/">SatMAE</a></em> and we can use it as a reference. </p>
+<p>The workflow in Fig.&nbsp;9 outlines the progression of experiments and methodologies selected. Generally, current FMs adopt the autoencoder structure, namely an encoder to learn the image representation followed by a decoder to reconstruct the input. The generated dataset first undergoes a <strong>Pretrain</strong> stage, where the FM (ViT) pre-train its encoder with <em>ScaleMAE</em>. For the pre-training stage, a previous study (<a href="https://arxiv.org/pdf/2111.06377.pdf">MAE</a>, <a href="https://arxiv.org/pdf/2111.09886.pdf">SimMIM</a>) shows that decoder architecture is not the bottleneck to learn the image representation for masked image modelling techniques. However, it is not the case when it comes to <strong>Fine-tune</strong> on the downstream tasks. Certain modules specifically designed for different tasks, e.g. <em>Semantic Segmentation</em>, <em>Scene Classification</em>, and <em>Object Detection</em>, remain crucial even pre-trained encoder can effectively improve model performance. </p>
+<p align="center">
+<img src='image/workflow.png' width="90%"/>
+<br />
+<i>Fig.9  Experiments design and workflow </i>
+</p>
+
+<p>In this project, we decided to use <a href="https://arxiv.org/pdf/1807.10221.pdf">UperNet</a> as the decoder following the implementation from <a href="https://github.com/open-mmlab/mmsegmentation">MMsegmentation</a> considering its strength in scene understanding and semantic segmentation. The model is further refined on two annotated datasets, FLAIR #1 and STDL-SOILS to optimal performance with supervised learning.</p>
+<p>After fine-tuning, the model performance is analyzed and compared in segmentation accuracy. Additionally, the <em>Ablation Study</em> is conducted on the FLAIR dataset, which involves systematically removing components from the model to assess their individual contributions.</p>
+<p>The code is available at this <a href="https://github.com/swiss-territorial-data-lab/proj-vit">GitHub Repository</a>.</p>
+<h3 id="pre-training">Pre-training<a class="headerlink" href="#pre-training" title="Permanent link">&para;</a></h3>
+<p>The original implementation of ScaleMAE is designed for 3-band RGB images, therefore, we modified the network to be compatible with 5-band inputs. To accelerate the pre-training, we initialized the optical channels (RGB) with <a href="https://github.com/bair-climate-initiative/scale-mae?tab=readme-ov-file#pretrained-models">weights</a> from ScaleMAE which is pre-trained on <a href="https://github.com/fMoW/dataset">FMoW-rgb</a> dataset. The encoder is trained with the RS imagery dataset for more than 600 epochs. According to the reconstructed image visualization and the convergence of the training loss curve, 3-band pre-trained weights are still valuable for initializing 5-band model. While the additional channels can copy the weights from the optical channel, it raises the concern that this strategy would trap the model to local optimal concentrated on optical features.</p>
+<p>Fig.&nbsp;10 visualizes the reconstruction results with ScaleMAE. The input image is firstly resampled to different resolution and masked before entering the encoder. The decoder tries to rebuild the masked image patches from the know pixels and aggregate the final prediction. The results shown in Fig.&nbsp;10 demonstrates the effectiveness of ScaleMAE and self-supervised learning (SSL) for NIR and nDSM bands as well.</p>
+<p align="center">
+<img src='image/scaleMAE_pretrain.png' width="90%"/>
+<br />
+<i>Fig.&nbsp;10  Reconstruction visualization for low and high frequency features and final prediction </i>
+</p>
+
+<h3 id="fine-tuning">Fine-tuning<a class="headerlink" href="#fine-tuning" title="Permanent link">&para;</a></h3>
+<p>After learning image representation from large-scale RS imagery, the encoder is further finetuned on two labelled dataset for semantic segmentation task. Here are previous studies on the two datasets:</p>
+<ul>
+<li><a href="https://codalab.lisn.upsaclay.fr/competitions/8769#learn_the_details">FLAIR challenge</a> </li>
+<li><a href="../PROJ-SOILS/">STDL's PROJ-SOILS</a></li>
+</ul>
+<p>Here, we use the <a href="https://github.com/czczup/ViT-Adapter">ViT-Adapter</a> solution trained by HEIG-VD as the comparison. Generally, ViT-Adapter employs a plain ViT (BEiT) that can learn powerful representations from large-scale multi-modal data as the backbone. When transferring to downstream tasks, a pre-training-free adapter is used to introduce the image-related inductive biases into the model, making it suitable for these tasks. In HEIG-VD implementation, Masked Attention Transformer proposed by <a href="https://github.com/facebookresearch/Mask2Former">Mask2Former</a> is adopted as the decoder for ViT-Adapter. Besides, the BEiT weights loaded is firstly pre-trained with self-supervised learning (MIM) and further optimized with supervised scene classification task on ImageNet dataset. HEIG-VD deployed both 3-band and 5-band model  </p>
+<p><center></p>
+<table>
+<thead>
+<tr>
+<th>Model</th>
+<th>STDL Model</th>
+<th>ViT-Adapter (HEIG-VD)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Number of Bands</td>
+<td>5</td>
+<td>3</td>
+</tr>
+<tr>
+<td>Decoder</td>
+<td>UperNet</td>
+<td>Mask2Former</td>
+</tr>
+<tr>
+<td>Pre-training Method</td>
+<td>ScaleMAE</td>
+<td>BEiT + Supervised Learning</td>
+</tr>
+<tr>
+<td>Pre-training Dataset</td>
+<td>RS imagery</td>
+<td>ImageNet-22k</td>
+</tr>
+<tr>
+<td>Backbone</td>
+<td>ViT-L</td>
+<td>BEiT-L</td>
+</tr>
+<tr>
+<td>Input Size</td>
+<td>512 * 512</td>
+<td>512 * 512</td>
+</tr>
+<tr>
+<td>mIoU - FLAIR</td>
+<td>62.15</td>
+<td>62.80</td>
+</tr>
+<tr>
+<td>mIoU - SOILS</td>
+<td>77.39</td>
+<td>76.85 (3-band)</td>
+</tr>
+</tbody>
+</table>
+<p><i>Table 3 Implementation and performance of our model (Vision Transformer) and previous study (ViT-Adapter)</i>
+</center></p>
+<blockquote>
+<p><small><strong><em>note: ImageNet-22K means 2 stage pretraining with ImageNet-21K (Self-Supervised Learning) and ImageNet-1K (Scene Classification Supervised Learning).</em></strong></small></p>
+</blockquote>
+<p>Table 3 shows the model configuration and their performance with mean <a href="https://en.wikipedia.org/wiki/Jaccard_index">Intersection-over-Union</a> (mIoU). For FLAIR challenge, the Vision Transformer pre-trained on large-scale 5-band RS imagery did not outperform the ViT-Adapter which stems from natural imagery. However, this can not lead to the conclusion that RS imagery did not bring gain to the model. On the one hand, the two models are designed with different architecture. ViT-Adapter introduces spatial and multi-scale architecture for encoder-adapter and advanced transformer module for decoder, which could be more powerful than ViT and UperNet. On the other hand, additional supervised learning on ImageNet-22k dataset could benefit the pre-training more compared with solely self-supervised learning. The ground truth label from scene classification could empower the ViT-Adapter with better image representation.</p>
+<p>When it comes to the <a href="../PROJ-SOILS/">STDL-SOILS</a> project, the Vision Transformer surpassed the ViT-Adapter that only utilizes 3-band RGB image. The pre-training of BEiT model used a image-to-text <a href="https://github.com/microsoft/unilm/tree/master/beit#example-pre-training-beit-base-on-imagenet-22k">tokenizer</a> (<a href="https://openai.com/dall-e-2">DALL-E by OpenAI</a>) which compatible with 3-band imagery only. We did not generate a 5-band pre-trained ViT-Adapter with RS imagery as delving into expensive tokenizer was beyond the scope of the project. Therefore, to better understand the effect of adding band information and RS imaginary pre-training, we deploy the ablation study on Vision Transformer model.</p>
+<h3 id="ablation-study">Ablation Study<a class="headerlink" href="#ablation-study" title="Permanent link">&para;</a></h3>
+<h4 id="window-size-and-photometric-augmentation">Window Size and Photometric Augmentation<a class="headerlink" href="#window-size-and-photometric-augmentation" title="Permanent link">&para;</a></h4>
+<p><center></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">Model</th>
+<th style="text-align: center;">Baseline</th>
+<th style="text-align: center;">Tiny Window</th>
+<th style="text-align: center;">PhotoMetric</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">Number of Bands</td>
+<td style="text-align: center;">5</td>
+<td style="text-align: center;">5</td>
+<td style="text-align: center;">5</td>
+</tr>
+<tr>
+<td style="text-align: center;">Pretrain Method</td>
+<td style="text-align: center;">ScaleMAE</td>
+<td style="text-align: center;">ScaleMAE</td>
+<td style="text-align: center;">ScaleMAE</td>
+</tr>
+<tr>
+<td style="text-align: center;">Pretrained Dataset</td>
+<td style="text-align: center;">RS imagery</td>
+<td style="text-align: center;">RS imagery</td>
+<td style="text-align: center;">RS imagery</td>
+</tr>
+<tr>
+<td style="text-align: center;">Backbone</td>
+<td style="text-align: center;">ViT-L</td>
+<td style="text-align: center;">ViT-L</td>
+<td style="text-align: center;">ViT-L</td>
+</tr>
+<tr>
+<td style="text-align: center;">Input Size</td>
+<td style="text-align: center;">512</td>
+<td style="text-align: center;">224</td>
+<td style="text-align: center;">512</td>
+</tr>
+<tr>
+<td style="text-align: center;">mIoU</td>
+<td style="text-align: center;">62.15</td>
+<td style="text-align: center;">58.46</td>
+<td style="text-align: center;">60.74</td>
+</tr>
+</tbody>
+</table>
+<p><i>Table 4 Comparison of models with Tiny Window inputs and PhotoMetric augmentation. </i>
+</center></p>
+<p>Shown in Table 4, finetuning on different model configuration is firstly conducted. As the encoder is pretrained with (224，224) image resolution, we tested the model with the same window size as pretraining and window size (512, 512) which has larger receptive field. The outcome shows that smaller window limits the information passed to the model, which resulted in lower performance. While it is more costly for computation, enlarging the input window size can improve the model capacity significantly (around 4% in this case). Concerning the difficulties for deployment on small GPU memory machines (16 GB and lower), we did not further increase the window size.</p>
+<p>Photometric augmentation, like random brightness, contrast, hue, saturation, and noise, is a popular data enhancement method for deep learning. However, these methods are initially designed for RGB color space. It is not feasible to extend some of the augmentation to multi-spectral and multi-modal data as the transformations are only applicable to RGB images. Given the NIR and nDSM channels consolidated, we complied partial photometric distortion (random brightness, contrast and Gaussian noise) for 5-band images to the finetuning stage. Experiment shows that these augmentation tricks do not benefit the semantic segmentation performance. Constrained by the lack of variety, the remote sensing imagery has more fixed patterns. Therefore, the photometric augmentation might mislead and confuse the model with nonexistent features.</p>
+<h4 id="pretrained-dataset-and-5-band-inputs">Pretrained Dataset and 5-band Inputs<a class="headerlink" href="#pretrained-dataset-and-5-band-inputs" title="Permanent link">&para;</a></h4>
+<p><center></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">Model</th>
+<th style="text-align: center;">Scratch Initialization</th>
+<th style="text-align: center;">Scratch Initialization</th>
+<th style="text-align: center;">RS Initialization</th>
+<th style="text-align: center;">Natural Initialization</th>
+<th style="text-align: center;">RS Initialization</th>
+<th style="text-align: center;">Natural Initialization</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">Number of Bands</td>
+<td style="text-align: center;">3</td>
+<td style="text-align: center;">5</td>
+<td style="text-align: center;">3</td>
+<td style="text-align: center;">3</td>
+<td style="text-align: center;">5</td>
+<td style="text-align: center;">5</td>
+</tr>
+<tr>
+<td style="text-align: center;">Pretrain Method</td>
+<td style="text-align: center;">None</td>
+<td style="text-align: center;">None</td>
+<td style="text-align: center;">ScaleMAE</td>
+<td style="text-align: center;">Supervised Learning</td>
+<td style="text-align: center;">ScaleMAE</td>
+<td style="text-align: center;">Supervised Learning</td>
+</tr>
+<tr>
+<td style="text-align: center;">Pretrained Dataset</td>
+<td style="text-align: center;">None</td>
+<td style="text-align: center;">None</td>
+<td style="text-align: center;">RS imagery</td>
+<td style="text-align: center;">ImageNet-22K</td>
+<td style="text-align: center;">RS imagery</td>
+<td style="text-align: center;">ImageNet-22K</td>
+</tr>
+<tr>
+<td style="text-align: center;">Backbone</td>
+<td style="text-align: center;">ViT-L</td>
+<td style="text-align: center;">ViT-L</td>
+<td style="text-align: center;">ViT-L</td>
+<td style="text-align: center;">ViT-L</td>
+<td style="text-align: center;">ViT-L</td>
+<td style="text-align: center;">ViT-L</td>
+</tr>
+<tr>
+<td style="text-align: center;">Input Size</td>
+<td style="text-align: center;">512</td>
+<td style="text-align: center;">512</td>
+<td style="text-align: center;">512</td>
+<td style="text-align: center;">512</td>
+<td style="text-align: center;">512</td>
+<td style="text-align: center;">512</td>
+</tr>
+<tr>
+<td style="text-align: center;">mIoU</td>
+<td style="text-align: center;">53.73</td>
+<td style="text-align: center;">53.86</td>
+<td style="text-align: center;">60.54</td>
+<td style="text-align: center;">60.52</td>
+<td style="text-align: center;">62.15</td>
+<td style="text-align: center;">61.58</td>
+</tr>
+</tbody>
+</table>
+<p><i>Table 5 Ablation study of 5-band imagery and pretraining with large-scale RS / natural dataset. </i>
+</center></p>
+<p>Table 5 reveals the contribution of pretraining with large-scale unlabelled dataset and 5-band imagery. On the one hand, when it comes to the baseline model initiated from scratch, additional channels with NIR or elevation information didn't bring gain. The mIoU for the two models are almost the same. As in <a href="https://codalab.lisn.upsaclay.fr/competitions/8769#learn_the_details">FLAIR challenge</a>, some model got best performance with 3-band inputs instead of using all the 5 bands. This shows that either additional bands did not bring more information for semantic segmentation or current network architecture faces the challenge to utilize the information from multi-modal inputs. </p>
+<p>On the other hand, pretraining from large-scale dataset does benefit for the downstream tasks. Around 7% mIoU improvement on 3-band models can be obtained from the self-supervised learning with either remote sensing or natural imagery. With additional bands, segmentation performance can be further improved by around 1-2%, which demonstrates that multi-spectral and multi-modal architecture is more data-demanding than the one with RGB images. </p>
+<h2 id="conclusion-and-outlooks">Conclusion and Outlooks<a class="headerlink" href="#conclusion-and-outlooks" title="Permanent link">&para;</a></h2>
+<p>Foundation models with vision transformer is the recent spotlight of remote sensing field. In this project, we consolidated a large-scale 5-band multi-modal RS dataset and tested different architecture designed for RS or natural images on downstream semantic segmentation task. Our observations from experiments indicate that although Remote Sensing Foundation Models exhibit promise, they encounter obstacles in achieving significant advantages over natural Foundation Models owing to the constraints posed by limited remote sensing data and certain structural design limitations. While our 500 GB dataset did not break through, the latest research (<a href="https://arxiv.org/pdf/2312.10115">SkySense</a> – 300TB multi-modal and multi-spectral image series) in this direction proved that an enriched pre-train dataset can improve performance remarkably but is extremely expensive and not cost-effective for application projects. </p>
+<p>Besides, pre-training method and data have significant impact on the downstream task. <a href="https://arxiv.org/pdf/2403.13430">Recent efforts</a> have explored segmentation pre-training paradigms to improve model representation capability, particularly for tasks demanding finer granularity. This suggests that specific pre-training, especially with consistent target representation, could bolster model performance during finetuning, bridging the gap between pre-training and downstream tasks. E.g.:</p>
+<blockquote>
+<ul>
+<li>Image reconstruction – semantic segmentation (pixel-level)</li>
+<li>Vision-language models – scene classification  (scene-level)</li>
+<li>Object detection - instance segmentation (instance-level)</li>
+</ul>
+</blockquote>
+<p>This conclusion is also validated by the superior performance of RS pretrained model in STDL-SOILS project, as the majority of the pretrained dataset comes from Switzerland. Given data from nearby location, pretraining is more beneficial to the downstream task. Therefore, ground truth from different STDL projects can accumulatedly contribute to a single RSFM for all kinds of Swiss Earth Observation (EO) tasks.  </p>
+<p>Finally, compared with HEIG-VD's ViT-Adapter solution, we found designing an RSFM requires not only a well-suited pre-training algorithm but also an excellent multiscale structure that enables the model to better understand the image representation.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2020-2021 Swiss Territorial Data Lab
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        <div class="md-social">
+  
+    
+    
+    
+    
+    <a href="https://github.com/swiss-territorial-data-lab" target="_blank" rel="noopener" title="Repo on Github" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+    </a>
+  
+    
+    
+    
+    
+    <a href="mailto:<info@stdl.ch>" target="_blank" rel="noopener" title="Send us an eMail!" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M498.1 5.6c10.1 7 15.4 19.1 13.5 31.2l-64 416c-1.5 9.7-7.4 18.2-16 23s-18.9 5.4-28 1.6L284 427.7l-68.5 74.1c-8.9 9.7-22.9 12.9-35.2 8.1S160 493.2 160 480v-83.6c0-4 1.5-7.8 4.2-10.7l167.6-182.9c5.8-6.3 5.6-16-.4-22s-15.7-6.4-22-.7L106 360.8l-88.3-44.2C7.1 311.3.3 300.7 0 288.9s5.9-22.8 16.1-28.7l448-256c10.7-6.1 23.9-5.5 34 1.4z"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.expand"], "search": "../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.a7c05c9e.min.js"></script>
+      
+        <script src="../assets/javascripts/config.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>
