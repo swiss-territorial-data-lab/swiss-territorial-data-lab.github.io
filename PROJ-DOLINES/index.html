@@ -1,0 +1,1489 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.0, mkdocs-material-9.5.21">
+    
+    
+      
+        <title>Mapping sinkholes of Switzerland based on DEM processing - Swiss Territorial Data Lab</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.66ac8b77.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#mapping-sinkholes-of-switzerland-based-on-dem-processing" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Swiss Territorial Data Lab" class="md-header__button md-logo" aria-label="Swiss Territorial Data Lab" data-md-component="logo">
+      
+  <img src="../assets/logo-stdl-transparent.svg" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Swiss Territorial Data Lab
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Mapping sinkholes of Switzerland based on DEM processing
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var media,input,key,value,palette=__md_get("__palette");if(palette&&palette.color){"(prefers-color-scheme)"===palette.color.media&&(media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']"),palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent"));for([key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/swiss-territorial-data-lab" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    STDL on Github
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Swiss Territorial Data Lab" class="md-nav__button md-logo" aria-label="Swiss Territorial Data Lab" data-md-component="logo">
+      
+  <img src="../assets/logo-stdl-transparent.svg" alt="logo">
+
+    </a>
+    Swiss Territorial Data Lab
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/swiss-territorial-data-lab" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    STDL on Github
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Homepage
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://github.com/swiss-territorial-data-lab" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    GitHub
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-introduction" class="md-nav__link">
+    <span class="md-ellipsis">
+      1 Introduction
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-data" class="md-nav__link">
+    <span class="md-ellipsis">
+      2 Data
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2 Data">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21-ground-truth" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.1 Ground truth
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22-swissalti3d" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.2 swissALTI3D
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#23-additional-datasets-for-pre-and-post-processing" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.3 Additional datasets for pre- and post-processing
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-method" class="md-nav__link">
+    <span class="md-ellipsis">
+      3 Method
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3 Method">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31-igns-method" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.1 IGN's method
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32-watershed-method" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.2 Watershed method
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#33-level-set-method" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.3 Level-set method
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#34-stochastic-depression-analysis" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.4 Stochastic depression analysis
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#35-post-processing" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.5 Post-processing
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#36-metrics" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.6 Metrics
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-bare-karst" class="md-nav__link">
+    <span class="md-ellipsis">
+      4 Bare karst
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4 Bare karst">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#41-results" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.1 Results
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#42-discussion" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.2 Discussion
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-depressions-in-loose-rock" class="md-nav__link">
+    <span class="md-ellipsis">
+      5 Depressions in loose rock
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5 Depressions in loose rock">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#51-results" class="md-nav__link">
+    <span class="md-ellipsis">
+      5.1 Results
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#52-discussion" class="md-nav__link">
+    <span class="md-ellipsis">
+      5.2 Discussion
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-evaporites" class="md-nav__link">
+    <span class="md-ellipsis">
+      6 Evaporites
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6 Evaporites">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#61-results" class="md-nav__link">
+    <span class="md-ellipsis">
+      6.1 Results
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#62-discussion" class="md-nav__link">
+    <span class="md-ellipsis">
+      6.2 Discussion
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-marls-on-karst" class="md-nav__link">
+    <span class="md-ellipsis">
+      7 Marls on karst
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="7 Marls on karst">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#71-results" class="md-nav__link">
+    <span class="md-ellipsis">
+      7.1 Results
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#72-discussion" class="md-nav__link">
+    <span class="md-ellipsis">
+      7.2 Discussion
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-molasse" class="md-nav__link">
+    <span class="md-ellipsis">
+      8 Molasse
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="8 Molasse">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#81-results" class="md-nav__link">
+    <span class="md-ellipsis">
+      8.1 Results
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#82-discussion" class="md-nav__link">
+    <span class="md-ellipsis">
+      8.2 Discussion
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9-various-sedimentary-rocks-with-a-limestone-matrix" class="md-nav__link">
+    <span class="md-ellipsis">
+      9 Various sedimentary rocks with a limestone matrix
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="9 Various sedimentary rocks with a limestone matrix">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#91-results" class="md-nav__link">
+    <span class="md-ellipsis">
+      9.1 Results
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#92-discussion" class="md-nav__link">
+    <span class="md-ellipsis">
+      9.2 Discussion
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#10-all-areas" class="md-nav__link">
+    <span class="md-ellipsis">
+      10 All areas
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="10 All areas">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#101-results" class="md-nav__link">
+    <span class="md-ellipsis">
+      10.1 Results
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#102-discussion" class="md-nav__link">
+    <span class="md-ellipsis">
+      10.2 Discussion
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#11-discussion" class="md-nav__link">
+    <span class="md-ellipsis">
+      11 Discussion
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#12-conclusion" class="md-nav__link">
+    <span class="md-ellipsis">
+      12 Conclusion
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#references" class="md-nav__link">
+    <span class="md-ellipsis">
+      References
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="mapping-sinkholes-of-switzerland-based-on-dem-processing">Mapping sinkholes of Switzerland based on DEM processing<a class="headerlink" href="#mapping-sinkholes-of-switzerland-based-on-dem-processing" title="Permanent link">&para;</a></h1>
+<p>Gwenaëlle Salamin (ExoLabs) - Clémence Herny (ExoLabs) - Clotilde Marmy (ExoLabs) - Alessandro Cerioni (Canton of Geneva) - Roxane Pott (swisstopo)</p>
+<p>Proposed by the geology domain of the Federal Office of Topography swisstopo - PROJ-DOLINES<br/>
+July to January 2024 - Published in June 2025</p>
+<p>All scripts are available on <a href="https://github.com/swiss-territorial-data-lab/proj-dolines">GitHub</a>.</p>
+<p xmlns:cc="http://creativecommons.org/ns#" >This work by <a rel="cc:attributionURL dct:creator" property="cc:attributionName" href="https://stdl.ch">STDL</a> is licensed under <a href="https://creativecommons.org/licenses/by-sa/4.0/?ref=chooser-v1" target="_blank" rel="license noopener noreferrer" style="display:inline-block;">CC BY-SA 4.0<img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1" alt=""><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/by.svg?ref=chooser-v1" alt=""><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/sa.svg?ref=chooser-v1" alt=""></a></p>
+
+<p><br/></p>
+<p><em><strong>Abstract</strong>: Sinkholes, or dolines, are key geomorphological features in Switzerland’s karst landscapes, yet their mapping remains inconsistent due to heterogeneous inventories and subjective expert interpretation. This study aimed to standardize and accelerate sinkhole cartography across diverse Swiss geological contexts by testing four automatic detection methods using LiDAR-derived digital terrain models. Each method was optimized based on ground truth data and evaluated through quantitative metrics and expert validation. While six of eleven areas of interest showed satisfactory detection of sinkhole-dense zones, smaller sinkholes were frequently missed, and overall automation was hindered by and incomplete ground truth dataset. These findings underscore the necessity of establishing a clear, standardized definition of sinkholes and improving ground truth quality before reliable automatic detection can be achieved.</em></p>
+<h2 id="1-introduction">1 Introduction<a class="headerlink" href="#1-introduction" title="Permanent link">&para;</a></h2>
+<p>Sinkholes or "dolines" are funnel-shaped depressions characteristic of karstic environments. In Switzerland, they are mapped on national and geological maps by the Federal Office of Topography (swisstopo). These are based on the <a href="https://www.swisstopo.admin.ch/en/landscape-model-swisstlm3d">swissTLM3D</a> and <a href="https://www.swisstopo.admin.ch/en/geological-model-2d-geocover">GeoCover</a> products respectively. Unfortunately, these inventories are very heterogeneous. As there is no standard definition in Switzerland for the characterization of sinkholes, their mapping is always subject to the appreciation of the geologists and cartographers in charge. This is not in line with the mission of swisstopo to provide stable and precise data over the whole Switzerland. <br>
+The establishment of an automatic detection method would help to standardize the mapping of sinkholes over the Swiss territory. Indeed, it would define sinkholes based on clear criteria and limit variability across experts to the post-processing controls.</p>
+<p>Recent advancements in sinkhole detection methods have significantly improved the identification of these karstic landforms. In particular, the use of LiDAR-based Digital Terrain Models (DTM) has emerged as a cornerstone. Studies such as Telbisz et al. (2016)<sup id="fnref:1"><a class="footnote-ref" href="#fn:1">1</a></sup> and Wu et al. (2016)<sup id="fnref:2"><a class="footnote-ref" href="#fn:2">2</a></sup> demonstrated the superior resolution and reliability of LiDAR for mapping sinkholes compared to traditional methods, allowing for precise morphometric analyses even in vegetated areas. <br>
+A fundamental approach in sinkhole detection involves comparing the original digital elevation model (DEM) with its filled or smoothed version to identify depressions characteristic of karst terrain. Wu et al. (2016)<sup id="fnref2:2"><a class="footnote-ref" href="#fn:2">2</a></sup> utilized this principle in their automated delineation of sinkholes, where subtracting the filled DEM from the original effectively highlighted depressions. Bauer et Wagner (2024)<sup id="fnref:3"><a class="footnote-ref" href="#fn:3">3</a></sup> used this method to detect sinkholes before performing morphometric analysis. Ferreira et al. (2022) extended this concept using UAV-based mapping in Brazilian karst, demonstrating that high-resolution DEM derived from drone imagery, when compared to their filled counterparts, could efficiently reveal sinkhole boundaries. Similarly, Touya et al. (2019)<sup id="fnref:4"><a class="footnote-ref" href="#fn:4">4</a></sup> used the difference between a smoothed DEM and its original version to detect sinkholes in French karstic plateaus, improving the generation of contour lines. This simple yet powerful method allows for precise and scalable detection, making it a valuable tool in both automated geomorphological analysis and heritage protection. <br>
+A different method is used in Slovenia, Slovakia and Hungary. The method developed by Obu and Podobnikar in 2013 <sup id="fnref:5"><a class="footnote-ref" href="#fn:5">5</a></sup>, which combined hydrology modelling and morphological filters, provided a robust framework for identifying karstic features. Building on this approach, Telbisz et al. (2016)<sup id="fnref2:1"><a class="footnote-ref" href="#fn:1">1</a></sup> refined the method by integrating pre-processing for noise removal in the DTM. These improvements allowed for detailed analyses of sinkhole shapes, depths, and distributions<sup id="fnref:6"><a class="footnote-ref" href="#fn:6">6</a></sup><sup id="fnref:7"><a class="footnote-ref" href="#fn:7">7</a></sup>. Čonč et al. (2022)<sup id="fnref:8"><a class="footnote-ref" href="#fn:8">8</a></sup> further utilized the refined methodology for morphological analysis, demonstrating its applicability in ecological studies, such as investigating the relationship between sinkhole landscapes and wild felid habitats. This evolution highlights the efficiency and relevance of this method, enabling its application across interdisciplinary domains. <br>
+Kokalj and Hesse (2017)<sup id="fnref:9"><a class="footnote-ref" href="#fn:9">9</a></sup> introduced advanced visualization techniques to enhance the interpretation of subtle terrain features, such as sinkholes, from airborne laser scanning (ALS) data, by emphasizing their openness and shading in three-dimensional models. Building on the strengths of ALS data, Berthe (2021)<sup id="fnref:10"><a class="footnote-ref" href="#fn:10">10</a></sup> combined LiDAR-based imaging with semi-automated cartographic techniques to map exokarst features on the Mountain of Reims, France. This approach leveraged the detailed elevation data to derive closed contours and advanced visualization strategies to help experts identify features, allowing to produce accurate, scalable representations of karst landscapes. Together, these studies highlight the critical role of visualization and semi-automated methods in improving the precision and accessibility of sinkhole detection and mapping. However, those method do not fully address the need of automation and precision in karst geomorphology yet.</p>
+<p>The goal of this project is to develop a method or several methods that can automatically detect sinkholes over the various geological soils of Switzerland. Four different methods were tested and compared. In this documentation, only a brief description of each method is provided. Please, refer to the cited articles for their full description.</p>
+<h2 id="2-data">2 Data<a class="headerlink" href="#2-data" title="Permanent link">&para;</a></h2>
+<p>The project makes use of a custom ground truth, the swissALTI3D DEM and several vector layers used to delimit coherent sinkhole areas.</p>
+<h3 id="21-ground-truth">2.1 Ground truth<a class="headerlink" href="#21-ground-truth" title="Permanent link">&para;</a></h3>
+<div align="center">
+<img src="images/AOIs.webp" width="90%" alt="Shaded relief of Switzerland with in color, the lithological types over which AOI were defined"><br>
+<i>Figure 1: Areas of interest by lithological type.</i>
+</div>
+
+<p>The dataset used as the ground truth (GT) was produced by swisstopo's expert for 11 areas of interest (AOI) (Fig. 1). The sinkholes were digitized as a point placed near the sinkhole center. The AOI were selected to cover each type of lithology susceptible to harbour sinkholes in Switzerland and areas were the quality of the Geocover product is deemed acceptable. The number of GT sinkholes in each AOI is shown in Table 1.</p>
+<p><center></p>
+<table>
+<thead>
+<tr>
+<th><strong>Name</strong></th>
+<th style="text-align: center;"><strong>Type</strong></th>
+<th style="text-align: right;"><strong># of sinkholes</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Cadagno (TI)</td>
+<td style="text-align: center;">Marls on karst</td>
+<td style="text-align: right;">115</td>
+</tr>
+<tr>
+<td>Chasseral (BE)</td>
+<td style="text-align: center;">Marls on karst</td>
+<td style="text-align: right;">259</td>
+</tr>
+<tr>
+<td>Chueboden (SG)</td>
+<td style="text-align: center;">Molasse</td>
+<td style="text-align: right;">110</td>
+</tr>
+<tr>
+<td>Gryon (VD)</td>
+<td style="text-align: center;">Evaporites</td>
+<td style="text-align: right;">16</td>
+</tr>
+<tr>
+<td>Les Verrières (NE)</td>
+<td style="text-align: center;">Marls on karst</td>
+<td style="text-align: right;">157</td>
+</tr>
+<tr>
+<td>Piz Curtinatsch (GR)</td>
+<td style="text-align: center;">Various sedimentary rocks with a limestone matrix</td>
+<td style="text-align: right;">3</td>
+</tr>
+<tr>
+<td>S-Chanf (GR)</td>
+<td style="text-align: center;">Depressions in loose rock</td>
+<td style="text-align: right;">29</td>
+</tr>
+<tr>
+<td>Schwarzsee (FR)</td>
+<td style="text-align: center;">Molasse</td>
+<td style="text-align: right;">51</td>
+</tr>
+<tr>
+<td>Silberen (SZ)</td>
+<td style="text-align: center;">Bare karst</td>
+<td style="text-align: right;">106</td>
+</tr>
+<tr>
+<td>Sissach (BL)</td>
+<td style="text-align: center;">Marls on karst</td>
+<td style="text-align: right;">42</td>
+</tr>
+<tr>
+<td>Val d'Alvra (GR)</td>
+<td style="text-align: center;">Various sedimentary rocks with a limestone matrix</td>
+<td style="text-align: right;">41</td>
+</tr>
+</tbody>
+</table>
+<p><i>Table 1: Areas of interest.</i> <br />
+</center></p>
+<p>We can split the areas of interest in two larger groups: the standard sinkholes and the sinkholes in bare karst. In the Jura Mountains, sinkholes are mostly circular and funnel-shaped. They are smaller than in most literature, as the smallest ones have an area around 40 m<sup>2</sup>. In the areas of bare karst, sinkholes are more often elliptical, and their area can go down to 20 m<sup>2</sup>. We note that it was not possible in these areas for the expert to objectively determine for each hole based on the aerial data if it was or not a sinkhole and the ground truth was not exhaustive.</p>
+<h3 id="22-swissalti3d">2.2 swissALTI3D<a class="headerlink" href="#22-swissalti3d" title="Permanent link">&para;</a></h3>
+<p>The product <a href="https://www.swisstopo.admin.ch/en/height-model-swissalti3d">swissALTI3D</a> is a digital elevation model without vegetation and elevated structures. It is updated globally every six years with LiDAR data. Some local updates are done automatically with the aerial imagery or manually in case of major changes. The accuracy in all three dimensions is 0.3 m for all AOI, except for Le Chasseral AOI where the accuracy is 0.5 m. </p>
+<h3 id="23-additional-datasets-for-pre-and-post-processing">2.3 Additional datasets for pre- and post-processing<a class="headerlink" href="#23-additional-datasets-for-pre-and-post-processing" title="Permanent link">&para;</a></h3>
+<p>Several datasets were used for the post-processing of the detected depressions. In the case of the IGN's method, they were used in pre-processing to establish the mask for possible sinkhole areas.</p>
+<ul>
+<li>non-sedimentary zones: The non-sedimentary zones were provided by the expert in the form of polygons. He extracted this layer from <a href="https://www.swisstopo.admin.ch/en/geological-model-2d-geocover">GeoCover</a>. By definition, it is not possible to have sinkholes outside of sedimentary soils.</li>
+<li>settlement areas: The <a href="https://www.geocat.ch/datahub/dataset/4229c353-e780-42d8-9f8c-298c83920a3a">settlement dataset</a> is established by the Federal Office for Spatial Development and delineates in the form of polygons every area built-up for residential, work, or leisure purposes. We consider that any sinkhole in those areas would have been filled.</li>
+<li>water bodies: The water bodies are extracted in the form of polygons from the <a href="https://www.swisstopo.admin.ch/en/landscape-model-swisstlm3d">swissTLM3D product</a>. It allows us filtering out the detected depressions that are water bodies or part of a water body.</li>
+<li>rivers: The <a href="https://www.geocat.ch/datahub/dataset/50a848cc-fe89-426a-940b-cc409cb4ff50">river dataset</a> is established by the Federal Office for the Environment and trace in the form of lines the Swiss rivers. A buffer of 3 m is applied to the lines, i.e. each riverbed is considered to be 6 m wide. We consider that depressions overlapping a riverbed can not be a sinkhole.</li>
+</ul>
+<h2 id="3-method">3 Method<a class="headerlink" href="#3-method" title="Permanent link">&para;</a></h2>
+<p>Four methods based on the following approaches were implemented for this project:</p>
+<ol>
+<li>difference between a smoothed and the original DEM</li>
+<li>delineation of the bottoms of watersheds</li>
+<li>delineating the nested hierarchy of depressions</li>
+<li>stochastic determination of depressions</li>
+</ol>
+<p>The area on which sinkholes are possible was always limited in pre- or post-processing based on the lithological type.</p>
+<p>For all methods, the parameters were optimized with <code>optuna</code><sup id="fnref:11"><a class="footnote-ref" href="#fn:11">11</a></sup> based on the F2 score for the different types of lithology and for all AOI at once.</p>
+<h3 id="31-igns-method">3.1 IGN's method<a class="headerlink" href="#31-igns-method" title="Permanent link">&para;</a></h3>
+<div align="center">
+    <img src="images/Touya_al_2nd_step.jpg" width="100%" alt="Flowchart in 7 steps for the IGN's method"><br>
+    <i>Figure 2: Steps of the IGN's method for sinkhole detection, image from Touya et al. (2019)</i>
+</div>
+
+<p>The method, we called the IGN's method, is based on the based on the sinkhole detection part (Fig. 2) of the process described by Touya et al. (2019)<sup id="fnref2:4"><a class="footnote-ref" href="#fn:4">4</a></sup> to generate contour lines in karstic plateaus. The creation of the mask for flat areas was done differently. In our case, the mask for the flat area not only excluded areas with a steep slope, but also build-up areas, non-sedimentary zones, water bodies and rivers. An opening filter was performed on the binary mask to remove noise and ensure that potential zones have a sufficient size.</p>
+<h3 id="32-watershed-method">3.2 Watershed method<a class="headerlink" href="#32-watershed-method" title="Permanent link">&para;</a></h3>
+<div align="center">
+    <img src="images/Telbisz_al_watershed_method.jpg" width="75%" alt="Flowchart with the 10 steps of the watershed method"><br>
+    <i>Figure 3: Steps of the watershed method, image from Telbisz et al. (2016).</i>
+</div>
+
+<p>The watershed method (Fig. 3) is based on the article by Telbisz et al. (2016)<sup id="fnref3:1"><a class="footnote-ref" href="#fn:1">1</a></sup>. It considers that each sinkhole can be detected as a small watershed or is at the bottom of a watershed.<br>
+The initial method was tested in ArcGIS. Here, we implemented it with the functions from WhiteboxTools<sup id="fnref:12"><a class="footnote-ref" href="#fn:12">12</a></sup> with the following adaptations:</p>
+<ul>
+<li>the <code>Sink</code> function produced depressions well beyond the expected area; the <code>FindNoFlowCells</code> function was used instead,</li>
+<li>no function was already available to perform the zonal fill; we developed our own code for this part.</li>
+</ul>
+<p>Post-processing as described in Section <a href="#35-post-processing">3.5</a> was performed to remove as many false positives as possible.</p>
+<h3 id="33-level-set-method">3.3 Level-set method<a class="headerlink" href="#33-level-set-method" title="Permanent link">&para;</a></h3>
+<div align="center">
+    <img src="images/level_set_method.webp" width="90%" alt="Flowchart with the 8 steps of the level-set method"><br>
+    <i>Figure 4: Steps of the level-set method as defined by Wu (2019).</i>
+</div>
+
+<p>The level-set method (Fig. 4) is based on the article by Wu et al. (2019)<sup id="fnref:13"><a class="footnote-ref" href="#fn:13">13</a></sup>. It allows determining the nested hierarchy of depressions and was implemented by the main author in the <code>lidar</code> library<sup id="fnref:14"><a class="footnote-ref" href="#fn:14">14</a></sup>. We noticed that the output regions, <em>i.e.</em> depression compound, were sometimes, much wider than the expected area. Therefore, we filtered the produced dataset to keep only level 1 depressions. In exceptional cases were all the level 1 depressions in a larger depression are very small, the corresponding level 2 depression is kept instead.<br>
+Post-processing as described in Section <a href="#35-post-processing">3.5</a> was performed to remove as many false positives as possible.</p>
+<h3 id="34-stochastic-depression-analysis">3.4 Stochastic depression analysis<a class="headerlink" href="#34-stochastic-depression-analysis" title="Permanent link">&para;</a></h3>
+<p>WhiteboxTools<sup id="fnref2:12"><a class="footnote-ref" href="#fn:12">12</a></sup> has a function to perform a stochastic analysis of depressions within a DEM. This simple approach was tested and the results were post-processed as described in Section <a href="#35-post-processing">3.5</a>.</p>
+<p>As this method is memory-extensive and very time-consuming, we did not optimize the parameters for the AOI of marls on karst and for all AOI at once.</p>
+<h3 id="35-post-processing">3.5 Post-processing<a class="headerlink" href="#35-post-processing" title="Permanent link">&para;</a></h3>
+<p>To fit the methods to the Swiss geological landscape, we added the following post-processing steps:</p>
+<ul>
+<li>simplify depression geometry with the <a href="https://en.wikipedia.org/wiki/Visvalingam%E2%80%93Whyatt_algorithm">Visvalingam-Wyatt algorithm</a></li>
+<li>remove depressions outside of sedimentary soils</li>
+<li>remove depressions in settlement areas</li>
+<li>remove depressions intersecting too much with a lake</li>
+<li>remove depression intersecting too much with a river, except for the following river types:<ul>
+<li>mountain rivers with a low flow rate in the Jura</li>
+<li>alpine rivers with a low flow rate</li>
+</ul>
+</li>
+<li>remove depressions based on:<ul>
+<li>minimum and maximum area</li>
+<li>minimum compactness</li>
+<li>minimum and maximum depth</li>
+<li>minimum diameter</li>
+<li>maximum standard deviation in elevation</li>
+</ul>
+</li>
+</ul>
+<p>The zonal statistics of the depression, namely depth, standard deviation in elevation, diameter, area, and compactness, were determined after the geometry simplification.</p>
+<h3 id="36-metrics">3.6 Metrics<a class="headerlink" href="#36-metrics" title="Permanent link">&para;</a></h3>
+<p>To evaluate the results, the reliability of the detections, namely the precision <em>P</em>, and their exhaustiveness, namely the recall <em>R</em>, were computed for each area and globally. They were then combined to obtain the F2 score, which weights recall higher than precision. The respective formulas are presented below:</p>
+<ul>
+<li><span class="arithmatex">\(P = \frac{TP}{TP + FP}\)</span> </li>
+<li><span class="arithmatex">\(R = \frac{TP}{TP + FN}\)</span></li>
+<li><span class="arithmatex">\(F2 = 5 \frac{P\;\cdot\;R}{4P\; +\; R}\)</span></li>
+</ul>
+<p>with:</p>
+<ul>
+<li>TP: true positives of the class, <em>i.e.</em> a detection overlapping a label</li>
+<li>FN: false negative of the class, <em>i.e.</em> a missed label</li>
+<li>FP: false positive of the class, <em>i.e.</em> an excess detection</li>
+</ul>
+<p>The F2 score was used as the discriminating factor when comparing two methods. It was selected because we know the ground truth to be precise and 50% to 70% exhaustive. The best results would then have a high recall but not necessarily a high precision.</p>
+<!-- ## 4. Results and discussion -->
+
+<!--
+- Metrics per method
+- Performance per area for the best method
+- Visualization of the results
+- Discussion
+
+-->
+
+<h2 id="4-bare-karst">4 Bare karst<a class="headerlink" href="#4-bare-karst" title="Permanent link">&para;</a></h2>
+<p>There is only one AOI for bare karst. It is at Silberen (SZ) and contains 51 sinkholes.</p>
+<h3 id="41-results">4.1 Results<a class="headerlink" href="#41-results" title="Permanent link">&para;</a></h3>
+<p><center></p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th style="text-align: center;">Precision</th>
+<th style="text-align: center;">Recall</th>
+<th style="text-align: center;">F2 score</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>IGN</td>
+<td style="text-align: center;"><strong>0.11</strong></td>
+<td style="text-align: center;"><strong>0.61</strong></td>
+<td style="text-align: center;"><strong>0.32</strong></td>
+</tr>
+<tr>
+<td>Watershed</td>
+<td style="text-align: center;">0.10</td>
+<td style="text-align: center;">0.53</td>
+<td style="text-align: center;">0.28</td>
+</tr>
+<tr>
+<td>Level-set</td>
+<td style="text-align: center;">0.08</td>
+<td style="text-align: center;">0.72</td>
+<td style="text-align: center;">0.27</td>
+</tr>
+<tr>
+<td>Stochastic</td>
+<td style="text-align: center;">0.06</td>
+<td style="text-align: center;">0.57</td>
+<td style="text-align: center;">0.22</td>
+</tr>
+</tbody>
+</table>
+<p><i>Table 2: Metrics for each method over the bare karst area with the results for the best F2 score in bold. </i></p>
+<p></center></p>
+<p>All the methods provided a precision lower than 0.11 (Tab. 2), which is very low. The recall is varying more than the precision, between 0.53 and 0.72. The IGN's method provided the best results with a F2 score of 0.32, thank to having the best precision. Knowing that the precision is extremely low anyway, we could instead choose the method with the best recall, which is the level-set method. However, a control of the results would then take substantially more time as there would be more or less 1000 detections against 600 for the IGN's method. These two methods have an acceptable recall, but all the other metrics are too low.</p>
+<div align="center">
+    <img src="images\results_per_area_type\Bare karst_fissure.webp" width="66%" alt="Detected sinkholes as polygons and GT sinkholes as points over an area of bare karst with several fissures"><br>
+    <i>Figure 5: Detected sinkholes from the level-set method and GT sinkholes over an area of bare karst with several fissures.</i>
+</div>
+
+<p>In the end, the results of the level-set method were provided to the expert for a visual inspection. He reported that the sinkholes are poorly mapped and the results would not be usable in this form. Many small sinkholes are not recognised and several sinkholes are often grouped into large incomprehensible geometries. In addition, the typical distribution of sinkholes in lines along fractures of fissures is not mapped well enough (Fig. 5).</p>
+<div align="center">
+    <img src="images\results_per_area_type\Bare karst.webp" width="90%" alt="TP, FP, and FN as dots corresponding to the doline centroids for the bare karst area"><br>
+    <i>Figure 6: Dolines produced by the level-set methods over the bare karst area at Silberen, represented through their centroid and tagged as TP, FP, or FN after a comparison with the ground truth.</i>
+</div>
+
+<p>When visualising the whole area, we note that the detections are spread everywhere, except for the Rätschtal at the north-west of the area (Fig. 6). The density in detections is neither higher nor lower in the zones were ground truth was produced.</p>
+<h3 id="42-discussion">4.2 Discussion<a class="headerlink" href="#42-discussion" title="Permanent link">&para;</a></h3>
+<p>No correspondence can be observed between the ground truth and the detections. Either the sinkholes digitized were not evenly distributed and largely underestimate the total amount of element, or the results are completely wrong. The visualization of the results leads us to think the both possibilities are true.</p>
+<p>The sinkholes in the bare karst are very numerous and difficult to define and therefore very difficult to cartography. The region is very dense in depressions, such as it would be very time-consuming for someone to annotate every single one on such a large area. Maybe a smaller area of interest should be defined on such a complex topography. <br>
+If all detections are not sinkholes, better criteria than the ones defined in this project should be determined. Currently, it is not clear when a depression is a sinkhole or not, leading to the detection of a very high number of depressions that were not labelled as sinkholes by the expert. <br></p>
+<p>Among false positives, a variety of shape and depth was observed. There is no obvious reason as to why some GT sinkholes are missed while so many depressions are detected. We note however that a large part of false negatives are very small sinkholes. As mentioned in the expert's review, very small sinkholes are not easily detected. However, detecting small objects would probably further deteriorate the precision based on the current ground truth.</p>
+<h2 id="5-depressions-in-loose-rock">5 Depressions in loose rock<a class="headerlink" href="#5-depressions-in-loose-rock" title="Permanent link">&para;</a></h2>
+<p>There is only one AOI for depressions in loose rock. It is at S-Chanf (GR) and contains 29 sinkholes.</p>
+<h3 id="51-results">5.1 Results<a class="headerlink" href="#51-results" title="Permanent link">&para;</a></h3>
+<p><center></p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th style="text-align: center;">Precision</th>
+<th style="text-align: center;">Recall</th>
+<th style="text-align: center;">F2 score</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>IGN</td>
+<td style="text-align: center;">0.75</td>
+<td style="text-align: center;">0.62</td>
+<td style="text-align: center;">0.64</td>
+</tr>
+<tr>
+<td>Watershed</td>
+<td style="text-align: center;"><strong>0.70</strong></td>
+<td style="text-align: center;"><strong>0.66</strong></td>
+<td style="text-align: center;"><strong>0.66</strong></td>
+</tr>
+<tr>
+<td>Level-set</td>
+<td style="text-align: center;">0.69</td>
+<td style="text-align: center;">0.62</td>
+<td style="text-align: center;">0.63</td>
+</tr>
+<tr>
+<td>Stochastic</td>
+<td style="text-align: center;">0.58</td>
+<td style="text-align: center;">0.62</td>
+<td style="text-align: center;">0.61</td>
+</tr>
+</tbody>
+</table>
+<p><i>Table 3: Metrics for each method over the area of depressions in loose rock with the results for the best F2 score in bold. </i>
+</center></p>
+<p>The detection quality is quite equivalent across the methods with the F2 score varying by 0.05 point (Tab. 3). The best method is the watershed one, as it has the highest recall and F2 score. The IGN's one has the highest precision. The results obtained by this method were provided to the expert for a visual inspection, as the F2 score value is close to the best one and it produces less absurd false positives, as visible on Figure 7.<br>
+Based on the metrics, we would qualify the result as average.</p>
+<div align="center">
+    <img src="images\results_per_area_type\DGM_FP.webp" width="100%" alt="Comparison of the sinkholes detected through the IGN's method and the watershed method"><br>
+    <i>Figure 7: Sinkholes detected through the IGN's method and the watershed method in the south-west of the AOI in S-Chanf.</i>
+</div>
+
+<p>The expert was quite satisfied with the results, as numerous sinkholes were correctly recognized. However, numerous other sinkholes were missed. In addition, he found a few false positives which are not sinkholes missed in the ground truth. These results could be used to create a map showing where sinkholes are generally located.</p>
+<div align="center">
+    <img src="images\results_per_area_type\DDI.webp" width="90%" alt="TP, FP, and FN as dots corresponding to the doline centroids for the DLR area"><br>
+    <i>Figure 8: Sinkholes produced by the IGN's method over the DLR area at S-Chanf, represented through their centroid and tagged as TP, FP, or FN after a comparison with the ground truth.</i>
+</div>
+
+<p>Most of the detected sinkholes are on the east bank of the river Inn (Fig. 8), like the GT sinkholes. In the upper half of the area, the false positives as well as the false negative are located above steep round depressions. In the lower half of the area, they are located in a sparse forest with a very rough terrain (Fig. 7), making depressions and sinkholes hard to delimit and distinguish.</p>
+<h3 id="52-discussion">5.2 Discussion<a class="headerlink" href="#52-discussion" title="Permanent link">&para;</a></h3>
+<p>As mentioned by the expert, the general position of sinkholes is correct. However, some large sinkholes are missed even though their form is easily visible in the terrain. <br>
+Concerning false positive detections, we could distinguish between two types:</p>
+<ul>
+<li>sinkholes that were not digitized and that are mostly in the upper half of the AOI,</li>
+<li>depressions in a rough terrain that are not sinkholes, mostly in the lower half of the AOI.</li>
+</ul>
+<p>It should be noted that the method chosen here is not the best one based on the F2 score, but the one that was the more convincing visually. Indeed, the watershed method had the best F2 score, but it suffers from several false positive detections due to the presence of depressions near road and rail infrastructures (Fig. 7). The level-set method has the same downside. Tackling this problem would significantly improve the results of those two methods.</p>
+<h2 id="6-evaporites">6 Evaporites<a class="headerlink" href="#6-evaporites" title="Permanent link">&para;</a></h2>
+<p>There is only one AOI for evaporites. It is at Gryon (VD) and contains 16 sinkholes.</p>
+<h3 id="61-results">6.1 Results<a class="headerlink" href="#61-results" title="Permanent link">&para;</a></h3>
+<p><center></p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th style="text-align: center;">Precision</th>
+<th style="text-align: center;">Recall</th>
+<th style="text-align: center;">F2 score</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>IGN</td>
+<td style="text-align: center;"><strong>0.52</strong></td>
+<td style="text-align: center;"><strong>0.94</strong></td>
+<td style="text-align: center;"><strong>0.81</strong></td>
+</tr>
+<tr>
+<td>Watershed</td>
+<td style="text-align: center;">0.52</td>
+<td style="text-align: center;">0.69</td>
+<td style="text-align: center;">0.65</td>
+</tr>
+<tr>
+<td>Level-set</td>
+<td style="text-align: center;">0.44</td>
+<td style="text-align: center;">0.75</td>
+<td style="text-align: center;">0.66</td>
+</tr>
+<tr>
+<td>Stochastic</td>
+<td style="text-align: center;">0.55</td>
+<td style="text-align: center;">0.69</td>
+<td style="text-align: center;">0.60</td>
+</tr>
+</tbody>
+</table>
+<p><i>Table 4: Metrics for each method over the area of evaporites with the results for the best F2 score in bold. </i>
+</center></p>
+<p>The IGN's method is significantly better than the others for the area at Gryon (Tab. 4). The method demonstrates one of the highest precision, equal to that of the watershed method, and exhibits a significantly superior recall compared to all other methods, with a difference of 0.19 points relative to the second-best method, the level-set method. <br>
+The metrics for the IGN's method are good. A precision of 0.5 is just acceptable as not all the sinkholes were digitized in the ground truth. The F2 score for the other methods are mediocre as their recall is at the limit of acceptance.</p>
+<div align="center">
+    <img src="images\results_per_area_type\Evaporites - weird shapes.webp" width="80%" alt="Sinkhole detections from the IGN's method"><br>
+    <i>Figure 9: Sinkholes detected through the IGN's method in the area of evaporites at Gryon.</i>
+</div>
+
+<p>The expert recognized that the majority of the detected sinkholes are indeed sinkholes. Even though the recall is high, he spotted some missed elements, in particular among very small sinkholes. He also reported that some shapes are rather peculiar, diverging often from the usual convex elliptical shape (Fig. 9).</p>
+<div align="center">
+    <img src="images\results_per_area_type\Evaporites.webp" width="90%" alt="TP, FP, and FN as dots corresponding to the doline centroids for the evaporites area"><br>
+    <i>Figure 10: Sinkholes produced by the IGN's method over the evaporites area at Gryon, represented through their centroid and tagged as TP, FP, or FN after a comparison with the ground truth.</i>
+</div>
+
+<p>Considering the entire AOI, we note that GT sinkholes were all found at the north-west of the village of Gryon (Fig. 10). All but one were properly retrieved and the only missed sinkhole is actually encompassed in the detection of its neighbour. <br> 
+There are several false positive detections in the rough forest terrain east of Gryon and several others in the village itself.</p>
+<h3 id="62-discussion">6.2 Discussion<a class="headerlink" href="#62-discussion" title="Permanent link">&para;</a></h3>
+<p>Despite half the detections being labeled as FP, the expert did not complain about depressions wrongly detected as sinkholes. As the GT dataset is precise but not exhaustive, it would not be surprising that the detections evaluated as false positives are actually sinkholes. The estimated precision is then underestimated and the metrics of the IGN's method might be the best achievable result. <br>
+However, the expert reported several missed sinkholes, meaning that in his opinion the recall is overestimated. The GT dataset should have been exhaustive, but apparently some small sinkholes were missed.<br></p>
+<h2 id="7-marls-on-karst">7 Marls on karst<a class="headerlink" href="#7-marls-on-karst" title="Permanent link">&para;</a></h2>
+<p>There are four AOI for marls on karst. They are at Cadagno (TI), Chasseral (BE), Les Verrières (NE), and Sissach (BL) and contain 573 sinkholes.</p>
+<h3 id="71-results">7.1 Results<a class="headerlink" href="#71-results" title="Permanent link">&para;</a></h3>
+<p>No optimization was performed on the parameters of the stochastic method for areas of marls on karst, because the processing time was too long.</p>
+<p><center></p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th style="text-align: center;">Precision</th>
+<th style="text-align: center;">Recall</th>
+<th style="text-align: center;">F2 score</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>IGN</td>
+<td style="text-align: center;">0.61</td>
+<td style="text-align: center;">0.35</td>
+<td style="text-align: center;">0.39</td>
+</tr>
+<tr>
+<td>Watershed</td>
+<td style="text-align: center;"><strong>0.39</strong></td>
+<td style="text-align: center;"><strong>0.47</strong></td>
+<td style="text-align: center;"><strong>0.45</strong></td>
+</tr>
+<tr>
+<td>Level-set</td>
+<td style="text-align: center;"><strong>0.38</strong></td>
+<td style="text-align: center;"><strong>0.48</strong></td>
+<td style="text-align: center;"><strong>0.45</strong></td>
+</tr>
+<tr>
+<td>Stochastic</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">-</td>
+</tr>
+</tbody>
+</table>
+<p><i>Table 5: Metrics for each method over the areas of marls on karst with the results for the best F2 score in bold. </i>
+</center></p>
+<p>The results obtained for the watershed and the level-set methods are comparable (Tab. 5). The two aforementioned methods demonstrated superior recall in comparison to precision, whilst the opposite is true for the IGN's method. Based on visualization of the results, the watershed method was selected as the best method. We note however that no method is really satisfactory with F2 scores lower than 0.50. <br></p>
+<div align="center">
+    <img src="images\results_per_area_type\Marnes sur karst_ground_truth_metrics_per_zone.jpg" width="75%" alt="Precision, recall and F2 score for each area of marls on karst"><br>
+    <i>Figure 11: Metrics per each AOI of marls on karst with the watershed method.</i>
+</div>
+
+<p>When considering the metrics per zone, the alpine area at Cadagno is performing significantly worse than the other areas of marls on karst in the Jura Mountains (Fig. 11). The regions of Le Chasseral and Sissach have a comparable F2 score, yet the former exhibits superior precision to recall with a difference of 0.25 point, while the latter demonstrates higher recall than precision with a difference of 0.45 points. The region of Les Verrières is performing the best with a recall of 0.85. The precision is however still a little low and would be expected to reach at least 60%.</p>
+<p>The expert assessed each region separately. He deemed the results for the region of Cadagno unusable. The smaller sinkholes are missed even though they present the characteristic funnel shape. The detections are too big, with several sinkholes grouped into one misshapen geometry. The region of Sissach was assessed as problematic due to the large quantity of false positives in quarries, streams, road embankments, and artificial fillings. The results were good for the regions of Le Chasseral and Les Verrières. The precision was satisfying, but some sinkholes were still missed.</p>
+<div align="center">
+    <img src="images\results_per_area_type\Marls on karst.webp" width="85%" alt="TP, FP, and FN as dots corresponding to the doline centroids for the areas of marls on karst"><br>
+    <i>Figure 12: Sinkholes produced by the watershed method over the areas of marls on karst, represented through their centroid and tagged as TP, FP, or FN after a comparison with the ground truth.</i>
+</div>
+
+<p>In the region of Cadagno, the clusters of GT sinkholes and of detected sinkholes are not in the same parts of the AOI (Fig. 12). The results are completely wrong. In the region of Chasseral, the detections reproduce the line pattern expected along geological layers, but the number of detections is insufficient and many sinkholes are missed. The same pattern along geological layers can be observed in the north-west of Les Verrières, but at this place, most of the sinkholes are detected, even some tagged as false positives as they were too small to be included in the ground truth. We also note in this region the high quantity of false positives at the east of the region, <em>i.e.</em> at Haut de la Côte near the steep slope of the Bois de Réserve and at Les Maulieux on the rough terrain on a moraine down the slope. The hill in the region of Sissach is strongly marked by local hydrology and the temporary and dry riverbeds lead to many false positives.</p>
+<h3 id="72-discussion">7.2 Discussion<a class="headerlink" href="#72-discussion" title="Permanent link">&para;</a></h3>
+<p>The quality of the results strongly varies depending on the lithological type. The F2 score seems very pessimistic for Le Chasseral and Les Verrières compared to the expert's appreciation. On the other hand, it does reflect the expert's appreciation for the region of Cadagno and Sissach. The very low precision and the absurdity of some false positive detections affected negatively the expert's review. It was judged worse than the region of Le Chasseral, which has a similar F2 score but a smaller difference between precision and recall. <br>
+Even if all the AOI cover a terrain made of marls on karst, the large difference in their metrics indicates that the optimal parameter set might not be the same for all. While it was working quite well for les Verrières and Le Chasseral, it seems less appropriated for Sissach, where the terrain is more shaped by hydrology and infrastructure, and for Cadagno, which is in an alpine setting. Based on the expert's insights, Les Verrières and Le Chasseral have the best GT, the most exhaustive, and the highest number of sinkholes. They then have a large influence on the optimal parameters by their GT quality and their sinkhole number. <br></p>
+<p>The recall does not exceed 0.65, except in Les Verrières. The expert noted that the small sinkholes are missed the most. Maybe a lower threshold should be selected for the lower limit of sinkhole size. This would deteriorate the precision, but it seems that several small threshold were not digitized in the ground truth and therefore, the precision does not fully reflect the result quality.</p>
+<h2 id="8-molasse">8 Molasse<a class="headerlink" href="#8-molasse" title="Permanent link">&para;</a></h2>
+<p>There are two AOI for molasse. They are at Chueboden (SG) and Schwarzsee (FR) and contain 161 sinkholes.</p>
+<h3 id="81-results">8.1 Results<a class="headerlink" href="#81-results" title="Permanent link">&para;</a></h3>
+<p><center></p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th style="text-align: center;">Precision</th>
+<th style="text-align: center;">Recall</th>
+<th style="text-align: center;">F2 score</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>IGN</td>
+<td style="text-align: center;"><strong>0.52</strong></td>
+<td style="text-align: center;"><strong>0.70</strong></td>
+<td style="text-align: center;"><strong>0.66</strong></td>
+</tr>
+<tr>
+<td>Watershed</td>
+<td style="text-align: center;"><strong>0.44</strong></td>
+<td style="text-align: center;"><strong>0.76</strong></td>
+<td style="text-align: center;"><strong>0.66</strong></td>
+</tr>
+<tr>
+<td>Level-set</td>
+<td style="text-align: center;">0.47</td>
+<td style="text-align: center;">0.72</td>
+<td style="text-align: center;">0.65</td>
+</tr>
+<tr>
+<td>Stochastic</td>
+<td style="text-align: center;">0.55</td>
+<td style="text-align: center;">0.56</td>
+<td style="text-align: center;">0.56</td>
+</tr>
+</tbody>
+</table>
+<p><i>Table 6: Metrics for each method over the areas of molasse with the results for the best F2 score in bold. </i>
+</center></p>
+<p>The IGN's, watershed and level-set methods have comparable F2 score, even though they all have a different combination of precision and recall (Tab. 6). The watershed method has the lowest precision and the highest recall. The IGN's method has the lowest recall and the highest precision, even if this latter remains low. The stochastic method has the worst results, with a F2 score lower than the others by 0.09. <br>
+In reason of its high recall and good performance in the visual assessment, the watershed method was chosen as the best method for the area of molasse.</p>
+<div align="center">
+    <img src="images\results_per_area_type\Molasse_ground_truth_metrics_per_zone.jpg" width="50%" alt="Precision, recall and F2 score for each area of molasse"><br>
+    <i>Figure 13: Metrics per each AOI of molasse with the watershed method.</i>
+</div>
+
+<p>The quality of the results is comparable between the regions of Chueboden and Schwarzsee (Fig. 13). They both have a higher recall than precision with a gap of 0.27 point between the two for the first region, against 0.41 points for the second one.</p>
+<p>The expert reported that many sinkholes were correctly recognized and only a few of the detections were not actual sinkholes. However, like in areas of marls on karst, sinkholes with a very typical shape are also often missed. Consequently, the results are a good compilation to highlight areas with sinkholes, but a manual selection remains essential.</p>
+<div align="center">
+    <img src="images\results_per_area_type\Molasse.webp" width="100%" alt="TP, FP, and FN as dots corresponding to the doline centroids for the areas of molasse"><br>
+    <i>Figure 14: Sinkholes produced by the watershed method over the areas of molasse, represented through their centroid and tagged as TP, FP, or FN after a comparison with the ground truth.</i>
+</div>
+
+<p>Regarding the location of the detections, the false negatives are grouped over certain regions of the AOI, especially in the region of Chueboden (Fig. 14). On the other hand, false positives are very spread reaching even zones were no ground truth was produced. <br>
+The distribution of the sinkholes parallel to the rock horizons is well reproduced in the results.</p>
+<h3 id="82-discussion">8.2 Discussion<a class="headerlink" href="#82-discussion" title="Permanent link">&para;</a></h3>
+<p>Based on the expert's review and the clustering of the ground truth on some AOI parts (Fig. 14), it seems that the precision was underestimated because not all sinkholes were digitized. The expert warned us that only 50% to 70% of the sinkholes were digitized. It seems that those were in addition not equally distributed over the AOI.<br>
+On the other hand, the recall is sufficient for this lithological type. However, once again, the expert emphasized that several small sinkholes had been overlooked. Most of the false negatives are indeed very small. It is possible that there were not enough of them present in the ground truth to enable the parameters to be adapted.</p>
+<h2 id="9-various-sedimentary-rocks-with-a-limestone-matrix">9 Various sedimentary rocks with a limestone matrix<a class="headerlink" href="#9-various-sedimentary-rocks-with-a-limestone-matrix" title="Permanent link">&para;</a></h2>
+<p>There are two AOI for various sedimentary rocks with a limestone matrix (VSRLM). They are at Piz Curtinatsch (GR) and Val d'Alvra (GR) and contains 44 sinkholes.</p>
+<h3 id="91-results">9.1 Results<a class="headerlink" href="#91-results" title="Permanent link">&para;</a></h3>
+<!--Deleted three hills from the GT (16.05)-->
+
+<p><center></p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th style="text-align: center;">Precision</th>
+<th style="text-align: center;">Recall</th>
+<th style="text-align: center;">F2 score</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>IGN</td>
+<td style="text-align: center;">0.50</td>
+<td style="text-align: center;">0.49</td>
+<td style="text-align: center;">0.49</td>
+</tr>
+<tr>
+<td>Watershed</td>
+<td style="text-align: center;"><strong>0.35</strong></td>
+<td style="text-align: center;"><strong>0.55</strong></td>
+<td style="text-align: center;"><strong>0.50</strong></td>
+</tr>
+<tr>
+<td>Level-set</td>
+<td style="text-align: center;">0.28</td>
+<td style="text-align: center;">0.60</td>
+<td style="text-align: center;">0.49</td>
+</tr>
+<tr>
+<td>Stochastic</td>
+<td style="text-align: center;">0.26</td>
+<td style="text-align: center;">0.38</td>
+<td style="text-align: center;">0.35</td>
+</tr>
+</tbody>
+</table>
+<p><i>Table 7: Metrics for each method over the areas of VSRLM with the results for the best F2 score in bold. </i>
+</center></p>
+<p>The stochastic method has the worst results with a F2 score 0.14 point lower than the other method (Tab. 7). When not considering it, all the method have similar low F2 score, with different combinations of precision and recall. The IGN's method has the highest precision and the lowest recall. The level-set method has the lowest precision and the highest recall. Upon visualization, the watershed method was selected as the best method for the area of VSRLM.<br></p>
+<div align="center">
+    <img src="images\results_per_area_type\RSVMC_ground_truth_metrics_per_zone.jpg" width="50%" alt="Precision, recall and F2 score for each area of molasse"><br>
+    <i>Figure 15: Metrics per AOI for each AOI of VSRLM with the watershed method.</i>
+</div>
+
+<p>The area of the Piz Curtinatsch has a precision of 100%, meaning that all the depressions were detected. However, the number of detections is twice the number of labels and the precision remains at 0.5. <br>
+The performance in the Val d'Alvra are worst, especially for the recall.</p>
+<p>The expert concluded that the results were not satisfactory for this lithological type. The produced geometries are frequently misshapen and incoherent, and most of the time, they do not cover sinkholes. Several depression within fossil rock glaciers are notably detected. In addition, a significant number of sinkholes were not detected.</p>
+<div align="center">
+    <img src="images\results_per_area_type\VSRLM.webp" width="90%" alt="TP, FP, and FN as dots corresponding to the doline centroids for the areas of VSRLM"><br>
+    <i>Figure 16: Sinkholes produced by the watershed method over the areas of molasse, represented through their centroid and tagged as TP, FP, or FN after a comparison with the ground truth.</i>
+</div>
+
+<p>Because of the little amount of labels and detections, it is hard to draw conclusions for the area of the Piz Curtinatsch. For the area of Val d'Alvra, we note a high number of false negatives in the north part and of false positives in the south part (Fig. 16). Most of the false negatives are small sinkholes or sinkholes with a very gentle curvature. The false positives are depressions in the rough terrain of the moraine walls or of the beads of rock glaciers.</p>
+<h3 id="92-discussion">9.2 Discussion<a class="headerlink" href="#92-discussion" title="Permanent link">&para;</a></h3>
+<p>The metrics are average, but the visualization of the results (Fig. 16) show that there is no correspondence between the ground truth and the produced geometries. The results for the other methods were similar. The tested methods are not adapted to this kind of topography.</p>
+<h2 id="10-all-areas">10 All areas<a class="headerlink" href="#10-all-areas" title="Permanent link">&para;</a></h2>
+<p>Finally, even if the AOI show different characteristics, processing of each methods on all AOI at once was tested. </p>
+<h3 id="101-results">10.1 Results<a class="headerlink" href="#101-results" title="Permanent link">&para;</a></h3>
+<p>No optimization was performed on the parameters of the stochastic method for all AOI, because the processing time was too long.</p>
+<p><center></p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th style="text-align: center;">Precision</th>
+<th style="text-align: center;">Recall</th>
+<th style="text-align: center;">F2 score</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>IGN</td>
+<td style="text-align: center;"><strong>0.24</strong></td>
+<td style="text-align: center;"><strong>0.45</strong></td>
+<td style="text-align: center;"><strong>0.38</strong></td>
+</tr>
+<tr>
+<td>Watershed</td>
+<td style="text-align: center;">0.15</td>
+<td style="text-align: center;">0.49</td>
+<td style="text-align: center;">0.34</td>
+</tr>
+<tr>
+<td>Level-set</td>
+<td style="text-align: center;">0.14</td>
+<td style="text-align: center;">0.45</td>
+<td style="text-align: center;">0.31</td>
+</tr>
+<tr>
+<td>Stochastic</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">-</td>
+</tr>
+</tbody>
+</table>
+<p><i>Table 8: Metrics for each method over all the AOI with the results for the best F2 score in bold. </i>
+</center></p>
+<p>Considering the final F2 score, no method achieves a good quality (Tab. 8). The best method is the IGN's one with the highest precision and F2 score. The watershed method has the highest recall, but the precision is low and it achieves only a F2 score of 0.34.</p>
+<div align="center">
+    <img src="images\results_per_area_type\ground_truth_metrics_per_zone.jpg" width="100%" alt="Precision, recall and F2 score for each area"><br>
+    <i>Figure 17: Metrics per AOI for all the AOI with the IGN's method.</i>
+</div>
+
+<p>The F2 scores are worst for all AOI with the general parameters than with parameters specific to the lithological type, except for the AOI of Sissach. For this last region, we note an increase of 0.08 points (Fig. 11 &amp; 17). For all the other, the F2 score drops by more or less 0.15 points (Tab. 2, 3, 4, and Fig. 11, 13, 15, and 17). In most of those AOI, the precision improved while the recall dropped compared to the results with the use of the specific parameters. <br>
+In general, it can be stated that the AOI exhibiting favourable metrics within specific parameters continue to demonstrate superior performance in comparison to those exhibiting unfavourable metrics. The ranking of the AOI results would remain relatively unchanged.</p>
+<h3 id="102-discussion">10.2 Discussion<a class="headerlink" href="#102-discussion" title="Permanent link">&para;</a></h3>
+<p>The use of specific parameters has been tested. Simplifying the algorithm by using the same parameters for all AOI would deteriorate significantly the results. <br>
+Controlling the metrics per AOI confirmed that there is too much diversity in the AOI of marls on karst. The global parameters performed better in the region of Sissach than the specific parameters for this lithological type. Subdividing this type and performing new specific optimizations might improve the results.</p>
+<h2 id="11-discussion">11 Discussion<a class="headerlink" href="#11-discussion" title="Permanent link">&para;</a></h2>
+<p><center></p>
+<table>
+<thead>
+<tr>
+<th><strong>Lithological type</strong></th>
+<th style="text-align: center;"><strong>Best precision</strong></th>
+<th style="text-align: center;"><strong>Best recall</strong></th>
+<th style="text-align: center;"><strong>Best F2 score</strong></th>
+<th style="text-align: center;"><strong>Selected method</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Bare karst</td>
+<td style="text-align: center;">IGN</td>
+<td style="text-align: center;">Level-set</td>
+<td style="text-align: center;">IGN</td>
+<td style="text-align: center;">Level-set</td>
+</tr>
+<tr>
+<td>DLR</td>
+<td style="text-align: center;">IGN</td>
+<td style="text-align: center;">Watershed</td>
+<td style="text-align: center;">Watershed</td>
+<td style="text-align: center;">IGN</td>
+</tr>
+<tr>
+<td>Evaporites</td>
+<td style="text-align: center;">Stochastic</td>
+<td style="text-align: center;">IGN</td>
+<td style="text-align: center;">IGN</td>
+<td style="text-align: center;">IGN</td>
+</tr>
+<tr>
+<td>Marls on karst</td>
+<td style="text-align: center;">IGN</td>
+<td style="text-align: center;">Level-set</td>
+<td style="text-align: center;">Level-set &amp; watershed</td>
+<td style="text-align: center;">Watershed</td>
+</tr>
+<tr>
+<td>Molasse</td>
+<td style="text-align: center;">IGN</td>
+<td style="text-align: center;">Watershed</td>
+<td style="text-align: center;">IGN &amp; watershed</td>
+<td style="text-align: center;">Watershed</td>
+</tr>
+<tr>
+<td>VSRLM</td>
+<td style="text-align: center;">IGN</td>
+<td style="text-align: center;">Level-set</td>
+<td style="text-align: center;">Watershed</td>
+<td style="text-align: center;">Watershed</td>
+</tr>
+<tr>
+<td>All areas</td>
+<td style="text-align: center;">IGN</td>
+<td style="text-align: center;">Watershed</td>
+<td style="text-align: center;">IGN</td>
+<td style="text-align: center;">-</td>
+</tr>
+</tbody>
+</table>
+<p><i>Table 9: Best method for each lithological type based on precision, recall, or F2 score, and selected method based on metrics and a visual inspection. </i></p>
+<p></center></p>
+<p>After analysing the results across all lithological types and AOI, we note that the IGN's method always achieves a higher precision than the watershed and level-set methods (Tab. 9). This two methods tend to detect too many depressions, especially when infrastructures or rivers are present in the area. However, they generally have a better recall than the IGN's method. We also note that the visual inspection showed that the results of the two methods are close and show little differences in their results. It is not suprising as they both rely on the same function for the detection of sinks. <br>
+The stochastic method has a long computation time and is always performing worse  than the other methods. While the recall is on par with the other methods, the precision is lower. There are exceptions: it has the best precision and the lowest recall in the AOI with molasse, and the results that are globally worse for the AOI with VSRLM. <br>
+In the end, the IGN's method has the best metrics for two lithological types out of six and was selected as the best only for the area of evaporites.</p>
+<p>Since the ground truth was not complete and we do not have a clear baseline, it is difficult to know if the tested methods really improved the situation for the cartography of sinkholes. We can however state that the achieved results are average at the very best, and that no method stands out as the best for a particular type of lithology. <br>
+The expert informed us that all the articles the methods are based on were tested initially on karstik plateaus. This type of topography with a less rough terrain and bigger sinkholes is quite rare in Switzerland. The closest type in the current project would be the marls on karst areas and more specifically the AOI of Sissach. Considering that the Swiss landscape is different from the ones tested in the literature review, tuning the parameters of existing algorithms is probably not a fit solution. The development of a new method would then be necessary.<br>
+However, no amount of development and tuning would allow to achieve good results as long as the object is not clearly defined and digitized in a ground truth. The quality of the ground truth has a visible impact on the metrics. The tested algorithms performed better for the AOI with a good ground truth, namely Le Chasseral, Gryon, les Verrières, and S-Chanf. In many of these areas, the expert complained that very small sinkholes were not detected. However, the recall remains good, because those very small sinkholes were never digitized in the ground truth.</p>
+<p>This project had two goals, the standardization and acceleration of sinkhole mapping. For the first one, the expert established the ground truth. However, the limited time he could dedicate to the task and the difficulty to control the results in the terrain made it impossible to have an exhaustive and coherent dataset. This fact led us to use simple algorithms that we could understand well and tune easily, but even with a good control of the methods, we could not achieve good results. Using machine learning and training a model in these conditions would probably lead to even worst results, because it can not learn properly from such a dataset. The standardization of the sinkhole definition can not be delegated to a machine and need to be executed beforehand by an expert if we hope to achieve good results in the automatization. <br>
+The second goal, the automatization, could not succeed since no proper standardization was done beforehand. Some detections were produced and the expert judged their quality as satisfactory in some areas. Yet he still recommends a manual control to validate the results. With the lack of standardization, the manual control could nullify the little time economy and standardization that the automatization brought.</p>
+<h2 id="12-conclusion">12 Conclusion<a class="headerlink" href="#12-conclusion" title="Permanent link">&para;</a></h2>
+<p>Sinkholes are important landmarks in the Swiss landscape. Their cartography should be performed regularly as they evolve over time, especially around inhabited areas<sup id="fnref3:2"><a class="footnote-ref" href="#fn:2">2</a></sup>. However, it is difficult and time-consuming. As a results, their mapping lacks consistency across the different regions of Switzerland and across the various products of swisstopo, because it can not be performed by a single expert. The goal of this project was to standardize and fasten the cartography of dolines thank to methods of automatic detection. <br>
+Four different methods were tested and for each, its parameters were tuned to achieve the best F2 score on the ground truth. The results were assessed through metrics and through the visualization by the expert. The expert's review was in general in accordance with the determined metrics. The results were judged as good enough to know the zones dense in sinkholes for six out of eleven AOI. For the other ones, the results were unsatisfactory. It was noted that small sinkholes were missed in all AOI. <br>
+No satisfying automatisation can be achieved as long as the ground truth is not exhaustive and coherent. In this project, no clear definition of sinkholes, applicable to digitization through aerial views, was established and not comprehensive ground truth could be produced. The first priority to improve the results would be improving the ground truth. Then, the tuning of the test methods could be performed again, but we noted that the methods tested here may not be suited for the Swiss geology. Maybe, a new method should be developed or deep learning could be used. As deep learning on RGB imagery has little chance to work properly, but three bands based on the DEM processing might be a good choice. For example, the sky-view factor, the openness, or the local dominance could be considered<sup id="fnref2:9"><a class="footnote-ref" href="#fn:9">9</a></sup>.</p>
+<h2 id="references">References<a class="headerlink" href="#references" title="Permanent link">&para;</a></h2>
+<div class="footnote">
+<hr />
+<ol>
+<li id="fn:1">
+<p>Tamás Telbisz, Tamás Látos, Márton Deák, Balázs Székely, Zsófia Koma, and Tibor Standovár. The advantage of lidar digital terrain models in doline morphometry compared to topographic map based datasets – Aggtelek karst (Hungary) as an example. <em>Acta Carsologica</em>, July 2016. Publisher: The Research Center of the Slovenian Academy of Sciences and Arts / Znanstvenoraziskovalni center Slovenske akademije znanosti in umetnosti (ZRC SAZU). URL: <a href="http://ojs.zrc-sazu.si/carsologica/article/view/4138">http://ojs.zrc-sazu.si/carsologica/article/view/4138</a> (visited on 2024-09-17), <a href="https://doi.org/10.3986/ac.v45i1.4138">doi:10.3986/ac.v45i1.4138</a>.&#160;<a class="footnote-backref" href="#fnref:1" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:1" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref3:1" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+</li>
+<li id="fn:2">
+<p>Qiusheng Wu, Chengbin Deng, and Zuoqi Chen. Automated delineation of karst sinkholes from LiDAR-derived digital elevation models. <em>Geomorphology</em>, 266:1–10, August 2016. URL: <a href="https://linkinghub.elsevier.com/retrieve/pii/S0169555X1630280X">https://linkinghub.elsevier.com/retrieve/pii/S0169555X1630280X</a> (visited on 2024-08-26), <a href="https://doi.org/10.1016/j.geomorph.2016.05.006">doi:10.1016/j.geomorph.2016.05.006</a>.&#160;<a class="footnote-backref" href="#fnref:2" title="Jump back to footnote 2 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:2" title="Jump back to footnote 2 in the text">&#8617;</a><a class="footnote-backref" href="#fnref3:2" title="Jump back to footnote 2 in the text">&#8617;</a></p>
+</li>
+<li id="fn:3">
+<p>C. Bauer and T. Wagner. From landform inventories to landscape evolution? - Karst development in the Central Styrian Karst (Austria). <em>Geomorphology</em>, 447:109024, February 2024. URL: <a href="https://linkinghub.elsevier.com/retrieve/pii/S0169555X23004440">https://linkinghub.elsevier.com/retrieve/pii/S0169555X23004440</a> (visited on 2024-05-22), <a href="https://doi.org/10.1016/j.geomorph.2023.109024">doi:10.1016/j.geomorph.2023.109024</a>.&#160;<a class="footnote-backref" href="#fnref:3" title="Jump back to footnote 3 in the text">&#8617;</a></p>
+</li>
+<li id="fn:4">
+<p>Guillaume Touya, Hugo Boulze, Anouk Schleich, and Hervé Quinquenel. Contour Lines Generation in Karstic Plateaus for Topographic Maps. <em>Proceedings of the ICA</em>, 2:1–8, July 2019. URL: <a href="https://ica-proc.copernicus.org/articles/2/133/2019/">https://ica-proc.copernicus.org/articles/2/133/2019/</a> (visited on 2024-09-16), <a href="https://doi.org/10.5194/ica-proc-2-133-2019">doi:10.5194/ica-proc-2-133-2019</a>.&#160;<a class="footnote-backref" href="#fnref:4" title="Jump back to footnote 4 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:4" title="Jump back to footnote 4 in the text">&#8617;</a></p>
+</li>
+<li id="fn:5">
+<p>Jaroslav Obu and Tomaž Podobnikar. ALGORITEM ZA PREPOZNAVANJE KRAŠKIH KOTANJ NA PODLAGI DIGITALNEGA MODELA RELIEFA = Algorithm for Karst Depression Recognition Using Digital Terrain Model. <em>Geodetski Vestnik</em>, 57(2):260–270, 2013. URL: <a href="https://epic.awi.de/id/eprint/33195/">https://epic.awi.de/id/eprint/33195/</a>.&#160;<a class="footnote-backref" href="#fnref:5" title="Jump back to footnote 5 in the text">&#8617;</a></p>
+</li>
+<li id="fn:6">
+<p>Tamás Telbisz. Lidar-Based Morphometry of Conical Hills in Temperate Karst Areas in Slovenia. <em>Remote Sensing</em>, 13(14):2668, July 2021. URL: <a href="https://www.mdpi.com/2072-4292/13/14/2668">https://www.mdpi.com/2072-4292/13/14/2668</a> (visited on 2024-11-22), <a href="https://doi.org/10.3390/rs13142668">doi:10.3390/rs13142668</a>.&#160;<a class="footnote-backref" href="#fnref:6" title="Jump back to footnote 6 in the text">&#8617;</a></p>
+</li>
+<li id="fn:7">
+<p>Tamás Telbisz, László Mari, and Balázs Székely. LiDAR-Based Morphometry of Dolines in Aggtelek Karst (Hungary) and Slovak Karst (Slovakia). <em>Remote Sensing</em>, 16(5):737, February 2024. URL: <a href="https://www.mdpi.com/2072-4292/16/5/737">https://www.mdpi.com/2072-4292/16/5/737</a> (visited on 2024-05-23), <a href="https://doi.org/10.3390/rs16050737">doi:10.3390/rs16050737</a>.&#160;<a class="footnote-backref" href="#fnref:7" title="Jump back to footnote 7 in the text">&#8617;</a></p>
+</li>
+<li id="fn:8">
+<p>Špela Čonč, Teresa Oliveira, Ruben Portas, Rok Černe, Mateja Breg Valjavec, and Miha Krofel. Dolines and Cats: Remote Detection of Karst Depressions and Their Application to Study Wild Felid Ecology. <em>Remote Sensing</em>, 14(3):656, January 2022. URL: <a href="https://www.mdpi.com/2072-4292/14/3/656">https://www.mdpi.com/2072-4292/14/3/656</a> (visited on 2024-05-22), <a href="https://doi.org/10.3390/rs14030656">doi:10.3390/rs14030656</a>.&#160;<a class="footnote-backref" href="#fnref:8" title="Jump back to footnote 8 in the text">&#8617;</a></p>
+</li>
+<li id="fn:9">
+<p>Žiga Kokalj and Ralf Hesse. <em>Airborne laser scanning raster data visualization: a guide to good practice</em>. Number 14 in Prostor, kraj, čas. Založba ZRC, Ljubljana, 2017. ISBN 978-961-254-984-8.&#160;<a class="footnote-backref" href="#fnref:9" title="Jump back to footnote 9 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:9" title="Jump back to footnote 9 in the text">&#8617;</a></p>
+</li>
+<li id="fn:10">
+<p>Julien Berthe, Olivier Lejeune, and Nicolas Bollot. Imagerie LIDAR et cartographie semi-automatique de l’exokarst de la Montagne de Reims (Champagne, France). <em>Karstologia</em>, pages 41–48, 2021. URL: <a href="https://hal.science/hal-03543184/document">https://hal.science/hal-03543184/document</a>.&#160;<a class="footnote-backref" href="#fnref:10" title="Jump back to footnote 10 in the text">&#8617;</a></p>
+</li>
+<li id="fn:11">
+<p>Takuya Akiba, Shotaro Sano, Toshihiko Yanase, Takeru Ohta, and Masanori Koyama. Optuna: A Next-generation Hyperparameter Optimization Framework. In <em>Proceedings of the 25th ACM SIGKDD International Conference on Knowledge Discovery &amp; Data Mining</em>, 2623–2631. Anchorage AK USA, July 2019. ACM. URL: <a href="https://dl.acm.org/doi/10.1145/3292500.3330701">https://dl.acm.org/doi/10.1145/3292500.3330701</a> (visited on 2024-11-29), <a href="https://doi.org/10.1145/3292500.3330701">doi:10.1145/3292500.3330701</a>.&#160;<a class="footnote-backref" href="#fnref:11" title="Jump back to footnote 11 in the text">&#8617;</a></p>
+</li>
+<li id="fn:12">
+<p>J.B. Lindsay. Whitebox GAT: A case study in geomorphometric analysis. <em>Computers &amp; Geosciences</em>, 95:75–84, October 2016. URL: <a href="https://linkinghub.elsevier.com/retrieve/pii/S0098300416301820">https://linkinghub.elsevier.com/retrieve/pii/S0098300416301820</a> (visited on 2024-12-10), <a href="https://doi.org/10.1016/j.cageo.2016.07.003">doi:10.1016/j.cageo.2016.07.003</a>.&#160;<a class="footnote-backref" href="#fnref:12" title="Jump back to footnote 12 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:12" title="Jump back to footnote 12 in the text">&#8617;</a></p>
+</li>
+<li id="fn:13">
+<p>Qiusheng Wu, Charles R. Lane, Lei Wang, Melanie K. Vanderhoof, Jay R. Christensen, and Hongxing Liu. Efficient Delineation of Nested Depression Hierarchy in Digital Elevation Models for Hydrological Analysis Using Level‐Set Method. <em>JAWRA Journal of the American Water Resources Association</em>, 55(2):354–368, April 2019. URL: <a href="https://onlinelibrary.wiley.com/doi/10.1111/1752-1688.12689">https://onlinelibrary.wiley.com/doi/10.1111/1752-1688.12689</a> (visited on 2024-08-26), <a href="https://doi.org/10.1111/1752-1688.12689">doi:10.1111/1752-1688.12689</a>.&#160;<a class="footnote-backref" href="#fnref:13" title="Jump back to footnote 13 in the text">&#8617;</a></p>
+</li>
+<li id="fn:14">
+<p>Qiusheng Wu. Lidar: A Python package for delineating nested surface depressions from digital elevation data. <em>Journal of Open Source Software</em>, 6(59):2965, March 2021. URL: <a href="https://joss.theoj.org/papers/10.21105/joss.02965">https://joss.theoj.org/papers/10.21105/joss.02965</a> (visited on 2024-12-10), <a href="https://doi.org/10.21105/joss.02965">doi:10.21105/joss.02965</a>.&#160;<a class="footnote-backref" href="#fnref:14" title="Jump back to footnote 14 in the text">&#8617;</a></p>
+</li>
+</ol>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2020-2021 Swiss Territorial Data Lab
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        <div class="md-social">
+  
+    
+    
+    
+    
+    <a href="https://github.com/swiss-territorial-data-lab" target="_blank" rel="noopener" title="Repo on Github" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+    </a>
+  
+    
+    
+    
+    
+    <a href="mailto:<info@stdl.ch>" target="_blank" rel="noopener" title="Send us an eMail!" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M498.1 5.6c10.1 7 15.4 19.1 13.5 31.2l-64 416c-1.5 9.7-7.4 18.2-16 23s-18.9 5.4-28 1.6L284 427.7l-68.5 74.1c-8.9 9.7-22.9 12.9-35.2 8.1S160 493.2 160 480v-83.6c0-4 1.5-7.8 4.2-10.7l167.6-182.9c5.8-6.3 5.6-16-.4-22s-15.7-6.4-22-.7L106 360.8l-88.3-44.2C7.1 311.3.3 300.7 0 288.9s5.9-22.8 16.1-28.7l448-256c10.7-6.1 23.9-5.5 34 1.4z"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.expand"], "search": "../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.a7c05c9e.min.js"></script>
+      
+        <script src="../assets/javascripts/config.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>
