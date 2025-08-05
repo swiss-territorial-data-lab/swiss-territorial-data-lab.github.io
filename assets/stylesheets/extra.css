@@ -65,6 +65,10 @@
     border-bottom: 0.5px solid var(--stdl-blue);
 }
 
+.md-typeset .admonition.abstract:focus-within, .md-typeset details.abstract:focus-within {
+    box-shadow: none;
+}
+
 .md-typeset :is(.admonition, details):is(.abstract, .summary, .tldr) {
     border-color: var(--stdl-blue);
 }
