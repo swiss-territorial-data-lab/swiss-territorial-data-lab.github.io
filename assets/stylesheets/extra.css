@@ -35,10 +35,10 @@
 }
 
 :root {
-    --stdl-dark-gray: #959CB4;
-    --stdl-light-gray: #C4C9DD;
-    --stdl-blue: #00468C;
-    --md-primary-fg-color: var(--stdl-blue);
+    --stdl-dark-gray: #5D6580;
+    --stdl-light-gray: #C6CBD8;
+    --stdl-gray: #8C96AD;
+    --md-primary-fg-color: var(--stdl-gray);
     --md-accent-fg-color: var(--stdl-dark-gray);
 }
 
@@ -61,8 +61,8 @@
 } */
 
 .md-typeset :is(.abstract, .summary, .tldr)> :is(.admonition-title, summary) {
-    background-color: white; 
-    border-bottom: 0.5px solid var(--stdl-blue);
+    background-color: var(--stdl-light-gray);
+    border-bottom: 0.5px solid var(--stdl-gray);
 }
 
 .md-typeset .admonition.abstract:focus-within, .md-typeset details.abstract:focus-within {
@@ -70,13 +70,21 @@
 }
 
 .md-typeset :is(.admonition, details):is(.abstract, .summary, .tldr) {
-    border-color: var(--stdl-blue);
+    border-color: var(--stdl-gray);
+}
+
+.md-typeset :is(.admonition, details):is(.abstract, .summary, .tldr) a {
+    color: white;
+}
+
+.md-typeset :is(.admonition, details):is(.abstract, .summary, .tldr) a:hover {
+    color: var(--stdl-dark-gray);
 }
 
 .md-typeset :is(.abstract, .summary, .tldr)> :is(.admonition-title, summary)::before {
-    background-color: var(--stdl-blue);
+    background-color: white;
 }
 
 .md-typeset :is(.abstract, .summary, .tldr)> :is(.admonition-title, summary)::after {
-    background-color: var(--stdl-blue);
+    background-color: white;
 }
