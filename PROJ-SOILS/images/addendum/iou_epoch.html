@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>IoU per Class vs Threshold</title>
+    <script src="https://cdn.jsdelivr.net/npm/echarts/dist/echarts.min.js"></script>
+    <style>
+        html, body {
+            margin: 10;
+            padding: 0;
+        }
+        #chart {
+            width: 100%;
+            height: 800px;
+        }
+    </style>
+</head>
+<body>
+    <div id="chart"></div>
+    <script>
+        var chart = echarts.init(document.getElementById('chart'));
+
+        const thresholds = [10, 20, 30, 40, 50, 60, 69, 70];
+        const colors = [
+            '#4949E7', '#ad9452', '#f04d68', '#929292', '#19bfff', '#009193',
+            '#ffffff', '#45b72f', '#5bc08c', '#8dba37', '#000000', '#ffc100',
+            '#00fdf6', '#ffff00', '#19bfff', '#00ff8b'
+        ];
+
+        const data = {
+            "building": [0.79, 0.92, 0.93, 0.93, 0.93, 0.93, 0.93, 0.93],
+            "non-concrete surface": [0.61, 0.73, 0.75, 0.79, 0.78, 0.79, 0.79, 0.8],
+            "surface in concrete": [0.77, 0.83, 0.84, 0.84, 0.84, 0.85, 0.86, 0.86],
+            "bare rock": [0.77, 0.85, 0.81, 0.82, 0.84, 0.85, 0.86, 0.85],
+            "natural water": [0.98, 0.98, 0.99, 0.99, 0.99, 0.99, 0.99, 0.99],
+            "reed": [0.26, 0.88, 0.85, 0.89, 0.91, 0.9, 0.9, 0.91],
+            "snow": [0.85, 0.93, 0.93, 0.91, 0.92, 0.73, 0.92, 0.93],
+            "soil with vegetation": [0.92, 0.92, 0.92, 0.93, 0.93, 0.93, 0.94, 0.94],
+            "vineyard and orchard": [0.89, 0.94, 0.84, 0.95, 0.95, 0.95, 0.95, 0.96],
+            "agricultural land": [0.97, 0.97, 0.97, 0.98, 0.98, 0.98, 0.98, 0.98],
+            "tarp": [0.74, 0.98, 0.97, 0.97, 0.99, 0.97, 0.98, 0.98],
+            "temporary green house": [0.21, 0.86, 0.93, 0.94, 0.94, 0.95, 0.94, 0.94],
+            "permanent green house": [0.4, 0.99, 1, 1, 1, 0.92, 1, 1],
+            "green roof": [0.07, 0.58, 0.87, 0.76, 0.9, 0.9, 0.9, 0.9],
+            "basin": [0.06, 0.95, 0.93, 0.96, 0.96, 0.97, 0.97, 0.96],
+            "synthetic lawn": [0, 0.99, 0.98, 0, 0.99, 0, 0.99, 0.99]
+        };
+
+        const series = Object.entries(data).map(([name, values], idx) => ({
+            name,
+            type: 'line',
+            data: values,
+            smooth: false,
+            lineStyle: {
+                color: '#ccc'
+            },
+            itemStyle: {
+                color: colors[idx % colors.length]
+            },
+            emphasis: {
+                focus: 'series',
+                lineStyle: {
+                    width: 3,
+                    color: colors[idx % colors.length]
+                },
+                itemStyle: {
+                    color: colors[idx % colors.length]
+                }
+            },
+            symbol: 'circle',
+            symbolSize: 6
+        }));
+
+        const option = {
+            title: {
+                text: 'IoU per Class vs Epochs',
+                left: 'center'
+            },
+            tooltip: {
+                trigger: 'axis'
+            },
+            legend: {
+                type: 'scroll',
+                top: 50
+            },
+            grid: {
+                top: 120,   // push plot area lower
+                bottom: 80  // space below x-axis
+            },
+            xAxis: {
+                type: 'category',
+                name: 'Epochs',
+                data: thresholds
+            },
+            yAxis: {
+                type: 'value',
+                name: 'IoU',
+                min: 0,
+                max: 1.1
+            },
+            series: series,
+            toolbox: {
+                feature: {
+                    saveAsImage: {},
+                    dataZoom: {},
+                    restore: {}
+                }
+            },
+            dataZoom: [
+                {
+                    type: 'slider',
+                    start: 0,
+                    end: 100
+                },
+                {
+                    type: 'inside'
+                }
+            ]
+        };
+
+        chart.setOption(option);
+    </script>
+</body>
+</html>

@@ -565,9 +565,60 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#10-bibliography" class="md-nav__link">
+  <a href="#10-addendum" class="md-nav__link">
     <span class="md-ellipsis">
-      10. Bibliography
+      10. Addendum
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="10. Addendum">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#101-additional-ground-truth" class="md-nav__link">
+    <span class="md-ellipsis">
+      10.1 Additional Ground Truth
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#102-methodology" class="md-nav__link">
+    <span class="md-ellipsis">
+      10.2 Methodology
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#103-results-discussion" class="md-nav__link">
+    <span class="md-ellipsis">
+      10.3 Results &amp; Discussion
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#104-conclusions-and-outlooks" class="md-nav__link">
+    <span class="md-ellipsis">
+      10.4 Conclusions and Outlooks
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#11-bibliography" class="md-nav__link">
+    <span class="md-ellipsis">
+      11. Bibliography
     </span>
   </a>
   
@@ -589,12 +640,14 @@
 
 
 <h1 id="automatic-soil-segmentation">Automatic Soil Segmentation<a class="headerlink" href="#automatic-soil-segmentation" title="Permanent link">&para;</a></h1>
-<p>Nicolas Beglinger (swisstopo) - Clotilde Marmy (ExoLabs) - Alessandro Cerioni (Canton of Geneva) - Roxane Pott (swisstopo) - Thilo Dürr-Auster (Canton of Fribourg) - Daniel Käser (Canton of Fribourg)</p>
+<p>Clotilde Marmy (ExoLabs) - Nicolas Beglinger (swisstopo) - Gwenaëlle Salamin (ExoLabs) - Alessandro Cerioni (Canton of Geneva) - Roxane Pott (swisstopo) - Thilo Dürr-Auster (Canton of Fribourg) - Daniel Käser (Canton of Fribourg)</p>
 <p>Proposed by the <a href="https://www.fr.ch/dime/sen">Service de l'environnement</a> (SEn) of the Canton of Fribourg - PROJ-SOILS<br/>
-May 2023 to April 2024 - Published in April 2024</p>
+May 2023 to April 2024 - Published in April 2024 - Complementary publication in September 2025</p>
 <p>All code is available on <a href="https://github.com/swiss-territorial-data-lab/proj-soil">GitHub</a>.</p>
 <p xmlns:cc="http://creativecommons.org/ns#" >This work by <a rel="cc:attributionURL dct:creator" property="cc:attributionName" href="https://stdl.ch">STDL</a> is licensed under <a href="https://creativecommons.org/licenses/by-sa/4.0/?ref=chooser-v1" target="_blank" rel="license noopener noreferrer" style="display:inline-block;">CC BY-SA 4.0<img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1" alt=""><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/by.svg?ref=chooser-v1" alt=""><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/sa.svg?ref=chooser-v1" alt=""></a></p>
 
+<p><br /></p>
+<p><strong>DISCLAIMER</strong>: This documentation corresponds to two phases of a same project. Sections 1 to 9 document explorative tests with different models and parameters. Section 10 is an addendum built on the first phase of the project and, therefore, delivers the more up-to-date and production-oriented results. The reader may want to begin with this part directly and, if necessary, consult the previous sections. All developments are documented in the same GitHub repository. </p>
 <p><br /></p>
 <p><em><strong>Abstract</strong>: This project focuses on developing an automated methodology to distinguish areas covered by pedological soil from areas comprised of non-soil. The goal is to generate high-resolution maps (10cm) to aid in the location and assessment of polluted soils. Towards this end, we utilize deep learning models to classify land cover types using raw, raster-based aerial imagery and digital elevation models (DEMs). Specifically, we assess models developed by the Institut National de l’Information Géographique et Forestière (IGN), the Haute Ecole d'Ingénierie et de Gestion du Canton de Vaud (HEIG-VD), and the Office Fédéral de la Statistique (OFS). The performance of the models is evaluated with the Matthew's correlation coefficient (MCC) and the Intersection over Union (IoU), as well as with qualitatifve assessments conducted by the beneficiaries of the project. In addition to testing pre-existing models, we fine-tuned the model developed by the HEIG-VD on a dataset specifically created for this project. The fine-tuning aimed to optimize the model performance on the specific use-case and to adapt it to the characteristics of the dataset: higher resolution imagery, different vegetation appearances due to seasonal differences, and a unique classification scheme. Fine-tuning with a mixed-resolution dataset improved the model performance of its application on lower-resolution imagery, which is proposed to be a solution to square artefacts that are common in inferences of attention-based models. Reaching an MCC score of 0.983, the findings demonstrate promising performance. The derived model produces satisfactory results, which have to be evaluated in a broader context before being published by the beneficiaries. Lastly, this report sheds light on potential improvements and highlights considerations for future work.</em></p>
 <h2 id="1-introduction">1. Introduction<a class="headerlink" href="#1-introduction" title="Permanent link">&para;</a></h2>
@@ -609,18 +662,12 @@ May 2023 to April 2024 - Published in April 2024</p>
 <p>Identify or develop a model, that is able to distinguish areas covered by pedological soil from areas covered by non-soil land cover, given a raster-based input in the form of aerial imagery and digital elevation models (DEMs).
 </p>
 </blockquote>
-<!-- ####################################          #################################### -->
-<!-- ####################################          #################################### -->
-<!-- ####################################          #################################### -->
 <h2 id="2-acceptance-criteria-and-concerned-metrics">2. Acceptance criteria and concerned metrics<a class="headerlink" href="#2-acceptance-criteria-and-concerned-metrics" title="Permanent link">&para;</a></h2>
-<!-- ####################################          #################################### -->
-<!-- ####################################          #################################### -->
-<!-- ####################################          #################################### -->
 <p>The acceptance criteria describe the conditions that must be met by the outcome of the project, by which the proof-of-concept is considered a success.</p>
 <p>These conditions can be of qualitative or quantitative nature. In the present case, the former ones rely on visual interpretation; the latter ones consist of metrics which measure the performance of the methodologies to evaluate and are easily standardized.</p>
 <p>The chosen evaluation strategies are described below.</p>
 <h3 id="21-metrics">2.1 Metrics<a class="headerlink" href="#21-metrics" title="Permanent link">&para;</a></h3>
-<p>As metrics, the Mathew's correlation coefficient and the intersection over union have been used.</p>
+<p>As metrics, the Mathew's correlation coefficient and the intersection over union were used.</p>
 <p><strong>Mathew's Correlation Coefficient (MCC)</strong>
 The Matthew's correlation coefficient (MCC) offers a balanced evaluation of model performance by incorporating and combining all four components of the confusion matrix: true positives, false positives, true negatives, and false negatives. This makes the metric be effective even in cases of class imbalance, which could be a challenge when working with aerial imagery.</p>
 <div class="arithmatex">\[MCC = \frac{TP \times TN - FP \times FN}{\sqrt{(TP + FP)(TP + FN)(TN + FP)(TN + FN)}}\]</div>
@@ -660,7 +707,7 @@ The IoU, also known as the Jaccard index, measures the overlap between two datas
 <p>The ground truth data for this project is used to compare the predictions of the models to the actual land cover types and to fine-tune an existing model for the project's specific needs. It was digitized by the beneficiaries of the project and is based on the SWISSIMAGE RS  acquisition from 2020. As vector data allows for a more precise delineation of the land cover types, the ground truth data was digitized in a vector format. All contiguous areas comprised of the same land cover type were digitized as polygons.</p>
 <h4 id="classification-scheme">Classification Scheme<a class="headerlink" href="#classification-scheme" title="Permanent link">&para;</a></h4>
 <p>Although the goal of this project is to distinguish soil from non-soil areas, the ground truth data is classified into more detailed classes. This is due to the fact that it is easier to identify possible shortcomings of the models when the classes are more detailed. With a  classification, techniques like confusion matrices can be used to identify which classes are often confused with each other, leading also to a better understanding about what areas should be covered in additional ground truth digitizations.</p>
-<p>During development of the classification scheme, the focus lied on the distinction between soil and non-soil, which means that every class can be attributed to either soil, or non-soil, thereby respecting the legal definitions of soil according to the <em>Federal Ordinance on Soil Pollutions</em><sup id="fnref:4"><a class="footnote-ref" href="#fn:4">4</a></sup>. The final classification scheme of the ground truth data is a product of an iterative process and has been subject of compromises between an optimal fit to the legal definitions and practical limitations like the possibility of a mere optical identification of the classes. Essentially, the scheme consists of 17 classes. However, during <a href="#62-fine-tuning">fine-tuning</a>, it was found that some classes are too heavily underrepresented to be learnt by the model. As a result, the classes were merged into a new scheme consisting of 12 classes. Another feature of the classification scheme to keep in mind is that it is optimized for the Fribourgese territory, which means that some classes may not be directly applicable to other regions. The classification scheme is depicted in Figure 1.</p>
+<p>During development of the classification scheme, the focus lied on the distinction between soil and non-soil, which means that every class can be attributed to either soil, or non-soil, thereby respecting the legal definitions of soil according to the <em>Federal Ordinance on Soil Pollutions</em><sup id="fnref:4"><a class="footnote-ref" href="#fn:4">4</a></sup>. The final classification scheme of the ground truth data is a product of an iterative process and was subject of compromises between an optimal fit to the legal definitions and practical limitations like the possibility of a mere optical identification of the classes. Essentially, the scheme consists of 17 classes. However, during <a href="#62-fine-tuning">fine-tuning</a>, it was found that some classes are too heavily underrepresented to be learnt by the model. As a result, the classes were merged into a new scheme consisting of 12 classes. Another feature of the classification scheme to keep in mind is that it is optimized for the Fribourgese territory, which means that some classes may not be directly applicable to other regions. The classification scheme is depicted in Figure 1.</p>
 <div align="center" style="font-style: italic">
   <img
   src="images/gt_classes.png"
@@ -670,7 +717,7 @@ The IoU, also known as the Jaccard index, measures the overlap between two datas
 </div>
 
 <h4 id="extent">Extent<a class="headerlink" href="#extent" title="Permanent link">&para;</a></h4>
-<p>The ground truth has been digitized on the Fribourgese territory on about 9.6 km², including diverse land cover types. The area of interest is depicted in Figure 2.</p>
+<p>The ground truth was digitized on the Fribourgese territory on about 9.6 km², including diverse land cover types. The area of interest is depicted in Figure 2.</p>
 <div align="center" style="font-style: italic">
   <img
   src="images/GT_overview_2.png"
@@ -725,7 +772,7 @@ Furthermore, the metrics were implemented in the workflow and a rigorous qualita
 <h4 id="inference">Inference<a class="headerlink" href="#inference" title="Permanent link">&para;</a></h4>
 <p>In the beginning of the evaluation phase, the inferences of the models were generated directly by the aforementioned institutions. Later, after receiving the model weights and the source codes, we could infere from the models of the HEIG-VD and OFS directly.</p>
 <h4 id="reclassification">Reclassification<a class="headerlink" href="#reclassification" title="Permanent link">&para;</a></h4>
-<p>As already touched upon, the above-stated models do not directly output binary (soil/non-soil) raster images, but output segmented rasters with multiple classes. The classification scheme depends on the data that was used for training. The classes of the models of IGN and HEIG-VD are almost identical, since they have both been trained on French imagery and ground truth. They differ only in the numbering of the classes. The model of OFS, however outputs completely different classes. To harmonize the results of all three institution’s models and to make them fit for out problem at hand, all outputs have been reclassified to the same classification scheme named “Package ID”. The reason for this name is that there is an N:M relationship between the IGN-originated classes and the Fribourg ground truth classes. One “package” thus consists of all the classes that are connected via N:M relationships. The mapping of the classes is depicted in Figures 3 and 4.</p>
+<p>As already touched upon, the above-stated models do not directly output binary (soil/non-soil) raster images, but output segmented rasters with multiple classes. The classification scheme depends on the data that was used for training. The classes of the models of IGN and HEIG-VD are almost identical, since they have both been trained on French imagery and ground truth. They differ only in the numbering of the classes. The model of OFS, however outputs completely different classes. To harmonize the results of all three institution’s models and to make them fit for out problem at hand, all outputs were reclassified to the same classification scheme named “Package ID”. The reason for this name is that there is an N:M relationship between the IGN-originated classes and the Fribourg ground truth classes. One “package” thus consists of all the classes that are connected via N:M relationships. The mapping of the classes is depicted in Figures 3 and 4.</p>
 <div style="display: flex; justify-content: center;">
   <div align="center" style="font-style: italic; margin-right: 10px;">
   <img
@@ -782,7 +829,7 @@ The output of the HEIG-VD's model is affected by square-shaped artefacts, which 
   <figcaption>Figure 7: Representative map showing square artefacts in areas without high-frequency context. Lines: GT, Fills: predictions</figcaption>
 </div>
 
-<p>The artefacts produce large areas of false predictions that supposedly greatly influence any evaluation metric that is computed. To obtain a clearer understanding of the influence of those artefacts on the metrics, a second extent, Extent 2 as shown in Figure 8, has been created, that excludes all the tiles where the HEIG-VD model produces those artefacts.</p>
+<p>The artefacts produce large areas of false predictions that supposedly greatly influence any evaluation metric that is computed. To obtain a clearer understanding of the influence of those artefacts on the metrics, a second extent, Extent 2 as shown in Figure 8, was created, that excludes all the tiles where the HEIG-VD model produces those artefacts.</p>
 <div align="center" style="font-style: italic">
   <img
   src="images/extent2.png"
@@ -809,7 +856,7 @@ The output of the HEIG-VD's model is affected by square-shaped artefacts, which 
 </ol>
 <p>More details about the technical implications of the evaluation pipeline can be found in the <a href="https://github.com/swiss-territorial-data-lab/proj-soils">GitHub repository</a> of the project.</p>
 <h4 id="qualitative-assessment">Qualitative assessment<a class="headerlink" href="#qualitative-assessment" title="Permanent link">&para;</a></h4>
-<p>As stated in the <a href="#qualitative-assessment">Qualitative Assessment</a> section, this visual assessment serves to ensure that the chosen metrics (MCC, IoU) correspond to the qualitative evaluation of the beneficiaries. Three models where chosen, such that (regarding the metrics) high- and low-performing models were included. As the problem with the artefacts in the HEIG-VD model’s predictions is very evident, for this assessment, only a subset from Extent 2 has been taken into account.</p>
+<p>As stated in the <a href="#qualitative-assessment">Qualitative Assessment</a> section, this visual assessment serves to ensure that the chosen metrics (MCC, IoU) correspond to the qualitative evaluation of the beneficiaries. Three models where chosen, such that (regarding the metrics) high- and low-performing models were included. As the problem with the artefacts in the HEIG-VD model’s predictions is very evident, for this assessment, only a subset from Extent 2 was taken into account.</p>
 <p>To conduct the qualitative assessment, the beneficiaries were given the predictions of the three chosen models on 4 representative tiles. The tiles were chosen to represent different land cover types (as far as possible on this area). The beneficiaries were then asked to rank the predictions of the models from best to worst.</p>
 <p>As the inferences for the OFS model were not available at the relevant point in time, the qualitative assessment was conducted only for the IGN and the HEIG-VD models for the tiles displayed in Figure 9.</p>
 <div align="center" style="font-style: italic">
@@ -889,7 +936,7 @@ The output of the HEIG-VD's model is affected by square-shaped artefacts, which 
 </li>
 </ul>
 <h4 id="training">Training<a class="headerlink" href="#training" title="Permanent link">&para;</a></h4>
-<p>Both the models trained on the single-resolution and on the mixed-resolution dataset have been trained for a total of 160'000 iterations using the mmsegmentation library<sup id="fnref2:14"><a class="footnote-ref" href="#fn:14">14</a></sup>. One iteration in this context means one batch of data has been processed. Because of memory limitations, the models were trained with a batch-size of 1, which means, that one iteration corresponds to one tile being processed. Thus, one epoch (one pass through the whole dataset) consists of 2'640 iterations for the single-resolution dataset and 3'460 iterations for the mixed-resolution dataset. During training, the models were evaluated on the validation set after every epoch by computing the mIoU metric. If the mIoU increased, a model checkpoint was saved and the old one deleted. After training for the predefined number of iterations, the model with the highest mIoU on the validation set was chosen as the final model.</p>
+<p>Both the models trained on the single-resolution and on the mixed-resolution dataset were trained for a total of 160'000 iterations using the mmsegmentation library<sup id="fnref2:14"><a class="footnote-ref" href="#fn:14">14</a></sup>. One iteration in this context means one batch of data was processed. Because of memory limitations, the models were trained with a batch-size of 1, which means, that one iteration corresponds to one tile being processed. Thus, one epoch (one pass through the whole dataset) consists of 2'640 iterations for the single-resolution dataset and 3'460 iterations for the mixed-resolution dataset. During training, the models were evaluated on the validation set after every epoch by computing the mIoU metric. If the mIoU increased, a model checkpoint was saved and the old one deleted. After training for the predefined number of iterations, the model with the highest mIoU on the validation set was chosen as the final model.</p>
 <h2 id="6-results">6. Results<a class="headerlink" href="#6-results" title="Permanent link">&para;</a></h2>
 <p>The metrics values for the evaluation and the fine-tuning parts of the project are first presented. Afterwards, a close view of the final product is shown.</p>
 <h3 id="61-evaluation">6.1 Evaluation<a class="headerlink" href="#61-evaluation" title="Permanent link">&para;</a></h3>
@@ -1127,7 +1174,7 @@ The OFS model <em>OFS_ADELE2(+SAM)</em> performs similarly to the best-performin
 <h4 id="performance-increase">Performance Increase<a class="headerlink" href="#performance-increase" title="Permanent link">&para;</a></h4>
 <p>The fine-tuning procedure could improve the model performance substantially, even though a small dataset was used. For comparison: The FLAIR-1 dataset comprises more than 800 km², which is more than 80 times the size of our used dataset. The improvement is especially impressing, since the chosen model is an attention-based model, which is known to be dependent on large amounts of data <sup id="fnref:15"><a class="footnote-ref" href="#fn:15">15</a></sup>. A possible explanation for the success of the fine-tuning is that most of the features that the model has to learn are already present in the pre-trained model. The adjustments of the weights needed to adapt to the specifics of the dataset may, in comparison to the vast amount of information needed to train a model from scratch, be quite small.</p>
 <h4 id="adaptability">Adaptability<a class="headerlink" href="#adaptability" title="Permanent link">&para;</a></h4>
-<p>Fine-Tuning allows to adjust for different specifics of new datasets. In this case, the model was able to adjust for different resolutions, a different acquisition season, and a new classification scheme. However, also the model that has been trained on the mixed-resolution dataset performed worse on 20 cm and 40 cm resolution input than on 10 cm resolution input. This could be due to the fact that the model has been trained on 4 times as many 10 cm resolution tiles as on 20 cm resolution tiles and 16 times as many 10 cm resolution tiles as on 40 cm resolution tiles. As a result, the model could be biased towards the 10 cm resolution. Another explanation imaginable could be that the defined classes are more easily identifiable in high-resolution input in general. While e.g., the IoU values for the class "sol_vegetalise" does not fluctuate much between the different resolutions, the IoU values for e.g., the class "roche_dure_meuble" seems to depend considerably on the resolution.</p>
+<p>Fine-tuning allows to adjust for different specifics of new datasets. In this case, the model was able to adjust for different resolutions, a different acquisition season, and a new classification scheme. However, also the model that was trained on the mixed-resolution dataset performed worse on 20 cm and 40 cm resolution input than on 10 cm resolution input. This could be due to the fact that the model was trained on 4 times as many 10 cm resolution tiles as on 20 cm resolution tiles and 16 times as many 10 cm resolution tiles as on 40 cm resolution tiles. As a result, the model could be biased towards the 10 cm resolution. Another explanation imaginable could be that the defined classes are more easily identifiable in high-resolution input in general. While e.g., the IoU values for the class "sol_vegetalise" does not fluctuate much between the different resolutions, the IoU values for e.g., the class "roche_dure_meuble" seems to depend considerably on the resolution.</p>
 <h4 id="square-artefacts">Square Artefacts<a class="headerlink" href="#square-artefacts" title="Permanent link">&para;</a></h4>
 <p>While a decreased resolution and fine-tuning could not remove the square artefacts completely, their occurence could be drastically reduced. Even more so in the binary case, where the depicted confusion between water and vegetated soil in Figure 27 seems to contribute the most to the square artefacts, which could be reduced by a post-processing step, using known waterbodies as a mask. These water square artefacts that appear by decreasing the resolution, show that the model depends on both resolution and context. Indeed, the lower resolution seems to have removed the specific texture of mountainous meadow and rendered it similar to waterbody. Another factor contributing to this confusion could be a possible bias in the ground truth caused by overrepresented lake sediments that resemble soil.</p>
 <p>The resolution decrease affects also the size of the smallest object segmentable. Luckily, urban areas profit the most from high resolution and are not prone to square artefacts, which means that a trade-off could be circumvented by a spatial seperation of high- and low-resolution inferences (e.g., urban: 10 cm, countryside: 40 cm).</p>
@@ -1151,7 +1198,7 @@ The OFS model <em>OFS_ADELE2(+SAM)</em> performs similarly to the best-performin
 <p>The confusion between water and vegetated soil is a main cause of error in the binary predictions. A post-processing step to remove these square artefacts could be conducted by using known waterbodies as a mask.</p>
 </li>
 <li>Another outlook is to conduct further experiments on the effect of the vegetation period on the model performance. This could be done by training the model on different vegetation periods and evaluating it on the same extent.</li>
-<li>Many hyperparameters of the model have been left at their default values that have been set by HEIG-VD. They could be optimized to further increase the model's performance.</li>
+<li>Many hyperparameters of the model were left at their default values that were set by HEIG-VD. They could be optimized to further increase the model's performance.</li>
 </ul>
 <h3 id="83-acknowledgements">8.3 Acknowledgements<a class="headerlink" href="#83-acknowledgements" title="Permanent link">&para;</a></h3>
 <p>We would like to express our gratitude to the people working at HEIG-VD, IGN, and OFS, which contributed significantly to this project by sharing not only their code and models, but also their thoughts and experiences with us. It was a pleasure to collaborate with them.</p>
@@ -1244,7 +1291,1687 @@ The OFS model <em>OFS_ADELE2(+SAM)</em> performs similarly to the best-performin
   <figcaption>Figure 39: Confusion matrix of the OFS model OFS_ADELE2(+SAM) on Extent 1.</figcaption>
 </div>
 
-<h2 id="10-bibliography">10. Bibliography<a class="headerlink" href="#10-bibliography" title="Permanent link">&para;</a></h2>
+<h2 id="10-addendum">10. Addendum<a class="headerlink" href="#10-addendum" title="Permanent link">&para;</a></h2>
+<p>As the proof of concept (PoC) yielded promising results, we continued to work on:</p>
+<ul>
+<li>Extending the ground truth</li>
+<li>Fine-tuning the model</li>
+<li>Targeting potential prediction errors</li>
+<li>Correcting the artefacts in post-processing</li>
+<li>Monitoring the changes between two image acquisitions</li>
+</ul>
+<h3 id="101-additional-ground-truth">10.1 Additional Ground Truth<a class="headerlink" href="#101-additional-ground-truth" title="Permanent link">&para;</a></h3>
+<p>The beneficiaries from the Canton of Fribourg digitized additional ground truth (<a href="#32-ground-truth">original definition</a>). They completed the Fribourg area and digitized 5 new zones on <a href="https://www.swisstopo.admin.ch/en/orthoimage-swissimage-10">SWISSIMAGE 10 cm</a> this time. The covered surface increased from 9.6 km² to 14 km². In addition, the Canton of Vaud joined the project and digitized ground truth on SWISSIMAGE 10 cm of the last leaf-on acquisition campaign from 2023. It covers 8.5 km². Figure 40 gives an overview of the areas of interest (AoI). Furthermore, the AoI were tagged as urban and rural for analysis purposes. The first Fribourgese ground truth is called "FR 1" and the additional one is called "FR 2". Together, they are the "FR" ground truth. The ground truth made on the canton of Vaud is the "VD" ground truth. </p>
+<div align="center" style="font-style: italic">
+  <img
+  src="images/addendum/AOI_overview.jpg"
+  alt="FR and VD AOI."
+  width = "100%" >
+  <figcaption>Figure 40: The areas of interest where the ground truth was digitized are located in the cantons of Fribourg and Vaud. Red indicates ground truth digitized using SWISSIMAGE 10 cm, while blue indicates ground truth digitized using SWISSIMAGE RS. Squares represent rural areas and rounds represent urban areas. Images from 2020 and 2023 were labelled for the cantons of Fribourg and Vaud respectively. White and black background circles on the Fribourgese ground truth indicate the time at which the data were digitized: white was during the PoC phase, black was during the extension of the PoC. </figcaption>
+</div>
+
+<p>With the experience of the PoC and the arrival of a new beneficiary canton, the <a href="#classification-scheme">class</a> definitions were slightly adapted. The new version is documented in Table 3. One notices that the snow cover is now in the <em>uncertain</em> superclass and that pools and natural water are grouped into a specific one, called <em>water</em>. The vineyards and orchards are now in the same class <em>vineyard and orchard</em>. With more ground truth, objects like green roofs, synthetic lawn and eaves were labeled. </p>
+<p><i>Table 3: Definition of the classes for the deep learning algorithm and their aggregation into superclasses. </i></p>
+<table>
+<thead>
+<tr>
+<th>No. classes</th>
+<th>Classes</th>
+<th>Superclasses</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>building</td>
+<td>non-soil</td>
+<td>All   types of buildings, except green roofs and permanent greenhouses. Even garden   sheds fall into this superclass.</td>
+</tr>
+<tr>
+<td>2</td>
+<td>non-concrete anthropogenic surface</td>
+<td>non-soil</td>
+<td>Gravel,   paving stones, quarries, and gravel pits, as well as synthetic surfaces, but   not synthetic lawn.</td>
+</tr>
+<tr>
+<td>3</td>
+<td>surface in concrete</td>
+<td>non-soil</td>
+<td>Concrete   surface, asphalt, tar</td>
+</tr>
+<tr>
+<td>4</td>
+<td>bare rock</td>
+<td>non-soil</td>
+<td>Bare   rock and loose rock (scree, gravel, sand, silt, etc.)</td>
+</tr>
+<tr>
+<td>5</td>
+<td>natural water</td>
+<td>water</td>
+<td>Natural   waterbodies</td>
+</tr>
+<tr>
+<td>6</td>
+<td>reed</td>
+<td>non-soil</td>
+<td>Reed   (in water)</td>
+</tr>
+<tr>
+<td>7</td>
+<td>snow</td>
+<td>uncertain</td>
+<td>Surface   covered by snow</td>
+</tr>
+<tr>
+<td>8</td>
+<td>soil with vegetation</td>
+<td>soil</td>
+<td>Non-agricultural   vegetated land (forests, sports fields with soil, gardens, etc.), including temporarily bare land in urban areas, but not plowed agricultural land.</td>
+</tr>
+<tr>
+<td>9</td>
+<td>vineyard and orchard</td>
+<td>soil</td>
+<td>Vineyard or orchard in rows</td>
+</tr>
+<tr>
+<td>10</td>
+<td>agricultural land</td>
+<td>soil</td>
+<td>Agricultural   land except vineyards and orchards in rows (including plowed land and grass   strips along plots)</td>
+</tr>
+<tr>
+<td>11</td>
+<td>tarp</td>
+<td>soil</td>
+<td>Soil   covered with large plastic sheets (crop covers, often white or black)</td>
+</tr>
+<tr>
+<td>12</td>
+<td>temporary greenhouse</td>
+<td>soil</td>
+<td>Temporary   greenhouse (plastic tunnels placed on the ground)</td>
+</tr>
+<tr>
+<td>13</td>
+<td>permanent greenhouse</td>
+<td>non-soil</td>
+<td>Permanent   greenhouse (building-shaped, with a glass or plastic roof)</td>
+</tr>
+<tr>
+<td>14</td>
+<td>green roof</td>
+<td>non-soil</td>
+<td></td>
+</tr>
+<tr>
+<td>15</td>
+<td>basin, pool</td>
+<td>water</td>
+<td>Surface   water in non-natural basins (ponds, swimming pools)</td>
+</tr>
+<tr>
+<td>16</td>
+<td>synthetic lawn</td>
+<td>non-soil</td>
+<td></td>
+</tr>
+<tr>
+<td>17</td>
+<td>eave</td>
+<td>uncertain</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="102-methodology">10.2 Methodology<a class="headerlink" href="#102-methodology" title="Permanent link">&para;</a></h3>
+<p>This section documents the new fine-tuning strategy, uncertainty computation, artefact correction, and monitoring rules. </p>
+<h4 id="1021-fine-tuning">10.2.1 Fine-tuning<a class="headerlink" href="#1021-fine-tuning" title="Permanent link">&para;</a></h4>
+<p>Before fine-tuning, the ground truth was split in train, validation and test datasets.</p>
+<h5 id="10211-dataset-preparation">10.2.1.1 Dataset Preparation<a class="headerlink" href="#10211-dataset-preparation" title="Permanent link">&para;</a></h5>
+<p>We remind that the ground truth was acquired in two times and that the first part was already used for developments. As it was small, there were only  the <a href="#data-preparation">train and validation sets defined</a>. Now, with more ground truth available, the validation set was divided in the new validation and test set. Then the new train, validation and test sets are completed with the additional acquired ground truth.</p>
+<p>First of all, the vector layer of the ground truth was converted into raster images and cut into tiles of 512 by 512 pixels, as depicted in Figure 41. Tiles of each new region of the AoI were randomly divided into three sets: training (hatched pink tiles, 70%), validation (hatched green tiles, 15%), and test (hatched yellow tiles, 15%), as depicted by the image on the left side in Figure 41. The counter part of this splitting strategy is that test tiles are close to train tiles. This hinders the assessment of the generalization capability of the model on zones outside of the AoI. 
+For tiles in AoI regions already present in the first version of the ground truth, the validation samples were split equally between the validation and test sets. This is illustrated by the image on the right in Figure 41.</p>
+<div align="center" style="font-style: italic">
+    <div style="display: inline-block; border: 1px solid #212121; padding: 5px; border-radius: 0px;">
+      <img
+      src="images/addendum/data_preparation.png"
+      alt="right_angles"
+      width = "100%" >
+  </div>
+  <figcaption>Figure 41: Rasters of the ground truth and the grid of tiles for cutting the former one into datasets. Train (hatched pink tiles), validation (hatched green tiles) and test (hatched yellow tiles) datasets are established. </figcaption>
+</div>
+
+<p>The pixel distribution across classes was then monitored, and tile assignment was manually adjusted when needed to better represent smaller classes. Figures 42, 43 and 44 illustrate the class distributions across the three datasets respectively for the canton of Fribourg, of Vaud and of both cantons. For the ground truth of the canton of Fribourg, seven samples covered by fog or clouds were removed. The Fribourgese ground truth has also only one group of three permanent greenhouses, that barely covers more than one tile of the training set (first part of the ground truth). This explains the absence of this class in the validation and test datasets. There are as well no synthetic lawn. About the eaves, at the time of the Fribourgese digitization, no <em>eave</em> class was defined yet. </p>
+<div align="center" style="font-style: italic">
+    <div style="display: inline-block; border: 1px solid #212121; padding: 5px; border-radius: 0px;">
+      <img
+      src="images/addendum/distribution_FR.png"
+      alt="fribourg_dataset"
+      width = "100%" >
+  </div>
+  <figcaption>Figure 42: Pixel distribution by class for the training, validation and test datasets over the canton of Fribourg (FR 1 and FR 2). The Fribourgese ground truth has only one group of three permanent greenhouses. This explains the absence of this class in the validation and test datasets. </figcaption>
+</div>
+
+<div align="center" style="font-style: italic">
+    <div style="display: inline-block; border: 1px solid #212121; padding: 5px; border-radius: 0px;">
+      <img
+      src="images/addendum/distribution_VD.png"
+      alt="vaud_dataset"
+      width = "100%" >
+  </div>
+  <figcaption>Figure 43: Pixel distribution by class for the training, validation and test datasets over the canton of Vaud (VD). </figcaption>
+</div>
+
+<div align="center" style="font-style: italic">
+    <div style="display: inline-block; border: 1px solid #212121; padding: 5px; border-radius: 0px;">
+      <img
+      src="images/addendum/distribution_FR_VD.png"
+      alt="both_dataset"
+      width = "100%" >
+  </div>
+  <figcaption>Figure 44: Pixel distribution by class for the training, validation and test datasets over both cantons of Fribourg and Vaud (FR 1 + FR 2 + VD). </figcaption>
+</div>
+
+<h5 id="10212-fine-tuning-strategy">10.2.1.2 Fine-tuning Strategy<a class="headerlink" href="#10212-fine-tuning-strategy" title="Permanent link">&para;</a></h5>
+<p>Three fine-tunings were performed:</p>
+<ol>
+<li>Fine-tuning on the Fribourg ground truth (leaf-off images from 2020), name hereafter <em>FR model</em></li>
+<li>Fine-tuning on the Vaud ground truth (leaf-on images from 2023), named hereafter <em>VD model</em></li>
+<li>Fine-tuning on both ground truth, named hereafter <em>mixed model</em></li>
+</ol>
+<p>The number of iterations was scaled according to the lessons learned from the PoC, such as each training sample is seen 100 times by the model. </p>
+<p>Afterwards, the best fine-tuned models were used to infer on the test sets. The <a href="#21-metrics">mean IoU and MCC</a> are computed with the following test sets:</p>
+<ul>
+<li>Vaud test set on VD, FR and mixed models</li>
+<li>Fribourg test set on FR, VD and mixed models</li>
+<li>both test sets on the mixed model</li>
+</ul>
+<p>In addition, the fine-tuned models were used to generate inference on areas outside of the AoI in order to evaluate visually their adequacy to other parts of the cantonal territory. Two 4 km² areas with agglomeration and land were chosen, one near Morat, another near Nyon as depicted in Figure 45.</p>
+<div align="center" style="font-style: italic">
+  <img
+  src="images/addendum/nyon_morat_aoi.png"
+  alt="both_dataset"
+  width = "100%" >
+  <figcaption>Figure 45: Overview of the two 4 km² areas chosen for visual appreciation of the inference.</figcaption>
+</div>
+
+<h4 id="1022-targeting-potential-errors">10.2.2 Targeting Potential Errors<a class="headerlink" href="#1022-targeting-potential-errors" title="Permanent link">&para;</a></h4>
+<p>Even if a high performance is reached after fine-tuning, errors remain present in the output, which is inconvenient for use of the results in real situations. In order to target potential errors, an index was defined to focus on areas where the model is more likely to confuse between classes of the <em>soil</em> and <em>non-soil</em> superclasses. The predicted probabilities of the classes were combined to obtain a "probability index" (referred to as  "index" thereafter):
+the absolute value of the difference of predicted probabilities between the best class in the <em>soil</em> and <em>non-soil</em> superclasses respectively. For instance, when referring to Table 4, 0.5 from <em>soil with vegetation</em> is subtracted to 0.4 from <em>non-concrete anthropogenic surface</em>. The absolute gives 0.1. This probability index should help to focus on areas where the model is more likely to confuse between <em>soil</em> and <em>non-soil</em> classes.</p>
+<p><i>Table 4: Computation example of the "probability index". </i></p>
+<table>
+<thead>
+<tr>
+<th>Class</th>
+<th style="text-align: center;">Predicted probabilities</th>
+<th style="text-align: center;">Ranking</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Soil with vegetation</strong></td>
+<td style="text-align: center;"><strong>0.5</strong></td>
+<td style="text-align: center;"><strong>1</strong></td>
+</tr>
+<tr>
+<td>Non-concrete anthropogenic surface</td>
+<td style="text-align: center;">0.4</td>
+<td style="text-align: center;">2</td>
+</tr>
+<tr>
+<td>Surface in concrete</td>
+<td style="text-align: center;">0.1</td>
+<td style="text-align: center;">3</td>
+</tr>
+<tr>
+<td>Snow</td>
+<td style="text-align: center;">0.1</td>
+<td style="text-align: center;">4</td>
+</tr>
+<tr>
+<td>Vineyard and orchard</td>
+<td style="text-align: center;">&lt;0.1</td>
+<td style="text-align: center;">5</td>
+</tr>
+<tr>
+<td>Agricultural land</td>
+<td style="text-align: center;">&lt;0.1</td>
+<td style="text-align: center;">6</td>
+</tr>
+<tr>
+<td>Temporary greenhouse</td>
+<td style="text-align: center;">&lt;0.1</td>
+<td style="text-align: center;">7</td>
+</tr>
+<tr>
+<td>Bare rock</td>
+<td style="text-align: center;">&lt;0.1</td>
+<td style="text-align: center;">8</td>
+</tr>
+<tr>
+<td>Building</td>
+<td style="text-align: center;">&lt;0.1</td>
+<td style="text-align: center;">9</td>
+</tr>
+<tr>
+<td>Water</td>
+<td style="text-align: center;">&lt;0.1</td>
+<td style="text-align: center;">10</td>
+</tr>
+<tr>
+<td>Reed</td>
+<td style="text-align: center;">&lt;0.1</td>
+<td style="text-align: center;">11</td>
+</tr>
+</tbody>
+</table>
+<p>The index ranges from 0 to 1, with 0 indicating a low chance of the classification in <em>soil</em> and <em>non-soil</em> of being correct (i.e. high chance of confusion between <em>soil</em> and <em>non-soil</em>) and 1 a high chance of the classification in <em>soil</em> and <em>non-soil</em> of being correct. When applying a threshold on this index to remove, according to the assumption, less correct predictions, the accuracy should be increasing. We recall that the accuracy is the ratio of correct predictions over all the predictions. The accuracy on more confident part of the test set is called uncertainty aware accuracy (UAA). It will be used to validate the previous assumption. </p>
+<h4 id="1023-correcting-artefacts">10.2.3 Correcting Artefacts<a class="headerlink" href="#1023-correcting-artefacts" title="Permanent link">&para;</a></h4>
+<p>When correcting <a href="#extents">artefacts</a>, the strategy was to use the neighborhood of each sample to detect and edit them. Each sample was mosaiced with its 8 closer neighboring samples. Then, the mosaic was vectorized for the class values. For each polygon, previously a group of neighboring pixels of the same class, an algorithm searched for the right angles and documented them: </p>
+<ul>
+<li>how many right angles were detected</li>
+<li>how many were convex</li>
+</ul>
+<p>To be a right angle, the magnitude of the vector drawn by the three consecutive points of the corner had to be greater than 50 m. This condition is necessary to filter out all the right angles deriving from the original raster pixels from which the polygons were created as illustrated in Figure 46. </p>
+<div align="center" style="font-style: italic">
+    <div style="display: inline-block; border: 1px solid #212121; padding: 5px; border-radius: 0px;">
+      <img
+      src="images/addendum/steps_post_processing.png"
+      alt="right_angles"
+      width = "100%" >
+  </div>
+  <figcaption>Figure 46: In the vectorized detection, right angles from pixels on the polygon borders had to be differentiated from right angles belonging to artefacts. </figcaption>
+</div>
+
+<p>The hypotheses to consider detected right angles as artefact candidates were:</p>
+<ul>
+<li>between 1 to 4 right convex angles</li>
+<li>a perimeter not exceeding 400 m</li>
+<li>a bounding box fill ratio greater than 0.4, the domain of value is <span class="arithmatex">\([0:1]\)</span></li>
+<li><span class="arithmatex">\(bounding\ box\ fill\ ratio = \frac{area}{area \ of \ the \ bounding \ box}\)</span>  </li>
+</ul>
+<p>With the polygons fulfilling the conditions making them artefact candidates, a second round of right angle computation was performed, but per neighboring segment this time. This allowed to correct the artefact with the class of the neighbor sharing a right angle and the longest common edge. </p>
+<p>After correction, polygons were rasterized and cut to the original size of the sample of interest. </p>
+<h4 id="1024-monitoring-approach">10.2.4 Monitoring Approach<a class="headerlink" href="#1024-monitoring-approach" title="Permanent link">&para;</a></h4>
+<p>When comparing prediction between two years, it is expected to observe different types of differences: </p>
+<ul>
+<li>differences accounting for actual changes of <em>soil</em> to <em>non-soil</em> or of <em>non-soil</em> to <em>soil</em></li>
+<li>differences due to tilted buildings in the image and overhanging vegetation </li>
+<li>differences due to prediction errors </li>
+<li>differences due to snow cover</li>
+</ul>
+<p>With 16 classes, there are 256 types of possible differences. They can be uniquely described as this linear combination: </p>
+<p><span class="arithmatex">\(difference = (class_i-1)*17+class_{i-1},\)</span> <span class="arithmatex">\(i\)</span> in <span class="arithmatex">\([1:17]\)</span>, <span class="arithmatex">\(difference\)</span> in <span class="arithmatex">\([0:255]\)</span>.</p>
+<p>From the implementation point of view, the same neighborhood as when <a href="#1023-correcting-artefacts">correcting artefacts</a> is considered. A raster of differences is computed with the previously written formula. Then, it is vectorized per group of adjacent pixels of the same difference. For each polygon, the mean prediction probability index per year is computed. Then, the minimum value is kept to keep information of less confident prediction at one of the time considered. In addition, for each polygon, following geometric descriptors are computed:</p>
+<ul>
+<li>the longest axis of an oriented bounding box</li>
+<li>the shortest axis of an oriented bounding box</li>
+<li>the axis ratio, defined as the ratio of the shortest axis to the longest axis of the oriented bounding box</li>
+<li>the rectangularity, the area of the polygon divided by the area of the oriented bounding box, i.e. how rectangular the polygon is. </li>
+<li>the bounding box fill ratio, as described before</li>
+</ul>
+<p>Figure 47 illustrates the approach. Furthermore, the <em>water</em> superclass is here included into the <em>non-soil</em> superclass. </p>
+<div align="center" style="font-style: italic">
+    <div style="display: inline-block; border: 1px solid #212121; padding: 5px; border-radius: 0px;">
+      <img
+      src="images/addendum/monitoring_approach.jpg"
+      alt="both_dataset"
+      width = "100%" >
+  </div>
+  <figcaption>Figure 47: Illustration of the monitoring approach: groups of adjacent pixels of the same prediction difference between two years are described by geometric descriptors and the probability index. </figcaption>
+</div>
+
+<p>Afterward, conditions are applied successively on the descriptors of each polygon to sort the differences as illustrated in Figure 48.</p>
+<div align="center" style="font-style: italic">
+    <div style="display: inline-block; border: 1px solid #212121; padding: 5px; border-radius: 0px;">
+      <img
+      src="images/addendum/monitoring_decision_tree.png"
+      alt="both_dataset"
+      width = "100%" >
+  </div>
+  <figcaption>Figure 48: Decision tree to sort differences between prediction made on aerial images acquired at two different times. The purpose is to isolate soil to non-soil and non-soil to soil real changes. </figcaption>
+</div>
+
+<p>Here is a summary of the tags in which the differences were sorted, with a numeric ID in brackets: </p>
+<ul>
+<li>No change (0): identical predicted class </li>
+<li>Non important, change within the same superclass (10): different predicted class, but within the same superclass </li>
+<li>differences from <em>soil</em> to <em>non-soil</em> superclasses: <ul>
+<li><em>Non-soil</em> to <em>soil</em>, low probability (21): probability index lower than 0.075. differences with a probability index lower than 0.075 are likely to result from prediction errors (see Section <a href="#1022-targeting-potential-errors">10.2.2</a>). </li>
+<li>Tilt of building (23): the class <em>building</em> is involved, the axis ratio is lower than 0.3 or the rectangularity is lower than 0.4. The condition on the axis ratio targets tilts on only one side of the building, the condition on rectangularity targets tilts at a corner of buildings. </li>
+<li>New construction (22): the class <em>building</em> is involved, area is larger than 5 m² and the rectangularity is larger than 0.8. The assumption is that buildings have rectangular shapes. Buildings of different shape (L, cross, etc.) will end-up in tag (24).</li>
+<li><em>Non-soil</em> to <em>building</em>, unspecified (24): the rest of the differences involving the <em>building</em> class. This includes the buildings with non-rectangular shapes, large tilts, and other special cases. </li>
+<li>Vegetation overhang/tilt (25): the class <em>soil with vegetation</em> is involved, the axis ratio is lower than 0.3 or the rectangularity is lower than 0.4, and the small axis of the oriented bounding box is 4 m. The assumptions are similar as when filtering the tilt differences (24), but, in addition, a scale factor thanks to the short axis of the oriented bounding box is applied.  </li>
+<li>Artefacts (26): the class <em>natural water</em> is involved, the bounding box fill ratio is larger than 0.8 and the area is larger than 2500 m². It checks a last time for artefacts linked to the <em>water</em> class.</li>
+<li><em>Soil</em> to <em>non-soil</em>, high probability (20): probability index higher than or equal to 0.075. This are the differences that remain after the filter applied for the tags (21) to (26) </li>
+</ul>
+</li>
+<li>Differences from <em>non-soil</em> to <em>soil</em> superclasses: <ul>
+<li><em>Soil</em> to <em>non-soil</em>, low probability (31): probability index lower than 0.075. </li>
+<li>Tilt of building (33): the class <em>building</em> is involved, the axis ratio is lower than 0.3 or the rectangularity is lower than 0.4</li>
+<li>Deconstruction (32): the class <em>building</em> is involved, area is larger than 5 m² and the rectangularity is larger than 0.8</li>
+<li><em>Building</em> to <em>soil</em>, unspecified (34): the rest of the differences involving the <em>building</em> class. </li>
+<li>Vegetation overhang/tilt  (35): the class <em>soil with vegetation</em> is involved, the axis ratio is smaller than 0.3 or the rectangularity is lower than 0.4. The small axis of the oriented bounding box is shorter than 4 m.</li>
+<li>Artefacts (36): the class <em>natural water</em> is involved, the bounding box fill ratio is larger than 0.8 and the area is larger than 2500 m²</li>
+<li><em>Non-soil</em> to <em>soil</em>, high probability (30): probability index higher than or equal to 0.075 </li>
+</ul>
+</li>
+<li>Border (40): differences elongated and of small size, typically at the border between two objects of the territory, the axis ratio is smaller than 0.2 and the short axis is shorter than 2 m</li>
+<li>Uncertainty due to snow cover (50): differences involving the <em>snow</em> class</li>
+<li>Noise (60): differences of negligible size, i.e. less than 1 m².</li>
+</ul>
+<p>Since we do not have a ground truth on the same area for two different years, we are not able to evaluate the performance of this sorting of changes. Later in the <a href="#1036-monitoring-evaluation">Results section</a>, one should be careful about deductions.</p>
+<h3 id="103-results-discussion">10.3 Results &amp; Discussion<a class="headerlink" href="#103-results-discussion" title="Permanent link">&para;</a></h3>
+<p>The results are progressively presented and discussed: fine-tuning performance on the test sets, inference in independent regions, benefits and limits of artefact corrections, and first insights of the monitoring approach. </p>
+<h4 id="1031-fine-tuned-models">10.3.1 Fine-tuned Models<a class="headerlink" href="#1031-fine-tuned-models" title="Permanent link">&para;</a></h4>
+<p>From the three fine-tuning sessions performed, the best models kept are documented in Table 5. </p>
+<p><i>Table 5: Mean IoU scores on the validation sets during the respective fine-tunings. </i></p>
+<table>
+<thead>
+<tr>
+<th>Model</th>
+<th>Number of training tiles</th>
+<th>Number of validation tiles</th>
+<th>Total number of iterations</th>
+<th>Iteration with the best mean IoU (% of total iterations)</th>
+<th>Best mean IoU</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>FR</td>
+<td>3897</td>
+<td>607</td>
+<td>400’000</td>
+<td>215’818   (54)</td>
+<td>0.78</td>
+</tr>
+<tr>
+<td>VD</td>
+<td>2225</td>
+<td>481</td>
+<td>223’00</td>
+<td>186’900   (84)</td>
+<td>0.88</td>
+</tr>
+<tr>
+<td>Mixed</td>
+<td>6212</td>
+<td>1088</td>
+<td>612’200</td>
+<td>428’628   (69)</td>
+<td>0.82</td>
+</tr>
+</tbody>
+</table>
+<p>With <a href="https://www.tensorflow.org/tensorboard?hl=en">TensorBoard</a>, mean IoU (mIoU) curves were visualized for each fine-tuning. A relative narrow range of mIoU scores was reached each time at the end. The number of epochs was enough to extract information from the dataset. </p>
+<h4 id="1032-performance-on-the-test-sets">10.3.2 Performance on the Test Sets<a class="headerlink" href="#1032-performance-on-the-test-sets" title="Permanent link">&para;</a></h4>
+<p>With the evaluation of the fine-tuned models, the goals are to:</p>
+<ul>
+<li>identify the best model for each ground truth (FR, VD, FR+VD)</li>
+<li>understand what the model is capable of</li>
+</ul>
+<p>After reclassifying the predicted classes into the four superclasses, the <a href="#21-metrics">MCC</a> scores are given as the global metric to evaluate the models (see motivation in <a href="#21-metrics">Section 2.1</a>). Using the mixed model, the MCC score is of 0.97 and 0.98 on the FR and VD test datasets respectively, and of 0.97 on both test sets as documented in Table 6.</p>
+<p><i>Table 6: MCC scores on the test sets with the three models. </i></p>
+<table>
+<thead>
+<tr>
+<th>Model</th>
+<th><strong>FR+VD test dataset</strong></th>
+<th><strong>FR test dataset</strong></th>
+<th><strong>VD test dataset</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Mixed</strong></td>
+<td>0.97</td>
+<td>0.97</td>
+<td>0.98</td>
+</tr>
+<tr>
+<td><strong>FR</strong></td>
+<td>[not tested]</td>
+<td>0.96</td>
+<td>0.78</td>
+</tr>
+<tr>
+<td><strong>VD</strong></td>
+<td>[not tested]</td>
+<td>0.77</td>
+<td>0.98</td>
+</tr>
+</tbody>
+</table>
+<p>From Table 6, we notice that the MCC indicates the mixed model as the best one for the FR test dataset, whereas the mixed model and the VD models give the same score (0.98) on the VD test dataset. It seems that the FR areas benefits from a model trained additionally on the VD area. </p>
+<p>When using the FR model to predict the VD test set and the VD model to predict the FR test set, one notices a decrease in the MCC scores (FR test set: 0.97 to 0.77, VD test set: 0.98 to 0.78). The lower performance can be explained by the difficulty of the models to generalize to different seasons or other territory. </p>
+<p>Furthermore, Table 7 compares the MCC scores obtained with the <a href="#binary-results">previous version of the FR model (HEIG-VD-10cm-71k model)</a> and the new one, each time on the original FR test dataset (FR 1) and on the extended FR test dataset (FR 2). With a MCC value of 0.65, the old model was poor at predicting the FR 2. After fine-tuning, the performance is of 0.98 for FR 2, and of 0.87 for FR 1. This latter score is close to what was reached with the old model (0.86). </p>
+<p><i>Table 7: MCC scores on the FR test sets using the old and new FR models. </i></p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>FR 1</th>
+<th>FR 2</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Old model</td>
+<td>0.86</td>
+<td>0.65</td>
+</tr>
+<tr>
+<td>New model</td>
+<td>0.87</td>
+<td>0.98</td>
+</tr>
+</tbody>
+</table>
+<p>One should know that the test set of the old part of the ground truth is only the half of what was used in <a href="#62-fine-tuning">Section 6.2</a>. Moreover, 4 superclasses are now considered when computing the MCC (<em>soil</em>, <em>non-soil</em>, <em>water</em>, <em>uncertain</em>) instead of two superclasses before (<em>soil</em>, <em>non-soil</em>). After exploration of the ground truth, it appears that the new digitized images on reed and the lake of Neuchatel are showing quite different color and texture than before. It is to conclude that the ground truth of the PoC was not exhaustive enough to reflect the entire Fribourgese territory and this may still be the case. </p>
+<p>The MCC scores in Table 6 indicate satisfactory result when the classes predicted by the model are aggregated in the four superclasses. However, with the metrics indicated in Table 8, we become aware of the difficulties of the model to predict certain classes like <em>non-concrete anthropogenic surface</em>, <em>surface in concrete</em>, <em>bare rock</em>, <em>reed</em>, <em>vineyard and orchard</em>, <em>basin</em> and <em>eave</em>. </p>
+<p><i>Table 8: IoU scores on the test datasets for the mixed model. </i></p>
+<table>
+<thead>
+<tr>
+<th>Classes</th>
+<th>IoU on both test sets</th>
+<th>Pixels per class in both test sets   [%]</th>
+<th>IoU on FR test set</th>
+<th>Pixels per class in FR test set   [%]</th>
+<th>IoU on VD test sets</th>
+<th>Pixels per class in VD test set   [%]</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>building</td>
+<td>0.92</td>
+<td>2.81</td>
+<td>0.92</td>
+<td>2.37</td>
+<td>0.93</td>
+<td>3.36</td>
+</tr>
+<tr>
+<td>non-concrete anthropogenic surface</td>
+<td>0.77</td>
+<td>2.44</td>
+<td>0.38</td>
+<td>0.48</td>
+<td>0.83</td>
+<td>4.92</td>
+</tr>
+<tr>
+<td>surface in concrete</td>
+<td>0.84</td>
+<td>3.73</td>
+<td>0.80</td>
+<td>2.47</td>
+<td>0.87</td>
+<td>5.32</td>
+</tr>
+<tr>
+<td>bare rock</td>
+<td>0.87</td>
+<td>4.77</td>
+<td>0.78</td>
+<td>4.59</td>
+<td>0.98</td>
+<td>5.00</td>
+</tr>
+<tr>
+<td>natural water</td>
+<td>0.99</td>
+<td>14.19</td>
+<td>0.99</td>
+<td>20.58</td>
+<td>0.98</td>
+<td>6.06</td>
+</tr>
+<tr>
+<td>reed</td>
+<td>0.95</td>
+<td>3.00</td>
+<td>0.96</td>
+<td>5.02</td>
+<td>0.75</td>
+<td>0.44</td>
+</tr>
+<tr>
+<td>snow</td>
+<td>0.93</td>
+<td>0.45</td>
+<td>0.95</td>
+<td>0.05</td>
+<td>0.93</td>
+<td>0.95</td>
+</tr>
+<tr>
+<td>soil with vegetation</td>
+<td>0.94</td>
+<td>27.46</td>
+<td>0.93</td>
+<td>31.94</td>
+<td>0.95</td>
+<td>21.77</td>
+</tr>
+<tr>
+<td>vineyard and orchard</td>
+<td>0.95</td>
+<td>0.97</td>
+<td>0.67</td>
+<td>0.03</td>
+<td>0.96</td>
+<td>2.17</td>
+</tr>
+<tr>
+<td>agricultural land</td>
+<td>0.98</td>
+<td>37.95</td>
+<td>0.97</td>
+<td>31.87</td>
+<td>0.99</td>
+<td>45.69</td>
+</tr>
+<tr>
+<td>tarp</td>
+<td>0.97</td>
+<td>0.65</td>
+<td>0.96</td>
+<td>0.47</td>
+<td>0.98</td>
+<td>0.89</td>
+</tr>
+<tr>
+<td>temporary greenhouse</td>
+<td>0.92</td>
+<td>0.12</td>
+<td>0.96</td>
+<td>0.11</td>
+<td>0.87</td>
+<td>0.12</td>
+</tr>
+<tr>
+<td>permanent greenhouse</td>
+<td>0.99</td>
+<td>1.12</td>
+<td>-</td>
+<td>0.00</td>
+<td>0.99</td>
+<td>2.55</td>
+</tr>
+<tr>
+<td>green roof</td>
+<td>0.90</td>
+<td>0.18</td>
+<td>0.98</td>
+<td>0.01</td>
+<td>0.89</td>
+<td>0.38</td>
+</tr>
+<tr>
+<td>basin</td>
+<td>0.93</td>
+<td>0.10</td>
+<td>0.27</td>
+<td>0.01</td>
+<td>0.97</td>
+<td>0.22</td>
+</tr>
+<tr>
+<td>synthetic lawn</td>
+<td>0.95</td>
+<td>0.02</td>
+<td>-</td>
+<td>0.00</td>
+<td>0.95</td>
+<td>0.05</td>
+</tr>
+<tr>
+<td>eave</td>
+<td>0.42</td>
+<td>0.05</td>
+<td>-</td>
+<td>0.00</td>
+<td>0.42</td>
+<td>0.12</td>
+</tr>
+</tbody>
+</table>
+<p>Per class, one can compare the IoU scores with the pixel ratio in the test set and notices that some very few represented classes - like <em>synthetic lawn</em>, <em>temporary greenhouse</em>, <em>green roof</em> - do perform well compared to others - <em>eave</em> and <em>basin</em> (on the FR test set). For <em>synthetic lawn</em>, since only one object is in the ground truth, the model learned to recognized other part of it. </p>
+<p>Further exploration of the errors with visualization of the aerial images, lead to observations summarized hereafter. They help to understand the heterogeneity of the classes over the cantons and the area type, as well as which errors are to be expected when inferring:</p>
+<ul>
+<li><em>Non-concrete anthropogenic surface</em>:<ul>
+<li>It is especially a difficult class on the FR ground truth, due to heterogeneity of size, neighborhood, and material for this class. Moreover, tiles showing non-concrete and having a IoU score lower than 0.5 displayed shadow cases, difficult visual cases, and were mainly to be found in urban context. Confusion was mainly with concrete surface, secondly with the <em>soil with vegetation</em> class and with some other classes. </li>
+<li>The VD GT contains few urban area with non-concrete anthropogenic surfaces. They are rather found for large infrastructures in industrial areas.</li>
+</ul>
+</li>
+<li><em>Snow</em>: in the FR ground truth, the snow is on grass, while it is on rocks in the VD ground truth. Still, snow segmentation is above 0.90 in both ground truths. </li>
+<li><em>Vineyard and orchard</em>: this class shows different aspects in the ground truth. The model is not segmenting all types with the same ease. <ul>
+<li>In the VD GT: very green and clear structures in Lavaux are properly segmented.</li>
+<li>In the FR GT: the leaf-off vineyards are confused with non-concrete anthropogenic surface and lines of tarp.</li>
+</ul>
+</li>
+<li><em>Temporary greenhouse</em>: possibly lower performance for small greenhouses in urban context.<ul>
+<li>In the FR GT: small in resident neighborhood, medium on land</li>
+<li>In the VD GT: rather big on land</li>
+</ul>
+</li>
+<li><em>Basin, pool</em>: possibly low performance due to the heterogeneity of the class <ul>
+<li>In the VD GT: there are mostly big basins in quarries, round ones near permanent greenhouses and some fountains.</li>
+<li>In the FR GT: there are fountains (urban, rural), ponds, one swimming pool, small objects. </li>
+</ul>
+</li>
+<li><em>Tarp</em>: small portions of garden covered with tarp in the urban part of the FR ground truth are missed by the model.</li>
+<li><em>Green roof</em>: the ones in the rural area of Lavaux are not predicted correctly. </li>
+<li><em>Eave</em>: <ul>
+<li>This class is well predicted in the rural part of the ground truth, because there is only one roof  in metal, that is big.</li>
+<li>In the urban part of the ground truth, small eaves are difficult to classify.</li>
+</ul>
+</li>
+</ul>
+<p>To help concluding the analysis, the confusion matrix presenting the recall and the proportions of labels that end up in other classes to be predicted on the test dataset is depicted in Table 9. The prediction class are in columns and the ground truth class in rows. The table is to be read row-wise. Values are given in percent. To ease the reading, 0 values were removed. One can notice that few errors occur between the <em>soil</em> and <em>non-soil</em> superclasses, which is positive, since that kind of confusion has to be avoided. When they occur, it is mainly from <em>non-soil</em> to <em>soil</em>, with, for instance, 8.62% of <em>bare rock</em>, 4.28 % of <em>non-concrete anthropogenic surface</em>, 2.63 % of <em>surface in concrete</em> and 1.85 % of <em>reed</em> are predicted as <em>soil with vegetation</em>. </p>
+<p><i>Table 9: From the test set, which prediction (columns) is attributed to the ground truth (rows). The table is to be read row-wise and the <a href="https://en.wikipedia.org/wiki/Precision_and_recall">recall</a> per class is to be find on the diagonal. To ease the reading, 0 values were removed. Values are given in percent (row-wise). </i></p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>building</th>
+<th>non-concrete anthropogenic surface</th>
+<th>surface in concrete</th>
+<th>bare rock</th>
+<th>reed</th>
+<th>permanent greenhouse</th>
+<th>green roof</th>
+<th>synthetic lawn</th>
+<th>eaves</th>
+<th>basin, pool</th>
+<th>natural water</th>
+<th>snow</th>
+<th>soil with vegetation</th>
+<th>wine and orchards</th>
+<th>agricultural land</th>
+<th>tarp</th>
+<th>temporary greenhouse</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>building</td>
+<td>96.80</td>
+<td>0.48</td>
+<td>1.64</td>
+<td>&gt; 0</td>
+<td></td>
+<td>0.13</td>
+<td></td>
+<td></td>
+<td>0.12</td>
+<td>&gt; 0</td>
+<td></td>
+<td></td>
+<td>0.82</td>
+<td>0.01</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>non-concrete anthropogenic surface</td>
+<td>0.95</td>
+<td>85.10</td>
+<td>8.17</td>
+<td>&gt; 0</td>
+<td>0.05</td>
+<td>0.03</td>
+<td>&gt; 0</td>
+<td></td>
+<td></td>
+<td>0.07</td>
+<td>0.07</td>
+<td></td>
+<td>4.28</td>
+<td>0.96</td>
+<td>0.28</td>
+<td>0.02</td>
+<td>0.01</td>
+</tr>
+<tr>
+<td>surface in concrete</td>
+<td>1.97</td>
+<td>3.60</td>
+<td>91.38</td>
+<td>0.01</td>
+<td></td>
+<td>&gt; 0</td>
+<td>0.01</td>
+<td></td>
+<td>0.01</td>
+<td>0.10</td>
+<td>&gt; 0</td>
+<td></td>
+<td>2.63</td>
+<td>0.03</td>
+<td>0.23</td>
+<td>0.01</td>
+<td></td>
+</tr>
+<tr>
+<td>bare rock</td>
+<td></td>
+<td>0.02</td>
+<td>0.01</td>
+<td>90.86</td>
+<td>&gt; 0</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>0.05</td>
+<td>0.43</td>
+<td>8.62</td>
+<td>0.01</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>reed</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>97.68</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>0.47</td>
+<td></td>
+<td>1.85</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>permanent greenhouse</td>
+<td></td>
+<td>0.02</td>
+<td></td>
+<td></td>
+<td></td>
+<td>99.94</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>0.04</td>
+<td></td>
+<td>&gt; 0</td>
+<td>&gt; 0</td>
+<td></td>
+</tr>
+<tr>
+<td>green roof</td>
+<td>8.83</td>
+<td>0.39</td>
+<td>0.21</td>
+<td></td>
+<td></td>
+<td></td>
+<td>90.14</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>0.41</td>
+<td>0.02</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>synthetic lawn</td>
+<td></td>
+<td>3.85</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>95.10</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>1.05</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>eaves</td>
+<td>38.45</td>
+<td>2.58</td>
+<td>14.25</td>
+<td></td>
+<td></td>
+<td></td>
+<td>0.04</td>
+<td></td>
+<td>44.66</td>
+<td></td>
+<td></td>
+<td></td>
+<td>0.02</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>basin, pool</td>
+<td>0.01</td>
+<td>0.31</td>
+<td>1.16</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>97.75</td>
+<td></td>
+<td></td>
+<td>0.77</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>natural water</td>
+<td></td>
+<td>0.24</td>
+<td>&gt; 0</td>
+<td>0.01</td>
+<td>0.16</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>99.28</td>
+<td></td>
+<td>0.32</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>snow</td>
+<td></td>
+<td></td>
+<td></td>
+<td>2.03</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>97.86</td>
+<td>0.10</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>soil with vegetation</td>
+<td>0.04</td>
+<td>0.21</td>
+<td>0.17</td>
+<td>0.79</td>
+<td>0.22</td>
+<td>0.01</td>
+<td>&gt; 0</td>
+<td></td>
+<td></td>
+<td>&gt; 0</td>
+<td>0.09</td>
+<td>&gt; 0</td>
+<td>98.06</td>
+<td>0.03</td>
+<td>0.37</td>
+<td>&gt; 0</td>
+<td>0.01</td>
+</tr>
+<tr>
+<td>vineyard and orchard</td>
+<td>&gt; 0</td>
+<td>0.97</td>
+<td>0.04</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>0.13</td>
+<td>98.24</td>
+<td></td>
+<td>0.62</td>
+<td>&gt; 00</td>
+</tr>
+<tr>
+<td>agricultural land</td>
+<td>&gt; 0</td>
+<td>0.01</td>
+<td>&gt; 0</td>
+<td></td>
+<td>0.01</td>
+<td>&gt; 0</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>1.43</td>
+<td></td>
+<td>98.53</td>
+<td>0.01</td>
+<td>0.01</td>
+</tr>
+<tr>
+<td>tarp</td>
+<td></td>
+<td>0.02</td>
+<td>0.10</td>
+<td></td>
+<td></td>
+<td>0.02</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>0.11</td>
+<td></td>
+<td>0.30</td>
+<td>99.45</td>
+<td>&gt; 0</td>
+</tr>
+<tr>
+<td>temporary   greenhouse</td>
+<td></td>
+<td></td>
+<td>0.01</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>1.38</td>
+<td></td>
+<td>0.45</td>
+<td>2.80</td>
+<td>95.36</td>
+</tr>
+</tbody>
+</table>
+<h5 id="complementary-tests">Complementary Tests<a class="headerlink" href="#complementary-tests" title="Permanent link">&para;</a></h5>
+<p>While the best models for the VD and mixed fine-tunings were respectively saved at 84% and 69% of planed iterations, the FR model was saved at 54% of the iterations (Tab. 5). Having in mind that the the method chosen to split the ground truth between train, validation and test set may lead to an overfit, we retrained the mixed model and saved model checkpoints each 10 epochs. </p>
+<p>Before fine-tuning again the model, the class <em>eave</em> was reclassified to <em>building</em> since this class was poorly detected and could be a burden when fine-tuning. Table 10 reminds the best model obtained previously and gives the new one. Both were saved at the 428'628th iteration. The mean IoU is now of 0.83. The increase of 2 points is probably due to the removal of the <em>eave</em> class and variability in learning. </p>
+<p><i>Table 10: MCC scores on the test sets using different models. </i></p>
+<table>
+<thead>
+<tr>
+<th>Number of training tiles</th>
+<th>Total number of iterations</th>
+<th>Iteration of best mean IoU</th>
+<th>Number of classes</th>
+<th>Best mean IoU</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>6212</td>
+<td>612’200</td>
+<td>428’628</td>
+<td>17</td>
+<td>0.81</td>
+</tr>
+<tr>
+<td>6212</td>
+<td>434'840</td>
+<td>428’628</td>
+<td>16</td>
+<td>0.83</td>
+</tr>
+</tbody>
+</table>
+<p>The IoU scores per class are given for each best mixed model in Table 11. The increase of 1 point of the <em>building</em> class was expected, as the precision improved since no more eaves are wrongly predicted as <em>building</em>. In the same way, the <em>non-concrete anthropogenic surface</em>, <em>surface in concrete</em>, <em>green roof</em> and <em>soil with vegetation</em> classes should also benefit from such mechanism, as confusion was observed in the confusion matrix (see Table 9). However, the <em>bare rock</em>, <em>reed</em>, and <em>snow</em> classes have a decrease in performance. This decrease, as well as the previous mentioned increases, may probably due to natural variability in learning. </p>
+<p><i>Table 11: MCC scores on the test sets with the mixed models. </i></p>
+<table>
+<thead>
+<tr>
+<th>Classes</th>
+<th>IoU of mixed model with 17 classes</th>
+<th>IoU of mixed model with 16 classes</th>
+<th>IoU difference</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>building</td>
+<td>0.92</td>
+<td>0.93</td>
+<td>0.01</td>
+</tr>
+<tr>
+<td>non-concrete anthropogenic surface</td>
+<td>0.77</td>
+<td>0.79</td>
+<td>0.02</td>
+</tr>
+<tr>
+<td>surface in concrete</td>
+<td>0.84</td>
+<td>0.86</td>
+<td>0.02</td>
+</tr>
+<tr>
+<td>bare rock</td>
+<td>0.87</td>
+<td>0.86</td>
+<td>-0.01</td>
+</tr>
+<tr>
+<td>natural water</td>
+<td>0.99</td>
+<td>0.99</td>
+<td>0</td>
+</tr>
+<tr>
+<td>reed</td>
+<td>0.95</td>
+<td>0.9</td>
+<td>-0.05</td>
+</tr>
+<tr>
+<td>snow</td>
+<td>0.93</td>
+<td>0.92</td>
+<td>-0.01</td>
+</tr>
+<tr>
+<td>soil with vegetation</td>
+<td>0.94</td>
+<td>0.94</td>
+<td>0</td>
+</tr>
+<tr>
+<td>vineyard and orchard</td>
+<td>0.95</td>
+<td>0.95</td>
+<td>0</td>
+</tr>
+<tr>
+<td>agricultural land</td>
+<td>0.98</td>
+<td>0.98</td>
+<td>0</td>
+</tr>
+<tr>
+<td>tarp</td>
+<td>0.97</td>
+<td>0.98</td>
+<td>0.01</td>
+</tr>
+<tr>
+<td>temporary greenhouse</td>
+<td>0.92</td>
+<td>0.94</td>
+<td>0.02</td>
+</tr>
+<tr>
+<td>permanent greenhouse</td>
+<td>0.99</td>
+<td>1</td>
+<td>0.01</td>
+</tr>
+<tr>
+<td>green roof</td>
+<td>0.9</td>
+<td>0.9</td>
+<td>0</td>
+</tr>
+<tr>
+<td>basin</td>
+<td>0.93</td>
+<td>0.97</td>
+<td>0.04</td>
+</tr>
+<tr>
+<td>synthetic lawn</td>
+<td>0.95</td>
+<td>0.99</td>
+<td>0.04</td>
+</tr>
+<tr>
+<td>eave</td>
+<td>0.42</td>
+<td>-</td>
+<td>-</td>
+</tr>
+</tbody>
+</table>
+<p>The respective MCC values after aggregation in the superclasses is of 0.973 for the model trained with 17 classes and of 0.970 for the model trained with 16 classes. Considering potential variability during training, no model is significantly better. The only difference is that one model tries to detect the eaves and is not really good at it, while the other does not, but the global quality stays the same because there were few eaves and their impact was almost negligible. </p>
+<p>Furthermore, Figure 49 gives the IoU scores per class on the test set every 10 epochs when a model was saved. There is still no detected overfit. As mentioned in <a href="#10211-dataset-preparation">Section 10.2.1.1</a>, the split strategy in train, validation and test sets had the weakness of leading to neighboring train, validation and test tiles, which may hinder overfit detection. </p>
+<div align="center" style="font-style: italic">
+    <div style="display: inline-block; border: 1px solid #212121; padding: 5px; border-radius: 0px;">
+      <iframe src="images/addendum/iou_epoch.html" width="700px" height="500px" frameborder="0" scrolling="no"> </iframe>
+  </div>
+  <figcaption>Figure 49: IoU by epoch. </figcaption>
+</div>
+
+<p>We recommend using the mixed model with 16 classes as a model for productive inference across the entire cantonal territory. Some of the artefacts will be corrected with the developed method and will improve what has been shown in the results. This additional test was also very informative about the variability of the output of the model, probably linked to the limited size of the ground truth.</p>
+<h4 id="1033-inference">10.3.3 Inference<a class="headerlink" href="#1033-inference" title="Permanent link">&para;</a></h4>
+<p>Inference in the regions of Morat and Nyon gives relatively nice outputs with the mixed model as depicted in Figures 50 to 53. However, one notices several artefacts on the Nyon region. </p>
+<div align="center" style="font-style: italic">
+    <div style="display: inline-block; border: 1px solid #212121; padding: 5px; border-radius: 0px;">
+      <img
+      src="images/addendum/mix1_morat_2020.png"
+      alt="both_dataset"
+      width = "100%" >
+  </div>
+  <figcaption>Figure 50: Inference with the mixed model in Morat region on SWISSIMAGE 10 cm of 2020. In the lowest map, the predicted classes have been aggregated in 4 superclasses.</figcaption>
+</div>
+
+<div align="center" style="font-style: italic">
+    <div style="display: inline-block; border: 1px solid #212121; padding: 5px; border-radius: 0px;">
+      <img
+      src="images/addendum/mix1_morat_2023.png"
+      alt="both_dataset"
+      width = "100%" >
+  </div>
+  <figcaption>Figure 51: Inference with the mixed model in Morat region on SWISSIMAGE 10 cm of 2023. In the lowest map, the predicted classes have been aggregated in 4 superclasses. </figcaption>
+</div>
+
+<div align="center" style="font-style: italic">
+    <div style="display: inline-block; border: 1px solid #212121; padding: 5px; border-radius: 0px;">
+      <img
+      src="images/addendum/mix1_nyon_2020.png"
+      alt="both_dataset"
+      width = "100%" >
+      </div>
+  <figcaption>Figure 52: Inference with the mixed model in Nyon region on SWISSIMAGE 10 cm of 2020. In the lowest map, the predicted classes have been aggregated in 4 superclasses.</figcaption>
+</div>
+
+<div align="center" style="font-style: italic">
+    <div style="display: inline-block; border: 1px solid #212121; padding: 5px; border-radius: 0px;">
+      <img
+      src="images/addendum/mix1_nyon_2023.png"
+      alt="both_dataset"
+      width = "100%" >
+  </div>
+  <figcaption>Figure 53: Inference with the mixed model in Nyon region on SWISSIMAGE 10 cm of 2023. In the lowest map, the predicted classes have been aggregated in 4 superclasses. </figcaption>
+</div>
+
+<p>Therefore, the suitability of the mixed model was questioned and the specific models, FR model and VD model, were used to infer on SWISSIMAGE 10 cm of 2020 and of 2023 respectively. Figures 54 and 55 allow to visually compare the outputs of the specific and mixed models. One notices that artefacts are also to be found when inferring with the specific models. </p>
+<div align="center" style="font-style: italic">
+    <div style="display: inline-block; border: 1px solid #212121; padding: 5px; border-radius: 0px;">
+      <img
+      src="images/addendum/mix1_nyon_2020_comp_model.png"
+      alt="both_dataset"
+      width = "100%" >
+  </div>
+  <figcaption>Figure 54: Inference with the mixed model and FR models in Nyon region on SWISSIMAGE 10 cm of 2020. </figcaption>
+</div>
+
+<div align="center" style="font-style: italic">
+    <div style="display: inline-block; border: 1px solid #212121; padding: 5px; border-radius: 0px;">
+      <img
+      src="images/addendum/mix1_nyon_2023_comp_model.png"
+      alt="both_dataset"
+      width = "100%" >
+  </div>
+  <figcaption>Figure 55: Inference with the mixed model and VD models in Nyon region on SWISSIMAGE 10 cm of 2023. </figcaption>
+</div>
+
+<p>However, these are only conclusion from visual observation at a regional scale. At a closer zoom, when objects of the territory are distinguishable, the level of detail from the mixed model, independently of the season (leaf-off or leaf-on aerial campaign) is appreciated. Nevertheless, one notices also prediction errors. Some examples are given hereafter in Figures 56 to 63. It is especially remarkable that:</p>
+<ul>
+<li>The GT on VD helps detect better the green roofs with the mixed model. However, the VD model tends to detect too many green roofs. </li>
+<li>The mixed and VD models ignore in some extent overhanging trees on roads. This is what the models were taught to do.<ul>
+<li>The models do not suppress some wanted vegetation like hedges.</li>
+</ul>
+</li>
+<li>The mixed and VD models handle train tracks better. In the ground truth, some train tracks were included:<ul>
+<li>VD GT: tracks in industrial AoI</li>
+<li>FR GT: corner of AoI with tracks for regional trains.</li>
+</ul>
+</li>
+</ul>
+<div align="center" style="font-style: italic">
+    <div style="display: inline-block; border: 1px solid #212121; padding: 5px; border-radius: 0px;">
+      <img
+      src="images/addendum/output_92_green_roof.png"
+      alt="both_dataset"
+      width = "100%" >
+  </div>
+  <figcaption>Figure 56: Illustration of the model ability to predict green roofs. </figcaption>
+</div>
+
+<div align="center" style="font-style: italic">
+    <div style="display: inline-block; border: 1px solid #212121; padding: 5px; border-radius: 0px;">
+      <img
+      src="images/addendum/output_273_green_roof.png"
+      alt="both_dataset"
+      width = "100%" >
+  </div>
+  <figcaption>Figure 57: Illustration of the model ability to predict green roofs. </figcaption>
+</div>
+
+<div align="center" style="font-style: italic">
+    <div style="display: inline-block; border: 1px solid #212121; padding: 5px; border-radius: 0px;">
+      <img
+      src="images/addendum/output_1329_green_roof.png"
+      alt="both_dataset"
+      width = "100%" >
+  </div>
+  <figcaption>Figure 58: Illustration of the model ability to predict green roofs. </figcaption>
+</div>
+
+<div align="center" style="font-style: italic">
+    <div style="display: inline-block; border: 1px solid #212121; padding: 5px; border-radius: 0px;">
+      <img
+      src="images/addendum/output_1_vegetation.png"
+      alt="both_dataset"
+      width = "100%" >
+  </div>
+  <figcaption>Figure 59: Illustration of the model ability to predict vegetation and ignore overhanging parts.</figcaption>
+</div>
+
+<div align="center" style="font-style: italic">
+    <div style="display: inline-block; border: 1px solid #212121; padding: 5px; border-radius: 0px;">
+      <img
+      src="images/addendum/output_1259_vegetation.png"
+      alt="both_dataset"
+      width = "100%" >
+  </div>
+  <figcaption>Figure 60: Illustration of the model ability to predict vegetation and ignore overhanging parts. </figcaption>
+</div>
+
+<div align="center" style="font-style: italic">
+    <div style="display: inline-block; border: 1px solid #212121; padding: 5px; border-radius: 0px;">
+      <img
+      src="images/addendum/output_1449_train_tracks.png"
+      alt="both_dataset"
+      width = "100%" >
+  </div>
+  <figcaption>Figure 61: Illustration of the model ability to predict train tracks. </figcaption>
+</div>
+
+<div align="center" style="font-style: italic">
+    <div style="display: inline-block; border: 1px solid #212121; padding: 5px; border-radius: 0px;">
+      <img
+      src="images/addendum/output_93_brightness.png"
+      alt="both_dataset"
+      width = "100%" >
+  </div>
+  <figcaption>Figure 62: Illustration of the model difficulty to predict the class of a special building. </figcaption>
+</div>
+
+<div align="center" style="font-style: italic">
+    <div style="display: inline-block; border: 1px solid #212121; padding: 5px; border-radius: 0px;">
+      <img
+      src="images/addendum/output_106_worse_better.png"
+      alt="both_dataset"
+      width = "100%" >
+  </div>
+  <figcaption>Figure 63: Illustration of the model difficulty to predict the class vineyard and orchard. </figcaption>
+</div>
+
+<h4 id="1034-model-uncertainty">10.3.4 Model Uncertainty<a class="headerlink" href="#1034-model-uncertainty" title="Permanent link">&para;</a></h4>
+<p>Finally, the test dataset was used to evaluate the model uncertainty, i.e. to verify that higher predicted probabilities correspond to more accurate predictions. Specifically with regard to this project, it was also used to determine whether the probability index introduced in Section 10.2.2 helps to distinguish between <em>soil</em> and <em>non-soil</em> superclasses.</p>
+<p>The prediction of the mixed model over the test sets of Fribourg and Vaud was explored for the hypothesis: accuracy grows when higher threshold values are applied on the predicted probabilities. A completely agnostic model with 17 classes would assign a predicted probability of approximately 0.058 per class.</p>
+<p>One reads from Figure 64 that: </p>
+<ul>
+<li>up to a threshold of 0.1375 on the predicted probability, the UAA (after aggregation of classes into the superclasses) is improving. </li>
+<li>At 0.15 of threshold, suddenly, 1% only of original pixels are still considered for computation. There, the UAA drops to 0.94. </li>
+<li>Afterwards, the UAA improves again progressively. </li>
+<li>No pixel has a predicted probability of 1. </li>
+</ul>
+<p>Globally, the accuracy increases with increasing thresholds on the predicted probability, until a certain point of rupture is reached, where only a few predictions are left among which the proportion of wrong elements increases by 5 points. At the very last threshold, correct predictions remain in the majority. </p>
+<div align="center" style="font-style: italic">
+    <div style="display: inline-block; border: 1px solid #212121; padding: 5px; border-radius: 0px;">
+      <img
+      src="images/addendum/uncertainty_logit.png"
+      alt="both_dataset"
+      width = "100%" >
+  </div>
+  <figcaption>Figure 64: Uncertainty aware accuracy with thresholds on predicted probability. </figcaption>
+</div>
+
+<p>The custom probability index works relatively similarly as indicated in Figure 65. Until the threshold of 0.075 (included), UAA improves. Then the number of pixels considered for computation collapses to 3% and the UAA drops to 0.95 at 0.1 of threshold. Then, it varies a bit before reaching 0.99 at a treshold of 0.6. </p>
+<div align="center" style="font-style: italic">
+    <div style="display: inline-block; border: 1px solid #212121; padding: 5px; border-radius: 0px;">
+          <img
+          src="images/addendum/uncertainty_diff.png"
+          alt="both_dataset"
+          width = "100%" >
+    </div>
+  <figcaption>Figure 65: Uncertainty aware accuracy with thresholds on magnitude of diff soil/non-soil. </figcaption>
+</div>
+
+<p>Since the relation between the decrease of considered pixels and of the respective accuracy values drops less sharply with the custom probability index, this latter seems to help maintain more pixels at higher accuracy values before the lowest value is reached. This custom index will be kept as (manual) tool for prioritizing the control of predictions. </p>
+<h4 id="1035-artefact-correction">10.3.5 Artefact Correction<a class="headerlink" href="#1035-artefact-correction" title="Permanent link">&para;</a></h4>
+<p>Figure 66 illustrates cases where artefacts were corrected, could not be corrected, and where the correction happened but is dubious. It is to be read row-wise, columns being successive steps in correction processing:</p>
+<ol>
+<li>Left up, the corner of <em>reeds</em> (dark turquoise) is corrected in <em>soil with vegetation</em> (green). Here, with no lake context, reed was mainly predicted as <em>soil with vegetation</em>. </li>
+<li>This <em>soil with vegetation</em> artefact (green) can not be corrected because it is linked to other regions that are not to be corrected. Filter on the perimeter and bounding box fill ratio of artefacts did their work. </li>
+<li><em>Synthetic lawn</em> predictions (light turquoise) are corrected as <em>green roof</em> (yellow).</li>
+<li>Agricultural land (light green) is corrected in <em>soil with vegetation</em>. This is not relevant for the <em>soil</em>/<em>non-soil</em> questions since both classes are aggregated in the <em>soil</em> superclass afterwards.</li>
+<li>Here is an illustration of correction happening in the second round of correction only because the neighborhood in the first correction was too heterogeneous to have the right angle of the artefacts to be described by only one class. Thanks to the aggregation of classes into superclasse, the artefact is now embraced by a <em>soil</em> polygon.</li>
+</ol>
+<div align="center" style="font-style: italic">
+   <div style="display: inline-block; border: 1px solid #212121; padding: 5px; border-radius: 0px;">
+      <img
+      src="images/addendum/output_corr.png"
+      alt="both_dataset"
+      width = "100%" >
+    </div>
+  <figcaption>Figure 66: Artefact configuration that can be corrected with the developed method. It is to be read row-wise, columns being successive steps in correction processing. </figcaption>
+</div>
+
+<p>Some numbers about the correction of prediction from the mixed model on the Morat and Nyon regions are given in Table 12. Except for the region of Morat with the images of 2023, most of the corrections are performed during the first round. In two cases, Morat (2023) and Nyon (2020), the correction on the four final superclasses lead to more modifications. One notices that the corrected artefacts were less than 1% of the zone. This means, less than 4 hectares.</p>
+<p><i>Table 12: Percentage of corrected pixels after correction of artefacts. </i></p>
+<table>
+<thead>
+<tr>
+<th>Region, year</th>
+<th>Corrected pixels [%]</th>
+<th>Corrected pixels by the first round of correction [%]</th>
+<th>Corrected pixel by the second round of   correction [%]</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Morat, 2020</td>
+<td>0.07</td>
+<td>0.07</td>
+<td>0</td>
+</tr>
+<tr>
+<td>Morat, 2023</td>
+<td>0.06</td>
+<td>0.02</td>
+<td>0.04</td>
+</tr>
+<tr>
+<td>Nyon, 2020</td>
+<td>0.22</td>
+<td>0.20</td>
+<td>0.02</td>
+</tr>
+<tr>
+<td>Nyon, 2023</td>
+<td>0.05</td>
+<td>0.05</td>
+<td>0</td>
+</tr>
+</tbody>
+</table>
+<h4 id="1036-monitoring-evaluation">10.3.6 Monitoring Evaluation<a class="headerlink" href="#1036-monitoring-evaluation" title="Permanent link">&para;</a></h4>
+<p>The monitoring approach was applied to the regions of Morat and Nyon. </p>
+<p>The percentage of type of changes isolated by the monitoring method on Morat and Nyon are documented in Table 13. </p>
+<p><i>Table 13: Percentage and hectare of type of changes isolated by the monitoring method on Morat and Nyon regions. </i></p>
+<table>
+<thead>
+<tr>
+<th><strong>Type of change</strong></th>
+<th><strong>Morat [%]</strong></th>
+<th><strong>Morat [ha]</strong></th>
+<th><strong>Nyon [%]</strong></th>
+<th><strong>Nyon [ha]</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Same predicted class</strong></td>
+<td><strong>82.22</strong></td>
+<td><strong>328.06</strong></td>
+<td><strong>85.02</strong></td>
+<td><strong>335.54</strong></td>
+</tr>
+<tr>
+<td><strong>Different predicted class, but same superclass</strong></td>
+<td><strong>13.74</strong></td>
+<td><strong>54.82</strong></td>
+<td><strong>9.8</strong></td>
+<td><strong>38.68</strong></td>
+</tr>
+<tr>
+<td><strong>Total soil to non-soil</strong></td>
+<td><strong>1.73</strong></td>
+<td><strong>6.90</strong></td>
+<td><strong>2.64</strong></td>
+<td><strong>10.42</strong></td>
+</tr>
+<tr>
+<td>- High probability</td>
+<td>0.69</td>
+<td>2.75</td>
+<td>1.47</td>
+<td>5.80</td>
+</tr>
+<tr>
+<td>- Low probability</td>
+<td>0.86</td>
+<td>3.43</td>
+<td>0.92</td>
+<td>3.63</td>
+</tr>
+<tr>
+<td>- New construction</td>
+<td>0.04</td>
+<td>0.16</td>
+<td>0.15</td>
+<td>0.59</td>
+</tr>
+<tr>
+<td>- Tilt of building</td>
+<td>0.11</td>
+<td>0.44</td>
+<td>0.06</td>
+<td>0.24</td>
+</tr>
+<tr>
+<td>- Non-soil to building, unspecified</td>
+<td>0.05</td>
+<td>0.20</td>
+<td>0.09</td>
+<td>0.36</td>
+</tr>
+<tr>
+<td>- Vegetation overhang/tilt</td>
+<td>0.03</td>
+<td>0.12</td>
+<td>0.04</td>
+<td>0.16</td>
+</tr>
+<tr>
+<td>- Artefacts</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr>
+<td><strong>Total non-soil to soil</strong></td>
+<td><strong>1.83</strong></td>
+<td><strong>7.30</strong></td>
+<td><strong>2</strong></td>
+<td><strong>7.89</strong></td>
+</tr>
+<tr>
+<td>- High probability</td>
+<td>0.63</td>
+<td>2.51</td>
+<td>0.67</td>
+<td>2.64</td>
+</tr>
+<tr>
+<td>- Low probability</td>
+<td>0.98</td>
+<td>3.91</td>
+<td>1.09</td>
+<td>4.30</td>
+</tr>
+<tr>
+<td>- Deconstruction</td>
+<td>0.01</td>
+<td>0.04</td>
+<td>0.01</td>
+<td>0.04</td>
+</tr>
+<tr>
+<td>- Tilt of building</td>
+<td>0.11</td>
+<td>0.44</td>
+<td>0.08</td>
+<td>0.32</td>
+</tr>
+<tr>
+<td>- Non-soil to building, unspecified</td>
+<td>0.04</td>
+<td>0.16</td>
+<td>0.09</td>
+<td>0.36</td>
+</tr>
+<tr>
+<td>- Vegetation overhang/tilt</td>
+<td>0.06</td>
+<td>0.24</td>
+<td>0.07</td>
+<td>0.28</td>
+</tr>
+<tr>
+<td>- Artefacts</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr>
+<td><strong>Border</strong></td>
+<td><strong>0.01</strong></td>
+<td><strong>0.04</strong></td>
+<td><strong>&lt;0.01</strong></td>
+<td><strong>&lt;0.04</strong></td>
+</tr>
+<tr>
+<td><strong>Uncertainty due to snow cover</strong></td>
+<td><strong>0</strong></td>
+<td><strong>0</strong></td>
+<td><strong>0</strong></td>
+<td><strong>0</strong></td>
+</tr>
+<tr>
+<td><strong>Noise ( &lt; 1 m²)</strong></td>
+<td><strong>0.42</strong></td>
+<td><strong>1.68</strong></td>
+<td><strong>0.45</strong></td>
+<td><strong>1.78</strong></td>
+</tr>
+</tbody>
+</table>
+<p>Table 13 shows that, once the predictions are aggregated into the superclasses, the Morat area changes of 4.04 % (stable is 82.22+13.74%) and the Nyon area changes of 5.18 % (stable is 85.02+9.8%). </p>
+<p>Under these changes, less than 0.5 % are in the <em>border</em> and <em>noise</em> tag. 
+Concerning the <em>soil</em> to <em>non-soil</em> changes and inversely, without filtering them by means of descriptors, they would reach:</p>
+<ul>
+<li>1.73 % and 1.83 % respectively on Morat region</li>
+<li>2.64 % and 2 % respectively on Nyon region</li>
+</ul>
+<p>The qualification of the changes is certainly not entirely correct. However, the aim was to focus on actual changes of soil. Then the interesting tags to look at are <em>new construction</em>, <em>deconstruction</em>, the <em>high probability</em> changes, and <em>unspecified</em> building changes:</p>
+<ul>
+<li>Morat looses 0.78 % of soil and gains 0.68 %</li>
+<li>Nyon looses 1.71 % of soil and gains 0.77 %</li>
+</ul>
+<p>This 0.78 % and 1.71 % correspond to 2.7 ha and 3.1 ha respectively for a total area of 399 ha and 395 ha respectively. This estimation should be controlled by experts. The region may not be representative of the whole canton.   </p>
+<p>The changes from <em>non-soil</em> to <em>soil</em> are more prone to be erroneous due to the effect of vegetation in summer masking the ground. In addition, from the confusion matrix, one can expect the <em>soil with vegetation</em> class to be overpredicted. This suggests that the soil gain may be lower in reality.  </p>
+<p>Further visual inspections of the changes are made and it was noticed that:</p>
+<ul>
+<li>Vegetation from summer leads to <em>non-soil</em> to <em>soil</em> changes</li>
+<li>There is changes due to errors in predictions </li>
+<li>Some curved border for overhanging vegetation or tilt are not tagged as such.</li>
+<li>Only new constructions on <em>soil</em> are detected, new constructions or change of construction on <em>non-soil</em> are not seen. </li>
+<li>Some dry plowed land lead to <em>soil</em> to <em>non-soil</em> changes. </li>
+<li>A remaining group of artefacts in lake (Nyon) are considered as appearance of <em>non-soil</em>. </li>
+</ul>
+<p>Figures 67 and 68 are here to illustrate how the monitoring output looks like. The top row of Figure 67 illustrates consumption of soil for a new neighborhood. One notices that differences deriving from the construction of large buildings of non-rectangular shape are tagged as soil to building, unspecified. One notices also that new construction on already non-soil surface are not monitored. In the images at the bottom of Figure 67, it is to notice that green roofs, maybe spontaneous or extensive, are leading to error in prediction and therefore to erroneous monitoring conclusions. In the top row of Figure 68, in orange, we can see the error of tagging as overhanging vegetation the loss of a strip of lawn into concrete. On the contrary, the overanhing vegetation in summer images leading to predict soil over a road is usefully tagged in yellow as overhanging vegetation. On the bottom part of Figure 68, one can appreciate the tag of differences of small surface in a neighborhood. Difference of building tilt and uncertainty linked to bordering vegetation is rather well tagged. </p>
+<div align="center" style="font-style: italic">
+      <div style="display: inline-block; border: 1px solid #212121; padding: 5px; border-radius: 0px;">
+    <img
+      src="images/addendum/ex_monitoring.png"
+      alt="both_dataset"
+      width="100%">
+  </div>
+  <figcaption>Figure 67: Illustration of monitoring. </figcaption>
+</div>
+
+<div align="center" style="font-style: italic">
+    <div style="display: inline-block; border: 1px solid #212121; padding: 5px; border-radius: 0px;">
+        <img
+          src="images/addendum/ex_monitoring_2.png"
+          alt="both_dataset"
+          width = "100%" >
+    </div>
+    <figcaption>Figure 68: Illustration of monitoring. </figcaption>
+</div>
+
+<h3 id="104-conclusions-and-outlooks">10.4 Conclusions and Outlooks<a class="headerlink" href="#104-conclusions-and-outlooks" title="Permanent link">&para;</a></h3>
+<p>The extension of the proof of concept lead to a strengthening of the method. The additional ground truth and the new fine-tuning allowed us to elect a model for inference over entire cantonal territories. Efforts were also put in post-processing and side products to facilitate the data integration by the beneficiaries. The corrected version of the prediction and the probability index contribute to that purpose. 
+The monitoring approach delivered interesting insights on what can be achieved, but revealed that more work is needed before being able to validate the change of soil cover computed. </p>
+<p>Following additional tests would help bring the project further: </p>
+<ul>
+<li>Train, validate and test the model with the ground truth split in a way that conserves the integrity of the several AoI</li>
+<li>Continue to enrich the ground truth</li>
+<li>Explore indicators for the artefacts per tile: roughness, color, feature map and feature importance of the model</li>
+<li>Develop other strategies to correct remaining artefacts</li>
+<li>
+<p>Develop further the monitoring approach:</p>
+<ul>
+<li>Digitized a ground truth for monitoring</li>
+<li>Tune and add filters to sort better the differences</li>
+<li>Instead of empiric filters, rather do a unsupervised clustering to simplify the number of differences</li>
+</ul>
+</li>
+</ul>
+<h2 id="11-bibliography">11. Bibliography<a class="headerlink" href="#11-bibliography" title="Permanent link">&para;</a></h2>
 <!-- markdownlint-configure-file {
   "MD033": false,
   "MD007": false,
@@ -1278,7 +3005,7 @@ The OFS model <em>OFS_ADELE2(+SAM)</em> performs similarly to the best-performin
 <p>Meng-Hao Guo, Tian-Xing Xu, Jiang-Jiang Liu, Zheng-Ning Liu, Peng-Tao Jiang, Tai-Jiang Mu, Song-Hai Zhang, Ralph R. Martin, Ming-Ming Cheng, and Shi-Min Hu. Attention Mechanisms in Computer Vision: A Survey. <em>Computational Visual Media</em>, 8(3):331–368, September 2022. arXiv:2111.07624 [cs]. URL: <a href="http://arxiv.org/abs/2111.07624">http://arxiv.org/abs/2111.07624</a> (visited on 2024-04-08), <a href="https://doi.org/10.1007/s41095-022-0271-y">doi:10.1007/s41095-022-0271-y</a>.&#160;<a class="footnote-backref" href="#fnref:8" title="Jump back to footnote 8 in the text">&#8617;</a></p>
 </li>
 <li id="fn:9">
-<p>Alexander Kirillov, Eric Mintun, Nikhila Ravi, Hanzi Mao, Chloe Rolland, Laura Gustafson, Tete Xiao, Spencer Whitehead, Alexander C. Berg, Wan-Yen Lo, Piotr Dollár, and Ross Girshick. Segment Anything. April 2023. arXiv:2304.02643 [cs]. URL: <a href="http://arxiv.org/abs/2304.02643">http://arxiv.org/abs/2304.02643</a> (visited on 2024-04-05), <a href="https://doi.org/10.48550/arXiv.2304.02643">doi:10.48550/arXiv.2304.02643</a>.&#160;<a class="footnote-backref" href="#fnref:9" title="Jump back to footnote 9 in the text">&#8617;</a></p>
+<p>Alexander Kirillov, Eric Mintun, Nikhila Ravi, Hanzi Mao, Chloe Rolland, Laura Gustafson, Tete Xiao, Spencer Whitehead, Alexander C. Berg, Wan-Yen Lo, Piotr Dollár, and Ross Girshick. Segment Anything. April 2023. arXiv:2304.02643 [cs]. URL: <a href="http://arxiv.org/abs/2304.02643">http://arxiv.org/abs/2304.02643</a> (visited on 2024-04-09).&#160;<a class="footnote-backref" href="#fnref:9" title="Jump back to footnote 9 in the text">&#8617;</a></p>
 </li>
 <li id="fn:10">
 <p>Unknown. <em>Arealstatistik Schweiz. Erhebung der Bodennutzung und der Bodenbedeckung. (Ausgabe 2019 / 2020)</em>. Number 9406112. Bundesamt für Statistik (BFS), Neuchâtel, September 2019. Backup Publisher: Bundesamt für Statistik (BFS). URL: <a href="https://dam-api.bfs.admin.ch/hub/api/dam/assets/9406112/master">https://dam-api.bfs.admin.ch/hub/api/dam/assets/9406112/master</a>.&#160;<a class="footnote-backref" href="#fnref:10" title="Jump back to footnote 10 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:10" title="Jump back to footnote 10 in the text">&#8617;</a></p>
