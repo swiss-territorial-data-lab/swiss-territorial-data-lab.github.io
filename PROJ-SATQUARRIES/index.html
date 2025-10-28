@@ -1,0 +1,1455 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+      
+      
+      <link rel="icon" href="../assets/images/favicon.ico">
+      <meta name="generator" content="mkdocs-1.6.0, mkdocs-material-9.5.21">
+    
+    
+      
+        <title>Automatic detection and observation of mineral extraction sites using satellite images - Swiss Territorial Data Lab</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.66ac8b77.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#automatic-detection-and-observation-of-mineral-extraction-sites-using-satellite-images" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Swiss Territorial Data Lab" class="md-header__button md-logo" aria-label="Swiss Territorial Data Lab" data-md-component="logo">
+      
+  <img src="../assets/logo-no-text-500px.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Swiss Territorial Data Lab
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Automatic detection and observation of mineral extraction sites using satellite images
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var media,input,key,value,palette=__md_get("__palette");if(palette&&palette.color){"(prefers-color-scheme)"===palette.color.media&&(media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']"),palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent"));for([key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/swiss-territorial-data-lab" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    STDL on Github
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Swiss Territorial Data Lab" class="md-nav__button md-logo" aria-label="Swiss Territorial Data Lab" data-md-component="logo">
+      
+  <img src="../assets/logo-no-text-500px.png" alt="logo">
+
+    </a>
+    Swiss Territorial Data Lab
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/swiss-territorial-data-lab" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    STDL on Github
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Homepage
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://github.com/swiss-territorial-data-lab" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    GitHub
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-introduction" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Introduction
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-data" class="md-nav__link">
+    <span class="md-ellipsis">
+      2 Data
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2 Data">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21-images-sources" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.1 Images sources
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#22-images" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.2 Images
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2.2 Images">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#221-swisstopo" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.2.1 swisstopo
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#222-swiss-data-cube" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.2.2 Swiss Data Cube
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#223-brazil-data-cube" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.2.3 Brazil Data Cube
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#23-mes-labels" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.3 MES labels
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2.3 MES labels">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#231-switzerland-ground-truth" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.3.1 Switzerland ground truth
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#232-brazil-ground-truth" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.3.2 Brazil ground truth
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#24-areas-of-interest-aoi" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.4 Areas of interest (AoI)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-satellite-image-fetching" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Satellite image fetching
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-automatic-detection-methodology" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. Automatic detection methodology
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. Automatic detection methodology">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#41-deep-learning-algorithm-for-object-detection" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.1 Deep learning algorithm for object detection
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#42-model-training" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.2 Model training
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#13-metrics" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.3 Metrics
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-analysis-of-the-automatic-detection-models" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. Analysis of the automatic detection models
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5. Analysis of the automatic detection models">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#51-model-performance" class="md-nav__link">
+    <span class="md-ellipsis">
+      5.1 Model performance
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-automatic-detection-of-mes" class="md-nav__link">
+    <span class="md-ellipsis">
+      6. Automatic detection of MES
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6. Automatic detection of MES">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#61-detection-post-processing-for-switzerland" class="md-nav__link">
+    <span class="md-ellipsis">
+      6.1 Detection post-processing for Switzerland
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#62-detection-post-processing-for-brazil" class="md-nav__link">
+    <span class="md-ellipsis">
+      6.2 Detection post-processing for Brazil
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#63-inference-detections" class="md-nav__link">
+    <span class="md-ellipsis">
+      6.3 Inference detections
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-conclusion-and-perspectives" class="md-nav__link">
+    <span class="md-ellipsis">
+      7. Conclusion and perspectives
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#code-availability" class="md-nav__link">
+    <span class="md-ellipsis">
+      Code availability
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#acknowledgements" class="md-nav__link">
+    <span class="md-ellipsis">
+      Acknowledgements
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#appendix" class="md-nav__link">
+    <span class="md-ellipsis">
+      Appendix
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Appendix">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#a-wms-urls" class="md-nav__link">
+    <span class="md-ellipsis">
+      A. WMS URLs
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#b-training-curves" class="md-nav__link">
+    <span class="md-ellipsis">
+      B. Training curves
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#c-metrics" class="md-nav__link">
+    <span class="md-ellipsis">
+      C. Metrics
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#references" class="md-nav__link">
+    <span class="md-ellipsis">
+      References
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="automatic-detection-and-observation-of-mineral-extraction-sites-using-satellite-images">Automatic detection and observation of mineral extraction sites using satellite images<a class="headerlink" href="#automatic-detection-and-observation-of-mineral-extraction-sites-using-satellite-images" title="Permanent link">&para;</a></h1>
+<p>Pierre Sledz (UNIGE), Clémence Herny (Exolabs), Roxane Pott (swisstopo), Gwenaëlle Salamin (Exolabs), Gregory Giuliani (UNIGE)</p>
+<p>Proposed by UNIGE and STDL - PROJ-SATQUARRIES <br/>
+February 2025 to July 2025 - Published on October 2025</p>
+<p xmlns:cc="http://creativecommons.org/ns#" >This work by <a rel="cc:attributionURL dct:creator" property="cc:attributionName" href="https://stdl.ch">STDL</a> is licensed under <a href="https://creativecommons.org/licenses/by-sa/4.0/?ref=chooser-v1" target="_blank" rel="license noopener noreferrer" style="display:inline-block;">CC BY-SA 4.0<img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1" alt=""><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/by.svg?ref=chooser-v1" alt=""><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/sa.svg?ref=chooser-v1" alt=""></a></p>
+
+<p><br /></p>
+<p><em><strong>Abstract</strong>: This project builds on previous work to demonstrate the effectiveness of an automatic deep learning-based object detection algorithm for identifying Mining Extraction Sites (MES) in satellite imagery from the Swiss Data Cube and the Brazil Data Cube. The algorithm was trained using Earth Observation (EO) data, leveraging Open Data Cube (ODC) infrastructure, to detect MES across large areas. The trained models achieved f1-scores ranging from 49% to 76% on validation datasets, successfully identifying potential MES, though false positives (FPs) were observed, particularly due to confusion with features such as rock outcrops, water bodies, and deforested areas, as well as the influence of spectral resolution of certain layers. Despite these challenges, the framework enabled rapid detection, processing large areas within minutes or hours depending on the ground truths, and providing a high replicability of the object detector framework.<br />
+The automatic detection of MES with this method allows for efficient, large-scale monitoring, and could support the monitoring of MES evolution inventories over time. By using satellite imagery with high temporal resolution, the algorithm can offer valuable insights into the ongoing changes in mining activities, providing a significant advantage over manual mapping and in situ surveys in terms of time/cost savings. The integration of the Open Data Cube infrastructure also facilitates multi-layers analysis, with Analysis Ready Data already available for future feature tracking. The framework offers the potential for live-time updates, making it a valuable tool for improving the speed and efficiency of MES monitoring in Switzerland and in other regions of the world.</em></p>
+<h2 id="1-introduction">1. Introduction<a class="headerlink" href="#1-introduction" title="Permanent link">&para;</a></h2>
+<p>Mineral extraction constitutes a strategic activity worldwide. Demand for mineral resources has been growing significantly in recent decades<sup id="fnref:1"><a class="footnote-ref" href="#fn:1">1</a></sup>, mainly due to the rapid increase in the production of batteries and electronic chips, or buildings construction, for example. As a result, the exploitation of some resources, such as rare earth elements, lithium, or sand, is putting pressure on their availability. Being able to observe the development of mineral extraction sites (MES) is of primary importance to adapt mining strategy and anticipate demand and shortage. <br />
+The extraction plants, and the activity of mineral extraction more generally, can severely impact the environment in many different ways<sup id="fnref:2"><a class="footnote-ref" href="#fn:2">2</a></sup><sup id="fnref:3"><a class="footnote-ref" href="#fn:3">3</a></sup><sup id="fnref:4"><a class="footnote-ref" href="#fn:4">4</a></sup>: such as chemical waste, heat discharge, water pollution, and air pollution. MES implies the extraction of rocks and minerals from water ponds, cliffs, and quarries. The surface affected, initially natural areas, can reach up to thousands of square kilometres<sup id="fnref2:1"><a class="footnote-ref" href="#fn:1">1</a></sup>. 
+Economic and political interests of some resources might overwhelm land protection, and conflicts are gradually intensifying<sup id="fnref2:3"><a class="footnote-ref" href="#fn:3">3</a></sup>. This is particularly applicable in developing countries, where these sectors have the greatest impact on human health and the ecosystem<sup id="fnref:5"><a class="footnote-ref" href="#fn:5">5</a></sup>. According to Reed (2002)<sup id="fnref:6"><a class="footnote-ref" href="#fn:6">6</a></sup>, extractive industries are prevalent in these countries because they are often rich in natural resources, attract extractive industries due to economic dependency, weak regulations, and the need for foreign investments, but face challenges of poverty, weak governance, and exploitation. 
+MES are dynamic features that can evolve according to singular patterns, especially if they are small, as they are the ones that can undergo the most modifications over time across the whole spectrum of worldwide MES characteristics. A site can expand horizontally and vertically or be filled<sup id="fnref:7"><a class="footnote-ref" href="#fn:7">7</a></sup><sup id="fnref:8"><a class="footnote-ref" href="#fn:8">8</a></sup>. Changes can happen quickly, in a matter of months. As a results, updating the MES inventory can be challenging. In most cases, the management of MES, from their creation to their registration, is conducted by public administrations. In the context of mining operations within a nation's sovereign territory, the state is often responsible for the allocation of mining permits, entrusting third parties with the exploitation of its mineral resources through the grant of concessions<sup id="fnref:9"><a class="footnote-ref" href="#fn:9">9</a></sup><sup id="fnref:10"><a class="footnote-ref" href="#fn:10">10</a></sup>. Given the significance of mining resources and their role in global supply chains, this sector presents significant economic opportunities, often escaping governmental oversight at various levels, whether within established mining enterprises or at the site of small-scale artisanal mining operation<sup id="fnref:11"><a class="footnote-ref" href="#fn:11">11</a></sup>. Such activities often operate illegally and are often found in regions where mineral deposits are present, akin to the historical American gold rushes.<br />
+For the reasons given above, there is a crucial need for MES mapping and observation worldwide. The majority of MES mapping is performed manually by visual inspection of images<sup id="fnref3:1"><a class="footnote-ref" href="#fn:1">1</a></sup>. Alternatively, recent improvements in the availability of high spatial and temporal resolution space/airborne imagery and computational methods have encouraged the development of automated image processing, and helped assess evolution of MES<sup id="fnref:12"><a class="footnote-ref" href="#fn:12">12</a></sup>. Supervised classification of spectral images is an effective method but requires complex workflow<sup id="fnref3:3"><a class="footnote-ref" href="#fn:3">3</a></sup><sup id="fnref:13"><a class="footnote-ref" href="#fn:13">13</a></sup><sup id="fnref2:8"><a class="footnote-ref" href="#fn:8">8</a></sup> and can be considered as a valuable tool for landcover change detection applied to MES<sup id="fnref:14"><a class="footnote-ref" href="#fn:14">14</a></sup><sup id="fnref:15"><a class="footnote-ref" href="#fn:15">15</a></sup>. More recently, few studies have implemented deep learning algorithms to train models to detect extraction sites in images and have shown high levels of accuracy<sup id="fnref2:4"><a class="footnote-ref" href="#fn:4">4</a></sup><sup id="fnref:16"><a class="footnote-ref" href="#fn:16">16</a></sup><sup id="fnref:17"><a class="footnote-ref" href="#fn:17">17</a></sup>. </p>
+<p>The STDL has developed a framework named <a href="https://tech.stdl.ch/TASK-IDET/"><em>object-detector</em></a> to automatically detect objects in a georeferenced imagery dataset based on deep learning method<sup id="fnref:18"><a class="footnote-ref" href="#fn:18">18</a></sup>. It was used for the automatic detection of MES<sup id="fnref2:16"><a class="footnote-ref" href="#fn:16">16</a></sup><sup id="fnref2:17"><a class="footnote-ref" href="#fn:17">17</a></sup> in order to improve the process of mapping MES in Switzerland, and to keep the database up to date with the annual acquisition of the dataset of high-resolution (up to 10 cm) aerial images <em>SWISSIMAGE</em>. The method has proven its efficiency detecting MES with a trained model achieving a f1-score of 82%. The MES inferences for <em>SWISSIMAGE</em> from 1998 to 2024 were provided and reviewed by experts from <em>swisstopo</em>. 
+The model's replicability to other regions or datasets with different characteristics has not been tested yet. While the framework has shown strong results, its performance in areas with varying data quality, landscapes, or environmental conditions remains uncertain, which limits its use beyond Switzerland. Indeed, high-resolution image dataset like <em>SWISSIMAGE</em> requires significant time and financial investment, with data collected over multiple flights during spring and summer to cover the whole country<sup id="fnref:19"><a class="footnote-ref" href="#fn:19">19</a></sup> and an extensive manual post-processing to merge and correct images. In situ surveys with manned or unmanned devices are still costly and slow, often still used alongside remote sensing<sup id="fnref:20"><a class="footnote-ref" href="#fn:20">20</a></sup><sup id="fnref:21"><a class="footnote-ref" href="#fn:21">21</a></sup>. Thanks to Switzerland’s geographic scale and economic means, high-resolution data, such as <em>SWISSIMAGE</em> can be feasibly collected and integrated. However, for larger or global applications, satellite imagery offers a better scale-cost balance and more frequent updates, making it well-suited for MES detection over wide areas<sup id="fnref4:3"><a class="footnote-ref" href="#fn:3">3</a></sup><sup id="fnref:22"><a class="footnote-ref" href="#fn:22">22</a></sup>. Satellite sensors also provide richer spectral information beyond RGB images, improving landscape analysis<sup id="fnref:23"><a class="footnote-ref" href="#fn:23">23</a></sup>. <br />
+The Open Data Cube (ODC) initiative seeks to provide a free and open data architecture solution, to facilitate the use of EO satellite data<sup id="fnref:25"><a class="footnote-ref" href="#fn:25">24</a></sup>, by making national data available to other users or by processing and bringing together opensource data that already exist in the country<sup id="fnref:26"><a class="footnote-ref" href="#fn:26">25</a></sup>. The Swiss Data Cube<sup id="fnref:27"><a class="footnote-ref" href="#fn:27">26</a></sup> and the Brazil Data Cube<sup id="fnref:28"><a class="footnote-ref" href="#fn:28">27</a></sup> joins this network and the development of an ODC community<sup id="fnref:29"><a class="footnote-ref" href="#fn:29">28</a></sup><sup id="fnref:30"><a class="footnote-ref" href="#fn:30">29</a></sup>, acknowledging the potential of a central data archive which delivers decision-ready product. </p>
+<p>This project mainly aims to develop the <em>object-detector</em> framework to enable the use of satellite images for automated MES detection, with the support of an ODC infrastructure. The performance of high-resolution <em>SWISSIMAGE</em> aerial images and satellite images in Switzerland will be evaluated. In addition, applying the framework to a new region in Brazil will allow its performance to be evaluated in another region.  </p>
+<div align="center">
+<figure>
+    <img src="./images/Fig1.webp" alt="Workflow" width="100%">
+    <figcaption>
+        <i>Figure 1: Workflow diagram for automatic MES detection using satellite images.</i>
+    </figcaption>
+</figure>
+</div>
+
+<p>The workflow developed from the <a href="https://tech.stdl.ch/PROJ-DQRY-TM/"><em>proj-dqry</em></a> framework and applied to satellite images is shown in Figure 1. First, a deep learning algorithm is trained using a mapped MES dataset that serves as ground truth (GT). After evaluating the performance of the trained model, the selected model was used to perform inference detection for a given layer dataset and area of interest (AoI). The results were filtered to discard irrelevant detections. The procedure was repeated for both data sources and each provided layers. </p>
+<p>In this report, we first describe the data used, including the image description and the definition of AoI. Then we explain the model training, evaluation and object detection procedure. Next, we present the results of potential MES detection. Finally, we provide conclusion and perspectives. This project is a continuation of the following <a href="https://tech.stdl.ch/PROJ-DQRY-TM/"><em>proj-dqry</em></a>, therefore some elements are similar.</p>
+<h2 id="2-data">2 Data<a class="headerlink" href="#2-data" title="Permanent link">&para;</a></h2>
+<h3 id="21-images-sources">2.1 Images sources<a class="headerlink" href="#21-images-sources" title="Permanent link">&para;</a></h3>
+<h4 id="211-satellite-programs">2.1.1 Satellite programs<a class="headerlink" href="#211-satellite-programs" title="Permanent link">&para;</a></h4>
+<h5 id="2111-landsat-8">2.1.1.1 Landsat-8<a class="headerlink" href="#2111-landsat-8" title="Permanent link">&para;</a></h5>
+<p>Landsat 8, launched in 2013 by NASA and the US Geological Survey (USGS), continues the long-standing Landsat EO program that began in the 1970s<sup id="fnref:31"><a class="footnote-ref" href="#fn:31">30</a></sup>. It carries two main sensors: the Operational Land Imager (OLI), which provides multispectral images at 30 meters resolution and a panchromatic band at 15 meters, and the Thermal InfraRed Sensor (TIRS), with 100 meters resolution<sup id="fnref:32"><a class="footnote-ref" href="#fn:32">31</a></sup>. Each scene covers an area of roughly 185 by 180 km, with a revisit time of 16 days. Since 2008, the USGS’s open data policy has dramatically increased access to Landsat images, especially benefiting regions with limited resources<sup id="fnref:33"><a class="footnote-ref" href="#fn:33">32</a></sup>. However, cloud cover and the relatively long revisit time limit the availability of cloud-free images, reducing the number of good acquisitions each year<sup id="fnref:34"><a class="footnote-ref" href="#fn:34">33</a></sup><sup id="fnref:35"><a class="footnote-ref" href="#fn:35">34</a></sup>. Landsat 8 data is offered in several correction levels, including Level-1 (systematically corrected) and Level-2 (surface reflectance). </p>
+<h5 id="2112-sentinel-2">2.1.1.2 Sentinel-2<a class="headerlink" href="#2112-sentinel-2" title="Permanent link">&para;</a></h5>
+<p>The Sentinel-2 mission, part of the European Space Agency’s Copernicus program, consists of two satellites, Sentinel-2A launched in 2015 and Sentinel-2B in 2017, each equipped with a Multispectral Instrument (MSI) capturing data in 13 spectral bands at varying spatial resolutions between 10 and 60 meters<sup id="fnref2:32"><a class="footnote-ref" href="#fn:32">31</a></sup><sup id="fnref2:31"><a class="footnote-ref" href="#fn:31">30</a></sup>. Sentinel-2 covers a wider swath of 290 km and revisits the same area approximately every 5 days, improving temporal resolution compared to Landsat 8. Sentinel-2 data is processed into different levels, including Level-1C (Top-of-Atmosphere reflectance with geometric corrections) and Level-2A (Bottom-of-Atmosphere reflectance with atmospheric corrections).</p>
+<h4 id="212-open-data-cube-platforms">2.1.2 Open Data Cube platforms<a class="headerlink" href="#212-open-data-cube-platforms" title="Permanent link">&para;</a></h4>
+<h5 id="2121-swiss-data-cube">2.1.2.1 Swiss Data Cube<a class="headerlink" href="#2121-swiss-data-cube" title="Permanent link">&para;</a></h5>
+<p>The <a href="https://www.swissdatacube.org/">Swiss Data Cube</a> (SDC) is a comprehensive data source for EO analytics<sup id="fnref2:27"><a class="footnote-ref" href="#fn:27">26</a></sup><sup id="fnref:36"><a class="footnote-ref" href="#fn:36">35</a></sup>, offering a database of over 35 years of satellite data, including from the Landsat and Sentinel missions. The system is designed to transform raw satellite imagery into standardised Analysis Ready Data (ARD), with the aim of optimising the data for the purposes of environmental monitoring and time-series analysis. The SDC facilitates access to pre-processed and validated datasets for a range of applications, including land use classification, vegetation dynamics, water resource management, and snow cover mapping<sup id="fnref:37"><a class="footnote-ref" href="#fn:37">36</a></sup><sup id="fnref2:30"><a class="footnote-ref" href="#fn:30">29</a></sup><sup id="fnref:38"><a class="footnote-ref" href="#fn:38">37</a></sup>. The SDC has been constructed on Open Data Cube architecture, thereby ensuring seamless data integration, storage, and analysis<sup id="fnref:39"><a class="footnote-ref" href="#fn:39">38</a></sup>.</p>
+<div align="center">
+<figure>
+    <img src="./images/Fig2.webp" alt="SDCworkflow" width="100%">
+    <figcaption>
+        <i>Figure 2: Swiss Data Cube ARD products from Chatenoux et al. (2021).</i>
+    </figcaption>
+</figure>
+</div>
+
+<p>The SDC acquires and processes ARD products which are continuously updated<sup id="fnref2:29"><a class="footnote-ref" href="#fn:29">28</a></sup>. This archive integrates data from prominent EO satellite programs. The SDC employs Python scripts for automated data download and processing, ensuring that data from these satellites are ingested into the system for seamless access. The ingestion process includes atmospheric corrections, topographic corrections and the generation of multitemporal backscatter composites<sup id="fnref3:27"><a class="footnote-ref" href="#fn:27">26</a></sup>.<br />
+These ARD products are available in a consistent format, allowing for easy time-series analysis and multi-sensor integration. The data is archived with backup copies and reprocessing capabilities, ensuring that future updates or improvements to processing algorithms can be easily incorporated. This structured workflow guarantees that the archive remains up-to-date and ready for analysis, with users benefiting from the highest quality and consistency in the data. See Figure 2 for a summary of the workflow for generating ARD products. <br />
+The SDC, with its localised, real-time monitoring and time-series analysis, could be particularly useful for tracking the evolution of MES with higher temporal resolution in Switzerland.</p>
+<h5 id="2122-brazil-data-cube">2.1.2.2 Brazil Data Cube<a class="headerlink" href="#2122-brazil-data-cube" title="Permanent link">&para;</a></h5>
+<p>The <a href="https://data.inpe.br/bdc/web/en/home-page-2/">Brazil Data Cube</a> (BDC) is a national initiative developed by the National Institute for Space Research (INPE), aimed at processing large volumes of medium-resolution remote sensing data for environmental monitoring across Brazil<sup id="fnref2:28"><a class="footnote-ref" href="#fn:28">27</a></sup>. The BDC is part of a broader effort to monitor Brazilian biomes, with a focus on the Amazon region. The workflow to generate ARD is similar to the one of SDC and follows the ODC initiative<sup id="fnref:40"><a class="footnote-ref" href="#fn:40">39</a></sup><sup id="fnref2:25"><a class="footnote-ref" href="#fn:25">24</a></sup>. However, the focus of the finished products differs slightly: the BDC utilizes advanced computational methods, including AI and machine learning, to analyse time-series data and to produce highly effective models for large-scale land-use and land-cover mapping across Brazil's biomes <sup id="fnref:41"><a class="footnote-ref" href="#fn:41">40</a></sup><sup id="fnref:42"><a class="footnote-ref" href="#fn:42">41</a></sup>.</p>
+<h2 id="22-images">2.2 Images<a class="headerlink" href="#22-images" title="Permanent link">&para;</a></h2>
+<p>This section describes the images used for this project. Table 1 summarises the main characteristics of the selected images.</p>
+<p><center></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">Product</th>
+<th style="text-align: center;">Type</th>
+<th style="text-align: center;">Year</th>
+<th style="text-align: center;">Coordinate system</th>
+<th style="text-align: center;">Spatial resolution</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">SWISSIMAGE Journey</td>
+<td style="text-align: center;">True colour RGB</td>
+<td style="text-align: center;">2018-2020</td>
+<td style="text-align: center;">CH1903+/MN95 (EPSG:2056)</td>
+<td style="text-align: center;">0.10 m (<span class="arithmatex">\(\sigma\)</span> <span class="arithmatex">\(\pm\)</span> 0.15 m) - 0.25 m</td>
+</tr>
+<tr>
+<td style="text-align: center;">Landsat8/9 Collection 2 Level 2 Surface reflectance and Temperature (landsat_ot_c2_l2)</td>
+<td style="text-align: center;">True colour Bands 4 (red), 3 (green), and 2 (blue)</td>
+<td style="text-align: center;">11/08/2020 / 20/08/2020</td>
+<td style="text-align: center;">WGS 84 / Pseudo-Mercator (EPSG:3857)</td>
+<td style="text-align: center;">30 m</td>
+</tr>
+<tr>
+<td style="text-align: center;">Landsat-8/OLI image mosaic of Brazilian Amazon (mosaic-landsat-amazon-3m)</td>
+<td style="text-align: center;">True colour Bands 4 (Red), 3 (Green) and 2 (Blue)</td>
+<td style="text-align: center;">07/2016 - 09/2016</td>
+<td style="text-align: center;">WGS 84 / Pseudo-Mercator (EPSG:3857)</td>
+<td style="text-align: center;">30 m</td>
+</tr>
+<tr>
+<td style="text-align: center;">Landsat-8/OLI image mosaic of Brazil (mosaic-landsat-brazil-6m)</td>
+<td style="text-align: center;">False colour Bands 6 (SWIR), 5 (NIR), and 4 (Red)</td>
+<td style="text-align: center;">07/2017 - 06/2018</td>
+<td style="text-align: center;">WGS 84 / Pseudo-Mercator (EPSG:3857)</td>
+<td style="text-align: center;">30 m</td>
+</tr>
+<tr>
+<td style="text-align: center;">Sentinel-2 image Mosaic of Brazilian Amazon Biome (mosaic-s2-amazon-3m)</td>
+<td style="text-align: center;">False colour Bands 11 (SWIR), 8A (NIR), and 4 (Red)</td>
+<td style="text-align: center;">06/2022 - 08/2022</td>
+<td style="text-align: center;">WGS 84 / Pseudo-Mercator (EPSG:3857)</td>
+<td style="text-align: center;">30 m</td>
+</tr>
+</tbody>
+</table>
+<p><i>Table 1: Characteristics of aerial images and ODC products.</i>
+</center></p>
+<h3 id="221-swisstopo">2.2.1 swisstopo<a class="headerlink" href="#221-swisstopo" title="Permanent link">&para;</a></h3>
+<p>Using EO data, the maximum zoom produced is level 14, which is lower than the zoom level 16 for <a href="https://map.geo.admin.ch/#/map?lang=en&amp;center=2660000,1190000&amp;z=1&amp;topic=ech&amp;layers=ch.swisstopo.swissimage-product@year=current&amp;bgLayer=ch.swisstopo.pixelkarte-farbe"><em>SWISSIMAGE Journey</em></a> products chosen for the previous project<sup id="fnref3:17"><a class="footnote-ref" href="#fn:17">17</a></sup>. In order to compare models and maintain consistency, a model using <em>SWISSIMAGE</em> orthophotos at zoom level 14 was retrained for evaluation, and to match the maximum potential of satellite images. For this analysis only the images from mosaic of the year 2020 (a combination of 2020, 2019 and 2018 images acquisition) are needed and the images are georeferenced RGB TIF tiles with a size of 256 x 256 pixels (1 km<sup>2</sup>sup&gt;).</p>
+<h3 id="222-swiss-data-cube">2.2.2 Swiss Data Cube<a class="headerlink" href="#222-swiss-data-cube" title="Permanent link">&para;</a></h3>
+<p>Only Landsat data was available on the SDC via Web Map Service<sup id="fnref2:36"><a class="footnote-ref" href="#fn:36">35</a></sup><sup id="fnref:43"><a class="footnote-ref" href="#fn:43">42</a></sup> (WMS). Landsat true colour images at the highest correction level (Level 2) and a 30 m spatial resolution were used (Table 1). Unfortunatly, accessing the SDC through the WMS connector delivers images that lack full processing, such as visualization corrections like contrast reduction or reflectance enhancement. This omission explains their darker appearance compared to the more refined datasets accessible via the SDC's API. </p>
+<p>We chose images from August 2020 for several reasons, first and foremost because they coincide with the <em>swissTLM3D</em> ground truth acquisition and mapping period, so that we can fit in as close as possible. In fact, as indicated in the introduction, the survey period for high-resolution <em>SWISSIMAGE</em> images is spread over a long period, starting at the very beginning of spring in the west of Switzerland and gradually covering the rest of the country, and for mountainous regions it is even necessary to wait until the very end of summer when snow cover is at its lowest. The date of 11 August 2020 has been chosen for training the model because it is the one with the largest footprint to encompass as much ground truth as possible, as well as a minimal cloud cover compared with the other dates available. August 20 has been used for detection and inference, so that the model can be applied to the entire country, as Eastern Switzerland is excluded from August 11. </p>
+<p>The different footprints and data information’s can be checked on the <a href="https://explorer.swissdatacube.org/products/landsat_ot_c2_l2">SDC explorer</a>.</p>
+<h3 id="223-brazil-data-cube">2.2.3 Brazil Data Cube<a class="headerlink" href="#223-brazil-data-cube" title="Permanent link">&para;</a></h3>
+<p>The products used as input for the <em>object-detector</em> through the BDC are different from the SDC, as we will be using Landsat (30 m) and Sentinel (10 m) mosaics that have been generated over an extended period of time in order to compose cloud-free mosaics (Table 1). This is the advantage of these mosaics, as they allow us to have images of the highest quality, even if they don't have the same temporal resolution as simple updated layers. 
+The BDC uses a Least Cloud Cover first (LCF) algorithm to perform the temporal compositing. It first applies cloud masking to each image, then selects pixels based on their reliability, favouring images with higher percentages of clear pixels<sup id="fnref:44"><a class="footnote-ref" href="#fn:44">43</a></sup>. By sorting images by cloud coverage, LCF selects the clearest pixels for each time step, ensuring high-quality composites with minimal cloud impact. Two of the mosaics are focusing on the Amazon biome and the third represent Brazil as a whole. 
+The false colour composite images, registered in RGB format<sup id="fnref3:32"><a class="footnote-ref" href="#fn:32">31</a></sup>, make it possible to distinguish the elements of the landscape thanks to their spectral properties, with the vegetation really standing out, as well as the bare ground, and the contrasting water bodies which are much darker<sup id="fnref:45"><a class="footnote-ref" href="#fn:45">44</a></sup><sup id="fnref:46"><a class="footnote-ref" href="#fn:46">45</a></sup><sup id="fnref:47"><a class="footnote-ref" href="#fn:47">46</a></sup><sup id="fnref:48"><a class="footnote-ref" href="#fn:48">47</a></sup>.</p>
+<h2 id="23-mes-labels">2.3 MES labels<a class="headerlink" href="#23-mes-labels" title="Permanent link">&para;</a></h2>
+<h3 id="231-switzerland-ground-truth">2.3.1 Switzerland ground truth<a class="headerlink" href="#231-switzerland-ground-truth" title="Permanent link">&para;</a></h3>
+<p>The MES labels originate from the swiss Topographic Landscape Model 3D (<a href="https://www.swisstopo.admin.ch/en/knowledge-facts/topographic-landscape-model.html"><em>swissTLM3D</em></a>) produced by <em>swisstopo</em>. <em>swissTLM3D</em> is a large-scale topographic landscape model of Switzerland, including manually drawn and georeferenced vectors of objects of interest at a high resolution, including MES features. Domain experts from swisstopo have carried out extensive work to review the labeled MES and to synchronise them with the 2020 <em>SWISSIMAGE</em> mosaic to improve the quality of the labeled dataset. A total of 266 labels are available. The mapped MES reveal the diversity of MES characteristics, such as the presence or absence of buildings/infrastructures, trucks, water pounds, and vegetation<sup id="fnref4:17"><a class="footnote-ref" href="#fn:17">17</a></sup>.<br />
+Changing the zoom level affects the resolution by a factor of 2, leading to a loss of information between zoom level 16 (resolution of 1.6 m px<sup>-1</sup>) used in the previous study<sup id="fnref5:17"><a class="footnote-ref" href="#fn:17">17</a></sup> and zoom level 14 (resolution of 6.4 m px<sup>-1</sup>) selected in this project. With regards to satellite images, we can see that the information visible in the MES is completely lost and that, without the presence of ground truth it could be difficult to distinguish the MES from the rest of the territory (Fig. 3).  </p>
+<p><strong><em>NOTE:</em></strong> In this report, every figure is systematically oriented to the north, allowing us to remove the orientation of the figure layout for better clarity and synthesis of the information.</p>
+<div align="center">
+<figure>
+    <img src="./images/Fig3.webp" alt="Images_z14" width="100%">
+    <figcaption>
+        <i>Figure 3: Side-by-side comparison of SWISSIMAGE image (left) and Landsat-8 image (right) at zoom level 14 for the same label polygon.</i>
+    </figcaption>
+</figure>
+</div>
+
+<p>In addition, as the footprint of the Landsat raster of August 11, 2020, does not cover the entire Swiss territory (Fig. 4), some labels had to be removed to retain only those that overlapped with the footprint of the raster layer. Thi leaves us with 236 labels for the model using the SDC data, compared to the 266 used for the 2020 <em>SWISSIMAGE</em> mosaic.<br />
+These labels are used as the ground truth (GT), <em>i.e.</em> the reference dataset indicating the presence of a MES in an image. The GT is used both as input to train the model to detect MES and to evaluate the model performance.</p>
+<div align="center">
+<figure>
+    <img src="./images/Fig4.webp" alt="Landsat-8_footprint" width="100%">
+    <figcaption>
+        <i>Figure 4: Footprint of the SDC Landsat-8 raster of August 11-2020, with overlapping labels.</i>
+    </figcaption>
+</figure>
+</div>
+
+<h3 id="232-brazil-ground-truth">2.3.2 Brazil ground truth<a class="headerlink" href="#232-brazil-ground-truth" title="Permanent link">&para;</a></h3>
+<p>Brazil is an ideal location to test the <em>object detector</em> with another GT dataset, as there are a large number of MES labels available, while also benefiting from access to an ODC.  </p>
+<p>Two datasets were used:</p>
+<ul>
+<li>the first one is presented in Maus et al. (2020)<sup id="fnref9:1"><a class="footnote-ref" href="#fn:1">1</a></sup>. It is a GT dataset which was designed to enable other studies to validate machine learning models, remote sensing analyses, and spatial assessments in the field of mineral extraction. The dataset contains manually delineated polygons representing 21,060 mining areas, derived from satellite imagery within a 10 km radius of known active mining sites.<br />
+This dataset features 2,427 labels at a Brazil-wide scale, of which 1,487 are clipped to the Amazon biome and footprint of our BDC rasters. The labels are highly diverse in terms of both surface area and shape. They represent a comprehensive range of highly polygonal shapes with very detailed delineation as shown in Figure 5. Labels were not synchronised for each mosaic in the BDC, as the date of acquisition of the labels did not coincide with the temporal compositing of the mosaics. In addition, this dataset gives a new dimension of quarries compared to previous studied standards since, for example, MES in Figure 5C is approximately 42 km long. </li>
+</ul>
+<div align="center">
+<figure>
+    <img src="./images/Fig5.webp" alt="GT_Maus" width="100%">
+    <figcaption>
+        <i>Figure 5: Examples of MES from Maus et al. (2020) mapped on Sentinel-2 false colour tiles from the BDC (scale not uniform).</i>
+    </figcaption>
+</figure>
+</div>
+
+<ul>
+<li>the second dataset is not designed to be used as GT, since it is the outputs from the <a href="https://github.com/earthrise-media/mining-detector">Earthrise Media Mining Detector</a>, which is an open source project designed to automatically detect artisanal and industrial gold mining activities using Sentinel-2 satellite imagery focusing on the Amazon basin. The <a href="https://github.com/earthrise-media/mining-detector">Earth Genome repository</a> provides open source access to its yearly results since 2018, and we use these results, which are already the result of automatic detection, as ground truth. As this project started in 2018 it will not be available for the layer: <em>mosaic-landsat-amazon-3m</em> (Table 1). As this is another type of MES, with artisanal mines which are much smaller overall, we have a dataset that is different than the previous one as the Figure 6 can attest, it has a more cell-like delimitation and is more centred on the objects of study.</li>
+</ul>
+<div align="center">
+<figure>
+    <img src="./images/Fig6.webp" alt="GT_EG" width="100%">
+    <figcaption>
+        <i>Figure 6: Examples of MES outputs for the 2018 year from Earth Genome.</i>
+    </figcaption>
+</figure>
+</div>
+
+<p>When clipped to the corresponding BDC layers extent, it represents 2766 labels for <em>mosaic-landsat-brazil-6m</em> and 3970 labels for <em>mosaic-s2-amazon-3m</em>. Given the very large number of labels, it is impossible for us to check whether they are all quarries, and it is important to consider that these are not 100% accurate labels even though this project follows just like the object detector a heavy post-processing filtering based on confidence score threshold (&gt; 0.6). Setting aside the size of the labels, the first sample is more detailed and polygonal, whereas the second sample takes the form of individual cells and/or aggregates.</p>
+<h3 id="24-areas-of-interest-aoi">2.4 Areas of interest (AoI)<a class="headerlink" href="#24-areas-of-interest-aoi" title="Permanent link">&para;</a></h3>
+<p>As explained in Section 2.2.1, the <em>SWISSIMAGE</em> mosaics are composed over several years, as such <a href="https://map.geo.admin.ch/#/map?lang=en&amp;center=2660000,1190000&amp;z=1&amp;topic=ech&amp;layers=ch.swisstopo.swissimage-product@year=2020;ch.swisstopo.swissimage-product.metadata@year=2020&amp;bgLayer=ch.swisstopo.pixelkarte-farbe&amp;timeSlider=2020">acquisition footprints</a> of yearly acquired orthophotos were used as AoI to perform MES detection over Switzerland<sup id="fnref6:17"><a class="footnote-ref" href="#fn:17">17</a></sup>.
+For Brazil, the inference AoI was defined in order to contain a maximum number of labels for each GT dataset, and within computational limits. The AoI is an area of considerable size, with a total area of approximately 500,000 km<sup>2</sup> (Fig. 7). It encompasses a wide variety of landscapes and land covers, thereby ensuring that the terrain is varied and not uniform, and that land cover is not dominated by a single use.</p>
+<div align="center">
+<figure>
+    <img src="./images/Fig7.webp" alt="AoI-Brazil" width="100%">
+    <figcaption>
+        <i>Figure 7: AoI used for BDC models inference, approximately 500,000 km<sup>2</sup> in the central/eastern part of the Amazone Biome (layer: mosaic-landsat-amazon-3m).</i>
+    </figcaption>
+</figure>
+</div>
+
+<h2 id="3-satellite-image-fetching">3. Satellite image fetching<a class="headerlink" href="#3-satellite-image-fetching" title="Permanent link">&para;</a></h2>
+<p>Pre-rendered <em>SWISSIMAGE</em> tiles (256 x 256 px) are downloaded using a <a href="https://www.geo.admin.ch/en">Web Map Tile Service</a> (WMTS) via an XYZ connector. Similarly, tiles (256 x 256 px) are extracted from the georectified rasters stored on the ODC servers and are accessed directly via a WMS with an URL which acts as an end point. All tiles are served on a cartesian coordinates grid using a <a href="https://docs.ogc.org/is/17-083r2/17-083r2.html#63">Web Mercator Quad</a> projection and a coordinate reference system EPGS 3857. Position of a tile on the grid is defined by x and y coordinates and the pixel resolution of the image is defined by z, its zoom level.<br />
+The URL follows the OGC WMS protocol and differs depending on which Data Cube is used. The correct product must be extracted from the server by specifying its layer name in the URL (<em>e.g.</em> <em>Landsat_ot_c2_l2</em>), and the remaining parameters of the URL are defined according to what the server provides and is indicated in the <a href="https://docs.geoserver.org/main/en/user/services/wms/reference.html#getcapabilities">get capabilities</a> of the end point. Depending on the ODC and the layer selected, a temporal component may be chosen, for the <em>landsat_ot_c2_l2</em> product’s raster in the SDC, in which case the server format must be respected.</p>
+<p>The different URL queries used in the <em>object-detector</em> for the layers mentioned in Table 1 are summarized in the Table A1 of <a href="#a-wms-urls">Appendix A</a> and can be used as a template. Their structure differs depending on the server.</p>
+<h2 id="4-automatic-detection-methodology">4. Automatic detection methodology<a class="headerlink" href="#4-automatic-detection-methodology" title="Permanent link">&para;</a></h2>
+<h3 id="41-deep-learning-algorithm-for-object-detection">4.1 Deep learning algorithm for object detection<a class="headerlink" href="#41-deep-learning-algorithm-for-object-detection" title="Permanent link">&para;</a></h3>
+<p>Training and inference detection of potential MES were performed with the <a href="https://tech.stdl.ch/TASK-IDET/">object-detector</a> framework. This project is based on the open source <a href="https://github.com/facebookresearch/detectron2">detectron2</a> framework<sup id="fnref:49"><a class="footnote-ref" href="#fn:49">48</a></sup>, implemented with PyTorch by the Facebook Artificial Intelligence Research group (FAIR). Instance segmentation (delineation of object) was performed with a Mask R-CNN deep learning algorithm<sup id="fnref:50"><a class="footnote-ref" href="#fn:50">49</a></sup>. It is based on a Recursive-Convolutional Neural Network (CNN) with a backbone pre-trained model ResNet-50 (50 layers deep residual network). Images were annotated with custom <a href="https://cocodataset.org/#home">COCO object</a> based on the labels. The model is trained with this dataset to later perform inference detection on images. If the object is detected by the algorithm, a pixel mask is produced with a confidence score (0 to 1) attributed to the detection. The object detector framework permits to convert detection mask to georeferenced polygon that can be used in GIS software’s (more detailed information about this part can be found in Herny et al. (2024)<sup id="fnref7:17"><a class="footnote-ref" href="#fn:17">17</a></sup>).</p>
+<h3 id="42-model-training">4.2 Model training<a class="headerlink" href="#42-model-training" title="Permanent link">&para;</a></h3>
+<p>Rasters from the different ODC products, for which the GT has been defined, were chosen to proceed the model training. Tiles intersecting labels were selected and split randomly into three datasets: the training dataset (70%), the validation dataset (15%), and the test dataset (15%). The primary objective of this project is to train models using various combinations of GTs and images, and to evaluate and compare their performance. The algorithm hyperparameters (Table 2) were tuned in order to optimize the model’s performances considering each datasets specific characteristics. The training durations were obtained using an NVIDIA L4 GPU machine with 16 GB of RAM.</p>
+<p><center></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">Model</th>
+<th style="text-align: center;">Products</th>
+<th style="text-align: center;">GT Dataset</th>
+<th style="text-align: center;">Number of labels</th>
+<th style="text-align: center;">image/batch</th>
+<th style="text-align: center;">Learning rate</th>
+<th style="text-align: center;">Learning rate decay</th>
+<th style="text-align: center;">Checkpoint period</th>
+<th style="text-align: center;">Max iteration</th>
+<th style="text-align: center;">Optimal iteration</th>
+<th style="text-align: center;">Training duration</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">SWISSIMAGE</td>
+<td style="text-align: center;">swissTLM3D</td>
+<td style="text-align: center;">266</td>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">0.005</td>
+<td style="text-align: center;">0.0001</td>
+<td style="text-align: center;">200</td>
+<td style="text-align: center;">3000</td>
+<td style="text-align: center;">1199</td>
+<td style="text-align: center;">11 min</td>
+</tr>
+<tr>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">SDC landsat_ot_c2_l2</td>
+<td style="text-align: center;">Reduce swissTLM3D</td>
+<td style="text-align: center;">236</td>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">0.005</td>
+<td style="text-align: center;">0.0001</td>
+<td style="text-align: center;">200</td>
+<td style="text-align: center;">3400</td>
+<td style="text-align: center;">1199</td>
+<td style="text-align: center;">12.6 min</td>
+</tr>
+<tr>
+<td style="text-align: center;">3</td>
+<td style="text-align: center;">BDC mosaic-landsat-amazon-3m</td>
+<td style="text-align: center;">Maus et al. (2020)</td>
+<td style="text-align: center;">1487</td>
+<td style="text-align: center;">12</td>
+<td style="text-align: center;">0.01</td>
+<td style="text-align: center;">0.0001</td>
+<td style="text-align: center;">400</td>
+<td style="text-align: center;">8000</td>
+<td style="text-align: center;">3199</td>
+<td style="text-align: center;">3.6 hr</td>
+</tr>
+<tr>
+<td style="text-align: center;">4</td>
+<td style="text-align: center;">BDC mosaic-landsat-brazil-6m</td>
+<td style="text-align: center;">Maus et al. (2020)</td>
+<td style="text-align: center;">2427</td>
+<td style="text-align: center;">16</td>
+<td style="text-align: center;">0.01</td>
+<td style="text-align: center;">0.0001</td>
+<td style="text-align: center;">400</td>
+<td style="text-align: center;">10000</td>
+<td style="text-align: center;">3199</td>
+<td style="text-align: center;">6.1 hr</td>
+</tr>
+<tr>
+<td style="text-align: center;">5</td>
+<td style="text-align: center;">BDC mosaic-s2-amazon-3m</td>
+<td style="text-align: center;">Maus et al. (2020)</td>
+<td style="text-align: center;">1487</td>
+<td style="text-align: center;">12</td>
+<td style="text-align: center;">0.01</td>
+<td style="text-align: center;">0.0001</td>
+<td style="text-align: center;">400</td>
+<td style="text-align: center;">8000</td>
+<td style="text-align: center;">2799</td>
+<td style="text-align: center;">3.6 hr</td>
+</tr>
+<tr>
+<td style="text-align: center;">6</td>
+<td style="text-align: center;">BDC mosaic-landsat-brazil-6m</td>
+<td style="text-align: center;">Earth Genome</td>
+<td style="text-align: center;">2766</td>
+<td style="text-align: center;">16</td>
+<td style="text-align: center;">0.01</td>
+<td style="text-align: center;">0.0001</td>
+<td style="text-align: center;">400</td>
+<td style="text-align: center;">10000</td>
+<td style="text-align: center;">2799</td>
+<td style="text-align: center;">6.2 hr</td>
+</tr>
+<tr>
+<td style="text-align: center;">7</td>
+<td style="text-align: center;">BDC mosaic-s2-amazon-3m</td>
+<td style="text-align: center;">Earth Genome</td>
+<td style="text-align: center;">3970</td>
+<td style="text-align: center;">24</td>
+<td style="text-align: center;">0.01</td>
+<td style="text-align: center;">0.0001</td>
+<td style="text-align: center;">400</td>
+<td style="text-align: center;">10000</td>
+<td style="text-align: center;">4799</td>
+<td style="text-align: center;">9.3 hr</td>
+</tr>
+</tbody>
+</table>
+<p><i>Table 2: Training parameters for all models at zoom level 14.</i>
+</center></p>
+<p>For example, for model 4 (Landsat-8), 5,938 tiles were produced for the training process and 160,953 tiles (~20 GiB) were produce for the inference on the Brazil AoI.<br />
+In order for the models to learn effectively and avoid significant underfitting, the learning rate and number of images per batch had to be increased significantly, from model 3 to model 7, to compensate the effects of the number of labels used in input. Such parameters favour faster convergence but result in a more deterministic training which introduces noise. Corresponding total loss curves show important oscillation (Fig. B1, <a href="#b-training-curves">Appendix B</a>), and a slower total loss decrease, meaning the model has difficulty to settle<sup id="fnref:51"><a class="footnote-ref" href="#fn:51">50</a></sup><sup id="fnref:52"><a class="footnote-ref" href="#fn:52">51</a></sup><sup id="fnref:53"><a class="footnote-ref" href="#fn:53">52</a></sup>. Despite nearly identical hyperparameters during training, the total loss curves of models 4 and 6 exhibit noticeable differences oscillation patterns, attributable only to differences in the nature and characteristics of the labels. The complexity of the GT datasets can be the direct cause, but further tuning could improve the model. The optimal detection model is the one minimising the validation loss curve. </p>
+<h3 id="13-metrics">1.3 Metrics<a class="headerlink" href="#13-metrics" title="Permanent link">&para;</a></h3>
+<p>Each model’s performance and detection reliability were assessed by comparing the results to the GT. The detection performed by the model can be either (1) a True Positive (TP), <em>i.e.</em> the detection is real (spatially intersecting the GT); (2) a False Positive <em>i.e.</em> the detection is not real (not spatially intersecting the GT) or (3) a False Negative (FN) <em>i.e.</em> the labelled object is not detected by the algorithm (Fig. 8). </p>
+<div align="center">
+<figure>
+    <img src="./images/Fig8.webp" alt="Results" width="100%">
+    <figcaption>
+        <i>Figure 8: Examples of different detection cases for each GT datasets. (A) Swiss Data Cube model 2 (B) Brazil Data Cube models 3, 4, 5 (C) Brazil Data Cube models 6, 7. Detections are represented as follows: True Positive in Green, False Positive in Red, and False Negative in Blue. In case B, because of the reduced labels some of the False Positive could be considered as missing part of the GT labels.</i>
+    </figcaption>
+</figure>
+</div>
+
+<p>Metrics presented in Figure C1 (<a href="#c-metrics">Appendix C</a>) are computed such as:
+- the <strong>recall</strong>, translating the amount of TP detections predicted by the model:</p>
+<div class="arithmatex">\[recall = \frac{\sum_k TP_k}{\sum_k (TP_k + FN_k)}\]</div>
+<ul>
+<li>the <strong>precision</strong>, translating the number of well-predicted TP among all the detections:</li>
+</ul>
+<div class="arithmatex">\[precision = \frac{\sum_k TP_k}{\sum_k (TP_k + FP_k)}\]</div>
+<ul>
+<li>the <strong>f1-score</strong>, the harmonic average of the precision and the recall:</li>
+</ul>
+<div class="arithmatex">\[f1 = 2 \times \frac{recall \times precision}{recall + precision}\]</div>
+<h2 id="5-analysis-of-the-automatic-detection-models">5. Analysis of the automatic detection models<a class="headerlink" href="#5-analysis-of-the-automatic-detection-models" title="Permanent link">&para;</a></h2>
+<h3 id="51-model-performance">5.1 Model performance<a class="headerlink" href="#51-model-performance" title="Permanent link">&para;</a></h3>
+<p>The performance of each model vary (Table 3) according to all the elements mentioned so far, from the nature of the data itself to the training parameters. When considering the potential impact of GT datasets, it is also important to consider the impact of the enhanced training settings outlined in <a href="#42-model-training">Section 4.2</a> for model 3 to 7.    <br />
+<em>SWISSIMAGE</em> at zoom level 16 achieved a f1-score of 82%<sup id="fnref8:17"><a class="footnote-ref" href="#fn:17">17</a></sup>. In comparison, the performance of model 2 using satellite images on the same labels was lower. With this in mind, the performance of model 2, are reasonably below the other models and is the least performing across the board. Given the GT dataset, a 30 m spatial resolution and dark true colour image doesn’t suit the needs of the mapped MES in the <em>swissTLM3D</em> dataset, demonstrated by the recall score of 40% meaning a significant number of objects are missed. </p>
+<p><center></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">Model</th>
+<th style="text-align: center;">Precision</th>
+<th style="text-align: center;">Recall</th>
+<th style="text-align: center;">F1</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">61%</td>
+<td style="text-align: center;">70%</td>
+<td style="text-align: center;">65%</td>
+</tr>
+<tr>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">62%</td>
+<td style="text-align: center;">40%</td>
+<td style="text-align: center;">49%</td>
+</tr>
+<tr>
+<td style="text-align: center;">3</td>
+<td style="text-align: center;">48%</td>
+<td style="text-align: center;">42%</td>
+<td style="text-align: center;">45%</td>
+</tr>
+<tr>
+<td style="text-align: center;">4</td>
+<td style="text-align: center;">64%</td>
+<td style="text-align: center;">48%</td>
+<td style="text-align: center;">55%</td>
+</tr>
+<tr>
+<td style="text-align: center;">5</td>
+<td style="text-align: center;">64%</td>
+<td style="text-align: center;">50%</td>
+<td style="text-align: center;">56%</td>
+</tr>
+<tr>
+<td style="text-align: center;">6</td>
+<td style="text-align: center;">73%</td>
+<td style="text-align: center;">55%</td>
+<td style="text-align: center;">63%</td>
+</tr>
+<tr>
+<td style="text-align: center;">7</td>
+<td style="text-align: center;">72%</td>
+<td style="text-align: center;">61%</td>
+<td style="text-align: center;">67%</td>
+</tr>
+</tbody>
+</table>
+<p><i>Table 3: Metrics value computed for the validation dataset for each model. </i>
+</center></p>
+<p>Key observations can be made based on the presented results:</p>
+<ul>
+<li>It has been suggested that false colour images may have the potential to improve performance in comparison to true colour models. It seems that this difference is highlighted by models 4 and 5 achieving an overall f1-score 10 points higher than model 3, and there appears to be a noticeable difference in precision due to the ability of false colour images to enhance contrast and feature delimitations.</li>
+<li>A comparison of models 4 to 7 also highlights the minor impact of spatial resolution on model performance, in the context of the GT datasets used with the BDC. It could be assumed that when using true colour and false colour images, spatial resolution is outweighed by spectral resolution.</li>
+<li>Beyond image datasets, the differences between <a href="https://github.com/earthrise-media/mining-detector">Earth Genome</a> models (models 6 and 7) and Maus et al. (2020)<sup id="fnref7:1"><a class="footnote-ref" href="#fn:1">1</a></sup> models (model 3, 4 and 5), suggest that it is the characteristics of the GT labels that determines the ability of the models to perform, since the models use practically identical images and hyperparameters. The object detector may respond better to cell shaped labels than polygonised labels, which may be too complex. It is possible that the Maus et al. (2020)<sup id="fnref8:1"><a class="footnote-ref" href="#fn:1">1</a></sup> dataset is too diverse, and that it would be more efficient to train models by label categories when datasets are to diverse unlike the <em>swissTLM3D</em> dataset.</li>
+</ul>
+<p>Experimenting with varying label counts/characteristics during the training process could provide insights into the relationship between label specificities and performance. This approach could directly influence model adaptability to different image resolutions and GT datasets. Determining a possible optimal range of labels to use as inputs in the object detector based on image resolution (spatial and spectral) and label characteristics could be a step closer towards optimized performances.</p>
+<h2 id="6-automatic-detection-of-mes">6. Automatic detection of MES<a class="headerlink" href="#6-automatic-detection-of-mes" title="Permanent link">&para;</a></h2>
+<h3 id="61-detection-post-processing-for-switzerland">6.1 Detection post-processing for Switzerland<a class="headerlink" href="#61-detection-post-processing-for-switzerland" title="Permanent link">&para;</a></h3>
+<p>Detection by inference was performed over previously mentioned AoIs (<em>SWISSIMAGE</em> footprints) with a minimum threshold detection score of 0.3. The low score filtering was resulting in a large number of detections. Several detections may overlap, potentially segmenting a single object. In addition, a detection might be split into multiple tiles. To improve the pertinence and the aesthetics of the raw detection polygons, a post-processing procedure was applied.<br />
+Switching the image type did not change the inherent characteristics of the Swiss landscape. Consequently, a significant number of false positives still appeared in mountainous regions with Landsat-8 images, primarily due to rock outcrops and snow. An elevation filtering was applied using a <a href="https://github.com/lukasmartinelli/swissdem">Switzerland Digital Elevation Model</a> (DEM, about 25 m px<sup>-1</sup>) derived from the <a href="https://www.usgs.gov/centers/eros/science/usgs-eros-archive-digital-elevation-shuttle-radar-topography-mission-srtm-1?qt-science_center_objects=0#qt-science_center_objects">SRTM instrument</a> (USGS - SRTM). Based on the previous results from different filter combination of the first project, the max altitude threshold value used here was 1200 m, excluding 3 MES with this filter. </p>
+<p>Detection aggregation was also applied: first, polygons were clustered (K-means) according to their centroid position. The method involves setting a predefined number k of clusters. The highest detection score was assigned to the clustered detection. This method preserves the final integrity of detection polygons by retaining detection that has potentially a low confidence score but belongs to a cluster with a higher confidence score improving the final segmentation of the detected object. The value of the threshold score must be kept relatively low (<em>i.e.</em> 0.3) when performing the detection to prevent removing too many polygons that could potentially be part of the detected object. Then, spatially close polygons were assumed to belong to the same MES and are merged according to a distance threshold of 10 m. The averaged score of the merged detection polygons was ultimately computed. Finally, score filtering was applied to the clusters keeping only detections with a minimal score of 0.95. <br />
+Detections with an area smaller than 5000 m<sup>2</sup> were filtered out, considering, as in the first project, that 13 MES are below this threshold, but for performance reasons, as previously concluded, the threshold could not be set at the real minimum of 2270 m<sup>2</sup>.</p>
+<p>In addition to rock outcrops and areas of snow, a significant number of FP detections were recorded in the extensive riverbeds due to the low water level period and the resultant sediment deposits and turbidity. This is why a slope filter has been designed to try to limit these detections. The goal was to exclude flat detections like riverbeds and improve the altitude filter by removing rock outcrops below 1200 m. The mean of the slope within the detection polygons is calculated. The calculation uses the same Switzerland Digital Elevation Model, with the slope layer processed at the same spatial resolution. A 1° to 48° slope range has been applied to remove all detections outside of this range. The maximum value is determined based on labels characteristics, ensuring a non-excluding filter. The filter is constrained by the resolution of the DEM and the Landsat-8 image. This is because detections do not focus only on the water of rivers but includes the banks themselves, and this with a significant margin (Fig. 9). Consequently, the average slope calculated is necessarily greater than 1°. Using a DEM with higher resolution, such as the <em>swissALTI3D</em> product, could perhaps solve this problem in combination with more precise satellite images like Sentinel products. </p>
+<div align="center">
+<figure>
+    <img src="./images/Fig9.webp" alt="Riverbeds" width="100%">
+    <figcaption>
+        <i>Figure 9: Example FP detections with riverbeds and slope filtering issues.</i>
+    </figcaption>
+</figure>
+</div>
+
+<h3 id="62-detection-post-processing-for-brazil">6.2 Detection post-processing for Brazil<a class="headerlink" href="#62-detection-post-processing-for-brazil" title="Permanent link">&para;</a></h3>
+<p>Because of the completely different landscape, MES characteristics, and data availability the post-processing on Brazil models was lighter than the one applied to the SDC model. Based on the characterises of both GT datasets, elevation was not identified as an element useful to differentiate detections in the area studied and where the MES can be found. Due to the unavailability of accessible data, the implementation of slope filtering was not a considered option, but it remains a possible improvement and will be addressed in the conclusion. Detection aggregation was still carried out in the same way, with a 10m distance threshold and a 0.30 score value for the first dataset and a 0.90 score for the second. A lower score threshold allowed more detections to pass through and fitted better the complexity of the second dataset. The complexity and great variety of both the <a href="https://github.com/earthrise-media/mining-detector">Earthrise Media Mining Detector</a> and Maus et al. (2020)<sup id="fnref4:1"><a class="footnote-ref" href="#fn:1">1</a></sup> dataset has also led us to take the decision not to set a minimum detection area.</p>
+<h3 id="63-inference-detections">6.3 Inference detections<a class="headerlink" href="#63-inference-detections" title="Permanent link">&para;</a></h3>
+<p>Each trained model was used to perform inference detection respectively to their trained layer apart from model 2 where the August 20, 2020 layer was used for the inference of the 2019 footprint AoI. These initial inferences give a lot of feedback on potential improvements and how could EO data should be used for automatic MES detections. The detection results are presented in Table 4, showing the spatial intersections between GT and model detections.
+The evaluation of the automatic detection process, as well as the relevance of the results is difficult as the various GT datasets provided do not represent 100% of reality and do not always include every existing MES. </p>
+<p>The results in Table 3 are not fully reflected in Table 4, but model 7 is nevertheless the best performing of all the models. Model 5 stands out for its overdetection of labels. This means that the object detector detects multiple times the same GT label, but in smaller split pieces. This aspect could be improve in the future by changing the post-processing parameters.</p>
+<p><center></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">Model</th>
+<th style="text-align: center;">Detections</th>
+<th style="text-align: center;">Label detection (%)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">1188</td>
+<td style="text-align: center;">88%</td>
+</tr>
+<tr>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">1074</td>
+<td style="text-align: center;">66.2%</td>
+</tr>
+<tr>
+<td style="text-align: center;">3</td>
+<td style="text-align: center;">977</td>
+<td style="text-align: center;">45%</td>
+</tr>
+<tr>
+<td style="text-align: center;">4</td>
+<td style="text-align: center;">1031</td>
+<td style="text-align: center;">86%</td>
+</tr>
+<tr>
+<td style="text-align: center;">5</td>
+<td style="text-align: center;">1780</td>
+<td style="text-align: center;">131%</td>
+</tr>
+<tr>
+<td style="text-align: center;">6</td>
+<td style="text-align: center;">1431</td>
+<td style="text-align: center;">68.7%</td>
+</tr>
+<tr>
+<td style="text-align: center;">7</td>
+<td style="text-align: center;">2378</td>
+<td style="text-align: center;">90%</td>
+</tr>
+</tbody>
+</table>
+<p><i>Table 4: Inference results for each model.</i>
+</center></p>
+<p>Despite the poor training performances of model 2 (<a href="#51-model-performance">Section 5.1</a>), we can see that even with lower image resolution of Landsat-8, the <em>object-detector</em> can still accurately identify and delineate labels (Figure 10A). One of the many introductions of FP detections is linked to the presence of a cloud cover extent in the north of the layer, which is confused by the <em>object-detector</em> (Fig. 10B). </p>
+<div align="center">
+<figure>
+    <img src="./images/Fig10.webp" alt="FP_clouds" width="100%">
+    <figcaption>
+        <i>Figure 10: (A) Example of object detections for model 2, with labels in yellow and detected polygon in green. (B) Example of cloud cover related FP detections.</i>
+    </figcaption>
+</figure>
+</div>
+
+<p>The detections obtained from models 3, 4, and 5 demonstrate strong coherence with the distribution and characteristics of the GT labels from the Maus et al. (2020)<sup id="fnref5:1"><a class="footnote-ref" href="#fn:1">1</a></sup> dataset. FP detections across all three models are predominantly located in riverbeds/banks and deforested areas in the central part of the AoI, this is apparent when comparing Figure 11A and 11B. It is important to note that these FP observations are not attributed to <a href="https://github.com/earthrise-media/mining-detector">Earth Genome models</a>. The polygonised shape of the labels may result in the <em>object-detector</em> experiencing confusion. Still, as demonstrated in Figure 11C, the delineation of detections is precise and follows the patterns of the labels, taking into account their shape and diverse scale.</p>
+<div align="center">
+<figure>
+    <img src="./images/Fig11.webp" alt="Results_model3" width="100%">
+    <figcaption>
+        <i>Figure 11: (A) Distribution of model 3 detections within the AoI, (B) labels distribution, (C) example of object detections for model 3, labels in yellow and detections in blue.</i>
+    </figcaption>
+</figure>
+</div>
+
+<p>For both models, 6 and 7, the distribution of detections closely matches the <a href="https://github.com/earthrise-media/mining-detector">Earth Genome datasets</a> in the AoI as shown with model 7 (Fig. 12A and 12B). The object detector is able to smooth polygons and more precisely map MES compared to the labels. After manual verification, the inference can detect MES that were not part of the GT datasets which, as we recall, were not 100% accurate. This observation can be found in the inference of each model. MES present a large variety of features (buildings, water pounds, trucks, vegetation) which have been identified as a source of confusion for the algorithm in Herny et al. (2024)<sup id="fnref9:17"><a class="footnote-ref" href="#fn:17">17</a></sup>. As illustrated in Figure 11C, the use of satellite data is unable to detect these anthropic objects, even when employing Sentinel-2 images. Two readings can be distinguished, characterised by either fewer confusing features or a lack of information for the algorithm, it could explain the difference in performance between the 2 projects.</p>
+<div align="center">
+<figure>
+    <img src="./images/Fig12.webp" alt="Results_model7" width="100%">
+    <figcaption>
+        <i>Figure 12: (A) Distribution of detections within the AoI, (B) labels distribution, (C) example of object detections for model 7, labels in yellow and detections in blue.</i>
+    </figcaption>
+</figure>
+</div>
+
+<h2 id="7-conclusion-and-perspectives">7. Conclusion and perspectives<a class="headerlink" href="#7-conclusion-and-perspectives" title="Permanent link">&para;</a></h2>
+<p>This new project was designed to apply the <em>object-detector</em> framework to satellite imagery with the goal to implement it on a global scale. It has met the set objectives and demonstrated the <em>object-detector</em> potential to use satellite images and GTs in new areas, while accessing an ODC architecture. The project demonstrated the ability for the <em>object-detector</em> to quickly detect potential MES or over extensive areas, in satellite images of Switzerland and Brazil, with an automatic detection algorithm based on a deep learning approach.<br />
+The different trained model achieved a f1-score ranging from 49% to 67% on the validation dataset. The final detection polygons can in many cases accurately delineate potential MES. Although the performance of the trained models could be judged satisfactory, it should be taken with caution. Many FP detections are present in the different datasets, they are mainly due to confusion of the algorithm between MES and rock outcrops, open water bodies, construction sites, deforested areas, and this confusion can be either reduced or enhanced by false colour images. A manual verification of the relevance of the detection by experts in the field is necessary before using and interpreting the data.<br />
+Despite the required manual checks, the provided framework and detection results constitute a valuable contribution that can greatly assist the inventory and the observation of MES evolution worldwide. It can easily provide state-wide detection in a matter of hours or even minutes, with unprecedent temporal resolution which could be a considerable timesaving compared with manual mapping and in situ surveys techniques. The ODC infrastructure could allow a potential live time updating of MES mapping before checking by specialists, even if such a system would have to be adapted to the needs of each area. This method also enables MES detection with a standardised method, independent of the data used by countries/regions. Further model improvements should be considered, such as increasing the metrics by improving GT quality and improving model learning strategy. Operationalisation by training a general model that can be used in different contexts with different images seems complex, in particular because of the great diversity of MES typology across the regions and countries of the world.</p>
+<p>Here are some technical improvements which could be considered and explored to extend the framework with satellite images:<br />
+- Improvement in the WMS queries to ODCs perfromed by the <em>object-detector</em> could be done so that multi-year analyses can be carried out seamlessly in order to perform feature tracking and really take advantage of the potential of the high temporal resolution of EO data. More on the data provider and server side, on multiple occasions, the requests made by the object detector exceeded the capacity of the servers, which can occasionally result in a reduction in processing speed. Nonetheless, processing in general is to be constrained, especially with regard to the potential inference surface. Consequently, in terms of the surface area of a country, this can pose a problem, as it was not possible to infer on the layer’s full extent in the conditions under which this project was tested.<br />
+- Regarding GT quality and datasets, the dataset offered by Maus et al. (2020)<sup id="fnref6:1"><a class="footnote-ref" href="#fn:1">1</a></sup> could have even greater potential if it was not constrained by the availability of strictly national images with ODCs. In South America, there were a large number of MES labels across the region, so greater availability and accessibility to transboundary images through ODCs would be a major asset and could meet the needs of the study of MES. As seen in the case of the code developed by Earth Genome (<a href="#232-brazil-ground-truths">Section 2.3.2</a>), this tool could solve this issue but remains limited by the temporal resolution and acquisition footprint bands.<br />
+- It is not only a matter of resources availability, since the sensor footprints are not clipped by the data producers. The capacity to produce ARD products is inherent to the server that makes them available, as in the case of the images in the SDC, which extend over neighbouring countries and the trained model 2 could be used to inferred in Italy or France. In the similar manner, it would be worthwhile to cross-reference the models and draw inferences from on Landsat-8 images using a model trained on Sentinel-2, to take advantage of the qualities of each sensor. <br />
+- As we have seen, the question of image resolution remains central to the performance of the algorithm, and so, in keeping with the logic of automation, time savings and replicability, products at the crossroads of <em>SWISSIMAGE</em> and Landsat/Sentinel could be the right balance in order achieve these goals. <em>swisstopo</em> is also developing satellite imagery with the <a href="https://www.npoc.ch/de">NPOC</a> using Sentinel-2 imagery and could be a future asset.   <br />
+- For EO data, improvements could be made either in pre-processing with contrasts reduction/colour enhancement as well as post-processing filtering, which can be easily implemented in the short term compared to above mentioned prospects. As is the case with the SDC, for instance, a significant amount of higher quality data is stored in the STAC interface, yet this data is not accessible via the WMS endpoint. In particular the use of new false colour composition with the <em>object-detector</em>. This technical solution should not be systematic, as it works well in the Brazilian context and landscape, but in the context of MES in Switzerland there is no certainty that it would work, given the environment surrounding the MES.   <br />
+- Perhaps Sentinel-2 RGB images would be best, to be able to filter-out FP detections using spectral indexes, for example using NDWI/NDVI to map open water<sup id="fnref:54"><a class="footnote-ref" href="#fn:54">53</a></sup><sup id="fnref:55"><a class="footnote-ref" href="#fn:55">54</a></sup><sup id="fnref:56"><a class="footnote-ref" href="#fn:56">55</a></sup>, and reject objects with a ratio of water to total surface area above a certain threshold. For FP detections of deforested and agricultural areas, as in Brazil models (BDC models 3, 4 and 5), the same principle (ratio: spectral detections/total surface area) can be used but with Normalized Burn ratio and different soil spectral properties, which may lead to FP reduction<sup id="fnref:57"><a class="footnote-ref" href="#fn:57">56</a></sup><sup id="fnref:58"><a class="footnote-ref" href="#fn:58">57</a></sup><sup id="fnref3:4"><a class="footnote-ref" href="#fn:4">4</a></sup>. <br />
+- In future, depending on the needs, the <a href="https://dataspace.copernicus.eu/explore-data/data-collections/copernicus-contributing-missions/collections-description/COP-DEM">Copernicus DEM</a> (Copernicus DEM - Global and European Digital Elevation Model, 2025) could be used for elevation and slope filtering. <br />
+- Finally, the SDC case allows us to think about a possible filter to remove FP detections associated with cloud cover and to apply a cloud mask to the images to remove the clouds before or after inference, since relying on products such as those of the BDC with the best possible quality is not a sustainable solution. The <a href="https://github.com/dlr-eoc/ukis-csmask">Ukis-csmask</a> code<sup id="fnref:59"><a class="footnote-ref" href="#fn:59">58</a></sup> which is based on a machine learning algorithm, could be added in the <em>object-detector</em> to try to mitigate errors generated by the cloud cover and cloud shadows. This would allow detections to be carried out in all seasons, not just summer, and would also reduce image pre-processing and increase the number of usable images.</p>
+<h2 id="code-availability">Code availability<a class="headerlink" href="#code-availability" title="Permanent link">&para;</a></h2>
+<p>The codes are stored and available on the STDL's GitHub page:</p>
+<ul>
+<li><a href="https://github.com/swiss-territorial-data-lab/proj-dqry">proj-dqry</a>: framework for detecting mineral extraction site. The version used to produce the results is <a href="https://github.com/swiss-territorial-data-lab/proj-dqry/releases/tag/v2.2.0">v2.2.0</a> (except for the post-processing for which script from <a href="https://github.com/swiss-territorial-data-lab/proj-dqry/releases/tag/v2.0.0">v2.0.0</a> were used).</li>
+<li><a href="https://github.com/swiss-territorial-data-lab/object-detector">object-detector</a>: object detector framework</li>
+</ul>
+<h2 id="acknowledgements">Acknowledgements<a class="headerlink" href="#acknowledgements" title="Permanent link">&para;</a></h2>
+<p>This project was made possible thanks to a tight collaboration between the STDL team and UNIGE. This project has been funded by "Stratégie suisse pour la géoinformation".</p>
+<h2 id="appendix">Appendix<a class="headerlink" href="#appendix" title="Permanent link">&para;</a></h2>
+<h3 id="a-wms-urls">A. WMS URLs<a class="headerlink" href="#a-wms-urls" title="Permanent link">&para;</a></h3>
+<p><center></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;"></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Swiss Data Cube:</strong></td>
+</tr>
+<tr>
+<td style="text-align: left;">#location: <a href="https://ows.swissdatacube.org/?service=WMS&amp;request=GetMap&amp;version=1.3.0&amp;layers=landsat_ot_c2_l2&amp;styles=simple_rgb&amp;crs=EPSG:3857&amp;bbox=5.82094745,45.69217318,10.58912293,47.81708853&amp;width=256&amp;height=256&amp;format=image/png&amp;time=2020-08-11">https://ows.swissdatacube.org/?service=WMS&amp;request=GetMap&amp;version=1.3.0&amp;layers=landsat_ot_c2_l2&amp;styles=simple_rgb&amp;crs=EPSG:3857&amp;bbox=5.82094745,45.69217318,10.58912293,47.81708853&amp;width=256&amp;height=256&amp;format=image/png&amp;time=2020-08-11</a></td>
+</tr>
+<tr>
+<td style="text-align: left;">#layers: landsat_ot_c2_l2</td>
+</tr>
+<tr>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Brazil Data Cube:</strong></td>
+</tr>
+<tr>
+<td style="text-align: left;">#location: <a href="https://data.inpe.br/bdc/geoserver/mosaics/ows?SERVICE=WMS&amp;REQUEST=GetMap&amp;VERSION=1.3.0&amp;LAYERS=mosaic-landsat-brazil-6m&amp;STYLES=raster&amp;CRS=EPSG:3857&amp;TIME=2017-07-01T00:00:00.000Z/2018-01-01T00:00:00.000Z&amp;WIDTH=256&amp;HEIGHT=256&amp;BBOX=-8210729.32210553,-3743686.60247694,-3204262.47299497,585552.62310988&amp;FORMAT=image/png">https://data.inpe.br/bdc/geoserver/mosaics/ows?SERVICE=WMS&amp;REQUEST=GetMap&amp;VERSION=1.3.0&amp;LAYERS=mosaic-landsat-brazil-6m&amp;STYLES=raster&amp;CRS=EPSG:3857&amp;TIME=2017-07-01T00:00:00.000Z/2018-01-01T00:00:00.000Z&amp;WIDTH=256&amp;HEIGHT=256&amp;BBOX=-8210729.32210553,-3743686.60247694,-3204262.47299497,585552.62310988&amp;FORMAT=image/png</a></td>
+</tr>
+<tr>
+<td style="text-align: left;">#layers: mosaic-landsat-brazil-6m</td>
+</tr>
+<tr>
+<td style="text-align: left;">#location: <a href="https://data.inpe.br/bdc/geoserver/mosaics/ows?SERVICE=WMS&amp;REQUEST=GetMap&amp;VERSION=1.3.0&amp;LAYERS=mosaic-s2-amazon-3m&amp;STYLES=raster&amp;CRS=EPSG:3857&amp;TIME=2022-06-01T00:00:00.000Z/2022-08-01T00:00:00.000Z&amp;WIDTH=256&amp;HEIGHT=256&amp;BBOX=-8210729.32210553,-3743686.60247694,-3204262.47299497,585552.62310988&amp;FORMAT=image/png">https://data.inpe.br/bdc/geoserver/mosaics/ows?SERVICE=WMS&amp;REQUEST=GetMap&amp;VERSION=1.3.0&amp;LAYERS=mosaic-s2-amazon-3m&amp;STYLES=raster&amp;CRS=EPSG:3857&amp;TIME=2022-06-01T00:00:00.000Z/2022-08-01T00:00:00.000Z&amp;WIDTH=256&amp;HEIGHT=256&amp;BBOX=-8210729.32210553,-3743686.60247694,-3204262.47299497,585552.62310988&amp;FORMAT=image/png</a></td>
+</tr>
+<tr>
+<td style="text-align: left;">#layers: mosaic-s2-amazon-3m</td>
+</tr>
+<tr>
+<td style="text-align: left;">#location: <a href="https://data.inpe.br/bdc/geoserver/mosaics/ows?SERVICE=WMS&amp;REQUEST=GetMap&amp;VERSION=1.3.0&amp;LAYERS=mosaic-landsat-amazon-3m&amp;STYLES=raster&amp;CRS=EPSG:3857&amp;TIME=2016-07-01T00:00:00.000Z&amp;WIDTH=256&amp;HEIGHT=256&amp;BBOX=-8210729.32210553,-3743686.60247694,-3204262.47299497,585552.62310988&amp;FORMAT=image/png">https://data.inpe.br/bdc/geoserver/mosaics/ows?SERVICE=WMS&amp;REQUEST=GetMap&amp;VERSION=1.3.0&amp;LAYERS=mosaic-landsat-amazon-3m&amp;STYLES=raster&amp;CRS=EPSG:3857&amp;TIME=2016-07-01T00:00:00.000Z&amp;WIDTH=256&amp;HEIGHT=256&amp;BBOX=-8210729.32210553,-3743686.60247694,-3204262.47299497,585552.62310988&amp;FORMAT=image/png</a></td>
+</tr>
+<tr>
+<td style="text-align: left;">#layers: mosaic-landsat-amazon-3m</td>
+</tr>
+<tr>
+<td style="text-align: left;"></td>
+</tr>
+</tbody>
+</table>
+<p><i>Table A1: URL queries for Open Data Cube access.</i>
+</center></p>
+<h3 id="b-training-curves">B. Training curves<a class="headerlink" href="#b-training-curves" title="Permanent link">&para;</a></h3>
+<div align="center">
+<figure>
+    <img src="./images/FigB1.webp" alt="GT" width="100%">
+    <figcaption>
+        <i>Figure B1: Training curves obtained for the different models at zoom level 14 with the 3 image datasets: SWISSIMAGE (1), SDC (2), BDC (3, 4, 5, 6, 7). The referring model number is detailed in Table 2. The dotted line indicates the iteration minimizing the loss curve. </i>
+    </figcaption>
+</figure>
+</div>
+
+<h3 id="c-metrics">C. Metrics<a class="headerlink" href="#c-metrics" title="Permanent link">&para;</a></h3>
+<div align="center">
+<figure>
+    <img src="./images/FigC1.webp" alt="GT" width="100%">
+    <figcaption>
+        <i>Figure C1: Evaluation of the trained models performance obtained at zoom level 14 for 7 different models (Table 5). (Left) Number of TP (blue), FN (red), and FP (green) as a function of detection score threshold for the validation dataset. (Right) Metrics value, precision (blue), recall (red), and f1-score (green) as a function of the detection score threshold for the validation dataset.</i>
+    </figcaption>
+</figure>
+</div>
+
+<h2 id="references">References<a class="headerlink" href="#references" title="Permanent link">&para;</a></h2>
+<div class="footnote">
+<hr />
+<ol>
+<li id="fn:1">
+<p>Victor Maus, Stefan Giljum, Jakob Gutschlhofer, Dieison M. Da Silva, Michael Probst, Sidnei L. B. Gass, Sebastian Luckeneder, Mirko Lieber, and Ian McCallum. A global-scale data set of mining areas. <em>Scientific Data</em>, 7(1):289, September 2020. URL: <a href="https://www.nature.com/articles/s41597-020-00624-w">https://www.nature.com/articles/s41597-020-00624-w</a>, <a href="https://doi.org/10.1038/s41597-020-00624-w">doi:10.1038/s41597-020-00624-w</a>.&#160;<a class="footnote-backref" href="#fnref:1" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:1" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref3:1" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref4:1" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref5:1" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref6:1" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref7:1" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref8:1" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref9:1" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+</li>
+<li id="fn:2">
+<p>Nur Nadiatul Hidayah and Sumaiya Zainal Abidin. The evolution of mineral processing in extraction of rare earth elements using liquid-liquid extraction: A review. <em>Minerals Engineering</em>, 121:146–157, June 2018. URL: <a href="https://linkinghub.elsevier.com/retrieve/pii/S0892687518301250">https://linkinghub.elsevier.com/retrieve/pii/S0892687518301250</a>, <a href="https://doi.org/10.1016/j.mineng.2018.03.018">doi:10.1016/j.mineng.2018.03.018</a>.&#160;<a class="footnote-backref" href="#fnref:2" title="Jump back to footnote 2 in the text">&#8617;</a></p>
+</li>
+<li id="fn:3">
+<p>Vicenç Carabassa, Pau Montero, Marc Crespo, Joan-Cristian Padró, Xavier Pons, Jaume Balagué, Lluís Brotons, and Josep Maria Alcañiz. Unmanned aerial system protocol for quarry restoration and mineral extraction monitoring. <em>Journal of Environmental Management</em>, 270:110717, September 2020. URL: <a href="https://linkinghub.elsevier.com/retrieve/pii/S0301479720306496">https://linkinghub.elsevier.com/retrieve/pii/S0301479720306496</a>, <a href="https://doi.org/10.1016/j.jenvman.2020.110717">doi:10.1016/j.jenvman.2020.110717</a>.&#160;<a class="footnote-backref" href="#fnref:3" title="Jump back to footnote 3 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:3" title="Jump back to footnote 3 in the text">&#8617;</a><a class="footnote-backref" href="#fnref3:3" title="Jump back to footnote 3 in the text">&#8617;</a><a class="footnote-backref" href="#fnref4:3" title="Jump back to footnote 3 in the text">&#8617;</a></p>
+</li>
+<li id="fn:4">
+<p>Chunsheng Wang, Lili Chang, Lingran Zhao, and Ruiqing Niu. Automatic Identification and Dynamic Monitoring of Open-Pit Mines Based on Improved Mask R-CNN and Transfer Learning. <em>Remote Sensing</em>, 12(21):3474, January 2020. URL: <a href="https://www.mdpi.com/2072-4292/12/21/3474">https://www.mdpi.com/2072-4292/12/21/3474</a>, <a href="https://doi.org/10.3390/rs12213474">doi:10.3390/rs12213474</a>.&#160;<a class="footnote-backref" href="#fnref:4" title="Jump back to footnote 4 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:4" title="Jump back to footnote 4 in the text">&#8617;</a><a class="footnote-backref" href="#fnref3:4" title="Jump back to footnote 4 in the text">&#8617;</a></p>
+</li>
+<li id="fn:5">
+<p>Agata Fugiel, Dorota Burchart-Korol, Krystyna Czaplicka-Kolarz, and Adam Smoliński. Environmental impact and damage categories caused by air pollution emissions from mining and quarrying sectors of European countries. <em>Journal of Cleaner Production</em>, 143:159–168, February 2017. URL: <a href="https://linkinghub.elsevier.com/retrieve/pii/S0959652616322004">https://linkinghub.elsevier.com/retrieve/pii/S0959652616322004</a>, <a href="https://doi.org/10.1016/j.jclepro.2016.12.136">doi:10.1016/j.jclepro.2016.12.136</a>.&#160;<a class="footnote-backref" href="#fnref:5" title="Jump back to footnote 5 in the text">&#8617;</a></p>
+</li>
+<li id="fn:6">
+<p>Darryl Reed. Resource Extraction Industries in Developing Countries. <em>Journal of Business Ethics</em>, 39(3):199–226, September 2002. URL: <a href="https://link.springer.com/10.1023/A:1016538006160">https://link.springer.com/10.1023/A:1016538006160</a>, <a href="https://doi.org/10.1023/A:1016538006160">doi:10.1023/A:1016538006160</a>.&#160;<a class="footnote-backref" href="#fnref:6" title="Jump back to footnote 6 in the text">&#8617;</a></p>
+</li>
+<li id="fn:7">
+<p>Valentin Tertius Bickel and Andrea Manconi. Decadal Surface Changes and Displacements in Switzerland. <em>Journal of Geovisualization and Spatial Analysis</em>, 6(2):24, December 2022. URL: <a href="https://link.springer.com/10.1007/s41651-022-00119-9">https://link.springer.com/10.1007/s41651-022-00119-9</a>, <a href="https://doi.org/10.1007/s41651-022-00119-9">doi:10.1007/s41651-022-00119-9</a>.&#160;<a class="footnote-backref" href="#fnref:7" title="Jump back to footnote 7 in the text">&#8617;</a></p>
+</li>
+<li id="fn:8">
+<p>Haoteng Zhao, Yong Ma, Fu Chen, Jianbo Liu, Liyuan Jiang, Wutao Yao, and Jin Yang. Monitoring Quarry Area with Landsat Long Time-Series for Socioeconomic Study. <em>Remote Sensing</em>, 10(4):517, April 2018. URL: <a href="https://www.mdpi.com/2072-4292/10/4/517">https://www.mdpi.com/2072-4292/10/4/517</a>, <a href="https://doi.org/10.3390/rs10040517">doi:10.3390/rs10040517</a>.&#160;<a class="footnote-backref" href="#fnref:8" title="Jump back to footnote 8 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:8" title="Jump back to footnote 8 in the text">&#8617;</a></p>
+</li>
+<li id="fn:9">
+<p>Mike Faber and Roland Brown. Changing the rules of the game: Political risk, instability and fairplay in mineral concession contracts. <em>Third World Quarterly</em>, 2(1):100–119, January 1980. URL: <a href="http://www.tandfonline.com/doi/full/10.1080/01436598008419480">http://www.tandfonline.com/doi/full/10.1080/01436598008419480</a>, <a href="https://doi.org/10.1080/01436598008419480">doi:10.1080/01436598008419480</a>.&#160;<a class="footnote-backref" href="#fnref:9" title="Jump back to footnote 9 in the text">&#8617;</a></p>
+</li>
+<li id="fn:10">
+<p>Dusan Paredes and Nathaly M. Rivera. Mineral taxes and the local public goods provision in mining communities. <em>Resources Policy</em>, 53:328–339, September 2017. URL: <a href="https://linkinghub.elsevier.com/retrieve/pii/S030142071730065X">https://linkinghub.elsevier.com/retrieve/pii/S030142071730065X</a>, <a href="https://doi.org/10.1016/j.resourpol.2017.07.007">doi:10.1016/j.resourpol.2017.07.007</a>.&#160;<a class="footnote-backref" href="#fnref:10" title="Jump back to footnote 10 in the text">&#8617;</a></p>
+</li>
+<li id="fn:11">
+<p>Gavin Hilson and Clive Potter. Why Is Illegal Gold Mining Activity so Ubiquitous in Rural Ghana? <em>African Development Review</em>, 15(2-3):237–270, December 2003. URL: <a href="https://onlinelibrary.wiley.com/doi/10.1111/j.1467-8268.2003.00073.x">https://onlinelibrary.wiley.com/doi/10.1111/j.1467-8268.2003.00073.x</a>, <a href="https://doi.org/10.1111/j.1467-8268.2003.00073.x">doi:10.1111/j.1467-8268.2003.00073.x</a>.&#160;<a class="footnote-backref" href="#fnref:11" title="Jump back to footnote 11 in the text">&#8617;</a></p>
+</li>
+<li id="fn:12">
+<p>T. Darwish, C. Khater, I. Jomaa, R. Stehouwer, A. Shaban, and M. Hamzé. Environmental impact of quarries on natural resources in lebanon. <em>Land Degradation &amp; Development</em>, 22(3):345–358, 2011. URL: <a href="https://onlinelibrary.wiley.com/doi/10.1002/ldr.1011">https://onlinelibrary.wiley.com/doi/10.1002/ldr.1011</a>, <a href="https://doi.org/10.1002/ldr.1011">doi:10.1002/ldr.1011</a>.&#160;<a class="footnote-backref" href="#fnref:12" title="Jump back to footnote 12 in the text">&#8617;</a></p>
+</li>
+<li id="fn:13">
+<p>George P. Petropoulos, Panagiotis Partsinevelos, and Zinovia Mitraka. Change detection of surface mining activity and reclamation based on a machine learning approach of multi-temporal Landsat TM imagery. <em>Geocarto International</em>, 28(4):323–342, July 2013. URL: <a href="http://www.tandfonline.com/doi/abs/10.1080/10106049.2012.706648">http://www.tandfonline.com/doi/abs/10.1080/10106049.2012.706648</a>, <a href="https://doi.org/10.1080/10106049.2012.706648">doi:10.1080/10106049.2012.706648</a>.&#160;<a class="footnote-backref" href="#fnref:13" title="Jump back to footnote 13 in the text">&#8617;</a></p>
+</li>
+<li id="fn:14">
+<p>A. O. Akanwa, F. I. Okeke, V. C. Nnodu, and E. T. Iortyom. Quarrying and its effect on vegetation cover for a sustainable development using high-resolution satellite image and GIS. <em>Environmental Earth Sciences</em>, 76(14):505, July 2017. URL: <a href="http://link.springer.com/10.1007/s12665-017-6844-x">http://link.springer.com/10.1007/s12665-017-6844-x</a>, <a href="https://doi.org/10.1007/s12665-017-6844-x">doi:10.1007/s12665-017-6844-x</a>.&#160;<a class="footnote-backref" href="#fnref:14" title="Jump back to footnote 14 in the text">&#8617;</a></p>
+</li>
+<li id="fn:15">
+<p>R. S. Moeletsi and S. G. Tesfamichael. Assessing land cover changes caused by granite quarrying using remote sensing. <em>The International Archives of the Photogrammetry, Remote Sensing and Spatial Information Sciences</em>, XLII-3/W2:119–124, November 2017. URL: <a href="https://isprs-archives.copernicus.org/articles/XLII-3-W2/119/2017/">https://isprs-archives.copernicus.org/articles/XLII-3-W2/119/2017/</a>, <a href="https://doi.org/10.5194/isprs-archives-XLII-3-W2-119-2017">doi:10.5194/isprs-archives-XLII-3-W2-119-2017</a>.&#160;<a class="footnote-backref" href="#fnref:15" title="Jump back to footnote 15 in the text">&#8617;</a></p>
+</li>
+<li id="fn:16">
+<p>Huriel Reichel and Nils Hamel. Automatic Detection of Quarries and the Lithology below them in Switzerland. 2022. URL: <a href="https://tech.stdl.ch/PROJ-DQRY/">https://tech.stdl.ch/PROJ-DQRY/</a>.&#160;<a class="footnote-backref" href="#fnref:16" title="Jump back to footnote 16 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:16" title="Jump back to footnote 16 in the text">&#8617;</a></p>
+</li>
+<li id="fn:17">
+<p>Clémence Herny, Shanci Li, Alessandro Cerioni, and Roxane Pott. Automatic detection and observation of mineral extraction sites in Switzerland. January 2024. URL: <a href="https://tech.stdl.ch/PROJ-DQRY-TM/">https://tech.stdl.ch/PROJ-DQRY-TM/</a>.&#160;<a class="footnote-backref" href="#fnref:17" title="Jump back to footnote 17 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:17" title="Jump back to footnote 17 in the text">&#8617;</a><a class="footnote-backref" href="#fnref3:17" title="Jump back to footnote 17 in the text">&#8617;</a><a class="footnote-backref" href="#fnref4:17" title="Jump back to footnote 17 in the text">&#8617;</a><a class="footnote-backref" href="#fnref5:17" title="Jump back to footnote 17 in the text">&#8617;</a><a class="footnote-backref" href="#fnref6:17" title="Jump back to footnote 17 in the text">&#8617;</a><a class="footnote-backref" href="#fnref7:17" title="Jump back to footnote 17 in the text">&#8617;</a><a class="footnote-backref" href="#fnref8:17" title="Jump back to footnote 17 in the text">&#8617;</a><a class="footnote-backref" href="#fnref9:17" title="Jump back to footnote 17 in the text">&#8617;</a></p>
+</li>
+<li id="fn:18">
+<p>Alessandro Cerioni, Clémence Herny, Adrian Meyer, and Gwenaëlle Salamin. Object detector framework. December 2024. URL: <a href="https://tech.stdl.ch/TASK-IDET/">https://tech.stdl.ch/TASK-IDET/</a>.&#160;<a class="footnote-backref" href="#fnref:18" title="Jump back to footnote 18 in the text">&#8617;</a></p>
+</li>
+<li id="fn:19">
+<p>Vignesh Kumar and Kiran Yarrakula. Environmental impact assessment of limestone quarry using multispectral satellite imagery. <em>Earth Science Informatics</em>, 15(3):1905–1923, September 2022. URL: <a href="https://link.springer.com/10.1007/s12145-022-00845-0">https://link.springer.com/10.1007/s12145-022-00845-0</a>, <a href="https://doi.org/10.1007/s12145-022-00845-0">doi:10.1007/s12145-022-00845-0</a>.&#160;<a class="footnote-backref" href="#fnref:19" title="Jump back to footnote 19 in the text">&#8617;</a></p>
+</li>
+<li id="fn:20">
+<p>D.V. Beregovoi, J.A. Younes, and M.G. Mustafin. Monitoring of Quarry Slope Deformations with the Use of Satellite Positioning Technology and Unmanned Aerial Vehicles. <em>Procedia Engineering</em>, 189:737–743, 2017. URL: <a href="https://linkinghub.elsevier.com/retrieve/pii/S1877705817322415">https://linkinghub.elsevier.com/retrieve/pii/S1877705817322415</a>, <a href="https://doi.org/10.1016/j.proeng.2017.05.116">doi:10.1016/j.proeng.2017.05.116</a>.&#160;<a class="footnote-backref" href="#fnref:20" title="Jump back to footnote 20 in the text">&#8617;</a></p>
+</li>
+<li id="fn:21">
+<p>Giuseppe Bonifazi, Laura Cutaia, Paolo Massacci, and Ivan Roselli. Monitoring of abandoned quarries by remote sensing and in situ surveying. <em>Ecological Modelling</em>, 170(2-3):213–218, December 2003. URL: <a href="https://linkinghub.elsevier.com/retrieve/pii/S030438000300228X">https://linkinghub.elsevier.com/retrieve/pii/S030438000300228X</a>, <a href="https://doi.org/10.1016/S0304-3800(03)00228-X">doi:10.1016/S0304-3800(03)00228-X</a>.&#160;<a class="footnote-backref" href="#fnref:21" title="Jump back to footnote 21 in the text">&#8617;</a></p>
+</li>
+<li id="fn:22">
+<p>Laura Cutaia, P. Massacci, and Ivan Roselli. Analysis of Landsat 5 TM Images for Monitoring the State of Restoration of Abandoned Quarries. <em>International Journal of Surface Mining, Reclamation and Environment</em>, 18(2):122–134, June 2004. URL: <a href="http://www.tandfonline.com/doi/abs/10.1080/13895260412331295385">http://www.tandfonline.com/doi/abs/10.1080/13895260412331295385</a>, <a href="https://doi.org/10.1080/13895260412331295385">doi:10.1080/13895260412331295385</a>.&#160;<a class="footnote-backref" href="#fnref:22" title="Jump back to footnote 22 in the text">&#8617;</a></p>
+</li>
+<li id="fn:23">
+<p>Dakota Aaron McCarty, Hyun Woo Kim, and Hye Kyung Lee. Evaluation of Light Gradient Boosted Machine Learning Technique in Large Scale Land Use and Land Cover Classification. <em>Environments</em>, 7(10):84, October 2020. URL: <a href="https://www.mdpi.com/2076-3298/7/10/84">https://www.mdpi.com/2076-3298/7/10/84</a>, <a href="https://doi.org/10.3390/environments7100084">doi:10.3390/environments7100084</a>.&#160;<a class="footnote-backref" href="#fnref:23" title="Jump back to footnote 23 in the text">&#8617;</a></p>
+</li>
+<li id="fn:25">
+<p>Martin Sudmanns, Hannah Augustin, Brian Killough, Gregory Giuliani, Dirk Tiede, Alex Leith, Fang Yuan, and Adam Lewis. Think global, cube local: an Earth Observation Data Cube’s contribution to the Digital Earth vision. <em>Big Earth Data</em>, 7(3):831–859, July 2023. URL: <a href="https://www.tandfonline.com/doi/full/10.1080/20964471.2022.2099236">https://www.tandfonline.com/doi/full/10.1080/20964471.2022.2099236</a>, <a href="https://doi.org/10.1080/20964471.2022.2099236">doi:10.1080/20964471.2022.2099236</a>.&#160;<a class="footnote-backref" href="#fnref:25" title="Jump back to footnote 24 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:25" title="Jump back to footnote 24 in the text">&#8617;</a></p>
+</li>
+<li id="fn:26">
+<p>Efthimios Tambouris, Evangelos Kalampokis, and Konstantinos Tarabanis. Processing Linked Open Data Cubes. In Efthimios Tambouris, Marijn Janssen, Hans Jochen Scholl, Maria A. Wimmer, Konstantinos Tarabanis, Mila Gascó, Bram Klievink, Ida Lindgren, and Peter Parycek, editors, <em>Electronic Government</em>, volume 9248, pages 130–143. Springer International Publishing, Cham, 2015. URL: <a href="http://link.springer.com/10.1007/978-3-319-22479-4_10">http://link.springer.com/10.1007/978-3-319-22479-4_10</a>, <a href="https://doi.org/10.1007/978-3-319-22479-4_10">doi:10.1007/978-3-319-22479-4_10</a>.&#160;<a class="footnote-backref" href="#fnref:26" title="Jump back to footnote 25 in the text">&#8617;</a></p>
+</li>
+<li id="fn:27">
+<p>Bruno Chatenoux, Jean-Philippe Richard, David Small, Claudia Roeoesli, Vladimir Wingate, Charlotte Poussin, Denisa Rodila, Pascal Peduzzi, Charlotte Steinmeier, Christian Ginzler, Achileas Psomas, Michael E. Schaepman, and Gregory Giuliani. The Swiss data cube, analysis ready data archive using earth observations of Switzerland. <em>Scientific Data</em>, 8(1):295, November 2021. URL: <a href="https://www.nature.com/articles/s41597-021-01076-6">https://www.nature.com/articles/s41597-021-01076-6</a>, <a href="https://doi.org/10.1038/s41597-021-01076-6">doi:10.1038/s41597-021-01076-6</a>.&#160;<a class="footnote-backref" href="#fnref:27" title="Jump back to footnote 26 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:27" title="Jump back to footnote 26 in the text">&#8617;</a><a class="footnote-backref" href="#fnref3:27" title="Jump back to footnote 26 in the text">&#8617;</a></p>
+</li>
+<li id="fn:28">
+<p>Karine R. Ferreira, Gilberto R. Queiroz, Lubia Vinhas, Rennan F. B. Marujo, Rolf E. O. Simoes, Michelle C. A. Picoli, Gilberto Camara, Ricardo Cartaxo, Vitor C. F. Gomes, Lorena A. Santos, Alber H. Sanchez, Jeferson S. Arcanjo, José Guilherme Fronza, Carlos Alberto Noronha, Raphael W. Costa, Matheus C. Zaglia, Fabiana Zioti, Thales S. Korting, Anderson R. Soares, Michel E. D. Chaves, and Leila M. G. Fonseca. Earth Observation Data Cubes for Brazil: Requirements, Methodology and Products. <em>Remote Sensing</em>, 12(24):4033, December 2020. URL: <a href="https://www.mdpi.com/2072-4292/12/24/4033">https://www.mdpi.com/2072-4292/12/24/4033</a>, <a href="https://doi.org/10.3390/rs12244033">doi:10.3390/rs12244033</a>.&#160;<a class="footnote-backref" href="#fnref:28" title="Jump back to footnote 27 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:28" title="Jump back to footnote 27 in the text">&#8617;</a></p>
+</li>
+<li id="fn:29">
+<p>Trevor Dhu, Gregory Giuliani, Jimena Juárez, Argyro Kavvada, Brian Killough, Paloma Merodio, Stuart Minchin, and Steven Ramage. National Open Data Cubes and Their Contribution to Country-Level Development Policies and Practices. <em>Data</em>, 4(4):144, November 2019. URL: <a href="https://www.mdpi.com/2306-5729/4/4/144">https://www.mdpi.com/2306-5729/4/4/144</a>, <a href="https://doi.org/10.3390/data4040144">doi:10.3390/data4040144</a>.&#160;<a class="footnote-backref" href="#fnref:29" title="Jump back to footnote 28 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:29" title="Jump back to footnote 28 in the text">&#8617;</a></p>
+</li>
+<li id="fn:30">
+<p>M. C. A. Picoli, R. Simoes, M. Chaves, L. A. Santos, A. Sanchez, A. Soares, I. D. Sanches, K. R. Ferreira, and G. R. Queiroz. CBERS Data Cube: a powerful technology for mapping and monitoring brazilian biomes. <em>ISPRS Annals of the Photogrammetry, Remote Sensing and Spatial Information Sciences</em>, V-3-2020:533–539, August 2020. URL: <a href="https://isprs-annals.copernicus.org/articles/V-3-2020/533/2020/">https://isprs-annals.copernicus.org/articles/V-3-2020/533/2020/</a>, <a href="https://doi.org/10.5194/isprs-annals-V-3-2020-533-2020">doi:10.5194/isprs-annals-V-3-2020-533-2020</a>.&#160;<a class="footnote-backref" href="#fnref:30" title="Jump back to footnote 29 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:30" title="Jump back to footnote 29 in the text">&#8617;</a></p>
+</li>
+<li id="fn:31">
+<p>Emanuele Mandanici and Gabriele Bitelli. Preliminary Comparison of Sentinel-2 and Landsat 8 Imagery for a Combined Use. <em>Remote Sensing</em>, 8(12):1014, December 2016. URL: <a href="https://www.mdpi.com/2072-4292/8/12/1014">https://www.mdpi.com/2072-4292/8/12/1014</a>, <a href="https://doi.org/10.3390/rs8121014">doi:10.3390/rs8121014</a>.&#160;<a class="footnote-backref" href="#fnref:31" title="Jump back to footnote 30 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:31" title="Jump back to footnote 30 in the text">&#8617;</a></p>
+</li>
+<li id="fn:32">
+<p>Michel E. D. Chaves, Michelle C. A. Picoli, and Ieda D. Sanches. Recent Applications of Landsat 8/OLI and Sentinel-2/MSI for Land Use and Land Cover Mapping: A Systematic Review. <em>Remote Sensing</em>, 12(18):3062, September 2020. URL: <a href="https://www.mdpi.com/2072-4292/12/18/3062">https://www.mdpi.com/2072-4292/12/18/3062</a>, <a href="https://doi.org/10.3390/rs12183062">doi:10.3390/rs12183062</a>.&#160;<a class="footnote-backref" href="#fnref:32" title="Jump back to footnote 31 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:32" title="Jump back to footnote 31 in the text">&#8617;</a><a class="footnote-backref" href="#fnref3:32" title="Jump back to footnote 31 in the text">&#8617;</a></p>
+</li>
+<li id="fn:33">
+<p>Gerald Forkuor, Kangbeni Dimobe, Idriss Serme, and Jerome Ebagnerin Tondoh. Landsat-8 vs. Sentinel-2: examining the added value of sentinel-2’s red-edge bands to land-use and land-cover mapping in Burkina Faso. <em>GIScience &amp; Remote Sensing</em>, 55(3):331–354, May 2018. URL: <a href="https://www.tandfonline.com/doi/full/10.1080/15481603.2017.1370169">https://www.tandfonline.com/doi/full/10.1080/15481603.2017.1370169</a>, <a href="https://doi.org/10.1080/15481603.2017.1370169">doi:10.1080/15481603.2017.1370169</a>.&#160;<a class="footnote-backref" href="#fnref:33" title="Jump back to footnote 32 in the text">&#8617;</a></p>
+</li>
+<li id="fn:34">
+<p>Andrea Lessio, Vanina Fissore, and Enrico Borgogno-Mondino. Preliminary Tests and Results Concerning Integration of Sentinel-2 and Landsat-8 OLI for Crop Monitoring. <em>Journal of Imaging</em>, 3(4):49, November 2017. URL: <a href="https://www.mdpi.com/2313-433X/3/4/49">https://www.mdpi.com/2313-433X/3/4/49</a>, <a href="https://doi.org/10.3390/jimaging3040049">doi:10.3390/jimaging3040049</a>.&#160;<a class="footnote-backref" href="#fnref:34" title="Jump back to footnote 33 in the text">&#8617;</a></p>
+</li>
+<li id="fn:35">
+<p>Raziye Hale Topaloğlu, Elif Sertel, and Nebiye Musaoğlu. Assessment of classification accuracies of Sentinel-2 and Landsat-8 data for land cover/use mapping. <em>The International Archives of the Photogrammetry, Remote Sensing and Spatial Information Sciences</em>, XLI-B8:1055–1059, June 2016. URL: <a href="https://isprs-archives.copernicus.org/articles/XLI-B8/1055/2016/">https://isprs-archives.copernicus.org/articles/XLI-B8/1055/2016/</a>, <a href="https://doi.org/10.5194/isprs-archives-XLI-B8-1055-2016">doi:10.5194/isprs-archives-XLI-B8-1055-2016</a>.&#160;<a class="footnote-backref" href="#fnref:35" title="Jump back to footnote 34 in the text">&#8617;</a></p>
+</li>
+<li id="fn:36">
+<p>Gregory Giuliani, Bruno Chatenoux, Andrea De Bono, Denisa Rodila, Jean-Philippe Richard, Karin Allenbach, Hy Dao, and Pascal Peduzzi. Building an Earth Observations Data Cube: lessons learned from the Swiss Data Cube (SDC) on generating Analysis Ready Data (ARD). <em>Big Earth Data</em>, 1(1-2):100–117, December 2017. URL: <a href="https://www.tandfonline.com/doi/full/10.1080/20964471.2017.1398903">https://www.tandfonline.com/doi/full/10.1080/20964471.2017.1398903</a>, <a href="https://doi.org/10.1080/20964471.2017.1398903">doi:10.1080/20964471.2017.1398903</a>.&#160;<a class="footnote-backref" href="#fnref:36" title="Jump back to footnote 35 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:36" title="Jump back to footnote 35 in the text">&#8617;</a></p>
+</li>
+<li id="fn:37">
+<p>Gregory Giuliani, Bruno Chatenoux, Antonio Benvenuti, Pierre Lacroix, Mattia Santoro, and Paolo Mazzetti. Monitoring land degradation at national level using satellite Earth Observation time-series data to support SDG15 – exploring the potential of data cube. <em>Big Earth Data</em>, 4(1):3–22, January 2020. URL: <a href="https://www.tandfonline.com/doi/full/10.1080/20964471.2020.1711633">https://www.tandfonline.com/doi/full/10.1080/20964471.2020.1711633</a>, <a href="https://doi.org/10.1080/20964471.2020.1711633">doi:10.1080/20964471.2020.1711633</a>.&#160;<a class="footnote-backref" href="#fnref:37" title="Jump back to footnote 36 in the text">&#8617;</a></p>
+</li>
+<li id="fn:38">
+<p>Charlotte Poussin, Pablo Timoner, Bruno Chatenoux, Gregory Giuliani, and Pascal Peduzzi. Improved Landsat-based snow cover mapping accuracy using a spatiotemporal NDSI and generalized linear mixed model. <em>Science of Remote Sensing</em>, 7:100078, June 2023. URL: <a href="https://linkinghub.elsevier.com/retrieve/pii/S2666017223000032">https://linkinghub.elsevier.com/retrieve/pii/S2666017223000032</a>, <a href="https://doi.org/10.1016/j.srs.2023.100078">doi:10.1016/j.srs.2023.100078</a>.&#160;<a class="footnote-backref" href="#fnref:38" title="Jump back to footnote 37 in the text">&#8617;</a></p>
+</li>
+<li id="fn:39">
+<p>Gregory Giuliani, Gilberto Camara, Brian Killough, and Stuart Minchin. Earth Observation Open Science: Enhancing Reproducible Science Using Data Cubes. <em>Data</em>, 4(4):147, November 2019. URL: <a href="https://www.mdpi.com/2306-5729/4/4/147">https://www.mdpi.com/2306-5729/4/4/147</a>, <a href="https://doi.org/10.3390/data4040147">doi:10.3390/data4040147</a>.&#160;<a class="footnote-backref" href="#fnref:39" title="Jump back to footnote 38 in the text">&#8617;</a></p>
+</li>
+<li id="fn:40">
+<p>K. R. Ferreira, G. R. Queiroz, R. F. B. Marujo, and R. W. Costa. Building Earth observation data cubes on AWS. <em>The International Archives of the Photogrammetry, Remote Sensing and Spatial Information Sciences</em>, XLIII-B3-2022:597–602, May 2022. URL: <a href="https://isprs-archives.copernicus.org/articles/XLIII-B3-2022/597/2022/">https://isprs-archives.copernicus.org/articles/XLIII-B3-2022/597/2022/</a>, <a href="https://doi.org/10.5194/isprs-archives-XLIII-B3-2022-597-2022">doi:10.5194/isprs-archives-XLIII-B3-2022-597-2022</a>.&#160;<a class="footnote-backref" href="#fnref:40" title="Jump back to footnote 39 in the text">&#8617;</a></p>
+</li>
+<li id="fn:41">
+<p>Michel E. D. Chaves, Anderson R. Soares, Ieda D. Sanches, and José G. Fronza. CBERS data cubes for land use and land cover mapping in the Brazilian Cerrado agricultural belt. <em>International Journal of Remote Sensing</em>, 42(21):8398–8432, November 2021. URL: <a href="https://www.tandfonline.com/doi/full/10.1080/01431161.2021.1978584">https://www.tandfonline.com/doi/full/10.1080/01431161.2021.1978584</a>, <a href="https://doi.org/10.1080/01431161.2021.1978584">doi:10.1080/01431161.2021.1978584</a>.&#160;<a class="footnote-backref" href="#fnref:41" title="Jump back to footnote 40 in the text">&#8617;</a></p>
+</li>
+<li id="fn:42">
+<p>Vitor C. F. Gomes, Gilberto R. Queiroz, Karine R. Ferreira, Edzer Pebesma, and Claudio C. F. Barbosa. Brazil Data Cube Workflow Engine: a tool for big Earth observation data processing. <em>International Journal of Digital Earth</em>, 17(1):2313099, December 2024. URL: <a href="https://www.tandfonline.com/doi/full/10.1080/17538947.2024.2313099">https://www.tandfonline.com/doi/full/10.1080/17538947.2024.2313099</a>, <a href="https://doi.org/10.1080/17538947.2024.2313099">doi:10.1080/17538947.2024.2313099</a>.&#160;<a class="footnote-backref" href="#fnref:42" title="Jump back to footnote 41 in the text">&#8617;</a></p>
+</li>
+<li id="fn:43">
+<p>Gregory Giuliani, Bruno Chatenoux, Erica Honeck, and Jean-Philippe Richard. Towards Sentinel-2 Analysis Ready Data: a Swiss Data Cube Perspective. In <em>IGARSS 2018 - 2018 IEEE International Geoscience and Remote Sensing Symposium</em>, 8659–8662. Valencia, July 2018. IEEE. URL: <a href="https://ieeexplore.ieee.org/document/8517954/">https://ieeexplore.ieee.org/document/8517954/</a>, <a href="https://doi.org/10.1109/IGARSS.2018.8517954">doi:10.1109/IGARSS.2018.8517954</a>.&#160;<a class="footnote-backref" href="#fnref:43" title="Jump back to footnote 42 in the text">&#8617;</a></p>
+</li>
+<li id="fn:44">
+<p>K. R. Ferreira, G. R. Queiroz, G. Camara, R. C. M. Souza, L. Vinhas, R. F. B. Marujo, R. E. O. Simoes, C. A. F. Noronha, R. W. Costa, J. S. Arcanjo, V. C. F. Gomes, and M. C. Zaglia. Using Remote Sensing Images and Cloud Services on Aws to Improve Land Use and Cover Monitoring. In <em>2020 IEEE Latin American GRSS &amp; ISPRS Remote Sensing Conference (LAGIRS)</em>, 558–562. Santiago, Chile, March 2020. IEEE. URL: <a href="https://ieeexplore.ieee.org/document/9165649/">https://ieeexplore.ieee.org/document/9165649/</a>, <a href="https://doi.org/10.1109/LAGIRS48042.2020.9165649">doi:10.1109/LAGIRS48042.2020.9165649</a>.&#160;<a class="footnote-backref" href="#fnref:44" title="Jump back to footnote 43 in the text">&#8617;</a></p>
+</li>
+<li id="fn:45">
+<p>E Iman. <em>Remote Sensing and GIS Module: Colour Composite Images and Visual Image Interpretation</em>. University Grand Commission (UGC), MHRD, Govt of India, 2019.&#160;<a class="footnote-backref" href="#fnref:45" title="Jump back to footnote 44 in the text">&#8617;</a></p>
+</li>
+<li id="fn:46">
+<p>Pasquale Imperatore, Ramin Azar, Fabiana Calo, Daniela Stroppiana, Pietro Alessandro Brivio, Riccardo Lanari, and Antonio Pepe. Effect of the Vegetation Fire on Backscattering: An Investigation Based on Sentinel-1 Observations. <em>IEEE Journal of Selected Topics in Applied Earth Observations and Remote Sensing</em>, 10(10):4478–4492, October 2017. URL: <a href="https://ieeexplore.ieee.org/document/7972961/">https://ieeexplore.ieee.org/document/7972961/</a>, <a href="https://doi.org/10.1109/JSTARS.2017.2717039">doi:10.1109/JSTARS.2017.2717039</a>.&#160;<a class="footnote-backref" href="#fnref:46" title="Jump back to footnote 45 in the text">&#8617;</a></p>
+</li>
+<li id="fn:47">
+<p>Peng Li, Wenyu Li, Dong Shi, and Arun Jyoti Nath. Normalized Difference Red-NIR-SWIR: A new Sentinel-2 three-band spectral index for mapping freshly-opened swiddens in the tropics. <em>Ecological Informatics</em>, 82:102775, September 2024. URL: <a href="https://linkinghub.elsevier.com/retrieve/pii/S1574954124003170">https://linkinghub.elsevier.com/retrieve/pii/S1574954124003170</a>, <a href="https://doi.org/10.1016/j.ecoinf.2024.102775">doi:10.1016/j.ecoinf.2024.102775</a>.&#160;<a class="footnote-backref" href="#fnref:47" title="Jump back to footnote 46 in the text">&#8617;</a></p>
+</li>
+<li id="fn:48">
+<p>Ian Olthof and Robert H. Fraser. Mapping surface water dynamics (1985–2021) in the Hudson Bay Lowlands, Canada using sub-pixel Landsat analysis. <em>Remote Sensing of Environment</em>, 300:113895, January 2024. URL: <a href="https://linkinghub.elsevier.com/retrieve/pii/S0034425723004467">https://linkinghub.elsevier.com/retrieve/pii/S0034425723004467</a>, <a href="https://doi.org/10.1016/j.rse.2023.113895">doi:10.1016/j.rse.2023.113895</a>.&#160;<a class="footnote-backref" href="#fnref:48" title="Jump back to footnote 47 in the text">&#8617;</a></p>
+</li>
+<li id="fn:49">
+<p>Yuxin Wu, Alexander Kirillov, Francisco Massa, Wan-Yen Lo, and Ross Girshick. Detectron2. 2019. URL: <a href="https://github.com/facebookresearch/detectron2">https://github.com/facebookresearch/detectron2</a>.&#160;<a class="footnote-backref" href="#fnref:49" title="Jump back to footnote 48 in the text">&#8617;</a></p>
+</li>
+<li id="fn:50">
+<p>Kaiming He, Georgia Gkioxari, Piotr Dollár, and Ross Girshick. Mask R-CNN. January 2018. arXiv:1703.06870 [cs]. URL: <a href="http://arxiv.org/abs/1703.06870">http://arxiv.org/abs/1703.06870</a>, <a href="https://doi.org/10.48550/arXiv.1703.06870">doi:10.48550/arXiv.1703.06870</a>.&#160;<a class="footnote-backref" href="#fnref:50" title="Jump back to footnote 49 in the text">&#8617;</a></p>
+</li>
+<li id="fn:51">
+<p>Samuel L. Smith, Pieter-Jan Kindermans, Chris Ying, and Quoc V. Le. Don't Decay the Learning Rate, Increase the Batch Size. <em>arXiv e-prints</em>, pages arXiv:1711.00489, November 2017. URL: <a href="https://ui.adsabs.harvard.edu/abs/2017arXiv171100489S/abstract">https://ui.adsabs.harvard.edu/abs/2017arXiv171100489S/abstract</a>, <a href="https://doi.org/10.48550/arXiv.1711.00489">doi:10.48550/arXiv.1711.00489</a>.&#160;<a class="footnote-backref" href="#fnref:51" title="Jump back to footnote 50 in the text">&#8617;</a></p>
+</li>
+<li id="fn:52">
+<p>Leslie N. Smith and Nicholay Topin. Super-Convergence: Very Fast Training of Neural Networks Using Large Learning Rates. 2017. URL: <a href="https://arxiv.org/abs/1708.07120">https://arxiv.org/abs/1708.07120</a>, <a href="https://doi.org/10.48550/ARXIV.1708.07120">doi:10.48550/ARXIV.1708.07120</a>.&#160;<a class="footnote-backref" href="#fnref:52" title="Jump back to footnote 51 in the text">&#8617;</a></p>
+</li>
+<li id="fn:53">
+<p>Leslie N. Smith. A disciplined approach to neural network hyper-parameters: Part 1 – learning rate, batch size, momentum, and weight decay. <em>arXiv e-prints</em>, pages arXiv:1803.09820, March 2018. URL: <a href="https://ui.adsabs.harvard.edu/abs/2018arXiv180309820S/abstract">https://ui.adsabs.harvard.edu/abs/2018arXiv180309820S/abstract</a>, <a href="https://doi.org/10.48550/arXiv.1803.09820">doi:10.48550/arXiv.1803.09820</a>.&#160;<a class="footnote-backref" href="#fnref:53" title="Jump back to footnote 52 in the text">&#8617;</a></p>
+</li>
+<li id="fn:54">
+<p>Bo-cai Gao. NDWI—A normalized difference water index for remote sensing of vegetation liquid water from space. <em>Remote Sensing of Environment</em>, 58(3):257–266, December 1996. URL: <a href="https://linkinghub.elsevier.com/retrieve/pii/S0034425796000673">https://linkinghub.elsevier.com/retrieve/pii/S0034425796000673</a>, <a href="https://doi.org/10.1016/S0034-4257(96)00067-3">doi:10.1016/S0034-4257(96)00067-3</a>.&#160;<a class="footnote-backref" href="#fnref:54" title="Jump back to footnote 53 in the text">&#8617;</a></p>
+</li>
+<li id="fn:55">
+<p>Akhona Madasa, Israel R. Orimoloye, and Olusola O. Ololade. Application of geospatial indices for mapping land cover/use change detection in a mining area. <em>Journal of African Earth Sciences</em>, 175:104108, March 2021. URL: <a href="https://linkinghub.elsevier.com/retrieve/pii/S1464343X21000091">https://linkinghub.elsevier.com/retrieve/pii/S1464343X21000091</a>, <a href="https://doi.org/10.1016/j.jafrearsci.2021.104108">doi:10.1016/j.jafrearsci.2021.104108</a>.&#160;<a class="footnote-backref" href="#fnref:55" title="Jump back to footnote 54 in the text">&#8617;</a></p>
+</li>
+<li id="fn:56">
+<p>S. K. McFeeters. The use of the Normalized Difference Water Index (NDWI) in the delineation of open water features. <em>International Journal of Remote Sensing</em>, 17(7):1425–1432, May 1996. URL: <a href="https://www.tandfonline.com/doi/full/10.1080/01431169608948714">https://www.tandfonline.com/doi/full/10.1080/01431169608948714</a>, <a href="https://doi.org/10.1080/01431169608948714">doi:10.1080/01431169608948714</a>.&#160;<a class="footnote-backref" href="#fnref:56" title="Jump back to footnote 55 in the text">&#8617;</a></p>
+</li>
+<li id="fn:57">
+<p>Fabio Castaldi, Sabine Chabrillat, Axel Don, and Bas Van Wesemael. Soil Organic Carbon Mapping Using LUCAS Topsoil Database and Sentinel-2 Data: An Approach to Reduce Soil Moisture and Crop Residue Effects. <em>Remote Sensing</em>, 11(18):2121, September 2019. URL: <a href="https://www.mdpi.com/2072-4292/11/18/2121">https://www.mdpi.com/2072-4292/11/18/2121</a>, <a href="https://doi.org/10.3390/rs11182121">doi:10.3390/rs11182121</a>.&#160;<a class="footnote-backref" href="#fnref:57" title="Jump back to footnote 56 in the text">&#8617;</a></p>
+</li>
+<li id="fn:58">
+<p>Klara Dvorakova, Pu Shi, Quentin Limbourg, and Bas Van Wesemael. Soil Organic Carbon Mapping from Remote Sensing: The Effect of Crop Residues. <em>Remote Sensing</em>, 12(12):1913, June 2020. URL: <a href="https://www.mdpi.com/2072-4292/12/12/1913">https://www.mdpi.com/2072-4292/12/12/1913</a>, <a href="https://doi.org/10.3390/rs12121913">doi:10.3390/rs12121913</a>.&#160;<a class="footnote-backref" href="#fnref:58" title="Jump back to footnote 57 in the text">&#8617;</a></p>
+</li>
+<li id="fn:59">
+<p>Marc Wieland, Yu Li, and Sandro Martinis. Multi-sensor cloud and cloud shadow segmentation with a convolutional neural network. <em>Remote Sensing of Environment</em>, 230:111203, September 2019. URL: <a href="https://linkinghub.elsevier.com/retrieve/pii/S0034425719302159">https://linkinghub.elsevier.com/retrieve/pii/S0034425719302159</a>, <a href="https://doi.org/10.1016/j.rse.2019.05.022">doi:10.1016/j.rse.2019.05.022</a>.&#160;<a class="footnote-backref" href="#fnref:59" title="Jump back to footnote 58 in the text">&#8617;</a></p>
+</li>
+</ol>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2020 Swiss Territorial Data Lab
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        <div class="md-social">
+  
+    
+    
+    
+    
+    <a href="https://github.com/swiss-territorial-data-lab" target="_blank" rel="noopener" title="Repo on Github" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+    </a>
+  
+    
+    
+    
+    
+    <a href="mailto:<info@stdl.ch>" target="_blank" rel="noopener" title="Send us an eMail!" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M498.1 5.6c10.1 7 15.4 19.1 13.5 31.2l-64 416c-1.5 9.7-7.4 18.2-16 23s-18.9 5.4-28 1.6L284 427.7l-68.5 74.1c-8.9 9.7-22.9 12.9-35.2 8.1S160 493.2 160 480v-83.6c0-4 1.5-7.8 4.2-10.7l167.6-182.9c5.8-6.3 5.6-16-.4-22s-15.7-6.4-22-.7L106 360.8l-88.3-44.2C7.1 311.3.3 300.7 0 288.9s5.9-22.8 16.1-28.7l448-256c10.7-6.1 23.9-5.5 34 1.4z"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.expand"], "search": "../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.a7c05c9e.min.js"></script>
+      
+        <script src="../assets/javascripts/config.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>
