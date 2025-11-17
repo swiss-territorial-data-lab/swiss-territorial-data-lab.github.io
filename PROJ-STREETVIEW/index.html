@@ -1,0 +1,1911 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+      
+      
+      <link rel="icon" href="../assets/images/favicon.ico">
+      <meta name="generator" content="mkdocs-1.6.0, mkdocs-material-9.5.21">
+    
+    
+      
+        <title>Detection of manholes using street view images for pipe cadastre control and completion - Swiss Territorial Data Lab</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.66ac8b77.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#detection-of-manholes-using-street-view-images-for-pipe-cadastre-control-and-completion" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Swiss Territorial Data Lab" class="md-header__button md-logo" aria-label="Swiss Territorial Data Lab" data-md-component="logo">
+      
+  <img src="../assets/logo-no-text-500px.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Swiss Territorial Data Lab
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Detection of manholes using street view images for pipe cadastre control and completion
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var media,input,key,value,palette=__md_get("__palette");if(palette&&palette.color){"(prefers-color-scheme)"===palette.color.media&&(media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']"),palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent"));for([key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/swiss-territorial-data-lab" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    STDL on Github
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Swiss Territorial Data Lab" class="md-nav__button md-logo" aria-label="Swiss Territorial Data Lab" data-md-component="logo">
+      
+  <img src="../assets/logo-no-text-500px.png" alt="logo">
+
+    </a>
+    Swiss Territorial Data Lab
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/swiss-territorial-data-lab" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    STDL on Github
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Homepage
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://github.com/swiss-territorial-data-lab" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    GitHub
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-introduction" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Introduction
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-data" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Data
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Data">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21-areas-of-interest" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.1 Areas of interest
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22-street-view-acquisitions" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.2 Street view acquisitions
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#23-ground-truth" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.3 Ground truth
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#24-cadastre" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.4 Cadastre
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-methodology" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Methodology
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Methodology">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31-metrics" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.1 Metrics
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32-preprocessing" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.2 Preprocessing
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#33-deep-learning" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.3 Deep learning
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#34-geo-localization" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.4 Geo-Localization
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#35-comparison-with-the-pipe-cadastre" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.5 Comparison with the pipe cadastre
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-results" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. Results
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. Results">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#41-deep-learning" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.1 Deep learning
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#42-geo-localization" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.2 Geo-localization
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#43-comparison-with-the-pipe-cadastre" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.3 Comparison with the pipe cadastre
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-discussion" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. Discussion
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5. Discussion">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#51-performance-of-the-deep-learning-models" class="md-nav__link">
+    <span class="md-ellipsis">
+      5.1 Performance of the deep learning models
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#52-geo-localization" class="md-nav__link">
+    <span class="md-ellipsis">
+      5.2 Geo-localization
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#53-comparison-of-the-detections-and-the-pipe-cadastre" class="md-nav__link">
+    <span class="md-ellipsis">
+      5.3 Comparison of the detections and the pipe cadastre
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#54-limitations-and-future-work" class="md-nav__link">
+    <span class="md-ellipsis">
+      5.4 Limitations and future work
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-conclusion" class="md-nav__link">
+    <span class="md-ellipsis">
+      6. Conclusion
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#appendixes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Appendixes
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Appendixes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#a-creation-of-the-ground-truth" class="md-nav__link">
+    <span class="md-ellipsis">
+      A. Creation of the ground truth
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#b-projection" class="md-nav__link">
+    <span class="md-ellipsis">
+      B. Projection
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#reference" class="md-nav__link">
+    <span class="md-ellipsis">
+      Reference
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="detection-of-manholes-using-street-view-images-for-pipe-cadastre-control-and-completion">Detection of manholes using street view images for pipe cadastre control and completion<a class="headerlink" href="#detection-of-manholes-using-street-view-images-for-pipe-cadastre-control-and-completion" title="Permanent link">&para;</a></h1>
+<p>Gwenaëlle Salamin (ExoLabs) - Shanci Li (HEIG-VD) - Corentin Junod (SITN) - Adrien Gressin (HEIG-VD) - Roxane Pott (swisstopo)</p>
+<p>Proposed by the City of Zürich and the Canton of Neuchatel - PROJ-STREETVIEW<br/>
+March to September 2025 - Published in October 2025</p>
+<p>All scripts are available on <a href="https://github.com/swiss-territorial-data-lab/proj-streetview">GitHub</a>.</p>
+<p xmlns:cc="http://creativecommons.org/ns#" >This work by <a rel="cc:attributionURL dct:creator" property="cc:attributionName" href="https://stdl.ch">STDL</a> is licensed under <a href="https://creativecommons.org/licenses/by-sa/4.0/?ref=chooser-v1" target="_blank" rel="license noopener noreferrer" style="display:inline-block;">CC BY-SA 4.0<img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1" alt=""><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/by.svg?ref=chooser-v1" alt=""><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/sa.svg?ref=chooser-v1" alt=""></a></p>
+
+<p><br/></p>
+<p><em><strong>Abstract</strong>: Manholes are critical access points to underground drainage and utility networks, and their accurate position is essential for consolidating and updating urban pipe cadastres. Manual surveys are labor-intensive, costly, and difficult to conduct at scale, particularly in traffic-dense environments. To address this, we evaluate the use of street view imagery combined with deep learning–based object detection and geolocalization by triangulation to automate manhole identification. Two frameworks, YOLO and Detectron2, were trained on high-resolution panoramic images in the Canton of Neuchâtel and the City of Zürich. Comparative results show that YOLO consistently outperforms Detectron2, achieving F1 scores of 0.9 or higher, while Detectron2 reaches around 0.8 F1 on street view imagery. This metric could be maintained when reprojecting the results to EPSG:2056. These results confirm the robustness and accuracy of YOLO for detecting manholes in complex urban scenes and demonstrate the feasibility of image-based deep learning for large-scale manhole inventories, enabling the reinforcement of pipe cadastres and supporting data-driven infrastructure management.</em></p>
+<h2 id="1-introduction">1. Introduction<a class="headerlink" href="#1-introduction" title="Permanent link">&para;</a></h2>
+<!--
+- Topic description
+- Literature review
+- Problem statement and method summary
+-->
+
+<p>Manholes are key access points to urban drainage and energy supply networks. They provide essential information for the management of underground infrastructure. Accurate knowledge of their position and condition is crucial for maintaining and consolidating pipe cadastres, which serve as the foundation for planning, operation, and rehabilitation of underground systems. However, existing cadastres are often difficult to maintain up to date due to the high number of involved actors, leading to inefficiencies in infrastructure management and increased operational risks. Automating the detection and positioning of manholes can therefore contribute significantly to improving the quality and reliability of urban asset inventories. <br>
+Traditionally, the acquisition of manhole data has relied on manual field surveys. This process is labor-intensive, time-consuming, and costly due to the wide spatial distribution of manholes across the territory and the challenges posed by traffic and accessibility. As a result, comprehensive surveys are difficult to conduct. Leveraging image-based methods, particularly street view imagery combined with modern object detection algorithms, offers a promising alternative. These approaches could enable large-scale, cost-effective, and efficient extraction of manhole locations, creating new opportunities to support digital cadastre consolidation and data-driven infrastructure management.</p>
+<!-- @Shanci you can modify/rewrite state of the art to include your references. -->
+
+<p>Deep learning methods have progressively transformed object detection and localization from street view imagery. Early work combined aerial and ground perspectives to catalog urban trees (Wegner et al., 2016)<sup id="fnref:1"><a class="footnote-ref" href="#fn:1">1</a></sup> with Faster R-CNN, and was soon extended to technical assets such as telecom equipment (Hebbalaguppe et al., 2017)<sup id="fnref:2"><a class="footnote-ref" href="#fn:2">2</a></sup> with the use of triangulation to geolocalize the objects. Advances in convolutional neural networks enabled not only robust detection but also geolocation: Krylov et al. (2018)<sup id="fnref:3"><a class="footnote-ref" href="#fn:3">3</a></sup> demonstrated the automatic discovery and geotagging of objects by estimating the distance to the camera, while Zhang et al. (2018)<sup id="fnref:4"><a class="footnote-ref" href="#fn:4">4</a></sup> refined this process by estimating the positions of utility poles directly using camera pose metadata. More recently, multi-view strategies have been introduced to address occlusions and improve positional accuracy, with Nassar (2021)<sup id="fnref:5"><a class="footnote-ref" href="#fn:5">5</a></sup> showing how integrating soft geometric constraints enhances both detection robustness and geospatial consistency. Together, these studies illustrate the shift from simple visual recognition toward integrated detection–localization pipelines, where objects are always more precisely embedded into geographic reference systems.<br>
+Within this broader context, urban drainage infrastructure has emerged as a specific application domain. Santos et al. (2020)<sup id="fnref:6"><a class="footnote-ref" href="#fn:6">6</a></sup> applied RetinaNet to detect storm drains and manholes, demonstrating that general-purpose detectors can be adapted to small and heterogeneous objects. Boller et al. (2019)<sup id="fnref:7"><a class="footnote-ref" href="#fn:7">7</a></sup> advanced this further by automating the localization of drainage covers from public street-level imagery in Switzerland, explicitly linking detections with geospatial coordinates to build infrastructure inventories. These studies confirm both the technical feasibility and the practical relevance of deep learning for supporting drainage and pipe cadastre consolidation, laying the foundation for scalable, image-based urban water management.</p>
+<p>The goal of this project is to extract the manholes from street view imagery thank to a deep learning (DL) algorithm and localize them in the Swiss coordinate reference system (CRS), namely EPSG:2056. Then, we compare the detected objects with the existing pipe cadastres in the Republic and Canton of Neuchâtel (RCNE) and in the City of Zürich (or Stadt Zürich abbreviated SZH). To identify the manholes, two frameworks were tested: Detectron2 by Meta and YOLOv11 by Ultralytics.</p>
+<h2 id="2-data">2. Data<a class="headerlink" href="#2-data" title="Permanent link">&para;</a></h2>
+<h3 id="21-areas-of-interest">2.1 Areas of interest<a class="headerlink" href="#21-areas-of-interest" title="Permanent link">&para;</a></h3>
+<div align="center">
+    <img src="images/AOIs.webp" width="75%" alt="Polygons for each AoI in yellow over the black and white national map separated in three sub-images: the countryside in RCNE, the suburban area in RCNE and the city center in SZH."><br>
+    <i>Figure 1: Areas of interest in the country side of the RCNE (up), the suburban area of the City of Neuchâtel (middle), and the city center of the SZH (down).</i>
+</div>
+
+<p>Several roads were selected to define the area of interest in the RCNE and the SZH. They were selected to cover landscape of the city center, suburban area and countryside (Fig. 1). They cover approximately 2.3 km<sup>2</sup>.</p>
+<h3 id="22-street-view-acquisitions">2.2 Street view acquisitions<a class="headerlink" href="#22-street-view-acquisitions" title="Permanent link">&para;</a></h3>
+<!--
+- Give spec for each location in a table
+- Give full process for iNovitas images (here or in the appendix?) or just 
+-->
+
+<p><center></p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th style="text-align: center;"><strong>Provider</strong></th>
+<th style="text-align: center;"><strong>Altimetric precision</strong></th>
+<th style="text-align: center;"><strong>Planimetric precision</strong></th>
+<th style="text-align: center;"><strong>Height</strong></th>
+<th style="text-align: center;"><strong>Width</strong></th>
+<th style="text-align: center;"><strong>360° cameras</strong></th>
+<th style="text-align: center;"><strong>LiDAR system</strong></th>
+<th style="text-align: center;"><strong>Acquisition period</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>RCNE</td>
+<td style="text-align: center;">Helimap</td>
+<td style="text-align: center;">5 cm</td>
+<td style="text-align: center;">5 cm</td>
+<td style="text-align: center;">4000</td>
+<td style="text-align: center;">8000</td>
+<td style="text-align: center;">Trimble MX7 Ladybug 5  &amp; 6 cameras 5 MP</td>
+<td style="text-align: center;">2x Riegl VUX-1HA, left and right</td>
+<td style="text-align: center;">April 2020</td>
+</tr>
+<tr>
+<td>SZH</td>
+<td style="text-align: center;">iNovitas</td>
+<td style="text-align: center;">5 cm</td>
+<td style="text-align: center;">5 cm</td>
+<td style="text-align: center;">2048 or 4016</td>
+<td style="text-align: center;">2048 or 4016</td>
+<td style="text-align: center;">Ladybug5 USB3</td>
+<td style="text-align: center;">Profiler 9012A</td>
+<td style="text-align: center;">November 2024 - January 2025</td>
+</tr>
+</tbody>
+</table>
+<p><i>Table 1: Information for the data acquisition in each AOI. Information of height and width for the iNovitas data corresponds to the data pre-processed by the HEIG-VD for the STDL.</i>
+</center></p>
+<p>The specification of the street view acquisitions at each location are given in Table 1. The acquisition in the RCNE was performed during the COVID lock down, with low density of vehicles on the road. In the SZH, we took the most recent available acquisition.<br>
+The position of the vehicles at each shot is represented by a point saved in a georeferenced file.</p>
+<h3 id="23-ground-truth">2.3 Ground truth<a class="headerlink" href="#23-ground-truth" title="Permanent link">&para;</a></h3>
+<!--
+- Describe process (globally, no details)
+- Highlight the difference with usual GT on aerial view
+- Make a table with the number of original (EPSG:2056, street view) and validated annotations at each location
+-->
+
+<p>The ground truth (GT) was produced by the domain experts. The creation process needed to be as easy, fast and reliable as possible. We considered two options:</p>
+<ol>
+<li>Annotate the street view images:<ul>
+<li>Advantage: production of well-detoured objects directly on the images the algorithm will see.</li>
+<li>Disadvantages:<ul>
+<li>There is a lot to see on each panoramic images;</li>
+<li>No ready-to-use tool that the experts could easily master;</li>
+<li>Most objects are visible on several images and have to be annotated on each of them.</li>
+<li>Target object ground truth coordinate is not accessible.  </li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Annotate on ground LiDAR intensity orthoimage:<ul>
+<li>Advantages:<ul>
+<li>Feasible in QGIS, which the domain experts master;</li>
+<li>Every object is annotated once only.</li>
+<li>Both ground truth for image detection and final object geo-localization is obtained.</li>
+</ul>
+</li>
+<li>Disadvantages:<ul>
+<li>Occlusion on aerial view by objects covering the road;</li>
+<li>Additional validation required for street view image ground truth. Annotations need to be reprojected on street view images and controlled for potential occlusion by elements on the street and buildings.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+<p>It was decided to go with option 2. To create the initial ground truth in 3D world coordinates, called ortho GT, an RGB aerial view of the same period, the street view images and ground LiDAR intensity from mobile mapping acquisition were used. The annotation process was performed on these resources by domain experts. The LiDAR acquisition is only used to ease the annotation process and limit occlusion by objects over the street. It is not required during the training and inference steps. Please refer to <a href="#appendixes"><strong><em>Appendixes.A</em></strong></a> for detailed process. </p>
+<p>The ortho GT was projected on the street view images and controlled. The projected GT is called the street view GT or STVW GT. It is controlled in a tool developed for this work. The tool, called "COCO Validator", allows to resize, move, reject, and validate an annotation. Annotations for which the manhole was occluded were rejected. Some annotations were rejected, because the shape of the projected annotation did not correspond to the manhole. Those cases mostly occurred in presence of objects close to or on the manhole, such as grass or cars (Fig. 2).</p>
+<div align="center">
+    <img src="images/Problematic_annotations.webp" width="100%" alt="Examples of rejected annotations: partially occluded object, object in grass with a deformed mask, object on a structure deforming the mask."><br>
+    <i>Figure 2: Example of manhole annotations that were rejected: partial occlusion (right), bad projection of the mask (center and left).</i>
+</div>
+
+<p><center></p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th style="text-align: center;"><strong>ortho GT</strong></th>
+<th style="text-align: center;"><strong>STVW GT (full)</strong></th>
+<th style="text-align: center;"><strong>STVW GT (valid)</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>RCNE</td>
+<td style="text-align: center;">1,401</td>
+<td style="text-align: center;">18,451</td>
+<td style="text-align: center;">13,821</td>
+</tr>
+<tr>
+<td>SZH</td>
+<td style="text-align: center;">1,150</td>
+<td style="text-align: center;">11,972</td>
+<td style="text-align: center;">7,650</td>
+</tr>
+</tbody>
+</table>
+<p><i>Table 2: Number of manholes at each step of the GT production.</i>
+</center></p>
+<!--Not the actual number in the SZH, have to check with Roxane how many we went through during the control.-->
+
+<p>The total number of manholes in the GT are shown in Table 1. We downsampled the trajectory in the SZH to have a final number of annotations that could reasonably be controlled in the imparted time. <br> 
+Most annotations of the STVW GT were validated in the RCNE and the SZH. The proportion is lower in the SZH. It was expected, because of the higher occlusion by pedestrians and vehicles.</p>
+<h3 id="24-cadastre">2.4 Cadastre<a class="headerlink" href="#24-cadastre" title="Permanent link">&para;</a></h3>
+<!--
+Give link to metadata at each location (if available, else just say they are points)
+Say no specific attribute was used
+-->
+
+<p>The experts provided the manholes extracted from the pipe cadastre for both the RCNE and the SZH. The data corresponds to 1,207 and 622 manholes respectively. It is from the most recent data at the start of the project, <em>i.e.</em> February 2025. The manholes are represented through points and no specific attribute was used.</p>
+<h2 id="3-methodology">3. Methodology<a class="headerlink" href="#3-methodology" title="Permanent link">&para;</a></h2>
+<div align="center">
+    <img src="images/algorithm_flowchart.webp" width="66%" alt="Flowchart of the process with background color indicated the parts in EPSG:2056 and the part in the reference of the street view images. The ground truth creation is visible in grey with a tilted line"><br>
+    <i>Figure 3: Workflow for the detections of manholes from the creation of the ground truth to the comparison with the pipe cadastre. The creation of the ground truth is in grey with tilted lines, as it is not included in the provided materials about this project.</i>
+</div>
+
+<p>The full workflow is illustrated on Fig. <mark>3</mark>. The detection with a DL model is happening on standardized tiles produced from the street view images. The results are then transformed back to EPSG:2056 and compared to the corresponding objects in the pipe cadastre.</p>
+<h3 id="31-metrics">3.1 Metrics<a class="headerlink" href="#31-metrics" title="Permanent link">&para;</a></h3>
+<p>To evaluate the results, the reliability of the detections, namely the precision <em>P</em>, and their exhaustiveness, namely the recall <em>R</em>, are calculated. Since the precision and recall are in a constant trade off, the F1 score, the harmonic mean of the two, was calculated to determine the point of equilibrium. The respective formulas are presented below:</p>
+<ul>
+<li><span class="arithmatex">\(P = \frac{TP}{TP + FP}\)</span> </li>
+<li><span class="arithmatex">\(R = \frac{TP}{TP + FN}\)</span></li>
+<li>
+<p><span class="arithmatex">\(F_{1} = 2\cdot\frac{P \cdot R}{P + R}\)</span></p>
+<p>with:</p>
+<ul>
+<li><em>TP</em>: true positives, <em>i.e.</em> a detection overlapping a manhole</li>
+<li><em>FN</em>: false negatives, <em>i.e.</em> a missed label</li>
+<li><em>FP</em>: false positives, <em>i.e.</em> an excess detection</li>
+</ul>
+</li>
+</ul>
+<h3 id="32-preprocessing">3.2 Preprocessing<a class="headerlink" href="#32-preprocessing" title="Permanent link">&para;</a></h3>
+<!--
+- Panoramic images to tiles
+- mask rejected labels
+    - explain the problematic of occluded objects vs missed objects and bad masks
+-->
+
+<p>Data preparation is slightly different between model training and inference. In the first case, emphasis is put on ensuring the best coherence between the annotations and tiles. In the second case, the lower part of each panoramic image is processed.</p>
+<h4 id="321-model-training">3.2.1 Model training<a class="headerlink" href="#321-model-training" title="Permanent link">&para;</a></h4>
+<div align="center">
+    <img src="images/pano_to_tiles.webp" width="100%" alt="Panoramic image from the RCNE (up) and the annotated 512 px tiles produced from this images (down)."><br>
+    <i>Figure 4: Panoramic image (up) and four annotated tiles of 512 px produced from the image (down).</i>
+</div>
+
+<p>The panoramic images are split across the training, validation and test datasets with the ratios 70%, 15% and 15%. Then, they are clipped to a grid of 512 x 512 pixels (Fig. 4). The overlap is calculated to ensure that the image is divided perfectly into a whole number of tiles. For this project, the overlap is as small as possible and varies between 0% and 14.5% depending on the image size.<br>
+The labels are clipped to correspond to the produced tiles. Tiles and clipped labels are saved in the COCO format and YOLO format in the dataset corresponding to its panoramic image (training, validation or test). Between 30% and 60% of tiles without labels, called empty tiles, were included in each dataset, depending on the processed AoI.</p>
+<p>Some annotations were rejected, because they were partially occluded, or because the mask was not projected properly (Fig. 2). However, the corresponding manhole is visible and could reduce the training quality when manholes are close or when adding random empty tiles to the training. To avoid such problem, we mask each rejected annotation with a black rectangle a little larger than its bounding box.</p>
+<h4 id="322-inference">3.2.2 Inference<a class="headerlink" href="#322-inference" title="Permanent link">&para;</a></h4>
+<p>Once a DL model is trained and assessed, a dataset with all the tiles in the image lower half and no annotation is created. It is tagged as the dataset "other". No black mask is applied on those tiles. </p>
+<h3 id="33-deep-learning">3.3 Deep learning<a class="headerlink" href="#33-deep-learning" title="Permanent link">&para;</a></h3>
+<!--
+- Description of the process
+- Give area for the training and test
+-->
+
+<p>Due to the limited time for this project, we chose not to develop a new DL framework. Upon consideration of the existing tools and the amount of available data, we decided to test Detectron2 by Meta<sup id="fnref:8"><a class="footnote-ref" href="#fn:8">8</a></sup> and YOLOv11 by Ultralytics<sup id="fnref:9"><a class="footnote-ref" href="#fn:9">9</a></sup>. Data augmentation (DA) was performed with both framework by enabling random color adjustments and resizing of the images. <br>
+After the inference, the detections are filtered based on their confidence score. The threshold was selected to maximize the F1 score on the confidence score. All the metrics described in Section <mark><a href="#31-metrics">3.1</a></mark> are calculated. They are referred as the tile level metrics. The adjacent detections of a same panoramic image are then merged together and the metrics are calculated again. These metrics are referred as the image level ones.</p>
+<p>Three models were trained with each framework: a specialized model for the RCNE, a specialized model for the SZH and a general model trained on the two AoI. We optimized the hyperparameters for all trainings. However, it turned out that the best parameters were generally the sames.<br>
+For Detectron2, only the model Mask-RCNN R50-FPN 1x was tested. A manual search was conducted to determine the hyperparameters producing the best F1 score over the panoramic images.<br>
+For YOLO, the small and medium model of YOLOv11 were tested. For each, the hyperparameters were optimized thank to Ray<sup id="fnref:10"><a class="footnote-ref" href="#fn:10">10</a></sup> to determine the ones producing the best F1 score over the tiles. Aggregation over the panoramic images was not included in Ray.</p>
+<hr />
+<h3 id="34-geo-localization">3.4 Geo-Localization<a class="headerlink" href="#34-geo-localization" title="Permanent link">&para;</a></h3>
+<p>Given per-image segmentation masks of small ground objects (e.g., manholes) observed across a moving camera trajectory, recover stable 3D object locations in a local CRS by: </p>
+<ul>
+<li>Converting each detection into a 3D viewing ray in world coordinates.</li>
+<li>Estimating closest-approach intersections between rays from different frames.</li>
+<li>Clustering the most self-consistent intersections while suppressing ambiguous ones via a peeling strategy.</li>
+<li>Tracking and merging evolving 3D candidates over time.</li>
+</ul>
+<p>Regarding projection implementation, see <a href="#b-projection">Appendix.B</a> for details.</p>
+<h4 id="necessary-inputs">Necessary Inputs<a class="headerlink" href="#necessary-inputs" title="Permanent link">&para;</a></h4>
+<ul>
+<li>COCO‑style detections (polygons) per frame (a spherical image or a cubemap with 6 images).</li>
+<li>Per-frame camera pose and model metadata.</li>
+<li>Algorithm thresholds: 
+    <code>maximum intersection distance</code>, <code>clustering radius</code>, <code>candidate update radius</code>, <code>missing‑frame limit</code>,<code>geometric consistency threshold</code>.</li>
+</ul>
+<hr />
+<h4 id="step-1-from-detections-to-viewing-rays">Step 1 — From detections to viewing rays<a class="headerlink" href="#step-1-from-detections-to-viewing-rays" title="Permanent link">&para;</a></h4>
+<ol>
+<li>
+<p>For each detection polygon, fit a minimum‑area ellipse and take its center as the representative 2D point. On cube‑maps, reject poor ellipse fits to reduce bias from partial masks.</p>
+</li>
+<li>
+<p>Back‑project the 2D center to a world‑space ray using the appropriate camera model.</p>
+</li>
+</ol>
+<p>The result is a set of per‑detection rays (origin, direction, frame identifier, optional mask area) for each frame.</p>
+<hr />
+<h4 id="step-2-closestapproach-intersections-between-rays">Step 2 — Closest‑approach intersections between rays<a class="headerlink" href="#step-2-closestapproach-intersections-between-rays" title="Permanent link">&para;</a></h4>
+<p>For rays from different frames, compute their closest‑approach points and accept those that satisfy geometric consistency:</p>
+<ul>
+<li>Forward‑only: the closest point must lie in front of both ray origins within a maximum range.</li>
+<li>Proximity: the two closest points must be within the intersection threshold.</li>
+<li>Optional mask‑area control: for spherical panos, infer plausible physical radius from pixel area along each ray; require consistency to reject mismatched objects.</li>
+<li>Optional height control: only accept intersections within an expected vertical window relative to camera heights (suppress sky/overhead artifacts for ground objects).</li>
+</ul>
+<p>Each accepted pair yields an intersection record (point, ray pair, separation, forward distance), where the point is the midpoint of the two closest points, the separation is their distance, and the forward distance summarizes range from the sensors.</p>
+<hr />
+<h4 id="step-3-temporalspatial-iteration-over-frames">Step 3 — Temporal–spatial iteration over frames<a class="headerlink" href="#step-3-temporalspatial-iteration-over-frames" title="Permanent link">&para;</a></h4>
+<div align="center">
+    <img src="images/temporal_spatial.svg" width="100%" alt="Temporal-spatial interation."><br>
+    <i>Figure 5: Temporal-spatial interation with dynamic pools.</i>
+</div>
+
+<p>Shown in Fig. 5, instead of forming all ray pairs at once, the method processes frames in an ordered sequence (by time and approximate spatial continuity). At each step it:</p>
+<ul>
+<li>Builds new rays from detections in the current frame and adds them to the active ray set.</li>
+<li>Computes closest‑approach intersections only between these new rays and previously active rays from other frames.</li>
+<li>Adds valid intersections to the active intersection set and prepares them for clustering.</li>
+<li>Maintains an active pool of candidates that can be updated by nearby clusters (see the next steps).</li>
+</ul>
+<p>Why this design:</p>
+<ul>
+<li>Reduces the combinatorial explosion inherent in all‑pairs matching, keeping computation manageable as sequences grow.; memory and CPU usage remain bounded by the active window rather than the full history.</li>
+<li>Leverages temporal coherence: adjacent frames tend to observe the same objects from slightly different viewpoints, producing high‑quality intersections sooner.</li>
+<li>Improves robustness in overlapping trajectories: by gating matches to recent, spatially compatible rays/candidates, spurious long‑range pairings are naturally suppressed.</li>
+</ul>
+<hr />
+<h4 id="step-4-peeling-clustering-of-intersections">Step 4 — Peeling clustering of intersections<a class="headerlink" href="#step-4-peeling-clustering-of-intersections" title="Permanent link">&para;</a></h4>
+<div align="center">
+    <img src="images/triangulation.svg" width="100%" alt="Peeling clustering."><br>
+    <i>Figure 6: Peeling clustering strategy to remove false positive intersections.</i>
+</div>
+
+<p>Intersections form spatial clusters near true object locations, but combinatorial crossings can create many spurious intersections. A peeling strategy enforces mutual exclusivity:</p>
+<ol>
+<li>With the current active set, cluster all intersection points using DBSCAN.</li>
+<li>Select the largest cluster and record it as a coherent hypothesis.</li>
+<li>Remove from consideration every other intersection that shares any ray with that cluster. This suppresses conflicts from the same observations pairing inconsistently.</li>
+<li>Repeat until no intersections remain.</li>
+</ol>
+<p>This yields a set of disjoint, self‑consistent clusters suitable for candidate building.</p>
+<hr />
+<h4 id="step-5-dynamic-candidate-pool-over-time">Step 5 — Dynamic candidate pool over time<a class="headerlink" href="#step-5-dynamic-candidate-pool-over-time" title="Permanent link">&para;</a></h4>
+<p>For each cluster in the current frame step:</p>
+<ul>
+<li>Compute a robust center as the component‑wise median of intersection points; summarize quality (mean forward distance, mean closest‑approach separation).</li>
+<li>Attempt to match to an existing active candidate by proximity; if matched and not identical in intersection set, merge intersections, recompute the robust center, and refresh the last‑seen marker.</li>
+<li>If not matched, start a new candidate.</li>
+<li>Increment the missing counter for candidates not updated this step and deactivate those exceeding the missing‑frame limit. Deactivation also prunes their associated rays/intersections from the active sets.</li>
+</ul>
+<p>This dynamic pool maintains temporal coherence, tolerates intermittent detections, and guards against duplicate hypotheses.</p>
+<hr />
+<h4 id="step-6-final-consolidation-and-export">Step 6 — Final consolidation and export<a class="headerlink" href="#step-6-final-consolidation-and-export" title="Permanent link">&para;</a></h4>
+<ul>
+<li>After iterating all grouped frames, run a final spatial clustering of candidate centers within the update threshold to merge any residual duplicates. </li>
+<li>For merged clusters, recompute centers as medians of all contributing intersections and propagate quality statistics.</li>
+<li>Export the final list as a GeoDataFrame with world‑space geometries and attributes.</li>
+</ul>
+<h3 id="35-comparison-with-the-pipe-cadastre">3.5 Comparison with the pipe cadastre<a class="headerlink" href="#35-comparison-with-the-pipe-cadastre" title="Permanent link">&para;</a></h3>
+<p>To compare the pipe cadastre to the detections we need to limit it to the area of 15 m around the driven road and visible from it. To achieve this, we buffered the camera positions, available as georeferenced points, by 15 m and kept only the cadastre manholes overlapping the buffered points. No occlusion is considered by this basic method. <br>
+The cadastre and the detections are passed to the assessment script and they are compared with the cadastre as ground truth. Metrics used to assess the difference between the two files are based on the same principle as the one described at section <a href="#31-metrics">3.1</a>, <em>i.e.</em> precision and recall. <br>
+Since the cadastre is used as the ground truth, the precision indicates the part of the detections which are missing in the cadastre or the <em>ratio of detected manholes registered (r<sub>registered</sub>)</em> and the recall indicates the part of the registered objects that were not detected on the images or the <em>ratio of retrieved registered manholes (r<sub>retrieved</sub>)</em>.</p>
+<ul>
+<li><span class="arithmatex">\(r_{registered} = \frac{CON}{CON + NEW}\)</span> </li>
+<li>
+<p><span class="arithmatex">\(r_{retrieved} = \frac{CON}{CON + MIS}\)</span></p>
+<p>with:</p>
+<ul>
+<li><em>CON</em>: confirmed manhole, <em>i.e.</em> a manhole registered in the cadastre that was detected</li>
+<li><em>MIS</em>: missed manhole, <em>i.e.</em> a manhole registered in the cadastre that was <strong>not</strong> detected</li>
+<li><em>NEW</em>: new manhole, <em>i.e.</em> a new detection where nothing was registered</li>
+</ul>
+</li>
+</ul>
+<p>To help the domain experts use the results efficiently, two heat maps, one for the missed registered manholes and one for the new detections, are produced.</p>
+<h2 id="4-results">4. Results<a class="headerlink" href="#4-results" title="Permanent link">&para;</a></h2>
+<p>The results were generated with Detectron2 and YOLOv11 at tile level to compare the two framework. Only the detections of the best framework, namely YOLOv11, are post-processed and presented at panoramic image level, as well as reprojected in EPSG:2056 and compared to the pipe cadastre.</p>
+<h3 id="41-deep-learning">4.1 Deep learning<a class="headerlink" href="#41-deep-learning" title="Permanent link">&para;</a></h3>
+<h4 id="412-performance-of-detectron2-and-yolo">4.1.2 Performance of detectron2 and YOLO<a class="headerlink" href="#412-performance-of-detectron2-and-yolo" title="Permanent link">&para;</a></h4>
+<p><center></p>
+<table>
+<thead>
+<tr>
+<th>Model</th>
+<th style="text-align: center;"><strong>confidence score</strong></th>
+<th style="text-align: center;"><strong>P</strong></th>
+<th style="text-align: center;"><strong>R</strong></th>
+<th style="text-align: center;"><strong>F1 score</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>detectron2</td>
+<td style="text-align: center;">0.20</td>
+<td style="text-align: center;">0.88</td>
+<td style="text-align: center;">0.77</td>
+<td style="text-align: center;">0.82</td>
+</tr>
+<tr>
+<td>YOLO</td>
+<td style="text-align: center;">0.35</td>
+<td style="text-align: center;">0.94</td>
+<td style="text-align: center;">0.94</td>
+<td style="text-align: center;">0.94</td>
+</tr>
+</tbody>
+</table>
+<p><i>Table 3: Metrics for the models trained in the RCNE on the corresponding test dataset.</i>
+</center></p>
+<p>Detectron2 reaches a better precision than recall with a gap of 0.11 points (Tab. 3), while YOLO has the same precision and recall. YOLO obtains the best results on the RCNE with a F1 score of 0.94.</p>
+<p><center></p>
+<table>
+<thead>
+<tr>
+<th>Model</th>
+<th style="text-align: center;"><strong>confidence score</strong></th>
+<th style="text-align: center;"><strong>P</strong></th>
+<th style="text-align: center;"><strong>R</strong></th>
+<th style="text-align: center;"><strong>F1 score</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>detectron2</td>
+<td style="text-align: center;">0.40</td>
+<td style="text-align: center;">0.86</td>
+<td style="text-align: center;">0.66</td>
+<td style="text-align: center;">0.75</td>
+</tr>
+<tr>
+<td>YOLO</td>
+<td style="text-align: center;">0.35</td>
+<td style="text-align: center;">0.91</td>
+<td style="text-align: center;">0.90</td>
+<td style="text-align: center;">0.90</td>
+</tr>
+</tbody>
+</table>
+<p><i>Table 4: Metrics for the models trained in the SZH on the corresponding test dataset.</i>
+</center></p>
+<p>The tendencies observed in the RCNE (Tab. 3) are also present when training and testing a model on the SZH (Tab. 4). Detectron2 has a better precision than recall by 0.20 points, while YOLO shows balanced results. YOLO outperforms Detectron2 by 0.15 points on the F1 score.</p>
+<p><center></p>
+<table>
+<thead>
+<tr>
+<th>Model</th>
+<th style="text-align: center;"><strong>confidence score</strong></th>
+<th style="text-align: center;"><strong>P</strong></th>
+<th style="text-align: center;"><strong>R</strong></th>
+<th style="text-align: center;"><strong>F1 score</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>detectron2</td>
+<td style="text-align: center;">0.45</td>
+<td style="text-align: center;">0.89</td>
+<td style="text-align: center;">0.75</td>
+<td style="text-align: center;">0.82</td>
+</tr>
+<tr>
+<td>YOLO</td>
+<td style="text-align: center;">0.35</td>
+<td style="text-align: center;">0.93</td>
+<td style="text-align: center;">0.93</td>
+<td style="text-align: center;">0.93</td>
+</tr>
+</tbody>
+</table>
+<p><i>Table 5: Metrics for the model trained in both AoI on the corresponding test dataset.</i>
+</center></p>
+<p>When comparing Detectron2 and YOLO, training on both AoI yields similar results than training on the RCNE (Tab. 3). Results remained very stable with at most 0.02 points of difference. Detectron2 achieves a better precision than recall with 0.14 points of difference, while YOLO achieves a result balanced between precision and recall. YOLO is the best framework with 0.11 points more on the F1 score and 0.05 points more on the precision. Precision is important here as the missed detections can be compensated by the redundancy across street view, while the false positives may accumulate.</p>
+<h4 id="performance-of-yolo-models-on-panoramic-images-of-each-aoi">Performance of YOLO models on panoramic images of each AoI<a class="headerlink" href="#performance-of-yolo-models-on-panoramic-images-of-each-aoi" title="Permanent link">&para;</a></h4>
+<p><center></p>
+<style type="text/css">
+.tg  {border-collapse:collapse;border-spacing:0;}
+.tg td{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
+  overflow:hidden;padding:10px 5px;word-break:normal;}
+.tg th{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
+  font-weight:normal;overflow:hidden;padding:10px 5px;word-break:normal;}
+.tg .tg-hwm5{background-color:#828aa4;border-color:inherit;color:#ffffff;text-align:center;vertical-align:top}
+.tg .tg-9wq8{border-color:inherit;text-align:center;vertical-align:middle}
+.tg .tg-4cuv{background-color:#c6cbd8;border-color:inherit;text-align:left;vertical-align:top}
+.tg .tg-c3ow{border-color:inherit;text-align:center;vertical-align:top}
+.tg .tg-ih9g{background-color:#828aa4;border-color:inherit;color:#ffffff;font-weight:bold;text-align:left;vertical-align:top}
+.tg .tg-a3w2{background-color:#828aa4;border-color:inherit;color:#ffffff;font-weight:bold;text-align:center;vertical-align:top}
+.tg .tg-l3av{background-color:#c6cbd8;border-color:inherit;text-align:center;vertical-align:top}
+.tg .tg-0pky{border-color:inherit;text-align:left;vertical-align:top}
+.tg .tg-a6tl{background-color:#c6cbd8;border-color:inherit;text-align:center;vertical-align:middle}
+</style>
+<table class="tg"><thead>
+  <tr>
+    <th class="tg-ih9g">Training AoI</th>
+    <th class="tg-ih9g">Test AoI</th>
+    <th class="tg-a3w2"># labels</th>
+    <th class="tg-a3w2">Confidence score</th>
+    <th class="tg-a3w2"># dets</th>
+    <th class="tg-a3w2">P</th>
+    <th class="tg-a3w2">R</th>
+    <th class="tg-a3w2">F1 score</th>
+  </tr></thead>
+<tbody>
+  <tr>
+    <td class="tg-hwm5" rowspan="2">RCNE</td>
+    <td class="tg-4cuv">RCNE (test set)</td>
+    <td class="tg-l3av">2,007</td>
+    <td class="tg-l3av">0.35</td>
+    <td class="tg-l3av">2,038</td>
+    <td class="tg-l3av">0.94</td>
+    <td class="tg-l3av">0.95</td>
+    <td class="tg-l3av">0.94</td>
+  </tr>
+  <tr>
+    <td class="tg-0pky">SZH (whole)</td>
+    <td class="tg-c3ow">6,795</td>
+    <td class="tg-c3ow">0.35</td>
+    <td class="tg-c3ow">4,943</td>
+    <td class="tg-c3ow">0.84</td>
+    <td class="tg-c3ow">0.61</td>
+    <td class="tg-c3ow">0.70</td>
+  </tr>
+  <tr>
+    <td class="tg-hwm5" rowspan="2">SZH</td>
+    <td class="tg-4cuv">RCNE (whole)</td>
+    <td class="tg-l3av">13,667</td>
+    <td class="tg-a6tl">0.45</td>
+    <td class="tg-a6tl">11,172</td>
+    <td class="tg-a6tl">0.88</td>
+    <td class="tg-a6tl">0.72</td>
+    <td class="tg-l3av">0.79</td>
+  </tr>
+  <tr>
+    <td class="tg-0pky">SZH (test set)</td>
+    <td class="tg-c3ow">1,004</td>
+    <td class="tg-9wq8">0.45</td>
+    <td class="tg-9wq8">1,000</td>
+    <td class="tg-9wq8">0.91</td>
+    <td class="tg-9wq8">0.91</td>
+    <td class="tg-c3ow">0.91</td>
+  </tr>
+  <tr>
+    <td class="tg-hwm5" rowspan="2">RCNE + SZH</td>
+    <td class="tg-4cuv">RCNE (test set)</td>
+    <td class="tg-l3av">2,007</td>
+    <td class="tg-l3av">0.45</td>
+    <td class="tg-l3av">1,956</td>
+    <td class="tg-l3av">0.95</td>
+    <td class="tg-l3av">0.93</td>
+    <td class="tg-l3av">0.94</td>
+  </tr>
+  <tr>
+    <td class="tg-0pky">SZH (test set)</td>
+    <td class="tg-c3ow">1,004</td>
+    <td class="tg-c3ow">0.45</td>
+    <td class="tg-c3ow">1,030</td>
+    <td class="tg-c3ow">0.89</td>
+    <td class="tg-c3ow">0.92</td>
+    <td class="tg-c3ow">0.91</td>
+  </tr>
+</tbody></table>
+
+<p><i>Table 6: Test of YOLO models on the two AoI</i>
+</center></p>
+<p>When comparing metrics on tiles (Tab. 3 to 5) and on panoramic images (Tab. 6), we note that the results remain stable. The maximum difference on the precision or recall is 0.01 points. However, the confidence score increased from 0.35 to 0.45 for the models trained in SZH and in both AoI.</p>
+<p>We observe that the precision and recall are always better on the test dataset of the AoI where the model was trained, than on the whole dataset of the other AoI (Tab. 6). The metrics pass from a F1 score over 0.9 to F1 scores of 0.79 in the RCNE and 0.70 in the SZH. <br>
+The model trained on both AoI shows better metrics in the RCNE than in the SZH, mosly because of a drop of 0.06 points in precision.</p>
+<h3 id="42-geo-localization">4.2 Geo-localization<a class="headerlink" href="#42-geo-localization" title="Permanent link">&para;</a></h3>
+<h4 id="qualitative-analysis">Qualitative Analysis<a class="headerlink" href="#qualitative-analysis" title="Permanent link">&para;</a></h4>
+<div align="center">
+    <img src="images/ne_demo.webp" width="85%"><br>
+    <i>Figure 7: Visualization of geo-localization results on the RCNE dataset.</i>
+</div>
+
+<div align="center">
+    <img src="images/zh_demo.webp" width="85%"><br>
+    <i>Figure 8: Visualization of geo-localization results on the SZH dataset.</i>
+</div>
+
+<p>From the qualitative inspection of the geo-localization results on both datasets, the following observations can be made:</p>
+<ul>
+<li><strong>Accurate detection of target objects</strong>: The majority of target objects are correctly localized. The estimated 2D geo-tag coordinates are generally aligned with the centers of the ground-truth geometries.  </li>
+<li><strong>Detection errors</strong>: Instances of missed detections <strong>(False Negatives, FP)</strong> and wrong detections <strong>(False Positives, FP)</strong> are observed, although they occur less frequently.  </li>
+<li><strong>Category-level confusion</strong>: Objects with similar appearance may be incorrectly detected if they are not clearly distinguished in the ground truth or training data. For example, rectangular manholes in the SZH dataset are occasionally detected.  </li>
+</ul>
+<h4 id="quantitative-analysis-of-training-effects">Quantitative Analysis of Training Effects<a class="headerlink" href="#quantitative-analysis-of-training-effects" title="Permanent link">&para;</a></h4>
+<h5 id="metric-definition">Metric Definition<a class="headerlink" href="#metric-definition" title="Permanent link">&para;</a></h5>
+<p>The effective detection range of our method is <strong>15 meters</strong>. Consequently, only objects that appear at least <strong>twice</strong> within this 15-meter range along the image acquisition trajectory are considered in the evaluation.</p>
+<p>For evaluation purposes, we define a good detection <strong>(True Positive, TP)</strong> as a detection whose estimated 2D geo-tag lies within <strong>2 meters</strong> of the centroid of the corresponding ground-truth polygon.</p>
+<h5 id="performance">Performance<a class="headerlink" href="#performance" title="Permanent link">&para;</a></h5>
+<p><center></p>
+<style type="text/css">
+.tg  {border-collapse:collapse;border-spacing:0;}
+.tg td{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
+  overflow:hidden;padding:10px 5px;word-break:normal;}
+.tg th{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
+  font-weight:normal;overflow:hidden;padding:10px 5px;word-break:normal;}
+.tg .tg-hwm5{background-color:#828aa4;border-color:inherit;color:#ffffff;text-align:center;vertical-align:middle}
+.tg .tg-9wq8{border-color:inherit;text-align:center;vertical-align:middle}
+.tg .tg-4cuv{background-color:#c6cbd8;border-color:inherit;text-align:center;vertical-align:middle}
+.tg .tg-c3ow{border-color:inherit;text-align:center;vertical-align:middle}
+.tg .tg-ih9g{background-color:#828aa4;border-color:inherit;color:#ffffff;font-weight:bold;text-align:middle;vertical-align:middle}
+.tg .tg-a3w2{background-color:#828aa4;border-color:inherit;color:#ffffff;font-weight:bold;text-align:center;vertical-align:top}
+.tg .tg-l3av{background-color:#c6cbd8;border-color:inherit;text-align:center;vertical-align:middle}
+.tg .tg-0pky{border-color:inherit;text-align:center;vertical-align:middle}
+.tg .highlight {background-color:#ffd966 !important;font-weight:bold;}
+</style>
+
+<table class="tg">
+<thead>
+  <tr>
+    <th class="tg-ih9g">Testset</th>
+    <th class="tg-a3w2">Trainset</th>
+    <th class="tg-a3w2">F1</th>
+    <th class="tg-a3w2">Precision</th>
+    <th class="tg-a3w2">Recall</th>
+    <th class="tg-a3w2">TP</th>
+    <th class="tg-a3w2">FP</th>
+    <th class="tg-a3w2">FN</th>
+    <th class="tg-a3w2">mean</th>
+    <th class="tg-a3w2">std</th>
+    <th class="tg-a3w2">median</th>
+    <th class="tg-a3w2">max</th>
+    <th class="tg-a3w2">min</th>
+  </tr>
+</thead>
+<tbody>
+  <tr>
+    <td class="tg-hwm5" rowspan="3">RCNE</td>
+    <td class="tg-0pky">RCNE+SZH</td>
+    <td class="tg-0pky">0.889</td>
+    <td class="tg-0pky">0.871</td>
+    <td class="tg-0pky">0.908</td>
+    <td class="tg-0pky">1231</td>
+    <td class="tg-0pky">183</td>
+    <td class="tg-0pky">124</td>
+    <td class="tg-0pky">0.066</td>
+    <td class="tg-0pky">0.145</td>
+    <td class="tg-0pky">0.049</td>
+    <td class="tg-0pky">1.855</td>
+    <td class="tg-0pky">0.001</td>
+  </tr>
+  <tr>
+    <td class="tg-0pky">SZH</td>
+    <td class="tg-0pky">0.810</td>
+    <td class="tg-0pky">0.833</td>
+    <td class="tg-0pky">0.787</td>
+    <td class="tg-0pky">1067</td>
+    <td class="tg-0pky">214</td>
+    <td class="tg-0pky">288</td>
+    <td class="tg-0pky">0.081</td>
+    <td class="tg-0pky">0.161</td>
+    <td class="tg-0pky">0.050</td>
+    <td class="tg-0pky">1.751</td>
+    <td class="tg-0pky">0.001</td>
+  </tr>
+  <tr>
+    <td class="tg-4cuv">RCNE</td>
+    <td class="tg-4cuv">0.892</td>
+    <td class="tg-4cuv">0.871</td>
+    <td class="tg-4cuv">0.914</td>
+    <td class="tg-4cuv">1238</td>
+    <td class="tg-4cuv">183</td>
+    <td class="tg-4cuv">117</td>
+    <td class="tg-4cuv">0.076</td>
+    <td class="tg-4cuv">0.150</td>
+    <td class="tg-4cuv">0.050</td>
+    <td class="tg-4cuv">1.868</td>
+    <td class="tg-4cuv">0.001</td>
+  </tr>
+  <tr>
+    <td class="tg-hwm5" rowspan="3">SZH</td>
+    <td class="tg-0pky">RCNE+SZH</td>
+    <td class="tg-0pky">0.856</td>
+    <td class="tg-0pky">0.785</td>
+    <td class="tg-0pky">0.941</td>
+    <td class="tg-0pky">1028</td>
+    <td class="tg-0pky">281</td>
+    <td class="tg-0pky">64</td>
+    <td class="tg-0pky">0.064</td>
+    <td class="tg-0pky">0.133</td>
+    <td class="tg-0pky">0.042</td>
+    <td class="tg-0pky">1.865</td>
+    <td class="tg-0pky">0.001</td>
+  </tr>
+  <tr>
+    <td class="tg-4cuv">SZH</td>
+    <td class="tg-4cuv">0.866</td>
+    <td class="tg-4cuv">0.810</td>
+    <td class="tg-4cuv">0.930</td>
+    <td class="tg-4cuv">1016</td>
+    <td class="tg-4cuv">239</td>
+    <td class="tg-4cuv">76</td>
+    <td class="tg-4cuv">0.067</td>
+    <td class="tg-4cuv">0.147</td>
+    <td class="tg-4cuv">0.042</td>
+    <td class="tg-4cuv">1.891</td>
+    <td class="tg-4cuv">0.002</td>
+  </tr>
+  <tr>
+    <td class="tg-0pky">RCNE</td>
+    <td class="tg-0pky">0.820</td>
+    <td class="tg-0pky">0.797</td>
+    <td class="tg-0pky">0.845</td>
+    <td class="tg-0pky">923</td>
+    <td class="tg-0pky">235</td>
+    <td class="tg-0pky">169</td>
+    <td class="tg-0pky">0.067</td>
+    <td class="tg-0pky">0.142</td>
+    <td class="tg-0pky">0.043</td>
+    <td class="tg-0pky">1.978</td>
+    <td class="tg-0pky">0.002</td>
+  </tr>
+</tbody>
+</table>
+<p><i>Table 7: Geo-localization performance with different Trainsets and Testsets.</i>
+</center></p>
+<ol>
+<li>
+<p>In‑domain training yields the best F1 for each Testset.</p>
+<ul>
+<li>RCNE test: <code>RCNE</code> train F1 0.892 ≳ <code>RCNE+SZH</code> 0.889 ≫ <code>SZH</code> 0.810.</li>
+<li>SZH test: <code>SZH</code> train F1 0.866 ≳ <code>RCNE+SZH</code> 0.856 ≫ <code>RCNE</code> 0.820.</li>
+</ul>
+</li>
+<li>
+<p>Detection capacity (TP/FP/FN) is strongly governed by Trainset–Testset match.</p>
+<ul>
+<li>Cross‑domain training lowers recall (8.5% / 12.7%) and precision (3.8% / 1.3%), cutting F1-score by (4.6% / 8.2%).</li>
+<li>Cross‑domain training performance (81% / 82% on F1) is still valuable for initial detection.</li>
+</ul>
+</li>
+<li>
+<p>Mixed training (<code>RCNE+SZH</code>) improves generalization, trading precision for recall in the foreign AoI.</p>
+<ul>
+<li>Mixed trained model performance decreases negligibly on both test areas, indicating limited loss when broadening the Trainset. Model generalization would improve as more datasets are used in training. </li>
+</ul>
+</li>
+<li>
+<p>Camera pose accuracy and triangulation algorithmn dominate spatial error, while the image detection model mainly affects detection rate (TP/FN/FP).</p>
+<ul>
+<li>Both mean and median distance error of TP detections reach centimeter-level across datasets. </li>
+<li>Positional accuracy of geo‑localization (mean/std/median/max/min) remains stable across different experiments.</li>
+</ul>
+</li>
+<li>
+<p>Practical takeaway: use in‑domain or mixed training to maximize final retrieval (low FN) in new areas; then tune thresholds upstream to favor precision. The difference between best-precision and best-recall detections is that suspicious targets require manual inspection. </p>
+</li>
+</ol>
+<h6 id="clarification">Clarification<a class="headerlink" href="#clarification" title="Permanent link">&para;</a></h6>
+<p>During evaluation, the method detects some objects that are missed in annotation stage. Because of time constraints, we only checked and updated the ortho ground truth for RCNE dataset. That explain why in-domain geo-localization precision of SZH is obviously lower than RCNE, as missed ground truth are detected and count as false positives. Therefore, geo-localization performance from RCNE is more representative. </p>
+<h3 id="43-comparison-with-the-pipe-cadastre">4.3 Comparison with the pipe cadastre<a class="headerlink" href="#43-comparison-with-the-pipe-cadastre" title="Permanent link">&para;</a></h3>
+<!--
+- Table of the metrics on the pipe cadastre at each location
+- density map
+-->
+
+<div align="center">
+    <img src="images/heat maps.webp" width="90%" alt="Maps of the comparison between the detections and the registered manholes with only the tagged results (up), the heat map of missed manholes (middle), and the heat map of new detections (down)."><br>
+    <i>Figure 9: Status of the manholes after the comparison of the cadastre and the detections (up), with the heat map of the missing registered manholes (middle) or the heat map of the new detected manholes (down) in Draizes-Vauseyon in Neuchâtel.</i>
+</div>
+
+<p>The heatmap of missing registered manholes is significantly different than the one of new detected manholes (Fig 9). The missing manholes are more clustered than the new ones. <br>
+The experts were provided with the results shown in Fig. 9. They declared themselves surprised by the large difference between the cadastre and the detections. They nevertheless see the use of such results to highlight problematic areas and provide a first set of manholes an expert would control.</p>
+<p><center></p>
+<table>
+<thead>
+<tr>
+<th><strong>Training AoI</strong></th>
+<th><strong>Cadastre AoI</strong></th>
+<th style="text-align: center;"><strong># cadastre manholes</strong></th>
+<th style="text-align: center;"><strong># dets</strong></th>
+<th style="text-align: center;"><strong>r<sub>registered</sub></strong></th>
+<th style="text-align: center;"><strong>r<sub>retrieved</sub></strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>RCNE</td>
+<td>RCNE</td>
+<td style="text-align: center;">1207</td>
+<td style="text-align: center;">2265</td>
+<td style="text-align: center;">0.21</td>
+<td style="text-align: center;">0.40</td>
+</tr>
+<tr>
+<td>SZH</td>
+<td>SZH</td>
+<td style="text-align: center;">622</td>
+<td style="text-align: center;">1255</td>
+<td style="text-align: center;">0.27</td>
+<td style="text-align: center;">0.55</td>
+</tr>
+</tbody>
+</table>
+<p><i>Table 8: Comparison of the detected manholes with the ones present in the cadastre.</i>
+</center></p>
+<p>We note a important difference between the manholes from the pipe cadastre and the detected manholes in both areas (Tab. 8). Only 21% to 27% of the detected manholes were already registered and 40% to 55% of the registered manholes were retrieved. The results are worst for the RCNE than for the SZH.</p>
+<h2 id="5-discussion">5. Discussion<a class="headerlink" href="#5-discussion" title="Permanent link">&para;</a></h2>
+<h3 id="51-performance-of-the-deep-learning-models">5.1 Performance of the deep learning models<a class="headerlink" href="#51-performance-of-the-deep-learning-models" title="Permanent link">&para;</a></h3>
+<h4 id="511-comparison-of-detectron2-and-yolo">5.1.1 Comparison of Detectron2 and YOLO<a class="headerlink" href="#511-comparison-of-detectron2-and-yolo" title="Permanent link">&para;</a></h4>
+<p>The models trained with Detectron2 performed significantly worse than those trained with YOLO. They achieved an F1 score over 0.8 in the RCNE, which is quite good. However, given negative impact of the subsequent workflow steps on the precision, a precision of 0.88 is a bit low and we would hope for a precision over 0.9. This could be achieved by setting a higher threshold on the confidence score, at the expense of the recall. Nevertheless, since YOLO achieves very good results with a recall and precision over 0.9, we decided to continue to the next steps with the detections from this framework. </p>
+<p>We did our best to optimize the hyperparameters of each framework, but it is possible that we did not uncover the best configuration for Detectron2. Indeed, even with the chosen hyperparameters, the decrease of the training loss was very noisy and slow. <br> 
+Another limitation could be the chosen architecture itself. We used a model pre-trained on ~12 COCO epochs, which is heavily under-trained <sup id="fnref2:8"><a class="footnote-ref" href="#fn:8">8</a></sup>. Even though we perform transfer learning, maybe a model trained on ~37 COCO epochs would have performed better. Similarly, testing a model based on Resnet-101 and not Resnet-50 could improve results from Detectron2. <br>
+While improving the results with Detectron2 is probably still possible, we note that the YOLO framework is much easier to install and use. In addition, it is still actively maintained at the date of publication. Meta Research's last release for Detectron2 dates back to November 2021.</p>
+<h4 id="512-results-with-yolov11">5.1.2 Results with YOLOv11<a class="headerlink" href="#512-results-with-yolov11" title="Permanent link">&para;</a></h4>
+<p>The results of the YOLO models are excellent, with F1 score equal to or higher than 0.9 on test subsets, both at tile level and at image level. The threshold on the confidence score is 0.45 at most. A significant amount of correct detections must then have a confidence score lower than 0.5. Even if the model learned efficiently, it is not fully confident in its predictions.</p>
+<p>There is little difference between the metrics calculated on tiles and on panoramic images. However, the threshold on the confidence score increased for the model trained in the SZH and the one trained on both AoI. This indicates that, with the initial threshold, the precision was deprecated by the aggregation over panoramic images, and the recall was enhanced. It can be deduced that the decrease in precision must have been greater than the increase in recall, because the threshold of the confidence score was increased to maintain the same F1 score as before, resulting in a deterioration of the recall in favor of a better precision. <br>
+The fact that merging detections from adjacent tiles improve the recall and deprecate the precision was expected. Indeed, thank to the overlap, objects can be redundant across tiles and an object missed on one tile could be detected on another. However, false positives are sometimes observed to occur on a single tile, and as such, their proportion is increased in comparison to the overlapping true positives that are merged at the image level.</p>
+<p>The results with the YOLOv11 models are very good for all AoI on which the models were trained. Since the split between datasets was performed by image and not by region, the test dataset may lack novelty. Indeed, it was never seen by the model during training, but images of the same place taken a few meters before or after could have. Therefore, there is a risk that the metrics on the test subset are too optimistic and do not reflect the overfitting if there is one. <br>
+The metrics on the AoI on which the model was not trained are significantly lower than the ones of the test subset. This second AoI is much more likely to be impacted by overfitting than the test subset. Not only the covered area changed, but also the condition of acquisition. Those metrics should then be closer to what we can expect on a new acquisition.</p>
+<h3 id="52-geo-localization">5.2 Geo-localization<a class="headerlink" href="#52-geo-localization" title="Permanent link">&para;</a></h3>
+<h4 id="false-negatives">False negatives<a class="headerlink" href="#false-negatives" title="Permanent link">&para;</a></h4>
+<p>For geo-localization performance, most beneficiaries would perfer results with better recall than precision. As it is much more convenient to check suspicious candidates than look through entire area of interest. Therefore, it is significant to figure out the cause of false negatives.</p>
+<div align="center">
+    <img src="images/false_negatives.svg" width="100%" alt="False negatives."><br>
+    <i>Figure 10: False negative samples.</i>
+</div>
+
+<p>Some examples are shown in Fig. 10. Possible reasons of missed detection are:</p>
+<ul>
+<li>Shadowing.</li>
+<li>Occlusions by vehicles, garbage bins, and vegetation reduce visibility.</li>
+<li>Grass/soil coverage near curbs or in unpaved zones hides lids partially.</li>
+<li>Limited training coverage for rare styles (e.g., accompanied by hydrate/concreted surrounding) reduces recall.</li>
+<li>Privacy blurring collateral damage: masking people/plates sometimes spills onto the target area, degrading features.</li>
+<li>Tricky position: objects with supporting structure sometimes has less visibility. </li>
+</ul>
+<h4 id="false-positives">False positives<a class="headerlink" href="#false-positives" title="Permanent link">&para;</a></h4>
+<div align="center">
+    <img src="images/false_positives.svg" width="100%" alt="False positives."><br>
+    <i>Figure 11: False positive samples.</i>
+</div>
+
+<p>Wrong detections come from two false postive factors: street view image detection or intersection during triangulation. Fig. 11 gives some examples from image detection:</p>
+<ul>
+<li>Circular construction markings or spray paint on asphalt.</li>
+<li>Circular patches for repaired or damaged road surfaces.</li>
+<li>Other circular ground marks (utility caps, reflectors, drain covers) with similar visual cues.</li>
+</ul>
+<p>For triangulation process, future work can try to optimize global ray-to-candidate match or introduce accurate elevation raster to decrease false intersections. Some demo experiment were conducted to generate intersection by ray of image detection and elevation raster. It is validated that ground elevation with centimeter-level accuracy greatly improve the intersection performance.</p>
+<h4 id="accuracy-accounting">Accuracy accounting<a class="headerlink" href="#accuracy-accounting" title="Permanent link">&para;</a></h4>
+<p>The primary shortcoming of current method is missed detections rather than localization error of true positives.</p>
+<ul>
+<li>
+<p>From audits, the false‑negative budget decomposes approximately as:</p>
+<ul>
+<li>
+<p>≈ 50%: non‑presence in usable street‑view frames (outside FoV, occluded in all relevant frames, or acquisition gaps).</p>
+</li>
+<li>
+<p>≈ 25%: missed in image detection (score below threshold or features lost to blur/occlusion/masking).</p>
+</li>
+<li>
+<p>≈ 25%: triangulation gaps (insufficient multi‑view support, degenerate geometry, or projection error).</p>
+</li>
+</ul>
+</li>
+<li>
+<p>Positional accuracy for confirmed detections is stable across AoI (cm‑level mean/median), indicating pose/geometry dominate spatial error while image detection performance mainly affects detection rate (TP/FN/FP).</p>
+</li>
+</ul>
+<h4 id="acquisition-and-processing-best-practices-acquired-experience">Acquisition and processing best practices (acquired experience)<a class="headerlink" href="#acquisition-and-processing-best-practices-acquired-experience" title="Permanent link">&para;</a></h4>
+<ul>
+<li>Acquire around noon to minimize long shadows and occlusions.</li>
+<li>Drive both directions to increase multi‑view coverage and reduce single‑view occlusion risk.</li>
+<li>At most 5 meters spacing between panoramas (about one‑third of the effective ~15 m triangulation range) to balance redundancy and cost. </li>
+<li>Apply privacy blurring conservatively and review masks near the roadway to avoid covering targets.</li>
+<li>Buffer the AoI to define acquisition range and ensure continuous coverage at edges.</li>
+<li>Be cautious with cylindrical panoramas; bottom‑of‑image distortions bias shape.</li>
+<li>Cubemap image detection at boundary might be incomplete geometry. Increase acquisition frequency to guarantee full presence of object on single face or fit the geometry more carefully when mask near boundary.</li>
+<li>On dense image sets, tune thresholds to favor precision to limit FP accumulation in geo‑localization; leverage redundancy to recover recall. Get the difference of best-recall and best-precision detections to highlight suspicious detections.</li>
+</ul>
+<h3 id="53-comparison-of-the-detections-and-the-pipe-cadastre">5.3 Comparison of the detections and the pipe cadastre<a class="headerlink" href="#53-comparison-of-the-detections-and-the-pipe-cadastre" title="Permanent link">&para;</a></h3>
+<p>The metrics calculated between the pipe cadastre and the detected geolocalized manholes highlights large differences between the two datasets (Tab. 8). In particular, only one fourth of the detected manholes was registered in the pipe cadastre. Those unregistered detections are widespread across the AoI. It suggests that the total quantity of manholes is significantly underestimated. While the provided data should have covered all the AoI, it seems that some parts were not mapped recently. <br>
+The missing registered manholes are more clustered and less numerous. It seems possible that some of these clusters are due to some road refection that are visible in one dataset and not the other. Some of missing registered manholes are also very close to the buildings or on adjacent roads above or below the traveled road. It is possible that they were not visible on the street view imagery. A better consideration of the occlusion when comparing the detection and pipe cadastre is needed. <br>
+Lastly, the largest differences in the RCNE results might be due to the 5 years between the street view imagery and the manholes from the pipe cadastre. No historization of the data was available to allow us to work on the cadstre data from 2020.</p>
+<h3 id="54-limitations-and-future-work">5.4 Limitations and future work<a class="headerlink" href="#54-limitations-and-future-work" title="Permanent link">&para;</a></h3>
+<p>This project yields excellent metrics thanks to the quality of the ground truth, as well as the high resolution and the high density of the panoramic images. At the same time, we note that the metrics might overestimate the algorithm capacity on new areas. Indeed, as the split between training, validation and test was performed at the level of the panoramic images, images in the three datasets were sometimes taken from close positions and highly similar. In addition, under those conditions, maintaining the split was not possible after the projection to EPSG:2056. Consequently, we can presume that the effect of the overfit is underestimated when the model is tested in the same area where it was trained. Further works could split the datasets per road section or per AoI region. <br>
+While the models trained on only one AoI were tested on the other, the model trained on both AoI could not be tested on a new region. Therefore, its overfit is not fully evaluated.</p>
+<p>We noted that the aggregation of the detections from tiles to panoramic images impacted negatively the precision and positively the recall (Section <a href="#512-results-with-yolov11">5.1.2</a>). The same phenomenon is observed when projecting the detections to EPSG:2056. Redundancy of the manholes on the panoramic images is beneficial for the recall and detrimental for the precision, as confusing objects are also visualized several times and the errors accumulate.<br>
+If the density of the street view images is high enough, favoring the precision over the recall in the results on tiles and panoramic images could improve the final detections. In this project, the F1 score was used to determine the threshold on the confidence score. Switching to the F<sub>1/2</sub> would place the threshold higher and favor the precision.</p>
+<p>Finally, we need to mention that in the SZH, we did not differentiate between manholes leading to chamber and large round rainwater grids. With more time to control the ground truth and test on the results, make the distinction would improve the result usability. We notice however, that the DL framework should then be trained only on objects close to the camera, since differentiating chamber entry and grids past a certain distance is almost impossible.</p>
+<h2 id="6-conclusion">6. Conclusion<a class="headerlink" href="#6-conclusion" title="Permanent link">&para;</a></h2>
+<p>This study demonstrated the potential of deep learning–based object detection for the automated identification of manholes in street view imagery, with direct implications for the consolidation and maintenance of urban pipe cadastres. Among the two frameworks evaluated, YOLO models clearly outperformed Detectron2 ones, achieving F1 scores equal to or higher than 0.9 on test subsets at tile level. <mark> Once projected in EPSG:2056, at least 90% of the manholes were retrieved and ~87% of the detections were correct.</mark> These results confirm the suitability of YOLO for large-scale deployment, as they provide both accuracy and robustness necessary for downstream geospatial workflows.</p>
+<p>Despite these excellent performances, several limitations must be acknowledged. The high quality of the ground truth, image resolution, and spatial density of panoramas contributed significantly to the metrics, which may not directly generalize to new areas. Dataset splits at the panorama level led to training and test samples with spatial overlap, likely underestimating the degree of overfitting. <mark>When tested on new areas, the models achieve a precision between 0.84 and 0.88 at panorama level, which might be a slightly too low to achieve the quality expected in EPSG:2056.</mark> Future research should implement spatially independent splits, for example at the road-section or AoI scale to better quantify generalization capacity.</p>
+<p>Overall, this work provides evidence that image-based deep learning approaches can reduce the need for costly and time-consuming manual manhole surveys, particularly in dense urban areas where traffic and accessibility pose challenges. By enabling more reliable and efficient extraction of drainage infrastructure data, these methods open the way toward more complete and up-to-date pipe cadastres. Such advances support not only improved urban water management but also the development of digital infrastructure twins, where accurate underground asset information is critical for sustainable urban planning.</p>
+<h2 id="appendixes">Appendixes<a class="headerlink" href="#appendixes" title="Permanent link">&para;</a></h2>
+<h3 id="a-creation-of-the-ground-truth">A. Creation of the ground truth<a class="headerlink" href="#a-creation-of-the-ground-truth" title="Permanent link">&para;</a></h3>
+<h4 id="data-requirements">Data Requirements<a class="headerlink" href="#data-requirements" title="Permanent link">&para;</a></h4>
+<ul>
+<li>Raw LiDAR point cloud files</li>
+<li>Camera trajectory data with GPS coordinates and orientation</li>
+<li>Panoramic images (spherical or cubemap format)</li>
+</ul>
+<h4 id="stage-1-lidar-to-3d-ground-truth-generation">Stage 1: LiDAR to 3D Ground Truth Generation<a class="headerlink" href="#stage-1-lidar-to-3d-ground-truth-generation" title="Permanent link">&para;</a></h4>
+<h5 id="process-overview">Process Overview<a class="headerlink" href="#process-overview" title="Permanent link">&para;</a></h5>
+<p>The 3D ground truth generation process extracts circular objects (typically manholes) from LiDAR point cloud data through a multi-step methodology:</p>
+<h5 id="methodology">Methodology<a class="headerlink" href="#methodology" title="Permanent link">&para;</a></h5>
+<ul>
+<li><strong>Ground Point Extraction</strong>: Uses PDAL's Cloth Simulation Filter (CSF) to separate ground points from above-ground objects, filters points by classification codes to isolate ground-level features, and generates ground-only point cloud files for further processing</li>
+<li><strong>Raster Interpolation</strong>: Interpolates ground points to create intensity and elevation rasters using Inverse Distance Weighting (IDW) with high-resolution output for precise object detection</li>
+<li><strong>Circle Detection</strong>: Preprocesses intensity rasters with median filtering, morphological operations, contrast enhancement, and denoising, then applies Hough Circle Transform to detect circular features with appropriate parameter tuning</li>
+<li><strong>3D Polygon Creation</strong>: Converts detected circles to 3D polygons using elevation data, validates polygon flatness using plane fitting, filters out non-flat circles based on deviation thresholds, and creates GeoPackage files with 3D polygon geometries</li>
+<li><strong>Polygon Smoothing</strong>: Removes elevation outliers using statistical filtering, fits planes to 3D points using least squares, projects points to fitted planes, fits ellipses to 2D projections for smoother shapes, and generates final 3D elliptical polygons</li>
+</ul>
+<h4 id="stage-2-3d-to-panoramic-projection">Stage 2: 3D to Panoramic Projection<a class="headerlink" href="#stage-2-3d-to-panoramic-projection" title="Permanent link">&para;</a></h4>
+<h5 id="process-overview_1">Process Overview<a class="headerlink" href="#process-overview_1" title="Permanent link">&para;</a></h5>
+<p>Projects 3D ground truth annotations to panoramic images using two different projection methods: equirectangular spherical projection and multi-face cubemap projection.</p>
+<h5 id="21-spherical-projection">2.1 Spherical Projection<a class="headerlink" href="#21-spherical-projection" title="Permanent link">&para;</a></h5>
+<p>Projects 3D annotations to equirectangular panoramic images using spherical coordinate mapping.</p>
+<h6 id="methodology_1">Methodology<a class="headerlink" href="#methodology_1" title="Permanent link">&para;</a></h6>
+<ul>
+<li><strong>Camera Metadata Processing</strong>: Loads camera trajectory data with GPS coordinates and orientation, applies offset corrections for precise positioning, and filters 3D objects within specified radius of each camera position</li>
+<li><strong>Coordinate Transformation</strong>: Transforms 3D world coordinates to camera coordinate system, applies camera orientation transformations, and projects to spherical coordinates using equirectangular mapping</li>
+<li><strong>Image Coordinate Mapping</strong>: Maps spherical coordinates to image pixel coordinates, handles longitude wrapping around image edges, and clips coordinates to image boundaries</li>
+<li><strong>COCO Format Generation</strong>: Creates polygon segmentation masks, calculates bounding boxes and areas, and generates COCO-format JSON with annotations and metadata</li>
+</ul>
+<h5 id="22-cubemap-projection">2.2 Cubemap Projection<a class="headerlink" href="#22-cubemap-projection" title="Permanent link">&para;</a></h5>
+<p>Projects 3D annotations to cubemap panoramic images using a multi-face projection system.</p>
+<h6 id="methodology_2">Methodology<a class="headerlink" href="#methodology_2" title="Permanent link">&para;</a></h6>
+<ul>
+<li><strong>Metadata Extraction</strong>: Processes raw data delivery files, extracts camera positions and orientations, and handles multiple sensor configurations</li>
+<li><strong>Multi-Face Projection</strong>: Projects 3D points to multiple cubemap faces using specialized projection functions and groups points by sensor and face IDs for efficient processing</li>
+<li><strong>Face-Specific Processing</strong>: Processes each cubemap face independently, filters projections based on face visibility, and skips certain faces based on configuration</li>
+<li><strong>Annotation Generation</strong>: Creates face-specific annotations, handles multiple object categories, and generates COCO format with face-specific image metadata</li>
+</ul>
+<h4 id="stage-3-coco-annotation-validation">Stage 3: COCO Annotation Validation<a class="headerlink" href="#stage-3-coco-annotation-validation" title="Permanent link">&para;</a></h4>
+<h5 id="coco-validator-tool">COCO Validator Tool<a class="headerlink" href="#coco-validator-tool" title="Permanent link">&para;</a></h5>
+<p>We developed a <code>COCO_validator</code> to provides a PyQt-based GUI for validating and editing projected annotations.</p>
+<h6 id="features">Features<a class="headerlink" href="#features" title="Permanent link">&para;</a></h6>
+<ul>
+<li><strong>Visual Inspection</strong>: Display image patches with overlaid polygon annotations</li>
+<li><strong>Interactive Editing</strong>: Move and scale polygons using mouse interactions</li>
+<li><strong>Validation Workflow</strong>: Mark annotations as valid or remove them</li>
+<li><strong>Navigation</strong>: Jump to specific annotations or navigate through unvalidated ones</li>
+<li><strong>Export</strong>: Save validated annotations to new COCO files</li>
+<li><strong>Caching</strong>: Resume validation sessions with persistent state</li>
+</ul>
+<h3 id="b-projection">B. Projection<a class="headerlink" href="#b-projection" title="Permanent link">&para;</a></h3>
+<p>This section gives a brief introduction on prerequisite knowledge about coordinate systems, camera models, projections involved in this project. </p>
+<ul>
+<li>Coordinate systems</li>
+<li>Perspective projection (pinhole) with extrinsic/intrinsic parameters</li>
+<li>Spherical projection for panoramic images</li>
+<li>Cubemap projection for Ladybug multi-head camera model</li>
+</ul>
+<h4 id="b1-coordinate-reference-systems">B.1 Coordinate Reference Systems<a class="headerlink" href="#b1-coordinate-reference-systems" title="Permanent link">&para;</a></h4>
+<div class="arithmatex">\[\begin{equation}
+\substack{\text{World Coordinate}\\[2pt]\begin{bmatrix}U\\V\\W\end{bmatrix}}
+\;\to\;
+\substack{\text{Camera Coordinate}\\[2pt]\begin{bmatrix}X\\Y\\Z\end{bmatrix}}
+\;\to\;
+\substack{\text{Image Coordinate}\\[2pt]\begin{bmatrix}x\\y\end{bmatrix}}
+\;\to\;
+\substack{\text{Pixel Coordinate}\\[2pt]\begin{bmatrix}u\\v\end{bmatrix}}
+\end{equation}\]</div>
+<div align="center">
+    <img src="images/crs_trans.svg" width="85%" alt="CRS transformation pipeline."><br>
+    <i>Figure 12: Coordinate system transformation pipeline for 3D-2D projection.</i>
+</div>
+
+<p>Fig. 12 illustrates coordinates transformation from real world objects to image pixels, introducing following concepts:</p>
+<ul>
+<li><strong>World Coordinate</strong>: Defines global positions in a projected coordinate system such as <em>Easting–Northing–Height</em> (e.g., <code>EPSG:2056</code>). This is a right-handed system with <em>Z pointing upward</em>.</li>
+<li><strong>Camera Coordinate</strong>: Represents the local 3D coordinates relative to a given camera head. </li>
+<li><strong>Image Coordinate</strong>: Describes points in meters on the <strong><em>image plane</em></strong> located at the focal distance from the camera center. This is a continuous metric space before pixel discretization.</li>
+<li><strong>Pixel Coordinate</strong>: Uses integer pixel indices with the <strong>origin at the top-left corner</strong> of the image. Conversion from the image plane applies the pixel size and image resolution.</li>
+</ul>
+<hr />
+<h4 id="b2-perspective-projection-with-extrinsicintrinsic-parameters">B.2 Perspective projection with extrinsic/intrinsic parameters<a class="headerlink" href="#b2-perspective-projection-with-extrinsicintrinsic-parameters" title="Permanent link">&para;</a></h4>
+<h5 id="extrinsics"><strong>Extrinsics</strong><a class="headerlink" href="#extrinsics" title="Permanent link">&para;</a></h5>
+<div align="center">
+    <img src="images/extrinsic.webp" width="60%" alt="CRS transformation pipeline."><br>
+    <i>Figure 13: Extrinsic parameters determine proejection from global CRS to camera CRS.</i>
+</div>
+
+<!-- <small>note:[image reference](https://docs.basic.ai/docs/camera-intrinsic-extrinsic-and-distortion-in-camera-calibration)</small> -->
+
+<p>Extrinsics define the <strong><em>euclidean transformation</em></strong> from the <strong><em>world coordinate system</em></strong> to the <strong><em>camera coordinate system</em></strong> (Fig. 13). They consist of:</p>
+<ol>
+<li>
+<p><strong>Rotation (Orientation)</strong> </p>
+<p>Describes how the camera is oriented relative to the world.</p>
+<ul>
+<li>Common representations include:<ol>
+<li><strong>OPK rotations</strong> <span class="arithmatex">\([omega, phi, kappa](Ω, Φ, Κ)\)</span> — standard photogrammetric angles.</li>
+<li><strong>Yaw–Pitch–Roll</strong> — aerospace convention.</li>
+<li><strong>Euler angles</strong> — arbitrary axis sequences.</li>
+</ol>
+</li>
+<li>Rotations can also be expressed as rotation matrices <span class="arithmatex">\(R\)</span> or quaternions for numerical stability.</li>
+</ul>
+</li>
+<li>
+<p><strong>Translation (Position)</strong> </p>
+<p>Translation parameters <span class="arithmatex">\((T)\)</span> are the distance to shift <strong>camera center</strong> <span class="arithmatex">\((C)\)</span> to origin after rotation. </p>
+<ul>
+<li>In multi-head camera, this includes <strong>per-sensor offsets</strong> relative to the camera center.</li>
+</ul>
+</li>
+</ol>
+<p>Together, extrinsics allow transforming a 3D point <span class="arithmatex">\(P_W\)</span> into camera coordinates <span class="arithmatex">\(P_C\)</span>:</p>
+<div class="arithmatex">\[\begin{align}
+{P}_{C} &amp;= R \left( {P}_{W} - C \right) \\
+               &amp;= R {P}_{W} -{R} {C} \\
+               &amp;= {R} {P}_{W} + {T}
+\end{align}\]</div>
+<p>And inversely:</p>
+<div class="arithmatex">\[\begin{equation} {P}_{W} = R^{-1} ( {P}_{C} - T) \end{equation}\]</div>
+<h5 id="44-homogeneous-representation"><strong>4×4 Homogeneous Representation</strong><a class="headerlink" href="#44-homogeneous-representation" title="Permanent link">&para;</a></h5>
+<p>Extrinsics can be expressed as a single <strong>4×4 matrix</strong> that applies both rotation and translation in one step:</p>
+<div class="arithmatex">\[\begin{pmatrix} X \\ Y \\ Z \\ 1 \end{pmatrix} = \begin{pmatrix} r_{11} &amp; r_{12} &amp; r_{13} &amp; 0 \\ r_{21} &amp; r_{22} &amp; r_{23} &amp; 0 \\ r_{31} &amp; r_{32} &amp; r_{33} &amp; 0 \\ 0 &amp; 0 &amp; 0 &amp; 1 \end{pmatrix} \begin{pmatrix} 1 &amp; 0 &amp; 0 &amp; -C_{x} \\ 0 &amp; 1 &amp; 0 &amp; -C_{y} \\ 0 &amp; 0 &amp; 1 &amp; -C_{z} \\ 0 &amp; 0 &amp; 0 &amp; 1 \end{pmatrix} \begin{pmatrix} U \\ V \\ W \\ 1 \end{pmatrix}\]</div>
+<div class="arithmatex">\[M_{\text{ext}} = \begin{bmatrix} R_{3 \times 3} &amp; T_{3 \times 1} \\ 0_{1 \times 3} &amp; 1 \end{bmatrix}_{4 \times 4} = \begin{pmatrix} r_{11} &amp; r_{12} &amp; r_{13} &amp; t_{x} \\ r_{21} &amp; r_{22} &amp; r_{23} &amp; t_{y} \\ r_{31} &amp; r_{32} &amp; r_{33} &amp; t_{z} \\ 0 &amp; 0 &amp; 0 &amp; 1 \end{pmatrix}\]</div>
+<h5 id="intrinsics"><strong>Intrinsics</strong><a class="headerlink" href="#intrinsics" title="Permanent link">&para;</a></h5>
+<p>Intrinsics define the camera’s internal geometry: focal length <span class="arithmatex">\(f\)</span>, pixel size <span class="arithmatex">\(s\)</span> (meters per pixel), and principal point (assumed at image center), projecting 3D points in camera CRS to 2D Pixel coordinates. </p>
+<p><em>Camera intrinsic matrix</em> can be factorized into parts that separate <em>focal length scaling</em> from the <em>affine transformations</em> (principal point shift, skew, aspect ratio).  </p>
+<h6 id="homogeneous-transformation">Homogeneous Transformation<a class="headerlink" href="#homogeneous-transformation" title="Permanent link">&para;</a></h6>
+<p>Represent a 2D point <span class="arithmatex">\((x,y)\)</span> by a 3D point <span class="arithmatex">\((x', y', z')\)</span> by adding a “fictitious” third coordinate. By convention, we specify that given <span class="arithmatex">\((x', y', z')\)</span> we can recover the 2D point <span class="arithmatex">\((x,y)\)</span> as <span class="arithmatex">\(x= \frac{x'}{z'}, \quad y= \frac{y'}{z'}\)</span> . </p>
+<p><em><code>Note:(x,y)=(x,y,1)=(2x,2y,2)=(kx,ky,k) for any nonzero k (can be negative as well as positive)</code></em></p>
+<h6 id="camera-crs-to-image-coordinate">Camera CRS to Image Coordinate<a class="headerlink" href="#camera-crs-to-image-coordinate" title="Permanent link">&para;</a></h6>
+<div align="center">
+    <img src="images/perspective.svg" width="100%" alt="CRS transformation pipeline."><br>
+    <i>Figure 14: Focal length scaling of intrinsic parameters.</i>
+</div>
+
+<p>Therefore, Camera-to-Image transformation can be represented by following <code>Homogeneous Transformation</code>:</p>
+<div class="arithmatex">\[\begin{equation}\begin{aligned}
+ &amp; x= \frac{x'}{z'} = f\frac{X}{Z} 
+ &amp; y= \frac{x'}{z'} = f\frac{Y}{Z}\quad\longleftrightarrow\quad
+\begin{bmatrix}
+x^{\prime} \\
+y^{\prime} \\
+z^{\prime}
+\end{bmatrix}=
+\begin{bmatrix}
+f &amp; 0 &amp; 0 &amp; 0 \\
+0 &amp; f &amp; 0 &amp; 0 \\
+0 &amp; 0 &amp; 1 &amp; 0
+\end{bmatrix}
+\begin{bmatrix}
+X \\
+Y \\
+Z \\
+1
+\end{bmatrix}
+\end{aligned}\end{equation}\]</div>
+<hr />
+<h6 id="image-coordinate-to-pixel-coordinate">Image Coordinate to Pixel Coordinate<a class="headerlink" href="#image-coordinate-to-pixel-coordinate" title="Permanent link">&para;</a></h6>
+<div align="center">
+    <img src="images/pixel_crs.svg" width="50%" alt="Image to pixel coordinate."><br>
+    <i>Figure 15: Image to pixel: from continous physical space to discrete space.</i>
+</div>
+
+<div class="arithmatex">\[u = \frac{x}{s_x}, \quad v = \frac{y}{s_y} \quad \rightarrow \quad u = \frac{1}{s_{x}} f \frac{X}{Z} + c_{x}, \quad v = \frac{1}{s_{y}} f \frac{Y}{Z} + c_{y}\]</div>
+<p>where  </p>
+<ul>
+<li><span class="arithmatex">\(u, v\)</span>: pixel coordinates.   </li>
+<li><span class="arithmatex">\(s_x, s_y\)</span>: pixel size in physical unit along x/y axis.  </li>
+<li><span class="arithmatex">\(c_x, c_y\)</span>: principal point (optical center) in pixel unit.  </li>
+</ul>
+<h6 id="standard-intrinsic-matrix">Standard intrinsic matrix<a class="headerlink" href="#standard-intrinsic-matrix" title="Permanent link">&para;</a></h6>
+<div class="arithmatex">\[
+\begin{bmatrix}
+f_x &amp;  \gamma  &amp; c_x \\
+0   &amp; f_y &amp; c_y \\
+0   &amp; 0   &amp; 1
+\end{bmatrix}
+= \begin{bmatrix}
+ f / s_{x} &amp; \gamma   &amp; c_x \\
+0   &amp;  f / s_{y} &amp; c_y \\
+0   &amp; 0   &amp; 1
+\end{bmatrix}
+= \underbrace{\begin{bmatrix}
+1 / s_{x} &amp; \gamma / f   &amp; c_x \\
+0   &amp;  1 / s_{y} &amp; c_y \\
+0   &amp; 0   &amp; 1
+\end{bmatrix}}_{Affine Transform}
+\begin{bmatrix}
+f   &amp; 0  &amp; 0 \\
+0   &amp; f  &amp; 0 \\
+0   &amp; 0  &amp; 1
+\end{bmatrix}
+\]</div>
+<p>where:</p>
+<ul>
+<li><span class="arithmatex">\(f_x, f_y\)</span>: effective focal lengths in pixel units.</li>
+<li><span class="arithmatex">\( \gamma\)</span>: skew coefficient (often <span class="arithmatex">\(0\)</span> for modern cameras).  </li>
+</ul>
+<p>Thus, <strong>intrinsics = affine transformation × isotropic focal scaling</strong>.  </p>
+<h5 id="projection-matrix-from-global-3d-coordinates-to-pixel-coordinates">Projection matrix from global 3D coordinates to pixel coordinates<a class="headerlink" href="#projection-matrix-from-global-3d-coordinates-to-pixel-coordinates" title="Permanent link">&para;</a></h5>
+<div class="arithmatex">\[\begin{equation}\begin{bmatrix}
+u \\
+v \\
+1
+\end{bmatrix}=\underbrace{\underbrace{\underbrace{
+\begin{bmatrix}
+\alpha_{11} &amp; \alpha_{12} &amp; \alpha_{13} \\
+\alpha_{21} &amp; \alpha_{22} &amp; \alpha_{23} \\
+0 &amp; 0 &amp; 1
+\end{bmatrix}}_{\mathbf{M}_{\mathrm{aff}}}\underbrace{
+\begin{bmatrix}
+f &amp; 0 &amp; 0 &amp; 0 \\
+0 &amp; f &amp; 0 &amp; 0 \\
+0 &amp; 0 &amp; 1 &amp; 0
+\end{bmatrix}}_{\mathbf{M}_{\mathrm{focal}}}}_{\mathbf{M}_{\mathrm{int}}}\underbrace{
+\begin{bmatrix}
+r_{11} &amp; r_{12} &amp; r_{13} &amp; t_x \\
+r_{21} &amp; r_{22} &amp; r_{23} &amp; t_y \\
+r_{31} &amp; r_{32} &amp; r_{33} &amp; t_z \\
+0 &amp; 0 &amp; 0 &amp; 1
+\end{bmatrix}}_{\mathbf{M}_{\mathrm{ext}}}}_{\mathbf{M}_{\mathrm{cam}}}
+\begin{bmatrix}
+U \\
+V \\
+W \\
+1
+\end{bmatrix}\end{equation}\]</div>
+<p>where:</p>
+<ul>
+<li><span class="arithmatex">\(\alpha_{ij}\)</span>: affine transformation matrix parameters.</li>
+</ul>
+<hr />
+<h4 id="b3-spherical-projection-for-panoramic-images">B.3 Spherical projection for panoramic images<a class="headerlink" href="#b3-spherical-projection-for-panoramic-images" title="Permanent link">&para;</a></h4>
+<p>Despite of pinhole camera model with perspective projection for intrinsic transformation, there are other camera models with different intrinsic projection.
+For cylinderical 360° panoramas (Fig. 16), spherical mappings convert between camera CRS directions and equirectangular pixels, with image width <span class="arithmatex">\(W\)</span> and height <span class="arithmatex">\(H\)</span>:</p>
+<div style="float:left; width:50%; margin-right:1rem; text-align:center;">
+    <img src="images/sphere_angle.svg" width="75%" alt="CRS transformation pipeline."><br>
+    <i>Figure 16: spherical camera CRS.</i>
+</div>
+
+<div class="arithmatex">\[
+\begin{aligned}
+x &amp;= r\,\cos\varphi\,\sin\theta \\
+y &amp;= r\,\sin\varphi \\
+z &amp;= r\,\cos\varphi\,\cos\theta \\[6pt]
+\theta &amp;= \arctan\!\left(\tfrac{x}{z}\right) \\
+\varphi &amp;= \arctan\!\left(\tfrac{y}{\sqrt{x^{2}+z^{2}}}\right) \\
+r &amp;= \sqrt{x^{2}+y^{2}+z^{2}}
+\end{aligned}
+\]</div>
+<div style="clear:both;"></div>
+
+<ul>
+<li>
+<p>Forward projection (camera CRS → pixels):</p>
+<p><div align="center">
+    <img src="images/sphere.svg" width="100%" alt="CRS transformation pipeline."><br>
+    <i>Figure 17: Coordinate system transformation pipeline for 3D-2D projection.</i>
+</div></p>
+<ol>
+<li>
+<p>Map 3D point <span class="arithmatex">\((X, Y, Z)\)</span> onto unit sphere</p>
+<div class="arithmatex">\[\begin{equation}(\hat{x},\hat{y},\hat{z})=\frac{1}{\sqrt{X^2+Y^2+Z^2}}(X,Y,Z)\end{equation}\]</div>
+</li>
+<li>
+<p>Convert to spherical coordinates</p>
+<div class="arithmatex">\[\begin{equation}(sin\theta cos\phi,sin\phi,cos\theta cos\phi)=(\hat{x},\hat{y},\hat{z})\end{equation}\]</div>
+</li>
+<li>
+<p>Convert to pixel coordinates</p>
+<div class="arithmatex">\[\begin{equation}(u,v) = (\tilde{x},\tilde{y})=(\frac{\theta}{2\pi}W, \frac{\phi}{\pi}H)\end{equation}\]</div>
+</li>
+</ol>
+</li>
+</ul>
+<p>To convert a pixel to a world-space ray for spherical panos:</p>
+<ol>
+<li>
+<p>Spherical unprojection: pixel coodinates → camera CRS. </p>
+<ul>
+<li>Use unit length if depth of pixel unavailable. </li>
+<li>Recover azimuth <span class="arithmatex">\((\theta,\phi)\)</span> from <span class="arithmatex">\((u,v)\)</span>.</li>
+<li>Apply spherical-to-Cartesian.</li>
+</ul>
+</li>
+<li>
+<p>Rotate/translate to world CRS via extrinsic parameters.</p>
+</li>
+<li>
+<p>Build a ray from the camera center through projected world direction point.</p>
+</li>
+</ol>
+<h4 id="b4-ladybug-multi-head-camera-model-and-cubemap-representation">B.4 Ladybug Multi-head Camera Model and Cubemap Representation<a class="headerlink" href="#b4-ladybug-multi-head-camera-model-and-cubemap-representation" title="Permanent link">&para;</a></h4>
+<h5 id="ladybug-multi-head-camera-model">Ladybug Multi-head Camera Model<a class="headerlink" href="#ladybug-multi-head-camera-model" title="Permanent link">&para;</a></h5>
+<p>The <strong>Ladybug</strong> is a <strong>multi-camera panoramic system</strong> designed to capture <strong>360° panoramic imagery</strong>.<br />
+Compared with spherical panoramas, the cubemap representation avoids extreme stretching near the poles. This makes it preferable for rendering, graphics, and machine learning tasks due to its more uniform sampling and native GPU support.</p>
+<ul>
+<li>
+<p><strong>Multi-head design</strong>:<br />
+  The system integrates <strong>six individual wide-angle sensors</strong> (Ladybug5+: one upward-looking and five arranged laterally around the sides). Together, they cover the full sphere (approx. 90° vertical FoV for the top sensor and ~75–90° for each lateral sensor).<br />
+  For details on the stitching process from raw camera feeds to a spherical projection, refer to the <a href="https://www.teledynevisionsolutions.com/support/support-center/application-note/iis/overview-of-the-ladybug-image-stitching-process/">official documentation</a>.<br />
+  In this project, the cubemap images are based on <strong>distortion-corrected (stitching-error compensated)</strong> spherical mosaics.</p>
+</li>
+<li>
+<p><strong>Output</strong>:<br />
+  The Ladybug streams synchronized images from all six heads. Using intrinsic and extrinsic calibration parameters, these images can be stitched into <strong>spherical panoramas</strong> or remapped into <strong>cubemap projections</strong> (Fig. 18).</p>
+</li>
+</ul>
+<div align="center">
+    <img src="images/cubemap.svg" width="85%" alt="Spherical mosaic to cubemap transformation."><br>
+    <i>Figure 18: Spherical mosaic to cubemap transformation.</i>
+</div>
+
+<hr />
+<h5 id="cubemap-transformation">Cubemap Transformation<a class="headerlink" href="#cubemap-transformation" title="Permanent link">&para;</a></h5>
+<p>Cubemap transformations depend on the camera rig pose, per-face orientations, and per-sensor offsets. To clarify the technical framework, we introduce the following definitions:</p>
+<ol>
+<li>
+<p><strong>Frame CRS</strong><br />
+   Equivalent to the previously defined <em>Camera CRS</em>. Since the Ladybug system consists of six cameras, <em>Frame CRS</em> denotes the GPS-referenced position and orientation recorded for each panorama. In this project configuration, the <em>Frame CRS</em> aligns with the <em><code>Camera 0</code></em>.</p>
+</li>
+<li>
+<p><strong>Model CRS</strong><br />
+   The coordinate system of a image patch on a cubeface, determined by the cubeface orientation and the camera position of the corresponding spherical patch.<br />
+   In this project, <em>Model CRS</em> is consolidated from the relative camera position with respect to the frame center and predefined face rotations.<br />
+   Importantly, <em>Model CRS</em> is <strong>independent of the physical sensor orientations</strong>, since those are already applied during the spherical stitching step. Each cubeface is rendered from the mosaic sphere using its <em>Model CRS</em>.</p>
+</li>
+</ol>
+<hr />
+<h5 id="implementation-details">Implementation Details<a class="headerlink" href="#implementation-details" title="Permanent link">&para;</a></h5>
+<p>We define a <code>GeoFrame</code> class to model the Ladybug cameras, consisting of <strong>six heads</strong> (five lateral, one top).  </p>
+<p>Each Ladybug camera model specifies:</p>
+<ul>
+<li><strong>Canonical face directions</strong>: relative orientations <span class="arithmatex">\((\Delta\omega, \Delta\phi, \Delta\kappa)\)</span> with respect to the frame orientation.  </li>
+<li><strong>Cubeface resolution</strong>: width and height in pixels.  </li>
+</ul>
+<p>Each individual head further includes:</p>
+<ul>
+<li><strong>Intrinsics</strong>: focal length and pixel size.  </li>
+<li><strong>In-device Extrinsics</strong>: relative position <span class="arithmatex">\((dx, dy, dz)\)</span> in meters, and relative orientation <span class="arithmatex">\((\Delta\omega, \Delta\phi, \Delta\kappa)\)</span> in degrees (OPK).  </li>
+<li><strong>Mosaic mask</strong>: defines which spherical latitude/longitude region is covered by the head.  </li>
+</ul>
+<blockquote>
+<p><em>Note: Ladybug camera model parameters are predefined in the project source code.</em></p>
+</blockquote>
+<hr />
+<h5 id="forward-projection-3d-pixel">Forward Projection (3D → Pixel)<a class="headerlink" href="#forward-projection-3d-pixel" title="Permanent link">&para;</a></h5>
+<div align="center">
+    <img src="images/cubemap_pipeline.svg" width="100%" alt="Cubemap transformation pipeline."><br>
+    <i>Figure 19: Cubemap transformation pipeline.  
+    Only five lateral cameras are shown for clarity.</i>
+</div>
+
+<p>The workflow for projecting a 3D world point to cubemap pixel coordinates is as shown in Fig. 19:</p>
+<ol>
+<li>
+<p><strong>Global to Regional CRS</strong><br />
+   Transform the GPS-based geodetic coordinates (e.g., WGS84) into a projected CRS (e.g., LV95/LN02), which provides higher regional accuracy.</p>
+</li>
+<li>
+<p><strong>World to Frame CRS</strong><br />
+   Use frame extrinsic parameters between the projected CRS and the current frame pose to express the 3D point in <em>Frame CRS</em>.</p>
+</li>
+<li>
+<p><strong>Frame CRS to Spherical</strong><br />
+   Compute the point’s spherical coordinates (longitude, latitude) in <em>Frame CRS</em>. Determine the responsible camera head using the Ladybug mosaic mask.</p>
+</li>
+<li>
+<p><strong>Spherical to Model CRS</strong><br />
+   Assign the point to a cubeface Determind cubeface of the point by max dot product to canonical face directions. Construct the <em>Model CRS</em> from the camera head position and face orientation.</p>
+</li>
+<li>
+<p><strong>Model CRS to Pixel Coordinates</strong><br />
+   Apply perspective projection from <em>Model CRS</em> to <em>image coordinates</em> and finally to <em>pixel coordinates</em>.</p>
+</li>
+</ol>
+<hr />
+<h5 id="inverse-projection-pixel-3d-ray">Inverse Projection (Pixel → 3D Ray)<a class="headerlink" href="#inverse-projection-pixel-3d-ray" title="Permanent link">&para;</a></h5>
+<p>Conversely, pixel-to-ray backprojection proceeds as follows:</p>
+<ol>
+<li>
+<p><strong>Pixel → Image coordinates</strong><br />
+   Apply the intrinsic affine transformation.  </p>
+</li>
+<li>
+<p><strong>Face-based direction</strong><br />
+   Given the cubeface index (relative orientation), estimate the spherical coordinates (longitude, latitude) relative to the frame center. Determine the camera index via the mosaic mask.  </p>
+</li>
+<li>
+<p><strong>Image → Model CRS</strong><br />
+   Apply intrinsic focal scaling, assuming the pixel lies on the physical image plane. Incorporate the estimated camera position from Step 2.  </p>
+</li>
+<li>
+<p><strong>Model → Frame CRS</strong><br />
+   Transform by inverting the cubeface rotation and applying the relative camera offset.  </p>
+</li>
+<li>
+<p><strong>Frame → Regional CRS</strong><br />
+   Transform both the pixel point and the camera center into the regional CRS using the frame extrinsics.  </p>
+</li>
+<li>
+<p><strong>Ray construction</strong><br />
+   Form the final 3D ray vector from the camera center through the transformed pixel point.</p>
+</li>
+</ol>
+<h2 id="reference">Reference<a class="headerlink" href="#reference" title="Permanent link">&para;</a></h2>
+<div class="footnote">
+<hr />
+<ol>
+<li id="fn:1">
+<p>Jan D. Wegner, Steve Branson, David Hall, Konrad Schindler, and Pietro Perona. Cataloging Public Objects Using Aerial and Street-Level Images — Urban Trees. In <em>2016 IEEE Conference on Computer Vision and Pattern Recognition (CVPR)</em>, 6014–6023. Las Vegas, NV, USA, June 2016. IEEE. URL: <a href="http://ieeexplore.ieee.org/document/7781016/">http://ieeexplore.ieee.org/document/7781016/</a> (visited on 2024-08-02), <a href="https://doi.org/10.1109/CVPR.2016.647">doi:10.1109/CVPR.2016.647</a>.&#160;<a class="footnote-backref" href="#fnref:1" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+</li>
+<li id="fn:2">
+<p>Ramya Hebbalaguppe, Gaurav Garg, Ehtesham Hassan, Hiranmay Ghosh, and Ankit Verma. Telecom Inventory Management via Object Recognition and Localisation on Google Street View Images. In <em>2017 IEEE Winter Conference on Applications of Computer Vision (WACV)</em>, 725–733. Santa Rosa, CA, USA, March 2017. IEEE. <a href="https://doi.org/10.1109/WACV.2017.86">doi:10.1109/WACV.2017.86</a>.&#160;<a class="footnote-backref" href="#fnref:2" title="Jump back to footnote 2 in the text">&#8617;</a></p>
+</li>
+<li id="fn:3">
+<p>Vladimir A. Krylov, Eamonn Kenny, and Rozenn Dahyot. Automatic Discovery and Geotagging of Objects from Street View Imagery. <em>Remote Sensing</em>, 10(5):661, May 2018. Number: 5 Publisher: Multidisciplinary Digital Publishing Institute. URL: <a href="https://www.mdpi.com/2072-4292/10/5/661">https://www.mdpi.com/2072-4292/10/5/661</a> (visited on 2024-06-25), <a href="https://doi.org/10.3390/rs10050661">doi:10.3390/rs10050661</a>.&#160;<a class="footnote-backref" href="#fnref:3" title="Jump back to footnote 3 in the text">&#8617;</a></p>
+</li>
+<li id="fn:4">
+<p>Weixing Zhang, Chandi Witharana, Weidong Li, Chuanrong Zhang, Xiaojiang Li, and Jason Parent. Using Deep Learning to Identify Utility Poles with Crossarms and Estimate Their Locations from Google Street View Images. <em>Sensors</em>, 18(8):2484, August 2018. Number: 8 Publisher: Multidisciplinary Digital Publishing Institute. URL: <a href="https://www.mdpi.com/1424-8220/18/8/2484">https://www.mdpi.com/1424-8220/18/8/2484</a> (visited on 2024-06-25), <a href="https://doi.org/10.3390/s18082484">doi:10.3390/s18082484</a>.&#160;<a class="footnote-backref" href="#fnref:4" title="Jump back to footnote 4 in the text">&#8617;</a></p>
+</li>
+<li id="fn:5">
+<p>Ahmed Nassar. <em>Learning to map street-side objects using multiple views</em>. doctoral thesis, Université de Bretagne Sud, Vanne, May 2021. URL: <a href="https://theses.hal.science/tel-03523658v1/file/2021theseNassarAS.pdf">https://theses.hal.science/tel-03523658v1/file/2021theseNassarAS.pdf</a> (visited on 2024-08-02).&#160;<a class="footnote-backref" href="#fnref:5" title="Jump back to footnote 5 in the text">&#8617;</a></p>
+</li>
+<li id="fn:6">
+<p>Anderson Santos, José Marcato Junior, Jonathan de Andrade Silva, Rodrigo Pereira, Daniel Matos, Geazy Menezes, Leandro Higa, Anette Eltner, Ana Paula Ramos, Lucas Osco, and Wesley Gonçalves. Storm-Drain and Manhole Detection Using the RetinaNet Method. <em>Sensors</em>, 20(16):4450, January 2020. Number: 16 Publisher: Multidisciplinary Digital Publishing Institute. URL: <a href="https://www.mdpi.com/1424-8220/20/16/4450">https://www.mdpi.com/1424-8220/20/16/4450</a> (visited on 2024-06-24), <a href="https://doi.org/10.3390/s20164450">doi:10.3390/s20164450</a>.&#160;<a class="footnote-backref" href="#fnref:6" title="Jump back to footnote 6 in the text">&#8617;</a></p>
+</li>
+<li id="fn:7">
+<p>Dominik Boller, Matthew Moy De Vitry, Jan D. Wegner, and João P. Leitão. Automated localization of urban drainage infrastructure from public-access street-level images. <em>Urban Water Journal</em>, 16(7):480–493, August 2019. URL: <a href="https://www.tandfonline.com/doi/full/10.1080/1573062X.2019.1687743">https://www.tandfonline.com/doi/full/10.1080/1573062X.2019.1687743</a> (visited on 2024-06-24), <a href="https://doi.org/10.1080/1573062X.2019.1687743">doi:10.1080/1573062X.2019.1687743</a>.&#160;<a class="footnote-backref" href="#fnref:7" title="Jump back to footnote 7 in the text">&#8617;</a></p>
+</li>
+<li id="fn:8">
+<p>Yuxin Wu, Alexander Kirillov, Francisco Massa, Wan-Yen Lo, and Ross Girshick. Detectron2. 2019. URL: <a href="https://github.com/facebookresearch/detectron2">https://github.com/facebookresearch/detectron2</a>.&#160;<a class="footnote-backref" href="#fnref:8" title="Jump back to footnote 8 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:8" title="Jump back to footnote 8 in the text">&#8617;</a></p>
+</li>
+<li id="fn:9">
+<p>Glenn Jocher, Jing Qiu, and Ayush Chaurasia. Ultralytics YOLO. January 2023. URL: <a href="https://github.com/ultralytics/ultralytics">https://github.com/ultralytics/ultralytics</a>.&#160;<a class="footnote-backref" href="#fnref:9" title="Jump back to footnote 9 in the text">&#8617;</a></p>
+</li>
+<li id="fn:10">
+<p>the Ray Team. Ray. June 2025. URL: <a href="https://github.com/ray-project/ray">https://github.com/ray-project/ray</a>.&#160;<a class="footnote-backref" href="#fnref:10" title="Jump back to footnote 10 in the text">&#8617;</a></p>
+</li>
+</ol>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2020 Swiss Territorial Data Lab
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        <div class="md-social">
+  
+    
+    
+    
+    
+    <a href="https://github.com/swiss-territorial-data-lab" target="_blank" rel="noopener" title="Repo on Github" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+    </a>
+  
+    
+    
+    
+    
+    <a href="mailto:<info@stdl.ch>" target="_blank" rel="noopener" title="Send us an eMail!" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M498.1 5.6c10.1 7 15.4 19.1 13.5 31.2l-64 416c-1.5 9.7-7.4 18.2-16 23s-18.9 5.4-28 1.6L284 427.7l-68.5 74.1c-8.9 9.7-22.9 12.9-35.2 8.1S160 493.2 160 480v-83.6c0-4 1.5-7.8 4.2-10.7l167.6-182.9c5.8-6.3 5.6-16-.4-22s-15.7-6.4-22-.7L106 360.8l-88.3-44.2C7.1 311.3.3 300.7 0 288.9s5.9-22.8 16.1-28.7l448-256c10.7-6.1 23.9-5.5 34 1.4z"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.expand"], "search": "../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.a7c05c9e.min.js"></script>
+      
+        <script src="../assets/javascripts/config.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>
