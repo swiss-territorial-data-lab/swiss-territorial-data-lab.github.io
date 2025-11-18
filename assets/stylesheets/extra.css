@@ -55,7 +55,7 @@
     width: 150px;
     height: 150px;
     content: "";
-    margin-top: 50px;
+    margin: 50px auto;
 }
 
 /* .md-source__facts {
