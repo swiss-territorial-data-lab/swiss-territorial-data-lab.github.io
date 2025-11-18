@@ -88,3 +88,12 @@
 .md-typeset :is(.abstract, .summary, .tldr)> :is(.admonition-title, summary)::after {
     background-color: white;
 }
+
+.md-typeset .md-button {
+    background-color: var(--stdl-light-gray);
+}
+
+.md-typeset .md-button:hover {
+    background-color: var(--stdl-light-gray);
+    color: var(--stdl-dark-gray);
+}
